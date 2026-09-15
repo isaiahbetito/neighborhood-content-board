@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Neighborhood Content Board",
+  title: {
+    default: "Jamie's Content Board",
+    template: "%s",
+  },
   description:
-    "Hyperlocal content pipeline — 3 posts a day, rotating through every service area, always seven days ahead.",
+    "Jamie's weekly content hub — blogs, mailers, ads, YouTube, Canva, SOPs, and seller follow-ups, all in one place.",
 };
 
 export default function RootLayout({
