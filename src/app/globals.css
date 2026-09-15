@@ -333,7 +333,12 @@ footer button:hover{color:var(--brick);}
   border-color:var(--brass);
   box-shadow:0 0 16px rgba(212,175,55,0.14);
 }
-.hub-card-icon{font-size:20px;line-height:1;margin-bottom:4px;}
+.hub-card-head{
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+.hub-card-icon{font-size:20px;line-height:1;}
 .hub-card-title{
   font-family:'Fraunces',serif;
   font-weight:600;

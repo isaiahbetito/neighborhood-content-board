@@ -62,8 +62,10 @@ export default function Home() {
         <div className="hub-grid">
           {SECTIONS.map((s) => (
             <Link key={s.href} href={s.href} className="hub-card">
-              <span className="hub-card-icon">{s.icon}</span>
-              <span className="hub-card-title">{s.title}</span>
+              <span className="hub-card-head">
+                <span className="hub-card-icon">{s.icon}</span>
+                <span className="hub-card-title">{s.title}</span>
+              </span>
               <span className="hub-card-desc">{s.desc}</span>
             </Link>
           ))}
