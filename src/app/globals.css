@@ -1,8 +1,8 @@
 :root{
-  --sand: #060503;
-  --sand-deep: #0D0B07;
-  --panel: #121009;
-  --panel-raised: #1C1810;
+  --sand: #000000;
+  --sand-deep: #0A0A0A;
+  --panel: #121212;
+  --panel-raised: #1A1A1A;
   --ink: #F3EAD3;
   --ink-soft: #B7AC90;
   --brass: #D4AF37;
@@ -24,7 +24,7 @@ body{
   margin:0;
   background-color:var(--sand);
   background-image:
-    linear-gradient(to bottom, rgba(6,5,3,0) 0%, rgba(6,5,3,0.55) 55%, rgba(6,5,3,0.95) 100%),
+    linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.92) 100%),
     url('/skyline-bg.png');
   background-repeat:no-repeat;
   background-position:center bottom;
