@@ -1,19 +1,20 @@
 :root{
-  --sand: #EEE8DA;
-  --sand-deep: #E3DBC8;
-  --panel: #F8F5EE;
-  --ink: #1B2A3D;
-  --ink-soft: #4A5568;
-  --brass: #A9813F;
-  --brass-deep: #7A5B12;
-  --brass-light: #F1E3C2;
-  --forest: #2F4739;
-  --forest-light: #D9E8DD;
-  --brick: #9B4A3C;
-  --brick-light: #F1DAD5;
-  --mauve: #5F3F8C;
-  --mauve-light: #E7E1F2;
-  --line: #D8CFB8;
+  --sand: #060503;
+  --sand-deep: #0D0B07;
+  --panel: #121009;
+  --panel-raised: #1C1810;
+  --ink: #F3EAD3;
+  --ink-soft: #B7AC90;
+  --brass: #D4AF37;
+  --brass-deep: #E8C468;
+  --brass-light: rgba(212,175,55,0.16);
+  --forest: #7FDDA6;
+  --forest-light: rgba(127,221,166,0.16);
+  --brick: #FF9166;
+  --brick-light: rgba(255,145,102,0.16);
+  --mauve: #CBAAFF;
+  --mauve-light: rgba(203,170,255,0.16);
+  --line: rgba(212,175,55,0.22);
   --radius-tag: 3px;
   --radius-card: 2px;
 }
@@ -21,7 +22,14 @@
 html,body{margin:0;padding:0;}
 body{
   margin:0;
-  background:var(--sand);
+  background-color:var(--sand);
+  background-image:
+    linear-gradient(to bottom, rgba(6,5,3,0) 0%, rgba(6,5,3,0.55) 55%, rgba(6,5,3,0.95) 100%),
+    url('/skyline-bg.png');
+  background-repeat:no-repeat;
+  background-position:center bottom;
+  background-size:cover;
+  background-attachment:fixed;
   color:var(--ink);
   font-family:'Inter', sans-serif;
   -webkit-font-smoothing:antialiased;
@@ -31,7 +39,7 @@ body{
 /* ---------- Masthead ---------- */
 header.masthead{
   padding:40px 32px 28px;
-  border-bottom:2px solid var(--ink);
+  border-bottom:2px solid var(--brass);
   margin-bottom:28px;
 }
 .masthead-inner{max-width:1360px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;}
@@ -151,7 +159,7 @@ h1{
 
 /* ---------- Card ---------- */
 .card{
-  background:#fff;
+  background:var(--panel-raised);
   border:1px solid var(--line);
   border-left:3px solid var(--card-accent, var(--brass));
   border-radius:var(--radius-card);
@@ -206,13 +214,13 @@ h1{
 
 /* status color system, shared by platform chips + column accents */
 .s-notstarted{background:var(--brick-light);color:var(--brick);}
-.s-drafted{background:#DCE3EC;color:var(--ink);}
+.s-drafted{background:rgba(147,168,204,0.16);color:var(--ink);}
 .s-review{background:var(--mauve-light);color:var(--mauve);}
 .s-scheduled{background:var(--brass-light);color:var(--brass-deep);}
 .s-published{background:var(--forest-light);color:var(--forest);}
 
 .col-notstarted{--col-accent:var(--brick);}
-.col-drafted{--col-accent:#5C7089;}
+.col-drafted{--col-accent:#93A8CC;}
 .col-review{--col-accent:var(--mauve);}
 .col-scheduled{--col-accent:var(--brass);}
 .col-published{--col-accent:var(--forest);}
@@ -283,9 +291,9 @@ footer button:hover{color:var(--brick);}
   height:auto;
   margin:0 0 18px;
   border-radius:10px;
-  border:1px solid var(--line);
+  border:2px solid var(--brass);
   background:#fff;
-  box-shadow:0 2px 10px rgba(27,42,61,0.06);
+  box-shadow:0 0 24px rgba(212,175,55,0.18);
 }
 .hub-eyebrow{
   font-family:'Fraunces',serif;
@@ -338,7 +346,7 @@ footer button:hover{color:var(--brick);}
 }
 .hub-card:hover{
   border-color:var(--brass);
-  box-shadow:0 2px 10px rgba(27,42,61,0.06);
+  box-shadow:0 0 16px rgba(212,175,55,0.14);
 }
 .hub-card-icon{font-size:20px;line-height:1;margin-bottom:4px;}
 .hub-card-title{
@@ -401,7 +409,7 @@ footer button:hover{color:var(--brick);}
   color:var(--ink-soft);
   line-height:1.5;
   padding:10px 14px;
-  background:var(--panel);
+  background:var(--panel-raised);
   border:1px solid var(--line);
   border-radius:4px;
 }
