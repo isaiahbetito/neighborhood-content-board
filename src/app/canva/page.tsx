@@ -1,19 +1,100 @@
 import type { Metadata } from "next";
-import StubPage from "@/components/StubPage";
+import Link from "next/link";
 
 export const metadata: Metadata = { title: "Canva — Jamie's Content Board" };
 
+const FOLDERS = [
+  { icon: "🏷️", name: "Listing Flyers", count: "12 designs" },
+  { icon: "📱", name: "Social Posts", count: "34 designs" },
+  { icon: "✉️", name: "Mailer Templates", count: "6 designs" },
+  { icon: "🪧", name: "Open House Signs", count: "8 designs" },
+  { icon: "🎉", name: "Just Sold Graphics", count: "9 designs" },
+  { icon: "🎨", name: "Brand Kit", count: "logos, fonts, colors" },
+];
+
 export default function CanvaPage() {
   return (
-    <StubPage
-      icon="🎨"
-      title="Canva"
-      desc="Jamie's Canva account and marketing assets, organized so templates are easy to find and reuse."
-      bullets={[
-        "Folder structure by use — listings, social, mailers",
-        "Listing flyers built from existing templates and property photos",
-        "One place to find the current brand assets",
-      ]}
-    />
+    <div className="page-body">
+      <div className="page-top">
+        <Link href="/" className="back-link">
+          ← Jamie&apos;s Content Board
+        </Link>
+      </div>
+
+      <div className="demo-hero">
+        <div className="demo-icon">🎨</div>
+        <h1 className="demo-title">Canva</h1>
+        <p className="demo-desc">
+          Jamie&apos;s account organized by use, so templates are easy to
+          find and every listing flyer starts from the same brand kit.
+        </p>
+        <span className="sample-tag">sample folder structure + one flyer</span>
+      </div>
+
+      <div className="chrome-frame">
+        <div className="chrome-bar">
+          <span className="chrome-dot"></span>
+          <span className="chrome-dot"></span>
+          <span className="chrome-dot"></span>
+          <span className="chrome-label">Canva · Jamie&apos;s Team</span>
+        </div>
+        <div className="folder-grid">
+          {FOLDERS.map((f) => (
+            <div className="folder-item" key={f.name}>
+              <span className="folder-icon">{f.icon}</span>
+              <span className="folder-name">{f.name}</span>
+              <span className="folder-count">{f.count}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="demo-hero" style={{ paddingTop: 0 }}>
+        <span className="sample-tag">
+          one listing flyer, built from the template + a real photo
+        </span>
+      </div>
+
+      <div className="flyer-wrap" style={{ marginBottom: 64 }}>
+        <div className="flyer">
+          <img
+            className="flyer-photo"
+            src="https://images.unsplash.com/photo-1592595896616-c37162298647?w=700&q=70&auto=format&fit=crop"
+            alt="Listing photo"
+          />
+          <div className="flyer-band">Just Listed</div>
+          <div className="flyer-body">
+            <div className="flyer-price">$489,000</div>
+            <div className="flyer-address">218 Birchwood Lane, Maple Heights</div>
+            <div className="flyer-specs">
+              <div className="flyer-spec">
+                <div className="flyer-spec-num">4</div>
+                <div className="flyer-spec-lbl">Beds</div>
+              </div>
+              <div className="flyer-spec">
+                <div className="flyer-spec-num">2.5</div>
+                <div className="flyer-spec-lbl">Baths</div>
+              </div>
+              <div className="flyer-spec">
+                <div className="flyer-spec-num">2,340</div>
+                <div className="flyer-spec-lbl">Sqft</div>
+              </div>
+            </div>
+            <ul className="flyer-features">
+              <li>Updated kitchen with quartz counters</li>
+              <li>Fenced backyard, mature trees</li>
+              <li>2-minute walk to Maple Heights Elementary</li>
+            </ul>
+            <div className="flyer-contact">
+              <div className="flyer-contact-avatar">J</div>
+              <div>
+                <div className="flyer-contact-name">Jamie · Your Local Real Estate Guide</div>
+                <div className="flyer-contact-phone">(555) 010-2040 · clientwebsite.com</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
