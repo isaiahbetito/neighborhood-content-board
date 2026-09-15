@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const SECTIONS = [
@@ -49,6 +50,14 @@ export default function Home() {
   return (
     <div className="hub-body">
       <div className="hub-hero">
+        <Image
+          src="/logo.png"
+          alt="Jamie's Content Board"
+          width={688}
+          height={666}
+          priority
+          className="hub-logo"
+        />
         <div className="hub-eyebrow">Content &amp; Marketing Hub</div>
         <h1 className="hub-title">Jamie&apos;s Content Board</h1>
         <p className="hub-sub">

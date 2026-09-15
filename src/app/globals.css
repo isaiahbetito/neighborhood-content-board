@@ -278,6 +278,15 @@ footer button:hover{color:var(--brick);}
   margin:0 auto;
   width:100%;
 }
+.hub-logo{
+  width:min(160px, 34vw);
+  height:auto;
+  margin:0 0 18px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:#fff;
+  box-shadow:0 2px 10px rgba(27,42,61,0.06);
+}
 .hub-eyebrow{
   font-family:'Fraunces',serif;
   font-weight:600;
