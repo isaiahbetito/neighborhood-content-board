@@ -295,28 +295,13 @@ footer button:hover{color:var(--brick);}
   background:#fff;
   box-shadow:0 0 24px rgba(212,175,55,0.18);
 }
-.hub-eyebrow{
-  font-family:'Fraunces',serif;
-  font-weight:600;
-  font-size:13px;
-  letter-spacing:.02em;
-  color:var(--brass-deep);
-  margin-bottom:14px;
-}
 .hub-title{
   font-family:'Fraunces',serif;
   font-weight:600;
   font-size:clamp(30px,5vw,46px);
   line-height:1.08;
-  margin:0 0 12px;
-  color:var(--ink);
-}
-.hub-sub{
-  font-size:15.5px;
-  color:var(--ink-soft);
-  max-width:480px;
   margin:0 0 40px;
-  line-height:1.55;
+  color:var(--ink);
 }
 .hub-grid{
   display:grid;

@@ -58,12 +58,7 @@ export default function Home() {
           priority
           className="hub-logo"
         />
-        <div className="hub-eyebrow">Content &amp; Marketing Hub</div>
         <h1 className="hub-title">Jamie&apos;s Content Board</h1>
-        <p className="hub-sub">
-          Everything for the week, one place to check each morning. Pick a
-          section below.
-        </p>
         <div className="hub-grid">
           {SECTIONS.map((s) => (
             <Link key={s.href} href={s.href} className="hub-card">
