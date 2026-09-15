@@ -37,8 +37,8 @@ export default function BlogsPage() {
             the pipeline
           </div>
           <div className="howto-item">
-            <span className="howto-dot"></span>Drag a card, or click a tag,
-            to update it live
+            <span className="howto-dot"></span>Click a card to open the post,
+            or a tag to update it live
           </div>
         </div>
       </header>
@@ -63,6 +63,15 @@ export default function BlogsPage() {
           <div className="legend" id="legend"></div>
           <button id="resetBtn">Reset to sample week</button>
         </footer>
+      </div>
+
+      <div className="modal-overlay" id="modalOverlay" hidden>
+        <div className="modal-panel">
+          <button className="modal-close" id="modalClose" aria-label="Close">
+            ×
+          </button>
+          <div id="modalBody"></div>
+        </div>
       </div>
 
       <BoardApp />

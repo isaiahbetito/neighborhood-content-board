@@ -170,6 +170,85 @@ const PLATFORM_LABELS: Record<string, string> = {
   li: "LinkedIn",
 };
 
+// Verified real photos from images.unsplash.com (direct CDN, no API key needed)
+const PHOTOS = {
+  farmhouse: "1570129477492-45c003edd2be",
+  cabinDusk: "1568605114967-8130f3a36994",
+  modernTree: "1600585154340-be6161a56a0c",
+  whiteVillaPool: "1512917774080-9991f1c4c750",
+  minimalistWhite: "1523217582562-09d0def993a6",
+  keychain: "1560518883-ce09059eeffa",
+  craftsmanPalm: "1583608205776-bfd35f0d9f83",
+  modernLivingRoom: "1600607687939-ce8a6c25118c",
+  luxuryVillaPool: "1600596542815-ffad4c1539a9",
+  stuccoTraditional: "1592595896616-c37162298647",
+  loftDog: "1600566753086-00f18fb6b3ea",
+  modernWoodAccent: "1600047509807-ba8f99d2cdde",
+  cozyLivingRoom: "1600210492486-724fe5c67fb0",
+} as const;
+
+function photoUrl(key: keyof typeof PHOTOS, w = 900) {
+  return `https://images.unsplash.com/photo-${PHOTOS[key]}?w=${w}&q=70&auto=format&fit=crop`;
+}
+
+const AREA_PHOTOS: Record<string, (keyof typeof PHOTOS)[]> = {
+  "Maple Heights": ["farmhouse", "stuccoTraditional", "cozyLivingRoom"],
+  "Riverside District": ["keychain", "modernTree", "loftDog"],
+  "Downtown Corridor": ["modernLivingRoom", "modernWoodAccent", "minimalistWhite"],
+  "Lakeview Terrace": ["luxuryVillaPool", "whiteVillaPool", "cozyLivingRoom"],
+  "Oakwood Estates": ["whiteVillaPool", "craftsmanPalm", "keychain"],
+  "Westbrook Village": ["craftsmanPalm", "farmhouse", "modernLivingRoom"],
+  "Sunset Hills": ["cabinDusk", "minimalistWhite", "modernTree"],
+};
+
+function photoForPost(post: Post): string {
+  const titles = TITLES[post.area];
+  const idx = titles ? titles.findIndex(([t]) => t === post.title) : -1;
+  const pool = AREA_PHOTOS[post.area];
+  const key = pool && idx >= 0 ? pool[idx] : "farmhouse";
+  return photoUrl(key);
+}
+
+const INTRO_VARIANTS = [
+  (area: string, keyword: string) =>
+    `If you've been watching the ${area} market lately, you already know it's one of the more active corners of town right now — and "${keyword}" is exactly the kind of search bringing buyers here.`,
+  (area: string, keyword: string) =>
+    `Anyone searching "${keyword}" this month keeps landing on the same neighborhood: ${area}. Here's why it's worth a closer look.`,
+];
+const BODY_VARIANTS = [
+  (area: string) =>
+    `Here's what's standing out this season: inventory in ${area} is moving faster than the citywide average, and homes that are priced right rarely last more than a couple of weeks on the market. Buyers are drawn in by the walkability, the mix of housing styles, and a steady stream of new listings that keep the neighborhood feeling fresh without losing its character.`,
+  (area: string) =>
+    `A few things keep coming up in conversations with buyers touring ${area}: the tree-lined streets, the short commute into downtown, and a level of inventory that's finally starting to loosen up after a tight couple of years. It's the kind of neighborhood that photographs well but shows even better in person.`,
+];
+const CLOSE_VARIANTS = [
+  (area: string) =>
+    `For anyone comparing neighborhoods, ${area} tends to check the boxes that matter most: reasonable commute times, solid school options nearby, and a real sense of community — the kind of thing that's hard to manufacture and easy to notice once you've spent an afternoon walking the blocks.`,
+  (area: string) =>
+    `Prices here still leave room to negotiate compared to some of the more talked-about pockets of the city, which is part of why ${area} keeps showing up on buyers' shortlists once they've toured a few open houses.`,
+];
+const CTA_VARIANTS = [
+  (area: string) =>
+    `If this sounds like it could be the right fit, the best next step is simple: take a look at what's currently listed in ${area} and get a feel for the price range before you start touring.`,
+  (area: string) =>
+    `Ready to see it for yourself? The fastest way in is to browse what's currently available in ${area} and reach out about anything that catches your eye.`,
+];
+
+function hashPick<T>(seed: string, arr: T[]): T {
+  let h = 0;
+  for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) >>> 0;
+  return arr[h % arr.length];
+}
+
+function articleBody(post: Post): string[] {
+  return [
+    hashPick(post.id + "a", INTRO_VARIANTS)(post.area, post.keyword),
+    hashPick(post.id + "b", BODY_VARIANTS)(post.area),
+    hashPick(post.id + "c", CLOSE_VARIANTS)(post.area),
+    hashPick(post.id + "d", CTA_VARIANTS)(post.area),
+  ];
+}
+
 function statusForDay(i: number): { content: Status; plat: Status[] } {
   if (i === 0)
     return {
@@ -248,6 +327,7 @@ export default function BoardApp() {
     let boardData: Post[] = [];
     let activeDay = "All";
     let activeArea = "All";
+    let modalPostId: string | null = null;
 
     function el<T extends HTMLElement>(id: string): T {
       return document.getElementById(id) as T;
@@ -401,8 +481,6 @@ export default function BoardApp() {
           <span class="card-when">${post.date} · ${post.time}</span>
         </div>
         <p class="card-title">${post.title}</p>
-        <div class="card-kw">Keyword: ${post.keyword}</div>
-        <a class="card-link" href="#" onclick="return false;">${post.areaUrl}</a>
         <div class="platform-row">${platRow}</div>
       `;
 
@@ -411,6 +489,8 @@ export default function BoardApp() {
         e.dataTransfer?.setData("text/plain", post.id);
       });
       card.addEventListener("dragend", () => card.classList.remove("dragging"));
+
+      card.addEventListener("click", () => openModal(post.id));
 
       card.querySelectorAll<HTMLSpanElement>(".plat").forEach((tag) => {
         tag.addEventListener("click", async (e) => {
@@ -421,6 +501,7 @@ export default function BoardApp() {
           p.platforms[key] = cycleStatus(p.platforms[key]);
           await saveData();
           renderAll();
+          if (modalPostId === post.id) renderModal(post.id);
         });
       });
 
@@ -481,6 +562,50 @@ export default function BoardApp() {
       renderBoard();
     }
 
+    function renderModal(id: string) {
+      const post = boardData.find((p) => p.id === id);
+      if (!post) return;
+
+      const platRow = Object.entries(post.platforms)
+        .map(([key, val]) => {
+          return `<span class="plat s-${STATUS_CLASS[val]}">${PLATFORM_LABELS[key]} · ${STATUS_LABEL[val]}</span>`;
+        })
+        .join("");
+
+      el<HTMLDivElement>("modalBody").innerHTML = `
+        <img class="modal-photo" src="${photoForPost(post)}" alt="${post.title}" />
+        <div class="modal-content">
+          <div class="modal-top">
+            <span class="card-area">${post.area}</span>
+            <span class="card-when">${post.date} · ${post.time}</span>
+          </div>
+          <h2 class="modal-title">${post.title}</h2>
+          <div class="modal-kw">Target keyword: <strong>${post.keyword}</strong></div>
+          <a class="card-link" href="#" onclick="return false;">${post.areaUrl}</a>
+          <div class="modal-article">
+            ${articleBody(post)
+              .map((p) => `<p>${p}</p>`)
+              .join("")}
+          </div>
+          <div class="modal-section-label">Publishing status</div>
+          <div class="platform-row">${platRow}</div>
+        </div>
+      `;
+    }
+
+    function openModal(id: string) {
+      modalPostId = id;
+      renderModal(id);
+      el<HTMLDivElement>("modalOverlay").hidden = false;
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      modalPostId = null;
+      el<HTMLDivElement>("modalOverlay").hidden = true;
+      document.body.style.overflow = "";
+    }
+
     const resetBtn = el<HTMLButtonElement>("resetBtn");
     const onReset = async () => {
       boardData = buildSeedData();
@@ -491,6 +616,18 @@ export default function BoardApp() {
     };
     resetBtn.addEventListener("click", onReset);
 
+    const modalOverlay = el<HTMLDivElement>("modalOverlay");
+    const modalClose = el<HTMLButtonElement>("modalClose");
+    const onOverlayClick = (e: MouseEvent) => {
+      if (e.target === modalOverlay) closeModal();
+    };
+    const onKeydown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && modalPostId) closeModal();
+    };
+    modalOverlay.addEventListener("click", onOverlayClick);
+    modalClose.addEventListener("click", closeModal);
+    document.addEventListener("keydown", onKeydown);
+
     (async function init() {
       await loadData();
       renderAll();
@@ -498,6 +635,10 @@ export default function BoardApp() {
 
     return () => {
       resetBtn.removeEventListener("click", onReset);
+      modalOverlay.removeEventListener("click", onOverlayClick);
+      modalClose.removeEventListener("click", closeModal);
+      document.removeEventListener("keydown", onKeydown);
+      document.body.style.overflow = "";
     };
   }, []);
 
