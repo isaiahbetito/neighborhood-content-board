@@ -52,13 +52,13 @@ export default function Home() {
       <div className="hub-hero">
         <Image
           src="/logo.png"
-          alt="Jamie's Content Board"
-          width={688}
-          height={666}
+          alt="Jamie Meushaw Real Estate"
+          width={1194}
+          height={500}
           priority
           className="hub-logo"
         />
-        <h1 className="hub-title">Jamie&apos;s Content Board</h1>
+        <h1 className="hub-title">Content Board</h1>
         <div className="hub-grid">
           {SECTIONS.map((s) => (
             <Link key={s.href} href={s.href} className="hub-card">

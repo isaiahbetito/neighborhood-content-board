@@ -45,109 +45,112 @@ const STATUS_LABEL: Record<Status, string> = {
 };
 
 const AREAS: [string, string][] = [
-  ["Maple Heights", "maple-heights"],
-  ["Riverside District", "riverside-district"],
-  ["Downtown Corridor", "downtown-corridor"],
-  ["Lakeview Terrace", "lakeview-terrace"],
-  ["Oakwood Estates", "oakwood-estates"],
-  ["Westbrook Village", "westbrook-village"],
-  ["Sunset Hills", "sunset-hills"],
+  ["Holly Ridge, Camas", "holly-ridge-camas-wa"],
+  ["Lakeshore, Vancouver", "lakeshore-vancouver-wa"],
+  ["Pleasant Valley, Vancouver", "pleasant-valley-vancouver-wa"],
+  ["Hunter Ridge Estates, Camas", "hunter-ridge-estates-camas-wa"],
+  ["Columbia Way, Vancouver", "columbia-way-vancouver-wa"],
+  ["Deer Creek, Camas", "deer-creek-camas-wa"],
+  ["Harney Heights, Vancouver", "harney-heights-vancouver-wa"],
 ];
 
 const TITLES: Record<string, [string, string][]> = {
-  "Maple Heights": [
+  "Holly Ridge, Camas": [
     [
-      "Why Maple Heights is becoming the city's most sought-after family neighborhood",
-      "homes for sale in Maple Heights",
+      "Holly Ridge, Camas WA: Walk to the Lake, Live in Established Charm",
+      "Holly Ridge Camas homes for sale",
     ],
     [
-      "5 new listings in Maple Heights you need to see this week",
-      "Maple Heights new listings",
+      "5 New Listings in Holly Ridge You Need to See This Week",
+      "Holly Ridge new listings",
     ],
     [
-      "Maple Heights school district guide: what home buyers should know",
-      "Maple Heights schools",
-    ],
-  ],
-  "Riverside District": [
-    [
-      "Riverside District market update: home prices & trends",
-      "Riverside District home prices",
-    ],
-    [
-      "Living in Riverside District: a complete neighborhood guide",
-      "living in Riverside District",
-    ],
-    [
-      "Top 5 Riverside District spots near our latest listings",
-      "Riverside District things to do",
+      "Holly Ridge School Zones: What Camas Buyers Should Know",
+      "Holly Ridge Camas schools",
     ],
   ],
-  "Downtown Corridor": [
+  "Lakeshore, Vancouver": [
     [
-      "Downtown Corridor condo market: what's selling right now",
-      "Downtown Corridor condos for sale",
+      "Lakeshore, Vancouver WA: Northwest Clark County's Lake Community",
+      "Lakeshore Vancouver WA homes",
     ],
     [
-      "Is Downtown Corridor right for you? Pros and cons for buyers",
-      "Downtown Corridor living",
+      "Living in Lakeshore: A Complete Neighborhood Guide",
+      "living in Lakeshore Vancouver",
     ],
     [
-      "New construction spotlight: Downtown Corridor's newest developments",
-      "Downtown Corridor new construction",
-    ],
-  ],
-  "Lakeview Terrace": [
-    [
-      "Lakeview Terrace waterfront homes: 2026 buyer's guide",
-      "Lakeview Terrace waterfront homes",
-    ],
-    [
-      "5 reasons families are moving to Lakeview Terrace",
-      "moving to Lakeview Terrace",
-    ],
-    [
-      "Lakeview Terrace open houses this weekend",
-      "Lakeview Terrace open houses",
+      "Lakeshore Market Update: Home Prices & Trends",
+      "Lakeshore home prices",
     ],
   ],
-  "Oakwood Estates": [
+  "Pleasant Valley, Vancouver": [
     [
-      "Oakwood Estates luxury homes: what's on the market now",
-      "Oakwood Estates luxury homes",
+      "Pleasant Valley, Vancouver WA: Eastern Clark County's Semi-Rural Retreat",
+      "Pleasant Valley Vancouver WA homes",
     ],
     [
-      "Oakwood Estates neighborhood spotlight: parks, schools & amenities",
-      "Oakwood Estates neighborhood guide",
+      "Is Pleasant Valley Right for You? Pros and Cons for Buyers",
+      "Pleasant Valley Vancouver living",
     ],
     [
-      "How Oakwood Estates home values have changed this year",
-      "Oakwood Estates home values",
-    ],
-  ],
-  "Westbrook Village": [
-    [
-      "Westbrook Village first-time buyer's guide",
-      "Westbrook Village first time buyers",
-    ],
-    [
-      "New listings alert: Westbrook Village homes under budget",
-      "Westbrook Village new listings",
-    ],
-    [
-      "Westbrook Village community guide: everything to know before you move",
-      "Westbrook Village community guide",
+      "New Listings Alert: Pleasant Valley Homes on Acreage",
+      "Pleasant Valley new listings",
     ],
   ],
-  "Sunset Hills": [
-    ["Sunset Hills real estate market update", "Sunset Hills real estate market"],
+  "Hunter Ridge Estates, Camas": [
     [
-      "5 hidden gems in Sunset Hills every home buyer should know",
-      "Sunset Hills neighborhood guide",
+      "Hunter Ridge Estates, Camas WA: Gated, Elevated, and Private",
+      "Hunter Ridge Estates Camas homes",
     ],
     [
-      "Sunset Hills vs. nearby areas: which neighborhood fits your lifestyle?",
-      "Sunset Hills vs",
+      "Hunter Ridge Estates Luxury Homes: What's on the Market Now",
+      "Hunter Ridge Estates luxury homes",
+    ],
+    [
+      "How Hunter Ridge Estates Home Values Have Changed This Year",
+      "Hunter Ridge Estates home values",
+    ],
+  ],
+  "Columbia Way, Vancouver": [
+    [
+      "Columbia Way, Vancouver WA: The Columbia River's North Bank Address",
+      "Columbia Way Vancouver WA homes",
+    ],
+    [
+      "Columbia Way Condo & Townhome Market: What's Selling Right Now",
+      "Columbia Way condos for sale",
+    ],
+    [
+      "New Construction Spotlight: Columbia Way's Newest Developments",
+      "Columbia Way new construction",
+    ],
+  ],
+  "Deer Creek, Camas": [
+    [
+      "Moving to Camas? Consider Deer Creek: Established, Wooded, and Walkable",
+      "Deer Creek Camas homes",
+    ],
+    [
+      "Deer Creek First-Time Buyer's Guide",
+      "Deer Creek Camas first time buyers",
+    ],
+    [
+      "Deer Creek Community Guide: Everything to Know Before You Move",
+      "Deer Creek community guide",
+    ],
+  ],
+  "Harney Heights, Vancouver": [
+    [
+      "Harney Heights, Vancouver WA: Northeast Vancouver's Quietly Established Pocket",
+      "Harney Heights Vancouver WA homes",
+    ],
+    [
+      "5 Hidden Gems in Harney Heights Every Home Buyer Should Know",
+      "Harney Heights neighborhood guide",
+    ],
+    [
+      "Harney Heights vs. Nearby Areas: Which Neighborhood Fits Your Lifestyle?",
+      "Harney Heights vs",
     ],
   ],
 };
@@ -165,8 +168,8 @@ const TIME_SLOTS = ["9:00 AM", "12:00 PM", "3:00 PM"];
 
 const PLATFORM_LABELS: Record<string, string> = {
   gbp: "GBP",
-  w1: "Site 1",
-  w2: "Site 2",
+  w1: "Main Site",
+  w2: "eXp Site",
   li: "LinkedIn",
 };
 
@@ -192,13 +195,13 @@ function photoUrl(key: keyof typeof PHOTOS, w = 900) {
 }
 
 const AREA_PHOTOS: Record<string, (keyof typeof PHOTOS)[]> = {
-  "Maple Heights": ["farmhouse", "stuccoTraditional", "cozyLivingRoom"],
-  "Riverside District": ["keychain", "modernTree", "loftDog"],
-  "Downtown Corridor": ["modernLivingRoom", "modernWoodAccent", "minimalistWhite"],
-  "Lakeview Terrace": ["luxuryVillaPool", "whiteVillaPool", "cozyLivingRoom"],
-  "Oakwood Estates": ["whiteVillaPool", "craftsmanPalm", "keychain"],
-  "Westbrook Village": ["craftsmanPalm", "farmhouse", "modernLivingRoom"],
-  "Sunset Hills": ["cabinDusk", "minimalistWhite", "modernTree"],
+  "Holly Ridge, Camas": ["farmhouse", "stuccoTraditional", "cozyLivingRoom"],
+  "Lakeshore, Vancouver": ["keychain", "modernTree", "loftDog"],
+  "Pleasant Valley, Vancouver": ["modernLivingRoom", "modernWoodAccent", "minimalistWhite"],
+  "Hunter Ridge Estates, Camas": ["luxuryVillaPool", "whiteVillaPool", "cozyLivingRoom"],
+  "Columbia Way, Vancouver": ["whiteVillaPool", "craftsmanPalm", "keychain"],
+  "Deer Creek, Camas": ["craftsmanPalm", "farmhouse", "modernLivingRoom"],
+  "Harney Heights, Vancouver": ["cabinDusk", "minimalistWhite", "modernTree"],
 };
 
 function photoForPost(post: Post): string {
@@ -306,7 +309,7 @@ function buildSeedData(): Post[] {
         day: dayName,
         time: TIME_SLOTS[slot],
         area: areaName,
-        areaUrl: "clientwebsite.com/neighborhoods/" + slug,
+        areaUrl: "jamiemeushawrealestate.com/blog/" + slug,
         title,
         keyword: kw,
         status: st.content,

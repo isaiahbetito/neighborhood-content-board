@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = { title: "YouTube Content — Jamie's Content Board" };
+export const metadata: Metadata = { title: "YouTube Content — Jamie Meushaw Real Estate" };
 
 export default function YoutubeContentPage() {
   return (
     <div className="page-body">
       <div className="page-top">
         <Link href="/" className="back-link">
-          ← Jamie&apos;s Content Board
+          ← Content Board
         </Link>
       </div>
 
@@ -35,9 +35,9 @@ export default function YoutubeContentPage() {
             </div>
             <div className="yt-card-body">
               <div className="yt-card-title">
-                Touring a $1.2M Oakwood Estates Home — Full Walkthrough
+                Touring a $1.15M Hunter Ridge Estates Home — Full Walkthrough
               </div>
-              <div className="yt-card-meta">Jamie Real Estate · 6 months ago</div>
+              <div className="yt-card-meta">Jamie Meushaw Real Estate · 6 months ago</div>
             </div>
           </div>
 

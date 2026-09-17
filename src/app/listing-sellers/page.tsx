@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = { title: "Listing Sellers — Jamie's Content Board" };
+export const metadata: Metadata = { title: "Listing Sellers — Jamie Meushaw Real Estate" };
 
 type Row = {
   seller: string;
@@ -16,55 +16,55 @@ type Row = {
 const ROWS: Row[] = [
   {
     seller: "Karen Whitfield",
-    address: "218 Birchwood Ln, Maple Heights",
+    address: "1518 NW Holly Ridge Ln, Camas, WA",
     listed: "Aug 22",
-    lastContact: "Sep 10",
-    nextFollowUp: "Sep 17",
+    lastContact: "Sep 12",
+    nextFollowUp: "Sep 19",
     overdue: false,
     note: "Comfortable with pricing, no changes needed.",
   },
   {
     seller: "Marcus Bell",
-    address: "47 Riverside Dr, Riverside District",
+    address: "4471 NE Lakeshore Ave, Vancouver, WA",
     listed: "Jul 30",
-    lastContact: "Sep 5",
-    nextFollowUp: "Sep 12",
+    lastContact: "Sep 7",
+    nextFollowUp: "Sep 14",
     overdue: true,
     note: "Wants to discuss a price reduction — call first thing.",
   },
   {
     seller: "The Alvarez Family",
-    address: "902 Corridor Ave #12B, Downtown Corridor",
-    listed: "Sep 1",
-    lastContact: "Sep 12",
-    nextFollowUp: "Sep 19",
+    address: "2209 NE Columbia Way, Vancouver, WA",
+    listed: "Sep 3",
+    lastContact: "Sep 14",
+    nextFollowUp: "Sep 21",
     overdue: false,
     note: "Two showings booked this week.",
   },
   {
     seller: "Priya Nair",
-    address: "6 Lakeview Terrace Ct, Lakeview Terrace",
+    address: "915 SE Pleasant Valley Rd, Vancouver, WA",
     listed: "Jun 15",
-    lastContact: "Sep 3",
-    nextFollowUp: "Sep 10",
+    lastContact: "Sep 5",
+    nextFollowUp: "Sep 12",
     overdue: true,
     note: "On the market 90+ days — bring a refreshed strategy.",
   },
   {
     seller: "Tom & Diane Ruiz",
-    address: "88 Oakwood Pl, Oakwood Estates",
+    address: "2210 NW Hunter Ridge Dr, Camas, WA",
     listed: "Sep 10",
-    lastContact: "Sep 14",
-    nextFollowUp: "Sep 21",
+    lastContact: "Sep 16",
+    nextFollowUp: "Sep 23",
     overdue: false,
     note: "New listing — first check-in after week one.",
   },
   {
     seller: "Grace Lin",
-    address: "15 Sunset Hills Rd, Sunset Hills",
+    address: "3312 NE Harney Heights Ct, Vancouver, WA",
     listed: "Aug 5",
-    lastContact: "Sep 9",
-    nextFollowUp: "Sep 16",
+    lastContact: "Sep 11",
+    nextFollowUp: "Sep 18",
     overdue: false,
     note: "Happy with current showing traffic.",
   },
@@ -75,7 +75,7 @@ export default function ListingSellersPage() {
     <div className="page-body">
       <div className="page-top">
         <Link href="/" className="back-link">
-          ← Jamie&apos;s Content Board
+          ← Content Board
         </Link>
       </div>
 

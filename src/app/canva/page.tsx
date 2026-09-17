@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = { title: "Canva — Jamie's Content Board" };
+export const metadata: Metadata = { title: "Canva — Jamie Meushaw Real Estate" };
 
 const FOLDERS = [
   { icon: "🏷️", name: "Listing Flyers", count: "12 designs" },
@@ -17,7 +17,7 @@ export default function CanvaPage() {
     <div className="page-body">
       <div className="page-top">
         <Link href="/" className="back-link">
-          ← Jamie&apos;s Content Board
+          ← Content Board
         </Link>
       </div>
 
@@ -25,8 +25,9 @@ export default function CanvaPage() {
         <div className="demo-icon">🎨</div>
         <h1 className="demo-title">Canva</h1>
         <p className="demo-desc">
-          Jamie&apos;s account organized by use, so templates are easy to
-          find and every listing flyer starts from the same brand kit.
+          Jamie Meushaw&apos;s account organized by use, so templates are
+          easy to find and every listing flyer starts from the same brand
+          kit.
         </p>
         <span className="sample-tag">sample folder structure + one flyer</span>
       </div>
@@ -36,7 +37,7 @@ export default function CanvaPage() {
           <span className="chrome-dot"></span>
           <span className="chrome-dot"></span>
           <span className="chrome-dot"></span>
-          <span className="chrome-label">Canva · Jamie&apos;s Team</span>
+          <span className="chrome-label">Canva · Jamie Meushaw Real Estate</span>
         </div>
         <div className="folder-grid">
           {FOLDERS.map((f) => (
@@ -64,8 +65,8 @@ export default function CanvaPage() {
           />
           <div className="flyer-band">Just Listed</div>
           <div className="flyer-body">
-            <div className="flyer-price">$489,000</div>
-            <div className="flyer-address">218 Birchwood Lane, Maple Heights</div>
+            <div className="flyer-price">$625,000</div>
+            <div className="flyer-address">1518 NW Holly Ridge Ln, Camas, WA</div>
             <div className="flyer-specs">
               <div className="flyer-spec">
                 <div className="flyer-spec-num">4</div>
@@ -83,13 +84,13 @@ export default function CanvaPage() {
             <ul className="flyer-features">
               <li>Updated kitchen with quartz counters</li>
               <li>Fenced backyard, mature trees</li>
-              <li>2-minute walk to Maple Heights Elementary</li>
+              <li>Walk to Lacamas Lake</li>
             </ul>
             <div className="flyer-contact">
               <div className="flyer-contact-avatar">J</div>
               <div>
-                <div className="flyer-contact-name">Jamie · Your Local Real Estate Guide</div>
-                <div className="flyer-contact-phone">(555) 010-2040 · clientwebsite.com</div>
+                <div className="flyer-contact-name">Jamie Meushaw · Jamie Meushaw Real Estate</div>
+                <div className="flyer-contact-phone">(360) 798-7127 · jamiemeushawrealestate.com</div>
               </div>
             </div>
           </div>

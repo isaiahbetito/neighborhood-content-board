@@ -3,7 +3,7 @@ import Link from "next/link";
 import BoardApp from "@/components/BoardApp";
 
 export const metadata: Metadata = {
-  title: "Blogs — Jamie's Content Board",
+  title: "Blogs — Jamie Meushaw Real Estate",
 };
 
 export default function BlogsPage() {
@@ -14,7 +14,7 @@ export default function BlogsPage() {
           <div>
             <div className="mark">
               <Link href="/" className="back-link">
-                ← Jamie&apos;s Content Board
+                ← Content Board
               </Link>
             </div>
             <h1>Never miss a day, never repeat a neighborhood</h1>
@@ -49,9 +49,6 @@ export default function BlogsPage() {
           <div className="filter-group" id="dayFilters"></div>
           <div className="filter-divider"></div>
           <span className="filter-label">Neighborhood</span>
-          <span className="sample-tag">
-            example areas — swapped for yours on day one
-          </span>
           <div className="filter-group" id="areaFilters"></div>
         </div>
 

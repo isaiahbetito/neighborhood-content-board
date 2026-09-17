@@ -1,20 +1,20 @@
 :root{
-  --sand: #000000;
-  --sand-deep: #0A0A0A;
-  --panel: #121212;
-  --panel-raised: #1A1A1A;
+  --sand: #080808;
+  --sand-deep: #101010;
+  --panel: #181818;
+  --panel-raised: #202020;
   --ink: #F3EAD3;
   --ink-soft: #B7AC90;
-  --brass: #D4AF37;
-  --brass-deep: #E8C468;
-  --brass-light: rgba(212,175,55,0.16);
+  --brass: #D6BA6A;
+  --brass-deep: #E7D093;
+  --brass-light: rgba(214,186,106,0.16);
   --forest: #7FDDA6;
   --forest-light: rgba(127,221,166,0.16);
   --brick: #FF9166;
   --brick-light: rgba(255,145,102,0.16);
   --mauve: #CBAAFF;
   --mauve-light: rgba(203,170,255,0.16);
-  --line: rgba(212,175,55,0.22);
+  --line: rgba(214,186,106,0.22);
   --radius-tag: 3px;
   --radius-card: 2px;
 
@@ -23,7 +23,7 @@
   --paper-ink: #1B2230;
   --paper-ink-soft: #5B6472;
   --paper-line: #E6E1D3;
-  --paper-gold: #B8892B;
+  --paper-gold: #A9853F;
 }
 *{box-sizing:border-box;}
 html,body{margin:0;padding:0;}
@@ -294,13 +294,9 @@ footer button:hover{color:var(--brick);}
   width:100%;
 }
 .hub-logo{
-  width:min(160px, 34vw);
+  width:min(340px, 74vw);
   height:auto;
-  margin:0 0 18px;
-  border-radius:10px;
-  border:2px solid var(--brass);
-  background:#fff;
-  box-shadow:0 0 24px rgba(212,175,55,0.18);
+  margin:0 0 22px;
 }
 .hub-title{
   font-family:'Fraunces',serif;

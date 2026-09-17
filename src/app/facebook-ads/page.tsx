@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = { title: "Facebook Ads — Jamie's Content Board" };
+export const metadata: Metadata = { title: "Facebook Ads — Jamie Meushaw Real Estate" };
 
 export default function FacebookAdsPage() {
   return (
     <div className="page-body">
       <div className="page-top">
         <Link href="/" className="back-link">
-          ← Jamie&apos;s Content Board
+          ← Content Board
         </Link>
       </div>
 
@@ -34,13 +34,13 @@ export default function FacebookAdsPage() {
             <div className="fb-ad-head">
               <div className="fb-ad-avatar">J</div>
               <div>
-                <div className="fb-ad-page">Jamie · Your Local Real Estate Guide</div>
+                <div className="fb-ad-page">Jamie Meushaw Real Estate</div>
                 <div className="fb-ad-meta">Sponsored · 🌐</div>
               </div>
               <div className="fb-ad-menu">···</div>
             </div>
             <div className="fb-ad-copy">
-              🔑 Just listed in Westbrook Village — priced for first-time
+              🔑 Just listed in Deer Creek, Camas — priced for first-time
               buyers and won&apos;t last. Tap to see the full listing before
               it&apos;s gone.
             </div>
@@ -51,9 +51,9 @@ export default function FacebookAdsPage() {
             />
             <div className="fb-ad-info">
               <div>
-                <div className="fb-ad-domain">clientwebsite.com</div>
-                <div className="fb-ad-headline">New Listing: Westbrook Village</div>
-                <div className="fb-ad-desc">3 bd · 2 ba · Under $450K</div>
+                <div className="fb-ad-domain">jamiemeushawrealestate.com</div>
+                <div className="fb-ad-headline">New Listing: Deer Creek, Camas</div>
+                <div className="fb-ad-desc">3 bd · 2 ba · Under $600K</div>
               </div>
               <span className="fb-ad-cta">Learn More</span>
             </div>
@@ -75,15 +75,15 @@ export default function FacebookAdsPage() {
             <div className="fb-ad-head">
               <div className="fb-ad-avatar">J</div>
               <div>
-                <div className="fb-ad-page">Jamie · Your Local Real Estate Guide</div>
+                <div className="fb-ad-page">Jamie Meushaw Real Estate</div>
                 <div className="fb-ad-meta">Sponsored · 🌐</div>
               </div>
               <div className="fb-ad-menu">···</div>
             </div>
             <div className="fb-ad-copy">
-              🏡 Open house this Saturday in Maple Heights, 12–3pm. Family
-              home, big backyard, top-rated schools nearby. Stop by, no
-              appointment needed.
+              🏡 Open house this Saturday in Holly Ridge, Camas, 12–3pm. Family
+              home, big backyard, walk to the lake. Stop by, no appointment
+              needed.
             </div>
             <img
               className="fb-ad-photo"
@@ -92,8 +92,8 @@ export default function FacebookAdsPage() {
             />
             <div className="fb-ad-info">
               <div>
-                <div className="fb-ad-domain">clientwebsite.com</div>
-                <div className="fb-ad-headline">Open House · Maple Heights</div>
+                <div className="fb-ad-domain">jamiemeushawrealestate.com</div>
+                <div className="fb-ad-headline">Open House · Holly Ridge, Camas</div>
                 <div className="fb-ad-desc">Saturday, 12:00–3:00 PM</div>
               </div>
               <span className="fb-ad-cta">Send Message</span>

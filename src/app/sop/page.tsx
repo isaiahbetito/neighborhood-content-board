@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = { title: "SOP — Jamie's Content Board" };
+export const metadata: Metadata = { title: "SOP — Jamie Meushaw Real Estate" };
 
 const FOLDERS = [
   { icon: "📝", name: "Blog Writer (SEO)", count: "3 prompts" },
@@ -17,7 +17,7 @@ export default function SopPage() {
     <div className="page-body">
       <div className="page-top">
         <Link href="/" className="back-link">
-          ← Jamie&apos;s Content Board
+          ← Content Board
         </Link>
       </div>
 

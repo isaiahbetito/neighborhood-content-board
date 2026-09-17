@@ -3,11 +3,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Jamie's Content Board",
+    default: "Jamie Meushaw Real Estate — Content Board",
     template: "%s",
   },
   description:
-    "Jamie's weekly content hub — blogs, mailers, ads, YouTube, Canva, SOPs, and seller follow-ups, all in one place.",
+    "Jamie Meushaw Real Estate's weekly content hub — blogs, mailers, ads, YouTube, Canva, SOPs, and seller follow-ups, all in one place.",
 };
 
 export default function RootLayout({

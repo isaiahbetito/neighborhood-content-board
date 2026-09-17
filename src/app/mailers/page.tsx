@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = { title: "Mailers — Jamie's Content Board" };
+export const metadata: Metadata = { title: "Mailers — Jamie Meushaw Real Estate" };
 
 export default function MailersPage() {
   return (
     <div className="page-body">
       <div className="page-top">
         <Link href="/" className="back-link">
-          ← Jamie&apos;s Content Board
+          ← Content Board
         </Link>
       </div>
 
@@ -20,8 +20,7 @@ export default function MailersPage() {
           week&apos;s top listing and blog posts straight from the pipeline.
         </p>
         <span className="sample-tag">
-          sample based on this week&apos;s blog rotation — swapped for real
-          listings on day one
+          sample newsletter — listing details are illustrative
         </span>
       </div>
 
@@ -37,36 +36,36 @@ export default function MailersPage() {
           <div className="mailer-meta-row">
             <span className="mailer-meta-label">From</span>
             <span className="mailer-meta-value">
-              Jamie · Your Local Real Estate Guide &lt;jamie@clientwebsite.com&gt;
+              Jamie Meushaw · Jamie Meushaw Real Estate &lt;jamie@jamiemeushawrealestate.com&gt;
             </span>
           </div>
           <div className="mailer-meta-row">
             <span className="mailer-meta-label">Subject</span>
             <span className="mailer-meta-value">
-              This week: 9 new listings, a market pulse check &amp; 3 fresh
-              reads 🏡
+              This week: 7 new listings, a Clark County market pulse &amp; 3
+              fresh reads 🏡
             </span>
           </div>
           <div className="mailer-meta-row">
             <span className="mailer-meta-label">Preview</span>
             <span className="mailer-meta-value mailer-meta-preview">
-              Plus what&apos;s new in Maple Heights, Lakeview Terrace, and
-              Downtown Corridor this week...
+              Plus what&apos;s new in Holly Ridge, Lakeshore, and Deer Creek
+              this week...
             </span>
           </div>
         </div>
 
         <div className="mailer-canvas">
           <div className="email-header">
-            <span className="email-header-mark">JAMIE</span>
-            <span className="email-header-sub">Weekly Real Estate Digest</span>
+            <span className="email-header-mark">JAMIE MEUSHAW</span>
+            <span className="email-header-sub">Real Estate · Camas &amp; Vancouver, WA</span>
           </div>
 
           <p className="email-greeting">Hi there,</p>
           <p className="email-intro">
-            Here&apos;s what moved this week — a featured listing worth a
-            second look, where prices are trending, and a few reads from the
-            blog in case you missed them.
+            Here&apos;s what moved this week across Camas and Vancouver — a
+            featured listing worth a second look, where prices are trending,
+            and a few reads from the blog in case you missed them.
           </p>
 
           <div className="email-listing">
@@ -78,14 +77,14 @@ export default function MailersPage() {
             <div className="email-listing-body">
               <span className="email-listing-tag">Featured listing</span>
               <h3 className="email-listing-title">
-                14 Ridgeview Court, Oakwood Estates
+                2210 NW Hunter Ridge Dr, Camas, WA
               </h3>
               <p className="email-listing-price">
-                $1,245,000 · 4 bd · 3.5 ba · 3,180 sqft
+                $1,150,000 · 4 bd · 3.5 ba · 3,400 sqft
               </p>
               <p className="email-listing-desc">
-                A private pool, walls of glass, and a layout built for
-                entertaining — this one won&apos;t stay listed long.
+                Gated, elevated, and private — this Hunter Ridge Estates home
+                won&apos;t stay listed long.
               </p>
               <span className="email-btn">View the listing</span>
             </div>
@@ -93,15 +92,15 @@ export default function MailersPage() {
 
           <div className="email-stats">
             <div className="email-stat">
-              <div className="email-stat-num">$612K</div>
+              <div className="email-stat-num">$650K</div>
               <div className="email-stat-lbl">Median list price</div>
             </div>
             <div className="email-stat">
-              <div className="email-stat-num">18</div>
+              <div className="email-stat-num">21</div>
               <div className="email-stat-lbl">Avg. days on market</div>
             </div>
             <div className="email-stat">
-              <div className="email-stat-num">9</div>
+              <div className="email-stat-num">7</div>
               <div className="email-stat-lbl">New listings this week</div>
             </div>
           </div>
@@ -116,8 +115,8 @@ export default function MailersPage() {
               />
               <div>
                 <div className="email-blog-title">
-                  Why Maple Heights is becoming the city&apos;s most
-                  sought-after family neighborhood
+                  Holly Ridge, Camas WA: Walk to the Lake, Live in Established
+                  Charm
                 </div>
                 <div className="email-blog-read">Read more →</div>
               </div>
@@ -130,7 +129,8 @@ export default function MailersPage() {
               />
               <div>
                 <div className="email-blog-title">
-                  Lakeview Terrace waterfront homes: 2026 buyer&apos;s guide
+                  Lakeshore, Vancouver WA: Northwest Clark County&apos;s Lake
+                  Community
                 </div>
                 <div className="email-blog-read">Read more →</div>
               </div>
@@ -143,8 +143,8 @@ export default function MailersPage() {
               />
               <div>
                 <div className="email-blog-title">
-                  Downtown Corridor condo market: what&apos;s selling right
-                  now
+                  Moving to Camas? Consider Deer Creek: Established, Wooded,
+                  and Walkable
                 </div>
                 <div className="email-blog-read">Read more →</div>
               </div>
@@ -161,8 +161,8 @@ export default function MailersPage() {
           </div>
 
           <div className="email-footer">
-            <div className="email-footer-name">Jamie · Your Local Real Estate Guide</div>
-            <div>123 Main Street, Your City, ST 00000</div>
+            <div className="email-footer-name">Jamie Meushaw · Jamie Meushaw Real Estate</div>
+            <div>13514 SE 26th Circle, Vancouver, WA 98683 · (360) 798-7127</div>
             <div className="email-footer-links">
               <span>Unsubscribe</span>
               <span>·</span>
