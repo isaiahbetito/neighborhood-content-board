@@ -38,7 +38,11 @@ export default function BlogsPage() {
           </div>
           <div className="howto-item">
             <span className="howto-dot"></span>Click a card to open the post,
-            or a tag to update it live
+            or a tag to update its platform status
+          </div>
+          <div className="howto-item">
+            <span className="howto-dot"></span>Drag a card, or use its stage
+            menu, to move it between columns
           </div>
         </div>
       </header>
@@ -58,7 +62,7 @@ export default function BlogsPage() {
 
         <footer>
           <div className="legend" id="legend"></div>
-          <button id="resetBtn">Reset to sample week</button>
+          <button id="resetBtn">Reset to a fresh draft week</button>
         </footer>
       </div>
 

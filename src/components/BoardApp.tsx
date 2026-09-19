@@ -19,6 +19,7 @@ type Post = {
   title: string;
   keyword: string;
   status: Status;
+  statusChangedAt?: string;
   platforms: { gbp: Status; w1: Status; w2: Status; li: Status };
 };
 
@@ -329,33 +330,6 @@ function articleParagraphs(post: Post): string[] {
   return seed?.paragraphs ?? [];
 }
 
-function statusForDay(i: number): { content: Status; plat: Status[] } {
-  if (i === 0)
-    return {
-      content: "Published",
-      plat: ["Published", "Published", "Published", "Published"],
-    };
-  if (i === 1)
-    return {
-      content: "Scheduled",
-      plat: ["Published", "Published", "Scheduled", "Scheduled"],
-    };
-  if (i === 2 || i === 3)
-    return {
-      content: "Scheduled",
-      plat: ["Scheduled", "Scheduled", "Scheduled", "Scheduled"],
-    };
-  if (i === 4 || i === 5)
-    return {
-      content: "Drafted",
-      plat: ["Drafted", "Drafted", "Drafted", "Drafted"],
-    };
-  return {
-    content: "Ready for Review",
-    plat: ["Drafted", "Drafted", "Not Started", "Not Started"],
-  };
-}
-
 function buildSeedData(): Post[] {
   const today = new Date();
   const monday = new Date(today);
@@ -374,7 +348,6 @@ function buildSeedData(): Post[] {
       month: "short",
       day: "numeric",
     });
-    const st = statusForDay(d);
     ROTATION[d].forEach((areaIdx, slot) => {
       const [areaName, slug] = AREAS[areaIdx];
       const n = useCount[areaName];
@@ -389,12 +362,12 @@ function buildSeedData(): Post[] {
         areaUrl: "jamiemeushawrealestate.com/blog/" + slug,
         title: seed.title,
         keyword: seed.keyword,
-        status: st.content,
+        status: "Drafted",
         platforms: {
-          gbp: st.plat[0],
-          w1: st.plat[1],
-          w2: st.plat[2],
-          li: st.plat[3],
+          gbp: "Not Started",
+          w1: "Not Started",
+          w2: "Not Started",
+          li: "Not Started",
         },
       });
     });
@@ -542,6 +515,24 @@ export default function BoardApp() {
       }
     }
 
+    async function moveStatus(post: Post, newStatus: Status) {
+      if (post.status === newStatus) return;
+      post.status = newStatus;
+      post.statusChangedAt = new Date().toISOString();
+      await saveData();
+      renderAll();
+      if (modalPostId === post.id) renderModal(post.id);
+    }
+
+    function formatMovedAt(iso: string): string {
+      return new Date(iso).toLocaleString("en-US", {
+        month: "short",
+        day: "numeric",
+        hour: "numeric",
+        minute: "2-digit",
+      });
+    }
+
     function renderCard(post: Post) {
       const card = document.createElement("div");
       card.className = "card";
@@ -555,6 +546,11 @@ export default function BoardApp() {
         })
         .join("");
 
+      const statusOptions = STATUS_ORDER.map(
+        (s) =>
+          `<option value="${s}" ${s === post.status ? "selected" : ""}>${STATUS_LABEL[s]}</option>`
+      ).join("");
+
       card.innerHTML = `
         <div class="card-top">
           <span class="card-area">${post.area}</span>
@@ -562,6 +558,10 @@ export default function BoardApp() {
         </div>
         <p class="card-title">${post.title}</p>
         <div class="platform-row">${platRow}</div>
+        <div class="card-footer">
+          <select class="card-status-select" data-post="${post.id}" title="Move to a different stage">${statusOptions}</select>
+          ${post.statusChangedAt ? `<span class="card-moved">Moved ${formatMovedAt(post.statusChangedAt)}</span>` : ""}
+        </div>
       `;
 
       card.addEventListener("dragstart", (e) => {
@@ -583,6 +583,15 @@ export default function BoardApp() {
           renderAll();
           if (modalPostId === post.id) renderModal(post.id);
         });
+      });
+
+      const select = card.querySelector<HTMLSelectElement>(".card-status-select")!;
+      select.addEventListener("click", (e) => e.stopPropagation());
+      select.addEventListener("change", async (e) => {
+        e.stopPropagation();
+        const p = boardData.find((x) => x.id === post.id);
+        if (!p) return;
+        await moveStatus(p, select.value as Status);
       });
 
       return card;
@@ -622,11 +631,7 @@ export default function BoardApp() {
           body.classList.remove("dragover");
           const id = e.dataTransfer?.getData("text/plain");
           const post = boardData.find((p) => p.id === id);
-          if (post && post.status !== status) {
-            post.status = status;
-            await saveData();
-            renderAll();
-          }
+          if (post) await moveStatus(post, status);
         });
         board.appendChild(col);
       });
@@ -652,6 +657,11 @@ export default function BoardApp() {
         })
         .join("");
 
+      const statusOptions = STATUS_ORDER.map(
+        (s) =>
+          `<option value="${s}" ${s === post.status ? "selected" : ""}>${STATUS_LABEL[s]}</option>`
+      ).join("");
+
       el<HTMLDivElement>("modalBody").innerHTML = `
         <img class="modal-photo" src="${photoForPost(post)}" alt="${post.title}" />
         <div class="modal-content">
@@ -668,10 +678,20 @@ export default function BoardApp() {
               .map((p) => `<p>${p}</p>`)
               .join("")}
           </div>
+          <div class="modal-section-label">Pipeline stage</div>
+          <div class="card-footer">
+            <select class="card-status-select" id="modalStatusSelect" title="Move to a different stage">${statusOptions}</select>
+            ${post.statusChangedAt ? `<span class="card-moved">Moved ${formatMovedAt(post.statusChangedAt)}</span>` : ""}
+          </div>
           <div class="modal-section-label">Publishing status</div>
           <div class="platform-row">${platRow}</div>
         </div>
       `;
+
+      const modalSelect = el<HTMLSelectElement>("modalStatusSelect");
+      modalSelect.addEventListener("change", async () => {
+        await moveStatus(post, modalSelect.value as Status);
+      });
     }
 
     function openModal(id: string) {
@@ -689,6 +709,13 @@ export default function BoardApp() {
 
     const resetBtn = el<HTMLButtonElement>("resetBtn");
     const onReset = async () => {
+      if (
+        !window.confirm(
+          "This replaces every card on the board with a fresh draft week. Any progress on the current week will be lost. Continue?"
+        )
+      ) {
+        return;
+      }
       boardData = buildSeedData();
       activeDay = "All";
       activeArea = "All";
