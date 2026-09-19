@@ -417,6 +417,12 @@ footer button:hover{color:var(--brick);}
   margin:0 0 10px;
   color:var(--ink);
 }
+.modal-byline{
+  font-size:12px;
+  color:var(--ink-soft);
+  font-style:italic;
+  margin-bottom:12px;
+}
 .modal-kw{
   font-size:12.5px;
   color:var(--ink-soft);

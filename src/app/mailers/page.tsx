@@ -115,8 +115,7 @@ export default function MailersPage() {
               />
               <div>
                 <div className="email-blog-title">
-                  Holly Ridge, Camas WA: Walk to the Lake, Live in Established
-                  Charm
+                  Why Buyers Keep Circling Back to Holly Ridge in Camas
                 </div>
                 <div className="email-blog-read">Read more →</div>
               </div>
@@ -129,8 +128,7 @@ export default function MailersPage() {
               />
               <div>
                 <div className="email-blog-title">
-                  Lakeshore, Vancouver WA: Northwest Clark County&apos;s Lake
-                  Community
+                  Lakeshore: Vancouver&apos;s Answer to Lake Living
                 </div>
                 <div className="email-blog-read">Read more →</div>
               </div>
@@ -143,8 +141,8 @@ export default function MailersPage() {
               />
               <div>
                 <div className="email-blog-title">
-                  Moving to Camas? Consider Deer Creek: Established, Wooded,
-                  and Walkable
+                  Deer Creek, Camas: The Wooded Side of Prune Hill Buyers
+                  Overlook
                 </div>
                 <div className="email-blog-read">Read more →</div>
               </div>

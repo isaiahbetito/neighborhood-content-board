@@ -52,9 +52,10 @@ export default function SopPage() {
           <div className="prompt-card-label">Blog Writer (SEO) · Workflow</div>
           <h3 className="prompt-card-title">Hyperlocal Blog Post — Prompt &amp; Process</h3>
           <ol className="prompt-steps">
-            <li>Pull the next neighborhood + topic from this week&apos;s rotation.</li>
-            <li>Feed Claude the neighborhood, target keyword, and last 2 posts for that area (avoid repeating angles).</li>
-            <li>Generate a draft: 500–700 words, keyword in the title and first paragraph, one internal link to the neighborhood page.</li>
+            <li>Pull the next neighborhood + angle from this week&apos;s rotation — never the same angle twice for one area (spotlight, market pulse, buyer-fit).</li>
+            <li>Check jamiemeushawrealestate.com/blog first: if Jamie already has a long-form guide for that neighborhood, write a shorter, complementary post instead of duplicating it.</li>
+            <li>Feed Claude the neighborhood, target keyword, and 2–3 real local specifics (streets, parks, schools, commute) — Jamie&apos;s own posts cite these by name, so ours should too.</li>
+            <li>Generate a draft: 250–350 words, keyword in the title and first paragraph, byline &quot;By Jamie Meushaw,&quot; closes with a soft CTA (reach out, YouTube channel, or newsletter) — not a hard sales button.</li>
             <li>Light edit pass for voice, then move the card to &quot;Ready for review.&quot;</li>
             <li>Once approved, schedule across GBP, both websites, and LinkedIn.</li>
           </ol>
