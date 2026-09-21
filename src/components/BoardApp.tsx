@@ -18,6 +18,7 @@ type Post = {
   areaUrl: string;
   title: string;
   keyword: string;
+  metaDescription: string;
   status: Status;
   statusChangedAt?: string;
   platforms: { gbp: Status; w1: Status; w2: Status; li: Status };
@@ -55,13 +56,20 @@ const AREAS: [string, string][] = [
   ["Harney Heights, Vancouver", "harney-heights-vancouver-wa"],
 ];
 
-type PostSeed = { title: string; keyword: string; paragraphs: string[] };
+type PostSeed = {
+  title: string;
+  keyword: string;
+  metaDescription: string;
+  paragraphs: string[];
+};
 
 const TITLES: Record<string, PostSeed[]> = {
   "Holly Ridge, Camas": [
     {
       title: "Why Buyers Keep Circling Back to Holly Ridge in Camas",
       keyword: "Holly Ridge Camas homes for sale",
+      metaDescription:
+        "Holly Ridge keeps pulling Camas buyers back — Prune Hill greenspace, Camas schools, and prices from the upper $400s to $700K. See why it works.",
       paragraphs: [
         "Holly Ridge sits in the Camas Meadows corridor between Prune Hill and Lacamas Lake, and it's become one of those neighborhoods buyers mention by name before they've even toured a house — usually because a friend already lives there, or because they drove past it on the way to Grass Valley Park and couldn't stop thinking about it.",
         "What makes it work is the range: efficient three-bedroom townhomes start in the upper $400s, and larger single-family homes with daylight basements and bonus rooms run up toward $700K — so buyers at fairly different budgets end up on the same streets, backed by the same permanent Prune Hill greenspace that keeps the rear yards from ever feeling boxed in.",
@@ -71,6 +79,8 @@ const TITLES: Record<string, PostSeed[]> = {
     {
       title: "Holly Ridge Market Pulse: What's Moving Right Now",
       keyword: "Holly Ridge Camas market update",
+      metaDescription:
+        "A look at what's moving in Holly Ridge, Camas right now: tight inventory, fast-selling townhomes, and what buyers should have ready to compete.",
       paragraphs: [
         "Inventory in Holly Ridge has stayed tight through the second half of the year, and townhome-style listings on the accessible end of the price range — upper $400s to low $500s — are the first to go, often inside two weeks.",
         "Larger single-family homes backed to Prune Hill greenspace are commanding the strongest interest, and buyers relocating from out of state keep asking the same question first: how close is it to the lake. The answer — walking distance — is usually what closes the deal.",
@@ -80,6 +90,8 @@ const TITLES: Record<string, PostSeed[]> = {
     {
       title: "Is Holly Ridge the Right Camas Neighborhood for You?",
       keyword: "living in Holly Ridge Camas",
+      metaDescription:
+        "Is Holly Ridge, Camas the right fit? See who thrives here — first-time buyers, growing families, and lake-loving relocators alike.",
       paragraphs: [
         "Holly Ridge tends to attract three kinds of buyers: first-timers who want a genuine foothold in Camas without stretching past the upper $400s, growing families who need the extra bedroom and the bonus room the larger floor plans offer, and relocators from denser markets who want to walk to a lake on a Saturday without giving up good schools.",
         "What it's not is a fit for buyers chasing brand-new construction or a maintenance-free lock-and-leave lifestyle — this is a late-90s-to-early-2000s neighborhood with mature landscaping and real yards, which is exactly the draw for the people it's right for.",
@@ -91,6 +103,8 @@ const TITLES: Record<string, PostSeed[]> = {
     {
       title: "Lakeshore: Vancouver's Answer to Lake Living",
       keyword: "Lakeshore Vancouver WA homes",
+      metaDescription:
+        "Lakeshore, Vancouver WA delivers lake-adjacent living near Vancouver Lake Regional Park, with approachable pricing and easy I-5 access.",
       paragraphs: [
         "Lakeshore sits in northwest Vancouver near Vancouver Lake, and the appeal is exactly what the name suggests — proximity to the water, to Vancouver Lake Regional Park, and to the kind of paved trail system that turns an evening walk into an actual destination rather than a lap around the block.",
         "Homes here skew a bit older than the newer builds further east in Clark County, which keeps the price point more approachable, and lots tend to be generous enough for mature trees and real separation from the neighbors.",
@@ -100,19 +114,25 @@ const TITLES: Record<string, PostSeed[]> = {
     {
       title: "Lakeshore Market Update: Home Prices & Inventory",
       keyword: "Lakeshore Vancouver home prices",
+      metaDescription:
+        "Home prices and inventory near Vancouver Lake are moving fast. Here's the current Lakeshore, Vancouver market pulse for buyers.",
       paragraphs: [
         "Inventory near Vancouver Lake has been unusually tight this season — the combination of park access and established lot sizes doesn't come up for sale often, and when it does, well-priced listings are going under contract fast.",
         "Buyers specifically searching for water-adjacent living in Clark County keep landing on Lakeshore because the alternatives — waterfront property directly on the Columbia — run considerably higher, and this delivers a similar lifestyle at a more reasonable number.",
         "If Lakeshore is on your radar, I'd rather get you set up on alerts now than have you find out a listing already went pending. Reach out and I'll get that started.",
+        "Homes here tend to move fastest in spring and early summer, when park access matters most to buyers touring on weekends — but well-priced listings in the off-season still go quickly given how little inventory exists near the water at all.",
       ],
     },
     {
       title: "Is Lakeshore the Right Fit for Your Next Move?",
       keyword: "living in Lakeshore Vancouver WA",
+      metaDescription:
+        "Is Lakeshore, Vancouver the right move for you? A look at who this lake-adjacent, trail-close neighborhood actually fits best.",
       paragraphs: [
         "Lakeshore tends to draw outdoor-oriented buyers — people who actually use a park, not just live near one — along with move-up buyers who want more lot than the newer east-county subdivisions typically offer at a comparable price.",
         "It's a slightly longer trip into downtown Vancouver than Columbia Way or Harney Heights, which is the main trade-off buyers weigh against the park and lake access.",
         "If your weekends already revolve around trails and water, Lakeshore will feel like it was built for you — because for a lot of the people who live there now, it effectively was.",
+        "If you're not sure yet, the easiest way to find out is a weekend visit — walk the trail, check the commute at rush hour, and see how the neighborhood actually feels before comparing it against anywhere else on your list.",
       ],
     },
   ],
@@ -120,6 +140,8 @@ const TITLES: Record<string, PostSeed[]> = {
     {
       title: "Pleasant Valley: Eastern Clark County's Semi-Rural Retreat",
       keyword: "Pleasant Valley Vancouver WA homes",
+      metaDescription:
+        "Pleasant Valley, Vancouver WA blends farmland, larger lots, and new construction 20 minutes from downtown — a semi-rural retreat with real space.",
       paragraphs: [
         "Pleasant Valley sits about 20 minutes northeast of downtown Vancouver, off the I-5/I-205 corridor, and it's one of the few remaining pockets of Clark County where farmland, larger-lot homes, and newer construction genuinely coexist rather than one slowly replacing the other.",
         "Lot sizes here run well above what buyers find in Vancouver's inner subdivisions — space for a shop, a garden, or simply more distance from the neighbors — while still landing within a reasonable drive of Washington State University Vancouver and the retail corridor around Fisher's Landing.",
@@ -129,19 +151,25 @@ const TITLES: Record<string, PostSeed[]> = {
     {
       title: "Pleasant Valley Acreage Listings: What's Available Now",
       keyword: "Pleasant Valley new listings",
+      metaDescription:
+        "Acreage listings in Pleasant Valley move differently than standard subdivisions. Here's what's currently available for buyers who want land.",
       paragraphs: [
         "Acreage listings in Pleasant Valley move differently than standard subdivision homes — buyers take longer to decide, but once they commit, they tend to close without much negotiation, because there simply aren't many comparable properties to shop against.",
         "Newer construction on larger lots has been the biggest driver of interest this season, particularly from buyers relocating from tighter urban lots who want room to spread out without leaving Clark County entirely.",
         "If acreage or a semi-rural lot is on your list, the search radius matters — I can pull everything currently available in Pleasant Valley and the surrounding pockets in one pass so you're not missing anything just outside the exact boundary.",
+        "Well and septic systems, easement access, and zoning for accessory structures are worth checking early on any acreage listing here — the due diligence looks different than a standard subdivision purchase, and it's easier to sort out before you're under contract than after.",
       ],
     },
     {
       title: "Is Pleasant Valley Right for You? Pros and Cons",
       keyword: "Pleasant Valley Vancouver living",
+      metaDescription:
+        "Is Pleasant Valley, Vancouver right for you? The honest trade-offs between space, commute time, and walkability — explained.",
       paragraphs: [
         "Pleasant Valley is the right call for buyers who want land — real space for animals, a shop, a garden — and are willing to trade some walkability and retail proximity to get it. It's not a neighborhood you stroll to dinner from.",
         "The commute is the other honest trade-off: it's a real drive into downtown Vancouver or across into Portland, longer than anything else in this rotation, though I-5/I-205 access keeps it manageable rather than punishing.",
         "If space matters more to you than proximity, Pleasant Valley is worth serious consideration. If you want to walk somewhere on a Friday night, look at Columbia Way or Harney Heights instead.",
+        "Financing can also look different on larger acreage parcels, especially anything zoned for agricultural use, so it's worth talking through loan options before you fall in love with a specific property.",
       ],
     },
   ],
@@ -149,6 +177,8 @@ const TITLES: Record<string, PostSeed[]> = {
     {
       title: "Hunter Ridge Estates: Camas's Gated Hilltop Address",
       keyword: "Hunter Ridge Estates Camas homes",
+      metaDescription:
+        "Hunter Ridge Estates is Camas's gated, elevated address — custom homes, Mount Hood views, and real privacy at the top of the market.",
       paragraphs: [
         "Hunter Ridge Estates sits above much of Camas, a gated community of custom and semi-custom homes on elevated lots that trade density for view — Mount Hood on a clear day from more than a few back decks, and the kind of privacy a guarded entry actually delivers rather than just implies.",
         "Homes here run larger and newer than most of the Camas Meadows corridor, typically four-plus bedrooms on generous lots, and price points reflect it — this is the upper end of the Camas market, not the accessible end.",
@@ -158,19 +188,25 @@ const TITLES: Record<string, PostSeed[]> = {
     {
       title: "Hunter Ridge Estates: Where Camas's Luxury Market Stands",
       keyword: "Hunter Ridge Estates luxury homes Camas",
+      metaDescription:
+        "Where does Camas's luxury market stand right now? A current look at gated, Mount Hood view-lot inventory in Hunter Ridge Estates.",
       paragraphs: [
         "Luxury inventory in Camas stays thin by nature, and Hunter Ridge Estates is usually the address buyers mean when they say they want gated and elevated — the pool of comparable listings anywhere else in town is small.",
         "View lots with unobstructed Mount Hood sightlines command a real premium over interior lots in the same community, and buyers who wait too long to decide tend to watch that specific lot go to someone else.",
         "If you're shopping this tier, I'd rather show you what's coming before it's public than have you find it on a portal after the fact — that's usually how the best Hunter Ridge opportunities move.",
+        "Buyers shopping this tier are also comparing against similar gated communities across the broader Portland metro, and Hunter Ridge Estates consistently holds its own on price per square foot once the view premium is factored in.",
       ],
     },
     {
       title: "Is Hunter Ridge Estates Worth the Premium?",
       keyword: "Hunter Ridge Estates Camas review",
+      metaDescription:
+        "Is Hunter Ridge Estates worth the premium over the rest of Camas? An honest look at what you're really trading for the view.",
       paragraphs: [
         "The honest answer: it depends what you're optimizing for. If privacy, a gated entry, and a view lot matter more to you than walkability to downtown Camas or Lacamas Lake, Hunter Ridge Estates is worth every bit of the premium over the rest of the Camas Meadows corridor.",
         "If what you actually want is to walk to the lake on a Saturday morning, you'll get more of that lifestyle for less money in Holly Ridge or Deer Creek — Hunter Ridge trades that walkability for elevation, space, and privacy instead.",
         "Buyers who choose it tend to be move-up families or relocating executives who've already lived in a more walkable neighborhood and know exactly what they're trading for the view.",
+        "It's worth touring at more than one time of day, too — the light and the view shift more than most buyers expect, and a lot that looks good at noon can look extraordinary at sunset.",
       ],
     },
   ],
@@ -178,6 +214,8 @@ const TITLES: Record<string, PostSeed[]> = {
     {
       title: "Columbia Way: Living on Vancouver's Waterfront Side",
       keyword: "Columbia Way Vancouver WA homes",
+      metaDescription:
+        "Columbia Way puts you steps from Vancouver's waterfront district — restaurants, trails, and an easy bridge crossing into Portland.",
       paragraphs: [
         "Columbia Way runs along the north bank of the Columbia River, close enough to downtown Vancouver's waterfront district that a lot of buyers here trade a car trip for a walk — to the restaurants along the river, to Esther Short Park, to the trail that follows the water toward Wintler Park.",
         "Housing stock is more mixed than the established Camas neighborhoods — a run of newer condos and townhomes closer to the waterfront redevelopment, older single-family homes further back — which means the price range spans wider than almost anywhere else in this rotation.",
@@ -187,6 +225,8 @@ const TITLES: Record<string, PostSeed[]> = {
     {
       title: "Columbia Way Condo & Townhome Market: What's Selling",
       keyword: "Columbia Way condos for sale",
+      metaDescription:
+        "Condos and townhomes along Columbia Way are moving fast. Here's what's currently selling in Vancouver's waterfront-adjacent market.",
       paragraphs: [
         "The newer condo and townhome product along Columbia Way keeps attracting buyers who work in Portland but want Washington's tax advantage without giving up a walkable, river-adjacent lifestyle — that combination is hard to find on either side of the river at this price point.",
         "Units closest to the waterfront trail and downtown Vancouver's restaurant row move fastest, usually inside the first two to three weeks, while the older single-family stock further from the river takes longer and rewards patient buyers.",
@@ -196,17 +236,22 @@ const TITLES: Record<string, PostSeed[]> = {
     {
       title: "Who Columbia Way Is Actually Built For",
       keyword: "living in Columbia Way Vancouver",
+      metaDescription:
+        "Who is Columbia Way, Vancouver actually built for? A look at the city-adjacent buyers who'd rather walk to dinner than drive to it.",
       paragraphs: [
         "Columbia Way works best for buyers who want city-adjacent living without an Oregon address — commuters into Portland, empty nesters downsizing out of a bigger Camas or east Vancouver home, and anyone who'd rather walk to dinner than drive to it.",
         "It's a weaker fit for buyers who want a big yard or a quiet cul-de-sac — this is a denser, more urban corner of Vancouver than Harney Heights or Lakeshore, and that trade-off is the whole point for the people who choose it.",
         "If waterfront walkability is higher on your list than square footage, Columbia Way deserves a serious look before you widen the search elsewhere.",
+        "Parking and storage are the other trade-offs worth asking about upfront — most of the newer condo product here trades square footage for location, so buyers coming from a house with a garage should walk through exactly what's included before making an offer.",
       ],
     },
   ],
   "Deer Creek, Camas": [
     {
-      title: "Deer Creek, Camas: The Wooded Side of Prune Hill Buyers Overlook",
+      title: "Deer Creek, Camas: The Wooded Side of Prune Hill",
       keyword: "Deer Creek Camas homes",
+      metaDescription:
+        "Deer Creek, Camas is the wooded, quieter side of the Prune Hill corridor — mature landscaping and real value buyers often overlook.",
       paragraphs: [
         "Deer Creek sits on the wooded side of the Prune Hill corridor, a few minutes from the Holly Ridge and Camas Meadows area but with noticeably more tree cover and quieter cul-de-sac streets — the kind of neighborhood that doesn't show up in as many searches, which is part of why it's stayed relatively accessible.",
         "Homes here mostly date to the same late-1990s-to-2000s Camas building wave, with mature landscaping that new construction simply can't replicate yet, and lots that give some separation from the neighbors without leaving the city entirely.",
@@ -216,6 +261,8 @@ const TITLES: Record<string, PostSeed[]> = {
     {
       title: "Deer Creek Inventory Update: What's on the Market",
       keyword: "Deer Creek Camas listings",
+      metaDescription:
+        "Deer Creek, Camas doesn't turn over fast — but when it does, listings draw serious buyers. Here's the current inventory update.",
       paragraphs: [
         "Deer Creek doesn't turn over as fast as some of the more visible Camas neighborhoods, which means when a well-kept home does list here, it tends to draw serious buyers rather than lookers — the kind of listing that goes pending in the first weekend.",
         "Pricing has held steady relative to the broader Camas Meadows corridor, generally a step below Holly Ridge for comparable square footage, largely because it's a quieter address without direct lake frontage or greenspace backing on every lot.",
@@ -225,10 +272,13 @@ const TITLES: Record<string, PostSeed[]> = {
     {
       title: "Who Actually Buys in Deer Creek, Camas?",
       keyword: "Deer Creek Camas buyers guide",
+      metaDescription:
+        "Who actually buys in Deer Creek, Camas? Repeat Camas movers looking for more privacy, more trees, and the same great schools.",
       paragraphs: [
         "Deer Creek's buyers tend to be repeat Camas movers — people who've already lived in the area, know the school system, and are specifically looking for more privacy and more trees the second time around.",
         "It's less of a starter-home destination than Holly Ridge and more of a step-up move: established landscaping, a quieter street, still inside the Camas School District boundary, still a reasonable commute to Portland via SR-14.",
         "If that description fits where you are in your own search, Deer Creek deserves a look even though it rarely makes the highlight-reel lists — some of the best value in this corridor is sitting quietly on its side streets.",
+        "It's also a common landing spot for buyers who toured Holly Ridge first and wanted something a little quieter — same school district, same commute, just fewer people driving past on a Saturday morning.",
       ],
     },
   ],
@@ -236,28 +286,37 @@ const TITLES: Record<string, PostSeed[]> = {
     {
       title: "Harney Heights: Northeast Vancouver's Best-Kept Secret",
       keyword: "Harney Heights Vancouver WA homes",
+      metaDescription:
+        "Harney Heights is northeast Vancouver's best-kept secret — established streets, mature trees, and character newer builds can't match.",
       paragraphs: [
         "Harney Heights doesn't get the attention that some of Vancouver's newer subdivisions do, and that's exactly the appeal — an established, quiet pocket of northeast Vancouver with mature trees, settled landscaping, and noticeably less through-traffic than the busier east-county corridors.",
         "It sits close enough to the Mill Plain and SR-14 corridor for an easy commute, while feeling several steps removed from the retail density around Vancouver Mall — a real neighborhood rather than a collection of subdivisions stacked against arterial roads.",
         "Home styles run older and more varied than the newer east Vancouver developments, which means more character per square foot and, usually, more negotiating room for buyers willing to update a kitchen themselves.",
+        "The lack of a formal HOA in much of the neighborhood is also a draw for buyers who want more flexibility with their property — worth confirming on a home-by-home basis, since not every street here is governed the same way.",
       ],
     },
     {
-      title: "Harney Heights Market Pulse: Quiet Neighborhood, Active Market",
+      title: "Harney Heights Market Pulse: Quiet Area, Hot Demand",
       keyword: "Harney Heights Vancouver market update",
+      metaDescription:
+        "Harney Heights doesn't list often, but demand stays active. Here's the current market pulse for this quiet Vancouver pocket.",
       paragraphs: [
         "Harney Heights doesn't generate the listing volume of the bigger east-Vancouver developments, but that scarcity works in sellers' favor — homes here have been going under contract quickly whenever they're priced in line with recent comparable sales.",
         "Buyers coming from outside the immediate area are often surprised by how much house their budget covers here compared to the newer subdivisions closer to I-205, and that value gap is the main driver of current demand.",
         "If you want a heads-up the moment something lists in Harney Heights, that's an easy thing to set up — this is one of those neighborhoods where being first matters more than usual.",
+        "Because so few homes list here in a given month, buyers who are serious tend to move fast once something hits — offers within the first few days aren't unusual, even in a market that otherwise feels unhurried.",
       ],
     },
     {
       title: "Who Should Be Looking at Harney Heights?",
       keyword: "Harney Heights Vancouver buyers guide",
+      metaDescription:
+        "Who should be looking at Harney Heights? Buyers who want an established Vancouver neighborhood over a newer, denser subdivision.",
       paragraphs: [
         "Harney Heights suits buyers who've already ruled out the newer, denser subdivisions and want an established neighborhood instead — more mature trees, more varied architecture, and neighbors who've often been there for decades rather than years.",
         "It's a strong fit for buyers comfortable with a home that might need some updating in exchange for a quieter street and a lower price per square foot than comparable newer construction.",
         "If that trade-off sounds right to you, Harney Heights is worth a dedicated look rather than a drive-by — it rewards buyers who actually get out and walk the blocks.",
+        "It's also a solid option for buyers priced out of Camas who still want strong schools and an established feel — Harney Heights delivers a lot of that character at a noticeably lower entry point.",
       ],
     },
   ],
@@ -330,6 +389,49 @@ function articleParagraphs(post: Post): string[] {
   return seed?.paragraphs ?? [];
 }
 
+type SeoCheck = { label: string; pass: boolean; detail: string };
+
+function seoChecklist(post: Post): SeoCheck[] {
+  const titleLen = post.title.length;
+  const descLen = post.metaDescription.length;
+  const wordCount = articleParagraphs(post)
+    .join(" ")
+    .split(/\s+/)
+    .filter(Boolean).length;
+  const areaCore = post.area.split(",")[0].trim();
+  const titleHasArea = post.title.toLowerCase().includes(areaCore.toLowerCase());
+
+  return [
+    {
+      label: "Title length",
+      pass: titleLen >= 20 && titleLen <= 60,
+      detail: `${titleLen} characters (aim for 20–60 so it doesn't truncate in search)`,
+    },
+    {
+      label: "Meta description length",
+      pass: descLen >= 110 && descLen <= 160,
+      detail: `${descLen} characters (aim for 110–160)`,
+    },
+    {
+      label: "Neighborhood in title",
+      pass: titleHasArea,
+      detail: titleHasArea
+        ? `"${areaCore}" appears in the title`
+        : `"${areaCore}" is missing from the title`,
+    },
+    {
+      label: "Content length",
+      pass: wordCount >= 120,
+      detail: `${wordCount} words (aim for 120+ for a short-form post)`,
+    },
+    {
+      label: "Internal link",
+      pass: !!post.areaUrl,
+      detail: post.areaUrl,
+    },
+  ];
+}
+
 function buildSeedData(): Post[] {
   const today = new Date();
   const monday = new Date(today);
@@ -362,6 +464,7 @@ function buildSeedData(): Post[] {
         areaUrl: "jamiemeushawrealestate.com/blog/" + slug,
         title: seed.title,
         keyword: seed.keyword,
+        metaDescription: seed.metaDescription,
         status: "Drafted",
         platforms: {
           gbp: "Not Started",
@@ -662,6 +765,9 @@ export default function BoardApp() {
           `<option value="${s}" ${s === post.status ? "selected" : ""}>${STATUS_LABEL[s]}</option>`
       ).join("");
 
+      const checks = seoChecklist(post);
+      const passCount = checks.filter((c) => c.pass).length;
+
       el<HTMLDivElement>("modalBody").innerHTML = `
         <img class="modal-photo" src="${photoForPost(post)}" alt="${post.title}" />
         <div class="modal-content">
@@ -672,7 +778,19 @@ export default function BoardApp() {
           <h2 class="modal-title">${post.title}</h2>
           <div class="modal-byline">By Jamie Meushaw | Buying, Renting | ${post.day}, ${post.date}</div>
           <div class="modal-kw">Target keyword: <strong>${post.keyword}</strong></div>
+          <div class="modal-meta-desc">${post.metaDescription}</div>
           <a class="card-link" href="#" onclick="return false;">${post.areaUrl}</a>
+
+          <div class="modal-section-label">SEO check · ${passCount}/${checks.length}</div>
+          <ul class="seo-checklist">
+            ${checks
+              .map(
+                (c) =>
+                  `<li class="${c.pass ? "seo-pass" : "seo-warn"}"><span class="seo-icon">${c.pass ? "✓" : "!"}</span><span><strong>${c.label}</strong> — ${c.detail}</span></li>`
+              )
+              .join("")}
+          </ul>
+
           <div class="modal-article">
             ${articleParagraphs(post)
               .map((p) => `<p>${p}</p>`)
