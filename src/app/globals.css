@@ -31,10 +31,10 @@ body{
   margin:0;
   background-color:var(--sand);
   background-image:
-    linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.92) 100%),
-    url('/skyline-bg.png');
+    linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.68) 45%, rgba(0,0,0,0.88) 100%),
+    url('/hero-bg.jpg');
   background-repeat:no-repeat;
-  background-position:center bottom;
+  background-position:center 35%;
   background-size:cover;
   background-attachment:fixed;
   color:var(--ink);
@@ -786,3 +786,34 @@ footer button:hover{color:var(--brick);}
 .tracker-note{font-size:12px;color:var(--ink-soft);}
 .tracker-due{font-size:12px;}
 .tracker-due.overdue{color:var(--brick);font-weight:600;}
+
+/* ---------- MiniBoard (Mailers / Facebook Ads / Canva pipelines) ---------- */
+.mini-board{
+  width:100%;
+  max-width:1360px;
+  margin:0 auto;
+  padding:0 24px 64px;
+}
+.mini-stats{
+  display:flex;
+  gap:28px;
+  flex-wrap:wrap;
+  margin:0 0 24px;
+  padding-bottom:18px;
+  border-bottom:1px solid var(--line);
+}
+.mini-board-footer{
+  margin-top:20px;
+  text-align:right;
+}
+.mini-reset{
+  font-family:'Inter',sans-serif;
+  font-size:12px;
+  color:var(--ink-soft);
+  background:none;
+  border:none;
+  text-decoration:underline;
+  cursor:pointer;
+  padding:0;
+}
+.mini-reset:hover{color:var(--brick);}
