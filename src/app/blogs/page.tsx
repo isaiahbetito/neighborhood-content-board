@@ -53,7 +53,7 @@ export default function BlogsPage() {
           <div className="filter-group" id="dayFilters"></div>
           <div className="filter-divider"></div>
           <span className="filter-label">Neighborhood</span>
-          <div className="filter-group" id="areaFilters"></div>
+          <div className="area-filters" id="areaFilters"></div>
         </div>
 
         <div id="checklist"></div>

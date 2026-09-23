@@ -74,6 +74,17 @@ const AREAS: [string, string][] = [
   ["Salmon Creek, Vancouver", "salmon-creek-vancouver-wa"],
 ];
 
+// Every area above is Washington-side for now — Oregon areas (Portland, Beaverton, Tigard,
+// Bethany, Hillsboro, Lake Oswego, West Linn, Oregon City, Milwaukie, Happy Valley) are the
+// next phase per the user's "WA first, then OR" call. This map is what lets the filter and
+// checklist group by state — when OR areas are added to AREAS/TITLES/URL maps, just add
+// their entries here too and the grouping picks them up automatically.
+const AREA_STATE: Record<string, "WA" | "OR"> = Object.fromEntries(
+  AREAS.map(([name]) => [name, "WA" as const])
+);
+const STATE_LABEL: Record<"WA" | "OR", string> = { WA: "Washington", OR: "Oregon" };
+const STATE_ORDER: ("WA" | "OR")[] = ["WA", "OR"];
+
 // Real, verified property-search URLs — Camas/Vancouver/Ridgefield/Battle Ground/La Center/
 // Woodland/Hockinson/Amboy/Washougal all come from the client's own "WASHINGTON CITY LINKS"
 // doc. "Brush Prairie" isn't in that doc at all (no city-level link was ever given for it) —
@@ -2275,13 +2286,16 @@ export default function BoardApp() {
             }</button>`
         )
         .join("");
-      const areas = ["All", ...AREAS.map((a) => a[0])];
-      el<HTMLDivElement>("areaFilters").innerHTML = areas
-        .map(
-          (a) =>
-            `<button class="chip ${a === activeArea ? "active" : ""}" data-area="${a}">${a}</button>`
-        )
-        .join("");
+      const chip = (a: string) =>
+        `<button class="chip ${a === activeArea ? "active" : ""}" data-area="${a}">${a}</button>`;
+
+      const groups = STATE_ORDER.map((st) => {
+        const names = AREAS.map((a) => a[0]).filter((name) => AREA_STATE[name] === st);
+        if (!names.length) return "";
+        return `<span class="area-state-label">${STATE_LABEL[st]}</span>${names.map(chip).join("")}`;
+      }).join("");
+
+      el<HTMLDivElement>("areaFilters").innerHTML = `${chip("All")}${groups}`;
 
       document.querySelectorAll<HTMLButtonElement>("#dayFilters .chip").forEach((btn) => {
         btn.onclick = () => {
@@ -2505,9 +2519,21 @@ export default function BoardApp() {
       const doneCount = AREAS.filter(([name]) => postedAreas.has(name)).length;
       const allDone = doneCount === AREAS.length;
 
-      const items = AREAS.map(([name]) => {
+      const checklistItem = (name: string) => {
         const done = postedAreas.has(name);
         return `<span class="checklist-item ${done ? "done" : ""}"><span class="checklist-dot">${done ? "✓" : ""}</span>${name}</span>`;
+      };
+
+      const groups = STATE_ORDER.map((st) => {
+        const names = AREAS.map((a) => a[0]).filter((name) => AREA_STATE[name] === st);
+        if (!names.length) return "";
+        const groupDone = names.filter((n) => postedAreas.has(n)).length;
+        return `
+          <div class="checklist-state-group">
+            <span class="checklist-state-label">${STATE_LABEL[st]} · ${groupDone}/${names.length}</span>
+            <div class="checklist-items">${names.map(checklistItem).join("")}</div>
+          </div>
+        `;
       }).join("");
 
       el<HTMLDivElement>("checklist").innerHTML = `
@@ -2516,7 +2542,7 @@ export default function BoardApp() {
           <span class="checklist-count ${allDone ? "checklist-count-done" : ""}">${doneCount}/${AREAS.length} posted this cycle</span>
         </div>
         ${allDone ? `<div class="checklist-banner">Every neighborhood has been posted — the next post starts a new cycle back at ${AREAS[0][0]}.</div>` : ""}
-        <div class="checklist-items">${items}</div>
+        ${groups}
       `;
     }
 

@@ -123,6 +123,16 @@ h1{
   color:var(--sand);
 }
 .filter-group{display:flex;gap:8px;flex-wrap:wrap;}
+.area-filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+.area-state-label{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:var(--brass-deep);
+  margin:0 2px 0 8px;
+}
+.area-state-label:first-child{margin-left:0;}
 .filter-divider{width:1px;height:22px;background:var(--line);margin:0 6px;}
 
 #checklist{margin-bottom:24px;}
@@ -144,6 +154,17 @@ h1{
   border-radius:8px;
   padding:8px 12px;
   margin-bottom:10px;
+}
+.checklist-state-group{margin-bottom:10px;}
+.checklist-state-group:last-child{margin-bottom:0;}
+.checklist-state-label{
+  display:block;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:var(--brass-deep);
+  margin-bottom:6px;
 }
 .checklist-items{display:flex;flex-wrap:wrap;gap:8px;}
 .checklist-item{
