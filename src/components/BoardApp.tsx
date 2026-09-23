@@ -3284,6 +3284,72 @@ export default function BoardApp() {
       if (modalPostId === post.id) renderModal(post.id);
     }
 
+    function formatForDateTimeInput(d: Date): string {
+      const pad = (n: number) => String(n).padStart(2, "0");
+      return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+    }
+
+    // Sets a post's display date/day/time from a real chosen moment — once Scheduled, these
+    // fields mean "when this is actually scheduled to go live," not just the day it was
+    // originally seeded on, which is what makes the auto-publish check meaningful.
+    function applyScheduleDateTime(post: Post, dateTimeLocalValue: string) {
+      const d = new Date(dateTimeLocalValue);
+      if (isNaN(d.getTime())) return;
+      post.date = d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+      post.day = d.toLocaleDateString("en-US", { weekday: "long" });
+      post.time = d.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
+    }
+
+    // Wires a status <select> so picking "Scheduled" prompts for a real date/time via a
+    // native datetime-local picker before the status actually changes — otherwise a
+    // Scheduled post just keeps whatever date/time it happened to be seeded with, which is
+    // often already in the past and makes the "auto-publish once due" rule meaningless.
+    function wireStatusSelect(selectEl: HTMLSelectElement, postId: string) {
+      const dateInput = document.createElement("input");
+      dateInput.type = "datetime-local";
+      dateInput.className = "schedule-datetime-input";
+      dateInput.hidden = true;
+      selectEl.insertAdjacentElement("afterend", dateInput);
+
+      selectEl.addEventListener("change", (e) => {
+        e.stopPropagation();
+        const p = boardData.find((x) => x.id === postId);
+        if (!p) return;
+        const newStatus = selectEl.value as Status;
+        if (newStatus === "Scheduled") {
+          const fallback = new Date();
+          fallback.setDate(fallback.getDate() + 1);
+          fallback.setHours(9, 0, 0, 0);
+          dateInput.value = formatForDateTimeInput(fallback);
+          dateInput.hidden = false;
+          const withPicker = dateInput as HTMLInputElement & { showPicker?: () => void };
+          try {
+            withPicker.showPicker?.();
+          } catch {
+            dateInput.focus();
+          }
+          return; // wait for the datetime-local input's own change before committing
+        }
+        dateInput.hidden = true;
+        void moveStatus(p, newStatus);
+      });
+
+      dateInput.addEventListener("click", (e) => e.stopPropagation());
+      dateInput.addEventListener("change", (e) => {
+        e.stopPropagation();
+        const p = boardData.find((x) => x.id === postId);
+        if (!p) return;
+        if (!dateInput.value) {
+          selectEl.value = p.status; // no date chosen — revert the visual selection
+          dateInput.hidden = true;
+          return;
+        }
+        applyScheduleDateTime(p, dateInput.value);
+        dateInput.hidden = true;
+        void moveStatus(p, "Scheduled");
+      });
+    }
+
     // A Scheduled post's date/time is just a display string (no year, e.g. "Sep 21" +
     // "9:00 AM") — reconstruct it against the current year, which is fine since nothing on
     // this board spans a year boundary.
@@ -3296,14 +3362,37 @@ export default function BoardApp() {
     // Scheduled posts whose date/time has passed auto-publish, exactly like a manual
     // publish (including the "Not started" placeholder rule) — the VA shouldn't have to
     // remember to flip the status by hand once the scheduled moment arrives.
+    //
+    // This runs on a recurring interval (see init() below) for as long as a tab stays open,
+    // which used to be a real data-loss risk: a tab left open since before a deploy holds a
+    // stale in-memory boardData, and once its interval found a locally-due post it would
+    // save that ENTIRE stale snapshot back to the server — silently reverting anything added
+    // server-side since the tab was last loaded (confirmed happening in production: a
+    // long-open tab's auto-publish tick wiped a same-day content expansion). Re-fetching the
+    // latest server state right before checking for due posts closes that window — the tab
+    // can still be stale between ticks, but it never overwrites newer data, only ever adds
+    // its own status change on top of whatever is actually current.
     async function autoPublishDuePosts() {
+      try {
+        const res = await fetch("/api/board", { cache: "no-store" });
+        const data = await res.json();
+        if (data && Array.isArray(data.posts) && data.posts.length) {
+          boardData = data.posts;
+        }
+      } catch {
+        // fall through and check whatever's currently in memory
+      }
+
       const now = new Date();
       const due = boardData.filter((p) => {
         if (p.status !== "Scheduled") return false;
         const dt = parsePostDateTime(p);
         return dt !== null && dt <= now;
       });
-      if (!due.length) return;
+      if (!due.length) {
+        renderAll();
+        return;
+      }
       due.forEach(applyPublish);
       await saveData();
       renderAll();
@@ -3373,12 +3462,7 @@ export default function BoardApp() {
 
       const select = card.querySelector<HTMLSelectElement>(".card-status-select")!;
       select.addEventListener("click", (e) => e.stopPropagation());
-      select.addEventListener("change", async (e) => {
-        e.stopPropagation();
-        const p = boardData.find((x) => x.id === post.id);
-        if (!p) return;
-        await moveStatus(p, select.value as Status);
-      });
+      wireStatusSelect(select, post.id);
 
       return card;
     }
@@ -3536,9 +3620,7 @@ export default function BoardApp() {
       `;
 
       const modalSelect = el<HTMLSelectElement>("modalStatusSelect");
-      modalSelect.addEventListener("change", async () => {
-        await moveStatus(post, modalSelect.value as Status);
-      });
+      wireStatusSelect(modalSelect, post.id);
     }
 
     function openModal(id: string) {

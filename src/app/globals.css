@@ -336,6 +336,17 @@ h1{
   cursor:pointer;
 }
 .card-status-select:hover{border-color:var(--brass);}
+.schedule-datetime-input{
+  font-family:'Inter',sans-serif;
+  font-size:11px;
+  color:var(--ink);
+  background:var(--sand-deep);
+  border:1px solid var(--brass);
+  border-radius:4px;
+  padding:3px 5px;
+  margin-left:6px;
+  color-scheme:dark;
+}
 .card-moved{
   font-size:10.5px;
   color:var(--ink-soft);
