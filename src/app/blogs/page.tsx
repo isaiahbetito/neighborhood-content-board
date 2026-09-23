@@ -21,8 +21,8 @@ export default function BlogsPage() {
             <p className="sub">
               This is what your content calendar looks like once it&apos;s
               running: three posts a day, rotating through every neighborhood
-              you serve, always seven days ahead — and you can see exactly
-              what&apos;s live on each platform at a glance.
+              you serve, mapped out through the full rotation — and you can
+              see exactly what&apos;s live on each platform at a glance.
             </p>
           </div>
           <div className="stats" id="stats"></div>
@@ -55,6 +55,8 @@ export default function BlogsPage() {
           <span className="filter-label">Neighborhood</span>
           <div className="filter-group" id="areaFilters"></div>
         </div>
+
+        <div id="checklist"></div>
 
         <div id="boardRoot">
           <div className="loading-screen">Loading board…</div>
