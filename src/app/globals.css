@@ -352,6 +352,20 @@ h1{
   color:var(--ink-soft);
   font-style:italic;
 }
+.delete-post-btn{
+  margin-top:22px;
+  font-family:'Inter',sans-serif;
+  font-size:12px;
+  font-weight:600;
+  color:var(--brick);
+  background:none;
+  border:1px solid var(--brick);
+  border-radius:6px;
+  padding:8px 14px;
+  cursor:pointer;
+  transition:background .15s ease, color .15s ease;
+}
+.delete-post-btn:hover{background:var(--brick);color:var(--sand);}
 
 /* status color system, shared by platform chips + column accents */
 .s-notstarted{background:var(--brick-light);color:var(--brick);}

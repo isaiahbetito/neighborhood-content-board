@@ -3616,11 +3616,26 @@ export default function BoardApp() {
           </div>
           <div class="modal-section-label">Publishing status</div>
           <div class="platform-row">${platRow}</div>
+          <button class="delete-post-btn" id="deletePostBtn">Delete this card</button>
         </div>
       `;
 
       const modalSelect = el<HTMLSelectElement>("modalStatusSelect");
       wireStatusSelect(modalSelect, post.id);
+
+      el<HTMLButtonElement>("deletePostBtn").addEventListener("click", async () => {
+        if (
+          !window.confirm(
+            `Delete "${post.title}" permanently? This can't be undone.`
+          )
+        ) {
+          return;
+        }
+        boardData = boardData.filter((p) => p.id !== post.id);
+        await saveData();
+        closeModal();
+        renderAll();
+      });
     }
 
     function openModal(id: string) {
