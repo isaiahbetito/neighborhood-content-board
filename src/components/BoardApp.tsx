@@ -22,6 +22,12 @@ type Post = {
   status: Status;
   statusChangedAt?: string;
   platforms: { gbp: Status; w1: Status; w2: Status; li: Status; fb: Status };
+  // Stable pointer into TITLES[area] — set at creation so editing a PostSeed's hook/wording
+  // later never orphans an already-saved post (title-string matching alone is fragile: it
+  // silently breaks articleParagraphs() for any post whose title no longer matches after an
+  // edit). Optional only because posts saved before this field existed need one migration
+  // pass to backfill it — see loadData().
+  variant?: "guide" | "update" | "considerations";
 };
 
 const STATUS_ORDER: Status[] = [
@@ -1794,6 +1800,39 @@ const TITLES: Record<string, PostSeed[]> = {
   ],
 };
 
+// One-time repair map: the 14 "update"/"considerations" posts across the original 7
+// neighborhoods were rewritten (2026-09-24) to fix duplicate hooks/boilerplate Jamie
+// flagged as repeated content, but posts already saved to the live board still carried the
+// old titles, which silently broke their article body (titleIndexForPost couldn't match the
+// old title to any current PostSeed). This lets loadData() find those exact old titles and
+// refresh them to the current content — see the `variant` field on Post for how this class
+// of drift is now prevented going forward.
+const STALE_TITLE_VARIANTS: Record<string, "update" | "considerations"> = {
+  "Moving to Camas, WA? Consider Holly Ridge: Market Pulse: Tight Inventory, Fast-Moving Listings":
+    "update",
+  "Moving to Camas, WA? Consider Holly Ridge: What to Weigh Before You Buy": "considerations",
+  "Moving to Vancouver, WA? Consider Lakeshore: Market Update: Inventory & Demand Near the Lake":
+    "update",
+  "Moving to Vancouver, WA? Consider Lakeshore: What to Weigh Before You Buy": "considerations",
+  "Moving to Vancouver, WA? Consider Pleasant Valley: Acreage Listings: What's Available Now":
+    "update",
+  "Moving to Vancouver, WA? Consider Pleasant Valley: Pros and Cons to Weigh": "considerations",
+  "Moving to Camas, WA? Consider Hunter Ridge Estates: Where the Luxury Market Stands Right Now":
+    "update",
+  "Moving to Camas, WA? Consider Hunter Ridge Estates: Is the Space and Privacy Worth the Tradeoffs?":
+    "considerations",
+  "Moving to Vancouver, WA? Consider Columbia Way: Condo & Townhome Market: What's Selling":
+    "update",
+  "Moving to Vancouver, WA? Consider Columbia Way: What Daily Life Here Actually Involves":
+    "considerations",
+  "Moving to Camas, WA? Consider Deer Creek: Inventory Update: What's on the Market": "update",
+  "Moving to Camas, WA? Consider Deer Creek: What to Know Before You Buy": "considerations",
+  "Moving to Vancouver, WA? Consider Harney Heights: Market Pulse: Quiet Area, Steady Demand":
+    "update",
+  "Moving to Vancouver, WA? Consider Harney Heights: What to Know Before You Buy":
+    "considerations",
+};
+
 // One row per area, 3 slots/day — guarantees each area's 3 posts (guide/update/
 // considerations) land on different days, spread evenly across the full rotation cycle,
 // and that the cycle returns to area 0 only after every area has had all 3 posted once.
@@ -1856,7 +1895,12 @@ const AREA_PHOTOS: Record<string, (keyof typeof PHOTOS)[]> = {
 
 function titleIndexForPost(post: Post): number {
   const titles = TITLES[post.area];
-  return titles ? titles.findIndex((s) => seedTitle(post.area, s) === post.title) : -1;
+  if (!titles) return -1;
+  if (post.variant) {
+    const byVariant = titles.findIndex((s) => s.variant === post.variant);
+    if (byVariant !== -1) return byVariant;
+  }
+  return titles.findIndex((s) => seedTitle(post.area, s) === post.title);
 }
 
 function photoForPost(post: Post): string {
@@ -2087,6 +2131,7 @@ function buildSeedData(): Post[] {
         title: seedTitle(areaName, seed),
         keyword: seed.keyword,
         metaDescription: seed.metaDescription,
+        variant: seed.variant,
         status: "Drafted",
         platforms: {
           gbp: "Not Started",
@@ -2124,6 +2169,37 @@ export default function BoardApp() {
             if (p.platforms.fb !== undefined) return p;
             migrated = true;
             return { ...p, platforms: { ...p.platforms, fb: "Not Started" as Status } };
+          });
+
+          // Backfill the stable `variant` pointer, and repair the 14 posts whose content
+          // went stale when their PostSeed was rewritten before this field existed (see
+          // STALE_TITLE_VARIANTS). Leaves id/date/day/time/status/statusChangedAt/platforms
+          // untouched — only title/keyword/metaDescription/variant are ever corrected here.
+          boardData = boardData.map((p) => {
+            if (p.variant) return p;
+            const titles = TITLES[p.area];
+            if (!titles) return p;
+
+            const liveIdx = titles.findIndex((s) => seedTitle(p.area, s) === p.title);
+            if (liveIdx !== -1) {
+              migrated = true;
+              return { ...p, variant: titles[liveIdx].variant };
+            }
+
+            const staleVariant = STALE_TITLE_VARIANTS[p.title];
+            const seed = staleVariant && titles.find((s) => s.variant === staleVariant);
+            if (seed) {
+              migrated = true;
+              return {
+                ...p,
+                title: seedTitle(p.area, seed),
+                keyword: seed.keyword,
+                metaDescription: seed.metaDescription,
+                variant: seed.variant,
+              };
+            }
+
+            return p; // unrecognized title (e.g. an auto-spawned "New post needed for X" placeholder)
           });
 
           // Additive migration: if new areas were added to AREAS after this board was
