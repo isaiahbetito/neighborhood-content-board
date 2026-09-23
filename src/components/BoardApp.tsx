@@ -2163,6 +2163,8 @@ export default function BoardApp() {
     let activeDay = "All";
     let activeArea = "All";
     let modalPostId: string | null = null;
+    let areaFiltersOpen = false;
+    let checklistOpen = false;
 
     function el<T extends HTMLElement>(id: string): T {
       return document.getElementById(id) as T;
@@ -2295,7 +2297,19 @@ export default function BoardApp() {
         return `<span class="area-state-label">${STATE_LABEL[st]}</span>${names.map(chip).join("")}`;
       }).join("");
 
-      el<HTMLDivElement>("areaFilters").innerHTML = `${chip("All")}${groups}`;
+      const areaFiltersEl = el<HTMLDivElement>("areaFilters");
+      areaFiltersEl.hidden = !areaFiltersOpen;
+      areaFiltersEl.innerHTML = areaFiltersOpen ? `${chip("All")}${groups}` : "";
+
+      const toggle = el<HTMLButtonElement>("areaFiltersToggle");
+      toggle.classList.toggle("active", areaFiltersOpen);
+      toggle.textContent =
+        (activeArea !== "All" ? `Neighborhood: ${activeArea}` : "Neighborhood") +
+        (areaFiltersOpen ? " ▴" : " ▾");
+      toggle.onclick = () => {
+        areaFiltersOpen = !areaFiltersOpen;
+        renderFilters();
+      };
 
       document.querySelectorAll<HTMLButtonElement>("#dayFilters .chip").forEach((btn) => {
         btn.onclick = () => {
@@ -2306,6 +2320,7 @@ export default function BoardApp() {
       document.querySelectorAll<HTMLButtonElement>("#areaFilters .chip").forEach((btn) => {
         btn.onclick = () => {
           activeArea = btn.dataset.area!;
+          areaFiltersOpen = true;
           renderAll();
         };
       });
@@ -2524,26 +2539,33 @@ export default function BoardApp() {
         return `<span class="checklist-item ${done ? "done" : ""}"><span class="checklist-dot">${done ? "✓" : ""}</span>${name}</span>`;
       };
 
-      const groups = STATE_ORDER.map((st) => {
-        const names = AREAS.map((a) => a[0]).filter((name) => AREA_STATE[name] === st);
-        if (!names.length) return "";
-        const groupDone = names.filter((n) => postedAreas.has(n)).length;
-        return `
-          <div class="checklist-state-group">
-            <span class="checklist-state-label">${STATE_LABEL[st]} · ${groupDone}/${names.length}</span>
-            <div class="checklist-items">${names.map(checklistItem).join("")}</div>
-          </div>
-        `;
-      }).join("");
+      const groups = checklistOpen
+        ? STATE_ORDER.map((st) => {
+            const names = AREAS.map((a) => a[0]).filter((name) => AREA_STATE[name] === st);
+            if (!names.length) return "";
+            const groupDone = names.filter((n) => postedAreas.has(n)).length;
+            return `
+              <div class="checklist-state-group">
+                <span class="checklist-state-label">${STATE_LABEL[st]} · ${groupDone}/${names.length}</span>
+                <div class="checklist-items">${names.map(checklistItem).join("")}</div>
+              </div>
+            `;
+          }).join("")
+        : "";
 
       el<HTMLDivElement>("checklist").innerHTML = `
-        <div class="checklist-header">
-          <span class="checklist-title">Neighborhood rotation checklist</span>
+        <button class="checklist-header" id="checklistToggle">
+          <span class="checklist-title">Neighborhood rotation checklist ${checklistOpen ? "▴" : "▾"}</span>
           <span class="checklist-count ${allDone ? "checklist-count-done" : ""}">${doneCount}/${AREAS.length} posted this cycle</span>
-        </div>
+        </button>
         ${allDone ? `<div class="checklist-banner">Every neighborhood has been posted — the next post starts a new cycle back at ${AREAS[0][0]}.</div>` : ""}
         ${groups}
       `;
+
+      el<HTMLButtonElement>("checklistToggle").onclick = () => {
+        checklistOpen = !checklistOpen;
+        renderChecklist();
+      };
     }
 
     function renderAll() {
