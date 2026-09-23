@@ -21,7 +21,7 @@ type Post = {
   metaDescription: string;
   status: Status;
   statusChangedAt?: string;
-  platforms: { gbp: Status; w1: Status; w2: Status; li: Status };
+  platforms: { gbp: Status; w1: Status; w2: Status; li: Status; fb: Status };
 };
 
 const STATUS_ORDER: Status[] = [
@@ -786,6 +786,7 @@ const PLATFORM_LABELS: Record<string, string> = {
   w1: "Main Site",
   w2: "eXp Site",
   li: "LinkedIn",
+  fb: "Facebook Page",
 };
 
 // Verified real photos from images.unsplash.com (direct CDN, no API key needed)
@@ -1058,6 +1059,7 @@ function buildSeedData(): Post[] {
           w1: "Not Started",
           w2: "Not Started",
           li: "Not Started",
+          fb: "Not Started",
         },
       });
     });
@@ -1081,7 +1083,15 @@ export default function BoardApp() {
         const res = await fetch("/api/board", { cache: "no-store" });
         const data = await res.json();
         if (data && Array.isArray(data.posts) && data.posts.length) {
-          boardData = data.posts;
+          // Backfill any platform keys added after these posts were first saved
+          // (e.g. "fb") without touching existing progress on older keys.
+          let migrated = false;
+          boardData = data.posts.map((p: Post) => {
+            if (p.platforms.fb !== undefined) return p;
+            migrated = true;
+            return { ...p, platforms: { ...p.platforms, fb: "Not Started" as Status } };
+          });
+          if (migrated) await saveData();
           return;
         }
       } catch {
