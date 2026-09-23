@@ -2373,42 +2373,74 @@ export default function BoardApp() {
       }
     }
 
+    // Sets a post to Published and drops a fresh "Not started" placeholder for the same
+    // neighborhood, so it's obvious at a glance which ones need new content drafted next.
+    // Mutates `post`/`boardData` only — caller is responsible for saveData()/renderAll().
+    function applyPublish(post: Post) {
+      post.status = "Published";
+      post.statusChangedAt = new Date().toISOString();
+      const nextId =
+        "p" + (1 + Math.max(0, ...boardData.map((p) => parseInt(p.id.slice(1), 10) || 0)));
+      const today = new Date();
+      const neighborhood = post.area.split(",")[0].trim();
+      boardData.push({
+        id: nextId,
+        date: today.toLocaleDateString("en-US", { month: "short", day: "numeric" }),
+        day: today.toLocaleDateString("en-US", { weekday: "long" }),
+        time: post.time,
+        area: post.area,
+        areaUrl: post.areaUrl,
+        title: `New post needed for ${neighborhood}`,
+        keyword: "",
+        metaDescription: "",
+        status: "Not Started",
+        platforms: {
+          gbp: "Not Started",
+          w1: "Not Started",
+          w2: "Not Started",
+          li: "Not Started",
+          fb: "Not Started",
+        },
+      });
+    }
+
     async function moveStatus(post: Post, newStatus: Status) {
       if (post.status === newStatus) return;
-      const justPublished = newStatus === "Published";
-      post.status = newStatus;
-      post.statusChangedAt = new Date().toISOString();
-      if (justPublished) {
-        // Once a post for a neighborhood publishes, that slot in the rotation is done —
-        // drop a fresh "Not started" placeholder for the same neighborhood so it's
-        // obvious at a glance which neighborhoods need new content drafted next.
-        const nextId =
-          "p" + (1 + Math.max(0, ...boardData.map((p) => parseInt(p.id.slice(1), 10) || 0)));
-        const today = new Date();
-        const neighborhood = post.area.split(",")[0].trim();
-        boardData.push({
-          id: nextId,
-          date: today.toLocaleDateString("en-US", { month: "short", day: "numeric" }),
-          day: today.toLocaleDateString("en-US", { weekday: "long" }),
-          time: post.time,
-          area: post.area,
-          areaUrl: post.areaUrl,
-          title: `New post needed for ${neighborhood}`,
-          keyword: "",
-          metaDescription: "",
-          status: "Not Started",
-          platforms: {
-            gbp: "Not Started",
-            w1: "Not Started",
-            w2: "Not Started",
-            li: "Not Started",
-            fb: "Not Started",
-          },
-        });
+      if (newStatus === "Published") {
+        applyPublish(post);
+      } else {
+        post.status = newStatus;
+        post.statusChangedAt = new Date().toISOString();
       }
       await saveData();
       renderAll();
       if (modalPostId === post.id) renderModal(post.id);
+    }
+
+    // A Scheduled post's date/time is just a display string (no year, e.g. "Sep 21" +
+    // "9:00 AM") — reconstruct it against the current year, which is fine since nothing on
+    // this board spans a year boundary.
+    function parsePostDateTime(post: Post): Date | null {
+      const year = new Date().getFullYear();
+      const parsed = new Date(`${post.date}, ${year} ${post.time}`);
+      return isNaN(parsed.getTime()) ? null : parsed;
+    }
+
+    // Scheduled posts whose date/time has passed auto-publish, exactly like a manual
+    // publish (including the "Not started" placeholder rule) — the VA shouldn't have to
+    // remember to flip the status by hand once the scheduled moment arrives.
+    async function autoPublishDuePosts() {
+      const now = new Date();
+      const due = boardData.filter((p) => {
+        if (p.status !== "Scheduled") return false;
+        const dt = parsePostDateTime(p);
+        return dt !== null && dt <= now;
+      });
+      if (!due.length) return;
+      due.forEach(applyPublish);
+      await saveData();
+      renderAll();
+      if (modalPostId && due.some((p) => p.id === modalPostId)) renderModal(modalPostId);
     }
 
     function formatMovedAt(iso: string): string {
@@ -2686,8 +2718,14 @@ export default function BoardApp() {
 
     (async function init() {
       await loadData();
+      await autoPublishDuePosts();
       renderAll();
     })();
+
+    // Catch posts whose scheduled time passes while the board stays open, not just on load.
+    const autoPublishInterval = setInterval(() => {
+      autoPublishDuePosts();
+    }, 60000);
 
     return () => {
       resetBtn.removeEventListener("click", onReset);
@@ -2695,6 +2733,7 @@ export default function BoardApp() {
       modalClose.removeEventListener("click", closeModal);
       document.removeEventListener("keydown", onKeydown);
       document.body.style.overflow = "";
+      clearInterval(autoPublishInterval);
     };
   }, []);
 
