@@ -72,15 +72,35 @@ const AREAS: [string, string][] = [
   ["Fisher's Landing, Vancouver", "fishers-landing-vancouver-wa"],
   ["Downtown Vancouver, Vancouver", "downtown-vancouver-wa"],
   ["Salmon Creek, Vancouver", "salmon-creek-vancouver-wa"],
+  ["Irvington, Portland", "irvington-portland-or"],
+  ["Sexton Mountain, Beaverton", "sexton-mountain-beaverton-or"],
+  ["Bull Mountain, Tigard", "bull-mountain-tigard-or"],
+  ["North Bethany, Bethany", "north-bethany-or"],
+  ["Orenco Station, Hillsboro", "orenco-station-hillsboro-or"],
+  ["Mountain Park, Lake Oswego", "mountain-park-lake-oswego-or"],
+  ["Hidden Springs, West Linn", "hidden-springs-west-linn-or"],
+  ["Canemah, Oregon City", "canemah-oregon-city-or"],
+  ["Historic Milwaukie, Milwaukie", "historic-milwaukie-or"],
+  ["Rock Creek, Happy Valley", "rock-creek-happy-valley-or"],
 ];
 
-// Every area above is Washington-side for now — Oregon areas (Portland, Beaverton, Tigard,
-// Bethany, Hillsboro, Lake Oswego, West Linn, Oregon City, Milwaukie, Happy Valley) are the
-// next phase per the user's "WA first, then OR" call. This map is what lets the filter and
-// checklist group by state — when OR areas are added to AREAS/TITLES/URL maps, just add
-// their entries here too and the grouping picks them up automatically.
+// State grouping for the filter/checklist UI. WA areas above came first (7 original +
+// 12-area expansion); OR areas (Portland, Beaverton, Tigard, Bethany, Hillsboro, Lake
+// Oswego, West Linn, Oregon City, Milwaukie, Happy Valley) were added in the next phase.
+const OR_AREA_NAMES = new Set([
+  "Irvington, Portland",
+  "Sexton Mountain, Beaverton",
+  "Bull Mountain, Tigard",
+  "North Bethany, Bethany",
+  "Orenco Station, Hillsboro",
+  "Mountain Park, Lake Oswego",
+  "Hidden Springs, West Linn",
+  "Canemah, Oregon City",
+  "Historic Milwaukie, Milwaukie",
+  "Rock Creek, Happy Valley",
+]);
 const AREA_STATE: Record<string, "WA" | "OR"> = Object.fromEntries(
-  AREAS.map(([name]) => [name, "WA" as const])
+  AREAS.map(([name]) => [name, OR_AREA_NAMES.has(name) ? ("OR" as const) : ("WA" as const)])
 );
 const STATE_LABEL: Record<"WA" | "OR", string> = { WA: "Washington", OR: "Oregon" };
 const STATE_ORDER: ("WA" | "OR")[] = ["WA", "OR"];
@@ -104,6 +124,17 @@ const CITY_URLS: Record<string, string> = {
   Washougal: "https://jamiemeushawrealestate.com/properties/city-Washougal,%20WA/",
   // Constructed, not client-provided — see comment above.
   "Brush Prairie": "https://jamiemeushawrealestate.com/properties/city-Brush%20Prairie,%20WA/",
+  // Real, verified — from the client's own "OREGON CITY LINKS" doc.
+  Portland: "https://jamiemeushawrealestate.com/properties/city-Portland,%20OR/",
+  Beaverton: "https://jamiemeushawrealestate.com/properties/city-Beaverton,%20OR/",
+  Tigard: "https://jamiemeushawrealestate.com/properties/place-Tigard,%20OR/",
+  Bethany: "https://jamiemeushawrealestate.com/properties/place-Bethany,%20OR/",
+  Hillsboro: "https://jamiemeushawrealestate.com/properties/place-Hillsboro,%20OR/",
+  "Lake Oswego": "https://jamiemeushawrealestate.com/properties/city-Lake%20Oswego,%20OR/",
+  "West Linn": "https://jamiemeushawrealestate.com/properties/city-West%20Linn,%20OR/",
+  "Oregon City": "https://jamiemeushawrealestate.com/properties/city-Oregon%20City,%20OR/",
+  Milwaukie: "https://jamiemeushawrealestate.com/properties/place-Milwaukie,%20OR/",
+  "Happy Valley": "https://jamiemeushawrealestate.com/properties/city-Happy%20Valley,%20OR/",
 };
 
 // Per the official SOP, a real neighborhood search URL must be generated + tested via the
@@ -139,6 +170,19 @@ const NEIGHBORHOOD_URLS: Record<string, string | null> = {
   "Downtown Vancouver, Vancouver":
     "https://jamiemeushawrealestate.com/properties/#/p/-122.67577350198809,45.6184827040957|-122.65505341179498,45.612607119177014|-122.62252795133809,45.61067543945868|-122.64169983820209,45.63819675869527|-122.64113222032486,45.64670744631323|-122.65051007584096,45.650617471842565|-122.66219141584409,45.6509492125663|-122.66629762793411,45.65801425891175|-122.69061903800625,45.674790171788345|-122.69314593775398,45.67456946873304|-122.72473218460112,45.659559618987316|-122.73736668333973,45.64785797451367|-122.72820667175424,45.637699848292044|-122.67577350198809,45.6184827040957",
   "Salmon Creek, Vancouver": "https://jamiemeushawrealestate.com/properties/place-Salmon%20Creek,%20WA/",
+  // No neighborhood-level OR links were ever provided — all pending, same as most of the WA
+  // batch. Each falls back to its city-level URL (all real, from OREGON CITY LINKS) until a
+  // real neighborhood search is run.
+  "Irvington, Portland": null,
+  "Sexton Mountain, Beaverton": null,
+  "Bull Mountain, Tigard": null,
+  "North Bethany, Bethany": null,
+  "Orenco Station, Hillsboro": null,
+  "Mountain Park, Lake Oswego": null,
+  "Hidden Springs, West Linn": null,
+  "Canemah, Oregon City": null,
+  "Historic Milwaukie, Milwaukie": null,
+  "Rock Creek, Happy Valley": null,
 };
 
 const SCHOOL_DISTRICTS: Record<string, string> = {
@@ -162,6 +206,16 @@ const SCHOOL_DISTRICTS: Record<string, string> = {
   "Fisher's Landing, Vancouver": "Evergreen Public Schools",
   "Downtown Vancouver, Vancouver": "Vancouver Public Schools",
   "Salmon Creek, Vancouver": "Vancouver Public Schools",
+  "Irvington, Portland": "Portland Public Schools",
+  "Sexton Mountain, Beaverton": "Beaverton School District",
+  "Bull Mountain, Tigard": "Tigard-Tualatin School District",
+  "North Bethany, Bethany": "Beaverton School District",
+  "Orenco Station, Hillsboro": "Hillsboro School District",
+  "Mountain Park, Lake Oswego": "Lake Oswego School District",
+  "Hidden Springs, West Linn": "West Linn-Wilsonville School District",
+  "Canemah, Oregon City": "Oregon City School District",
+  "Historic Milwaukie, Milwaukie": "North Clackamas School District",
+  "Rock Creek, Happy Valley": "North Clackamas School District",
 };
 
 const YOUTUBE_URL = "https://www.youtube.com/@JamieMeushaw";
@@ -193,13 +247,14 @@ function cityLinkLine(label: string, url: string): string {
 function exploreHomesBlock(
   neighborhood: string,
   city: string,
+  stateAbbr: string,
   nUrl: string | null,
   cUrl: string
 ): string[] {
   return [
     h2("Explore Homes for Sale"),
     neighborhoodLinkLine(`View homes for sale in ${neighborhood}`, nUrl),
-    cityLinkLine(`View all homes for sale in ${city}, WA`, cUrl),
+    cityLinkLine(`View all homes for sale in ${city}, ${stateAbbr}`, cUrl),
     "Inventory and pricing change quickly — these links show what's currently on the market rather than numbers from when this was written.",
   ];
 }
@@ -207,20 +262,21 @@ function exploreHomesBlock(
 function seeHomesBlock(
   neighborhood: string,
   city: string,
+  stateAbbr: string,
   nUrl: string | null,
   cUrl: string
 ): string[] {
   return [
     h2(`See Homes in ${neighborhood}`),
     neighborhoodLinkLine(`View homes currently for sale in ${neighborhood}`, nUrl),
-    cityLinkLine(`View all homes for sale in ${city}, WA`, cUrl),
+    cityLinkLine(`View all homes for sale in ${city}, ${stateAbbr}`, cUrl),
     "Don't see the right home? Inventory in individual neighborhoods can be limited — nearby neighborhoods with similar homes, locations and amenities are often worth a look too.",
   ];
 }
 
-function youtubeBlock(city: string): string[] {
+function youtubeBlock(city: string, stateAbbr: string): string[] {
   return [
-    h2(`Moving to ${city}, WA or the Surrounding Area?`),
+    h2(`Moving to ${city}, ${stateAbbr} or the Surrounding Area?`),
     "Jamie's YouTube channel has a growing library of videos covering Camas, Vancouver and other communities throughout Southwest Washington and the Portland metro area — a good way to get a feel for different neighborhoods and housing options before making a move.",
     `Watch Jamie Meushaw Real Estate on YouTube: <a href="${YOUTUBE_URL}" target="_blank" rel="noopener">${YOUTUBE_URL}</a>`,
   ];
@@ -266,7 +322,7 @@ type PostSeed = {
 function seedTitle(area: string, seed: PostSeed): string {
   const neighborhood = area.split(",")[0].trim();
   const city = area.split(",")[1].trim();
-  return `Moving to ${city}, WA? Consider ${neighborhood}: ${seed.hook}`;
+  return `Moving to ${city}, ${AREA_STATE[area] ?? "WA"}? Consider ${neighborhood}: ${seed.hook}`;
 }
 
 const TITLES: Record<string, PostSeed[]> = {
@@ -1809,6 +1865,806 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
     },
   ],
+  "Irvington, Portland": [
+    {
+      hook: "Portland's Largest Historic District, Steps from Grant Park",
+      keyword: "Irvington Portland OR homes",
+      metaDescription:
+        "Moving to Portland, OR? See what Irvington is like — historic homes, parks, schools and commute, plus current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to Portland, Oregon, Irvington is one of the city's most established neighborhoods worth a look — Oregon's largest historic residential district, added to the National Register of Historic Places in 2010.",
+        "Irvington sits in Northeast Portland, bordered roughly by NE 7th Avenue to NE 26th Avenue and NE Fremont Street to NE Broadway.",
+      ],
+      livingIn: [
+        "Irvington is genuinely historic, not just old — it's the largest intact historic district in Oregon, with architecture spanning Queen Anne, Craftsman and Prairie School styles built mostly between the 1890s and 1930s.",
+      ],
+      whereLocated: [
+        "Irvington sits just south of NE Broadway in Northeast Portland, close to I-84 and I-5, neighboring Sabin, Alameda, Eliot and Grant Park.",
+      ],
+      homesIn: [
+        "Homes here are predominantly Queen Anne, Craftsman/Period Revival Bungalow and Prairie School styles, most built between the 1890s and 1930s — expect real architectural character, and real variation in what's been updated versus preserved as original.",
+      ],
+      parks: [
+        "Irving Park, about 16 acres at NE 7th and Fremont, has ball fields, courts, a playground and an off-leash dog area. Grant Park, nearly 20 acres, sits just east in the neighboring Grant Park neighborhood with its own playground, dog park and athletic fields.",
+      ],
+      commute: [
+        "I-84 and I-5 are both close by, and Northeast Portland's grid makes cross-town driving fairly direct. Portland-area traffic still varies significantly by time of day, so it's worth mapping your specific commute before assuming a number from a map.",
+      ],
+      reasons: [
+        "<strong>Genuine historic character:</strong> Oregon's largest historic residential district, real architecture from the 1890s–1930s.",
+        "<strong>Park access:</strong> Irving Park and nearby Grant Park both within reach.",
+        "<strong>Central Northeast Portland location:</strong> close to I-84 and I-5.",
+      ],
+      considerations: [
+        "<strong>Historic-district rules:</strong> exterior changes may be subject to preservation guidelines — worth understanding before planning any renovation.",
+        "<strong>Older systems:</strong> homes from this era may need updated wiring, plumbing or mechanical systems — a thorough inspection matters here.",
+        "<strong>Premium for character:</strong> genuinely historic homes in intact districts tend to draw more competition than comparable newer construction.",
+      ],
+      closing: [
+        "If real architectural character and an established Northeast Portland address matter to you, Irvington is worth a serious look — and worth comparing against neighboring Alameda and Grant Park, which share a similar historic feel.",
+      ],
+    },
+    {
+      hook: "Demand for a Real Historic District Doesn't Slow Down",
+      keyword: "Irvington Portland market update",
+      metaDescription:
+        "A market update on Irvington in Portland, OR — demand for this historic Northeast Portland district right now.",
+      variant: "update",
+      intro: [
+        "Genuine historic districts don't come along often in Portland, and Irvington's status as the largest one in Oregon keeps it in steady demand.",
+      ],
+      marketNotes: [
+        "Buyers specifically searching for pre-1930s architecture with intact original details tend to treat Irvington as a first stop, not a backup option.",
+        "Homes that have been thoughtfully updated while preserving historic exterior details tend to draw the most competition.",
+        "Proximity to both Irving Park and Grant Park continues to be a frequently cited reason buyers choose this neighborhood over comparable Northeast Portland addresses.",
+      ],
+      closing: [
+        "Given how limited genuine historic inventory is in this part of Portland, it's worth having a search alert running well before you're ready to make an offer.",
+      ],
+    },
+    {
+      hook: "What Owning a Historic Home Here Really Involves",
+      keyword: "living in Irvington Portland",
+      metaDescription:
+        "What owning a historic home in Irvington, Portland actually involves — preservation rules, upkeep and commute, explained.",
+      variant: "considerations",
+      intro: [
+        "Irvington's historic character is the whole draw, but owning a home in a real historic district comes with real responsibilities worth understanding first.",
+      ],
+      reasons: [
+        "<strong>Genuine architecture:</strong> real Queen Anne, Craftsman and Prairie School homes, not reproductions.",
+        "<strong>Established, walkable streets:</strong> mature trees and a real neighborhood feel uncommon in newer construction.",
+      ],
+      considerations: [
+        "<strong>Preservation guidelines:</strong> exterior renovations may require additional review — worth researching before you buy if changes are part of your plan.",
+        "<strong>Older home systems:</strong> wiring, plumbing and mechanical systems may need updating depending on the property's history.",
+      ],
+      closing: [
+        "Touring a few homes with an inspector who's worked in historic Portland districts before tends to surface the real condition questions faster than a listing description ever will.",
+      ],
+    },
+  ],
+  "Sexton Mountain, Beaverton": [
+    {
+      hook: "Hillside Living on Beaverton's Southwest Edge",
+      keyword: "Sexton Mountain Beaverton OR homes",
+      metaDescription:
+        "Moving to Beaverton, OR? See what Sexton Mountain is like — hillside homes, trail access, schools and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to Beaverton, Oregon, Sexton Mountain is a hillside neighborhood on the city's southwest edge worth a look — officially recognized by the City of Beaverton with its own dedicated neighborhood page.",
+        "Beaverton itself sits about 8 miles west of downtown Portland.",
+      ],
+      livingIn: [
+        "Sexton Mountain has a genuinely elevated, hillside setting — a mix of homes built mostly in the 1990s and 2000s, with a quieter, more suburban feel than central Beaverton.",
+      ],
+      whereLocated: [
+        "Sexton Mountain sits on the southwestern edge of Beaverton, which itself is about 8 miles west of downtown Portland.",
+      ],
+      homesIn: [
+        "Housing here is a mix from the 1990s and 2000s on hillside, elevated lots — expect more topography and views than in flatter parts of Beaverton, along with the tradeoffs that come with hillside construction.",
+      ],
+      parks: [
+        "The Westside Regional Trail runs through Sexton Mountain, connecting to several parks within the neighborhood — a real, usable outdoor amenity built into the area.",
+      ],
+      commute: [
+        "OR-217 (the Beaverton-Tigard Freeway) and US-26 (Sunset Highway) both serve Beaverton, and TriMet's WES commuter rail connects Beaverton and Tigard. OR-217 in particular sees real congestion at peak hours — worth testing your actual route rather than trusting a map estimate.",
+      ],
+      reasons: [
+        "<strong>Hillside setting:</strong> elevated lots and more topography than central Beaverton.",
+        "<strong>Westside Regional Trail access:</strong> a real, built-in outdoor amenity connecting to several neighborhood parks.",
+        "<strong>City-recognized neighborhood:</strong> Beaverton's own site has a dedicated Sexton Mountain page — this is a genuinely established, defined area.",
+      ],
+      considerations: [
+        "<strong>Hillside construction:</strong> elevated lots can mean more retaining walls, drainage considerations and steeper driveways — worth a close look during inspection.",
+        "<strong>OR-217 congestion:</strong> a real factor at peak commute hours — test your specific route and timing.",
+        "<strong>Distance from central Beaverton:</strong> being on the southwest edge means a slightly longer drive to the core retail and transit hub.",
+      ],
+      closing: [
+        "If a quieter, hillside setting with real trail access is what you're after in Beaverton, Sexton Mountain is worth a look — and worth comparing against other southwest Beaverton neighborhoods for lot orientation and views.",
+      ],
+    },
+    {
+      hook: "A Quieter Corner of a Fast-Growing Suburb",
+      keyword: "Sexton Mountain Beaverton market update",
+      metaDescription:
+        "A market update on Sexton Mountain in Beaverton, OR — demand for this hillside neighborhood right now this season.",
+      variant: "update",
+      intro: [
+        "Beaverton keeps growing, and Sexton Mountain's hillside setting continues to draw buyers who want distance from the busier core without leaving the city.",
+      ],
+      marketNotes: [
+        "Buyers relocating from denser parts of the Portland metro often ask about Sexton Mountain specifically for its quieter, more suburban feel relative to central Beaverton.",
+        "Homes with genuine views or larger hillside lots tend to draw more attention than interior-lot properties in the same price tier.",
+        "Westside Regional Trail access continues to come up as a deciding factor for buyers comparing Sexton Mountain against other southwest Beaverton options.",
+      ],
+      closing: [
+        "Given Beaverton's overall growth, it's worth setting up a dedicated search here rather than relying on a broader citywide alert.",
+      ],
+    },
+    {
+      hook: "Hillside Homes Come With Hillside Questions",
+      keyword: "living in Sexton Mountain Beaverton",
+      metaDescription:
+        "What to weigh before buying in Sexton Mountain, Beaverton — hillside construction, commute and trail access, explained.",
+      variant: "considerations",
+      intro: [
+        "A hillside setting is a real selling point in Sexton Mountain, but it also raises a few questions worth asking before you tour.",
+      ],
+      reasons: [
+        "<strong>Elevated, hillside lots:</strong> more topography and views than central Beaverton.",
+        "<strong>Westside Regional Trail:</strong> real, walkable access built into the neighborhood.",
+      ],
+      considerations: [
+        "<strong>Hillside construction details:</strong> retaining walls, drainage and steep driveways are worth a close inspection look.",
+        "<strong>OR-217 congestion:</strong> a genuine factor at peak hours — test your actual commute.",
+      ],
+      closing: [
+        "Driving the neighborhood's streets at different times of day, not just touring homes, tends to give the clearest read on how the hillside setting actually feels day to day.",
+      ],
+    },
+  ],
+  "Bull Mountain, Tigard": [
+    {
+      hook: "Elevated New Construction on Tigard's Signature Hilltop",
+      keyword: "Bull Mountain Tigard OR homes",
+      metaDescription:
+        "Moving to Tigard, OR? See what the Bull Mountain area is like — newer homes, trail access, schools and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to Tigard, Oregon, the Bull Mountain area is worth a look — a hilltop area, roughly 710 feet in elevation, about 12 miles southwest of Portland.",
+        "A quick note on geography: Bull Mountain is an unincorporated Washington County area in and around Tigard, not entirely inside the city limits everywhere — worth confirming the exact jurisdiction for any specific property.",
+      ],
+      livingIn: [
+        "Bull Mountain has a genuinely elevated, newer-construction character — mostly traditional and Craftsman-style homes built over roughly the last 20 years, many on view lots.",
+      ],
+      whereLocated: [
+        "Bull Mountain sits on a hilltop in and around Tigard, about 12 miles southwest of downtown Portland. Tigard itself is built around Pacific Highway (Hwy 99W), with OR-217 and I-5 both serving the city.",
+      ],
+      homesIn: [
+        "Housing on Bull Mountain is mostly newer traditional and Craftsman-style construction from the last two decades, often on elevated or view lots — expect more consistent modern layouts than in Tigard's older, more central neighborhoods.",
+      ],
+      parks: [
+        "Bull Mountain Park, maintained by the City of Tigard, has 9 trails supporting hiking, mountain biking and trail running — a real, substantial outdoor amenity for the area.",
+      ],
+      commute: [
+        "Tigard sits along Pacific Highway (99W), with OR-217 and I-5 access, and TriMet's WES commuter rail connects Tigard and Beaverton as a transit alternative. OR-217 sees real congestion at peak hours — worth testing your specific route rather than trusting a map estimate.",
+      ],
+      reasons: [
+        "<strong>Newer construction:</strong> mostly built within the last 20 years, more consistent modern layouts.",
+        "<strong>Elevation and views:</strong> a genuine hilltop setting, roughly 710 feet up.",
+        "<strong>Bull Mountain Park access:</strong> 9 trails maintained by the City of Tigard.",
+      ],
+      considerations: [
+        "<strong>Jurisdiction varies:</strong> parts of Bull Mountain are unincorporated Washington County rather than inside Tigard city limits — worth confirming for any specific address.",
+        "<strong>OR-217 congestion:</strong> a real factor at peak hours.",
+        "<strong>Hillside construction:</strong> elevated lots can mean more retaining walls and drainage considerations — worth a close inspection.",
+      ],
+      closing: [
+        "If newer construction on an elevated, view-oriented lot is what you're after near Tigard, the Bull Mountain area is worth a look — just confirm the exact jurisdiction and any HOA details for the specific property you're considering.",
+      ],
+    },
+    {
+      hook: "New Construction Keeps Bull Mountain in Demand",
+      keyword: "Bull Mountain Tigard market update",
+      metaDescription:
+        "A market update on the Bull Mountain area near Tigard, OR — demand for newer hilltop construction right now this season.",
+      variant: "update",
+      intro: [
+        "Newer construction on a real hilltop setting is a specific combination, and Bull Mountain continues to deliver on it for buyers who want both.",
+      ],
+      marketNotes: [
+        "Buyers relocating from denser parts of the Portland metro often ask about Bull Mountain specifically for its newer construction and elevation.",
+        "View lots tend to draw more attention and competition than interior lots within the same general area.",
+        "Bull Mountain Park's trail system continues to come up as a deciding factor for buyers comparing this area against other Tigard neighborhoods.",
+      ],
+      closing: [
+        "Given the area's popularity with relocation buyers, it's worth having a dedicated search running rather than a broad Tigard-wide alert.",
+      ],
+    },
+    {
+      hook: "What the Hilltop Setting Actually Means Day to Day",
+      keyword: "living in Bull Mountain Tigard",
+      metaDescription:
+        "What living on Bull Mountain near Tigard actually involves — jurisdiction, commute and hillside upkeep, explained.",
+      variant: "considerations",
+      intro: [
+        "The Bull Mountain area's hilltop setting is a real draw, but it's worth understanding a few practical details before you tour.",
+      ],
+      reasons: [
+        "<strong>Newer construction:</strong> mostly built within the last two decades.",
+        "<strong>Bull Mountain Park:</strong> 9 trails for hiking and mountain biking, maintained by the City of Tigard.",
+      ],
+      considerations: [
+        "<strong>Jurisdiction varies by address:</strong> confirm whether a specific property is inside Tigard city limits or unincorporated Washington County.",
+        "<strong>OR-217 congestion:</strong> a genuine factor at peak commute hours.",
+      ],
+      closing: [
+        "The best next step is usually confirming the exact jurisdiction and any HOA details for a specific property before touring, since both can vary block to block on Bull Mountain.",
+      ],
+    },
+  ],
+  "North Bethany, Bethany": [
+    {
+      hook: "A Planned Community in Northwest Washington County",
+      keyword: "North Bethany OR homes",
+      metaDescription:
+        "Moving to the Bethany, OR area? See what North Bethany is like — planned community, parks, schools and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Bethany area, North Bethany is worth a look — a planned community that's been developing since 2006, in the northwest corner of Washington County.",
+        "Bethany itself is an unincorporated community between Beaverton, Hillsboro and Portland, with two recognized sub-areas: the older, more mixed Central Bethany, and the newer, planned North Bethany.",
+      ],
+      livingIn: [
+        "North Bethany is a genuinely planned community — newer single-family homes with more consistent design than Central Bethany's older mix of townhomes, condos and apartments.",
+      ],
+      whereLocated: [
+        "North Bethany sits in the northwest corner of Washington County, between Beaverton, Hillsboro and Portland, accessible via US-26.",
+      ],
+      homesIn: [
+        "Homes in North Bethany are newer, single-detached construction as part of a planned development that began in 2006 — expect more consistent layouts and finishes than the older, mixed housing stock in Central Bethany.",
+      ],
+      parks: [
+        "The Rock Creek Regional Trail (3.5 miles, ADA-accessible) and the Waterhouse Trail (10 miles, ADA-accessible) both run through the broader Bethany area. Bethany Lake Park, a 42-acre park with trails, picnic areas and a community garden, is also nearby.",
+      ],
+      commute: [
+        "US-26 is the primary route connecting Bethany to Portland and Hillsboro. As with any Portland-metro commute, actual drive times vary significantly by time of day — worth testing your specific route before counting on an estimate.",
+      ],
+      reasons: [
+        "<strong>Planned community:</strong> newer, more consistent construction than Central Bethany's older mix.",
+        "<strong>Extensive trail access:</strong> the Rock Creek Regional Trail and Waterhouse Trail both serve the broader Bethany area.",
+        "<strong>Northwest Washington County location:</strong> between Beaverton, Hillsboro and Portland, with US-26 access.",
+      ],
+      considerations: [
+        "<strong>Newer, still-developing area:</strong> landscaping and some community amenities may still be maturing depending on the specific phase of development.",
+        "<strong>Distance from Vancouver WA:</strong> this is genuinely farther from Jamie's home base than the Washington-side neighborhoods — worth mapping your actual commute if that matters to your daily routine.",
+        "<strong>HOA likely:</strong> planned communities like North Bethany often have HOA structures — worth confirming dues and rules for a specific property.",
+      ],
+      closing: [
+        "If a planned community with real trail access in northwest Washington County is what you're after, North Bethany is worth a look — and worth comparing against Central Bethany if you want a wider range of home styles and ages.",
+      ],
+    },
+    {
+      hook: "A Still-Developing Community Worth Watching",
+      keyword: "North Bethany market update",
+      metaDescription:
+        "A market update on North Bethany, OR — demand for this planned community in Washington County right now this season.",
+      variant: "update",
+      intro: [
+        "North Bethany has been developing steadily since 2006, and that ongoing growth shapes how the market here behaves.",
+      ],
+      marketNotes: [
+        "Buyers relocating from more established parts of the Portland metro often ask about North Bethany specifically for its newer, more consistent construction.",
+        "Because development is ongoing, inventory includes homes from different phases and build years within the same general area — worth comparing specific build years, not just the neighborhood name.",
+        "Trail access via the Rock Creek Regional Trail and Waterhouse Trail continues to be a frequently cited reason buyers choose this area.",
+      ],
+      closing: [
+        "Given how actively this area continues to develop, it's worth checking in on new listings regularly rather than relying on a one-time search.",
+      ],
+    },
+    {
+      hook: "Newer Community, Different Tradeoffs",
+      keyword: "living in North Bethany OR",
+      metaDescription:
+        "What to weigh before buying in North Bethany, OR — HOA structure, commute distance and development stage, explained.",
+      variant: "considerations",
+      intro: [
+        "North Bethany has real advantages as a planned community, but it's worth understanding how it differs from more established Portland-area neighborhoods.",
+      ],
+      reasons: [
+        "<strong>Newer, consistent construction:</strong> more uniform layouts and finishes than older parts of Bethany.",
+        "<strong>Trail access:</strong> the Rock Creek Regional Trail and Waterhouse Trail both serve the area.",
+      ],
+      considerations: [
+        "<strong>Still developing:</strong> landscaping and amenities may vary by phase — worth asking about the specific section of the development.",
+        "<strong>HOA structure likely:</strong> worth confirming dues and rules for any specific property.",
+      ],
+      closing: [
+        "Comparing a few homes across different phases of the development tends to clarify how the community has matured so far.",
+      ],
+    },
+  ],
+  "Orenco Station, Hillsboro": [
+    {
+      hook: "A Transit-Oriented Community Built on Century-Old Roots",
+      keyword: "Orenco Station Hillsboro OR homes",
+      metaDescription:
+        "Moving to Hillsboro, OR? See what Orenco Station is like — walkable design, MAX access, schools and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to Hillsboro, Oregon, Orenco Station is a genuinely distinctive neighborhood worth a look — a New Urbanist, transit-oriented community built starting in 1997 on the site of a company town founded in 1906.",
+        "The name comes from the Oregon Nursery Company, which originally built Orenco as a company town with its own school, police, fire department and post office before residents voted to disincorporate in 1938.",
+      ],
+      livingIn: [
+        "Orenco Station is designed to be walkable — narrower streets, alley-loaded garages and live-work spaces, with architecture deliberately styled to look like an older, established neighborhood even though most of it was built starting in the late 1990s.",
+      ],
+      whereLocated: [
+        "Orenco Station is centered around NE Century Boulevard and Cornell Road in Hillsboro, built on roughly 209 acres of former nursery land.",
+      ],
+      homesIn: [
+        "Housing here is genuinely diverse — apartments, single-family homes, condos and townhouses, all built with a walkable, higher-density format in mind rather than a single repeated layout.",
+      ],
+      parks: [
+        "Central Park anchors the neighborhood just north of the retail core, along with several smaller distributed parks. A seasonal farmers market runs late spring through summer.",
+      ],
+      commute: [
+        "The Orenco MAX Station (TriMet Blue and Red Line, opened 1998) gives residents a genuine transit alternative to driving — a 2002 study found 22% of residents commuted by transit versus 6% regionally. For drivers, US-26 provides the primary route toward Portland, with the usual variability by time of day.",
+      ],
+      reasons: [
+        "<strong>Walkable, transit-oriented design:</strong> genuinely built around the Orenco MAX Station, not just close to it.",
+        "<strong>Housing variety:</strong> apartments, single-family homes, condos and townhouses all within the same walkable community.",
+        "<strong>Real neighborhood core:</strong> Central Park, a seasonal farmers market, and a retail core give this a genuine town-center feel.",
+      ],
+      considerations: [
+        "<strong>Higher density:</strong> narrower streets and alley-loaded garages mean less traditional yard space than a standard suburban lot.",
+        "<strong>Popularity means competition:</strong> this is one of the more sought-after transit-oriented communities in the Portland metro, and that shows in how quickly well-priced listings move.",
+        "<strong>HOA likely:</strong> many of the townhome and condo products here carry HOA dues — worth confirming for a specific property.",
+      ],
+      closing: [
+        "If walkability and a genuine transit alternative to driving matter to you, Orenco Station is worth a close look — it's a meaningfully different model than most other neighborhoods in this rotation.",
+      ],
+    },
+    {
+      hook: "One of the Metro's Most Requested Transit-Oriented Addresses",
+      keyword: "Orenco Station Hillsboro market update",
+      metaDescription:
+        "A market update on Orenco Station in Hillsboro, OR — demand for this transit-oriented community right now this season.",
+      variant: "update",
+      intro: [
+        "Transit-oriented, walkable communities are in real demand across the Portland metro, and Orenco Station is often the first one buyers ask about by name.",
+      ],
+      marketNotes: [
+        "Buyers specifically prioritizing walkability and MAX access tend to treat Orenco Station as a first stop rather than a backup option.",
+        "Townhomes and condos closest to the retail core and MAX station tend to move fastest among the various housing types here.",
+        "Buyers relocating from denser cities outside Oregon often recognize this development style immediately and gravitate toward it.",
+      ],
+      closing: [
+        "Given how consistently in-demand this neighborhood is, it's worth having a dedicated alert running well before you're ready to make an offer.",
+      ],
+    },
+    {
+      hook: "Density Trades Yard Space for Walkability",
+      keyword: "living in Orenco Station Hillsboro",
+      metaDescription:
+        "What to weigh before buying in Orenco Station, Hillsboro — density, HOA structure and walkability, explained clearly.",
+      variant: "considerations",
+      intro: [
+        "Orenco Station's walkable design is the whole point, but it's worth understanding what that trades away before you commit to touring.",
+      ],
+      reasons: [
+        "<strong>Walkability and transit access:</strong> genuinely built around the Orenco MAX Station.",
+        "<strong>Real neighborhood core:</strong> Central Park, a farmers market and a walkable retail district.",
+      ],
+      considerations: [
+        "<strong>Less yard space:</strong> narrower streets and alley-loaded garages mean less traditional outdoor space.",
+        "<strong>HOA dues likely:</strong> common across the townhome and condo product here — confirm for any specific property.",
+      ],
+      closing: [
+        "Walking the neighborhood at different times of day, including a stop at the farmers market if the timing works out, tends to show whether the walkable, denser format actually fits how you want to live.",
+      ],
+    },
+  ],
+  "Mountain Park, Lake Oswego": [
+    {
+      hook: "A Large HOA Community With Private Trails Near Portland",
+      keyword: "Mountain Park Lake Oswego OR homes",
+      metaDescription:
+        "Moving to Lake Oswego, OR? See what Mountain Park is like — HOA trails, homes, schools and current listings today.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to Lake Oswego, Oregon, Mountain Park is worth a look — an established community founded in 1968 with around 8,500 residents, in the northwest part of the city.",
+        "One important clarification upfront: despite Lake Oswego's name, most Mountain Park properties do not carry lake access rights — that's tied to specific easements on certain homes elsewhere in the city, not a general neighborhood amenity here.",
+      ],
+      livingIn: [
+        "Mountain Park is built around one of the largest homeowners associations in the country — nearly every property belongs to the Mountain Park HOA, with automatic membership and monthly dues that fund the community's private amenities.",
+      ],
+      whereLocated: [
+        "Mountain Park sits in northwest Lake Oswego, bordered by Southwest Portland to the north, the Uplands and Holly Orchard neighborhoods to the south, Oak Creek to the west and Forest Highlands to the east — near Highway 43 and I-5, roughly 8 miles from downtown Portland.",
+      ],
+      homesIn: [
+        "Housing in Mountain Park genuinely spans a wide range — entry-level condos and townhomes, mid-range single-level ranch and mid-century modern homes, and premium contemporary estates, all within the same HOA community.",
+      ],
+      parks: [
+        "The Mountain Park HOA maintains more than 8 miles of private walking trails within the community. Nearby, Tryon Creek State Natural Area and the Lake Oswego Recreation & Aquatics Center (LORAC) offer additional outdoor and recreation options.",
+      ],
+      commute: [
+        "Highway 43 and I-5 both serve Lake Oswego, with downtown Portland roughly 8 miles away. As with any Portland-area commute, actual drive time depends heavily on time of day — worth testing your specific route rather than relying on that approximate distance.",
+      ],
+      reasons: [
+        "<strong>Large, established HOA community:</strong> over 8 miles of private trails and shared amenities, funded and maintained by one of the largest HOAs in the country.",
+        "<strong>Housing variety:</strong> a genuine range from entry-level condos to premium contemporary estates.",
+        "<strong>Proximity to Portland:</strong> roughly 8 miles from downtown via Highway 43 and I-5.",
+      ],
+      considerations: [
+        "<strong>No general lake access:</strong> despite the city's name, most Mountain Park properties don't carry Oswego Lake access rights — don't assume this without verifying for a specific property.",
+        "<strong>Mandatory HOA dues:</strong> membership and monthly dues are automatic for nearly every property — a real ongoing cost worth budgeting for.",
+        "<strong>Wide price range:</strong> comparing like-for-like matters more here than in a single uniform subdivision, given the housing variety.",
+      ],
+      closing: [
+        "If a large, amenity-rich HOA community close to Portland is what you're after — and lake access isn't a must-have — Mountain Park is worth a serious look. Just verify HOA dues and any lake-access specifics directly for whatever property you're considering.",
+      ],
+    },
+    {
+      hook: "Steady Interest Across a Genuinely Wide Price Range",
+      keyword: "Mountain Park Lake Oswego market update",
+      metaDescription:
+        "A market update on Mountain Park in Lake Oswego, OR — demand across its wide range of housing types right now.",
+      variant: "update",
+      intro: [
+        "Mountain Park's genuinely wide housing mix means this market moves at more than one pace depending on the segment.",
+      ],
+      marketNotes: [
+        "Buyers drawn to the HOA's private trail system and shared amenities tend to be a steady source of demand regardless of the specific home type.",
+        "Entry-level condos and townhomes here continue to be a common starting point for buyers who want a Lake Oswego address without the premium-estate price tag.",
+        "Buyers specifically hoping for lake access sometimes discover partway through their search that most Mountain Park properties don't carry it — worth clarifying early to avoid a mismatch.",
+      ],
+      closing: [
+        "Given the range of housing types here, it's worth narrowing your search to a specific price tier rather than watching the whole community at once.",
+      ],
+    },
+    {
+      hook: "What the HOA Actually Covers — and What It Doesn't",
+      keyword: "living in Mountain Park Lake Oswego",
+      metaDescription:
+        "What to weigh before buying in Mountain Park, Lake Oswego — HOA dues, lake access and commute, explained clearly.",
+      variant: "considerations",
+      intro: [
+        "Mountain Park's HOA is central to daily life here, and it's worth understanding exactly what it does and doesn't include before you buy.",
+      ],
+      reasons: [
+        "<strong>Private trail system:</strong> over 8 miles maintained by the HOA, a genuine shared amenity.",
+        "<strong>Housing variety:</strong> a real range from entry-level to premium within the same community.",
+      ],
+      considerations: [
+        "<strong>No general lake access:</strong> verify this directly rather than assuming it comes with a Lake Oswego address.",
+        "<strong>Mandatory monthly dues:</strong> a real ongoing cost across nearly every property in the community.",
+      ],
+      closing: [
+        "Asking to see the HOA's current budget and rules directly, alongside touring a couple of homes, tends to answer the practical questions faster than general research can.",
+      ],
+    },
+  ],
+  "Hidden Springs, West Linn": [
+    {
+      hook: "One of West Linn's Eleven Official Neighborhoods, West of the Willamette",
+      keyword: "Hidden Springs West Linn OR homes",
+      metaDescription:
+        "Moving to West Linn, OR? See what Hidden Springs is like — hillside homes, parks, schools and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to West Linn, Oregon, Hidden Springs is one of the city's eleven official neighborhood associations worth a look — a hilly but walkable area west of Willamette Drive.",
+        "West Linn itself sits about 15 miles south of Portland along the Willamette River.",
+      ],
+      livingIn: [
+        "Hidden Springs has a genuine mix of architectural styles — federal, colonial, salt box and traditional homes — across roughly 1,236 homes and about 3,179 residents, making it one of West Linn's smaller neighborhoods.",
+      ],
+      whereLocated: [
+        "Hidden Springs sits west of Willamette Drive, nestled into the West Linn hills, bordering Marylhurst to the north, Robinwood and Bolton to the east, and Rosemont Summit to the south.",
+      ],
+      homesIn: [
+        "Housing here spans a genuine mix of styles and eras rather than one uniform product — mature flowering trees and manicured sidewalks give the neighborhood a settled, established feel despite the hilly terrain.",
+      ],
+      parks: [
+        "Three named parks serve the neighborhood directly: Benski Park, Palomino Park and Sunburst Park — real, local amenities rather than a single shared destination park.",
+      ],
+      commute: [
+        "West Linn sits along Highway 43 and I-205, about 15 miles from downtown Portland. Willamette Falls, the largest waterfall by volume in the Pacific Northwest, sits on the river between Oregon City and West Linn. As with any Portland-area commute, actual drive time varies by time of day — worth testing your specific route.",
+      ],
+      reasons: [
+        "<strong>Official, established neighborhood:</strong> one of West Linn's eleven recognized neighborhood associations, with real local infrastructure.",
+        "<strong>Three local parks:</strong> Benski, Palomino and Sunburst all serve the immediate area.",
+        "<strong>Genuinely walkable despite the hills:</strong> mature landscaping and sidewalks throughout.",
+      ],
+      considerations: [
+        "<strong>Hilly terrain:</strong> the neighborhood's setting means some homes and streets have real elevation change — worth considering if that matters to you.",
+        "<strong>One of the smaller neighborhoods:</strong> with about 1,236 homes, inventory can be more limited than in larger West Linn neighborhoods.",
+        "<strong>Architectural variety:</strong> the mix of styles means comparing specific homes matters more than assuming uniformity.",
+      ],
+      closing: [
+        "If an established, walkable West Linn neighborhood with real local parks is what you're after, Hidden Springs is worth a look — and worth comparing against West Linn's other ten neighborhood associations for the right fit.",
+      ],
+    },
+    {
+      hook: "A Smaller Neighborhood Where Inventory Moves Quickly",
+      keyword: "Hidden Springs West Linn market update",
+      metaDescription:
+        "A market update on Hidden Springs in West Linn, OR — demand in one of the city's smaller neighborhoods right now.",
+      variant: "update",
+      intro: [
+        "Hidden Springs is one of West Linn's smaller neighborhoods by home count, and that scarcity shapes how quickly things move here.",
+      ],
+      marketNotes: [
+        "With around 1,236 homes total, well-priced listings in Hidden Springs don't stay on the market long relative to some of West Linn's larger neighborhoods.",
+        "Buyers who value proximity to Benski, Palomino and Sunburst parks tend to treat this as a specific, deliberate choice rather than a general West Linn search.",
+        "Architectural variety here means buyers comparing homes should expect real differences in style and era from one listing to the next.",
+      ],
+      closing: [
+        "Given the neighborhood's smaller size, it's worth setting up a dedicated Hidden Springs alert rather than relying on a broader West Linn search.",
+      ],
+    },
+    {
+      hook: "Hills, History and What They Mean for a Tour",
+      keyword: "living in Hidden Springs West Linn",
+      metaDescription:
+        "What to weigh before buying in Hidden Springs, West Linn — hillside terrain, home variety and commute, explained.",
+      variant: "considerations",
+      intro: [
+        "Hidden Springs has real character, but its hilly setting and architectural variety are both worth understanding before you tour.",
+      ],
+      reasons: [
+        "<strong>Three local parks:</strong> Benski, Palomino and Sunburst all serve the immediate neighborhood.",
+        "<strong>Established, walkable streets:</strong> mature trees and sidewalks despite the hilly terrain.",
+      ],
+      considerations: [
+        "<strong>Hilly terrain:</strong> real elevation change across the neighborhood — worth understanding for daily walkability.",
+        "<strong>Smaller inventory:</strong> around 1,236 homes total means fewer listings at any given time than in larger neighborhoods.",
+      ],
+      closing: [
+        "Walking a few blocks in person tends to show how the hillside terrain actually affects daily life here more clearly than a map ever could.",
+      ],
+    },
+  ],
+  "Canemah, Oregon City": [
+    {
+      hook: "A National Register Historic District Above Willamette Falls",
+      keyword: "Canemah Oregon City OR homes",
+      metaDescription:
+        "Moving to Oregon City, OR? See what Canemah is like — historic homes, river views, schools and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to Oregon City, Oregon, Canemah is one of the most historically significant neighborhoods worth a look — a National Register of Historic Places district and one of the oldest mapped neighborhoods west of the Mississippi.",
+        "Oregon City sits along the Willamette River, near Willamette Falls, about 26 miles upriver from where the Willamette meets the Columbia.",
+      ],
+      livingIn: [
+        "Canemah is genuinely historic — the median build year is 1937, with some homes dating back to the 1800s, and exterior-preservation rules apply as part of the district's historic designation.",
+      ],
+      whereLocated: [
+        "Canemah sits along the Willamette River in Oregon City, near Willamette Falls. OR-99E connects Oregon City through Gladstone and Milwaukie into Portland, and I-205 intersects OR-99E about a mile south of OR-213.",
+      ],
+      homesIn: [
+        "Homes in Canemah are predominantly bungalows, cottages and Craftsman-style construction, with a median build year of 1937 and some homes dating to the 1800s — genuine historic character, not a modern reproduction.",
+      ],
+      parks: [
+        "Canemah Neighborhood Children's Park and the adjacent Canemah Bluff Nature Park both serve the area — the bluff park offers trails, wildlife viewing and overlooks of the Willamette River.",
+      ],
+      commute: [
+        "OR-99E is the primary route connecting Oregon City through Gladstone and Milwaukie toward Portland, with I-205 also accessible nearby. As with any Portland-metro commute, actual drive time depends on time of day — worth testing your specific route.",
+      ],
+      reasons: [
+        "<strong>Genuine historic significance:</strong> a National Register district, one of the oldest mapped neighborhoods west of the Mississippi.",
+        "<strong>River bluff setting:</strong> Canemah Bluff Nature Park offers trails and real Willamette River overlooks.",
+        "<strong>Established architecture:</strong> bungalows, cottages and Craftsman homes with a median build year of 1937.",
+      ],
+      considerations: [
+        "<strong>Historic-district rules:</strong> exterior preservation guidelines apply — worth understanding before planning any renovation.",
+        "<strong>Older home systems:</strong> given the age of the housing stock, wiring, plumbing and mechanical systems may need updating.",
+        "<strong>Willamette Falls Locks currently under repair:</strong> expected to reopen in 2026 — a nearby landmark worth knowing the status of if it factors into your interest in the area.",
+      ],
+      closing: [
+        "If genuine historic character with real river-bluff views is what you're after, Canemah is worth a serious look — and worth pairing with a visit to Willamette Falls itself to get a feel for the setting.",
+      ],
+    },
+    {
+      hook: "A Historic District That Doesn't Turn Over Often",
+      keyword: "Canemah Oregon City market update",
+      metaDescription:
+        "A market update on Canemah in Oregon City, OR — demand for this historic riverside district right now this season.",
+      variant: "update",
+      intro: [
+        "Genuine 19th- and early-20th-century housing stock is rare in the Portland metro, and Canemah's historic designation keeps it in steady, specific demand.",
+      ],
+      marketNotes: [
+        "Buyers specifically searching for pre-1940s architecture with river-bluff proximity tend to treat Canemah as a distinct, deliberate search rather than a general Oregon City look.",
+        "Homes that have preserved historic exterior details while updating interior systems tend to draw the most competition.",
+        "Canemah Bluff Nature Park's river overlooks continue to be a frequently cited reason buyers choose this specific district.",
+      ],
+      closing: [
+        "Given how limited genuine historic riverside inventory is in this part of Oregon City, it's worth having a dedicated alert running well ahead of time.",
+      ],
+    },
+    {
+      hook: "Owning History Above the Falls",
+      keyword: "living in Canemah Oregon City",
+      metaDescription:
+        "What owning a historic home in Canemah, Oregon City actually involves — preservation rules, upkeep and commute.",
+      variant: "considerations",
+      intro: [
+        "Canemah's history is the whole draw, but a genuine historic district comes with genuine responsibilities worth understanding first.",
+      ],
+      reasons: [
+        "<strong>Real historic character:</strong> median build year 1937, some homes dating to the 1800s.",
+        "<strong>River bluff setting:</strong> Canemah Bluff Nature Park offers trails and Willamette River overlooks.",
+      ],
+      considerations: [
+        "<strong>Preservation guidelines:</strong> exterior changes may require additional review as part of the historic district designation.",
+        "<strong>Older systems:</strong> wiring, plumbing and mechanical systems may need updating depending on the property's history.",
+      ],
+      closing: [
+        "Touring with an inspector experienced in historic Oregon City homes tends to surface the real condition questions faster than a listing description can.",
+      ],
+    },
+  ],
+  "Historic Milwaukie, Milwaukie": [
+    {
+      hook: "A Walkable Downtown Core Along the MAX Orange Line",
+      keyword: "Historic Milwaukie OR homes",
+      metaDescription:
+        "Moving to Milwaukie, OR? See what Historic Milwaukie is like — downtown character, MAX access, schools and listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to Milwaukie, Oregon, Historic Milwaukie is the city's downtown/core neighborhood worth a look — bungalow-era character with a genuinely active Main Street.",
+        "Milwaukie sits along OR-99E, on the way from Oregon City into Portland.",
+      ],
+      livingIn: [
+        "Historic Milwaukie has real bungalow character — 1920s and 1930s homes with original details, tree-lined sidewalks and small grassy lots, mixed with some ranch-style, cottage-style and contemporary homes.",
+      ],
+      whereLocated: [
+        "Historic Milwaukie sits along OR-99E, with downtown as the neighborhood's social and commercial center.",
+      ],
+      homesIn: [
+        "Housing here is predominantly 1920s–1930s bungalows with original character, tree-lined sidewalks and small grassy lots, alongside some ranch-style, cottage-style, contemporary and split-level homes mixed in — a genuine mix of eras rather than one uniform product.",
+      ],
+      parks: [
+        "Downtown Milwaukie's Main Street is the real neighborhood anchor — home to what's widely cited as the longest-running Sunday farmers market in the Portland metro, with 80+ vendors, plus the old city hall building and a growing restaurant and coffee scene.",
+      ],
+      commute: [
+        "The TriMet MAX Orange Line runs through downtown Milwaukie directly to downtown Portland and the Pearl District, giving residents a genuine transit alternative to driving. OR-99E provides the primary driving route, with the usual time-of-day variability.",
+      ],
+      reasons: [
+        "<strong>Genuine downtown character:</strong> a real Main Street with an active farmers market and growing restaurant scene.",
+        "<strong>MAX Orange Line access:</strong> a direct transit connection to downtown Portland and the Pearl District.",
+        "<strong>Bungalow-era architecture:</strong> 1920s–1930s homes with tree-lined streets and real character.",
+      ],
+      considerations: [
+        "<strong>Older home systems:</strong> given the age of much of the housing stock, wiring and mechanical systems may need updating.",
+        "<strong>Small lots:</strong> bungalow-era construction typically means less outdoor space than newer suburban subdivisions.",
+        "<strong>Mixed architecture:</strong> comparing specific homes matters more here than assuming uniformity across the neighborhood.",
+      ],
+      closing: [
+        "If genuine downtown character with a real transit alternative to driving is what you're after, Historic Milwaukie is worth a look — the Sunday farmers market alone is worth experiencing before you decide.",
+      ],
+    },
+    {
+      hook: "Downtown Character Keeps This Neighborhood in Demand",
+      keyword: "Historic Milwaukie market update",
+      metaDescription:
+        "A market update on Historic Milwaukie, OR — demand for this walkable downtown neighborhood right now this season.",
+      variant: "update",
+      intro: [
+        "Genuine downtown character with MAX access is a specific combination, and Historic Milwaukie continues to deliver it for buyers who want both.",
+      ],
+      marketNotes: [
+        "Buyers who work in downtown Portland but want a walkable, small-town feel often treat Historic Milwaukie as a serious alternative to denser Portland neighborhoods.",
+        "Homes closest to Main Street and the MAX Orange Line station tend to draw more competition than those further from the downtown core.",
+        "The neighborhood's Sunday farmers market continues to be a frequently cited reason buyers choose this specific area.",
+      ],
+      closing: [
+        "Given the neighborhood's popularity with commuter-minded buyers, it's worth having a dedicated search running rather than a broad Milwaukie-wide alert.",
+      ],
+    },
+    {
+      hook: "Character Homes Need a Closer Look",
+      keyword: "living in Historic Milwaukie",
+      metaDescription:
+        "What to weigh before buying in Historic Milwaukie, OR — home age, lot size and transit access, explained clearly.",
+      variant: "considerations",
+      intro: [
+        "Historic Milwaukie's bungalow character is a real draw, but the age of the housing stock is worth a closer look before you make an offer.",
+      ],
+      reasons: [
+        "<strong>Genuine downtown access:</strong> Main Street, a real farmers market and MAX Orange Line service.",
+        "<strong>Bungalow-era character:</strong> 1920s–1930s homes with tree-lined streets.",
+      ],
+      considerations: [
+        "<strong>Older systems:</strong> wiring and mechanical systems may need updating depending on the home's age.",
+        "<strong>Small lots:</strong> less outdoor space than newer suburban construction.",
+      ],
+      closing: [
+        "A weekday walk through downtown, paired with a Sunday visit during the farmers market, tends to show both sides of what living here actually feels like.",
+      ],
+    },
+  ],
+  "Rock Creek, Happy Valley": [
+    {
+      hook: "A Practical, Established Corner of a Fast-Growing Suburb",
+      keyword: "Rock Creek Happy Valley OR homes",
+      metaDescription:
+        "Moving to Happy Valley, OR? See what Rock Creek is like — homes, nature parks, schools and current listings today.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to Happy Valley, Oregon, Rock Creek is one of the city's practical, established residential areas worth a look — alongside neighboring Sunnyside, it sits at a lower elevation than some of Happy Valley's newer hillside developments.",
+        "Happy Valley sits about 13 miles southeast of Portland in Clackamas County, and is known as one of the Portland metro's fastest-growing, heavily master-planned suburbs.",
+      ],
+      livingIn: [
+        "Rock Creek has a genuinely practical character — classic multi-level homes, mature trees and convenient shopping plazas, often described as balancing price, school access and commute better than some of Happy Valley's premium hillside areas.",
+      ],
+      whereLocated: [
+        "Rock Creek sits within easy reach of Highway 212 and I-205 in Happy Valley, about 13 miles southeast of downtown Portland.",
+      ],
+      homesIn: [
+        "Housing in Rock Creek is predominantly classic multi-level construction with mature trees, a step apart from the newer master-planned developments elsewhere in Happy Valley — expect more established landscaping and a more settled feel.",
+      ],
+      parks: [
+        "Mount Talbert Nature Park (trails, wildlife, scenic viewpoints) and Scouters Mountain Nature Park (a popular trail system for after-school and weekend hikes) are both nearby outdoor destinations.",
+      ],
+      commute: [
+        "Highway 212 and I-205 both serve the Rock Creek area, with downtown Portland roughly 13 miles away. As with any Portland-metro commute, actual drive time depends heavily on time of day — worth testing your specific route before counting on that distance.",
+      ],
+      reasons: [
+        "<strong>Practical, established setting:</strong> mature trees and classic multi-level homes rather than a newer, still-developing subdivision.",
+        "<strong>Nature park access:</strong> Mount Talbert and Scouters Mountain both offer real trail systems nearby.",
+        "<strong>Convenient shopping:</strong> established plazas nearby, a genuine practical advantage over some newer, more remote developments.",
+      ],
+      considerations: [
+        "<strong>Not the newest construction:</strong> buyers specifically wanting brand-new finishes may prefer one of Happy Valley's newer master-planned areas.",
+        "<strong>North Clackamas School District serves a large area:</strong> over 40 square miles — worth confirming the specific school assignment for any address rather than assuming.",
+        "<strong>Elevation is lower than some Happy Valley areas:</strong> if hillside views specifically matter to you, other parts of the city may fit better.",
+      ],
+      closing: [
+        "If a practical, established Happy Valley address with real nature-park access is what you're after, Rock Creek is worth a look — and worth comparing against the city's newer, more elevated developments depending on what matters most to you.",
+      ],
+    },
+    {
+      hook: "The Practical Choice in a Fast-Growing City",
+      keyword: "Rock Creek Happy Valley market update",
+      metaDescription:
+        "A market update on Rock Creek in Happy Valley, OR — demand for this established, practical neighborhood right now.",
+      variant: "update",
+      intro: [
+        "Happy Valley keeps growing fast, and Rock Creek's practical, established character continues to draw a specific kind of buyer.",
+      ],
+      marketNotes: [
+        "Buyers balancing price, school access and commute often land on Rock Creek after comparing it against Happy Valley's newer, pricier hillside developments.",
+        "Homes near Mount Talbert or Scouters Mountain nature parks tend to draw more attention than those further from trail access.",
+        "Because North Clackamas School District covers such a large area, buyers should expect real variation in specific school assignments even within Rock Creek — worth confirming per address.",
+      ],
+      closing: [
+        "Given how quickly Happy Valley continues to grow overall, it's worth setting up a dedicated Rock Creek search rather than a broad citywide alert.",
+      ],
+    },
+    {
+      hook: "Practical Doesn't Mean Without Tradeoffs",
+      keyword: "living in Rock Creek Happy Valley",
+      metaDescription:
+        "What to weigh before buying in Rock Creek, Happy Valley — home age, elevation and school district, explained clearly.",
+      variant: "considerations",
+      intro: [
+        "Rock Creek's practical reputation is well-earned, but it's worth understanding how it compares to Happy Valley's newer developments before you tour.",
+      ],
+      reasons: [
+        "<strong>Established, practical setting:</strong> mature trees and classic multi-level homes.",
+        "<strong>Nature park access:</strong> Mount Talbert and Scouters Mountain both nearby.",
+      ],
+      considerations: [
+        "<strong>Not new construction:</strong> buyers wanting the newest finishes may prefer other Happy Valley areas.",
+        "<strong>Lower elevation than some Happy Valley neighborhoods:</strong> worth comparing if hillside views are a priority.",
+      ],
+      closing: [
+        "Comparing a Rock Creek home directly against a newer Happy Valley listing, back to back, tends to clarify which tradeoffs actually matter to you.",
+      ],
+    },
+  ],
 };
 
 // One-time repair map: the 14 "update"/"considerations" posts across the original 7
@@ -1902,6 +2758,16 @@ const AREA_PHOTOS: Record<string, (keyof typeof PHOTOS)[]> = {
   "Fisher's Landing, Vancouver": ["modernLivingRoom", "craftsmanPalm", "keychain"],
   "Downtown Vancouver, Vancouver": ["loftDog", "minimalistWhite", "whiteVillaPool"],
   "Salmon Creek, Vancouver": ["modernTree", "cozyLivingRoom", "minimalistWhite"],
+  "Irvington, Portland": ["craftsmanPalm", "stuccoTraditional", "cozyLivingRoom"],
+  "Sexton Mountain, Beaverton": ["modernWoodAccent", "modernTree", "minimalistWhite"],
+  "Bull Mountain, Tigard": ["modernLivingRoom", "whiteVillaPool", "modernWoodAccent"],
+  "North Bethany, Bethany": ["modernWoodAccent", "stuccoTraditional", "modernLivingRoom"],
+  "Orenco Station, Hillsboro": ["loftDog", "modernLivingRoom", "keychain"],
+  "Mountain Park, Lake Oswego": ["whiteVillaPool", "minimalistWhite", "cozyLivingRoom"],
+  "Hidden Springs, West Linn": ["cabinDusk", "farmhouse", "cozyLivingRoom"],
+  "Canemah, Oregon City": ["craftsmanPalm", "farmhouse", "stuccoTraditional"],
+  "Historic Milwaukie, Milwaukie": ["craftsmanPalm", "cozyLivingRoom", "farmhouse"],
+  "Rock Creek, Happy Valley": ["modernLivingRoom", "farmhouse", "modernTree"],
 };
 
 function titleIndexForPost(post: Post): number {
@@ -1928,6 +2794,7 @@ function articleParagraphs(post: Post): string[] {
 
   const neighborhood = post.area.split(",")[0].trim();
   const city = post.area.split(",")[1].trim();
+  const stateAbbr = AREA_STATE[post.area] ?? "WA";
   const cityUrl = CITY_URLS[city];
   const nUrl = NEIGHBORHOOD_URLS[post.area] ?? null;
   const district = SCHOOL_DISTRICTS[post.area];
@@ -1935,8 +2802,8 @@ function articleParagraphs(post: Post): string[] {
   if (seed.variant === "guide") {
     return [
       ...seed.intro,
-      ...exploreHomesBlock(neighborhood, city, nUrl, cityUrl),
-      h2(`What Is It Like Living in ${neighborhood} in ${city}, WA?`),
+      ...exploreHomesBlock(neighborhood, city, stateAbbr, nUrl, cityUrl),
+      h2(`What Is It Like Living in ${neighborhood} in ${city}, ${stateAbbr}?`),
       ...(seed.livingIn ?? []),
       h2(`Where Is ${neighborhood} Located?`),
       ...(seed.whereLocated ?? []),
@@ -1953,10 +2820,10 @@ function articleParagraphs(post: Post): string[] {
       ...(seed.reasons ?? []),
       h3("Things to Consider"),
       ...(seed.considerations ?? []),
-      h2(`Should You Consider ${neighborhood} if You're Moving to ${city}, WA?`),
+      h2(`Should You Consider ${neighborhood} if You're Moving to ${city}, ${stateAbbr}?`),
       ...seed.closing,
-      ...seeHomesBlock(neighborhood, city, nUrl, cityUrl),
-      ...youtubeBlock(city),
+      ...seeHomesBlock(neighborhood, city, stateAbbr, nUrl, cityUrl),
+      ...youtubeBlock(city, stateAbbr),
       ...workWithJamieBlock(),
     ];
   }
@@ -1964,19 +2831,19 @@ function articleParagraphs(post: Post): string[] {
   if (seed.variant === "update") {
     return [
       ...seed.intro,
-      ...exploreHomesBlock(neighborhood, city, nUrl, cityUrl),
+      ...exploreHomesBlock(neighborhood, city, stateAbbr, nUrl, cityUrl),
       h2(`${neighborhood} Market Notes`),
       ...(seed.marketNotes ?? []),
       ...seed.closing,
-      ...seeHomesBlock(neighborhood, city, nUrl, cityUrl),
-      ...youtubeBlock(city),
+      ...seeHomesBlock(neighborhood, city, stateAbbr, nUrl, cityUrl),
+      ...youtubeBlock(city, stateAbbr),
       ...workWithJamieBlock(),
     ];
   }
 
   return [
     ...seed.intro,
-    ...exploreHomesBlock(neighborhood, city, nUrl, cityUrl),
+    ...exploreHomesBlock(neighborhood, city, stateAbbr, nUrl, cityUrl),
     h2(`Pros & Considerations of Living in ${neighborhood}`),
     h3("Reasons Buyers May Consider"),
     ...(seed.reasons ?? []),
@@ -1984,8 +2851,8 @@ function articleParagraphs(post: Post): string[] {
     ...(seed.considerations ?? []),
     ...schoolsBlock(neighborhood, district),
     ...seed.closing,
-    ...seeHomesBlock(neighborhood, city, nUrl, cityUrl),
-    ...youtubeBlock(city),
+    ...seeHomesBlock(neighborhood, city, stateAbbr, nUrl, cityUrl),
+    ...youtubeBlock(city, stateAbbr),
     ...workWithJamieBlock(),
   ];
 }
