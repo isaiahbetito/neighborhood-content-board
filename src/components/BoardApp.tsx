@@ -69,33 +69,35 @@ const TITLES: Record<string, PostSeed[]> = {
       title: "Why Buyers Keep Circling Back to Holly Ridge in Camas",
       keyword: "Holly Ridge Camas homes for sale",
       metaDescription:
-        "Holly Ridge keeps pulling Camas buyers back — Prune Hill greenspace, Camas schools, and prices from the upper $400s to $700K. See why it works.",
+        "A look at Holly Ridge, Camas — home prices, the Prune Hill greenspace, and what buyers should know about this Camas Meadows neighborhood.",
       paragraphs: [
-        "Holly Ridge sits in the Camas Meadows corridor between Prune Hill and Lacamas Lake, and it's become one of those neighborhoods buyers mention by name before they've even toured a house — usually because a friend already lives there, or because they drove past it on the way to Grass Valley Park and couldn't stop thinking about it.",
-        "What makes it work is the range: efficient three-bedroom townhomes start in the upper $400s, and larger single-family homes with daylight basements and bonus rooms run up toward $700K — so buyers at fairly different budgets end up on the same streets, backed by the same permanent Prune Hill greenspace that keeps the rear yards from ever feeling boxed in.",
-        "Add in Camas School District access, Skyridge Middle and Camas High in the feeder pattern, and a 20-to-25-minute run into Portland via SR-14, and it's easy to see why homes here don't sit long once they're priced right.",
+        "Holly Ridge sits in the Camas Meadows area, between Prune Hill and Lacamas Lake. It's a name that comes up a lot when I talk with buyers about Camas. Most have either driven through it already or heard about it from someone who lives there.",
+        "The homes here cover a wide range. Three-bedroom townhomes start in the upper $400s. Larger single-family homes with daylight basements and bonus rooms run up toward $700K. That range means different budgets end up on the same streets.",
+        "Many homes back up to permanent Prune Hill greenspace, which gives the rear yards more privacy than you'll find in some newer subdivisions. The neighborhood is inside the Camas School District, with Skyridge Middle and Camas High in the normal feeder pattern — boundaries can change, so it's worth confirming directly with the district.",
+        "SR-14 gets you into Portland in about 20 to 25 minutes outside of peak traffic, though it's worth checking your own commute during the hours you'd actually be driving. If you want to see what's currently listed here, I'm happy to send it over.",
       ],
     },
     {
       title: "Holly Ridge Market Pulse: What's Moving Right Now",
       keyword: "Holly Ridge Camas market update",
       metaDescription:
-        "A look at what's moving in Holly Ridge, Camas right now: tight inventory, fast-selling townhomes, and what buyers should have ready to compete.",
+        "What's moving in the Holly Ridge, Camas real estate market right now, including current inventory and pricing trends.",
       paragraphs: [
-        "Inventory in Holly Ridge has stayed tight through the second half of the year, and townhome-style listings on the accessible end of the price range — upper $400s to low $500s — are the first to go, often inside two weeks.",
-        "Larger single-family homes backed to Prune Hill greenspace are commanding the strongest interest, and buyers relocating from out of state keep asking the same question first: how close is it to the lake. The answer — walking distance — is usually what closes the deal.",
-        "If you're watching this corridor, the move is to have financing ready before a listing hits, not after. Reach out and I'll flag anything in Holly Ridge before it's public, or catch the latest market breakdown on the YouTube channel.",
+        "Inventory in Holly Ridge has stayed tight through the second half of the year. Townhome-style listings in the upper $400s to low $500s tend to go first, often within two weeks of hitting the market.",
+        "Larger single-family homes backed to Prune Hill greenspace have been getting the most attention lately. Buyers relocating from out of state often ask the same question first: how close is it to the lake? Depending on the street, it's usually walking distance.",
+        "If you're watching this area, it helps to have financing in place before a listing hits rather than after. I'm glad to flag new Holly Ridge listings before they go public, or walk you through the latest numbers on a quick call. Just reach out and let me know what you're looking for.",
       ],
     },
     {
-      title: "Is Holly Ridge the Right Camas Neighborhood for You?",
+      title: "What to Know Before You Buy in Holly Ridge",
       keyword: "living in Holly Ridge Camas",
       metaDescription:
-        "Is Holly Ridge, Camas the right fit? See who thrives here — first-time buyers, growing families, and lake-loving relocators alike.",
+        "What to know before buying in Holly Ridge, Camas — home styles, lot sizes, and the tradeoffs worth thinking through first.",
       paragraphs: [
-        "Holly Ridge tends to attract three kinds of buyers: first-timers who want a genuine foothold in Camas without stretching past the upper $400s, growing families who need the extra bedroom and the bonus room the larger floor plans offer, and relocators from denser markets who want to walk to a lake on a Saturday without giving up good schools.",
-        "What it's not is a fit for buyers chasing brand-new construction or a maintenance-free lock-and-leave lifestyle — this is a late-90s-to-early-2000s neighborhood with mature landscaping and real yards, which is exactly the draw for the people it's right for.",
-        "If that sounds like you, the best next step is seeing two or three homes in person — the Prune Hill backing reads very differently on a listing photo than it does standing on the back deck.",
+        "Holly Ridge is an established neighborhood, built mostly between the late 1990s and early 2000s. That means mature trees and settled landscaping, but it can also mean some homes need updating — kitchens and bathrooms in particular are worth a close look on a tour.",
+        "Lot sizes vary by street, so if outdoor space matters to you, it's worth comparing a few addresses rather than assuming they're all similar. Homes backed to Prune Hill greenspace tend to have more privacy than interior lots.",
+        "New construction isn't really part of the picture here — most of what's available is resale. If a fully updated, move-in-ready kitchen matters more than location, that's a tradeoff worth thinking through before you start touring.",
+        "The best next step is usually seeing two or three homes in person. Listing photos don't always capture how the greenspace backing feels from the back deck, and that's often the detail that changes people's minds.",
       ],
     },
   ],
@@ -104,72 +106,74 @@ const TITLES: Record<string, PostSeed[]> = {
       title: "Lakeshore: Vancouver's Answer to Lake Living",
       keyword: "Lakeshore Vancouver WA homes",
       metaDescription:
-        "Lakeshore, Vancouver WA delivers lake-adjacent living near Vancouver Lake Regional Park, with approachable pricing and easy I-5 access.",
+        "A look at Lakeshore, Vancouver WA — homes near Vancouver Lake, typical lot sizes, and the commute in both directions, explained clearly.",
       paragraphs: [
-        "Lakeshore sits in northwest Vancouver near Vancouver Lake, and the appeal is exactly what the name suggests — proximity to the water, to Vancouver Lake Regional Park, and to the kind of paved trail system that turns an evening walk into an actual destination rather than a lap around the block.",
-        "Homes here skew a bit older than the newer builds further east in Clark County, which keeps the price point more approachable, and lots tend to be generous enough for mature trees and real separation from the neighbors.",
-        "It's a straightforward I-5 commute in either direction — north toward Salmon Creek, south into downtown Vancouver and across into Portland — which keeps it on the list for buyers who want the lake lifestyle without sacrificing commute flexibility.",
+        "Lakeshore sits in northwest Vancouver, close to Vancouver Lake. The appeal is straightforward: easy access to Vancouver Lake Regional Park and a paved trail system that turns an evening walk into an actual destination instead of a lap around the block.",
+        "Homes here tend to be a bit older than the newer construction further east in Clark County. That keeps prices more approachable, and lots are generally larger, with more mature trees than you'll find in tighter subdivisions.",
+        "The commute works in both directions on I-5 — north toward Salmon Creek, or south into downtown Vancouver and across into Portland. Actual drive times depend a lot on when you're on the road, so it's worth checking during your normal commute hours.",
+        "If lake access and a bit more space are on your list, Lakeshore is worth a look. I can pull together what's currently available if you want a starting point.",
       ],
     },
     {
       title: "Lakeshore Market Update: Home Prices & Inventory",
       keyword: "Lakeshore Vancouver home prices",
       metaDescription:
-        "Home prices and inventory near Vancouver Lake are moving fast. Here's the current Lakeshore, Vancouver market pulse for buyers.",
+        "Current home prices and inventory near Vancouver Lake, plus what's driving demand in the Lakeshore, Vancouver market.",
       paragraphs: [
-        "Inventory near Vancouver Lake has been unusually tight this season — the combination of park access and established lot sizes doesn't come up for sale often, and when it does, well-priced listings are going under contract fast.",
-        "Buyers specifically searching for water-adjacent living in Clark County keep landing on Lakeshore because the alternatives — waterfront property directly on the Columbia — run considerably higher, and this delivers a similar lifestyle at a more reasonable number.",
-        "If Lakeshore is on your radar, I'd rather get you set up on alerts now than have you find out a listing already went pending. Reach out and I'll get that started.",
-        "Homes here tend to move fastest in spring and early summer, when park access matters most to buyers touring on weekends — but well-priced listings in the off-season still go quickly given how little inventory exists near the water at all.",
+        "Inventory near Vancouver Lake has been tight this season. Homes with park access and larger lots don't come up for sale often, and when they do, well-priced listings tend to go under contract quickly.",
+        "Buyers looking specifically for water-adjacent living in Clark County often land on Lakeshore, since waterfront property directly on the Columbia typically costs significantly more. It's a way to get a similar lifestyle at a more reasonable price.",
+        "Homes here tend to move fastest in spring and early summer, when park access matters most to people touring on weekends. Off-season listings still sell, usually with a bit less competition.",
+        "If Lakeshore is on your list, it's worth setting up an alert now rather than waiting until something's already pending. I'm happy to get that started.",
       ],
     },
     {
-      title: "Is Lakeshore the Right Fit for Your Next Move?",
+      title: "Lakeshore: What to Weigh Before You Buy",
       keyword: "living in Lakeshore Vancouver WA",
       metaDescription:
-        "Is Lakeshore, Vancouver the right move for you? A look at who this lake-adjacent, trail-close neighborhood actually fits best.",
+        "What to weigh before buying in Lakeshore, Vancouver — commute distance, home age, lot size, and nearby school access, explained.",
       paragraphs: [
-        "Lakeshore tends to draw outdoor-oriented buyers — people who actually use a park, not just live near one — along with move-up buyers who want more lot than the newer east-county subdivisions typically offer at a comparable price.",
-        "It's a slightly longer trip into downtown Vancouver than Columbia Way or Harney Heights, which is the main trade-off buyers weigh against the park and lake access.",
-        "If your weekends already revolve around trails and water, Lakeshore will feel like it was built for you — because for a lot of the people who live there now, it effectively was.",
-        "If you're not sure yet, the easiest way to find out is a weekend visit — walk the trail, check the commute at rush hour, and see how the neighborhood actually feels before comparing it against anywhere else on your list.",
+        "Lakeshore is a longer drive into downtown Vancouver than some of the more central neighborhoods, like Columbia Way or Harney Heights. If a short commute matters more than lake access, that's worth factoring in early.",
+        "Because many homes here were built before the newer east-county developments, some may need updates to kitchens, roofs, or mechanical systems. A home inspection is worth taking seriously, especially on older properties.",
+        "Lot sizes vary quite a bit street to street. If a larger yard or more separation from neighbors is important, it's worth comparing specific addresses rather than assuming the whole neighborhood is the same.",
+        "Vancouver Public Schools serve this area, though boundaries can change, so it's worth confirming directly with the district if schools are part of your decision. From there, the best step is usually touring a few homes to see how the tradeoffs feel in person.",
       ],
     },
   ],
   "Pleasant Valley, Vancouver": [
     {
-      title: "Pleasant Valley: Eastern Clark County's Semi-Rural Retreat",
+      title: "Pleasant Valley, Vancouver: Larger Lots East of the City",
       keyword: "Pleasant Valley Vancouver WA homes",
       metaDescription:
-        "Pleasant Valley, Vancouver WA blends farmland, larger lots, and new construction 20 minutes from downtown — a semi-rural retreat with real space.",
+        "A look at Pleasant Valley, Vancouver WA — larger lots, semi-rural character, and the drive into downtown Vancouver.",
       paragraphs: [
-        "Pleasant Valley sits about 20 minutes northeast of downtown Vancouver, off the I-5/I-205 corridor, and it's one of the few remaining pockets of Clark County where farmland, larger-lot homes, and newer construction genuinely coexist rather than one slowly replacing the other.",
-        "Lot sizes here run well above what buyers find in Vancouver's inner subdivisions — space for a shop, a garden, or simply more distance from the neighbors — while still landing within a reasonable drive of Washington State University Vancouver and the retail corridor around Fisher's Landing.",
-        "It's the right answer for buyers who've decided a standard suburban lot isn't going to cut it, but who still want to stay inside commuting range of Vancouver and Portland rather than moving further out.",
+        "Pleasant Valley sits about 20 minutes northeast of downtown Vancouver, off the I-5 and I-205 corridor. It's one of the few pockets left in Clark County where farmland, larger-lot homes, and newer construction still sit side by side.",
+        "Lot sizes here run well above what you'll find in Vancouver's inner subdivisions. That means more room for a shop, a garden, or simply more distance from the next house. It also puts you within a reasonable drive of Washington State University Vancouver and the shopping around Fisher's Landing.",
+        "This isn't a walkable neighborhood in the way some closer-in areas are. If a standard suburban lot has started to feel too small, but you still want to stay within commuting range of Vancouver and Portland, it's worth a look.",
+        "I can pull together what's currently listed in Pleasant Valley if you want to see the range of lot sizes and prices firsthand.",
       ],
     },
     {
       title: "Pleasant Valley Acreage Listings: What's Available Now",
       keyword: "Pleasant Valley new listings",
       metaDescription:
-        "Acreage listings in Pleasant Valley move differently than standard subdivisions. Here's what's currently available for buyers who want land.",
+        "What's currently available on acreage in Pleasant Valley, Vancouver, plus what to check before buying land here.",
       paragraphs: [
-        "Acreage listings in Pleasant Valley move differently than standard subdivision homes — buyers take longer to decide, but once they commit, they tend to close without much negotiation, because there simply aren't many comparable properties to shop against.",
-        "Newer construction on larger lots has been the biggest driver of interest this season, particularly from buyers relocating from tighter urban lots who want room to spread out without leaving Clark County entirely.",
-        "If acreage or a semi-rural lot is on your list, the search radius matters — I can pull everything currently available in Pleasant Valley and the surrounding pockets in one pass so you're not missing anything just outside the exact boundary.",
-        "Well and septic systems, easement access, and zoning for accessory structures are worth checking early on any acreage listing here — the due diligence looks different than a standard subdivision purchase, and it's easier to sort out before you're under contract than after.",
+        "Acreage listings in Pleasant Valley tend to move differently than standard subdivision homes. Buyers often take longer to decide, but once they do, there usually isn't much room to negotiate — there simply aren't many similar properties to compare against.",
+        "Newer construction on larger lots has drawn the most interest this season, especially from buyers coming from tighter urban lots who want more room without leaving Clark County.",
+        "Well and septic systems, easement access, and zoning for accessory structures are all worth checking early on any acreage listing. The due diligence looks different than a typical subdivision purchase, and it's easier to sort out before you're under contract than after.",
+        "If acreage is on your list, it helps to widen the search radius slightly. I can pull together everything currently available in Pleasant Valley and the surrounding area in one pass.",
       ],
     },
     {
-      title: "Is Pleasant Valley Right for You? Pros and Cons",
+      title: "Pleasant Valley: Pros and Cons to Weigh",
       keyword: "Pleasant Valley Vancouver living",
       metaDescription:
-        "Is Pleasant Valley, Vancouver right for you? The honest trade-offs between space, commute time, and walkability — explained.",
+        "The honest tradeoffs to weigh before buying in Pleasant Valley, Vancouver — space, commute time, and walkability.",
       paragraphs: [
-        "Pleasant Valley is the right call for buyers who want land — real space for animals, a shop, a garden — and are willing to trade some walkability and retail proximity to get it. It's not a neighborhood you stroll to dinner from.",
-        "The commute is the other honest trade-off: it's a real drive into downtown Vancouver or across into Portland, longer than anything else in this rotation, though I-5/I-205 access keeps it manageable rather than punishing.",
-        "If space matters more to you than proximity, Pleasant Valley is worth serious consideration. If you want to walk somewhere on a Friday night, look at Columbia Way or Harney Heights instead.",
-        "Financing can also look different on larger acreage parcels, especially anything zoned for agricultural use, so it's worth talking through loan options before you fall in love with a specific property.",
+        "The biggest tradeoff in Pleasant Valley is walkability. This isn't a neighborhood where you stroll to dinner — most errands mean getting in the car. Worth knowing upfront if that matters to you.",
+        "The commute is the other honest consideration. It's a longer drive into downtown Vancouver or across into Portland than anywhere else in this rotation, though I-5 and I-205 access keeps it manageable. Map your actual drive during the hours you'd normally be on the road before deciding.",
+        "Financing can also look different on larger acreage parcels, especially anything zoned for agricultural use. It's worth talking through loan options early, before you fall in love with a specific property.",
+        "If space and land matter more to you than being close to shops and restaurants, Pleasant Valley is worth serious consideration.",
       ],
     },
   ],
@@ -178,71 +182,74 @@ const TITLES: Record<string, PostSeed[]> = {
       title: "Hunter Ridge Estates: Camas's Gated Hilltop Address",
       keyword: "Hunter Ridge Estates Camas homes",
       metaDescription:
-        "Hunter Ridge Estates is Camas's gated, elevated address — custom homes, Mount Hood views, and real privacy at the top of the market.",
+        "A look at Hunter Ridge Estates in Camas — the gated community's homes, lot sizes, typical price range, and what buyers should expect.",
       paragraphs: [
-        "Hunter Ridge Estates sits above much of Camas, a gated community of custom and semi-custom homes on elevated lots that trade density for view — Mount Hood on a clear day from more than a few back decks, and the kind of privacy a guarded entry actually delivers rather than just implies.",
-        "Homes here run larger and newer than most of the Camas Meadows corridor, typically four-plus bedrooms on generous lots, and price points reflect it — this is the upper end of the Camas market, not the accessible end.",
-        "Still zoned for Camas School District, still a manageable run to Portland via SR-14, but with a level of quiet and separation from through-traffic that the more established, walkable neighborhoods in town simply can't offer.",
+        "Hunter Ridge Estates sits above much of Camas — a gated community of custom and semi-custom homes on elevated lots. Some back decks have a clear view of Mount Hood on a clear day.",
+        "Homes here tend to run larger and newer than most of the Camas Meadows area, often four or more bedrooms on generous lots. Prices reflect that — this is the upper end of the Camas market, not the accessible end.",
+        "The neighborhood is zoned for Camas School District, with the same SR-14 route into Portland as the rest of Camas. The gated entry and larger lots mean less through-traffic than in more walkable, established neighborhoods closer to downtown.",
+        "If privacy and space are high on your list, it's worth a look. I can walk you through what's currently available or coming soon.",
       ],
     },
     {
       title: "Hunter Ridge Estates: Where Camas's Luxury Market Stands",
       keyword: "Hunter Ridge Estates luxury homes Camas",
       metaDescription:
-        "Where does Camas's luxury market stand right now? A current look at gated, Mount Hood view-lot inventory in Hunter Ridge Estates.",
+        "Where Camas's luxury real estate market stands right now, with a look at current inventory in Hunter Ridge Estates.",
       paragraphs: [
-        "Luxury inventory in Camas stays thin by nature, and Hunter Ridge Estates is usually the address buyers mean when they say they want gated and elevated — the pool of comparable listings anywhere else in town is small.",
-        "View lots with unobstructed Mount Hood sightlines command a real premium over interior lots in the same community, and buyers who wait too long to decide tend to watch that specific lot go to someone else.",
-        "If you're shopping this tier, I'd rather show you what's coming before it's public than have you find it on a portal after the fact — that's usually how the best Hunter Ridge opportunities move.",
-        "Buyers shopping this tier are also comparing against similar gated communities across the broader Portland metro, and Hunter Ridge Estates consistently holds its own on price per square foot once the view premium is factored in.",
+        "Luxury inventory in Camas stays limited by nature, and Hunter Ridge Estates is usually the first place buyers look when they want gated and elevated. There simply aren't many comparable listings anywhere else in town.",
+        "View lots with a clear line to Mount Hood tend to sell at a premium over interior lots in the same community. Buyers who take too long to decide often watch a specific lot go to someone else.",
+        "Buyers shopping this tier are often comparing against similar gated communities across the broader Portland metro. Hunter Ridge Estates has generally held its own on price per square foot once the view premium is factored in.",
+        "If you're shopping in this range, I'd rather show you what's coming before it's public than have you find it after the fact. That's usually how the best opportunities here move.",
       ],
     },
     {
-      title: "Is Hunter Ridge Estates Worth the Premium?",
+      title: "Is the Hunter Ridge Estates Premium Worth It?",
       keyword: "Hunter Ridge Estates Camas review",
       metaDescription:
-        "Is Hunter Ridge Estates worth the premium over the rest of Camas? An honest look at what you're really trading for the view.",
+        "What the price premium in Hunter Ridge Estates actually buys, compared to the rest of the Camas real estate market this year.",
       paragraphs: [
-        "The honest answer: it depends what you're optimizing for. If privacy, a gated entry, and a view lot matter more to you than walkability to downtown Camas or Lacamas Lake, Hunter Ridge Estates is worth every bit of the premium over the rest of the Camas Meadows corridor.",
-        "If what you actually want is to walk to the lake on a Saturday morning, you'll get more of that lifestyle for less money in Holly Ridge or Deer Creek — Hunter Ridge trades that walkability for elevation, space, and privacy instead.",
-        "Buyers who choose it tend to be move-up families or relocating executives who've already lived in a more walkable neighborhood and know exactly what they're trading for the view.",
-        "It's worth touring at more than one time of day, too — the light and the view shift more than most buyers expect, and a lot that looks good at noon can look extraordinary at sunset.",
+        "The honest answer depends on what matters most to you. Hunter Ridge Estates trades walkability to downtown Camas or Lacamas Lake for elevation, privacy, and a gated entry.",
+        "If daily walkability to the lake or local shops is important, homes in Holly Ridge or Deer Creek offer more of that at a lower price point. Hunter Ridge Estates is built around space and separation rather than proximity.",
+        "It's worth touring at more than one time of day. Light and views can shift more than people expect, and a lot that looks fine at noon can look very different at sunset.",
+        "HOA rules in gated communities can also be more involved than in older, established neighborhoods. It's worth reviewing the covenants before you get too far into the process.",
       ],
     },
   ],
   "Columbia Way, Vancouver": [
     {
-      title: "Columbia Way: Living on Vancouver's Waterfront Side",
+      title: "Columbia Way: Living Near Vancouver's Waterfront",
       keyword: "Columbia Way Vancouver WA homes",
       metaDescription:
-        "Columbia Way puts you steps from Vancouver's waterfront district — restaurants, trails, and an easy bridge crossing into Portland.",
+        "A look at Columbia Way in Vancouver WA — homes near the waterfront district, the commute into Portland, and typical pricing.",
       paragraphs: [
-        "Columbia Way runs along the north bank of the Columbia River, close enough to downtown Vancouver's waterfront district that a lot of buyers here trade a car trip for a walk — to the restaurants along the river, to Esther Short Park, to the trail that follows the water toward Wintler Park.",
-        "Housing stock is more mixed than the established Camas neighborhoods — a run of newer condos and townhomes closer to the waterfront redevelopment, older single-family homes further back — which means the price range spans wider than almost anywhere else in this rotation.",
-        "The draw is location more than any single home feature: I-5 access is immediate, the Portland side of the river is a short bridge crossing away, and Vancouver Public Schools serve the area.",
+        "Columbia Way runs along the north bank of the Columbia River, close to downtown Vancouver's waterfront district. Many buyers here trade a car trip for a walk — to restaurants along the river, to Esther Short Park, or along the trail toward Wintler Park.",
+        "Housing stock is more mixed than in the established Camas neighborhoods. Newer condos and townhomes sit closer to the waterfront redevelopment, while older single-family homes are set further back. That mix means the price range here is wider than almost anywhere else in this rotation.",
+        "I-5 access is immediate, and the Portland side of the river is a short bridge crossing away. Vancouver Public Schools serve the area, though it's worth confirming current boundaries directly with the district.",
+        "If walkability and river access matter more to you than square footage, Columbia Way is worth a close look.",
       ],
     },
     {
       title: "Columbia Way Condo & Townhome Market: What's Selling",
       keyword: "Columbia Way condos for sale",
       metaDescription:
-        "Condos and townhomes along Columbia Way are moving fast. Here's what's currently selling in Vancouver's waterfront-adjacent market.",
+        "What's currently selling in the Columbia Way condo and townhome market near downtown Vancouver's waterfront district.",
       paragraphs: [
-        "The newer condo and townhome product along Columbia Way keeps attracting buyers who work in Portland but want Washington's tax advantage without giving up a walkable, river-adjacent lifestyle — that combination is hard to find on either side of the river at this price point.",
-        "Units closest to the waterfront trail and downtown Vancouver's restaurant row move fastest, usually inside the first two to three weeks, while the older single-family stock further from the river takes longer and rewards patient buyers.",
-        "If a downtown-adjacent, low-maintenance option is what you're after, I can set up alerts for new Columbia Way listings the moment they hit — this stretch turns over quickly enough that waiting a week can mean missing the best units.",
+        "Newer condo and townhome product along Columbia Way continues to draw buyers who work in Portland but want Washington's tax advantage without giving up a walkable, river-adjacent location.",
+        "Units closest to the waterfront trail and downtown Vancouver's restaurant row tend to move fastest, often within two to three weeks. Older single-family homes further from the river typically take longer to sell.",
+        "If a downtown-adjacent, low-maintenance option is what you're after, it helps to set up alerts for new Columbia Way listings. This stretch turns over quickly enough that waiting even a week can mean missing the best units.",
+        "Reach out and I can get that set up, along with a sense of current pricing by unit size and how it compares to a few months ago.",
       ],
     },
     {
-      title: "Who Columbia Way Is Actually Built For",
+      title: "What Columbia Way Living Actually Involves",
       keyword: "living in Columbia Way Vancouver",
       metaDescription:
-        "Who is Columbia Way, Vancouver actually built for? A look at the city-adjacent buyers who'd rather walk to dinner than drive to it.",
+        "What daily life in Columbia Way actually involves, from parking to walkability, before you make an offer on a home here.",
       paragraphs: [
-        "Columbia Way works best for buyers who want city-adjacent living without an Oregon address — commuters into Portland, empty nesters downsizing out of a bigger Camas or east Vancouver home, and anyone who'd rather walk to dinner than drive to it.",
-        "It's a weaker fit for buyers who want a big yard or a quiet cul-de-sac — this is a denser, more urban corner of Vancouver than Harney Heights or Lakeshore, and that trade-off is the whole point for the people who choose it.",
-        "If waterfront walkability is higher on your list than square footage, Columbia Way deserves a serious look before you widen the search elsewhere.",
-        "Parking and storage are the other trade-offs worth asking about upfront — most of the newer condo product here trades square footage for location, so buyers coming from a house with a garage should walk through exactly what's included before making an offer.",
+        "Columbia Way is a denser, more urban stretch of Vancouver than neighborhoods like Harney Heights or Lakeshore. That's part of the appeal for some buyers and a bigger adjustment for others, depending on what you're used to.",
+        "Parking and storage are worth asking about upfront. Most of the newer condo product trades square footage for location, so if you're coming from a house with a garage, it helps to see exactly what's included before making an offer.",
+        "A larger yard or a quiet cul-de-sac isn't really part of the picture here. If outdoor space is high on your list, it's worth comparing Columbia Way against neighborhoods further from the river.",
+        "The best way to know if it fits is to walk the area at different times of day — weekday mornings look very different from a Saturday afternoon along the waterfront trail.",
       ],
     },
   ],
@@ -251,72 +258,73 @@ const TITLES: Record<string, PostSeed[]> = {
       title: "Deer Creek, Camas: The Wooded Side of Prune Hill",
       keyword: "Deer Creek Camas homes",
       metaDescription:
-        "Deer Creek, Camas is the wooded, quieter side of the Prune Hill corridor — mature landscaping and real value buyers often overlook.",
+        "A look at Deer Creek, Camas — the wooded side of the Prune Hill area, home styles, lot sizes, and local school district access.",
       paragraphs: [
-        "Deer Creek sits on the wooded side of the Prune Hill corridor, a few minutes from the Holly Ridge and Camas Meadows area but with noticeably more tree cover and quieter cul-de-sac streets — the kind of neighborhood that doesn't show up in as many searches, which is part of why it's stayed relatively accessible.",
-        "Homes here mostly date to the same late-1990s-to-2000s Camas building wave, with mature landscaping that new construction simply can't replicate yet, and lots that give some separation from the neighbors without leaving the city entirely.",
-        "It's an easy walk or short drive to Lacamas Creek Trail, and the same Camas School District access applies — Skyridge Middle, Camas High — with the same SR-14 run into Portland that the rest of the Camas Meadows area enjoys.",
+        "Deer Creek sits on the wooded side of the Prune Hill area, a few minutes from Holly Ridge, with noticeably more tree cover and quieter cul-de-sac streets. It doesn't come up in as many searches, which has kept it relatively accessible.",
+        "Most homes here date to the same late-1990s-to-2000s building period as the rest of Camas Meadows. That means mature landscaping that new construction can't really replicate, along with lots that give some separation from the neighbors.",
+        "It's an easy walk or short drive to the Lacamas Creek Trail. The same Camas School District access applies here, with Skyridge Middle and Camas High in the normal feeder pattern — boundaries can change, so it's worth confirming directly with the district.",
+        "SR-14 gets you into Portland on the same timeline as the rest of the Camas Meadows area. If you want to see what's currently on the market, I'm happy to send it over.",
       ],
     },
     {
       title: "Deer Creek Inventory Update: What's on the Market",
       keyword: "Deer Creek Camas listings",
       metaDescription:
-        "Deer Creek, Camas doesn't turn over fast — but when it does, listings draw serious buyers. Here's the current inventory update.",
+        "Current inventory and pricing trends in the Deer Creek, Camas real estate market, and what tends to draw buyer interest here.",
       paragraphs: [
-        "Deer Creek doesn't turn over as fast as some of the more visible Camas neighborhoods, which means when a well-kept home does list here, it tends to draw serious buyers rather than lookers — the kind of listing that goes pending in the first weekend.",
-        "Pricing has held steady relative to the broader Camas Meadows corridor, generally a step below Holly Ridge for comparable square footage, largely because it's a quieter address without direct lake frontage or greenspace backing on every lot.",
-        "If wooded and quiet is on your list, it's worth setting up an alert for this one specifically — the listings that hit here get outsized interest for how little attention the neighborhood otherwise gets. Happy to set that up, or walk through current options on a quick call.",
+        "Deer Creek doesn't turn over as quickly as some of the more visible Camas neighborhoods. When a well-kept home does list here, it tends to draw serious buyers rather than lookers, and listings have been going pending within the first weekend.",
+        "Pricing has held fairly steady relative to the broader Camas Meadows area, generally a step below Holly Ridge for comparable square footage. That's largely because it's a quieter address without direct lake frontage or greenspace backing on every lot.",
+        "If wooded and quiet is what you're after, it's worth setting up an alert specifically for this neighborhood. Listings here tend to get more attention than the neighborhood's overall visibility would suggest. I'm happy to set that up, or walk through current options on a call.",
       ],
     },
     {
-      title: "Who Actually Buys in Deer Creek, Camas?",
+      title: "What to Know Before You Buy in Deer Creek",
       keyword: "Deer Creek Camas buyers guide",
       metaDescription:
-        "Who actually buys in Deer Creek, Camas? Repeat Camas movers looking for more privacy, more trees, and the same great schools.",
+        "What to know before buying in Deer Creek, Camas — home age, lot sizes, and how pricing compares to nearby neighborhoods.",
       paragraphs: [
-        "Deer Creek's buyers tend to be repeat Camas movers — people who've already lived in the area, know the school system, and are specifically looking for more privacy and more trees the second time around.",
-        "It's less of a starter-home destination than Holly Ridge and more of a step-up move: established landscaping, a quieter street, still inside the Camas School District boundary, still a reasonable commute to Portland via SR-14.",
-        "If that description fits where you are in your own search, Deer Creek deserves a look even though it rarely makes the highlight-reel lists — some of the best value in this corridor is sitting quietly on its side streets.",
-        "It's also a common landing spot for buyers who toured Holly Ridge first and wanted something a little quieter — same school district, same commute, just fewer people driving past on a Saturday morning.",
+        "Deer Creek is more of a step-up neighborhood than a typical starting point. Homes here tend to be a bit larger and more established than in Holly Ridge, with mature landscaping and quieter streets.",
+        "New construction isn't part of the picture — everything here is resale, mostly from the same late-1990s-to-2000s building period as the rest of Camas Meadows. Some homes may need updated kitchens or systems, so a thorough inspection is worth the cost.",
+        "Because it's a quieter, less-searched address, it can take a little longer to find comparable sales when pricing a home here. That's worth knowing if you're trying to gauge value before making an offer.",
+        "The best way to get a feel for Deer Creek is to drive the streets at different times of day. It's a different pace than the busier corridors nearby, and that's easier to sense in person than in photos.",
       ],
     },
   ],
   "Harney Heights, Vancouver": [
     {
-      title: "Harney Heights: Northeast Vancouver's Best-Kept Secret",
+      title: "Harney Heights: An Established Corner of Northeast Vancouver",
       keyword: "Harney Heights Vancouver WA homes",
       metaDescription:
-        "Harney Heights is northeast Vancouver's best-kept secret — established streets, mature trees, and character newer builds can't match.",
+        "A look at Harney Heights in Vancouver WA — an established neighborhood with older homes, mature trees, and varied architecture.",
       paragraphs: [
-        "Harney Heights doesn't get the attention that some of Vancouver's newer subdivisions do, and that's exactly the appeal — an established, quiet pocket of northeast Vancouver with mature trees, settled landscaping, and noticeably less through-traffic than the busier east-county corridors.",
-        "It sits close enough to the Mill Plain and SR-14 corridor for an easy commute, while feeling several steps removed from the retail density around Vancouver Mall — a real neighborhood rather than a collection of subdivisions stacked against arterial roads.",
-        "Home styles run older and more varied than the newer east Vancouver developments, which means more character per square foot and, usually, more negotiating room for buyers willing to update a kitchen themselves.",
-        "The lack of a formal HOA in much of the neighborhood is also a draw for buyers who want more flexibility with their property — worth confirming on a home-by-home basis, since not every street here is governed the same way.",
+        "Harney Heights doesn't get the attention that some of Vancouver's newer subdivisions do. It's an established, quiet pocket of northeast Vancouver with mature trees and settled landscaping, and noticeably less through-traffic than the busier east-county corridors.",
+        "It sits close enough to the Mill Plain and SR-14 corridor for a reasonable commute, while feeling several steps removed from the retail density around Vancouver Mall.",
+        "Home styles here run older and more varied than the newer east Vancouver developments. That means more character per square foot, but it can also mean more updating — worth factoring into your budget if you're comparing against newer construction.",
+        "If an established neighborhood with more negotiating room is what you're after, Harney Heights is worth a look.",
       ],
     },
     {
-      title: "Harney Heights Market Pulse: Quiet Area, Hot Demand",
+      title: "Harney Heights Market Pulse: Quiet Area, Steady Demand",
       keyword: "Harney Heights Vancouver market update",
       metaDescription:
-        "Harney Heights doesn't list often, but demand stays active. Here's the current market pulse for this quiet Vancouver pocket.",
+        "Current market conditions in Harney Heights, Vancouver, including how quickly homes have been selling and why inventory stays low.",
       paragraphs: [
-        "Harney Heights doesn't generate the listing volume of the bigger east-Vancouver developments, but that scarcity works in sellers' favor — homes here have been going under contract quickly whenever they're priced in line with recent comparable sales.",
-        "Buyers coming from outside the immediate area are often surprised by how much house their budget covers here compared to the newer subdivisions closer to I-205, and that value gap is the main driver of current demand.",
-        "If you want a heads-up the moment something lists in Harney Heights, that's an easy thing to set up — this is one of those neighborhoods where being first matters more than usual.",
-        "Because so few homes list here in a given month, buyers who are serious tend to move fast once something hits — offers within the first few days aren't unusual, even in a market that otherwise feels unhurried.",
+        "Harney Heights doesn't generate the listing volume of the bigger east-Vancouver developments, but that scarcity tends to work in sellers' favor. Homes here have been going under contract fairly quickly when priced in line with recent comparable sales.",
+        "Buyers coming from outside the immediate area are often surprised by how much house their budget covers here compared to newer subdivisions closer to I-205. That value gap has been the main driver of demand lately.",
+        "Because so few homes list here in a given month, buyers who are serious about the area tend to move fast once something hits the market. Offers within the first few days aren't unusual.",
+        "If you want a heads-up the moment something lists in Harney Heights, that's easy to set up — just let me know.",
       ],
     },
     {
-      title: "Who Should Be Looking at Harney Heights?",
+      title: "What to Know Before You Buy in Harney Heights",
       keyword: "Harney Heights Vancouver buyers guide",
       metaDescription:
-        "Who should be looking at Harney Heights? Buyers who want an established Vancouver neighborhood over a newer, denser subdivision.",
+        "What to know before buying in Harney Heights, Vancouver — home condition, HOA structure, and price comparisons to nearby areas.",
       paragraphs: [
-        "Harney Heights suits buyers who've already ruled out the newer, denser subdivisions and want an established neighborhood instead — more mature trees, more varied architecture, and neighbors who've often been there for decades rather than years.",
-        "It's a strong fit for buyers comfortable with a home that might need some updating in exchange for a quieter street and a lower price per square foot than comparable newer construction.",
-        "If that trade-off sounds right to you, Harney Heights is worth a dedicated look rather than a drive-by — it rewards buyers who actually get out and walk the blocks.",
-        "It's also a solid option for buyers priced out of Camas who still want strong schools and an established feel — Harney Heights delivers a lot of that character at a noticeably lower entry point.",
+        "Harney Heights is an older, established neighborhood, which means more character but also more variation in home condition. Some properties have been updated, others haven't — worth budgeting for updates if a move-in-ready kitchen matters to you.",
+        "There's generally no formal HOA across much of the neighborhood, which gives more flexibility with a property but also less consistency street to street. It's worth confirming on a home-by-home basis rather than assuming.",
+        "Compared to newer subdivisions closer to I-205, homes here tend to cost less per square foot, though lots and floor plans vary more than in a planned development. Comparing a few different addresses helps you see the range.",
+        "The best way to judge Harney Heights is to walk a few blocks and see a couple of homes in person — it rewards buyers who take the time to look closely rather than judge from listing photos alone.",
       ],
     },
   ],
@@ -391,15 +399,63 @@ function articleParagraphs(post: Post): string[] {
 
 type SeoCheck = { label: string; pass: boolean; detail: string };
 
+// Per the client's real Writing Voice & Style Guide: avoid hype/AI filler words,
+// and never frame content around who a neighborhood is "for" (Fair Housing).
+const BANNED_PHRASES = [
+  "nestled in",
+  "boasts",
+  "hidden gem",
+  "dream home",
+  "something for everyone",
+  "perfect for",
+  "family-friendly",
+  "highly sought-after",
+  "idyllic",
+  "picturesque",
+  "sanctuary",
+  "stunning",
+  "amazing",
+  "incredible",
+  "gorgeous",
+  "spectacular",
+  "vibrant community",
+  "breathtaking",
+  "endless opportunities",
+  "perfect blend",
+  "ideal for",
+  "great for",
+  "best schools",
+  "safe neighborhood",
+  "good for kids",
+  "haven",
+];
+
+function findBannedPhrase(text: string): string | null {
+  const lower = text.toLowerCase();
+  for (const phrase of BANNED_PHRASES) {
+    const escaped = phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const re =
+      phrase === "haven"
+        ? /\bhaven\b(?!['’]t)/
+        : new RegExp(`\\b${escaped}\\b`, "i");
+    if (re.test(lower)) return phrase;
+  }
+  return null;
+}
+
 function seoChecklist(post: Post): SeoCheck[] {
   const titleLen = post.title.length;
   const descLen = post.metaDescription.length;
-  const wordCount = articleParagraphs(post)
-    .join(" ")
-    .split(/\s+/)
-    .filter(Boolean).length;
+  const paragraphs = articleParagraphs(post);
+  const wordCount = paragraphs.join(" ").split(/\s+/).filter(Boolean).length;
   const areaCore = post.area.split(",")[0].trim();
   const titleHasArea = post.title.toLowerCase().includes(areaCore.toLowerCase());
+  const fullText = `${post.title} ${post.metaDescription} ${paragraphs.join(" ")}`;
+  const bannedHit = findBannedPhrase(fullText);
+  const hasWhoFraming =
+    /\bwho (buys|should|actually|thrives)\b|attracts\b[^.]{0,40}buyers\b|right for you\b/i.test(
+      `${post.title} ${paragraphs.join(" ")}`
+    );
 
   return [
     {
@@ -428,6 +484,20 @@ function seoChecklist(post: Post): SeoCheck[] {
       label: "Internal link",
       pass: !!post.areaUrl,
       detail: post.areaUrl,
+    },
+    {
+      label: "Neutral, hype-free language",
+      pass: !bannedHit,
+      detail: bannedHit
+        ? `Avoid "${bannedHit}" — flagged by the voice guide's banned-phrase list`
+        : "No flagged hype words found",
+    },
+    {
+      label: "Fair Housing-neutral framing",
+      pass: !hasWhoFraming,
+      detail: hasWhoFraming
+        ? `Describe objective features, not who the neighborhood is "for"`
+        : "Framed around objective features, not buyer type",
     },
   ];
 }
