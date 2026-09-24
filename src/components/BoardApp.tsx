@@ -2787,13 +2787,15 @@ const STALE_TITLE_VARIANTS: Record<string, "update" | "considerations"> = {
     "considerations",
 };
 
-// One row per area, 3 slots/day — guarantees each area's 3 posts (guide/update/
-// considerations) land on different days, spread evenly across the full rotation cycle,
-// and that the cycle returns to area 0 only after every area has had all 3 posted once.
-// (For AREAS.length === 7 this reproduces the original hand-written 7-day rotation exactly.)
-const ROTATION = AREAS.map((_, d) =>
-  [0, 1, 2].map((s) => (3 * d + s) % AREAS.length)
-);
+// Each area appears exactly ONCE here, 3 per day — the initial seed gives every
+// neighborhood a single Drafted post (its canonical "guide" variant), never all 3 variants
+// at once. See the "one active entry per neighborhood" rule: update/considerations stay
+// unused in TITLES as source material for whenever that neighborhood's next draft is due,
+// rather than being pre-loaded onto the board alongside the guide post.
+const ROTATION: number[][] = [];
+for (let i = 0; i < AREAS.length; i += 3) {
+  ROTATION.push([i, i + 1, i + 2].filter((idx) => idx < AREAS.length));
+}
 const TIME_SLOTS = ["9:00 AM", "12:00 PM", "3:00 PM"];
 
 const PLATFORM_LABELS: Record<string, string> = {
@@ -3073,8 +3075,6 @@ function buildSeedData(): Post[] {
   mondayUTCNoon.setUTCDate(todayUTCNoon.getUTCDate() - ((todayDow + 6) % 7));
 
   const posts: Post[] = [];
-  const useCount: Record<string, number> = {};
-  AREAS.forEach((a) => (useCount[a[0]] = 0));
   let id = 1;
 
   for (let d = 0; d < ROTATION.length; d++) {
@@ -3088,9 +3088,7 @@ function buildSeedData(): Post[] {
     });
     ROTATION[d].forEach((areaIdx, slot) => {
       const [areaName] = AREAS[areaIdx];
-      const n = useCount[areaName];
-      const seed = TITLES[areaName][n];
-      useCount[areaName]++;
+      const seed = TITLES[areaName][0]; // canonical "guide" — the single initial draft
       const city = areaName.split(",")[1].trim();
       posts.push({
         id: "p" + id++,
@@ -3364,27 +3362,27 @@ export default function BoardApp() {
       });
     }
 
-    // One neighborhood, one active entry: if a post from the same area is already in
-    // Ready for Review or Scheduled, that's enough in Jamie's review queue at once — another
-    // post from that same neighborhood shouldn't also be sent into either stage until the
-    // first one moves on (Published, or back to Drafted).
+    // One neighborhood, one active entry: a neighborhood should only ever have a single
+    // post in flight at a time (Not Started, Drafted, Ready for Review, or Scheduled) — once
+    // it's Published, applyPublish() spawns exactly one fresh "Not Started" placeholder, and
+    // THAT'S when the next draft gets written (using a different variant, so it's never a
+    // repeat). Published posts are exempt — they're the historical record and accumulate
+    // freely. ACTIVE_STATUSES is what "in flight" means for this check.
+    const ACTIVE_STATUSES: Status[] = ["Not Started", "Drafted", "Ready for Review", "Scheduled"];
     function neighborhoodAlreadyActive(post: Post): boolean {
       return boardData.some(
-        (p) =>
-          p.id !== post.id &&
-          p.area === post.area &&
-          (p.status === "Ready for Review" || p.status === "Scheduled")
+        (p) => p.id !== post.id && p.area === post.area && ACTIVE_STATUSES.includes(p.status)
       );
     }
 
     async function moveStatus(post: Post, newStatus: Status) {
       if (post.status === newStatus) return;
       if (
-        (newStatus === "Ready for Review" || newStatus === "Scheduled") &&
+        (newStatus === "Drafted" || newStatus === "Ready for Review" || newStatus === "Scheduled") &&
         neighborhoodAlreadyActive(post)
       ) {
         window.alert(
-          `${areaDisplayLabel(post.area)} already has a post in Ready for Review or Scheduled — move that one along first before sending another from the same neighborhood.`
+          `${areaDisplayLabel(post.area)} already has an active post (Not Started, Drafted, Ready for Review, or Scheduled) — move that one along first before starting another for the same neighborhood.`
         );
         renderAll();
         if (modalPostId === post.id) renderModal(post.id);
@@ -3477,11 +3475,11 @@ export default function BoardApp() {
         if (!p) return;
         const newStatus = selectEl.value as Status;
         if (
-          (newStatus === "Ready for Review" || newStatus === "Scheduled") &&
+          (newStatus === "Drafted" || newStatus === "Ready for Review" || newStatus === "Scheduled") &&
           neighborhoodAlreadyActive(p)
         ) {
           window.alert(
-            `${areaDisplayLabel(p.area)} already has a post in Ready for Review or Scheduled — move that one along first before sending another from the same neighborhood.`
+            `${areaDisplayLabel(p.area)} already has an active post (Not Started, Drafted, Ready for Review, or Scheduled) — move that one along first before starting another for the same neighborhood.`
           );
           selectEl.value = p.status; // revert the visual selection
           return;
