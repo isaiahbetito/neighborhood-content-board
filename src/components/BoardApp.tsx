@@ -3364,8 +3364,32 @@ export default function BoardApp() {
       });
     }
 
+    // One neighborhood, one active entry: if a post from the same area is already in
+    // Ready for Review or Scheduled, that's enough in Jamie's review queue at once — another
+    // post from that same neighborhood shouldn't also be sent into either stage until the
+    // first one moves on (Published, or back to Drafted).
+    function neighborhoodAlreadyActive(post: Post): boolean {
+      return boardData.some(
+        (p) =>
+          p.id !== post.id &&
+          p.area === post.area &&
+          (p.status === "Ready for Review" || p.status === "Scheduled")
+      );
+    }
+
     async function moveStatus(post: Post, newStatus: Status) {
       if (post.status === newStatus) return;
+      if (
+        (newStatus === "Ready for Review" || newStatus === "Scheduled") &&
+        neighborhoodAlreadyActive(post)
+      ) {
+        window.alert(
+          `${areaDisplayLabel(post.area)} already has a post in Ready for Review or Scheduled — move that one along first before sending another from the same neighborhood.`
+        );
+        renderAll();
+        if (modalPostId === post.id) renderModal(post.id);
+        return;
+      }
       if (newStatus === "Published") {
         applyPublish(post);
       } else {
@@ -3452,6 +3476,16 @@ export default function BoardApp() {
         const p = boardData.find((x) => x.id === postId);
         if (!p) return;
         const newStatus = selectEl.value as Status;
+        if (
+          (newStatus === "Ready for Review" || newStatus === "Scheduled") &&
+          neighborhoodAlreadyActive(p)
+        ) {
+          window.alert(
+            `${areaDisplayLabel(p.area)} already has a post in Ready for Review or Scheduled — move that one along first before sending another from the same neighborhood.`
+          );
+          selectEl.value = p.status; // revert the visual selection
+          return;
+        }
         if (newStatus === "Scheduled") {
           // Default to tomorrow 9:00 AM — as literal Pacific calendar numbers, not an
           // instant converted through the visitor's own timezone (same reasoning as
