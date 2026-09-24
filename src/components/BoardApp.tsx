@@ -226,6 +226,84 @@ const WEBSITE_URL = "https://www.jamiemeushawrealestate.com";
 const SCHOOL_DISCLAIMER =
   "School boundaries and assignments can change. Buyers should verify current school assignments directly with the school district.";
 
+// Jamie's business runs on Pacific Time (both WA and OR are in this zone) — every date/time
+// shown or evaluated by this app should reflect Pacific, not whatever timezone a visitor's
+// own browser/device happens to be set to. Plain `toLocaleDateString()`/`new Date(string)`
+// calls are implicitly browser-local, so anywhere this app displays or parses a date/time,
+// route it through these helpers instead.
+const PACIFIC_TZ = "America/Los_Angeles";
+const MONTH_NAMES = [
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+];
+
+// How far Pacific time is from UTC, in minutes, at a given real instant (-480 for PST,
+// -420 for PDT) — computed via Intl rather than hardcoded so daylight saving is handled.
+function pacificOffsetMinutesAt(instant: Date): number {
+  const parts: Record<string, string> = {};
+  new Intl.DateTimeFormat("en-US", {
+    timeZone: PACIFIC_TZ,
+    hour12: false,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  })
+    .formatToParts(instant)
+    .forEach((p) => (parts[p.type] = p.value));
+  const hour = parts.hour === "24" ? 0 : Number(parts.hour);
+  const asUTC = Date.UTC(
+    Number(parts.year),
+    Number(parts.month) - 1,
+    Number(parts.day),
+    hour,
+    Number(parts.minute),
+    Number(parts.second)
+  );
+  return (asUTC - instant.getTime()) / 60000;
+}
+
+// Pacific-local wall-clock components -> the real absolute instant they refer to.
+function pacificComponentsToDate(
+  year: number,
+  monthIndex: number,
+  day: number,
+  hour: number,
+  minute: number
+): Date {
+  const naiveUTC = Date.UTC(year, monthIndex, day, hour, minute);
+  const offsetMin = pacificOffsetMinutesAt(new Date(naiveUTC));
+  return new Date(naiveUTC - offsetMin * 60000);
+}
+
+// The current date in Pacific terms — used anywhere "today"/"tomorrow" needs to mean
+// Pacific's today, not the visitor's own browser-local today.
+function pacificDateParts(instant: Date): { year: number; month: number; day: number } {
+  const parts: Record<string, string> = {};
+  new Intl.DateTimeFormat("en-US", {
+    timeZone: PACIFIC_TZ,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  })
+    .formatToParts(instant)
+    .forEach((p) => (parts[p.type] = p.value));
+  return { year: Number(parts.year), month: Number(parts.month) - 1, day: Number(parts.day) };
+}
+
+function pacificWeekdayName(instant: Date): string {
+  return instant.toLocaleDateString("en-US", { weekday: "long", timeZone: PACIFIC_TZ });
+}
+
+function pacificDateLabel(instant: Date): string {
+  return instant.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: PACIFIC_TZ });
+}
+
+function pacificTimeLabel(instant: Date): string {
+  return instant.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", timeZone: PACIFIC_TZ });
+}
+
 // "## " renders as a section heading, "### " as a sub-heading — see renderModal.
 function h2(text: string) {
   return "## " + text;
@@ -2976,9 +3054,14 @@ function seoChecklist(post: Post): SeoCheck[] {
 }
 
 function buildSeedData(): Post[] {
-  const today = new Date();
-  const monday = new Date(today);
-  monday.setDate(today.getDate() - ((today.getDay() + 6) % 7));
+  // Calendar-date arithmetic done entirely against Pacific's Y/M/D, using UTC-constructed
+  // dates purely as a neutral scratch space so browser-local timezone never enters into it —
+  // see the PACIFIC_TZ helpers above.
+  const todayPacific = pacificDateParts(new Date());
+  const todayUTCNoon = new Date(Date.UTC(todayPacific.year, todayPacific.month, todayPacific.day, 12));
+  const todayDow = todayUTCNoon.getUTCDay();
+  const mondayUTCNoon = new Date(todayUTCNoon);
+  mondayUTCNoon.setUTCDate(todayUTCNoon.getUTCDate() - ((todayDow + 6) % 7));
 
   const posts: Post[] = [];
   const useCount: Record<string, number> = {};
@@ -2986,12 +3069,13 @@ function buildSeedData(): Post[] {
   let id = 1;
 
   for (let d = 0; d < ROTATION.length; d++) {
-    const date = new Date(monday);
-    date.setDate(monday.getDate() + d);
-    const dayName = date.toLocaleDateString("en-US", { weekday: "long" });
+    const date = new Date(mondayUTCNoon);
+    date.setUTCDate(mondayUTCNoon.getUTCDate() + d);
+    const dayName = date.toLocaleDateString("en-US", { weekday: "long", timeZone: "UTC" });
     const dateLabel = date.toLocaleDateString("en-US", {
       month: "short",
       day: "numeric",
+      timeZone: "UTC",
     });
     ROTATION[d].forEach((areaIdx, slot) => {
       const [areaName] = AREAS[areaIdx];
@@ -3252,8 +3336,8 @@ export default function BoardApp() {
       const neighborhood = post.area.split(",")[0].trim();
       boardData.push({
         id: nextId,
-        date: today.toLocaleDateString("en-US", { month: "short", day: "numeric" }),
-        day: today.toLocaleDateString("en-US", { weekday: "long" }),
+        date: pacificDateLabel(today),
+        day: pacificWeekdayName(today),
         time: post.time,
         area: post.area,
         areaUrl: post.areaUrl,
@@ -3293,11 +3377,15 @@ export default function BoardApp() {
     // fields mean "when this is actually scheduled to go live," not just the day it was
     // originally seeded on, which is what makes the auto-publish check meaningful.
     function applyScheduleDateTime(post: Post, dateTimeLocalValue: string) {
+      // The native picker returns a naive local wall-clock string (no timezone attached),
+      // so `new Date(...)` correctly resolves it to a real instant using the browser's own
+      // timezone — that part is accurate regardless of where the person scheduling is. What
+      // we display/store afterward is then always reformatted in Pacific for consistency.
       const d = new Date(dateTimeLocalValue);
       if (isNaN(d.getTime())) return;
-      post.date = d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
-      post.day = d.toLocaleDateString("en-US", { weekday: "long" });
-      post.time = d.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
+      post.date = pacificDateLabel(d);
+      post.day = pacificWeekdayName(d);
+      post.time = pacificTimeLabel(d);
     }
 
     // Wires a status <select> so picking "Scheduled" prompts for a real date/time via a
@@ -3317,9 +3405,16 @@ export default function BoardApp() {
         if (!p) return;
         const newStatus = selectEl.value as Status;
         if (newStatus === "Scheduled") {
-          const fallback = new Date();
-          fallback.setDate(fallback.getDate() + 1);
-          fallback.setHours(9, 0, 0, 0);
+          // Default to tomorrow 9:00 AM Pacific — computed from Pacific's own "today" so the
+          // suggestion is correct even if the visitor's browser is in a different timezone.
+          const todayPacific = pacificDateParts(new Date());
+          const fallback = pacificComponentsToDate(
+            todayPacific.year,
+            todayPacific.month,
+            todayPacific.day + 1,
+            9,
+            0
+          );
           dateInput.value = formatForDateTimeInput(fallback);
           dateInput.hidden = false;
           const withPicker = dateInput as HTMLInputElement & { showPicker?: () => void };
@@ -3352,11 +3447,21 @@ export default function BoardApp() {
 
     // A Scheduled post's date/time is just a display string (no year, e.g. "Sep 21" +
     // "9:00 AM") — reconstruct it against the current year, which is fine since nothing on
-    // this board spans a year boundary.
+    // this board spans a year boundary. Parsed as Pacific wall-clock explicitly (not via
+    // `new Date(string)`, which would interpret it using the visitor's own browser
+    // timezone) so "9:00 AM" always means 9:00 AM Pacific for everyone, everywhere.
     function parsePostDateTime(post: Post): Date | null {
-      const year = new Date().getFullYear();
-      const parsed = new Date(`${post.date}, ${year} ${post.time}`);
-      return isNaN(parsed.getTime()) ? null : parsed;
+      const dateMatch = post.date.match(/^([A-Za-z]{3})\s+(\d{1,2})$/);
+      const timeMatch = post.time.match(/^(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
+      if (!dateMatch || !timeMatch) return null;
+      const month = MONTH_NAMES.indexOf(dateMatch[1]);
+      if (month === -1) return null;
+      const day = Number(dateMatch[2]);
+      let hour = Number(timeMatch[1]) % 12;
+      if (/pm/i.test(timeMatch[3])) hour += 12;
+      const minute = Number(timeMatch[2]);
+      const year = pacificDateParts(new Date()).year;
+      return pacificComponentsToDate(year, month, day, hour, minute);
     }
 
     // Scheduled posts whose date/time has passed auto-publish, exactly like a manual
@@ -3405,6 +3510,7 @@ export default function BoardApp() {
         day: "numeric",
         hour: "numeric",
         minute: "2-digit",
+        timeZone: PACIFIC_TZ,
       });
     }
 
