@@ -105,6 +105,15 @@ const AREA_STATE: Record<string, "WA" | "OR"> = Object.fromEntries(
 const STATE_LABEL: Record<"WA" | "OR", string> = { WA: "Washington", OR: "Oregon" };
 const STATE_ORDER: ("WA" | "OR")[] = ["WA", "OR"];
 
+// A handful of areas have no distinct sub-neighborhood — the town itself is the
+// "neighborhood" (e.g. "Washougal, Washougal") — so AREAS models them as "{Town}, {Town}".
+// That's correct data, but showing the name twice on a card/chip/checklist row reads like a
+// duplicate at a glance. Collapse it to the name once wherever an area is shown as a label.
+function areaDisplayLabel(area: string): string {
+  const [neighborhood, city] = area.split(",").map((s) => s.trim());
+  return neighborhood === city ? neighborhood : area;
+}
+
 // Real, verified property-search URLs — Camas/Vancouver/Ridgefield/Battle Ground/La Center/
 // Woodland/Hockinson/Amboy/Washougal all come from the client's own "WASHINGTON CITY LINKS"
 // doc. "Brush Prairie" isn't in that doc at all (no city-level link was ever given for it) —
@@ -3240,7 +3249,7 @@ export default function BoardApp() {
         )
         .join("");
       const chip = (a: string) =>
-        `<button class="chip ${a === activeArea ? "active" : ""}" data-area="${a}">${a}</button>`;
+        `<button class="chip ${a === activeArea ? "active" : ""}" data-area="${a}">${areaDisplayLabel(a)}</button>`;
 
       const groups = STATE_ORDER.map((st) => {
         const names = AREAS.map((a) => a[0]).filter((name) => AREA_STATE[name] === st);
@@ -3255,7 +3264,7 @@ export default function BoardApp() {
       const toggle = el<HTMLButtonElement>("areaFiltersToggle");
       toggle.classList.toggle("active", areaFiltersOpen);
       toggle.textContent =
-        (activeArea !== "All" ? `Neighborhood: ${activeArea}` : "Neighborhood") +
+        (activeArea !== "All" ? `Neighborhood: ${areaDisplayLabel(activeArea)}` : "Neighborhood") +
         (areaFiltersOpen ? " ▴" : " ▾");
       toggle.onclick = () => {
         areaFiltersOpen = !areaFiltersOpen;
@@ -3577,7 +3586,7 @@ export default function BoardApp() {
 
       card.innerHTML = `
         <div class="card-top">
-          <span class="card-area">${post.area}</span>
+          <span class="card-area">${areaDisplayLabel(post.area)}</span>
           <span class="card-when">${post.date} · ${post.time}</span>
         </div>
         <p class="card-title">${post.title}</p>
@@ -3668,7 +3677,7 @@ export default function BoardApp() {
 
       const checklistItem = (name: string) => {
         const done = postedAreas.has(name);
-        return `<span class="checklist-item ${done ? "done" : ""}"><span class="checklist-dot">${done ? "✓" : ""}</span>${name}</span>`;
+        return `<span class="checklist-item ${done ? "done" : ""}"><span class="checklist-dot">${done ? "✓" : ""}</span>${areaDisplayLabel(name)}</span>`;
       };
 
       const groups = checklistOpen
@@ -3690,7 +3699,7 @@ export default function BoardApp() {
           <span class="checklist-title">Neighborhood rotation checklist ${checklistOpen ? "▴" : "▾"}</span>
           <span class="checklist-count ${allDone ? "checklist-count-done" : ""}">${doneCount}/${AREAS.length} posted this cycle</span>
         </button>
-        ${allDone ? `<div class="checklist-banner">Every neighborhood has been posted — the next post starts a new cycle back at ${AREAS[0][0]}.</div>` : ""}
+        ${allDone ? `<div class="checklist-banner">Every neighborhood has been posted — the next post starts a new cycle back at ${areaDisplayLabel(AREAS[0][0])}.</div>` : ""}
         ${groups}
       `;
 
@@ -3730,7 +3739,7 @@ export default function BoardApp() {
         <img class="modal-photo" src="${photoForPost(post)}" alt="${post.title}" />
         <div class="modal-content">
           <div class="modal-top">
-            <span class="card-area">${post.area}</span>
+            <span class="card-area">${areaDisplayLabel(post.area)}</span>
             <span class="card-when">${post.date} · ${post.time}</span>
           </div>
           <h2 class="modal-title">${post.title}</h2>
