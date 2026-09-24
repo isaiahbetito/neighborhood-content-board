@@ -347,6 +347,14 @@ h1{
   margin-left:6px;
   color-scheme:dark;
 }
+.schedule-tz-label{
+  font-family:'Inter',sans-serif;
+  font-size:10px;
+  font-weight:600;
+  color:var(--brass);
+  margin-left:5px;
+  letter-spacing:0.02em;
+}
 .card-moved{
   font-size:10.5px;
   color:var(--ink-soft);

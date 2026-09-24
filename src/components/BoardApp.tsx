@@ -3368,21 +3368,51 @@ export default function BoardApp() {
       if (modalPostId === post.id) renderModal(post.id);
     }
 
-    function formatForDateTimeInput(d: Date): string {
+    function formatDateTimeComponents(
+      year: number,
+      monthIndex: number,
+      day: number,
+      hour: number,
+      minute: number
+    ): string {
       const pad = (n: number) => String(n).padStart(2, "0");
-      return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+      return `${year}-${pad(monthIndex + 1)}-${pad(day)}T${pad(hour)}:${pad(minute)}`;
     }
 
-    // Sets a post's display date/day/time from a real chosen moment — once Scheduled, these
-    // fields mean "when this is actually scheduled to go live," not just the day it was
-    // originally seeded on, which is what makes the auto-publish check meaningful.
+    // Pure calendar-date arithmetic (add N days, correctly rolling over month/year) done via
+    // a neutral UTC scratch space — same trick used in buildSeedData — so it never depends
+    // on any real timezone/instant conversion.
+    function addDaysToDateParts(
+      parts: { year: number; month: number; day: number },
+      days: number
+    ): { year: number; month: number; day: number } {
+      const scratch = new Date(Date.UTC(parts.year, parts.month, parts.day));
+      scratch.setUTCDate(scratch.getUTCDate() + days);
+      return { year: scratch.getUTCFullYear(), month: scratch.getUTCMonth(), day: scratch.getUTCDate() };
+    }
+
+    // Sets a post's display date/day/time from what was entered in the scheduling picker —
+    // once Scheduled, these fields mean "when this is actually scheduled to go live," not
+    // just the day it was originally seeded on, which is what makes the auto-publish check
+    // meaningful.
     function applyScheduleDateTime(post: Post, dateTimeLocalValue: string) {
-      // The native picker returns a naive local wall-clock string (no timezone attached),
-      // so `new Date(...)` correctly resolves it to a real instant using the browser's own
-      // timezone — that part is accurate regardless of where the person scheduling is. What
-      // we display/store afterward is then always reformatted in Pacific for consistency.
-      const d = new Date(dateTimeLocalValue);
-      if (isNaN(d.getTime())) return;
+      // A datetime-local input's value is always "YYYY-MM-DDTHH:mm" with no timezone
+      // attached. Treat those numbers as literal Pacific wall-clock — NOT the picker's own
+      // browser/device timezone — since this is a Pacific-time business regardless of where
+      // whoever is scheduling happens to physically be sitting. (Using `new Date(value)`
+      // here would instead resolve it via the visitor's own system timezone, which is what
+      // caused a real bug: someone several hours ahead of Pacific typed "9:00 AM" meaning
+      // Pacific, but it got converted to the equivalent — already-past — Pacific time and
+      // auto-published immediately instead of actually waiting.)
+      const m = dateTimeLocalValue.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
+      if (!m) return;
+      const d = pacificComponentsToDate(
+        Number(m[1]),
+        Number(m[2]) - 1,
+        Number(m[3]),
+        Number(m[4]),
+        Number(m[5])
+      );
       post.date = pacificDateLabel(d);
       post.day = pacificWeekdayName(d);
       post.time = pacificTimeLabel(d);
@@ -3396,8 +3426,17 @@ export default function BoardApp() {
       const dateInput = document.createElement("input");
       dateInput.type = "datetime-local";
       dateInput.className = "schedule-datetime-input";
+      dateInput.title = "Enter the scheduled date and time in Pacific Time";
       dateInput.hidden = true;
       selectEl.insertAdjacentElement("afterend", dateInput);
+
+      // The native picker never shows a timezone, so without an explicit label it's easy to
+      // assume it means "my own device's local time" — it doesn't; it always means Pacific.
+      const tzLabel = document.createElement("span");
+      tzLabel.className = "schedule-tz-label";
+      tzLabel.textContent = "Pacific Time";
+      tzLabel.hidden = true;
+      dateInput.insertAdjacentElement("afterend", tzLabel);
 
       selectEl.addEventListener("change", (e) => {
         e.stopPropagation();
@@ -3405,18 +3444,19 @@ export default function BoardApp() {
         if (!p) return;
         const newStatus = selectEl.value as Status;
         if (newStatus === "Scheduled") {
-          // Default to tomorrow 9:00 AM Pacific — computed from Pacific's own "today" so the
-          // suggestion is correct even if the visitor's browser is in a different timezone.
-          const todayPacific = pacificDateParts(new Date());
-          const fallback = pacificComponentsToDate(
-            todayPacific.year,
-            todayPacific.month,
-            todayPacific.day + 1,
+          // Default to tomorrow 9:00 AM — as literal Pacific calendar numbers, not an
+          // instant converted through the visitor's own timezone (same reasoning as
+          // applyScheduleDateTime above: what's shown in this picker IS Pacific time).
+          const tomorrowPacific = addDaysToDateParts(pacificDateParts(new Date()), 1);
+          dateInput.value = formatDateTimeComponents(
+            tomorrowPacific.year,
+            tomorrowPacific.month,
+            tomorrowPacific.day,
             9,
             0
           );
-          dateInput.value = formatForDateTimeInput(fallback);
           dateInput.hidden = false;
+          tzLabel.hidden = false;
           const withPicker = dateInput as HTMLInputElement & { showPicker?: () => void };
           try {
             withPicker.showPicker?.();
@@ -3426,6 +3466,7 @@ export default function BoardApp() {
           return; // wait for the datetime-local input's own change before committing
         }
         dateInput.hidden = true;
+        tzLabel.hidden = true;
         void moveStatus(p, newStatus);
       });
 
@@ -3437,10 +3478,12 @@ export default function BoardApp() {
         if (!dateInput.value) {
           selectEl.value = p.status; // no date chosen — revert the visual selection
           dateInput.hidden = true;
+          tzLabel.hidden = true;
           return;
         }
         applyScheduleDateTime(p, dateInput.value);
         dateInput.hidden = true;
+        tzLabel.hidden = true;
         void moveStatus(p, "Scheduled");
       });
     }
