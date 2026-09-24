@@ -79,6 +79,22 @@ export default function BlogsPage() {
         </div>
       </div>
 
+      <div className="modal-overlay" id="textModalOverlay" hidden>
+        <div className="modal-panel text-modal-panel">
+          <button className="modal-close" id="textModalClose" aria-label="Close">
+            ×
+          </button>
+          <div className="text-modal-content">
+            <h3 className="text-modal-title" id="textModalTitle"></h3>
+            <p className="text-modal-hint" id="textModalHint"></p>
+            <textarea className="text-modal-textarea" id="textModalTextarea" readOnly></textarea>
+            <button className="text-modal-copy-btn" id="textModalCopyBtn">
+              Copy to clipboard
+            </button>
+          </div>
+        </div>
+      </div>
+
       <BoardApp />
     </>
   );

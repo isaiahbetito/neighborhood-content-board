@@ -227,7 +227,7 @@ const SCHOOL_DISTRICTS: Record<string, string> = {
   "Rock Creek, Happy Valley": "North Clackamas School District",
 };
 
-const YOUTUBE_URL = "https://www.youtube.com/@JamieMeushaw";
+const YOUTUBE_URL = "https://www.youtube.com/@jamiemeushawrealestate";
 const CALENDLY_URL = "https://calendly.com/jamiemeushawrealestate";
 const CONTACT_PHONE = "(360) 798-7127";
 const CONTACT_EMAIL = "jamie@jamiemeushawrealestate.com";
@@ -393,6 +393,14 @@ type PostSeed = {
   hook: string;
   keyword: string;
   metaDescription: string;
+  // Optional — only written for whichever variant is currently the active post for its
+  // neighborhood (see the "one active entry per neighborhood" rule). excerpt is the short
+  // WP-excerpt-field blurb; gbp is a full pre-written Google Business Profile post per the
+  // client's real GBP prompt doc. Both surface via the "Content"/"Google Business Profile"
+  // buttons in the post modal. Fall back gracefully (see contentPackageText/gbpPostText)
+  // when a variant hasn't had these written yet.
+  excerpt?: string;
+  gbp?: string;
   variant: "guide" | "update" | "considerations";
   intro: string[];
   livingIn?: string[];
@@ -419,6 +427,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Holly Ridge Camas WA",
       metaDescription:
         "Moving to Camas, WA? See what living in Holly Ridge is like — location, homes, Lacamas Lake access, schools and commute, plus current listings.",
+      excerpt:
+        "Thinking about moving to Camas, WA? Explore Holly Ridge, an established neighborhood near Lacamas Lake with greenspace, parks and a variety of homes.",
+      gbp:
+        "If you're moving to Camas, WA and want an established neighborhood with easy outdoor access, Holly Ridge is worth a look. Holly Ridge in Camas sits in the Camas Meadows area between Prune Hill and Lacamas Lake, with homes built mostly in the late 1990s and early 2000s — mature trees, settled landscaping, and a mix of townhome-style and larger single-family properties on the same streets. Some homes back directly to Prune Hill greenspace, and Lacamas Lake's trails and water recreation are close by. Access toward Vancouver is fairly direct, and SR-14 is the main route into Portland from this part of Camas — traffic varies by time of day, so it's worth testing your actual commute before deciding how convenient the location really is. Living in Camas here also puts you near everyday shopping and restaurants along the surrounding corridors. If you're comparing Holly Ridge homes for sale or looking more broadly at Camas homes for sale, the full Holly Ridge neighborhood guide covers location, schools, commute and current listings — worth a read before you start touring homes.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to Camas, Washington, Holly Ridge is worth a look — especially if you want an established home with easy access to the outdoor spaces that draw a lot of people to this part of Camas.",
@@ -508,6 +520,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Lakeshore Vancouver WA homes",
       metaDescription:
         "Moving to Vancouver, WA? See what Lakeshore is like — homes near Vancouver Lake, lot sizes, commute options and current listings.",
+      excerpt:
+        "Thinking about moving to Vancouver, WA? Explore Lakeshore, an established northwest Vancouver neighborhood near Vancouver Lake Regional Park with larger lots and mature trees.",
+      gbp:
+        "If you're moving to Vancouver, WA and lake access is high on your list, Lakeshore is worth researching. Lakeshore in Vancouver, WA sits close to Vancouver Lake Regional Park and its paved trail system, with boating and other water recreation on the lake itself. Homes here tend to be older than the newer construction farther east in Clark County, which keeps the neighborhood feeling established, with mature trees and generally larger lots than tighter subdivisions. I-5 runs both directions from Lakeshore — north toward Salmon Creek, or south into downtown Vancouver and across into Portland — though it's a longer drive into more central Vancouver neighborhoods like Columbia Way or Harney Heights. Because homes were built earlier, a home inspection is worth taking seriously here. If you're comparing Lakeshore homes for sale or looking more broadly at Vancouver homes for sale, the full Lakeshore neighborhood guide covers commute, lot sizes and current listings. Living in Vancouver near the lake is a different pace than the busier east-county corridors.",
       variant: "guide",
       intro: [
         "Lakeshore sits in northwest Vancouver, close to Vancouver Lake. If easy access to the lake and a bit more room around the house matter to you, it's worth a look as you compare Vancouver neighborhoods.",
@@ -589,6 +605,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Pleasant Valley Vancouver WA homes",
       metaDescription:
         "Moving to Vancouver, WA? See what Pleasant Valley is like — larger lots, semi-rural character, commute options and current listings.",
+      excerpt:
+        "Thinking about moving to Vancouver, WA? Explore Pleasant Valley, a semi-rural neighborhood northeast of downtown with larger lots, acreage homes and newer construction side by side.",
+      gbp:
+        "If you're moving to Vancouver, WA and want more room than a standard subdivision lot, Pleasant Valley is worth researching. Pleasant Valley sits northeast of downtown Vancouver off the I-5 and I-205 corridor, one of the few pockets in Clark County where farmland, larger-lot homes and newer construction still sit side by side. Housing ranges from older farmhouses on acreage to newer construction on larger lots, with more room for a shop, a garden, or simply more distance from the next house. It's within a reasonable drive of Washington State University Vancouver and the shopping around Fisher's Landing. This isn't a walkable neighborhood — most errands mean getting in the car — and I-5 and I-205 access means a longer drive into downtown Vancouver or Portland than more central neighborhoods. On acreage listings specifically, well and septic systems, easement access and zoning are worth checking early. If you're comparing Pleasant Valley homes for sale or Vancouver homes for sale more broadly, the full neighborhood guide covers commute, lot types and current listings. Living in Vancouver here means trading walkability for space, and for the right buyer, that trade is the whole appeal.",
       variant: "guide",
       intro: [
         "Pleasant Valley sits northeast of downtown Vancouver, off the I-5 and I-205 corridor. It's one of the few pockets left in Clark County where farmland, larger-lot homes and newer construction still sit side by side.",
@@ -670,6 +690,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Hunter Ridge Estates Camas homes",
       metaDescription:
         "Moving to Camas, WA? See what Hunter Ridge Estates is like — gated entry, elevated lots, Mount Hood views and current listings.",
+      excerpt:
+        "Thinking about moving to Camas, WA? Explore Hunter Ridge Estates, a gated community of custom and semi-custom homes on elevated lots, some with Mount Hood views.",
+      gbp:
+        "If you're moving to Camas, WA and want privacy and elevation, Hunter Ridge Estates is worth researching. This gated community sits on elevated ground within Camas, with custom and semi-custom homes that often run four or more bedrooms on generous lots. Some backyards have a clear line toward Mount Hood on a clear day, though the view varies lot to lot, so it's worth touring more than once. Hunter Ridge Estates trades proximity to downtown Camas and Lacamas Lake for elevation and privacy — it isn't built around walkable parks the way some other Camas neighborhoods are. SR-14 provides the same route into Portland as the rest of Camas. Gated communities here often carry more involved HOA covenants than older, established neighborhoods, so that's worth reviewing early in the process. If you're comparing Hunter Ridge Estates homes for sale or Camas homes for sale more broadly, the full neighborhood guide covers location, HOA structure and current listings. Living in Camas at this elevation is a different experience than the walkable Camas Meadows neighborhoods nearby.",
       variant: "guide",
       intro: [
         "Hunter Ridge Estates sits above much of Camas — a gated community of custom and semi-custom homes on elevated lots. Some back decks have a clear view of Mount Hood on a clear day.",
@@ -751,6 +775,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Columbia Way Vancouver WA homes",
       metaDescription:
         "Moving to Vancouver, WA? See what Columbia Way is like — waterfront walkability, home types, commute and current listings.",
+      excerpt:
+        "Thinking about moving to Vancouver, WA? Explore Columbia Way, a walkable waterfront neighborhood near downtown with easy access to Esther Short Park and the riverfront trail.",
+      gbp:
+        "If you're moving to Vancouver, WA and want to trade a car trip for a walk, Columbia Way is worth researching. Columbia Way runs along the north bank of the Columbia River, close to downtown Vancouver's waterfront district, with restaurants, Esther Short Park and the trail toward Wintler Park all within walking distance for many addresses. Housing is more mixed here than in Vancouver's established neighborhoods — newer condos and townhomes sit closer to the waterfront redevelopment, while older single-family homes are set further back from the river. I-5 access is immediate, and Portland is a short bridge crossing away, though actual drive times depend heavily on time of day and bridge traffic. This is a denser, more urban stretch of Vancouver than neighborhoods like Harney Heights or Lakeshore, and a larger yard isn't really part of the picture here. If you're comparing Columbia Way homes for sale or Vancouver homes for sale more broadly, the full neighborhood guide covers housing types, commute and current listings. Living in Vancouver along the waterfront is a genuinely different pace than the city's quieter, more established pockets.",
       variant: "guide",
       intro: [
         "Columbia Way runs along the north bank of the Columbia River, close to downtown Vancouver's waterfront district. A lot of buyers here trade a car trip for a walk — to restaurants along the river, to Esther Short Park, or along the trail toward Wintler Park.",
@@ -832,6 +860,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Deer Creek Camas homes",
       metaDescription:
         "Moving to Camas, WA? See what Deer Creek is like — wooded lots, quiet streets, schools and current listings on Prune Hill.",
+      excerpt:
+        "Thinking about moving to Camas, WA? Explore Deer Creek, a wooded, quiet pocket of the Prune Hill area near Holly Ridge with easy access to the Lacamas Creek Trail.",
+      gbp:
+        "If you're moving to Camas, WA and want a quieter, wooded setting, Deer Creek is worth researching. Deer Creek sits on the wooded side of the Prune Hill area, a few minutes from Holly Ridge, with more tree cover and quieter cul-de-sac streets than more visible Camas addresses. Most homes here date to the same late-1990s-to-2000s building period as the rest of Camas Meadows, which means mature landscaping and lots that give some separation from neighbors. The Lacamas Creek Trail is an easy walk or short drive away, and SR-14 provides the same access into Portland as the rest of the Camas Meadows area. Because it's a quieter, less-searched address, it can take a little longer to find directly comparable sales when evaluating a home here, and pricing has tracked a step below Holly Ridge for comparable square footage. If you're comparing Deer Creek homes for sale or Camas homes for sale more broadly, the full neighborhood guide covers location, schools and current listings. Living in Camas here means trading visibility for a quieter, more settled pace.",
       variant: "guide",
       intro: [
         "Deer Creek sits on the wooded side of the Prune Hill area, a few minutes from Holly Ridge, with noticeably more tree cover and quieter cul-de-sac streets. It doesn't come up in as many searches, which has kept it relatively accessible.",
@@ -912,6 +944,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Harney Heights Vancouver WA homes",
       metaDescription:
         "Moving to Vancouver, WA? See what Harney Heights is like — established homes, mature trees, commute and current listings.",
+      excerpt:
+        "Thinking about moving to Vancouver, WA? Explore Harney Heights, an established, quiet neighborhood in northeast Vancouver with mature trees and a mix of older home styles.",
+      gbp:
+        "If you're moving to Vancouver, WA and want an established, quieter address, Harney Heights is worth researching. Harney Heights is a quiet pocket of northeast Vancouver with mature trees, settled landscaping and noticeably less through-traffic than the busier east-county corridors. Home styles here run older and more varied than newer east Vancouver developments, with a mix of floor plans rather than one repeated design — some properties have been updated, others haven't. There's generally no formal HOA across much of the neighborhood, which gives more flexibility but less consistency street to street. Harney Heights sits close enough to the Mill Plain and SR-14 corridor for a reasonable commute, while feeling several steps removed from the retail density around Vancouver Mall. Homes here also tend to cost less per square foot than newer construction closer to I-205. If you're comparing Harney Heights homes for sale or Vancouver homes for sale more broadly, the full neighborhood guide covers commute, HOA structure and current listings. Living in Vancouver in an established neighborhood like this rewards buyers who look closely rather than judge from photos alone.",
       variant: "guide",
       intro: [
         "Harney Heights doesn't get the attention that some of Vancouver's newer subdivisions do. It's an established, quiet pocket of northeast Vancouver with mature trees and settled landscaping, and noticeably less through-traffic than the busier east-county corridors.",
@@ -993,6 +1029,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Pioneer Canyon Ridgefield WA",
       metaDescription:
         "Moving to Ridgefield, WA? See what Pioneer Canyon is like — newer construction, location, schools and commute, plus current listings.",
+      excerpt:
+        "Thinking about moving to Ridgefield, WA? Explore Pioneer Canyon, a newer neighborhood built 2009-2017 near I-5 Exit 14 and the Ridgefield National Wildlife Refuge.",
+      gbp:
+        "If you're moving to Ridgefield, WA, Pioneer Canyon is worth a look. Built mostly between 2009 and 2017, it's one of the newer neighborhoods in town, sitting east of downtown just a few minutes from I-5 Exit 14. Homes here tend to have more consistent modern layouts than you'll find in older parts of Ridgefield, though lot size and floor plan still vary by section within the subdivision, so it's worth comparing more than one address. Living in Ridgefield also means easy access to the Ridgefield National Wildlife Refuge, with its auto tour and trails just minutes from Pioneer Canyon, plus the Port of Ridgefield's boat launches on Lake River. As with any newer area, landscaping is still filling in, and it's worth testing your actual commute at the hours you'd be driving. Curious what Pioneer Canyon homes for sale look like right now, or how they compare to other Ridgefield homes for sale? Read the full Pioneer Canyon guide and see current listings on the site.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to Ridgefield, Washington, Pioneer Canyon is one of the newer neighborhoods worth a look — built east of downtown, close to I-5, on the north side of Pioneer Road.",
@@ -1075,6 +1115,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Battle Ground Meadows WA",
       metaDescription:
         "Moving to Battle Ground, WA? See what Battle Ground Meadows is like — location, homes, schools and commute, plus current listings.",
+      excerpt:
+        "Thinking about moving to Battle Ground, WA? Explore Battle Ground Meadows, one of the city's larger, established neighborhoods near the center of Clark County.",
+      gbp:
+        "Moving to Battle Ground, WA and comparing neighborhoods? Battle Ground Meadows is one of the city's larger, more established options, sitting near the geographic center of Clark County where SR-503 meets SR-502. Living in Battle Ground Meadows means settled streets and more consistent housing stock than some of the city's newer developments, though condition and updates still vary address to address, so it's worth comparing a few listings directly. Battle Ground Lake State Park, about 280 acres built around a volcanic lake with roughly 5 miles of hiking trails plus swimming and fishing, sits just a few miles northeast, and it's one of the neighborhood's real draws. SR-503 and SR-502 connect toward I-5, though neither is a straight shot — worth testing your actual commute. If you're researching Battle Ground Meadows homes for sale or comparing them with other Battle Ground homes for sale, read the full Battle Ground Meadows guide and see current listings on the site.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to Battle Ground, Washington, Battle Ground Meadows is one of the larger, more established neighborhoods worth a look.",
@@ -1156,6 +1200,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Stephens Hillside Farm La Center WA",
       metaDescription:
         "Moving to La Center, WA? See what Stephens Hillside Farm is like — newer construction, location, schools and commute, plus listings.",
+      excerpt:
+        "Thinking about moving to La Center, WA? Explore Stephens Hillside Farm, a newer neighborhood of about 85 homesites with its own park and trails near the East Fork Lewis River.",
+      gbp:
+        "Moving to La Center, WA? Stephens Hillside Farm is one of the newer neighborhoods worth researching first. It's a development of roughly 85 homesites built by New Tradition Homes/Generation Homes NW, with a neighborhood park, playground and walking trails built right in — more amenity-focused than La Center's older, original-townsite housing stock. La Center sits along the East Fork Lewis River, less than 20 miles north of Vancouver, and living in La Center means fishing and kayaking access on the river, plus nearby Paradise Point State Park and Holley Park. It's a smaller, quieter setting than denser parts of Clark County, with its own standalone school district — just three schools in total, which is worth knowing if district size matters to you. If you're looking at Stephens Hillside Farm homes for sale or comparing them with other La Center homes for sale, read the full Stephens Hillside Farm guide and see current listings on the site.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to La Center, Washington, Stephens Hillside Farm is one of the newer neighborhoods worth a look — a development of roughly 85 homesites with its own park, playground and walking trails.",
@@ -1237,6 +1285,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Northfork Landing Woodland WA",
       metaDescription:
         "Moving to Woodland, WA? See what Northfork Landing is like — newer construction, river trail access, schools and current listings.",
+      excerpt:
+        "Thinking about moving to Woodland, WA? Explore Northfork Landing, a newer roughly 85-home neighborhood with its own trail to the Lewis River.",
+      gbp:
+        "Moving to Woodland, WA and researching newer neighborhoods? Northfork Landing is worth a look. It's a roughly 85-home development with a public trail, about 1,700 feet long, leading straight to the Lewis River, giving the neighborhood direct walkable river access. Woodland sits where the Lewis River meets I-5, about 22 miles north of Vancouver, straddling the Cowlitz and Clark county line. It's a small, historic town, incorporated in 1906, with a quieter pace than denser Vancouver-area neighborhoods and a well-regarded school district. I-5 runs straight through town, connecting south to Vancouver and Portland, though it's worth testing the actual drive time yourself rather than trusting a map estimate. Interested in Northfork Landing homes for sale, or how they compare with other Woodland homes for sale? Read the full Northfork Landing guide and see current listings on the site.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to Woodland, Washington, Northfork Landing is one of the newer developments worth a look — a roughly 85-home neighborhood with a public trail leading to the Lewis River.",
@@ -1318,6 +1370,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Washougal WA homes",
       metaDescription:
         "Moving to Washougal, WA? See what living here is like — river access, parks, schools and commute, plus current listings.",
+      excerpt:
+        "Thinking about moving to Washougal, WA? Explore what living here is like: a Columbia River town east of Camas with waterfront parks and a genuine mix of housing.",
+      gbp:
+        "Moving to Washougal, WA? It's a Columbia River town just east of Camas, on the north bank of the river in southeast Clark County, about 18 miles from Vancouver. Washougal doesn't have one single dominant neighborhood the way Camas has Holly Ridge — instead there's a real mix of subdivisions, including Columbia View and Crown Pointe, alongside older, established housing stock, so it's worth comparing specific streets rather than the town as a whole. Living in Washougal means real river access: Washougal Waterfront Park connects to the Columbia River Dike Trail and the Lewis and Clark Heritage Trail, and the city maintains 14 parks totaling more than 120 acres. SR-14 connects Washougal directly to Camas and on toward Vancouver and I-205, though commute times shift with time of day like anywhere in the metro. Researching Washougal homes for sale? Read the full Washougal guide and see current listings on the site.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to Washougal, Washington, it's worth knowing this is a Columbia River town just east of Camas, with its own waterfront parks and a genuine mix of housing options.",
@@ -1398,6 +1454,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Hockinson WA homes",
       metaDescription:
         "Moving to the Hockinson, WA area? See what living here is like — acreage, parks, schools and commute, plus current listings.",
+      excerpt:
+        "Thinking about moving to the Hockinson, WA area? Explore what living here is like: rural-residential acreage about 14 miles northeast of Vancouver.",
+      gbp:
+        "Moving to the Hockinson, WA area? It's a rural-residential community about 14 miles northeast of downtown Vancouver, bordering Venersborg, Battle Ground, Brush Prairie and Orchards. Hockinson doesn't have a distinct named sub-neighborhood — the area itself functions as its own community, with acreage properties, horse ranches and hillside lots rather than a dense subdivision. Living in Hockinson also means its own standalone school district, and Battle Ground Lake State Park, with hiking trails and a swimming lake, just minutes away. NE 182nd Avenue leads to the local 'Blueberry Corridor,' a mix of residential and agricultural land with several berry farms. There's no freeway directly through the area, so reaching I-5 or I-205 means routing through Battle Ground or Orchards first. Looking at Hockinson homes for sale, or comparing them with other homes for sale near Vancouver? Read the full Hockinson guide and see current listings on the site.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to the Hockinson area of Clark County, it's worth knowing this is a rural-residential community about 14 miles northeast of downtown Vancouver — acreage properties, horse ranches and hillside lots rather than a dense subdivision.",
@@ -1478,6 +1538,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Amboy WA homes",
       metaDescription:
         "Moving to the Amboy, WA area? See what living here is like — rural acreage, schools and commute, plus current listings.",
+      excerpt:
+        "Thinking about moving to the Amboy, WA area? Explore what living here is like: rural acreage in northern Clark County, about 30 miles from Vancouver.",
+      gbp:
+        "Moving to the Amboy, WA area? It's a small, unincorporated rural community in northern Clark County, sitting at the confluence of Chelatchie Creek and Cedar Creek, roughly 30 miles northeast of Vancouver. Amboy doesn't have a distinct named sub-neighborhood — the community itself functions as its own area, with larger acreage parcels than you'll typically find even in Battle Ground or Hockinson. Living in Amboy means real distance from neighbors and a quieter, more remote pace, with county roads as the primary access rather than a direct freeway. Moulton Falls Regional Park, with its waterfalls and trails, sits nearby in the broader Yacolt/Amboy area, and Amboy Middle School, part of Battle Ground Public Schools, is a local landmark worth knowing. Researching Amboy homes for sale? Read the full Amboy guide and see current listings on the site.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to the Amboy area, it's worth knowing this is a small, unincorporated rural community in northern Clark County, about 30 miles northeast of Vancouver.",
@@ -1558,6 +1622,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Brush Prairie WA homes",
       metaDescription:
         "Moving to the Brush Prairie, WA area? See what living here is like — rural-residential character, schools and current listings.",
+      excerpt:
+        "Thinking about moving to Brush Prairie, WA? Explore what living here is like — a rural-residential community between Battle Ground and Vancouver with hobby farms, equestrian properties and newer custom homes.",
+      gbp:
+        "If you're moving to Brush Prairie, WA, it helps to know this unincorporated Clark County community sits between Battle Ground and Vancouver with a genuinely rural-residential character. Living in Brush Prairie means a real mix of hobby farms, equestrian properties and newer custom-built homes rather than one uniform housing type. NE 117th Avenue (SR-503) connects to I-205 via the Padden Parkway exit, giving Brush Prairie a reasonably direct route toward both Vancouver and Portland. Lucky Dog Park, also known as Lucky Memorial Park, gives the area about 4.5 acres of open fields close to home. School district can vary by address here, so it's worth verifying directly for any property you're considering, and rural upkeep — hobby farms and equestrian properties in particular — comes with different maintenance needs than a standard subdivision lot. Read the full Brush Prairie guide and see current Brush Prairie homes for sale on the site.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to the Brush Prairie area, it's worth knowing this is an unincorporated Clark County community with a genuinely rural-residential character, sitting between Battle Ground and Vancouver.",
@@ -1638,6 +1706,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Cascade Park Vancouver WA homes",
       metaDescription:
         "Moving to Vancouver, WA? See what Cascade Park is like — location, parks, schools and commute, plus current listings.",
+      excerpt:
+        "Thinking about moving to Vancouver, WA? Explore Cascade Park, an established east-side neighborhood near Mill Plain Boulevard with a mix of single-family homes and townhomes.",
+      gbp:
+        "If you're moving to Vancouver, WA, Cascade Park is an established east-side neighborhood worth researching, bounded roughly by Mill Plain Boulevard to the north, the Columbia River to the south, and I-205 to the west. Living in Vancouver's Cascade Park means a genuine mix of single-family homes and townhomes, plus several small parks — Cascade Park itself near Crestline Elementary, Biddlewood Park and Homestead Neighborhood Park on SE 160th Avenue. It's worth knowing Cascade Park is in Evergreen Public Schools rather than Vancouver Public Schools, unlike some other Vancouver neighborhoods in this rotation, so it's worth confirming directly if you're comparing east and central Vancouver. Columbia Square along Mill Plain Boulevard covers everyday shopping close by, and I-205 running along the western edge keeps commute options reasonably direct. Read the full Cascade Park guide and see current Cascade Park homes for sale, or browse all Vancouver homes for sale, on the site.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to Vancouver, Washington, Cascade Park is an established east-side neighborhood worth a look — bounded roughly by Mill Plain Boulevard to the north, the Columbia River to the south, and I-205 to the west.",
@@ -1718,6 +1790,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Fishers Landing Vancouver WA homes",
       metaDescription:
         "Moving to Vancouver, WA? See what Fisher's Landing is like — homes, shopping, schools and commute, plus current listings.",
+      excerpt:
+        "Thinking about moving to Vancouver, WA? Explore Fisher's Landing, an established 1990s neighborhood cluster near SE 164th Avenue with real park access and nearby shopping.",
+      gbp:
+        "If you're moving to Vancouver, WA, Fisher's Landing is worth researching — actually a cluster of three related neighborhoods, Fisher's Creek, Fisher's Landing East and Village at Fisher's Landing, that grew up together along SE 164th Avenue in the 1990s, mostly single-level Craftsman-style and two-level homes. Living in Vancouver's Fisher's Landing area means real park access: Fisher's Landing East alone has roughly six parks, plus Heritage Park's circular walking path and playground and Clearmeadows Park's pollinator-themed play structures. Fisher's Landing Marketplace and further retail up toward Fred Meyer cover everyday shopping close by. Like Cascade Park, it's in Evergreen Public Schools rather than Vancouver Public Schools, and active HOAs are common across the neighborhood cluster, so reviewing covenants and dues is worth doing early. Read the full Fisher's Landing guide and see current Fisher's Landing homes for sale, or browse all Vancouver homes for sale, on the site.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to Vancouver, Washington, Fisher's Landing is an established east-side area worth a look — actually a cluster of three related neighborhoods, Fisher's Creek, Fisher's Landing East, and Village at Fisher's Landing, that grew up together in the 1990s.",
@@ -1798,6 +1874,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Downtown Vancouver WA condos",
       metaDescription:
         "Moving to Vancouver, WA? See what Downtown Vancouver is like — condo living, Esther Short Park, waterfront access and listings.",
+      excerpt:
+        "Thinking about moving to Vancouver, WA? Explore Downtown Vancouver, a walkable urban-core neighborhood centered on Esther Short Park and the Waterfront district.",
+      gbp:
+        "If you're moving to Vancouver, WA and want a genuinely walkable setting, Downtown Vancouver is worth researching. Living in Vancouver's downtown core centers on Esther Short Park, the oldest public park in the Pacific Northwest at 5 acres dating to 1853, home to a year-round farmers market and close to the Waterfront district, a major redevelopment south of the park that's added new retail and open space along the Columbia River. Housing here is predominantly condos, a genuinely different housing type than most other Vancouver neighborhoods, with immediate I-5 access and just a short bridge crossing to Portland. It's a noticeably different pace than Vancouver's residential neighborhoods, with public art and breweries within walking distance, though buyers specifically wanting a detached single-family home will find far fewer options downtown. Read the full Downtown Vancouver guide and see current Downtown Vancouver homes for sale, or browse all Vancouver homes for sale, on the site.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to Vancouver, Washington, and want a genuinely walkable, urban-core setting, Downtown Vancouver, centered on Esther Short Park and the waterfront, is worth a look.",
@@ -1878,6 +1958,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Salmon Creek Vancouver WA homes",
       metaDescription:
         "Moving to Vancouver, WA? See what Salmon Creek is like — location, parks, schools and commute, plus current listings.",
+      excerpt:
+        "Thinking about moving to Vancouver, WA? Explore Salmon Creek, a suburban north Vancouver area near the I-5/I-205 interchange with a genuine mix of housing types.",
+      gbp:
+        "If you're moving to Vancouver, WA, Salmon Creek is worth researching — a suburban north Vancouver/Clark County area of roughly 21,000 people, right at the I-5/I-205 interchange. Living in Vancouver's Salmon Creek area means a genuine mix of housing, from entry-level condos to higher-end homes, some with creek or estuary views. The Salmon Creek Greenway Trail offers real wooded, creek-side walking close to home, and Clark College's main campus sits nearby, just east of I-5 in Vancouver's Central Park area. Salmon Creek is in Vancouver Public Schools, the same district as several other Vancouver-area neighborhoods, and the interchange location means access in multiple directions, though it's worth testing your specific route at the hours you'd actually travel. Read the full Salmon Creek guide and see current Salmon Creek homes for sale, or browse all Vancouver homes for sale, on the site.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to Vancouver, Washington, Salmon Creek is a north Vancouver/Clark County area worth a look — a genuinely suburban setting near the I-5/I-205 interchange, with a population of roughly 21,000.",
@@ -1958,6 +2042,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Irvington Portland OR homes",
       metaDescription:
         "Moving to Portland, OR? See what Irvington is like — historic homes, parks, schools and commute, plus current listings.",
+      excerpt:
+        "Thinking about moving to Portland, OR? Explore Irvington, Oregon's largest historic residential district in Northeast Portland, steps from Irving Park and Grant Park.",
+      gbp:
+        "If you're moving to Portland, OR, Irvington is worth researching — Oregon's largest historic residential district, added to the National Register of Historic Places in 2010. Living in Portland's Irvington neighborhood means real architectural character: Queen Anne, Craftsman and Prairie School homes built mostly between the 1890s and 1930s, in Northeast Portland close to I-84 and I-5, neighboring Sabin, Alameda, Eliot and Grant Park. Irving Park's 16 acres at NE 7th and Fremont include ball fields, courts, a playground and an off-leash dog area, with Grant Park's nearly 20 acres just next door offering its own playground, dog park and athletic fields. Homes here are genuinely historic, not reproductions, so some exterior changes may involve preservation guidelines and older systems worth understanding before you buy. Read the full Irvington guide and see current Irvington homes for sale, or browse all Portland homes for sale, on the site.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to Portland, Oregon, Irvington is one of the city's most established neighborhoods worth a look — Oregon's largest historic residential district, added to the National Register of Historic Places in 2010.",
@@ -2038,6 +2126,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Sexton Mountain Beaverton OR homes",
       metaDescription:
         "Moving to Beaverton, OR? See what Sexton Mountain is like — hillside homes, trail access, schools and current listings.",
+      excerpt:
+        "Thinking about moving to Beaverton, OR? Explore Sexton Mountain, a hillside neighborhood on the city's southwest edge with real trail access.",
+      gbp:
+        "If you're moving to Beaverton, OR, Sexton Mountain is worth researching — a hillside neighborhood on the city's southwest edge, officially recognized by the City of Beaverton with its own dedicated neighborhood page. Living in Beaverton's Sexton Mountain area means an elevated setting with homes mostly from the 1990s and 2000s on hillside, elevated lots, plus real access to the Westside Regional Trail, which runs through the neighborhood connecting to several parks. Beaverton itself sits about 8 miles west of downtown Portland, served by OR-217, US-26 and TriMet's WES commuter rail, with OR-217 seeing real congestion at peak hours. Hillside lots here mean more topography and views than central Beaverton, along with a few extra things worth checking on a tour, like retaining walls, drainage and steeper driveways. Read the full Sexton Mountain guide and see current Sexton Mountain homes for sale, or browse all Beaverton homes for sale, on the site.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to Beaverton, Oregon, Sexton Mountain is a hillside neighborhood on the city's southwest edge worth a look — officially recognized by the City of Beaverton with its own dedicated neighborhood page.",
@@ -2118,6 +2210,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Bull Mountain Tigard OR homes",
       metaDescription:
         "Moving to Tigard, OR? See what the Bull Mountain area is like — newer homes, trail access, schools and current listings.",
+      excerpt:
+        "Thinking about moving to Tigard, OR? Explore the Bull Mountain area, a hilltop community with newer construction and real trail access.",
+      gbp:
+        "If you're moving to Tigard, OR, the Bull Mountain area is worth researching — a hilltop area roughly 710 feet in elevation, about 12 miles southwest of Portland. Living in Tigard's Bull Mountain area means mostly newer traditional and Craftsman-style homes built over the last two decades, often on elevated or view lots. Bull Mountain Park, maintained by the City of Tigard, has 9 trails supporting hiking, mountain biking and trail running — a real, substantial outdoor amenity. Tigard is built around Pacific Highway (99W), with OR-217, I-5 and TriMet's WES commuter rail connecting Tigard and Beaverton as a transit alternative. Parts of Bull Mountain are unincorporated Washington County rather than inside Tigard city limits, so it's worth confirming the exact jurisdiction and any HOA details for a specific property. Read the full Bull Mountain guide and see current Bull Mountain homes for sale, or browse all Tigard homes for sale, on the site.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to Tigard, Oregon, the Bull Mountain area is worth a look — a hilltop area, roughly 710 feet in elevation, about 12 miles southwest of Portland.",
@@ -2198,6 +2294,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "North Bethany OR homes",
       metaDescription:
         "Moving to the Bethany, OR area? See what North Bethany is like — planned community, parks, schools and current listings.",
+      excerpt:
+        "Thinking about moving to the Bethany, OR area? Explore North Bethany, a planned community developing since 2006 in northwest Washington County with newer, consistent-design homes and extensive trail access.",
+      gbp:
+        "If you're moving to the Bethany, OR area, North Bethany is worth researching — a planned community that's been developing since 2006 in the northwest corner of Washington County. Living in North Bethany means newer, single-detached homes with more consistent layouts and finishes than Central Bethany's older mix of townhomes, condos and apartments. The Rock Creek Regional Trail (3.5 miles) and Waterhouse Trail (10 miles), both ADA-accessible, run through the broader area, and Bethany Lake Park adds a 42-acre community garden and picnic space. US-26 connects North Bethany to Portland and Hillsboro, though drive times vary by time of day like anywhere in the metro. Because development is ongoing, inventory spans different build phases and years, so it's worth comparing specific build years rather than assuming uniformity. If you're comparing North Bethany homes for sale or Bethany OR homes for sale more broadly, the full neighborhood guide covers HOA structure, trail access and current listings. Living in North Bethany rewards buyers who want newer construction with real trail access close to home.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to the Bethany area, North Bethany is worth a look — a planned community that's been developing since 2006, in the northwest corner of Washington County.",
@@ -2278,6 +2378,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Orenco Station Hillsboro OR homes",
       metaDescription:
         "Moving to Hillsboro, OR? See what Orenco Station is like — walkable design, MAX access, schools and current listings.",
+      excerpt:
+        "Thinking about moving to Hillsboro, OR? Explore Orenco Station, a walkable, transit-oriented community built since 1997 on century-old nursery-town roots, centered on its own MAX station.",
+      gbp:
+        "If you're moving to Hillsboro, OR, Orenco Station is worth researching — a New Urbanist, transit-oriented community built starting in 1997 on the site of a company town founded in 1906. Living in Orenco Station means walkable streets, alley-loaded garages and a genuine mix of apartments, single-family homes, condos and townhouses, all designed around the Orenco MAX Station, which opened in 1998. A 2002 study found 22% of residents commuted by transit versus 6% regionally, and Central Park plus a seasonal farmers market give the neighborhood a real town-center feel. For drivers, US-26 provides the primary route toward Portland. Because narrower streets and alley-loaded garages mean less traditional yard space, this is a meaningfully different model than most other neighborhoods in the area, and HOA dues are common for the townhome and condo product here. If you're comparing Orenco Station homes for sale or Hillsboro OR homes for sale more broadly, the full neighborhood guide covers walkability, transit access and current listings. Living in Hillsboro here means trading yard space for a genuine transit alternative to driving.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to Hillsboro, Oregon, Orenco Station is a genuinely distinctive neighborhood worth a look — a New Urbanist, transit-oriented community built starting in 1997 on the site of a company town founded in 1906.",
@@ -2358,6 +2462,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Mountain Park Lake Oswego OR homes",
       metaDescription:
         "Moving to Lake Oswego, OR? See what Mountain Park is like — HOA trails, homes, schools and current listings today.",
+      excerpt:
+        "Thinking about moving to Lake Oswego, OR? Explore Mountain Park, a large HOA community founded in 1968 with 8+ miles of private trails, though most properties do not carry Oswego Lake access.",
+      gbp:
+        "If you're moving to Lake Oswego, OR, Mountain Park is worth researching — an established community founded in 1968 with around 8,500 residents in the northwest part of the city. One important clarification: despite Lake Oswego's name, most Mountain Park properties do not carry Oswego Lake access rights — that's tied to specific easements on certain homes elsewhere in the city. Living in Mountain Park means being part of one of the largest homeowners associations in the country, with automatic membership funding more than 8 miles of private walking trails and shared amenities. Housing genuinely spans entry-level condos and townhomes to mid-century ranch homes and premium contemporary estates. Highway 43 and I-5 both serve Lake Oswego, roughly 8 miles from downtown Portland. Because nearly every property carries mandatory monthly HOA dues, that's a real ongoing cost worth budgeting for. If you're comparing Mountain Park homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers HOA structure, trail access and current listings. Living in Lake Oswego here means real amenities close to Portland, without assuming lake access comes standard.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to Lake Oswego, Oregon, Mountain Park is worth a look — an established community founded in 1968 with around 8,500 residents, in the northwest part of the city.",
@@ -2438,6 +2546,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Hidden Springs West Linn OR homes",
       metaDescription:
         "Moving to West Linn, OR? See what Hidden Springs is like — hillside homes, parks, schools and current listings.",
+      excerpt:
+        "Thinking about moving to West Linn, OR? Explore Hidden Springs, one of the city's eleven official neighborhoods, a hilly but walkable area with a genuine mix of federal, colonial and traditional homes.",
+      gbp:
+        "If you're moving to West Linn, OR, Hidden Springs is worth researching — one of the city's eleven official neighborhood associations, a hilly but walkable area west of Willamette Drive with about 1,236 homes and roughly 3,179 residents. Living in Hidden Springs means a genuine mix of architectural styles — federal, colonial, salt box and traditional homes — with mature flowering trees and manicured sidewalks giving the area a settled feel despite the hilly terrain. Three local parks, Benski, Palomino and Sunburst, serve the neighborhood directly. West Linn sits along Highway 43 and I-205, about 15 miles from downtown Portland, near Willamette Falls, the largest waterfall by volume in the Pacific Northwest. Because this is one of West Linn's smaller neighborhoods, inventory can be more limited than in larger areas nearby. If you're comparing Hidden Springs homes for sale or West Linn OR homes for sale more broadly, the full neighborhood guide covers terrain, local parks and current listings. Living in West Linn here rewards buyers who don't mind real elevation change for a walkable, established setting.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to West Linn, Oregon, Hidden Springs is one of the city's eleven official neighborhood associations worth a look — a hilly but walkable area west of Willamette Drive.",
@@ -2518,6 +2630,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Canemah Oregon City OR homes",
       metaDescription:
         "Moving to Oregon City, OR? See what Canemah is like — historic homes, river views, schools and current listings.",
+      excerpt:
+        "Thinking about moving to Oregon City, OR? Explore Canemah, a National Register historic district above Willamette Falls with a median home build year of 1937.",
+      gbp:
+        "If you're moving to Oregon City, OR, Canemah is worth researching — a National Register of Historic Places district and one of the oldest mapped neighborhoods west of the Mississippi. Living in Canemah means genuine historic character: bungalows, cottages and Craftsman-style homes with a median build year of 1937, some dating to the 1800s, set along the Willamette River near Willamette Falls. Canemah Neighborhood Children's Park and the adjacent Canemah Bluff Nature Park offer trails, wildlife viewing and real river overlooks. OR-99E connects Oregon City through Gladstone and Milwaukie toward Portland, with I-205 also nearby. Because this is a genuine historic district, exterior-preservation rules apply, and older wiring, plumbing and mechanical systems may need updating depending on the property. If you're comparing Canemah homes for sale or Oregon City OR homes for sale more broadly, the full neighborhood guide covers preservation rules, river-bluff parks and current listings. Living in Oregon City here means owning real history above the falls.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to Oregon City, Oregon, Canemah is one of the most historically significant neighborhoods worth a look — a National Register of Historic Places district and one of the oldest mapped neighborhoods west of the Mississippi.",
@@ -2598,6 +2714,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Historic Milwaukie OR homes",
       metaDescription:
         "Moving to Milwaukie, OR? See what Historic Milwaukie is like — downtown character, MAX access, schools and listings.",
+      excerpt:
+        "Thinking about moving to Milwaukie, OR? Explore Historic Milwaukie, the city's walkable downtown core with 1920s-1930s bungalow character along the MAX Orange Line.",
+      gbp:
+        "If you're moving to Milwaukie, OR, Historic Milwaukie is worth researching — the city's downtown core neighborhood, with bungalow-era character and a genuinely active Main Street. Living in Historic Milwaukie means predominantly 1920s-1930s bungalows with original details, tree-lined sidewalks and small grassy lots, mixed with some ranch-style, cottage and contemporary homes. Downtown's Main Street anchors the neighborhood, home to what's widely cited as the longest-running Sunday farmers market in the Portland metro, with 80+ vendors. The TriMet MAX Orange Line runs directly through downtown to Portland and the Pearl District, giving residents a genuine transit alternative to driving, and OR-99E provides the main driving route. Because much of the housing stock dates to the 1920s and 1930s, wiring and mechanical systems may need updating, and lots tend to run smaller than newer suburban construction. If you're comparing Historic Milwaukie homes for sale or Milwaukie OR homes for sale more broadly, the full neighborhood guide covers transit access, downtown character and current listings. Living in Milwaukie here means real walkable character with a direct line to Portland.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to Milwaukie, Oregon, Historic Milwaukie is the city's downtown/core neighborhood worth a look — bungalow-era character with a genuinely active Main Street.",
@@ -2678,6 +2798,10 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Rock Creek Happy Valley OR homes",
       metaDescription:
         "Moving to Happy Valley, OR? See what Rock Creek is like — homes, nature parks, schools and current listings today.",
+      excerpt:
+        "Thinking about moving to Happy Valley, OR? Explore Rock Creek, a practical, established corner of the city with classic multi-level homes and real nature-park access.",
+      gbp:
+        "If you're moving to Happy Valley, OR, Rock Creek is worth researching — a practical, established residential area sitting at a lower elevation than some of the city's newer hillside developments. Living in Rock Creek means classic multi-level homes, mature trees and convenient shopping plazas, often balancing price, school access and commute better than some of Happy Valley's premium hillside areas. Mount Talbert Nature Park and Scouters Mountain Nature Park both offer real trail systems nearby for hiking. Highway 212 and I-205 both serve the area, with downtown Portland roughly 13 miles away. Because North Clackamas School District covers more than 40 square miles, it's worth confirming the specific school assignment for any address rather than assuming. If you're comparing Rock Creek homes for sale or Happy Valley OR homes for sale more broadly, the full neighborhood guide covers school assignments, nature-park access and current listings. Living in Happy Valley here means a practical, established address without a newer-construction price tag.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to Happy Valley, Oregon, Rock Creek is one of the city's practical, established residential areas worth a look — alongside neighboring Sunnyside, it sits at a lower elevation than some of Happy Valley's newer hillside developments.",
@@ -2859,6 +2983,44 @@ const AREA_PHOTOS: Record<string, (keyof typeof PHOTOS)[]> = {
   "Rock Creek, Happy Valley": ["modernLivingRoom", "farmhouse", "modernTree"],
 };
 
+// Real, AI-generated images (via the "Image Prompt" button's output, fed into Gemini) that
+// depict each neighborhood's actual home era/style/landscape — replacing the generic
+// Unsplash stock pool above, one area at a time as each is generated. Files live in
+// public/neighborhood-photos/. Only ONE image per area for now (the currently-active
+// "guide" post) — not per-variant, since only one variant is ever the active post at a time
+// (see the "one active entry per neighborhood" rule).
+const AREA_GENERATED_PHOTOS: Record<string, string> = {
+  "Holly Ridge, Camas": "/neighborhood-photos/holly-ridge-camas.jpeg",
+  "Lakeshore, Vancouver": "/neighborhood-photos/lakeshore-vancouver.jpeg",
+  "Pleasant Valley, Vancouver": "/neighborhood-photos/pleasant-valley-vancouver.jpeg",
+  "Hunter Ridge Estates, Camas": "/neighborhood-photos/hunter-ridge-estates-camas.jpeg",
+  "Columbia Way, Vancouver": "/neighborhood-photos/columbia-way-vancouver.jpeg",
+  "Deer Creek, Camas": "/neighborhood-photos/deer-creek-camas.jpeg",
+  "Harney Heights, Vancouver": "/neighborhood-photos/harney-heights-vancouver.jpeg",
+  "Pioneer Canyon, Ridgefield": "/neighborhood-photos/pioneer-canyon-ridgefield.jpeg",
+  "Battle Ground Meadows, Battle Ground": "/neighborhood-photos/battle-ground-meadows-battle-ground.jpeg",
+  "Stephens Hillside Farm, La Center": "/neighborhood-photos/stephens-hillside-farm-la-center.jpeg",
+  "Northfork Landing, Woodland": "/neighborhood-photos/northfork-landing-woodland.jpeg",
+  "Washougal, Washougal": "/neighborhood-photos/washougal-washougal.jpeg",
+  "Hockinson, Hockinson": "/neighborhood-photos/hockinson-hockinson.jpeg",
+  "Amboy, Amboy": "/neighborhood-photos/amboy-amboy.jpeg",
+  "Brush Prairie, Brush Prairie": "/neighborhood-photos/brush-prairie-brush-prairie.jpeg",
+  "Cascade Park, Vancouver": "/neighborhood-photos/cascade-park-vancouver.jpeg",
+  "Fisher's Landing, Vancouver": "/neighborhood-photos/fishers-landing-vancouver.jpeg",
+  "Downtown Vancouver, Vancouver": "/neighborhood-photos/downtown-vancouver-vancouver.jpeg",
+  "Salmon Creek, Vancouver": "/neighborhood-photos/salmon-creek-vancouver.jpeg",
+  "Irvington, Portland": "/neighborhood-photos/irvington-portland.jpeg",
+  "Sexton Mountain, Beaverton": "/neighborhood-photos/sexton-mountain-beaverton.jpeg",
+  "Bull Mountain, Tigard": "/neighborhood-photos/bull-mountain-tigard.jpeg",
+  "North Bethany, Bethany": "/neighborhood-photos/north-bethany-bethany.jpeg",
+  "Orenco Station, Hillsboro": "/neighborhood-photos/orenco-station-hillsboro.jpeg",
+  "Mountain Park, Lake Oswego": "/neighborhood-photos/mountain-park-lake-oswego.jpeg",
+  "Hidden Springs, West Linn": "/neighborhood-photos/hidden-springs-west-linn.jpeg",
+  "Canemah, Oregon City": "/neighborhood-photos/canemah-oregon-city.jpeg",
+  "Historic Milwaukie, Milwaukie": "/neighborhood-photos/historic-milwaukie-milwaukie.jpeg",
+  "Rock Creek, Happy Valley": "/neighborhood-photos/rock-creek-happy-valley.jpeg",
+};
+
 function titleIndexForPost(post: Post): number {
   const titles = TITLES[post.area];
   if (!titles) return -1;
@@ -2870,6 +3032,8 @@ function titleIndexForPost(post: Post): number {
 }
 
 function photoForPost(post: Post): string {
+  const generated = AREA_GENERATED_PHOTOS[post.area];
+  if (generated) return generated;
   const idx = titleIndexForPost(post);
   const pool = AREA_PHOTOS[post.area];
   const key = pool && idx >= 0 ? pool[idx] : "farmhouse";
@@ -2944,6 +3108,166 @@ function articleParagraphs(post: Post): string[] {
     ...youtubeBlock(city, stateAbbr),
     ...workWithJamieBlock(),
   ];
+}
+
+// Looks up the PostSeed a Post was generated from (same stable-variant-first matching as
+// titleIndexForPost) — needed to reach fields like excerpt/gbp that live on the seed, not
+// on the lighter-weight Post record saved to the board.
+function seedForPost(post: Post): PostSeed | undefined {
+  const idx = titleIndexForPost(post);
+  return idx >= 0 ? TITLES[post.area]?.[idx] : undefined;
+}
+
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+// Mechanically derived from the area name — matches the exact phrase set the client's real
+// GBP prompt doc requires ("moving to {city}", "{neighborhood} homes for sale", etc.), so no
+// per-post authoring is needed. Town-only areas (neighborhood === city, e.g. "Washougal,
+// Washougal") skip the redundant neighborhood-labeled duplicates.
+function secondaryKeywords(area: string, stateAbbr: string): string[] {
+  const neighborhood = area.split(",")[0].trim();
+  const city = area.split(",")[1].trim();
+  if (neighborhood === city) {
+    return [
+      `moving to ${city} ${stateAbbr}`,
+      `living in ${city} ${stateAbbr}`,
+      `${city} ${stateAbbr} neighborhoods`,
+      `${city} ${stateAbbr} homes for sale`,
+      `homes for sale in ${city} ${stateAbbr}`,
+    ];
+  }
+  return [
+    `moving to ${city} ${stateAbbr}`,
+    `living in ${city} ${stateAbbr}`,
+    `${neighborhood} neighborhood`,
+    `${neighborhood} homes for sale`,
+    `homes for sale in ${neighborhood} ${city} ${stateAbbr}`,
+    `${city} ${stateAbbr} neighborhoods`,
+    `${city} ${stateAbbr} homes for sale`,
+    `living in ${neighborhood} ${city}`,
+  ];
+}
+
+// A shorter, more search-friendly title than the long on-page H1 (post.title) — matches the
+// client's real "SEO TITLE" field pattern from the Final Blog Example doc.
+function publishingSeoTitle(area: string, variant: PostSeed["variant"], stateAbbr: string): string {
+  const neighborhood = area.split(",")[0].trim();
+  const city = area.split(",")[1].trim();
+  if (neighborhood === city) {
+    if (variant === "update") return `${city} ${stateAbbr} Market Update`;
+    if (variant === "considerations") return `Moving to ${city} ${stateAbbr}? What to Know Before You Buy`;
+    return `Moving to ${city} ${stateAbbr}? ${city} Neighborhood Guide`;
+  }
+  if (variant === "update") return `${neighborhood} Market Update — ${city}, ${stateAbbr}`;
+  if (variant === "considerations") return `${neighborhood}, ${city} ${stateAbbr}: What to Know Before You Buy`;
+  return `Moving to ${city} ${stateAbbr}? ${neighborhood} Neighborhood Guide`;
+}
+
+function publishingImageAltText(area: string, stateAbbr: string): string {
+  const neighborhood = area.split(",")[0].trim();
+  const city = area.split(",")[1].trim();
+  const stateFull = STATE_LABEL[stateAbbr as "WA" | "OR"] ?? stateAbbr;
+  return neighborhood === city
+    ? `${city} homes in ${stateFull}`
+    : `${neighborhood} neighborhood homes in ${city}, ${stateFull}`;
+}
+
+// Strips the handful of inline tags used in PostSeed paragraph strings (<a>, <strong>,
+// <em>, <br />) down to plain text for copy-paste — every <a> in this codebase already has
+// its href duplicated as the visible text, so dropping the tag never loses information.
+function stripHtmlForCopy(html: string): string {
+  return html.replace(/<br\s*\/?>/gi, "\n").replace(/<\/?(strong|em|a)[^>]*>/gi, "");
+}
+
+// The "Content" button: reproduces the client's real "Final Blog Example" document format
+// (TITLE / EXCERPT / SEO-PUBLISHING INFO / BLOG) as plain text, ready to copy sections
+// straight into WordPress/Yoast rather than re-typing them from the on-screen preview.
+function contentPackageText(post: Post): string {
+  const seed = seedForPost(post);
+  const stateAbbr = AREA_STATE[post.area] ?? "WA";
+  const variant = post.variant ?? seed?.variant ?? "guide";
+  const seoTitle = publishingSeoTitle(post.area, variant, stateAbbr);
+
+  const lines = [
+    "TITLE",
+    post.title,
+    "",
+    "EXCERPT",
+    seed?.excerpt ?? post.metaDescription,
+    "",
+    "SEO / PUBLISHING INFORMATION",
+    "",
+    "PRIMARY KEYWORD:",
+    post.keyword,
+    "",
+    "SECONDARY KEYWORDS:",
+    ...secondaryKeywords(post.area, stateAbbr),
+    "",
+    "SEO TITLE:",
+    seoTitle,
+    "",
+    "META DESCRIPTION:",
+    post.metaDescription,
+    "",
+    "SUGGESTED URL SLUG:",
+    slugify(seoTitle),
+    "",
+    "SUGGESTED IMAGE ALT TEXT:",
+    publishingImageAltText(post.area, stateAbbr),
+    "",
+    "BLOG",
+    "",
+    ...articleParagraphs(post).map((p) => {
+      if (p.startsWith("### ")) return stripHtmlForCopy(p.slice(4)).toUpperCase();
+      if (p.startsWith("## ")) return stripHtmlForCopy(p.slice(3)).toUpperCase();
+      return stripHtmlForCopy(p);
+    }),
+  ];
+  return lines.join("\n");
+}
+
+// The "Google Business Profile" button: returns the pre-written GBP post for this exact
+// post (seed.gbp) when one exists, per the client's real GBP prompt doc. Variants that
+// aren't the currently-active post for their neighborhood yet (see the one-active-entry
+// rule) may not have one written — surfaces a clear placeholder instead of silently
+// showing nothing or fabricating content on the fly.
+function gbpPostText(post: Post): string {
+  const seed = seedForPost(post);
+  if (seed?.gbp) return seed.gbp;
+  return `No Google Business Profile post has been written yet for this draft (${areaDisplayLabel(post.area)}, ${post.variant ?? "unknown"} variant). Write one using the client's GBP prompt once this becomes the active post for this neighborhood.`;
+}
+
+// The "Image Prompt" button: the real production image workflow is "feed the finished
+// blog to an image generator (Gemini, ChatGPT, Midjourney, etc.) along with this
+// instruction" — so the prompt itself always carries this specific post's real facts
+// (home era, architectural style, landscape) rather than a generic description, which is
+// what makes the resulting image actually match the neighborhood instead of defaulting to
+// a generic modern-home look.
+function imagePromptText(post: Post): string {
+  const neighborhood = post.area.split(",")[0].trim();
+  const city = post.area.split(",")[1].trim();
+  const stateAbbr = AREA_STATE[post.area] ?? "WA";
+  const stateFull = STATE_LABEL[stateAbbr as "WA" | "OR"] ?? stateAbbr;
+  const blogText = articleParagraphs(post)
+    .map((p) => {
+      if (p.startsWith("### ")) return stripHtmlForCopy(p.slice(4)).toUpperCase();
+      if (p.startsWith("## ")) return stripHtmlForCopy(p.slice(3)).toUpperCase();
+      return stripHtmlForCopy(p);
+    })
+    .join("\n");
+  const place = neighborhood === city ? city : `${neighborhood} in ${city}`;
+  return [
+    blogText,
+    "",
+    "---",
+    "",
+    `Create an image that represents ${place}, ${stateFull}. Use information from the blog above about the style of home, era of home and landscape of neighborhood to create the image.`,
+  ].join("\n");
 }
 
 type SeoCheck = { label: string; pass: boolean; detail: string };
@@ -3780,6 +4104,12 @@ export default function BoardApp() {
           <div class="modal-meta-desc">${post.metaDescription}</div>
           <a class="card-link" href="${post.areaUrl}" target="_blank" rel="noopener">${post.areaUrl}</a>
 
+          <div class="content-actions">
+            <button class="content-action-btn" id="contentPackageBtn">Content</button>
+            <button class="content-action-btn" id="gbpPostBtn">Google Business Profile</button>
+            <button class="content-action-btn" id="imagePromptBtn">Image Prompt</button>
+          </div>
+
           <div class="modal-section-label">SEO check · ${passCount}/${checks.length}</div>
           <ul class="seo-checklist">
             ${checks
@@ -3813,6 +4143,28 @@ export default function BoardApp() {
       const modalSelect = el<HTMLSelectElement>("modalStatusSelect");
       wireStatusSelect(modalSelect, post.id);
 
+      el<HTMLButtonElement>("contentPackageBtn").addEventListener("click", () => {
+        openTextModal(
+          `Content — ${post.title}`,
+          "Title, excerpt, SEO/publishing fields and the full blog body, formatted to copy straight into WordPress/Yoast.",
+          contentPackageText(post)
+        );
+      });
+      el<HTMLButtonElement>("gbpPostBtn").addEventListener("click", () => {
+        openTextModal(
+          `Google Business Profile post — ${areaDisplayLabel(post.area)}`,
+          "Paste this directly onto Google Business Profile and any other platform the client's SOP calls for.",
+          gbpPostText(post)
+        );
+      });
+      el<HTMLButtonElement>("imagePromptBtn").addEventListener("click", () => {
+        openTextModal(
+          `Image prompt — ${areaDisplayLabel(post.area)}`,
+          "Paste this whole thing (blog + instruction) into your image generator so the result reflects this post's real home era, style and landscape instead of a generic look.",
+          imagePromptText(post)
+        );
+      });
+
       el<HTMLButtonElement>("deletePostBtn").addEventListener("click", async () => {
         if (
           !window.confirm(
@@ -3841,6 +4193,23 @@ export default function BoardApp() {
       document.body.style.overflow = "";
     }
 
+    // A second overlay, layered on top of the post modal, for the "Content" and "Google
+    // Business Profile" copy-paste views — a plain readonly textarea so the VA can select-all
+    // and copy manually even if the Clipboard API is blocked, plus a one-click copy button.
+    let textModalOpen = false;
+    function openTextModal(title: string, hint: string, content: string) {
+      el<HTMLHeadingElement>("textModalTitle").textContent = title;
+      el<HTMLParagraphElement>("textModalHint").textContent = hint;
+      el<HTMLTextAreaElement>("textModalTextarea").value = content;
+      el<HTMLButtonElement>("textModalCopyBtn").textContent = "Copy to clipboard";
+      el<HTMLDivElement>("textModalOverlay").hidden = false;
+      textModalOpen = true;
+    }
+    function closeTextModal() {
+      el<HTMLDivElement>("textModalOverlay").hidden = true;
+      textModalOpen = false;
+    }
+
     const resetBtn = el<HTMLButtonElement>("resetBtn");
     const onReset = async () => {
       if (
@@ -3864,11 +4233,36 @@ export default function BoardApp() {
       if (e.target === modalOverlay) closeModal();
     };
     const onKeydown = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && modalPostId) closeModal();
+      if (e.key === "Escape" && textModalOpen) closeTextModal();
+      else if (e.key === "Escape" && modalPostId) closeModal();
     };
     modalOverlay.addEventListener("click", onOverlayClick);
     modalClose.addEventListener("click", closeModal);
     document.addEventListener("keydown", onKeydown);
+
+    const textModalOverlay = el<HTMLDivElement>("textModalOverlay");
+    const textModalClose = el<HTMLButtonElement>("textModalClose");
+    const onTextOverlayClick = (e: MouseEvent) => {
+      if (e.target === textModalOverlay) closeTextModal();
+    };
+    const onTextModalCopy = async () => {
+      const textarea = el<HTMLTextAreaElement>("textModalTextarea");
+      const copyBtn = el<HTMLButtonElement>("textModalCopyBtn");
+      try {
+        await navigator.clipboard.writeText(textarea.value);
+      } catch {
+        textarea.focus();
+        textarea.select();
+        document.execCommand("copy");
+      }
+      copyBtn.textContent = "Copied!";
+      setTimeout(() => {
+        copyBtn.textContent = "Copy to clipboard";
+      }, 1500);
+    };
+    textModalOverlay.addEventListener("click", onTextOverlayClick);
+    textModalClose.addEventListener("click", closeTextModal);
+    el<HTMLButtonElement>("textModalCopyBtn").addEventListener("click", onTextModalCopy);
 
     (async function init() {
       await loadData();
@@ -3886,6 +4280,9 @@ export default function BoardApp() {
       modalOverlay.removeEventListener("click", onOverlayClick);
       modalClose.removeEventListener("click", closeModal);
       document.removeEventListener("keydown", onKeydown);
+      textModalOverlay.removeEventListener("click", onTextOverlayClick);
+      textModalClose.removeEventListener("click", closeTextModal);
+      el<HTMLButtonElement>("textModalCopyBtn").removeEventListener("click", onTextModalCopy);
       document.body.style.overflow = "";
       clearInterval(autoPublishInterval);
     };

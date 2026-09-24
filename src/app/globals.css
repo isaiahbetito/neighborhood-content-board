@@ -374,6 +374,69 @@ h1{
   transition:background .15s ease, color .15s ease;
 }
 .delete-post-btn:hover{background:var(--brick);color:var(--sand);}
+.content-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:14px;
+}
+.content-action-btn{
+  font-family:'Inter',sans-serif;
+  font-size:12px;
+  font-weight:600;
+  color:var(--brass-deep);
+  background:none;
+  border:1px solid var(--brass);
+  border-radius:6px;
+  padding:7px 12px;
+  cursor:pointer;
+  transition:background .15s ease, color .15s ease;
+}
+.content-action-btn:hover{background:var(--brass);color:var(--sand);}
+.text-modal-panel{max-width:720px;}
+.text-modal-content{padding:22px 26px 26px;}
+.text-modal-title{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-size:18px;
+  margin:0 0 6px;
+  padding-right:34px;
+  color:var(--ink);
+}
+.text-modal-hint{
+  font-size:12px;
+  color:var(--ink-soft);
+  line-height:1.5;
+  margin:0 0 12px;
+}
+.text-modal-textarea{
+  width:100%;
+  height:420px;
+  resize:vertical;
+  font-family:ui-monospace,'SF Mono',Menlo,monospace;
+  font-size:12px;
+  line-height:1.6;
+  color:var(--ink);
+  background:var(--sand-deep);
+  border:1px solid var(--line);
+  border-radius:6px;
+  padding:12px 14px;
+  color-scheme:dark;
+}
+.text-modal-copy-btn{
+  margin-top:12px;
+  font-family:'Inter',sans-serif;
+  font-size:12.5px;
+  font-weight:600;
+  color:var(--sand);
+  background:var(--brass-deep);
+  border:1px solid var(--brass-deep);
+  border-radius:6px;
+  padding:9px 16px;
+  cursor:pointer;
+  transition:opacity .15s ease;
+}
+.text-modal-copy-btn:hover{opacity:.85;}
 
 /* status color system, shared by platform chips + column accents */
 .s-notstarted{background:var(--brick-light);color:var(--brick);}
