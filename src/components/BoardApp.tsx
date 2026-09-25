@@ -159,14 +159,22 @@ const CITY_URLS: Record<string, string> = {
 const NEIGHBORHOOD_URLS: Record<string, string | null> = {
   "Holly Ridge, Camas":
     "https://jamiemeushawrealestate.com/properties/neighborhood-Holly%20Ridge,%20Camas,%20WA/?box=-122.44137717237012%2C45.603188674527445%2C-122.43877191994316%2C45.60472275603769",
-  "Lakeshore, Vancouver": null,
-  "Pleasant Valley, Vancouver": null,
-  "Hunter Ridge Estates, Camas": null,
-  "Columbia Way, Vancouver": null,
-  "Deer Creek, Camas": null,
-  "Harney Heights, Vancouver": null,
-  "Pioneer Canyon, Ridgefield": null,
-  "Battle Ground Meadows, Battle Ground": null,
+  "Lakeshore, Vancouver":
+    "https://jamiemeushawrealestate.com/properties/neighborhood-Lakeshore,%20Vancouver,%20WA/?box=-122.68667856217482%2C45.67395828840645%2C-122.68406794682554%2C45.67601532227829",
+  "Pleasant Valley, Vancouver":
+    "https://jamiemeushawrealestate.com/properties/neighborhood-Pleasant%20Valley,%20Vancouver,%20WA/?box=-122.6247534716731%2C45.70953039712876%2C-122.62372158832417%2C45.71034296147562",
+  "Hunter Ridge Estates, Camas":
+    "https://jamiemeushawrealestate.com/properties/neighborhood-Hunter%20Ridge%20Estates,%20Camas,%20WA/?box=-122.43349879270093%2C45.590502964251954%2C-122.43075176429916%2C45.592670708276245",
+  "Columbia Way, Vancouver":
+    "https://jamiemeushawrealestate.com/properties/neighborhood-Columbia%20Way,%20Vancouver,%20WA/?box=-122.66040186040966%2C45.605898343980385%2C-122.63134778959014%2C45.62881505731616",
+  "Deer Creek, Camas":
+    "https://jamiemeushawrealestate.com/properties/neighborhood-Deer%20Creek,%20Camas,%20WA/?box=-122.4519297038318%2C45.58630549123674%2C-122.44442103116788%2C45.592231004302846",
+  "Harney Heights, Vancouver":
+    "https://jamiemeushawrealestate.com/properties/neighborhood-Harney%20Heights,%20Vancouver,%20WA/?box=-122.63454377745896%2C45.62457303070923%2C-122.62001132254099%2C45.63603301548193",
+  "Pioneer Canyon, Ridgefield":
+    "https://jamiemeushawrealestate.com/properties/neighborhood-Pioneer%20Canyon,%20Ridgefield,%20WA/?box=-122.70728207555308%2C45.816945497464815%2C-122.70363072444474%2C45.81981519775317",
+  "Battle Ground Meadows, Battle Ground":
+    "https://jamiemeushawrealestate.com/properties/neighborhood-Battle%20Ground%20Meadows,%20Battle%20Ground,%20WA/?box=-122.54315232480315%2C45.765620584947754%2C-122.5370529261966%2C45.77078515305644",
   "Stephens Hillside Farm, La Center": null,
   "Northfork Landing, Woodland": null,
   "Washougal, Washougal": CITY_URLS["Washougal"],
@@ -182,16 +190,31 @@ const NEIGHBORHOOD_URLS: Record<string, string | null> = {
   // No neighborhood-level OR links were ever provided — all pending, same as most of the WA
   // batch. Each falls back to its city-level URL (all real, from OREGON CITY LINKS) until a
   // real neighborhood search is run.
-  "Irvington, Portland": null,
-  "Sexton Mountain, Beaverton": null,
-  "Bull Mountain, Tigard": null,
+  "Irvington, Portland":
+    "https://jamiemeushawrealestate.com/properties/neighborhood-Irvington,%20Portland,%20OR/?box=-122.65456671792592%2C45.53884055332014%2C-122.6451769340735%2C45.54625672162044",
+  "Sexton Mountain, Beaverton":
+    "https://jamiemeushawrealestate.com/properties/neighborhood-Sexton%20Mountain,%20Beaverton,%20OR/?box=-122.84966496265906%2C45.45019448506264%2C-122.83317438433946%2C45.463238819008524",
+  "Bull Mountain, Tigard":
+    "https://jamiemeushawrealestate.com/properties/neighborhood-Bull%20Mountain,%20Bull%20Mountain,%20OR/?box=-122.87093209016437%2C45.3718188046104%2C-122.76126440983634%2C45.45863162740872",
+  // No exact "North Bethany" neighborhood exists in the site's own search database (only
+  // "Bosa North, Bethany, OR" — a different sub-neighborhood — comes up) — same legitimate
+  // fallback case as Stephens Hillside Farm and Northfork Landing below.
   "North Bethany, Bethany": null,
-  "Orenco Station, Hillsboro": null,
-  "Mountain Park, Lake Oswego": null,
-  "Hidden Springs, West Linn": null,
-  "Canemah, Oregon City": null,
-  "Historic Milwaukie, Milwaukie": null,
-  "Rock Creek, Happy Valley": null,
+  // Site's own neighborhood boundary is already tight/correct without a box override.
+  "Orenco Station, Hillsboro":
+    "https://jamiemeushawrealestate.com/properties/neighborhood-Orenco%20Station,%20Hillsboro,%20OR/",
+  "Mountain Park, Lake Oswego":
+    "https://jamiemeushawrealestate.com/properties/neighborhood-Mountain%20Park,%20Lake%20Oswego,%20OR/?box=-122.73449144780278%2C45.41637515455619%2C-122.69973868419656%2C45.44387815343822",
+  "Hidden Springs, West Linn":
+    "https://jamiemeushawrealestate.com/properties/neighborhood-Hidden%20Springs,%20West%20Linn,%20OR/?box=-122.65957978855639%2C45.36793832641692%2C-122.6342464104419%2C45.38800543302696",
+  "Canemah, Oregon City":
+    "https://jamiemeushawrealestate.com/properties/neighborhood-Canemah,%20Oregon%20City,%20OR/?box=-122.63457198854084%2C45.337619508817454%2C-122.6120702384591%2C45.35545352921798",
+  "Historic Milwaukie, Milwaukie":
+    "https://jamiemeushawrealestate.com/properties/neighborhood-Historic%20Milwaukie,%20Milwaukie,%20OR/?box=-122.64662550993384%2C45.43998521300503%2C-122.63378970206506%2C45.45014065818154",
+  // Site files this area under "Rock Creek, Clackamas, OR" rather than "Happy Valley" —
+  // verified real match: listing addresses are "Clackamas, OR 97015", Happy Valley's zip.
+  "Rock Creek, Happy Valley":
+    "https://jamiemeushawrealestate.com/properties/neighborhood-Rock%20Creek,%20Clackamas,%20OR/?box=-122.5186033128127%2C45.40921283147091%2C-122.49610127918805%2C45.42702451040785",
 };
 
 const SCHOOL_DISTRICTS: Record<string, string> = {
