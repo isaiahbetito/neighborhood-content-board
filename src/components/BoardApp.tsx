@@ -4029,6 +4029,20 @@ export default function BoardApp() {
         const col = document.createElement("div");
         col.className = "column";
         const items = data.filter((p) => p.status === status);
+        // Scheduled has a real, meaningful order (when it actually goes live) — soonest
+        // first, so whoever's working the board can see what's coming up next at a glance.
+        // Every other column has no such intrinsic order, so it's left as-is (insertion
+        // order) rather than imposing a sort that wouldn't mean anything for it.
+        if (status === "Scheduled") {
+          items.sort((a, b) => {
+            const da = parsePostDateTime(a);
+            const db = parsePostDateTime(b);
+            if (!da && !db) return 0;
+            if (!da) return 1;
+            if (!db) return -1;
+            return da.getTime() - db.getTime();
+          });
+        }
         col.innerHTML = `
           <div class="column-head col-${cls}">
             <span class="name">${STATUS_LABEL[status]}</span>
