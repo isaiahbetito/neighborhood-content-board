@@ -3470,6 +3470,12 @@ export default function BoardApp() {
     let modalPostId: string | null = null;
     let areaFiltersOpen = false;
     let checklistOpen = false;
+    // Counts saveData() calls currently in flight. autoPublishDuePosts() re-fetches from the
+    // server every 60s and blindly replaces boardData with whatever it gets back — if that
+    // lands while a user-initiated edit's own save is still in flight (or was just about to
+    // start), it can silently revert the just-made change before it's had a chance to persist.
+    // Skipping the refresh whenever a save is in flight closes that window.
+    let saveInFlight = 0;
 
     function el<T extends HTMLElement>(id: string): T {
       return document.getElementById(id) as T;
@@ -3549,6 +3555,7 @@ export default function BoardApp() {
     }
 
     async function saveData() {
+      saveInFlight++;
       try {
         await fetch("/api/board", {
           method: "PUT",
@@ -3557,6 +3564,8 @@ export default function BoardApp() {
         });
       } catch (e) {
         console.error("save failed", e);
+      } finally {
+        saveInFlight--;
       }
     }
 
@@ -3909,9 +3918,14 @@ export default function BoardApp() {
     // can still be stale between ticks, but it never overwrites newer data, only ever adds
     // its own status change on top of whatever is actually current.
     async function autoPublishDuePosts() {
+      if (saveInFlight > 0) return; // a local edit is mid-save — don't risk clobbering it
       try {
         const res = await fetch("/api/board", { cache: "no-store" });
         const data = await res.json();
+        // Re-check: a local edit may have started while the GET above was in flight. No
+        // `await` happens between this check and the assignment below, so nothing can slip
+        // in between them — this closes the race completely for single-tab use.
+        if (saveInFlight > 0) return;
         if (data && Array.isArray(data.posts) && data.posts.length) {
           boardData = data.posts;
         }
