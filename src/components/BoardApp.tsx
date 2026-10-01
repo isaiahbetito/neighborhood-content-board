@@ -175,11 +175,18 @@ const NEIGHBORHOOD_URLS: Record<string, string | null> = {
     "https://jamiemeushawrealestate.com/properties/neighborhood-Pioneer%20Canyon,%20Ridgefield,%20WA/?box=-122.70728207555308%2C45.816945497464815%2C-122.70363072444474%2C45.81981519775317",
   "Battle Ground Meadows, Battle Ground":
     "https://jamiemeushawrealestate.com/properties/neighborhood-Battle%20Ground%20Meadows,%20Battle%20Ground,%20WA/?box=-122.54315232480315%2C45.765620584947754%2C-122.5370529261966%2C45.77078515305644",
-  // Checked exhaustively against the site's own neighborhood database (exact name, and
-  // partial terms "Hillside"/"Farm" scoped to La Center) — genuinely no match of any kind,
-  // not even an adjacent/differently-named one. No substitute exists; city-wide stays.
-  "Stephens Hillside Farm, La Center": null,
-  // Same exhaustive check ("Northfork", "Landing" scoped to Woodland, "River") — no match.
+  // No exact "Stephens Hillside Farm" neighborhood exists in the site's database. Closest
+  // real, verified match: "Foothill Estates, La Center, WA" — same numbered-street grid just
+  // a few blocks over (108 W 16th St vs. Stephens Hillside Farm's own W 19th/20th Way), same
+  // $690-825k price band, and the site's own "Similar Listings" widget on a Stephens Hillside
+  // Farm home already surfaces this exact property — genuinely the same immediate area.
+  "Stephens Hillside Farm, La Center":
+    "https://jamiemeushawrealestate.com/properties/neighborhood-Foothill%20Estates,%20La%20Center,%20WA/",
+  // Checked exhaustively, including the one thematically-named option: "North Fork Lewis
+  // River, Woodland, WA" exists but is a sprawling rural corridor miles out of town spanning
+  // $200k mobile homes to $1.4M riverfront estates and multi-acre lots — not genuinely
+  // representative of this ~85-home modest new-construction subdivision. No good substitute
+  // found; city-wide stays.
   "Northfork Landing, Woodland": null,
   "Washougal, Washougal": CITY_URLS["Washougal"],
   "Hockinson, Hockinson": CITY_URLS["Hockinson"],
