@@ -175,7 +175,11 @@ const NEIGHBORHOOD_URLS: Record<string, string | null> = {
     "https://jamiemeushawrealestate.com/properties/neighborhood-Pioneer%20Canyon,%20Ridgefield,%20WA/?box=-122.70728207555308%2C45.816945497464815%2C-122.70363072444474%2C45.81981519775317",
   "Battle Ground Meadows, Battle Ground":
     "https://jamiemeushawrealestate.com/properties/neighborhood-Battle%20Ground%20Meadows,%20Battle%20Ground,%20WA/?box=-122.54315232480315%2C45.765620584947754%2C-122.5370529261966%2C45.77078515305644",
+  // Checked exhaustively against the site's own neighborhood database (exact name, and
+  // partial terms "Hillside"/"Farm" scoped to La Center) — genuinely no match of any kind,
+  // not even an adjacent/differently-named one. No substitute exists; city-wide stays.
   "Stephens Hillside Farm, La Center": null,
+  // Same exhaustive check ("Northfork", "Landing" scoped to Woodland, "River") — no match.
   "Northfork Landing, Woodland": null,
   "Washougal, Washougal": CITY_URLS["Washougal"],
   "Hockinson, Hockinson": CITY_URLS["Hockinson"],
@@ -196,10 +200,13 @@ const NEIGHBORHOOD_URLS: Record<string, string | null> = {
     "https://jamiemeushawrealestate.com/properties/neighborhood-Sexton%20Mountain,%20Beaverton,%20OR/?box=-122.84966496265906%2C45.45019448506264%2C-122.83317438433946%2C45.463238819008524",
   "Bull Mountain, Tigard":
     "https://jamiemeushawrealestate.com/properties/neighborhood-Bull%20Mountain,%20Bull%20Mountain,%20OR/?box=-122.87093209016437%2C45.3718188046104%2C-122.76126440983634%2C45.45863162740872",
-  // No exact "North Bethany" neighborhood exists in the site's own search database (only
-  // "Bosa North, Bethany, OR" — a different sub-neighborhood — comes up) — same legitimate
-  // fallback case as Stephens Hillside Farm and Northfork Landing below.
-  "North Bethany, Bethany": null,
+  // No exact "North Bethany" neighborhood exists in the site's own search database. Closest
+  // real, verified match: "Bosa North, Bethany, OR" — a specific active new-construction
+  // development (5 active listings, 97229 addresses) inside the broader North Bethany area,
+  // by builder Bosa — genuinely representative, even though it isn't literally the whole
+  // North Bethany boundary.
+  "North Bethany, Bethany":
+    "https://jamiemeushawrealestate.com/properties/neighborhood-Bosa%20North,%20Bethany,%20OR/",
   // Site's own neighborhood boundary is already tight/correct without a box override.
   "Orenco Station, Hillsboro":
     "https://jamiemeushawrealestate.com/properties/neighborhood-Orenco%20Station,%20Hillsboro,%20OR/",
