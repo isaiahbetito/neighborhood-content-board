@@ -27,7 +27,7 @@ type Post = {
   // silently breaks articleParagraphs() for any post whose title no longer matches after an
   // edit). Optional only because posts saved before this field existed need one migration
   // pass to backfill it — see loadData().
-  variant?: "guide" | "update" | "considerations";
+  variant?: "guide" | "update" | "considerations" | "spotlight";
 };
 
 const STATUS_ORDER: Status[] = [
@@ -438,7 +438,7 @@ type PostSeed = {
   // when a variant hasn't had these written yet.
   excerpt?: string;
   gbp?: string;
-  variant: "guide" | "update" | "considerations";
+  variant: "guide" | "update" | "considerations" | "spotlight";
   intro: string[];
   livingIn?: string[];
   whereLocated?: string[];
@@ -448,6 +448,10 @@ type PostSeed = {
   marketNotes?: string[];
   reasons?: string[];
   considerations?: string[];
+  // Lifestyle-focused paragraphs for the "spotlight" variant only — local life, dining,
+  // community feel. Distinct from `parks` (which stays park/trail-specific) so spotlight
+  // posts can draw on both without duplicating text.
+  lifestyle?: string[];
   closing: string[];
 };
 
@@ -550,6 +554,36 @@ const TITLES: Record<string, PostSeed[]> = {
         "None of that shows up well in photos — the greenspace backing, the light in a kitchen, how close a street actually feels to the lake. Seeing two or three homes in person tends to settle the question faster than more scrolling.",
       ],
     },
+    {
+      hook: "A Lakeside Pace of Life Near Prune Hill",
+      keyword: "life in Holly Ridge Camas WA",
+      metaDescription:
+        "What day-to-day life looks like in Holly Ridge, Camas — Lacamas Lake access, the Prune Hill greenspace behind it, and the everyday routine nearby.",
+      excerpt:
+        "A look at everyday life in Holly Ridge, Camas — mornings near Lacamas Lake, the greenspace behind the neighborhood, and what's actually nearby day to day.",
+      gbp:
+        "Curious what everyday life is actually like in Holly Ridge, Camas? The neighborhood's biggest draw is proximity — Lacamas Lake and its trails are close enough to use regularly, not just visit on a weekend, and the Prune Hill greenspace behind a number of properties means some stretches of yard back directly onto wooded open space. Because Holly Ridge was built mostly in the late 1990s and early 2000s, the street trees and landscaping have had time to fill in, which gives the neighborhood a settled, walkable feel rather than the bare-lot look of a brand-new subdivision. Everyday shopping and restaurants sit along the commercial corridors nearby, so errands don't require a long drive. If you're weighing Holly Ridge against other west Camas neighborhoods, the full lifestyle rundown covers what day-to-day actually looks like here.",
+      variant: "spotlight",
+      intro: [
+        "Listings and floor plans only tell part of the story — here's what day-to-day life actually looks like for people living in Holly Ridge.",
+        "The short version: mornings and evenings tend to revolve around Lacamas Lake, and the neighborhood's maturity shows up in small ways most listing photos don't capture.",
+      ],
+      lifestyle: [
+        "Because Lacamas Lake is close enough for a regular walk or run rather than a special-trip destination, a lot of the daily rhythm in Holly Ridge ends up built around it — before-work laps, after-dinner walks, weekend time on the water.",
+        "The neighborhood's age works in its favor here: trees that were saplings when Holly Ridge was built are now full-grown, so streets have real shade and the kind of settled look that takes decades to happen on its own.",
+        "Everyday errands — groceries, coffee, a quick dinner out — are a short drive along the commercial corridors near Camas Meadows, rather than a planned trip across town.",
+      ],
+      parks: [
+        "Prune Hill greenspace sits directly behind a number of Holly Ridge properties, which means wooded open space is accessible without getting in a car.",
+        "Lacamas Lake adds trail access and water recreation close enough to use on a regular basis rather than save for occasional outings.",
+      ],
+      commute: [
+        "SR-14 is the main route toward Portland, and access toward Vancouver is fairly direct from this part of Camas — actual drive times still vary by time of day, so it's worth testing before relying on an estimate.",
+      ],
+      closing: [
+        "None of this shows up in square footage or a listing price — it's the kind of thing you notice walking the neighborhood itself, ideally at the time of day you'd actually be using it.",
+      ],
+    },
   ],
   "Lakeshore, Vancouver": [
     {
@@ -633,6 +667,35 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       closing: [
         "For buyers who prioritize the lake, the extra minutes in the car tend to stop mattering fast. For buyers who don't, it's worth touring a more central neighborhood side by side before deciding.",
+      ],
+    },
+    {
+      hook: "An Evening on the Vancouver Lake Trail",
+      keyword: "life in Lakeshore Vancouver WA",
+      metaDescription:
+        "What everyday life looks like in Lakeshore, Vancouver — evenings near Vancouver Lake, larger lots, and the drive into the rest of the city.",
+      excerpt:
+        "A look at everyday life in Lakeshore, Vancouver — evenings near Vancouver Lake Regional Park and what a typical day in the neighborhood looks like.",
+      gbp:
+        "Curious what everyday life is actually like in Lakeshore, Vancouver? Vancouver Lake Regional Park and its paved trail system are the defining outdoor feature here, close enough that an evening walk turns into an actual destination rather than a drive somewhere else. Because homes in Lakeshore tend to be older than the newer construction farther east in Clark County, the neighborhood carries a more established feel, with mature trees and generally larger lots than tighter modern subdivisions — more room between houses, more shade on the street. I-5 runs both directions from here, north toward Salmon Creek or south into downtown Vancouver and across into Portland, though it's a longer drive into more central Vancouver neighborhoods like Columbia Way or Harney Heights. If you're weighing Lakeshore against Vancouver's more central neighborhoods, the full lifestyle rundown covers what day-to-day actually looks like here.",
+      variant: "spotlight",
+      intro: [
+        "Lakeshore's daily rhythm has a pretty clear anchor: Vancouver Lake and its trail system, close enough to use regularly rather than save for a planned outing.",
+        "The rest of the picture — older homes, larger lots, a longer drive into central Vancouver — shapes a pace that's noticeably different from the city's busier east-county corridors.",
+      ],
+      lifestyle: [
+        "Vancouver Lake Regional Park's paved trail system is close enough that an evening walk becomes a real destination, not just a loop around the block.",
+        "Because homes here tend to be older than the newer construction farther east in Clark County, the neighborhood keeps a more established feel — mature trees, more space between houses, and generally larger lots than tighter modern subdivisions.",
+        "That space comes with a tradeoff in distance: central Vancouver neighborhoods like Columbia Way or Harney Heights are a longer drive from here, so day-to-day errands tend to mean more time in the car.",
+      ],
+      parks: [
+        "Vancouver Lake Regional Park is the defining outdoor feature near Lakeshore, with boating, paddling and other water recreation on the lake itself in addition to the trail system.",
+      ],
+      commute: [
+        "I-5 runs both directions from Lakeshore — north toward Salmon Creek, or south into downtown Vancouver and across into Portland. Actual drive times depend a lot on when you're on the road, so it's worth checking during your normal commute hours.",
+      ],
+      closing: [
+        "For buyers who prioritize the lake, the extra minutes in the car tend to stop mattering fast — but it's worth driving the actual commute yourself before assuming that trade works for your routine.",
       ],
     },
   ],
@@ -720,6 +783,35 @@ const TITLES: Record<string, PostSeed[]> = {
         "Buyers who've made the move here tend to say the same thing: once you stop needing to be five minutes from everything, the tradeoff barely registers.",
       ],
     },
+    {
+      hook: "A Day With Room to Spread Out",
+      keyword: "life in Pleasant Valley Vancouver WA",
+      metaDescription:
+        "What everyday life looks like in Pleasant Valley, Vancouver — larger lots, semi-rural pace, and the drive into the rest of the city.",
+      excerpt:
+        "A look at everyday life in Pleasant Valley, Vancouver — larger lots, a semi-rural pace, and what a typical day here actually looks like.",
+      gbp:
+        "Curious what everyday life is actually like in Pleasant Valley, Vancouver? Space is the defining feature — this is one of the few pockets left in Clark County where farmland, larger-lot homes and newer construction still sit side by side, which means more room for a shop, a garden, or simply more distance from the next house than a standard subdivision lot. It isn't a walkable neighborhood in the way some closer-in Vancouver areas are, so most errands mean getting in the car, though Washington State University Vancouver and the shopping around Fisher's Landing are within a reasonable drive. I-5 and I-205 both provide access toward downtown Vancouver and across into Portland, but it's a longer drive than more central Vancouver neighborhoods. If you're weighing Pleasant Valley against Vancouver's more walkable neighborhoods, the full lifestyle rundown covers what day-to-day actually looks like here.",
+      variant: "spotlight",
+      intro: [
+        "Pleasant Valley's daily rhythm starts with a tradeoff most other Vancouver neighborhoods in this rotation don't ask buyers to make: space for walkability.",
+        "Day to day, that mostly means more room on the property itself and more time in the car to get anywhere else.",
+      ],
+      lifestyle: [
+        "This is one of the few pockets left in Clark County where farmland, larger-lot homes and newer construction still sit side by side, which shows up in daily life as more room for a shop, a garden, or just more distance from the next house.",
+        "Most errands mean getting in the car rather than walking, though Washington State University Vancouver and the shopping around Fisher's Landing are both within a reasonable drive.",
+        "The semi-rural character here is less about a single feature and more about the overall pace — fewer close neighbors, more property to maintain, and a noticeably different feel from Vancouver's inner subdivisions.",
+      ],
+      parks: [
+        "Pleasant Valley doesn't have the concentrated parks and trail access of some closer-in neighborhoods — its larger lots and semi-rural setting are themselves the outdoor amenity for buyers who want space attached to the property rather than a nearby trailhead.",
+      ],
+      commute: [
+        "I-5 and I-205 both provide access toward downtown Vancouver and across into Portland. It's a longer drive than more central Vancouver neighborhoods, so it's worth mapping your actual commute during the hours you'd be traveling.",
+      ],
+      closing: [
+        "Buyers who've made the move here tend to say the same thing: once you stop needing to be five minutes from everything, the day-to-day tradeoff barely registers.",
+      ],
+    },
   ],
   "Hunter Ridge Estates, Camas": [
     {
@@ -803,6 +895,35 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       closing: [
         "Buyers drawn to Holly Ridge or Deer Creek tend to want proximity first. Buyers drawn here tend to want separation first. Knowing which one you are makes the rest of the search a lot faster.",
+      ],
+    },
+    {
+      hook: "Life Above Camas: The View From Hunter Ridge Estates",
+      keyword: "life in Hunter Ridge Estates Camas WA",
+      metaDescription:
+        "What everyday life looks like in Hunter Ridge Estates, Camas — the gated entry, elevated lots, and the privacy that comes with both.",
+      excerpt:
+        "A look at everyday life in Hunter Ridge Estates, Camas — the gated entry, the elevation, and what privacy actually looks like day to day.",
+      gbp:
+        "Curious what everyday life is actually like in Hunter Ridge Estates, Camas? The gated entry sets the tone before you even reach a driveway — this is one of the more private settings in Camas, with less through-traffic than the more walkable, established neighborhoods closer to downtown. The elevation is the other defining feature: some backyards have a clear line toward Mount Hood on a clear day, though the view shifts lot to lot and with the time of day, which is part of why touring more than once tends to pay off. Because homes here run larger and newer, with custom and semi-custom finishes, daily life leans toward more space indoors and out rather than proximity to a walkable park or downtown strip. SR-14 provides the same route into Portland as the rest of Camas. If you're weighing Hunter Ridge Estates against Camas's more walkable neighborhoods like Holly Ridge or Deer Creek, the full lifestyle rundown covers what day-to-day actually looks like here.",
+      variant: "spotlight",
+      intro: [
+        "Hunter Ridge Estates asks a different question than most Camas neighborhoods: instead of what's walkable nearby, it's about what elevation and privacy actually add to daily life.",
+        "The gated entry is the first thing that sets the tone, and the rest of the day-to-day experience follows from there.",
+      ],
+      lifestyle: [
+        "Less through-traffic than the more walkable, established neighborhoods closer to downtown Camas means the gated entry isn't just a feature on paper — it translates into genuinely quieter streets.",
+        "Because homes here run larger and newer, with custom and semi-custom finishes on generous lots, day-to-day living leans toward space indoors and out rather than quick trips to a nearby park or shop.",
+        "The view is part of daily life for some addresses more than others — a clear line toward Mount Hood on a clear day is a real feature of some lots, but it shifts enough with light and time of day that it's worth experiencing at more than one point before assuming every lot has the same outlook.",
+      ],
+      parks: [
+        "This community trades proximity to downtown Camas and Lacamas Lake for elevation and privacy — it isn't set up around walkable parks and trails the way some other Camas neighborhoods are, so outdoor time here tends to happen on the property itself rather than a nearby trailhead.",
+      ],
+      commute: [
+        "SR-14 provides the same route into Portland as the rest of Camas. Traffic varies by time of day, so it's worth testing your actual commute during the hours you'd be driving.",
+      ],
+      closing: [
+        "Holly Ridge and Deer Creek lean toward proximity first; this neighborhood leans toward space and separation first — the day-to-day experience really does follow from which one matters more in your daily routine.",
       ],
     },
   ],
@@ -890,6 +1011,35 @@ const TITLES: Record<string, PostSeed[]> = {
         "A weekday morning here feels almost nothing like a Saturday afternoon along the waterfront trail — worth experiencing both before you decide this is the tradeoff you want.",
       ],
     },
+    {
+      hook: "A Morning Along the Columbia Way Waterfront",
+      keyword: "life in Columbia Way Vancouver WA",
+      metaDescription:
+        "What everyday life looks like in Columbia Way, Vancouver — the waterfront walk, nearby restaurants, and the tradeoffs of river living.",
+      excerpt:
+        "A look at everyday life in Columbia Way, Vancouver — the waterfront trail, nearby restaurants, and what a typical day along the river looks like.",
+      gbp:
+        "Curious what everyday life is actually like in Columbia Way, Vancouver? The short answer: a lot of it happens on foot. Esther Short Park and the trail toward Wintler Park are within walking distance for many addresses here, along with restaurants and shops along the river — errands and evenings out don't necessarily require a car the way they do in most Vancouver neighborhoods. The housing mix shapes the day-to-day too: newer condos and townhomes near the waterfront redevelopment lean toward a lower-maintenance routine, while older single-family homes set further back from the river keep more of a standard-yard rhythm. Immediate I-5 access and a short bridge crossing make Portland genuinely close, though actual drive times shift a lot with bridge traffic. If you're weighing Columbia Way against Vancouver's quieter, more established neighborhoods, the full lifestyle rundown covers what day-to-day actually looks like here.",
+      variant: "spotlight",
+      intro: [
+        "Columbia Way is one of the few Vancouver neighborhoods in this rotation where a walk, not a drive, is genuinely part of the daily routine.",
+        "What that looks like day to day depends a lot on which part of the neighborhood you're in — closer to the waterfront redevelopment, or further back where the older single-family homes sit.",
+      ],
+      lifestyle: [
+        "Restaurants and shops along the river are close enough for many addresses that dinner out doesn't require finding parking somewhere else first.",
+        "The housing mix changes the pace block to block: newer condos and townhomes near the water lean toward a simpler, lower-maintenance routine, while the older single-family homes set back from the river keep more of a standard yard-and-upkeep rhythm.",
+        "This is a denser, more urban stretch of Vancouver than neighborhoods like Harney Heights or Lakeshore — a weekday morning here has noticeably more foot traffic and activity than a quieter, more established pocket of the city.",
+      ],
+      parks: [
+        "Esther Short Park and the trail toward Wintler Park are within walking distance for many Columbia Way addresses, giving the neighborhood real outdoor access without needing to drive anywhere first.",
+      ],
+      commute: [
+        "I-5 access is immediate, and the Portland side of the river is a short bridge crossing away — actual drive times depend heavily on time of day and bridge traffic, so it's worth testing during your normal travel hours.",
+      ],
+      closing: [
+        "A weekday morning here feels almost nothing like a Saturday afternoon along the waterfront trail — worth experiencing both before deciding whether the pace fits what you want day to day.",
+      ],
+    },
   ],
   "Deer Creek, Camas": [
     {
@@ -972,6 +1122,35 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       closing: [
         "A drive through at different times of day tells you more about Deer Creek's actual pace than any listing photo will.",
+      ],
+    },
+    {
+      hook: "The Quiet Side of Prune Hill, Day to Day",
+      keyword: "life in Deer Creek Camas WA",
+      metaDescription:
+        "What everyday life feels like in Deer Creek, Camas — wooded quiet streets, Lacamas Creek Trail access, and the pace away from busier Camas addresses.",
+      excerpt:
+        "A look at everyday life in Deer Creek, Camas — wooded cul-de-sac streets, quiet pace, and easy access to the Lacamas Creek Trail.",
+      gbp:
+        "Curious what everyday life is actually like in Deer Creek, Camas? The neighborhood's defining trait is quiet — wooded cul-de-sac streets with more separation between homes than busier Camas addresses, and noticeably less through-traffic. Because Deer Creek dates to the same late-1990s-to-2000s building period as the rest of Camas Meadows, the trees along these streets have had decades to fill in, which is most of what gives the area its wooded feel. The Lacamas Creek Trail is an easy walk or short drive away, giving residents regular trail access without the traffic a more visible address would bring. SR-14 provides the same route into Portland as the rest of Camas Meadows. Because Deer Creek is a quieter, less-searched address, it tends to reward buyers who already know they want wooded and quiet over visibility. If you're comparing Deer Creek against Holly Ridge or other Camas Meadows addresses, the full lifestyle rundown covers what day-to-day actually looks like here.",
+      variant: "spotlight",
+      intro: [
+        "Deer Creek doesn't show up in as many searches as its Camas Meadows neighbors, which says more about its pace than its appeal — here's what day-to-day actually looks like.",
+        "Wooded and quiet are the two words that come up most, and once you're on the streets here instead of just reading about them, it's easy to see why.",
+      ],
+      lifestyle: [
+        "The wooded cul-de-sac streets keep Deer Creek quieter than more visible Camas addresses — less through-traffic, more separation between homes, a slower pace that's noticeable within the first few minutes of driving through.",
+        "Because the neighborhood dates to the same late-1990s-to-2000s building period as the rest of Camas Meadows, the trees along these streets have had two decades or more to fill in, which is most of what gives Deer Creek its wooded feel.",
+        "Being a quieter, less-searched address cuts both ways day to day — fewer passersby and more privacy, but also less foot traffic and activity than a more visible neighborhood might have.",
+      ],
+      parks: [
+        "The Lacamas Creek Trail is an easy walk or short drive from Deer Creek, giving residents regular access to wooded trail recreation without dealing with the traffic a more visible address would bring.",
+      ],
+      commute: [
+        "SR-14 provides the same access into Portland as the rest of Camas Meadows. Actual drive time still depends heavily on time of day, so it's worth testing during the hours you'd actually be commuting.",
+      ],
+      closing: [
+        "The quiet here is easiest to judge in person — driving the streets on a weekday evening tells you more about Deer Creek's actual pace than any description can.",
       ],
     },
   ],
@@ -1057,6 +1236,35 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       closing: [
         "None of that shows up in a listing summary — walking a few blocks and seeing two or three homes in person tells you more than any description can.",
+      ],
+    },
+    {
+      hook: "What a Quiet Street in Harney Heights Actually Feels Like",
+      keyword: "life in Harney Heights Vancouver WA",
+      metaDescription:
+        "A look at everyday life in Harney Heights, Vancouver — the quiet, tree-lined streets, nearby errands, and what a typical day feels like.",
+      excerpt:
+        "A look at everyday life in Harney Heights, Vancouver — quiet, tree-lined streets and what's actually nearby day to day.",
+      gbp:
+        "Curious what everyday life is actually like in Harney Heights, Vancouver? The defining feature here isn't a single park or amenity — it's the quiet itself. Noticeably less through-traffic than the busier east-county corridors means streets stay calm most hours of the day, and the mature, established trees give the neighborhood a settled look that newer subdivisions don't have yet. Because there's generally no formal HOA across much of the neighborhood, homes and yards show more individual character street to street rather than one repeated look. The Mill Plain and SR-14 corridor keeps everyday errands and the drive into the rest of Vancouver reasonably close, without putting Harney Heights in the middle of the retail density around Vancouver Mall. If you're weighing Harney Heights against other Vancouver neighborhoods, the full lifestyle rundown covers what day-to-day actually looks like here.",
+      variant: "spotlight",
+      intro: [
+        "Harney Heights doesn't have one headline feature that shows up in every listing description — the appeal here is more about pace than any single amenity.",
+        "Ask someone who's lived here a while what they'd tell a new buyer, and it usually comes down to the same thing: it's quiet, and the quiet is real, not just a listing word.",
+      ],
+      lifestyle: [
+        "Through-traffic is noticeably lighter here than on the busier east-county corridors, which makes an evening walk around the block feel more like a residential street than a cut-through.",
+        "Because there's generally no formal HOA across much of the neighborhood, homes and yards carry more individual character than a planned development — some properties lean more manicured, others more lived-in, and that variation is part of what gives the area its older, settled feel.",
+        "Being a step removed from the retail density around Vancouver Mall means fewer errands are a quick walk, but it also means less traffic noise and fewer cars cutting through on the way somewhere else.",
+      ],
+      parks: [
+        "Harney Heights isn't built around one destination park — the mature, tree-lined streets themselves are the bigger draw for people who want a quieter, settled setting over a specific trail or playground.",
+      ],
+      commute: [
+        "The Mill Plain and SR-14 corridor keeps the rest of Vancouver and Portland within a reasonable drive. As with any metro-area commute, it's worth testing your actual route at the times you'd normally be driving.",
+      ],
+      closing: [
+        "None of this shows up as a bullet point in a listing — it's the kind of thing you notice by driving the streets at different times of day before you commit to a tour schedule.",
       ],
     },
   ],
@@ -1145,6 +1353,36 @@ const TITLES: Record<string, PostSeed[]> = {
         "Touring homes in a couple of different sections of the subdivision usually clarifies more about lot orientation and finishes than any single listing can.",
       ],
     },
+    {
+      hook: "A Day in Pioneer Canyon, Refuge Included",
+      keyword: "life in Pioneer Canyon Ridgefield",
+      metaDescription:
+        "What everyday life looks like in Pioneer Canyon, Ridgefield — wildlife refuge access, Lake River boat launches, and newer-construction living.",
+      excerpt:
+        "A look at everyday life in Pioneer Canyon, Ridgefield — the wildlife refuge next door, Lake River access, and what newer construction actually feels like.",
+      gbp:
+        "Curious what everyday life is actually like in Pioneer Canyon, Ridgefield? The neighborhood's biggest everyday advantage is the Ridgefield National Wildlife Refuge next door — roughly 5,300 acres between the Columbia River and town, with the River 'S' Unit auto tour, the Kiwa seasonal trail, and the Carty Unit's Oaks to Wetlands Trail open year-round, all close enough for a regular visit rather than a special trip. The Port of Ridgefield's boat launches on Lake River, including a day-use dock and picnic area at the Mill Street launch, add water access as part of a longer trail running from the Lewis River down to Vancouver Lake. Because Pioneer Canyon was built mostly between 2009 and 2017, day-to-day life here comes with newer-construction conveniences, though landscaping is still filling in compared to an older, more established neighborhood. I-5 Exit 14 sits a few minutes away for everything else. If you're curious what living in Pioneer Canyon actually looks like day to day, the full lifestyle rundown covers the refuge, the water access and the newer-construction pace.",
+      variant: "spotlight",
+      intro: [
+        "Pioneer Canyon's new-construction status gets most of the attention, but what's day-to-day life actually like with the wildlife refuge practically next door? Here's a closer look.",
+        "The short version: regular access to real wildlife-refuge trails and water recreation, paired with the specific tradeoffs of living in a newer neighborhood that's still filling in.",
+      ],
+      lifestyle: [
+        "Because Pioneer Canyon was built mostly between 2009 and 2017, everyday life here comes with newer-construction conveniences and more consistent modern layouts than an older Ridgefield neighborhood — though landscaping and trees are still maturing compared to an established address.",
+        "I-5 Exit 14 sits just a few minutes away, so errands and trips beyond Ridgefield itself rarely require much extra driving.",
+        "Lot size and floor plan still vary by section within the subdivision, so day-to-day life can look a little different depending on exactly where in Pioneer Canyon you land — worth walking more than one street before deciding.",
+      ],
+      parks: [
+        "The Ridgefield National Wildlife Refuge is the defining everyday amenity here — roughly 5,300 acres between the Columbia River and town, with the River 'S' Unit auto tour, the Kiwa seasonal trail, and the Carty Unit's Oaks to Wetlands Trail open year-round.",
+        "The Port of Ridgefield's boat launches on Lake River, including a day-use dock and picnic area at the Mill Street launch, add water access as part of a longer trail running from the Lewis River down to Vancouver Lake.",
+      ],
+      commute: [
+        "I-5 Exit 14 sits a few minutes from Pioneer Canyon in either direction, though bridge traffic and time of day both swing actual drive times more than a map suggests.",
+      ],
+      closing: [
+        "A weekday visit to the refuge's auto tour, paired with a drive through Pioneer Canyon itself, tends to show how much the neighborhood's newer-construction pace and the refuge's quiet actually complement each other.",
+      ],
+    },
   ],
   "Battle Ground Meadows, Battle Ground": [
     {
@@ -1230,6 +1468,34 @@ const TITLES: Record<string, PostSeed[]> = {
         "Seeing a couple of homes in person, side by side, tends to clarify the condition question faster than reading listing descriptions alone.",
       ],
     },
+    {
+      hook: "Settled Streets a Few Miles From the Lake",
+      keyword: "life in Battle Ground Meadows WA",
+      metaDescription:
+        "What everyday life looks like in Battle Ground Meadows — settled streets, Battle Ground Lake State Park nearby, and SR-503/SR-502 access.",
+      excerpt:
+        "A look at everyday life in Battle Ground Meadows — settled, established streets near the center of Clark County, with Battle Ground Lake State Park close by.",
+      gbp:
+        "What does everyday life look like in Battle Ground Meadows? The neighborhood sits near the geographic center of Clark County, where SR-503 meets SR-502, with settled streets and more consistent housing stock than some of Battle Ground's newer developments. Battle Ground Lake State Park, about 280 acres built around a volcanic lake a few miles northeast, is one of the real everyday draws — roughly 5 miles of hiking trails and another 5 miles for equestrian and bike use, plus camping, swimming and fishing. Because the neighborhood is established rather than new construction, day-to-day life here tends to feel more settled than in a still-developing subdivision — mature landscaping, consistent streets, and neighbors who've often been there a while. SR-503 and SR-502 connect toward I-5, though neither route is a straight shot. If you're comparing the pace here against Battle Ground's newer neighborhoods, the full lifestyle rundown walks through what everyday life actually looks like.",
+      variant: "spotlight",
+      intro: [
+        "Battle Ground Meadows reads differently day to day than Battle Ground's newer subdivisions — it's an established neighborhood, and that shows up in the pace as much as the houses themselves.",
+        "The lake a few miles northeast is the other piece of the picture most listings mention in passing but don't really explain.",
+      ],
+      lifestyle: [
+        "Because Battle Ground Meadows is established rather than new construction, the everyday feel here leans more settled — consistent streets and housing stock that's had time to mature, rather than the still-developing look of a brand-new subdivision.",
+        "Sitting near the geographic center of Clark County means errands in multiple directions — toward Vancouver via SR-502, or deeper into Battle Ground itself — stay reasonably convenient.",
+      ],
+      parks: [
+        "Battle Ground Lake State Park, about 280 acres built around a volcanic lake a few miles northeast, offers roughly 5 miles of hiking trails and another 5 miles for equestrian and bike use, plus camping, swimming and fishing — all close enough for regular use rather than special trips.",
+      ],
+      commute: [
+        "SR-503 and SR-502 connect toward I-5, though neither is a straight shot — worth testing your specific route at the hours you'd actually be driving.",
+      ],
+      closing: [
+        "The established pace and the lake access are both real, but they mean different things to different buyers — worth walking the neighborhood itself before deciding how it compares to Battle Ground's newer options.",
+      ],
+    },
   ],
   "Stephens Hillside Farm, La Center": [
     {
@@ -1313,6 +1579,35 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       closing: [
         "Comparing Stephens Hillside Farm against La Center's older, original-townsite housing stock in person tends to make the small-town-versus-newer-construction question a lot clearer.",
+      ],
+    },
+    {
+      hook: "Small-Town Mornings Near the East Fork Lewis River",
+      keyword: "life in Stephens Hillside Farm La Center WA",
+      metaDescription:
+        "What day-to-day life looks like in Stephens Hillside Farm, La Center — built-in trails, East Fork Lewis River access, and small-town pace.",
+      excerpt:
+        "A look at everyday life in Stephens Hillside Farm, La Center — the neighborhood's built-in trails, East Fork Lewis River access, and small-town pace.",
+      gbp:
+        "Curious what everyday life is actually like in Stephens Hillside Farm, La Center? The development's own neighborhood park, playground and walking trails were built in as part of the community itself, so they function as everyday infrastructure rather than something residents drive to. La Center's small-town setting plays into the daily pace too — the East Fork Lewis River runs through the area with fishing and kayaking access, and Paradise Point State Park and Holley Park, which has sports fields and a skate park, are both nearby outdoor options beyond the neighborhood's own trails. La Center's original townsite, with its older craftsman-era homes along Pacific Highway and La Center Road, is close enough for a short trip into that older part of town. The town's standalone school district has just three schools total, which keeps the overall feel small-town rather than suburban. If you're picturing what day-to-day life actually looks like here, the full lifestyle rundown covers it in more detail.",
+      variant: "spotlight",
+      intro: [
+        "Stephens Hillside Farm's built-in park, playground and walking trails mean a lot of day-to-day life here happens without leaving the development.",
+        "Add in La Center's small-town setting along the East Fork Lewis River, and the overall pace is noticeably different from denser parts of Clark County.",
+      ],
+      lifestyle: [
+        "Because the neighborhood park, playground and walking trails were built in as part of the development itself, they function as everyday infrastructure rather than something residents have to drive to.",
+        "La Center's original townsite, with its older craftsman-era homes along Pacific Highway and La Center Road, sits close enough that newer Stephens Hillside Farm residents can walk or make a short trip into that older part of town for errands.",
+        "The town's small-school-district setup — just three schools total in La Center School District — is part of what keeps the overall pace small-town rather than suburban.",
+      ],
+      parks: [
+        "The East Fork Lewis River runs through the area, with fishing and kayaking access. Paradise Point State Park and Holley Park, which has sports fields and a skate park, are both nearby outdoor options beyond the neighborhood's own trails.",
+      ],
+      commute: [
+        "La Center sits along I-5, a short drive north of Vancouver. As with anywhere in this corridor, actual drive times rarely match the map, so it's worth a real test drive at the hours you'd actually be commuting.",
+      ],
+      closing: [
+        "The built-in park and trails are easy to see in photos, but the overall small-town pace — how quiet the streets feel, how close the river actually is day to day — is something worth experiencing in person before deciding.",
       ],
     },
   ],
@@ -1484,6 +1779,36 @@ const TITLES: Record<string, PostSeed[]> = {
         "Touring a few different subdivisions in the same visit tends to show the housing variety here more clearly than reading listings alone.",
       ],
     },
+    {
+      hook: "A Day Built Around the Columbia River Dike Trail",
+      keyword: "life in Washougal WA",
+      metaDescription:
+        "What everyday life in Washougal, WA looks like — Columbia River waterfront trails, 14 local parks, and the daily routine east of Camas.",
+      excerpt:
+        "A look at everyday life in Washougal, WA — waterfront trails along the Columbia River, 14 local parks, and the daily routine in this river town east of Camas.",
+      gbp:
+        "Curious what day-to-day life looks like in Washougal, WA? The Columbia River shapes a lot of it — Washougal Waterfront Park connects directly to the Columbia River Dike Trail and the Lewis and Clark Heritage Trail, so river access is part of a regular routine here, not an occasional outing. The city maintains 14 parks totaling more than 120 acres, including the roughly 2.2-mile Washougal River Greenway Trail, so outdoor time doesn't require much planning. Because Washougal doesn't have one single dominant neighborhood, daily life looks a little different depending on which subdivision or street you're in — some residents are a short walk from the river, others are closer to the Washougal River Greenway on the opposite side of town. SR-14 keeps Camas and the rest of Clark County within reach for errands and work. If you're comparing what everyday life actually feels like in Washougal versus Camas, the full lifestyle rundown walks through it.",
+      variant: "spotlight",
+      intro: [
+        "Washougal's biggest everyday advantage is one most listings undersell: real, regular access to the Columbia River, not just a view of it.",
+        "Because the city doesn't have one dominant neighborhood, day-to-day life here looks a little different depending on which part of town you're in — but the river and the park system tie it together.",
+      ],
+      lifestyle: [
+        "Washougal Waterfront Park connects directly to the Columbia River Dike Trail and the Lewis and Clark Heritage Trail, which makes river-adjacent walks, runs or bike rides a realistic daily habit rather than a special trip.",
+        "With 14 parks spread across the city and more than 120 acres of total parkland, most residents end up with some green space within easy reach, regardless of which part of Washougal they're in.",
+        "SR-14 keeps Camas close for anything Washougal itself doesn't have, so errands outside the city rarely turn into a long drive.",
+      ],
+      parks: [
+        "Washougal Waterfront Park is the anchor for river access, linking to both the Columbia River Dike Trail and the Lewis and Clark Heritage Trail.",
+        "The Washougal River Greenway Trail, roughly 2.2 miles, gives the opposite side of town its own dedicated outdoor route.",
+      ],
+      commute: [
+        "SR-14 runs as a four-lane freeway connecting Washougal to Camas and on toward Vancouver and I-205 — actual drive time still depends on when you're traveling.",
+      ],
+      closing: [
+        "Because Washougal's housing and amenities vary so much by specific street, it's worth walking a given block at the time of day you'd actually be using it before deciding how the lifestyle here compares to Camas or Vancouver.",
+      ],
+    },
   ],
   "Hockinson, Hockinson": [
     {
@@ -1566,6 +1891,35 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       closing: [
         "A couple of property tours, including the actual drive back toward Vancouver, tends to answer the rural-versus-convenient question better than any description.",
+      ],
+    },
+    {
+      hook: "Quiet Mornings on Acreage, Minutes From a State Park",
+      keyword: "life in Hockinson WA",
+      metaDescription:
+        "What everyday life looks like in Hockinson, WA — acreage living, the Blueberry Corridor, and Battle Ground Lake State Park minutes away.",
+      excerpt:
+        "A look at everyday life in the Hockinson, WA area — acreage and horse property, the local Blueberry Corridor, and Battle Ground Lake State Park close by.",
+      gbp:
+        "What does everyday life actually look like in the Hockinson area? Space is the defining feature — acreage properties, horse ranches and hillside lots mean more distance between neighbors than you'll find in Vancouver or Camas subdivisions. NE 182nd Avenue leads to what's locally known as the Blueberry Corridor, a mix of residential and agricultural land with several berry farms, giving the area a genuinely rural daily backdrop. Battle Ground Lake State Park is just minutes away for hiking or swimming, which makes outdoor time an easy part of a normal week rather than a planned trip. Hockinson also has its own standalone school district. The tradeoff is access: there's no freeway directly through the area, so reaching I-5 or I-205 means routing through Battle Ground or Orchards first. If you're weighing that tradeoff against the acreage and quiet, the full lifestyle rundown covers what day-to-day actually looks like here.",
+      variant: "spotlight",
+      intro: [
+        "Space shapes almost everything about daily life in Hockinson — more distance between homes, more land to maintain, and a pace that's genuinely different from denser parts of Clark County.",
+        "It's not a trade everyone wants to make, but for people who do, the acreage and the nearby state park are what daily life actually revolves around.",
+      ],
+      lifestyle: [
+        "Acreage properties, horse ranches and hillside lots mean neighbors are further apart here than in a standard subdivision — daily life has more room in it, literally.",
+        "NE 182nd Avenue leads to the local Blueberry Corridor, a mix of residential and agricultural land with several berry farms, which gives the area a working-rural backdrop rather than a purely residential one.",
+        "Because Hockinson has its own standalone school district, school life here runs separately from the larger districts in Battle Ground or Vancouver.",
+      ],
+      parks: [
+        "Battle Ground Lake State Park, with its hiking trails and swimming lake, is just minutes from Hockinson — close enough to make outdoor time part of a regular week rather than a planned outing.",
+      ],
+      commute: [
+        "There's no freeway directly through Hockinson — getting to I-5 or I-205 means routing through Battle Ground or Orchards first, and that add-on time varies by hour.",
+      ],
+      closing: [
+        "The acreage and quiet are real, but so is the drive — spending time in the area at the hours you'd actually be commuting is the best way to know if the tradeoff works for you.",
       ],
     },
   ],
@@ -1652,6 +2006,35 @@ const TITLES: Record<string, PostSeed[]> = {
         "Spending real time in the area at different points in the day, not just a single tour, tends to give the clearest read on whether the distance actually works for you.",
       ],
     },
+    {
+      hook: "What a Normal Week Looks Like 30 Miles Out",
+      keyword: "life in Amboy WA",
+      metaDescription:
+        "What everyday life looks like in the Amboy, WA area — rural acreage, Moulton Falls nearby, and the real drive time from Vancouver.",
+      excerpt:
+        "A look at everyday life in the Amboy, WA area — rural acreage at the confluence of two creeks, Moulton Falls nearby, and a genuinely quiet, remote pace.",
+      gbp:
+        "What does a normal week look like in the Amboy area? Distance and quiet are the two defining features — Amboy sits at the confluence of Chelatchie Creek and Cedar Creek in northern Clark County, roughly 30 miles northeast of Vancouver, with larger acreage parcels than you'll typically find even in Battle Ground or Hockinson. County roads are the primary access here rather than a direct freeway, so daily life runs on a different clock than closer-in suburbs. Moulton Falls Regional Park, with its waterfalls and trails, sits in the broader Yacolt/Amboy area as a real regional draw, and Amboy Middle School, part of Battle Ground Public Schools, is physically located in the community. Shopping and other services generally mean a drive into Battle Ground or further. If you're weighing whether that trade of distance for space and quiet actually works for your routine, the full lifestyle rundown covers what a typical week here looks like.",
+      variant: "spotlight",
+      intro: [
+        "A normal week in Amboy runs on a different clock than closer-in Clark County suburbs — more driving, more land, and a genuinely quieter pace.",
+        "Whether that trade works comes down to how your actual routine uses distance versus space.",
+      ],
+      lifestyle: [
+        "Acreage parcels here are larger than what you'll typically find even in Battle Ground or Hockinson, so daily life has real physical space built into it — more distance between neighbors, more land to maintain.",
+        "County roads are the primary access rather than a direct freeway, which means errands and commuting both take real, predictable time rather than a quick hop.",
+        "Amboy Middle School, part of Battle Ground Public Schools, is physically located in the community, which anchors a lot of the area's everyday rhythm around the school calendar.",
+      ],
+      parks: [
+        "Moulton Falls Regional Park, with its waterfalls and trails, sits in the broader Yacolt/Amboy area — technically addressed in Yacolt, but a real regional outdoor destination for people living in Amboy.",
+      ],
+      commute: [
+        "There's no direct freeway through Amboy — county roads carry the drive to I-5 or I-205, and the time adds up regardless of route. Testing the actual drive at the hours you'd be commuting matters more here than almost anywhere closer in.",
+      ],
+      closing: [
+        "Thirty miles sounds abstract until you've driven it daily — spending real time in the area, including the commute itself, is the clearest way to know if the distance works for your routine.",
+      ],
+    },
   ],
   "Brush Prairie, Brush Prairie": [
     {
@@ -1734,6 +2117,35 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       closing: [
         "Touring a couple of properties tends to make the rural-residential mix here click faster than reading about it does.",
+      ],
+    },
+    {
+      hook: "Foothill Acreage With a Straight Shot to I-205",
+      keyword: "life in Brush Prairie WA",
+      metaDescription:
+        "What everyday life looks like in Brush Prairie, WA — hobby farms, Lucky Dog Park, and SR-503 access between Battle Ground and Vancouver.",
+      excerpt:
+        "A look at everyday life in Brush Prairie, WA — hobby farms and acreage in the foothills, Lucky Dog Park nearby, and a reasonably direct commute via SR-503.",
+      gbp:
+        "What's everyday life actually like in Brush Prairie, WA? The area sits in the rolling foothills of northeast Clark County, about 12 miles north of Vancouver, with a genuine mix of hobby farms, equestrian properties and newer custom-built homes rather than one uniform housing type. Brush Prairie's 'Lucky' Dog Park, also known as Lucky Memorial Park, gives the area about 4.5 acres of open fields as a real local gathering spot. NE 117th Avenue, also SR-503, connects to I-205 via the Padden Parkway exit, which keeps Brush Prairie reasonably close to both Battle Ground and Vancouver for errands and work. School district can vary by exact address here, so it's worth verifying directly rather than assuming. If you're weighing the rural-residential pace here against life closer to Vancouver, the full lifestyle rundown covers what day-to-day actually looks like.",
+      variant: "spotlight",
+      intro: [
+        "Brush Prairie sits in a genuine in-between spot — rural enough for hobby farms and acreage, close enough to Vancouver that daily errands and commuting still work.",
+        "That middle ground is really what defines everyday life here more than any single feature.",
+      ],
+      lifestyle: [
+        "The mix of hobby farms, equestrian properties and newer custom-built homes means daily life looks different street to street — some residents are managing acreage and animals, others are in newer construction with a more standard routine.",
+        "Lucky Dog Park, also known as Lucky Memorial Park, gives the area about 4.5 acres of open fields — a real, regularly-used local gathering spot rather than a formal destination park.",
+        "Because school district can vary by exact address in Brush Prairie, daily school-related routines differ more from house to house than in a neighborhood served by a single district.",
+      ],
+      parks: [
+        "Lucky Dog Park (Lucky Memorial Park) is the area's main local green space, with about 4.5 acres of open fields.",
+      ],
+      commute: [
+        "NE 117th Avenue/SR-503 connects to I-205 via the Padden Parkway exit, giving Brush Prairie a reasonably direct route toward both Battle Ground and Vancouver — actual drive time still depends on when you're traveling.",
+      ],
+      closing: [
+        "The rural-residential pace here is real, but so is the proximity to Vancouver — worth spending time on a few different streets to see how that balance actually feels day to day.",
       ],
     },
   ],
@@ -1820,6 +2232,33 @@ const TITLES: Record<string, PostSeed[]> = {
         "A couple of home tours, paired with a direct call to the district about your specific address, covers both the big questions at once.",
       ],
     },
+    {
+      hook: "Mornings Near Crestline: Everyday Life in Cascade Park",
+      keyword: "life in Cascade Park Vancouver WA",
+      metaDescription:
+        "What everyday life in Cascade Park, Vancouver is actually like — neighborhood parks, Columbia Square shopping, and the I-205 commute.",
+      excerpt:
+        "A look at everyday life in Cascade Park, Vancouver — walks to the neighborhood's small parks, Columbia Square shopping, and the I-205 commute.",
+      gbp:
+        "What does everyday life in Cascade Park actually look like? This established east Vancouver neighborhood is bounded roughly by Mill Plain Boulevard to the north, the Columbia River to the south, and I-205 to the west. A handful of small neighborhood parks shape a lot of the daily rhythm here — Cascade Park itself, a roughly 3-acre park with a shaded playground and walking paths adjacent to Crestline Elementary, plus Biddlewood Park and Homestead Neighborhood Park on SE 160th Avenue. Columbia Square along Mill Plain Boulevard covers everyday shopping close by, and the mix of single-family homes and townhomes means the neighborhood has a genuinely varied, lived-in feel rather than one repeated layout. It's worth knowing Cascade Park is in Evergreen Public Schools rather than Vancouver Public Schools. Read the full Cascade Park lifestyle guide for more on what daily life here actually involves.",
+      variant: "spotlight",
+      intro: [
+        "Cascade Park's small neighborhood parks and Columbia Square shopping shape a lot of the everyday rhythm here — here's what that actually looks like day to day.",
+      ],
+      lifestyle: [
+        "The mix of single-family homes and townhomes gives Cascade Park a genuinely varied, lived-in feel rather than the uniform look of a single planned subdivision.",
+        "Columbia Square along Mill Plain Boulevard covers everyday shopping close by, keeping most errands within the immediate area.",
+      ],
+      parks: [
+        "Cascade Park itself is a roughly 3-acre neighborhood park with a shaded playground and walking paths, adjacent to Crestline Elementary. Biddlewood Park and Homestead Neighborhood Park on SE 160th Avenue are also nearby, both with walking paths and playgrounds.",
+      ],
+      commute: [
+        "I-205 runs along the neighborhood's western edge, with Mill Plain Boulevard providing an east-west route. Rush hour changes the math here more than the map does — worth checking your specific route and time.",
+      ],
+      closing: [
+        "A walk through Cascade Park itself, timed for whatever hour you'd actually use it, tends to say more about daily life here than square footage does.",
+      ],
+    },
   ],
   "Fisher's Landing, Vancouver": [
     {
@@ -1902,6 +2341,33 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       closing: [
         "Reading a couple of HOA covenant packets alongside touring homes tends to save real headaches down the line.",
+      ],
+    },
+    {
+      hook: "Six Parks and a Marketplace: Everyday Life in Fisher's Landing",
+      keyword: "life in Fishers Landing Vancouver WA",
+      metaDescription:
+        "What everyday life in Fisher's Landing, Vancouver is like — park access, Fisher's Landing Marketplace, and the HOA-community pace.",
+      excerpt:
+        "A look at everyday life in Fisher's Landing, Vancouver — park access, Fisher's Landing Marketplace, and what HOA-community living actually involves.",
+      gbp:
+        "Curious what everyday life in Fisher's Landing actually looks like? This is really a cluster of three related neighborhoods, Fisher's Creek, Fisher's Landing East and Village at Fisher's Landing, that grew up together along SE 164th Avenue in the 1990s. Park access is a genuine daily feature here — Fisher's Landing East alone has roughly six parks, plus Heritage Park's circular walking path and playground and Clearmeadows Park's pollinator-themed play structures. Fisher's Landing Marketplace and further retail up toward Fred Meyer cover everyday shopping close by, and active HOAs are common across the neighborhood cluster, which shapes a lot of the day-to-day — from landscaping standards to shared amenities. It's in Evergreen Public Schools rather than Vancouver Public Schools, worth noting if you're comparing areas. Read the full Fisher's Landing lifestyle guide for more on what daily life here actually involves.",
+      variant: "spotlight",
+      intro: [
+        "Fisher's Landing is really a cluster of three related neighborhoods that grew up together in the 1990s, and daily life here reflects that — park access and HOA structure both shape the day-to-day more than in a single standalone development.",
+      ],
+      lifestyle: [
+        "Active HOAs are common across the neighborhood cluster, which means landscaping standards and shared amenities are part of everyday life here in a way they aren't in every Vancouver neighborhood.",
+        "Fisher's Landing Marketplace and further retail up toward Fred Meyer cover everyday shopping close by, so errands tend to stay within the immediate area.",
+      ],
+      parks: [
+        "Fisher's Landing East alone has roughly six parks — a genuinely well-parked area for east Vancouver. Heritage Park has a circular walking path and playground, and Clearmeadows Park features pollinator-themed play structures.",
+      ],
+      commute: [
+        "SE 164th Avenue connects to SR-14 and the rest of east Vancouver. Like anywhere near the interchanges, actual travel time swings by hour — a test drive beats an estimate.",
+      ],
+      closing: [
+        "A walk through a couple of the neighborhood's six-plus parks, paired with a look at an HOA covenant packet, tends to give a fuller picture than either one alone.",
       ],
     },
   ],
@@ -1988,6 +2454,36 @@ const TITLES: Record<string, PostSeed[]> = {
         "A weekday morning near Esther Short Park looks almost nothing like a Saturday during the farmers market — worth experiencing both before you decide.",
       ],
     },
+    {
+      hook: "A Saturday Morning at Esther Short Park",
+      keyword: "life in Downtown Vancouver WA",
+      metaDescription:
+        "What everyday life in Downtown Vancouver, WA actually looks like — Esther Short Park, the farmers market, Waterfront walks and I-5 access.",
+      excerpt:
+        "A look at everyday life in Downtown Vancouver, WA — mornings near Esther Short Park, the farmers market, and what the Waterfront district adds to the mix.",
+      gbp:
+        "Curious what everyday life in Downtown Vancouver actually looks like? It centers on Esther Short Park, the oldest public park in the Pacific Northwest at 5 acres dating to 1853, which hosts a year-round farmers market and sits steps from the Waterfront district's newer retail and open space along the Columbia River. Because condos make up most of the housing here, daily life skews walkable rather than yard-centered — public art and breweries are within walking distance for most residents. I-5 access is immediate, with a short bridge crossing to Portland, though bridge traffic is worth checking at the hours you'd actually travel. Read the full Downtown Vancouver lifestyle guide for more on what a typical day here looks like.",
+      variant: "spotlight",
+      intro: [
+        "Downtown Vancouver reads differently depending on the day — a weekday morning near Esther Short Park looks almost nothing like a Saturday when the farmers market is running.",
+        "Here's what day-to-day life actually looks like in Vancouver's most walkable neighborhood.",
+      ],
+      lifestyle: [
+        "Because condos make up the large majority of housing downtown, daily life here leans walkable rather than yard-centered — errands, meals and time outdoors all happen within a short walk rather than a drive.",
+        "Public art and breweries are part of the everyday backdrop, within walking distance for most residents rather than a special occasion.",
+        "The Waterfront district, a major redevelopment south of Esther Short Park, has added new retail and open space along the Columbia River, giving the neighborhood more to walk to than it had a few years ago.",
+      ],
+      parks: [
+        "Esther Short Park anchors the neighborhood — 5 acres, the oldest public park in the Pacific Northwest, and home to a year-round farmers market and community events.",
+        "The Waterfront district adds additional open space along the Columbia River, within walking distance of the park.",
+      ],
+      commute: [
+        "I-5 access is immediate from downtown, with a short bridge crossing to Portland — bridge traffic in particular can turn a quick trip into a long one, so it's worth checking at the hours you'd actually cross.",
+      ],
+      closing: [
+        "None of this comes through in a floor plan — the walk to the farmers market, the pace of a weekday evening downtown. Spending time in the neighborhood at different hours tends to show whether that pace actually fits.",
+      ],
+    },
   ],
   "Salmon Creek, Vancouver": [
     {
@@ -2070,6 +2566,36 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       closing: [
         "Touring homes in more than one part of the area tends to show how much the traffic exposure actually varies block to block.",
+      ],
+    },
+    {
+      hook: "Everyday Life Near the Greenway Trail",
+      keyword: "life in Salmon Creek Vancouver WA",
+      metaDescription:
+        "What everyday life looks like in Salmon Creek, Vancouver — the Greenway Trail, interchange access, and a genuine mix of housing nearby.",
+      excerpt:
+        "A look at everyday life in Salmon Creek, Vancouver — walking the Greenway Trail, interchange convenience, and the area's genuine mix of housing.",
+      gbp:
+        "Curious what everyday life is actually like in Salmon Creek, Vancouver? The neighborhood's defining feature is convenience — sitting right at the I-5/I-205 interchange means routine errands and trips in multiple directions rarely require much extra driving, even though that same interchange can back up at the wrong hour. The Salmon Creek Greenway Trail gives residents a real, county-maintained wooded path with creek access close to home, a genuine outdoor routine rather than a special destination. Housing here genuinely varies, from entry-level condos to higher-end homes, some with creek or estuary views, so day-to-day life can look different block to block. Clark College's main campus sits nearby, just east of I-5 in Vancouver's Central Park area, and Legacy Salmon Creek Medical Center, opened in 2005 and recognized for its eco-friendly design, is a notable local landmark. If you're curious what living in Salmon Creek actually looks like day to day, the full lifestyle rundown covers the trail, the interchange and the neighborhood's mix of housing.",
+      variant: "spotlight",
+      intro: [
+        "Salmon Creek's interchange location gets most of the attention, but what's day-to-day life actually like for the roughly 21,000 people who live there? Here's a closer look.",
+        "The short version: genuine convenience in multiple directions, a real wooded trail close to home, and a mix of housing that means no two streets look quite the same.",
+      ],
+      lifestyle: [
+        "Sitting right at the I-5/I-205 interchange means errands and trips in multiple directions rarely require much extra driving — a genuinely central Clark County location, even though that same interchange can back up badly at the wrong hour.",
+        "Housing here spans entry-level condos to higher-end homes, some with creek or estuary views, so day-to-day life can look noticeably different depending on which pocket of Salmon Creek you're in — worth exploring more than one part of the area.",
+        "Clark College's main campus sits nearby, just east of I-5 in Vancouver's Central Park area, putting continuing education and campus amenities within easy reach for residents who want them.",
+      ],
+      parks: [
+        "The Salmon Creek Greenway Trail is a real, county-maintained wooded trail with creek access — a genuine outdoor routine close to home rather than a planned weekend trip.",
+        "Legacy Salmon Creek Medical Center, opened in 2005 and recognized for its eco-friendly design, is also a notable local landmark in the area.",
+      ],
+      commute: [
+        "The I-5/I-205 interchange gives Salmon Creek access in multiple directions, though it can back up badly at the wrong hour — worth testing your specific route before counting on a number.",
+      ],
+      closing: [
+        "Central access matters more to some buyers than any single amenity, and walking the Greenway Trail on a weekday evening tends to show a quieter side of Salmon Creek than the interchange location would suggest.",
       ],
     },
   ],
@@ -2156,6 +2682,36 @@ const TITLES: Record<string, PostSeed[]> = {
         "Touring a few homes with an inspector who's worked in historic Portland districts before tends to surface the real condition questions faster than a listing description ever will.",
       ],
     },
+    {
+      hook: "Two Parks, One Walk: A Typical Irvington Afternoon",
+      keyword: "life in Irvington Portland OR",
+      metaDescription:
+        "What everyday life looks like in Irvington, Portland — historic streets, Irving Park and Grant Park both within walking distance.",
+      excerpt:
+        "A look at everyday life in Irvington, Portland — walking historic streets, Irving Park and neighboring Grant Park both close enough for a regular routine.",
+      gbp:
+        "What does everyday life actually look like in Irvington? The neighborhood's historic character — Oregon's largest historic residential district, added to the National Register of Historic Places in 2010 — is part of daily life here, not just a selling point. Walking or biking past real Queen Anne, Craftsman and Prairie School homes built mostly between the 1890s and 1930s is a normal part of getting around. Irving Park, about 16 acres at NE 7th and Fremont, has ball fields, courts, a playground and an off-leash dog area, and Grant Park, nearly 20 acres, sits just next door in the neighboring Grant Park neighborhood with its own playground, dog park and athletic fields — both close enough for a regular routine rather than a planned outing. I-84 and I-5 are both close by for anything outside the neighborhood. If you're curious what daily life in a real historic district actually feels like, the full lifestyle rundown covers it.",
+      variant: "spotlight",
+      intro: [
+        "Irvington's historic character isn't just a backdrop here — it's part of what daily life actually looks like, from the walk to the park to the house next door.",
+        "Two of Northeast Portland's real neighborhood parks sit close enough to make outdoor time an easy, regular habit rather than a special trip.",
+      ],
+      lifestyle: [
+        "Walking or biking through Irvington means passing real Queen Anne, Craftsman and Prairie School homes built mostly between the 1890s and 1930s — the kind of architectural variety that gives the neighborhood its everyday character.",
+        "Irving Park, about 16 acres at NE 7th and Fremont, and Grant Park, nearly 20 acres just next door in the neighboring Grant Park neighborhood, are both close enough that using one or the other regularly is realistic, not aspirational.",
+        "Being close to I-84 and I-5 keeps the rest of Portland reasonably accessible for anything the neighborhood itself doesn't have.",
+      ],
+      parks: [
+        "Irving Park offers ball fields, courts, a playground and an off-leash dog area across about 16 acres at NE 7th and Fremont.",
+        "Grant Park, nearly 20 acres in the neighboring Grant Park neighborhood, adds its own playground, dog park and athletic fields within easy reach.",
+      ],
+      commute: [
+        "I-84 and I-5 are both close by, and Northeast Portland's grid keeps cross-town driving fairly direct — actual commute time still depends heavily on time of day.",
+      ],
+      closing: [
+        "The historic character and the park access both show up more in daily routine than in any listing description — worth walking the neighborhood at the time of day you'd actually be using it.",
+      ],
+    },
   ],
   "Sexton Mountain, Beaverton": [
     {
@@ -2238,6 +2794,35 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       closing: [
         "Driving the neighborhood's streets at different times of day, not just touring homes, tends to give the clearest read on how the hillside setting actually feels day to day.",
+      ],
+    },
+    {
+      hook: "What the Westside Regional Trail Adds to Everyday Life",
+      keyword: "life in Sexton Mountain Beaverton OR",
+      metaDescription:
+        "What everyday life looks like in Sexton Mountain, Beaverton — hillside streets, real trail access, and the drive into the rest of the city.",
+      excerpt:
+        "A look at everyday life in Sexton Mountain, Beaverton — hillside streets, Westside Regional Trail access, and what a typical day here looks like.",
+      gbp:
+        "Curious what everyday life is actually like in Sexton Mountain, Beaverton? The Westside Regional Trail is the neighborhood's biggest everyday asset — it runs directly through Sexton Mountain, connecting to several parks, so it's genuinely usable rather than a drive-to amenity. The hillside setting adds more topography and views than central Beaverton, with homes mostly from the 1990s and 2000s giving the streets a quieter, more suburban feel. Being on the city's southwest edge means a slightly longer drive to the core retail and transit hub, and OR-217 sees real congestion at peak hours, so the commute is worth testing directly rather than estimating. Beaverton itself sits about 8 miles west of downtown Portland. If you're weighing Sexton Mountain against more central Beaverton neighborhoods, the full lifestyle rundown covers what day-to-day actually looks like here.",
+      variant: "spotlight",
+      intro: [
+        "Sexton Mountain's daily rhythm is shaped by two things more than anything else: the hillside setting and the Westside Regional Trail running right through it.",
+        "Both add up to a quieter, more suburban feel than central Beaverton, with real tradeoffs in distance to the city's retail and transit core.",
+      ],
+      lifestyle: [
+        "The Westside Regional Trail isn't a drive-to amenity — it runs directly through the neighborhood, connecting to several parks, which makes it a genuinely usable part of a regular routine rather than an occasional outing.",
+        "Homes here are mostly from the 1990s and 2000s on hillside, elevated lots, which gives the streets a quieter, more suburban feel than central Beaverton's denser core.",
+        "Being on the southwest edge of the city means a slightly longer drive to Beaverton's main retail and transit hub, which trades convenience for a calmer day-to-day pace.",
+      ],
+      parks: [
+        "The Westside Regional Trail connects to several parks within Sexton Mountain, giving the neighborhood real, built-in outdoor access rather than a single isolated amenity.",
+      ],
+      commute: [
+        "OR-217 and US-26 both serve Beaverton, and TriMet's WES commuter rail connects Beaverton and Tigard. OR-217 sees real congestion at peak hours, so it's worth testing your actual route rather than trusting a map estimate.",
+      ],
+      closing: [
+        "Driving the neighborhood's streets at different times of day, not just touring homes, tends to give the clearest read on how the hillside setting and trail access actually fit into daily life.",
       ],
     },
   ],
@@ -2324,6 +2909,34 @@ const TITLES: Record<string, PostSeed[]> = {
         "The best next step is usually confirming the exact jurisdiction and any HOA details for a specific property before touring, since both can vary block to block on Bull Mountain.",
       ],
     },
+    {
+      hook: "What a Walk on Bull Mountain Park's Trails Is Actually Like",
+      keyword: "life on Bull Mountain Tigard OR",
+      metaDescription:
+        "What everyday life on Bull Mountain near Tigard, OR is like — trail access, elevation, newer construction and the drive into town.",
+      excerpt:
+        "A look at everyday life on Bull Mountain near Tigard, OR — trail time at Bull Mountain Park, the elevated setting, and the actual commute.",
+      gbp:
+        "Wondering what everyday life on Bull Mountain near Tigard actually looks like? The area's defining feature is Bull Mountain Park, maintained by the City of Tigard with 9 trails supporting hiking, mountain biking and trail running — a real, regularly usable amenity rather than an occasional destination. The hilltop setting, roughly 710 feet in elevation, means view lots and real topography are part of daily life, and because most homes were built within the last two decades, the neighborhood has a newer, more consistent feel than much of central Tigard. For the commute, Pacific Highway (99W), OR-217 and I-5 all serve Tigard, with TriMet's WES commuter rail offering a transit alternative toward Beaverton — OR-217 does see real congestion at peak hours. Read the full Bull Mountain lifestyle guide for more on what daily life here actually involves.",
+      variant: "spotlight",
+      intro: [
+        "Floor plans and lot sizes only tell part of the Bull Mountain story — here's what actually fills the day-to-day for people living up here.",
+        "The short version: the elevation and the trail system do a lot of the work in how this neighborhood feels to live in.",
+      ],
+      lifestyle: [
+        "Because most homes on Bull Mountain were built within the last two decades, streets have a newer, more consistent feel than much of central Tigard — view lots and real elevation change are part of the everyday backdrop.",
+        "The hilltop setting means some commutes and errands involve genuine topography, not just distance — worth factoring in beyond what a map shows.",
+      ],
+      parks: [
+        "Bull Mountain Park, maintained by the City of Tigard, has 9 trails supporting hiking, mountain biking and trail running — regularly usable rather than a special-occasion destination given how close it sits to most of the neighborhood.",
+      ],
+      commute: [
+        "Tigard is built around Pacific Highway (99W), with OR-217 and I-5 access, and TriMet's WES commuter rail connects Tigard and Beaverton as a transit alternative. OR-217 sees real congestion at peak hours — worth testing your specific route rather than trusting a map estimate.",
+      ],
+      closing: [
+        "A weekday evening walk on Bull Mountain Park's trails tends to say more about whether this setting fits than a listing photo ever could.",
+      ],
+    },
   ],
   "North Bethany, Bethany": [
     {
@@ -2406,6 +3019,35 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       closing: [
         "Comparing a few homes across different phases of the development tends to clarify how the community has matured so far.",
+      ],
+    },
+    {
+      hook: "A Trail-First Daily Routine, Still Taking Shape",
+      keyword: "life in North Bethany OR",
+      metaDescription:
+        "What everyday life looks like in North Bethany, OR — trail access via Rock Creek and Waterhouse, Bethany Lake Park, and a still-developing pace.",
+      excerpt:
+        "A look at everyday life in North Bethany, OR — trail access via Rock Creek and Waterhouse, Bethany Lake Park, and what a still-developing community feels like in person.",
+      gbp:
+        "Curious what everyday life is actually like in North Bethany, OR? Trail access is the throughline here — the Rock Creek Regional Trail (3.5 miles) and Waterhouse Trail (10 miles), both ADA-accessible, run through the broader Bethany area, and Bethany Lake Park adds a 42-acre community garden and picnic space nearby. Because North Bethany has been developing since 2006, day-to-day life varies a bit depending on which phase of the community you're in — some sections feel more settled than others, since inventory spans different build years within the same general area. Homes here are newer, single-detached construction with more consistent layouts than Central Bethany's older mix of townhomes, condos and apartments. US-26 connects the area to Portland and Hillsboro, with drive times that vary by time of day like anywhere in the metro. If you're trying to picture what living here actually feels like day to day, the full lifestyle rundown covers the trail system and how the community has developed so far.",
+      variant: "spotlight",
+      intro: [
+        "North Bethany is still filling in, which means day-to-day life here looks a little different depending on which phase of the development you're in.",
+        "What's consistent across the community so far is trail access — it's less a weekend activity and more a built-in part of getting around.",
+      ],
+      lifestyle: [
+        "Because North Bethany is newer and more consistently built than Central Bethany's older mix of townhomes, condos and apartments, streets tend to have a more uniform look, though landscaping maturity still varies by how recently a given section was finished.",
+        "Since development has been ongoing since 2006, inventory spans different build phases and years within the same general area — which also means some pockets feel more settled day to day than others.",
+        "Bethany Lake Park adds a 42-acre community garden and picnic space to the mix, giving residents a gathering spot that isn't just a trail.",
+      ],
+      parks: [
+        "The Rock Creek Regional Trail (3.5 miles, ADA-accessible) and the Waterhouse Trail (10 miles, ADA-accessible) both run through the broader Bethany area, and Bethany Lake Park adds picnic space and a community garden nearby.",
+      ],
+      commute: [
+        "US-26 connects North Bethany to Portland and Hillsboro. Like anywhere in the metro, actual drive times vary significantly by time of day — worth testing your specific route before counting on an estimate.",
+      ],
+      closing: [
+        "Because the community is still developing, walking a specific section in person — not just the general area — gives the clearest sense of how far along that part of North Bethany actually is.",
       ],
     },
   ],
@@ -2492,6 +3134,35 @@ const TITLES: Record<string, PostSeed[]> = {
         "Walking the neighborhood at different times of day, including a stop at the farmers market if the timing works out, tends to show whether the walkable, denser format actually fits how you want to live.",
       ],
     },
+    {
+      hook: "A Day Without a Car in Orenco Station",
+      keyword: "life in Orenco Station Hillsboro OR",
+      metaDescription:
+        "What everyday life in Orenco Station, Hillsboro is actually like — walkable streets, the MAX station, Central Park and the farmers market.",
+      excerpt:
+        "A look at everyday life in Orenco Station, Hillsboro — walking to the MAX station, Central Park, and the seasonal farmers market.",
+      gbp:
+        "Curious what a day actually looks like in Orenco Station? This is one of the few Hillsboro neighborhoods genuinely built around not needing a car for daily errands — narrower streets, alley-loaded garages and live-work spaces put the Orenco MAX Station (TriMet Blue and Red Line, opened 1998) within easy walking distance for most residents, and a 2002 study found 22% of residents commuted by transit versus 6% regionally. Central Park anchors the neighborhood just north of the retail core, and a seasonal farmers market runs late spring through summer. The tradeoff is less traditional yard space, since narrower streets and alley-loaded garages are part of the walkable design. For drivers, US-26 is the primary route toward Portland. Read the full Orenco Station lifestyle guide for more on what everyday life here actually involves.",
+      variant: "spotlight",
+      intro: [
+        "Orenco Station is one of the few Hillsboro neighborhoods genuinely built so you don't need a car for daily errands — here's what that actually looks like day to day.",
+        "The neighborhood's walkable design, alley-loaded garages and live-work spaces, was deliberate from the start, dating to the development's beginning in 1997.",
+      ],
+      lifestyle: [
+        "Daily errands tend to happen on foot here — the retail core, Central Park and the Orenco MAX Station are all within easy walking distance for most residents.",
+        "A seasonal farmers market runs late spring through summer, adding a regular weekend rhythm to the neighborhood's retail core.",
+        "The tradeoff for all that walkability is yard space — narrower streets and alley-loaded garages mean less traditional outdoor space than a standard suburban lot.",
+      ],
+      parks: [
+        "Central Park anchors the neighborhood just north of the retail core, with several smaller distributed parks also part of the original design.",
+      ],
+      commute: [
+        "The Orenco MAX Station (TriMet Blue and Red Line, opened 1998) gives residents a genuine transit alternative — a 2002 study found 22% of residents commuted by transit versus 6% regionally. For drivers, US-26 is the primary route toward Portland.",
+      ],
+      closing: [
+        "A weekend at the farmers market, paired with a weekday commute on the MAX line, tends to show whether the car-optional lifestyle here actually fits how you live.",
+      ],
+    },
   ],
   "Mountain Park, Lake Oswego": [
     {
@@ -2574,6 +3245,35 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       closing: [
         "Asking to see the HOA's current budget and rules directly, alongside touring a couple of homes, tends to answer the practical questions faster than general research can.",
+      ],
+    },
+    {
+      hook: "What Daily Life Looks Like Inside the HOA Trail System",
+      keyword: "life in Mountain Park Lake Oswego OR",
+      metaDescription:
+        "A look at everyday life in Mountain Park, Lake Oswego — the HOA's private trails, nearby Tryon Creek and LORAC, and the commute into Portland.",
+      excerpt:
+        "A look at everyday life in Mountain Park, Lake Oswego — the HOA's 8+ miles of private trails, nearby Tryon Creek and LORAC, and what the commute into Portland actually looks like.",
+      gbp:
+        "Curious what everyday life is actually like in Mountain Park, Lake Oswego? The HOA's more than 8 miles of private trails are built into the community itself, so a lot of daily movement here happens on foot before a car ever enters the picture. Because nearly every property in this roughly 8,500-resident community belongs to the HOA, trail access isn't a special amenity to seek out — it's part of the neighborhood's everyday infrastructure. Nearby, Tryon Creek State Natural Area and the Lake Oswego Recreation & Aquatics Center (LORAC) add further outdoor and recreation options beyond what the HOA maintains directly. Highway 43 and I-5 both serve Lake Oswego, with downtown Portland roughly 8 miles away, though actual drive time depends heavily on time of day. One note worth repeating: despite the city's name, most Mountain Park properties don't carry Oswego Lake access. If you're weighing Mountain Park's HOA trail system against its dues, the full lifestyle rundown walks through what that actually looks like day to day.",
+      variant: "spotlight",
+      intro: [
+        "Mountain Park's HOA shapes more than paperwork — it shapes what a regular week actually looks like for the roughly 8,500 residents living here.",
+        "With more than 8 miles of private trails built into the community itself, a lot of day-to-day life in Mountain Park ends up happening on foot before a car is ever involved.",
+      ],
+      lifestyle: [
+        "Because nearly every property belongs to the HOA, the private trail system isn't a special amenity you have to seek out — it's built into the neighborhood itself, which changes how often people actually use it versus treating it as an occasional destination.",
+        "The genuine range of housing here, from entry-level condos to premium estates, means Mountain Park doesn't have a single uniform daily rhythm — a townhome resident and an estate-home resident may use the same trail system very differently.",
+        "Nearby, the Lake Oswego Recreation & Aquatics Center (LORAC) rounds out the HOA's own trails with additional recreation options a short drive away.",
+      ],
+      parks: [
+        "Mountain Park's private trail network runs more than 8 miles within the community. Tryon Creek State Natural Area sits nearby for additional outdoor access beyond what the HOA maintains directly.",
+      ],
+      commute: [
+        "Highway 43 and I-5 both serve Lake Oswego, with downtown Portland roughly 8 miles away. Drive time depends heavily on time of day, so it's worth testing your specific route rather than relying on that approximate distance.",
+      ],
+      closing: [
+        "The HOA dues are easiest to judge against what you'd actually use day to day — walking the trail system yourself, at a time you'd realistically be using it, tells you more than the fee schedule alone.",
       ],
     },
   ],
@@ -2660,6 +3360,34 @@ const TITLES: Record<string, PostSeed[]> = {
         "Walking a few blocks in person tends to show how the hillside terrain actually affects daily life here more clearly than a map ever could.",
       ],
     },
+    {
+      hook: "Three Parks, One Neighborhood: A Day in Hidden Springs",
+      keyword: "life in Hidden Springs West Linn OR",
+      metaDescription:
+        "What everyday life in Hidden Springs, West Linn is like — walks to Benski, Palomino and Sunburst parks, and the hillside setting.",
+      excerpt:
+        "A look at everyday life in Hidden Springs, West Linn — walks to Benski, Palomino and Sunburst parks, and what the hilly terrain means day to day.",
+      gbp:
+        "What does everyday life in Hidden Springs actually look like? This is one of West Linn's eleven official neighborhood associations, a hilly but walkable area west of Willamette Drive with about 1,236 homes and roughly 3,179 residents. Three named parks, Benski, Palomino and Sunburst, serve the neighborhood directly, giving residents real local green space rather than a single shared destination park. Mature flowering trees and manicured sidewalks give the streets a settled feel despite the elevation change, and the mix of federal, colonial, salt box and traditional homes means no two blocks look quite the same. West Linn sits along Highway 43 and I-205, about 15 miles from downtown Portland, near Willamette Falls, the largest waterfall by volume in the Pacific Northwest. Read the full Hidden Springs lifestyle guide for more on what daily life here actually involves.",
+      variant: "spotlight",
+      intro: [
+        "Hidden Springs is one of West Linn's eleven official neighborhood associations, and its local parks do a lot of the work in how the neighborhood actually feels to live in.",
+        "Here's what a typical day looks like for residents, hills and all.",
+      ],
+      lifestyle: [
+        "With about 1,236 homes and roughly 3,179 residents, Hidden Springs is one of West Linn's smaller, more walkable neighborhoods — mature flowering trees and manicured sidewalks give the streets a settled feel despite the real elevation change.",
+        "The mix of federal, colonial, salt box and traditional homes means a walk through the neighborhood shows real architectural variety rather than one repeated style.",
+      ],
+      parks: [
+        "Three named parks serve the neighborhood directly: Benski Park, Palomino Park and Sunburst Park — genuine local amenities within the neighborhood rather than a single shared destination park.",
+      ],
+      commute: [
+        "West Linn sits along Highway 43 and I-205, about 15 miles from downtown Portland. As with any Portland-area commute, actual drive time varies by time of day — worth testing your specific route.",
+      ],
+      closing: [
+        "A walk past all three parks in one outing tends to show how the hillside terrain actually shapes daily life here better than a map ever could.",
+      ],
+    },
   ],
   "Canemah, Oregon City": [
     {
@@ -2742,6 +3470,37 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       closing: [
         "Touring with an inspector experienced in historic Oregon City homes tends to surface the real condition questions faster than a listing description can.",
+      ],
+    },
+    {
+      hook: "What Everyday Life Looks Like in a Living Historic District",
+      keyword: "life in Canemah Oregon City",
+      metaDescription:
+        "What day-to-day life is actually like in Canemah, Oregon City — walking the bluff above the falls, century-old homes, and the neighborhood's pace.",
+      excerpt:
+        "A look at everyday life in Canemah, Oregon City — century-old homes, the bluff path above Willamette Falls, and the neighborhood's quiet, historic pace.",
+      gbp:
+        "Curious what everyday life is actually like in Canemah, Oregon City? The neighborhood's historic designation means century-old bungalows, cottages and Craftsman homes line streets that have looked largely the same for generations, with a median build year of 1937 and some homes dating to the 1800s. Canemah Bluff Nature Park gives residents a walkable trail system with real Willamette River overlooks, right above Willamette Falls, while the smaller Canemah Neighborhood Children's Park serves as a closer-to-home green space. OR-99E connects the neighborhood through Gladstone and Milwaukie toward Portland, with I-205 also nearby. Because the historic district carries exterior-preservation rules, day-to-day life here includes a different relationship to home maintenance than a typical subdivision — older wiring, plumbing and mechanical systems are part of owning real history. If you're curious what living in Canemah is actually like day to day, the full lifestyle rundown covers the bluff park, the pace of the district and what's nearby.",
+      variant: "spotlight",
+      intro: [
+        "Canemah's historic designation gets most of the attention, but what's it actually like to live there day to day? Here's a closer look at the pace of the neighborhood itself, not just its landmark status.",
+        "The short version: life here moves around the bluff above Willamette Falls, and the neighborhood's age shows up in both its character and its upkeep — worth understanding before the history alone sways the decision.",
+      ],
+      lifestyle: [
+        "With a median build year of 1937 and some homes dating to the 1800s, Canemah's streets have a settled, consistent look that's rare even within Oregon City — walking them feels closer to visiting a small historic town than touring a typical subdivision.",
+        "Because the district carries exterior-preservation rules, day-to-day homeownership here looks a little different than elsewhere in Oregon City. Maintaining original character — rooflines, trim, siding details — is part of living in Canemah, not an optional upgrade you can skip.",
+        "That same age means the pace feels unhurried in a way newer neighborhoods rarely manage. There's no mistaking Canemah for a still-developing subdivision — the trees, the lots and the homes have all had close to a century to settle into their current shape.",
+        "OR-99E keeps downtown Oregon City, Gladstone and Milwaukie within easy reach for everyday errands and dining, so the historic setting doesn't come at the cost of being cut off from the rest of the area.",
+      ],
+      parks: [
+        "Canemah Bluff Nature Park is the neighborhood's defining outdoor space — trails, wildlife viewing and genuine Willamette River overlooks a short walk from home, with Willamette Falls visible from several points along the bluff.",
+        "Canemah Neighborhood Children's Park adds a smaller, closer-to-home green space for routine, everyday use rather than a destination trip.",
+      ],
+      commute: [
+        "OR-99E is the main route connecting Canemah through Gladstone and Milwaukie into Portland, with I-205 also accessible nearby. As with any Portland-metro commute, actual drive time depends on time of day, so it's worth testing your specific route before relying on an estimate.",
+      ],
+      closing: [
+        "Willamette Falls itself is worth seeing in person before deciding how much the bluff setting actually matters to your day-to-day — photos don't capture the sound or scale of it, and that's a real part of what living this close to it feels like.",
       ],
     },
   ],
@@ -2828,6 +3587,35 @@ const TITLES: Record<string, PostSeed[]> = {
         "A weekday walk through downtown, paired with a Sunday visit during the farmers market, tends to show both sides of what living here actually feels like.",
       ],
     },
+    {
+      hook: "A Sunday Morning on Main Street",
+      keyword: "life in Historic Milwaukie OR",
+      metaDescription:
+        "What a typical week looks like in Historic Milwaukie, OR — Main Street, the Sunday farmers market, MAX access and the neighborhood's walkable pace.",
+      excerpt:
+        "A look at everyday life in Historic Milwaukie — Main Street, the Sunday farmers market, MAX Orange Line access, and the neighborhood's walkable, bungalow-era pace.",
+      gbp:
+        "Curious what everyday life is actually like in Historic Milwaukie? The neighborhood's downtown core means Main Street functions as a genuine social and commercial center, home to what's widely cited as the longest-running Sunday farmers market in the Portland metro, with 80+ vendors, alongside a growing restaurant and coffee scene and the old city hall building. Bungalow-era homes from the 1920s and 1930s line tree-lined streets with small grassy lots, mixed with some ranch-style, cottage and contemporary homes. The TriMet MAX Orange Line runs directly through downtown to Portland and the Pearl District, so plenty of residents build transit into their regular routine instead of driving. OR-99E handles the driving route for everything else. Because much of the housing dates to the 1920s and 1930s, day-to-day life can include more home maintenance than a newer subdivision. If you're curious what a typical week in Historic Milwaukie actually looks like, the full lifestyle rundown covers Main Street, the farmers market and the neighborhood's pace.",
+      variant: "spotlight",
+      intro: [
+        "Historic Milwaukie's downtown character is well known, but what does a typical week actually look like for the people living there? Here's a closer look at the neighborhood's day-to-day rhythm.",
+        "The short version: a lot of it runs through Main Street, on foot, with the MAX Orange Line as a real alternative to driving.",
+      ],
+      lifestyle: [
+        "Main Street functions as the neighborhood's actual social center, not just a commercial strip — the old city hall building, a growing restaurant and coffee scene, and what's widely cited as the longest-running Sunday farmers market in the Portland metro, with 80+ vendors, all sit within easy walking distance of home.",
+        "Because the TriMet MAX Orange Line runs directly through downtown to Portland and the Pearl District, a meaningful number of residents build transit into their regular routine rather than driving every day — a genuine option here in a way it isn't in most Milwaukie-area neighborhoods.",
+        "The bungalow-era homes that make up most of the housing stock — 1920s and 1930s construction with tree-lined streets and small grassy lots — give the neighborhood a walkable, settled feel that newer subdivisions take decades to develop.",
+      ],
+      parks: [
+        "Main Street itself is the neighborhood's main gathering point, anchored by the Sunday farmers market and a growing lineup of restaurants and coffee shops rather than a formal park system.",
+      ],
+      commute: [
+        "The MAX Orange Line offers a direct transit route to downtown Portland and the Pearl District, while OR-99E handles the primary driving route for trips elsewhere — actual drive times still vary by time of day.",
+      ],
+      closing: [
+        "A weekday walk down Main Street shows a different side of the neighborhood than a Sunday during the farmers market — worth experiencing both before deciding how much the downtown setting actually fits your routine.",
+      ],
+    },
   ],
   "Rock Creek, Happy Valley": [
     {
@@ -2910,6 +3698,36 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       closing: [
         "Comparing a Rock Creek home directly against a newer Happy Valley listing, back to back, tends to clarify which tradeoffs actually matter to you.",
+      ],
+    },
+    {
+      hook: "The Practical Side of Happy Valley, Day to Day",
+      keyword: "life in Rock Creek Happy Valley",
+      metaDescription:
+        "What everyday life looks like in Rock Creek, Happy Valley — nature park access, established shopping plazas, and a practical, settled pace.",
+      excerpt:
+        "A look at everyday life in Rock Creek, Happy Valley — nearby nature parks, established shopping, mature trees and a practical, settled pace.",
+      gbp:
+        "Curious what everyday life is actually like in Rock Creek, Happy Valley? The neighborhood's practical, established character shows up in small ways — mature trees that have had decades to grow in, convenient shopping plazas nearby, and classic multi-level homes rather than a still-developing subdivision. Mount Talbert Nature Park and Scouters Mountain Nature Park both sit close enough for routine use, not just occasional weekend trips, with real trail systems for hiking and wildlife viewing. Highway 212 and I-205 both serve the area, with downtown Portland roughly 13 miles away. Because North Clackamas School District covers more than 40 square miles, families should confirm the specific school assignment for any address rather than assuming. If you're curious what day-to-day life in Rock Creek actually looks like, the full lifestyle rundown covers the nature parks, the shopping and the neighborhood's practical pace.",
+      variant: "spotlight",
+      intro: [
+        "Rock Creek's reputation for being practical and established is well earned, but what does that actually look like day to day? Here's a closer look at the pace of the neighborhood itself.",
+        "The short version: mature trees, nearby nature parks used on a routine basis, and shopping that doesn't require a long drive — a settled feel in a city still growing quickly around it.",
+      ],
+      lifestyle: [
+        "Because Rock Creek sits at a lower elevation than some of Happy Valley's newer hillside developments, and alongside neighboring Sunnyside, the trees and landscaping have had more time to mature — a different feel from the still-filling-in look of the city's newer master-planned pockets.",
+        "Convenient shopping plazas nearby mean routine errands don't require crossing into a different part of the city, a genuine practical advantage over some of Happy Valley's newer, more remote developments.",
+        "Classic multi-level homes with established lots give the neighborhood a settled character that stands apart from the rest of one of the Portland metro's fastest-growing, heavily master-planned suburbs.",
+      ],
+      parks: [
+        "Mount Talbert Nature Park offers trails, wildlife viewing and scenic viewpoints close enough to use regularly rather than save for special trips.",
+        "Scouters Mountain Nature Park adds a popular trail system that works well for after-school or weekend hikes without a long drive to reach it.",
+      ],
+      commute: [
+        "Highway 212 and I-205 both serve Rock Creek, with downtown Portland roughly 13 miles away — actual drive time depends heavily on time of day, so it's worth testing your specific route before counting on that distance.",
+      ],
+      closing: [
+        "A weekday drive through Rock Creek alongside a visit to one of Happy Valley's newer hillside developments tends to make the difference in pace and maturity obvious fairly quickly.",
       ],
     },
   ],
@@ -3131,6 +3949,23 @@ function articleParagraphs(post: Post): string[] {
     ];
   }
 
+  if (seed.variant === "spotlight") {
+    return [
+      ...seed.intro,
+      ...exploreHomesBlock(neighborhood, city, stateAbbr, nUrl, cityUrl),
+      h2(`Local Life in ${neighborhood}`),
+      ...(seed.lifestyle ?? []),
+      h2(`Parks, Trails & Things to Do Near ${neighborhood}`),
+      ...(seed.parks ?? []),
+      h2("Getting Around"),
+      ...(seed.commute ?? []),
+      ...seed.closing,
+      ...seeHomesBlock(neighborhood, city, stateAbbr, nUrl, cityUrl),
+      ...youtubeBlock(city, stateAbbr),
+      ...workWithJamieBlock(),
+    ];
+  }
+
   return [
     ...seed.intro,
     ...exploreHomesBlock(neighborhood, city, stateAbbr, nUrl, cityUrl),
@@ -3198,10 +4033,12 @@ function publishingSeoTitle(area: string, variant: PostSeed["variant"], stateAbb
   if (neighborhood === city) {
     if (variant === "update") return `${city} ${stateAbbr} Market Update`;
     if (variant === "considerations") return `Moving to ${city} ${stateAbbr}? What to Know Before You Buy`;
+    if (variant === "spotlight") return `${city} ${stateAbbr} Lifestyle Guide`;
     return `Moving to ${city} ${stateAbbr}? ${city} Neighborhood Guide`;
   }
   if (variant === "update") return `${neighborhood} Market Update — ${city}, ${stateAbbr}`;
   if (variant === "considerations") return `${neighborhood}, ${city} ${stateAbbr}: What to Know Before You Buy`;
+  if (variant === "spotlight") return `${neighborhood} Lifestyle Guide — ${city}, ${stateAbbr}`;
   return `Moving to ${city} ${stateAbbr}? ${neighborhood} Neighborhood Guide`;
 }
 
