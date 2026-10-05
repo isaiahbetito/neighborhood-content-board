@@ -1695,6 +1695,35 @@ const TITLES: Record<string, PostSeed[]> = {
         "Seeing the neighborhood's river trail in person tends to answer the river-access question faster than any listing description can.",
       ],
     },
+    {
+      hook: "Everyday Life With a River Trail Built Into the Neighborhood",
+      keyword: "life in Northfork Landing Woodland WA",
+      metaDescription:
+        "What day-to-day life looks like in Northfork Landing, Woodland — the neighborhood's own river trail, small-town pace, and newer-construction tradeoffs.",
+      excerpt:
+        "A look at everyday life in Northfork Landing, Woodland — the neighborhood's own trail to the Lewis River, a small-town pace, and what newer construction actually means day to day.",
+      gbp:
+        "Curious what everyday life is actually like in Northfork Landing, Woodland? The neighborhood's own public trail, about 1,700 feet long, leads straight to the Lewis River, so river access functions as everyday infrastructure rather than a weekend drive. Woodland's small-town setting — incorporated in 1906, with a well-regarded school district — keeps the overall pace noticeably slower than denser Vancouver-area neighborhoods. Because Northfork Landing is newer construction, roughly 85 homes, day-to-day life here comes with more consistent modern layouts than an older Woodland address, though landscaping and trees are still filling in compared to an established neighborhood. I-5 runs straight through town, connecting south to Vancouver and Portland, though the roughly 22-mile distance and the county-line location — Woodland straddles Cowlitz and Clark counties — are both worth weighing. If you're picturing what day-to-day life actually looks like here, the full lifestyle rundown covers it in more detail.",
+      variant: "spotlight",
+      intro: [
+        "Northfork Landing's own trail to the Lewis River does a lot of the everyday work here — it's not a detour, it's just part of living in the neighborhood.",
+        "Add in Woodland's small-town pace and the newer-construction tradeoffs that come with an 85-home development, and the day-to-day picture looks different from a denser Vancouver-area neighborhood.",
+      ],
+      lifestyle: [
+        "Because the neighborhood's own public trail — about 1,700 feet — leads straight to the Lewis River, river access here functions as everyday infrastructure rather than something residents have to plan a trip around.",
+        "Northfork Landing is newer construction, roughly 85 homes, which means more consistent modern layouts than an older Woodland address, though landscaping and trees are still filling in compared to an established neighborhood.",
+        "Woodland's small-town character — incorporated in 1906, with a well-regarded school district — keeps the overall pace noticeably slower than denser parts of Clark County, even with I-5 running straight through town.",
+      ],
+      parks: [
+        "The Lewis River is the defining outdoor feature here, with the neighborhood's own trail providing direct walkable access for fishing, paddling or just an evening walk without getting in a car.",
+      ],
+      commute: [
+        "I-5 runs straight through Woodland, connecting south to Vancouver and Portland and north to Longview and Kelso, though the roughly 22-mile distance to Vancouver is worth mapping against your actual routine rather than a map estimate.",
+      ],
+      closing: [
+        "A neighborhood where the river trail is part of daily life, not a special trip, is a specific kind of draw — worth experiencing on foot before deciding how much it actually fits your routine.",
+      ],
+    },
   ],
   "Washougal, Washougal": [
     {
