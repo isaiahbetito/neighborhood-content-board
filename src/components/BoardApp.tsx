@@ -4865,6 +4865,7 @@ export default function BoardApp() {
       ).join("");
 
       card.innerHTML = `
+        <img class="card-photo" src="${photoForPost(post)}" alt="${areaDisplayLabel(post.area)}" loading="lazy" />
         <div class="card-top">
           <span class="card-area">${areaDisplayLabel(post.area)}</span>
           <span class="card-when">${post.date} · ${post.time}</span>

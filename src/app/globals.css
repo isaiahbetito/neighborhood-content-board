@@ -264,9 +264,18 @@ h1{
   padding:12px 13px 11px;
   cursor:grab;
   transition:box-shadow .15s ease, transform .1s ease;
+  overflow:hidden;
 }
 .card:active{cursor:grabbing;}
 .card.dragging{opacity:.4;}
+.card-photo{
+  display:block;
+  width:calc(100% + 26px);
+  margin:-12px -13px 10px;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  background:var(--panel);
+}
 .card-top{
   display:flex;
   justify-content:space-between;
