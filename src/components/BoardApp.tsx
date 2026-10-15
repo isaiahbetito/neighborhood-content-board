@@ -3836,43 +3836,48 @@ function photoUrl(key: keyof typeof PHOTOS, w = 900) {
 }
 
 const AREA_PHOTOS: Record<string, (keyof typeof PHOTOS)[]> = {
-  "Holly Ridge, Camas": ["farmhouse", "stuccoTraditional", "cozyLivingRoom"],
-  "Lakeshore, Vancouver": ["keychain", "modernTree", "loftDog"],
-  "Pleasant Valley, Vancouver": ["modernLivingRoom", "modernWoodAccent", "minimalistWhite"],
-  "Hunter Ridge Estates, Camas": ["luxuryVillaPool", "whiteVillaPool", "cozyLivingRoom"],
-  "Columbia Way, Vancouver": ["whiteVillaPool", "craftsmanPalm", "keychain"],
-  "Deer Creek, Camas": ["craftsmanPalm", "farmhouse", "modernLivingRoom"],
-  "Harney Heights, Vancouver": ["cabinDusk", "minimalistWhite", "modernTree"],
-  "Pioneer Canyon, Ridgefield": ["modernWoodAccent", "craftsmanPalm", "cozyLivingRoom"],
-  "Battle Ground Meadows, Battle Ground": ["stuccoTraditional", "modernLivingRoom", "farmhouse"],
-  "Stephens Hillside Farm, La Center": ["farmhouse", "modernTree", "cozyLivingRoom"],
-  "Northfork Landing, Woodland": ["cabinDusk", "farmhouse", "modernWoodAccent"],
-  "Washougal, Washougal": ["craftsmanPalm", "modernTree", "stuccoTraditional"],
-  "Hockinson, Hockinson": ["farmhouse", "cabinDusk", "modernWoodAccent"],
-  "Amboy, Amboy": ["cabinDusk", "farmhouse", "modernTree"],
-  "Brush Prairie, Brush Prairie": ["farmhouse", "modernWoodAccent", "cabinDusk"],
-  "Cascade Park, Vancouver": ["modernLivingRoom", "keychain", "minimalistWhite"],
-  "Fisher's Landing, Vancouver": ["modernLivingRoom", "craftsmanPalm", "keychain"],
-  "Downtown Vancouver, Vancouver": ["loftDog", "minimalistWhite", "whiteVillaPool"],
-  "Salmon Creek, Vancouver": ["modernTree", "cozyLivingRoom", "minimalistWhite"],
-  "Irvington, Portland": ["craftsmanPalm", "stuccoTraditional", "cozyLivingRoom"],
-  "Sexton Mountain, Beaverton": ["modernWoodAccent", "modernTree", "minimalistWhite"],
-  "Bull Mountain, Tigard": ["modernLivingRoom", "whiteVillaPool", "modernWoodAccent"],
-  "North Bethany, Bethany": ["modernWoodAccent", "stuccoTraditional", "modernLivingRoom"],
-  "Orenco Station, Hillsboro": ["loftDog", "modernLivingRoom", "keychain"],
-  "Mountain Park, Lake Oswego": ["whiteVillaPool", "minimalistWhite", "cozyLivingRoom"],
-  "Hidden Springs, West Linn": ["cabinDusk", "farmhouse", "cozyLivingRoom"],
-  "Canemah, Oregon City": ["craftsmanPalm", "farmhouse", "stuccoTraditional"],
-  "Historic Milwaukie, Milwaukie": ["craftsmanPalm", "cozyLivingRoom", "farmhouse"],
-  "Rock Creek, Happy Valley": ["modernLivingRoom", "farmhouse", "modernTree"],
+  "Holly Ridge, Camas": ["farmhouse", "stuccoTraditional", "cozyLivingRoom", "modernWoodAccent"],
+  "Lakeshore, Vancouver": ["keychain", "modernTree", "loftDog", "craftsmanPalm"],
+  "Pleasant Valley, Vancouver": ["modernLivingRoom", "modernWoodAccent", "minimalistWhite", "cozyLivingRoom"],
+  "Hunter Ridge Estates, Camas": ["luxuryVillaPool", "whiteVillaPool", "cozyLivingRoom", "craftsmanPalm"],
+  "Columbia Way, Vancouver": ["whiteVillaPool", "craftsmanPalm", "keychain", "farmhouse"],
+  "Deer Creek, Camas": ["craftsmanPalm", "farmhouse", "modernLivingRoom", "luxuryVillaPool"],
+  "Harney Heights, Vancouver": ["cabinDusk", "minimalistWhite", "modernTree", "whiteVillaPool"],
+  "Pioneer Canyon, Ridgefield": ["modernWoodAccent", "craftsmanPalm", "cozyLivingRoom", "luxuryVillaPool"],
+  "Battle Ground Meadows, Battle Ground": ["stuccoTraditional", "modernLivingRoom", "farmhouse", "modernTree"],
+  "Stephens Hillside Farm, La Center": ["farmhouse", "modernTree", "cozyLivingRoom", "stuccoTraditional"],
+  "Northfork Landing, Woodland": ["cabinDusk", "farmhouse", "modernWoodAccent", "whiteVillaPool"],
+  "Washougal, Washougal": ["craftsmanPalm", "modernTree", "stuccoTraditional", "loftDog"],
+  "Hockinson, Hockinson": ["farmhouse", "cabinDusk", "modernWoodAccent", "minimalistWhite"],
+  "Amboy, Amboy": ["cabinDusk", "farmhouse", "modernTree", "modernWoodAccent"],
+  "Brush Prairie, Brush Prairie": ["farmhouse", "modernWoodAccent", "cabinDusk", "keychain"],
+  "Cascade Park, Vancouver": ["modernLivingRoom", "keychain", "minimalistWhite", "cozyLivingRoom"],
+  "Fisher's Landing, Vancouver": ["modernLivingRoom", "craftsmanPalm", "keychain", "luxuryVillaPool"],
+  "Downtown Vancouver, Vancouver": ["loftDog", "minimalistWhite", "whiteVillaPool", "farmhouse"],
+  "Salmon Creek, Vancouver": ["modernTree", "cozyLivingRoom", "minimalistWhite", "modernLivingRoom"],
+  "Irvington, Portland": ["craftsmanPalm", "stuccoTraditional", "cozyLivingRoom", "cabinDusk"],
+  "Sexton Mountain, Beaverton": ["modernWoodAccent", "modernTree", "minimalistWhite", "luxuryVillaPool"],
+  "Bull Mountain, Tigard": ["modernLivingRoom", "whiteVillaPool", "modernWoodAccent", "modernTree"],
+  "North Bethany, Bethany": ["modernWoodAccent", "stuccoTraditional", "modernLivingRoom", "loftDog"],
+  "Orenco Station, Hillsboro": ["loftDog", "modernLivingRoom", "keychain", "whiteVillaPool"],
+  "Mountain Park, Lake Oswego": ["whiteVillaPool", "minimalistWhite", "cozyLivingRoom", "loftDog"],
+  "Hidden Springs, West Linn": ["cabinDusk", "farmhouse", "cozyLivingRoom", "minimalistWhite"],
+  "Canemah, Oregon City": ["craftsmanPalm", "farmhouse", "stuccoTraditional", "modernWoodAccent"],
+  "Historic Milwaukie, Milwaukie": ["craftsmanPalm", "cozyLivingRoom", "farmhouse", "keychain"],
+  "Rock Creek, Happy Valley": ["modernLivingRoom", "farmhouse", "modernTree", "cozyLivingRoom"],
 };
 
 // Real, AI-generated images (via the "Image Prompt" button's output, fed into Gemini) that
-// depict each neighborhood's actual home era/style/landscape — replacing the generic
-// Unsplash stock pool above, one area at a time as each is generated. Files live in
-// public/neighborhood-photos/. Only ONE image per area for now (the currently-active
-// "guide" post) — not per-variant, since only one variant is ever the active post at a time
-// (see the "one active entry per neighborhood" rule).
+// depict each neighborhood's actual home era/style/landscape. Files live in
+// public/neighborhood-photos/. There is still only ONE real generated image per area, and it
+// was produced to match "spotlight" variant content specifically (see git history — it was
+// last regenerated "to match current spotlight blog content"), so photoForPost() below only
+// uses it for that one variant. The old "only one variant is ever active at a time" assumption
+// this comment used to rely on broke once guide+spotlight were simultaneously Published and a
+// 3rd/4th variant (update/considerations) started getting drafted for the same area — every
+// post in an area was silently showing this same single image regardless of variant, which is
+// the bug fixed on 2026-10-15. guide/update/considerations now fall back to the 4-key
+// AREA_PHOTOS stock pool below (one distinct real Unsplash photo per variant, per area).
 const AREA_GENERATED_PHOTOS: Record<string, string> = {
   "Holly Ridge, Camas": "/neighborhood-photos/holly-ridge-camas.jpeg",
   "Lakeshore, Vancouver": "/neighborhood-photos/lakeshore-vancouver.jpeg",
@@ -3916,11 +3921,13 @@ function titleIndexForPost(post: Post): number {
 }
 
 function photoForPost(post: Post): string {
-  const generated = AREA_GENERATED_PHOTOS[post.area];
-  if (generated) return generated;
   const idx = titleIndexForPost(post);
+  if (post.variant === "spotlight") {
+    const generated = AREA_GENERATED_PHOTOS[post.area];
+    if (generated) return generated;
+  }
   const pool = AREA_PHOTOS[post.area];
-  const key = pool && idx >= 0 ? pool[idx] : "farmhouse";
+  const key = pool && idx >= 0 && idx < pool.length ? pool[idx] : "farmhouse";
   return photoUrl(key);
 }
 
