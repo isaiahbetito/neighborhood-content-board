@@ -28,6 +28,14 @@ type Post = {
   // edit). Optional only because posts saved before this field existed need one migration
   // pass to backfill it — see loadData().
   variant?: "guide" | "update" | "considerations" | "spotlight";
+  // A real photo specific to THIS post (set when a fresh draft is created for a Not Started
+  // area — see photoForPost()). Deliberately stored per-post rather than derived from
+  // area+variant: a shared derivation function changes what EVERY post with that area/variant
+  // shows the moment the function changes, including already-Scheduled/Published posts no one
+  // meant to touch (a real incident, 2026-10-15 — see photoForPost()'s comment). Absent on
+  // every pre-existing post, which keeps showing the area's one real Gemini photo exactly as
+  // before.
+  photoUrl?: string;
 };
 
 const STATUS_ORDER: Status[] = [
@@ -3869,15 +3877,18 @@ const AREA_PHOTOS: Record<string, (keyof typeof PHOTOS)[]> = {
 
 // Real, AI-generated images (via the "Image Prompt" button's output, fed into Gemini) that
 // depict each neighborhood's actual home era/style/landscape. Files live in
-// public/neighborhood-photos/. There is still only ONE real generated image per area, and it
-// was produced to match "spotlight" variant content specifically (see git history — it was
-// last regenerated "to match current spotlight blog content"), so photoForPost() below only
-// uses it for that one variant. The old "only one variant is ever active at a time" assumption
-// this comment used to rely on broke once guide+spotlight were simultaneously Published and a
-// 3rd/4th variant (update/considerations) started getting drafted for the same area — every
-// post in an area was silently showing this same single image regardless of variant, which is
-// the bug fixed on 2026-10-15. guide/update/considerations now fall back to the 4-key
-// AREA_PHOTOS stock pool below (one distinct real Unsplash photo per variant, per area).
+// public/neighborhood-photos/. One image per area, shown for every post in that area that
+// doesn't have its own post.photoUrl (see the Post type and photoForPost() below).
+//
+// ⚠️ 2026-10-15 incident: a same-day change scoped this to the "spotlight" variant only and
+// fell back to a generic Unsplash pool for every other variant, to stop different posts in the
+// same area looking identical. That function is shared by every post with that area+variant —
+// so the change silently altered the displayed photo on already-Scheduled and -Published posts
+// too, not just the newly-drafted ones it was meant for. Reverted the same day. The correct
+// fix for "this specific new draft needs its own distinct photo" is `post.photoUrl` (set only
+// on that one post when it's created) — never change what this shared function returns for
+// existing areas/variants again; it silently reaches every post that doesn't have its own
+// photoUrl, including ones already live.
 const AREA_GENERATED_PHOTOS: Record<string, string> = {
   "Holly Ridge, Camas": "/neighborhood-photos/holly-ridge-camas.jpeg",
   "Lakeshore, Vancouver": "/neighborhood-photos/lakeshore-vancouver.jpeg",
@@ -3921,11 +3932,10 @@ function titleIndexForPost(post: Post): number {
 }
 
 function photoForPost(post: Post): string {
+  if (post.photoUrl) return post.photoUrl;
+  const generated = AREA_GENERATED_PHOTOS[post.area];
+  if (generated) return generated;
   const idx = titleIndexForPost(post);
-  if (post.variant === "spotlight") {
-    const generated = AREA_GENERATED_PHOTOS[post.area];
-    if (generated) return generated;
-  }
   const pool = AREA_PHOTOS[post.area];
   const key = pool && idx >= 0 && idx < pool.length ? pool[idx] : "farmhouse";
   return photoUrl(key);
