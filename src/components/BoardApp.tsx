@@ -4633,17 +4633,21 @@ export default function BoardApp() {
       });
     }
 
-    // One neighborhood, one active entry: a neighborhood should only ever have a single
-    // post in flight at a time (Not Started, Drafted, Ready for Review, or Scheduled) — once
-    // it's Published, applyPublish() spawns exactly one fresh "Not Started" placeholder, and
-    // THAT'S when the next draft gets written (using a different variant, so it's never a
-    // repeat). Published posts are exempt — they're the historical record and accumulate
-    // freely. ACTIVE_STATUSES is what "in flight" means for this check.
+    // One neighborhood, up to MAX_ACTIVE_PER_NEIGHBORHOOD active entries: a neighborhood
+    // should only ever have a bounded number of posts in flight at a time (Not Started,
+    // Drafted, Ready for Review, or Scheduled) — once one is Published, applyPublish() spawns
+    // exactly one fresh "Not Started" placeholder, and THAT'S when the next draft gets written
+    // (using a different variant, so it's never a repeat). Published posts are exempt —
+    // they're the historical record and accumulate freely. ACTIVE_STATUSES is what "in
+    // flight" means for this check. Raised from 1 to 2 (2026-10-19) so two differently-angled
+    // drafts can sit side by side per neighborhood.
     const ACTIVE_STATUSES: Status[] = ["Not Started", "Drafted", "Ready for Review", "Scheduled"];
+    const MAX_ACTIVE_PER_NEIGHBORHOOD = 2;
     function neighborhoodAlreadyActive(post: Post): boolean {
-      return boardData.some(
+      const activeCount = boardData.filter(
         (p) => p.id !== post.id && p.area === post.area && ACTIVE_STATUSES.includes(p.status)
-      );
+      ).length;
+      return activeCount >= MAX_ACTIVE_PER_NEIGHBORHOOD;
     }
 
     async function moveStatus(post: Post, newStatus: Status) {
@@ -4653,7 +4657,7 @@ export default function BoardApp() {
         neighborhoodAlreadyActive(post)
       ) {
         window.alert(
-          `${areaDisplayLabel(post.area)} already has an active post (Not Started, Drafted, Ready for Review, or Scheduled) — move that one along first before starting another for the same neighborhood.`
+          `${areaDisplayLabel(post.area)} already has 2 active posts (Not Started, Drafted, Ready for Review, or Scheduled) — move one of those along first before starting another for the same neighborhood.`
         );
         renderAll();
         if (modalPostId === post.id) renderModal(post.id);
@@ -4750,7 +4754,7 @@ export default function BoardApp() {
           neighborhoodAlreadyActive(p)
         ) {
           window.alert(
-            `${areaDisplayLabel(p.area)} already has an active post (Not Started, Drafted, Ready for Review, or Scheduled) — move that one along first before starting another for the same neighborhood.`
+            `${areaDisplayLabel(p.area)} already has 2 active posts (Not Started, Drafted, Ready for Review, or Scheduled) — move one of those along first before starting another for the same neighborhood.`
           );
           selectEl.value = p.status; // revert the visual selection
           return;
