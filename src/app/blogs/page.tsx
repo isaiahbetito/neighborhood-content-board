@@ -56,6 +56,10 @@ export default function BlogsPage() {
             Neighborhood
           </button>
           <div className="area-filters" id="areaFilters" hidden></div>
+          <div className="filter-divider"></div>
+          <button className="filter-toggle" id="archivedToggle">
+            Archived
+          </button>
         </div>
 
         <div id="checklist"></div>

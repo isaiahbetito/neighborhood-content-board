@@ -36,6 +36,10 @@ type Post = {
   // every pre-existing post, which keeps showing the area's one real Gemini photo exactly as
   // before.
   photoUrl?: string;
+  // Hides the post from the normal board view without deleting it — distinct from the
+  // modal's permanent "Delete this card", this is meant to be reversible via the same
+  // button (it just flips back).
+  archived?: boolean;
 };
 
 const STATUS_ORDER: Status[] = [
@@ -4366,6 +4370,7 @@ export default function BoardApp() {
     let activeArea = "All";
     let modalPostId: string | null = null;
     let areaFiltersOpen = false;
+    let showArchived = false;
     let checklistOpen = false;
     // Counts saveData() calls currently in flight. autoPublishDuePosts() re-fetches from the
     // server every 60s and blindly replaces boardData with whatever it gets back — if that
@@ -4472,10 +4477,11 @@ export default function BoardApp() {
     }
 
     function renderStats() {
-      const total = boardData.length;
-      const published = boardData.filter((p) => p.status === "Published").length;
-      const scheduled = boardData.filter((p) => p.status === "Scheduled").length;
-      const areas = new Set(boardData.map((p) => p.area)).size;
+      const active = boardData.filter((p) => !p.archived);
+      const total = active.length;
+      const published = active.filter((p) => p.status === "Published").length;
+      const scheduled = active.filter((p) => p.status === "Scheduled").length;
+      const areas = new Set(active.map((p) => p.area)).size;
       el<HTMLDivElement>("stats").innerHTML = [
         [total, "posts this week"],
         [published, "published"],
@@ -4535,6 +4541,17 @@ export default function BoardApp() {
           renderAll();
         };
       });
+
+      const archivedCount = boardData.filter((p) => p.archived).length;
+      const archivedToggle = el<HTMLButtonElement>("archivedToggle");
+      archivedToggle.classList.toggle("active", showArchived);
+      archivedToggle.textContent = showArchived
+        ? "← Back to board"
+        : `Archived (${archivedCount})`;
+      archivedToggle.onclick = () => {
+        showArchived = !showArchived;
+        renderAll();
+      };
     }
 
     function renderLegend() {
@@ -4547,6 +4564,7 @@ export default function BoardApp() {
     function filteredData() {
       return boardData.filter(
         (p) =>
+          (showArchived ? !!p.archived : !p.archived) &&
           (activeDay === "All" || p.day === activeDay) &&
           (activeArea === "All" || p.area === activeArea)
       );
@@ -4882,8 +4900,15 @@ export default function BoardApp() {
         <p class="card-title">${post.title}</p>
         <div class="platform-row">${platRow}</div>
         <div class="card-footer">
-          <select class="card-status-select" data-post="${post.id}" title="Move to a different stage">${statusOptions}</select>
-          ${post.statusChangedAt ? `<span class="card-moved">Moved ${formatMovedAt(post.statusChangedAt)}</span>` : ""}
+          ${
+            post.archived
+              ? `<span class="card-archived-label">Archived</span>`
+              : `<select class="card-status-select" data-post="${post.id}" title="Move to a different stage">${statusOptions}</select>
+                 ${post.statusChangedAt ? `<span class="card-moved">Moved ${formatMovedAt(post.statusChangedAt)}</span>` : ""}`
+          }
+          <button class="card-archive-btn" type="button" data-post="${post.id}" title="${
+            post.archived ? "Move this card back onto the board" : "Archive this card (hide it from the board)"
+          }">${post.archived ? "Restore" : "Archive"}</button>
         </div>
       `;
 
@@ -4908,9 +4933,21 @@ export default function BoardApp() {
         });
       });
 
-      const select = card.querySelector<HTMLSelectElement>(".card-status-select")!;
-      select.addEventListener("click", (e) => e.stopPropagation());
-      wireStatusSelect(select, post.id);
+      const select = card.querySelector<HTMLSelectElement>(".card-status-select");
+      if (select) {
+        select.addEventListener("click", (e) => e.stopPropagation());
+        wireStatusSelect(select, post.id);
+      }
+
+      const archiveBtn = card.querySelector<HTMLButtonElement>(".card-archive-btn")!;
+      archiveBtn.addEventListener("click", async (e) => {
+        e.stopPropagation();
+        const p = boardData.find((x) => x.id === post.id);
+        if (!p) return;
+        p.archived = !p.archived;
+        await saveData();
+        renderAll();
+      });
 
       return card;
     }
@@ -5170,6 +5207,7 @@ export default function BoardApp() {
       boardData = buildSeedData();
       activeDay = "All";
       activeArea = "All";
+      showArchived = false;
       await saveData();
       renderAll();
     };
