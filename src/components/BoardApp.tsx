@@ -531,6 +531,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Holly Ridge Camas market update",
       metaDescription:
         "Holly Ridge listings in Camas have been moving fast this season — here's what's driving the pace and what buyers should know.",
+      gbp:
+        "Watching the Holly Ridge market in Camas, WA? Listings have been moving fast this season. Townhome-style homes are typically gone within two weeks, and larger single-family homes aren't far behind. One pattern that keeps showing up with out-of-state buyers: the first question is almost always how close a listing sits to Lacamas Lake, before price or square footage even comes up. Getting financing pre-approval before a listing goes live, rather than after, has become the real difference between competing seriously here and missing out. Buyers who've had the best luck in Holly Ridge are the ones already set up to move the same day something new appears. See current Holly Ridge listings and the full market update on the site.",
       variant: "update",
       intro: [
         "Ask around about Holly Ridge and you'll hear the same thing: nothing sits long. Here's why, and what it means if you're watching this part of Camas.",
@@ -648,6 +650,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Lakeshore Vancouver home prices",
       metaDescription:
         "What's driving buyer demand for Lakeshore in Vancouver, WA right now, and how inventory near Vancouver Lake compares.",
+      gbp:
+        "Curious what's driving demand in Lakeshore, Vancouver, WA? Park-adjacent homes on larger lots near Vancouver Lake are genuinely rare, and they don't sit on the market once priced realistically. A lot of buyers comparing Lakeshore against true Columbia River waterfront end up here instead — same general lifestyle, different price tier. Spring and early summer bring the most competition, since touring a home with lake access hits differently on a nice weekend; winter listings see a smaller crowd. In a neighborhood like this, a standing search alert beats checking back manually. See current Lakeshore listings and the full market update on the site.",
       variant: "update",
       intro: [
         "Vancouver Lake access is the single biggest driver of interest in Lakeshore right now — here's how that's playing out in actual listings.",
@@ -764,6 +768,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Pleasant Valley new listings",
       metaDescription:
         "How acreage listings in Pleasant Valley, Vancouver are moving right now, and what to check before buying land here.",
+      gbp:
+        "Tracking the acreage market in Pleasant Valley, Vancouver, WA? Decisions take longer here, but once a buyer commits there's rarely much room to negotiate — there just aren't enough comparable properties to create leverage either way. The buyers moving fastest this season are coming from tighter urban lots elsewhere in Clark County, chasing more room without leaving the area. Well, septic, easement access and accessory-structure zoning are worth sorting out before an offer, not after — due diligence here runs longer than a standard subdivision purchase. Widening your search radius slightly and watching new listings closely tends to serve acreage buyers better than waiting for a perfect match. See current Pleasant Valley listings on the site.",
       variant: "update",
       intro: [
         "Acreage doesn't behave like a normal subdivision listing, and Pleasant Valley is a good example of why.",
@@ -880,6 +886,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Hunter Ridge Estates luxury homes Camas",
       metaDescription:
         "Where Camas's gated-community luxury market stands, and what's setting the pace in Hunter Ridge Estates right now.",
+      gbp:
+        "Watching Camas's gated-community market? Hunter Ridge Estates mostly sets its own pace rather than tracking broader Camas trends, since there are so few directly comparable listings citywide. Interior lots and view lots don't compete on the same terms here — a clear line toward Mount Hood consistently pulls more attention. Buyers at this level are usually cross-shopping against other gated communities across the Portland metro, not just other Camas neighborhoods. Seeing a new listing before it's public tends to matter more here than almost anywhere else in this rotation — worth asking directly rather than waiting for it to hit search sites. See current Hunter Ridge Estates listings on the site.",
       variant: "update",
       intro: [
         "There's no other Camas neighborhood quite like this one, which makes the market here behave differently too.",
@@ -996,6 +1004,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Columbia Way condos for sale",
       metaDescription:
         "Who's buying condos and townhomes along Columbia Way in Vancouver, WA, and what's selling fastest right now this season.",
+      gbp:
+        "Wondering who's buying along Columbia Way in Vancouver, WA right now? Portland commuters chasing Washington's tax advantage without giving up walkability make up a large share of current activity. Units near the waterfront trail and downtown's restaurant row typically go under contract in two to three weeks — older single-family homes set back from the river take noticeably longer. A week's hesitation on a new listing here regularly means missing it; this stretch turns over faster than almost anywhere else in this rotation. Buyers serious about a downtown-adjacent, low-maintenance option tend to do better with a standing alert than with periodic manual checks. See current Columbia Way listings on the site.",
       variant: "update",
       intro: [
         "The buyer profile along Columbia Way is pretty consistent, and it's shaping what sells fastest here.",
@@ -1112,6 +1122,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Deer Creek Camas listings",
       metaDescription:
         "Why Deer Creek in Camas sells faster than its visibility would suggest, and what's currently drawing buyer interest.",
+      gbp:
+        "Why does Deer Creek in Camas, WA sell faster than its visibility would suggest? A well-kept home here tends to go pending within the first weekend — this isn't a neighborhood where buyers window-shop. Pricing has tracked a step below Holly Ridge for comparable square footage, mostly because Deer Creek lacks direct lake frontage or guaranteed greenspace backing. Most buyers find this neighborhood through a referral or a drive-by rather than a keyword search, which is worth knowing if you're trying to gauge real competition. A standing alert for this specific neighborhood tends to catch listings that a broader Camas search would miss entirely. See current Deer Creek listings on the site.",
       variant: "update",
       intro: [
         "Deer Creek doesn't get searched as often as its neighbors, but that hasn't slowed things down once a listing actually appears.",
@@ -1227,6 +1239,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Harney Heights Vancouver market update",
       metaDescription:
         "Why buyers keep finding more house for their budget in Harney Heights, Vancouver, and how the market's been moving.",
+      gbp:
+        "Why do buyers keep finding more house for their budget in Harney Heights, Vancouver, WA? Homes priced in line with recent comparable sales have been going under contract quickly, despite the neighborhood's low listing volume. That value gap against newer subdivisions closer to I-205 has been the main draw lately, more than any single feature. Because so few homes list here in a given month, the buyers who move fastest tend to be the ones already watching closely. A heads-up the moment something lists is easy to set up, and in a neighborhood this quiet, it's often the difference between seeing a home and hearing about it after the fact. See current Harney Heights listings on the site.",
       variant: "update",
       intro: [
         "Ask a buyer who just toured Harney Heights what surprised them, and it's almost always the same answer: how much more house their budget covered.",
@@ -1345,6 +1359,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Pioneer Canyon Ridgefield new construction",
       metaDescription:
         "A market update on Pioneer Canyon in Ridgefield, WA — demand for newer construction near I-5 and what's been moving lately.",
+      gbp:
+        "Watching the new-construction market in Pioneer Canyon, Ridgefield, WA? Buyers relocating from more urban parts of Portland or Vancouver tend to search for newer construction first, and Pioneer Canyon fits that directly. Because the subdivision was built out over several years, inventory spans a real range within the same newer-construction bracket — worth comparing specific build years, not just the neighborhood name. Proximity to I-5 Exit 14 continues to come up early in conversations with buyers commuting south. Given how often this neighborhood comes up in relocation searches, an alert tends to beat checking back manually. See current Pioneer Canyon listings on the site.",
       variant: "update",
       intro: [
         "New construction near I-5 stays in demand in Ridgefield, and Pioneer Canyon is usually the first place that conversation goes.",
@@ -1462,6 +1478,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Battle Ground Meadows market update",
       metaDescription:
         "A market update on Battle Ground Meadows in Battle Ground, WA — demand and what's been moving in this established neighborhood.",
+      gbp:
+        "Tracking demand in Battle Ground Meadows, WA? Buyers comparing Battle Ground's many neighborhoods often bring this one up early, given its size and central location. Because it's an established neighborhood rather than new construction, condition and updates vary more than in a newer subdivision — pricing reflects that property by property. SR-503/SR-502 access continues to be a frequently asked-about feature for buyers commuting toward Vancouver or I-5. This isn't a neighborhood with heavy listing volume, so a standing alert tends to work better than periodic manual searches. See current Battle Ground Meadows listings on the site.",
       variant: "update",
       intro: [
         "Battle Ground has so many named neighborhoods that comparing them can get confusing fast — here's a read on how Battle Ground Meadows specifically has been performing.",
@@ -1577,6 +1595,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Stephens Hillside Farm new listings",
       metaDescription:
         "A market update on Stephens Hillside Farm in La Center, WA — demand for newer construction and what's been moving.",
+      gbp:
+        "Watching new construction in La Center, WA? Buyers relocating from denser parts of Clark County often ask about La Center's newer subdivisions first, and Stephens Hillside Farm is usually part of that conversation given its built-in park and trail amenities. Well-priced new-construction listings tend to get attention quickly, simply because there isn't much competing inventory in a town this size. The East Fork Lewis River continues to be one of the more frequently asked-about features for buyers considering this neighborhood. Given how limited inventory can be in a market this small, it's worth getting an alert running before you start seriously touring. See current listings on the site.",
       variant: "update",
       intro: [
         "La Center is a small market, which changes how buyers should think about timing here compared to a larger Vancouver-area search.",
@@ -1693,6 +1713,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Northfork Landing new listings",
       metaDescription:
         "A market update on Northfork Landing in Woodland, WA — demand for newer construction near the Lewis River right now.",
+      gbp:
+        "Watching new construction near the Lewis River in Woodland, WA? Buyers relocating from denser parts of Clark County or Portland often ask about Woodland's newer developments first, and Northfork Landing is usually part of that conversation given its river-trail access. Well-priced new-construction listings tend to get attention quickly, simply because there isn't much competing inventory in a market this size. A second nearby development, sometimes referenced as Woodland Creek, has also drawn interest from buyers comparing newer-construction options in the same area. Given how limited inventory can be here, it's worth getting an alert running before you start seriously touring. See current listings on the site.",
       variant: "update",
       intro: [
         "Woodland's small size means new-construction inventory here behaves differently than it would in a bigger Vancouver-area market.",
@@ -1808,6 +1830,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Washougal WA market update",
       metaDescription:
         "A market update on Washougal, WA — current demand across its wide range of housing types near the Columbia River.",
+      gbp:
+        "Watching the Washougal, WA market? It doesn't have one single center of gravity. Buyers looking for river or hillside views tend to focus on the custom-home end of the market, while manufactured-home and condo buyers are watching a different, more affordable segment entirely. Newer subdivisions like Columbia View and Crown Pointe have drawn steady interest from buyers wanting more consistent modern construction. Because Washougal doesn't have one dominant named neighborhood, buyers often compare specific streets or subdivisions directly rather than the town as a single market. An alert across a few different subdivisions tends to serve Washougal buyers better than watching just one. See current Washougal listings on the site.",
       variant: "update",
       intro: [
         "Washougal's genuinely wide housing mix means different parts of the market move at different paces, which makes a single market summary less useful here than elsewhere.",
@@ -1924,6 +1948,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Hockinson WA market update",
       metaDescription:
         "A market update on the Hockinson, WA area — demand for acreage and rural-residential properties right now near Vancouver.",
+      gbp:
+        "Watching the Hockinson, WA market? Horse property and hillside lots with real acreage tend to draw serious buyers rather than lookers, given how limited that type of inventory is across Clark County overall. Buyers relocating from denser parts of Vancouver or Portland are often surprised by how much land their budget covers here compared to a standard subdivision lot. Because Hockinson doesn't generate high listing volume, the buyers who move fastest tend to be the ones already watching closely. Acreage listings here don't sit long enough to check back manually — a standing alert works better. See current Hockinson-area listings on the site.",
       variant: "update",
       intro: [
         "Genuine acreage close to Vancouver is rare enough that it behaves like its own micro-market — here's what that's looked like in Hockinson lately.",
@@ -2039,6 +2065,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Amboy WA market update",
       metaDescription:
         "A market update on the Amboy, WA area — demand for rural acreage and what's been moving right now in northern Clark County.",
+      gbp:
+        "Watching the Amboy, WA market? It's a small, rural market where inventory doesn't turn over often — when a well-kept acreage property does list, it tends to draw serious, prepared buyers. Buyers relocating from denser parts of Clark County or Portland are often surprised by how much land their budget covers this far out from Vancouver. Amboy Middle School, part of the Battle Ground Public Schools district, is physically located in Amboy — a useful local landmark for orienting a search. Given how infrequently rural acreage listings come up here, it's worth having an alert running well before you're ready to buy. See current listings on the site.",
       variant: "update",
       intro: [
         "Amboy's rural acreage market runs on its own schedule, nothing like a typical suburban subdivision.",
@@ -2154,6 +2182,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Brush Prairie WA market update",
       metaDescription:
         "A market update on the Brush Prairie, WA area — demand for hobby farms and rural-residential properties right now.",
+      gbp:
+        "Watching the Brush Prairie, WA market? Buyers looking for horse property or acreage within a reasonable drive of Vancouver often land here given its SR-503/I-205 access. Because the area has a genuine mix of property types, pricing varies more than in a standard subdivision — comparable sales can be harder to pin down. Newer custom-built homes alongside more established rural properties means real variation in condition and age address to address. This type of inventory is both varied and limited, which makes a standing alert more useful here than a one-time search. See current Brush Prairie listings on the site.",
       variant: "update",
       intro: [
         "Hobby farms and equestrian properties don't come up for sale often anywhere in Clark County, and Brush Prairie is one of the more consistent places to find them.",
@@ -2269,6 +2299,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Cascade Park Vancouver market update",
       metaDescription:
         "A market update on Cascade Park in Vancouver, WA — demand for this established east-side neighborhood right now.",
+      gbp:
+        "Watching Cascade Park in Vancouver, WA? Buyers comparing east Vancouver neighborhoods often bring up Cascade Park early, given its I-205 access and mix of home types. Because it's an established neighborhood with a mix of single-family and townhome product, pricing and condition vary more than in a single planned subdivision. Proximity to Columbia Square and the broader Mill Plain Boulevard corridor continues to be a frequently asked-about feature. Given how often this comes up in east Vancouver comparisons, it's worth setting up a dedicated search rather than folding it into a broader one. See current Cascade Park listings on the site.",
       variant: "update",
       intro: [
         "East Vancouver has several established neighborhoods worth comparing, and Cascade Park consistently holds its own in that conversation.",
@@ -2382,6 +2414,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Fishers Landing Vancouver market update",
       metaDescription:
         "A market update on Fisher's Landing in Vancouver, WA — demand for this established east-side neighborhood right now.",
+      gbp:
+        "Watching Fisher's Landing in Vancouver, WA? Buyers comparing east Vancouver neighborhoods often ask about it specifically for park access — six parks in Fisher's Landing East alone is a real draw. Because the area is largely built out from the 1990s, inventory here is mostly resale rather than new construction, and well-priced listings in active HOA communities tend to move at a steady pace. Proximity to Fisher's Landing Marketplace and the broader SE 164th Avenue retail corridor continues to be a frequently asked-about feature. Given the steady pace here, checking in periodically works reasonably well, though a standing alert still catches things faster. See current listings on the site.",
       variant: "update",
       intro: [
         "Buyers weighing east Vancouver options usually put Fisher's Landing on the shortlist for one specific reason: the parks.",
@@ -2495,6 +2529,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Downtown Vancouver condo market",
       metaDescription:
         "A market update on Downtown Vancouver, WA — condo demand near Esther Short Park and the Waterfront district right now.",
+      gbp:
+        "Watching condo demand in Downtown Vancouver, WA? Buyers who work in Portland but want Washington's tax advantage without giving up a walkable, urban setting continue to be a steady source of demand downtown. Units closest to Esther Short Park and the Waterfront district's retail tend to draw the most interest, given the walkability to the farmers market, restaurants and breweries. Because condos make up the large majority of what's available, buyers specifically wanting a detached single-family home should expect a much smaller pool of options downtown than elsewhere in Vancouver. With the Waterfront district still actively developing, this is a market worth watching closely rather than checking in on occasionally. See current listings on the site.",
       variant: "update",
       intro: [
         "The ongoing Waterfront district redevelopment continues to shape condo demand downtown in a pretty direct way.",
@@ -2611,6 +2647,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Salmon Creek Vancouver market update",
       metaDescription:
         "A market update on Salmon Creek in Vancouver, WA — demand across its wide range of housing types right now near I-5.",
+      gbp:
+        "Watching Salmon Creek in Vancouver, WA? Buyers valuing I-5/I-205 access continue to be a steady source of demand, given how central this location is within Clark County. Homes with creek or estuary views tend to draw the most attention relative to more standard interior-lot properties, while entry-level condos here continue to be a common starting point for buyers new to the Vancouver market. Given how wide this market's range is, it's worth narrowing your alert to a specific home type rather than watching the whole area at once. See current Salmon Creek listings on the site.",
       variant: "update",
       intro: [
         "Salmon Creek's condo-to-estate range means this market moves at more than one speed at once.",
@@ -2727,6 +2765,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Irvington Portland market update",
       metaDescription:
         "A market update on Irvington in Portland, OR — demand for this historic Northeast Portland district right now.",
+      gbp:
+        "Watching the Irvington, Portland market? Demand for a real historic district doesn't slow down. Buyers specifically searching for pre-1930s architecture with intact original details tend to treat Irvington as a first stop, not a backup option. Homes that have been thoughtfully updated while preserving historic exterior details tend to draw the most competition, and proximity to both Irving Park and Grant Park continues to be a frequently cited reason buyers choose this neighborhood over comparable Northeast Portland addresses. Given how limited genuine historic inventory is in this part of Portland, it's worth having a search alert running well before you're ready to make an offer. See current Irvington listings on the site.",
       variant: "update",
       intro: [
         "Genuine historic districts don't come along often in Portland, and Irvington's status as the largest one in Oregon keeps it in steady demand.",
@@ -2843,6 +2883,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Sexton Mountain Beaverton market update",
       metaDescription:
         "A market update on Sexton Mountain in Beaverton, OR — demand for this hillside neighborhood right now this season.",
+      gbp:
+        "Watching Sexton Mountain near Beaverton, OR? Buyers relocating from denser parts of the Portland metro often ask about it specifically for its quieter, more suburban feel relative to central Beaverton. Homes with genuine views or larger hillside lots tend to draw more attention than interior-lot properties in the same price tier, and Westside Regional Trail access continues to come up as a deciding factor for buyers comparing Sexton Mountain against other southwest Beaverton options. Given Beaverton's overall growth, it's worth setting up a dedicated search here rather than relying on a broader citywide alert. See current listings on the site.",
       variant: "update",
       intro: [
         "Beaverton keeps growing, and Sexton Mountain's hillside setting continues to draw buyers who want distance from the busier core without leaving the city.",
@@ -2958,6 +3000,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Bull Mountain Tigard market update",
       metaDescription:
         "A market update on the Bull Mountain area near Tigard, OR — demand for newer hilltop construction right now this season.",
+      gbp:
+        "Watching Bull Mountain near Tigard, OR? New construction keeps this area in demand. Buyers relocating from denser parts of the Portland metro often ask about it specifically for its newer construction and elevation. View lots tend to draw more attention and competition than interior lots within the same general area, and Bull Mountain Park's trail system continues to come up as a deciding factor for buyers comparing this area against other Tigard neighborhoods. Given the area's popularity with relocation buyers, it's worth having a dedicated search running rather than a broad Tigard-wide alert. See current listings on the site.",
       variant: "update",
       intro: [
         "Newer construction on a real hilltop setting is a specific combination, and Bull Mountain continues to deliver on it for buyers who want both.",
@@ -3072,6 +3116,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "North Bethany market update",
       metaDescription:
         "A market update on North Bethany, OR — demand for this planned community in Washington County right now this season.",
+      gbp:
+        "Watching North Bethany, OR? It's a still-developing community worth watching closely. Buyers relocating from more established parts of the Portland metro often ask about it specifically for its newer, more consistent construction. Because development is ongoing, inventory includes homes from different phases and build years within the same general area — worth comparing specific build years, not just the neighborhood name. Trail access via the Rock Creek Regional Trail and Waterhouse Trail continues to be a frequently cited reason buyers choose this area. Given how actively this area continues to develop, it's worth checking in on new listings regularly rather than relying on a one-time search. See current listings on the site.",
       variant: "update",
       intro: [
         "North Bethany has been developing steadily since 2006, and that ongoing growth shapes how the market here behaves.",
@@ -3187,6 +3233,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Orenco Station Hillsboro market update",
       metaDescription:
         "A market update on Orenco Station in Hillsboro, OR — demand for this transit-oriented community right now this season.",
+      gbp:
+        "Watching Orenco Station in Hillsboro, OR? It's one of the metro's most requested transit-oriented addresses. Buyers specifically prioritizing walkability and MAX access tend to treat it as a first stop rather than a backup option. Townhomes and condos closest to the retail core and MAX station tend to move fastest among the various housing types here, and buyers relocating from denser cities outside Oregon often recognize this development style immediately and gravitate toward it. Given how consistently in-demand this neighborhood is, it's worth having a dedicated alert running well before you're ready to make an offer. See current Orenco Station listings on the site.",
       variant: "update",
       intro: [
         "Transit-oriented, walkable communities are in real demand across the Portland metro, and Orenco Station is often the first one buyers ask about by name.",
@@ -3302,6 +3350,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Mountain Park Lake Oswego market update",
       metaDescription:
         "A market update on Mountain Park in Lake Oswego, OR — demand across its wide range of housing types right now.",
+      gbp:
+        "Watching Mountain Park in Lake Oswego, OR? There's steady interest across a genuinely wide price range. Buyers drawn to the HOA's private trail system and shared amenities tend to be a steady source of demand regardless of specific home type, and entry-level condos and townhomes here continue to be a common starting point for buyers who want a Lake Oswego address without the premium-estate price tag. Buyers specifically hoping for lake access sometimes discover partway through their search that most Mountain Park properties don't carry it — worth clarifying early to avoid a mismatch. Given the range of housing types here, it's worth narrowing your search to a specific price tier rather than watching the whole community at once. See current listings on the site.",
       variant: "update",
       intro: [
         "Mountain Park's genuinely wide housing mix means this market moves at more than one pace depending on the segment.",
@@ -3417,6 +3467,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Hidden Springs West Linn market update",
       metaDescription:
         "A market update on Hidden Springs in West Linn, OR — demand in one of the city's smaller neighborhoods right now.",
+      gbp:
+        "Watching Hidden Springs in West Linn, OR? With around 1,236 homes total, well-priced listings here don't stay on the market long relative to some of West Linn's larger neighborhoods. Buyers who value proximity to Benski, Palomino and Sunburst parks tend to treat this as a specific, deliberate choice rather than a general West Linn search. Architectural variety here means buyers comparing homes should expect real differences in style and era from one listing to the next. Given the neighborhood's smaller size, it's worth setting up a dedicated Hidden Springs alert rather than relying on a broader West Linn search. See current listings on the site.",
       variant: "update",
       intro: [
         "Hidden Springs is one of West Linn's smaller neighborhoods by home count, and that scarcity shapes how quickly things move here.",
@@ -3531,6 +3583,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Canemah Oregon City market update",
       metaDescription:
         "A market update on Canemah in Oregon City, OR — demand for this historic riverside district right now this season.",
+      gbp:
+        "Watching Canemah in Oregon City, OR? This historic riverside district doesn't turn over often. Buyers specifically searching for pre-1940s architecture with river-bluff proximity tend to treat Canemah as a distinct, deliberate search rather than a general Oregon City look. Homes that have preserved historic exterior details while updating interior systems tend to draw the most competition, and Canemah Bluff Nature Park's river overlooks continue to be a frequently cited reason buyers choose this specific district. Given how limited genuine historic riverside inventory is in this part of Oregon City, it's worth having a dedicated alert running well ahead of time. See current listings on the site.",
       variant: "update",
       intro: [
         "Genuine 19th- and early-20th-century housing stock is rare in the Portland metro, and Canemah's historic designation keeps it in steady, specific demand.",
@@ -3648,6 +3702,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Historic Milwaukie market update",
       metaDescription:
         "A market update on Historic Milwaukie, OR — demand for this walkable downtown neighborhood right now this season.",
+      gbp:
+        "Watching Historic Milwaukie, OR? Downtown character keeps this neighborhood in demand. Buyers who work in downtown Portland but want a walkable, small-town feel often treat it as a serious alternative to denser Portland neighborhoods. Homes closest to Main Street and the MAX Orange Line station tend to draw more competition than those further from the downtown core, and the neighborhood's Sunday farmers market continues to be a frequently cited reason buyers choose this specific area. Given the neighborhood's popularity with commuter-minded buyers, it's worth having a dedicated search running rather than a broad Milwaukie-wide alert. See current listings on the site.",
       variant: "update",
       intro: [
         "Genuine downtown character with MAX access is a specific combination, and Historic Milwaukie continues to deliver it for buyers who want both.",
@@ -3763,6 +3819,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Rock Creek Happy Valley market update",
       metaDescription:
         "A market update on Rock Creek in Happy Valley, OR — demand for this established, practical neighborhood right now.",
+      gbp:
+        "Watching Rock Creek in Happy Valley, OR? It's the practical choice in a fast-growing city. Buyers balancing price, school access and commute often land on Rock Creek after comparing it against Happy Valley's newer, pricier hillside developments. Homes near Mount Talbert or Scouters Mountain nature parks tend to draw more attention than those further from trail access, and because North Clackamas School District covers such a large area, buyers should expect real variation in specific school assignments even within Rock Creek — worth confirming per address. Given how quickly Happy Valley continues to grow overall, it's worth setting up a dedicated Rock Creek search rather than a broad citywide alert. See current listings on the site.",
       variant: "update",
       intro: [
         "Happy Valley keeps growing fast, and Rock Creek's practical, established character continues to draw a specific kind of buyer.",
