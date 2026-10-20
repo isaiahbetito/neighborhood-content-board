@@ -549,6 +549,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "living in Holly Ridge Camas",
       metaDescription:
         "The real tradeoffs of buying in Holly Ridge, Camas — home age, lot differences, and what to expect on a tour of the neighborhood.",
+      gbp:
+        "Thinking about Holly Ridge in Camas, WA? It's worth knowing the honest tradeoffs before you tour. Built mostly in the late 1990s and early 2000s, many homes carry original kitchens and bathrooms that are worth a close look in person — some have been updated, plenty haven't. Lot sizes vary noticeably by street, so don't assume every address backs up to Prune Hill greenspace or sits close to Lacamas Lake the same way. And because Holly Ridge is resale-only, buyers wanting brand-new finishes are really paying for renovations rather than finding something move-in ready. None of that shows up well in photos — the light in a kitchen, how close a street actually feels to the lake, the condition behind a nice listing photo. Seeing two or three homes in person tends to settle those questions faster than more scrolling. The full breakdown of what to expect on a Holly Ridge tour is on the site, along with current listings.",
       variant: "considerations",
       intro: [
         "Holly Ridge gets a lot of attention for good reason, but it helps to walk in knowing where the tradeoffs actually are.",
@@ -664,6 +666,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "living in Lakeshore Vancouver WA",
       metaDescription:
         "The real commute-versus-lake-access tradeoff in Lakeshore, Vancouver — plus home age and lot size, explained clearly.",
+      gbp:
+        "Considering Lakeshore in Vancouver, WA? The real question is whether the lake is worth the extra commute. Lakeshore sits close to Vancouver Lake Regional Park and its trail system, with larger lots giving more separation from neighbors than many newer Vancouver subdivisions — but it's also a longer drive into downtown Vancouver than more central neighborhoods. Home age varies too; some properties may need updates to kitchens, roofs or mechanical systems, and lot sizes differ enough between addresses that it's worth comparing a few in person rather than assuming the whole neighborhood is the same. For buyers who prioritize lake access, the extra minutes in the car tend to stop mattering fast. For buyers who don't, it's worth touring a more central neighborhood side by side before deciding. The full tradeoff breakdown, plus current Lakeshore listings, is on the site.",
       variant: "considerations",
       intro: [
         "Lakeshore asks buyers to make one real tradeoff more than most Vancouver neighborhoods: commute distance for lake access.",
@@ -778,6 +782,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Pleasant Valley Vancouver living",
       metaDescription:
         "Weighing space against walkability before buying in Pleasant Valley, Vancouver — an honest look at both sides.",
+      gbp:
+        "Weighing Pleasant Valley in Vancouver, WA? It comes down to space versus walkability. Pleasant Valley offers some of the largest lots in this part of Clark County — room for a shop, a garden, or just more privacy — with a semi-rural character that feels genuinely different from Vancouver's inner subdivisions. The tradeoff: this isn't a neighborhood where you walk to dinner, and most errands mean getting in the car. It's also the longest commute into downtown Vancouver or Portland among nearby neighborhoods, though I-5 and I-205 access keeps it manageable — worth mapping your actual drive at the hours you'd normally travel. Financing on acreage can look different too, especially anything zoned for agricultural use, so it's worth discussing loan options early. Buyers who've made the move here tend to say the same thing: once you stop needing to be five minutes from everything, the tradeoff barely registers. The full guide and current listings are on the site.",
       variant: "considerations",
       intro: [
         "Every buyer looking at Pleasant Valley eventually lands on the same question: is the space worth giving up walkability?",
@@ -892,6 +898,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Hunter Ridge Estates Camas review",
       metaDescription:
         "What buying into a gated Camas community actually involves, compared with more walkable neighborhoods nearby in the area.",
+      gbp:
+        "Thinking about Hunter Ridge Estates in Camas, WA? The gated entry buys real privacy and space — elevated, larger lots set this community apart from more walkable Camas neighborhoods, and some homes have a clear line toward Mount Hood. What it costs you is distance: if daily walkability to downtown Camas or Lacamas Lake matters more than privacy, other Camas neighborhoods may fit better. HOA covenants also tend to be more involved in gated communities, worth reviewing early, and light and views shift enough by time of day that it's worth touring more than once before deciding. Buyers drawn to Holly Ridge or Deer Creek tend to want proximity first. Buyers drawn to Hunter Ridge Estates tend to want separation first — knowing which one you are makes the rest of the search faster. The full breakdown and current listings are on the site.",
       variant: "considerations",
       intro: [
         "A gated entry changes more about daily life than people expect going in — here's what that actually means here.",
@@ -1006,6 +1014,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "living in Columbia Way Vancouver",
       metaDescription:
         "What you actually give up and gain living in Columbia Way, Vancouver — parking, density and walkability, explained.",
+      gbp:
+        "Considering Columbia Way in Vancouver, WA? It's a real trade: a yard for a walk to dinner. Columbia Way puts restaurants, parks and the waterfront trail within walking distance for many addresses, with a genuine mix of newer condos and townhomes alongside older single-family homes. The tradeoffs are worth asking about upfront — parking and storage especially if you're coming from a house with a garage, and a larger yard isn't really part of the picture here, so it's worth comparing against neighborhoods further from the river if outdoor space matters. It's also a more urban feel than neighborhoods like Harney Heights or Lakeshore. A weekday morning here looks almost nothing like a Saturday afternoon along the waterfront trail — worth experiencing both before deciding this is the tradeoff you want. The full guide and current Columbia Way listings are on the site.",
       variant: "considerations",
       intro: [
         "The appeal of Columbia Way is obvious on a walk through it. What's less obvious is everything you're trading to get it.",
@@ -1120,6 +1130,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Deer Creek Camas buyers guide",
       metaDescription:
         "Why Deer Creek functions as a step-up neighborhood in Camas, and what that means for buyers touring here first.",
+      gbp:
+        "Looking at Deer Creek in Camas, WA? It functions as a step-up neighborhood, not a starter one. Homes here tend to run a bit larger and more settled than in Holly Ridge, with mature trees, quieter streets, and close access to the Lacamas Creek Trail without the traffic of a more visible address. The tradeoffs: it's resale-only, so some homes may need updated kitchens or systems — a thorough inspection is worth the cost — and because it's a quieter, less-searched address, fewer comparable sales can make it take longer to gauge value. A drive through at different times of day tends to tell you more about Deer Creek's actual pace than any listing photo will. The full breakdown and current listings are on the site.",
       variant: "considerations",
       intro: [
         "Deer Creek isn't usually where a Camas search starts — it's more often where it lands after a buyer already knows what they want.",
@@ -1233,6 +1245,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "Harney Heights Vancouver buyers guide",
       metaDescription:
         "The real catches behind Harney Heights' character and value in Vancouver, WA — HOA structure and condition, explained.",
+      gbp:
+        "Considering Harney Heights in Vancouver, WA? The character comes with a few catches worth knowing upfront. Established trees and varied home styles here are genuinely different from newer subdivisions, and homes tend to cost less per square foot than newer construction closer to I-205. That value comes with variation: some properties have been updated, others haven't, there's generally no formal HOA across much of the neighborhood (confirm on a home-by-home basis), and lots and floor plans vary more than in a planned development. None of that shows up in a listing summary — walking a few blocks and seeing two or three homes in person tells you more than any description can. The full tradeoff breakdown and current listings are on the site.",
       variant: "considerations",
       intro: [
         "Harney Heights has real character, and character usually comes with a few catches worth knowing upfront.",
@@ -1349,6 +1363,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "living in Pioneer Canyon Ridgefield",
       metaDescription:
         "What to weigh before buying in Pioneer Canyon, Ridgefield — home age, lot differences and commute, explained clearly.",
+      gbp:
+        "Looking at Pioneer Canyon in Ridgefield, WA? Newer construction here means more consistent modern layouts than older Ridgefield neighborhoods, with I-5 access just a few minutes away at Exit 14. The tradeoff is maturity — landscaping and trees are still filling in compared to an older neighborhood, and because it sits east of downtown, it's worth checking your actual routine driving pattern to shops and services in town before assuming the location works for your day-to-day. Touring homes in a couple of different sections of the subdivision usually clarifies more about lot orientation and finishes than any single listing can. The full guide and current Pioneer Canyon listings are on the site.",
       variant: "considerations",
       intro: [
         "Newer construction solves some problems and introduces a few new questions — Pioneer Canyon is a good example of both sides of that trade.",
@@ -1464,6 +1480,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "living in Battle Ground Meadows",
       metaDescription:
         "What to weigh before buying in Battle Ground Meadows — home condition, lot differences and commute, explained clearly.",
+      gbp:
+        "Considering Battle Ground Meadows? It's an established, larger neighborhood rather than a newer, still-developing subdivision, with a central Clark County location and SR-503/SR-502 access toward I-5. The tradeoff: this isn't new construction, so buyers specifically wanting the newest finishes may prefer a newer Battle Ground development, and condition varies enough that it's worth comparing specific addresses rather than assuming uniformity across the neighborhood. Seeing a couple of homes in person, side by side, tends to clarify the condition question faster than reading listing descriptions alone. The full breakdown and current listings are on the site.",
       variant: "considerations",
       intro: [
         "Battle Ground gives buyers a genuine choice between established and new construction, and Battle Ground Meadows sits firmly on the established side of that line.",
@@ -1577,6 +1595,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "living in La Center WA",
       metaDescription:
         "What to weigh before buying in La Center, WA — commute distance, school district size and small-town tradeoffs.",
+      gbp:
+        "Thinking about Stephens Hillside Farm in La Center, WA? Newer construction here comes with real built-in amenities — a neighborhood park, playground and walking trails — plus genuine small-town character surrounded by forest and farmland, a real change of pace from Vancouver. The tradeoffs: it's less than 20 miles from Vancouver but still a longer commute than Camas or Vancouver neighborhoods, worth mapping your actual drive, and La Center School District has just three schools total — worth understanding if district size matters to your decision. Comparing Stephens Hillside Farm against La Center's older, original-townsite housing stock in person tends to make the small-town-versus-newer-construction question a lot clearer. The full guide and current listings are on the site.",
       variant: "considerations",
       intro: [
         "Small-town living asks for a few specific tradeoffs, and La Center is a clear example of what those actually look like day to day.",
@@ -1691,6 +1711,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "living in Woodland WA",
       metaDescription:
         "What to weigh before buying in Woodland, WA — commute distance, county-line location and small-town tradeoffs.",
+      gbp:
+        "Considering Northfork Landing in Woodland, WA? A public trail leads directly from the neighborhood to the Lewis River, and Woodland's small-town, historic character (incorporated in 1906) comes with a well-regarded school district. The tradeoffs: it's about 22 miles from Vancouver, worth mapping your actual drive during normal travel hours, and Woodland straddles Cowlitz and Clark counties — worth understanding for anything tied to county services. Seeing the neighborhood's river trail in person tends to answer the river-access question faster than any listing description can. The full breakdown and current listings are on the site.",
       variant: "considerations",
       intro: [
         "Sitting on a county line changes a few practical things about living somewhere, and Woodland is a real example of what that involves.",
@@ -1804,6 +1826,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "living in Washougal WA",
       metaDescription:
         "What to weigh before buying in Washougal, WA — housing variety, commute and river access, explained clearly and honestly.",
+      gbp:
+        "Looking at homes in Washougal, WA? The town offers real river access — Washougal Waterfront Park and the Dike Trail both connect directly to the Columbia River — along with a genuinely wide range of home types and price points. The catch: there's no single defining neighborhood here, so it's worth comparing specific subdivisions or streets rather than the town as a whole, and being east of Camas means mapping your actual drive time toward Vancouver or Portland before deciding it works for your commute. Touring a few different subdivisions in the same visit tends to show the housing variety here more clearly than reading listings alone. The full guide and current Washougal listings are on the site.",
       variant: "considerations",
       intro: [
         "Washougal functions less like one market and more like several smaller ones stitched together — worth understanding before you start touring.",
@@ -1918,6 +1942,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "living in Hockinson WA",
       metaDescription:
         "What to weigh before buying in the Hockinson, WA area — commute, acreage upkeep and rural tradeoffs, explained.",
+      gbp:
+        "Considering the Hockinson, WA area? Genuine acreage and rural character are the draw — horse property and hillside lots are common here, not the exception, with Battle Ground Lake State Park just minutes away for hiking and swimming. The real cost is access: there's no direct freeway through the area, so reaching I-5 or I-205 means driving through Battle Ground or Orchards first, and larger lots mean more maintenance — acreage upkeep is a genuinely different commitment than a standard subdivision lot. A couple of property tours, including the actual drive back toward Vancouver, tends to answer the rural-versus-convenient question better than any description. The full breakdown and current listings are on the site.",
       variant: "considerations",
       intro: [
         "Rural acreage sounds appealing in the abstract — the actual tradeoffs are worth understanding before you commit to touring Hockinson properties.",
@@ -2031,6 +2057,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "living in Amboy WA",
       metaDescription:
         "What to weigh before buying in the Amboy, WA area — commute distance, rural tradeoffs and services, explained.",
+      gbp:
+        "Looking at the Amboy, WA area? Genuine rural acreage and a quiet, remote setting offer a real change of pace from suburban Clark County — larger parcels and more distance from neighbors than you'll find anywhere closer to Vancouver. The tradeoff is distance itself: roughly 30 miles from Vancouver is a real daily consideration, and fewer nearby services mean a drive into Battle Ground or further for shopping and amenities. Spending real time in the area at different points in the day, not just a single tour, tends to give the clearest read on whether the distance actually works for you. The full guide and current listings are on the site.",
       variant: "considerations",
       intro: [
         "Distance is the real currency in Amboy — it buys space and quiet, and it costs time and convenience. Worth being honest about that trade upfront.",
@@ -2144,6 +2172,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "living in Brush Prairie WA",
       metaDescription:
         "What to weigh before buying in the Brush Prairie, WA area — school district, land use and commute, explained clearly.",
+      gbp:
+        "Considering Brush Prairie, WA? It's a genuine rural-residential mix — hobby farms, equestrian properties and newer custom homes — with SR-503/I-205 access giving a reasonably direct route toward Vancouver and Portland. The tradeoffs: school district varies by address, so it's worth verifying directly rather than assuming one district applies, and rural upkeep on hobby farms or equestrian properties comes with different maintenance needs than a standard lot. Touring a couple of properties tends to make the rural-residential mix here click faster than reading about it does. The full breakdown and current Brush Prairie listings are on the site.",
       variant: "considerations",
       intro: [
         "Sitting between Battle Ground and Vancouver means Brush Prairie doesn't fit neatly into either market — worth understanding what that actually means before you buy.",
@@ -2257,6 +2287,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "living in Cascade Park Vancouver",
       metaDescription:
         "What to weigh before buying in Cascade Park, Vancouver — school district, home type and commute, explained clearly.",
+      gbp:
+        "Looking at Cascade Park in Vancouver, WA? I-205 runs along the western edge, and a genuine mix of single-family homes and townhomes gives buyers real options. One thing worth confirming directly: Cascade Park is served by Evergreen Public Schools, not Vancouver Public Schools, which matters if district is part of your decision. Condition also varies enough here that it's worth comparing specific addresses rather than assuming uniformity. A couple of home tours, paired with a direct call to the district about your specific address, covers both the big questions at once. The full guide and current listings are on the site.",
       variant: "considerations",
       intro: [
         "The biggest surprise for buyers new to Cascade Park usually isn't the homes — it's learning the school district differs from central Vancouver.",
@@ -2368,6 +2400,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "living in Fishers Landing Vancouver",
       metaDescription:
         "What to weigh before buying in Fisher's Landing, Vancouver — HOA structure, school district and commute, explained.",
+      gbp:
+        "Considering Fisher's Landing in Vancouver, WA? Genuine park access — roughly six parks in Fisher's Landing East alone — plus shopping at Fisher's Landing Marketplace and Fred Meyer along SE 164th Avenue make daily life convenient. Two things worth confirming before you're under contract: active HOAs are common across the neighborhood cluster, so review covenants and dues early, and Fisher's Landing is served by Evergreen Public Schools, not Vancouver Public Schools. Reading a couple of HOA covenant packets alongside touring homes tends to save real headaches down the line. The full breakdown and current listings are on the site.",
       variant: "considerations",
       intro: [
         "Active HOAs shape daily life here more than in most other neighborhoods in this rotation — worth understanding what that actually involves.",
@@ -2479,6 +2513,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "living in Downtown Vancouver WA",
       metaDescription:
         "What daily life in Downtown Vancouver actually involves, from condo living to walkability, before you make an offer.",
+      gbp:
+        "Thinking about Downtown Vancouver, WA? Walkability is real here — Esther Short Park, the farmers market and the Waterfront district are all reachable on foot, with an urban-core character (public art, breweries) genuinely different from Vancouver's residential neighborhoods. The tradeoff: housing is condo-dominant, so detached single-family homes are a small share of what's available, and a yard or garage isn't part of the picture for most downtown condos. A weekday morning near Esther Short Park looks almost nothing like a Saturday during the farmers market — worth experiencing both before you decide. The full guide and current Downtown Vancouver listings are on the site.",
       variant: "considerations",
       intro: [
         "Downtown Vancouver's walkability is a real draw, but it's worth understanding what daily life here actually involves before you make an offer.",
@@ -2593,6 +2629,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "living in Salmon Creek Vancouver",
       metaDescription:
         "What to weigh before buying in Salmon Creek, Vancouver — traffic, housing variety and commute, explained clearly.",
+      gbp:
+        "Considering Salmon Creek in Vancouver, WA? A genuinely central Clark County location with I-5/I-205 access, plus the Salmon Creek Greenway Trail's real wooded creek setting, are the draw. The tradeoffs: some addresses near the interchanges see more traffic and noise than others, worth checking specific locations in person, and the price range here is wide given the mix of condos and higher-end homes, so compare like-for-like. Touring homes in more than one part of the area tends to show how much the traffic exposure actually varies block to block. The full breakdown and current Salmon Creek listings are on the site.",
       variant: "considerations",
       intro: [
         "Living next to a major interchange has upsides and downsides, and Salmon Creek is a straightforward example of both.",
@@ -2707,6 +2745,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "living in Irvington Portland",
       metaDescription:
         "What owning a historic home in Irvington, Portland actually involves — preservation rules, upkeep and commute, explained.",
+      gbp:
+        "Considering a historic home in Irvington, Portland? The draw is real: genuine Queen Anne, Craftsman and Prairie School architecture, not reproductions, on established, walkable streets with mature trees. What it involves: preservation guidelines mean exterior renovations may require additional review, worth researching before you buy if changes are part of your plan, and older home systems — wiring, plumbing, mechanical — may need updating depending on the property's history. Touring a few homes with an inspector who's worked in historic Portland districts before tends to surface the real condition questions faster than a listing description ever will. The full guide and current Irvington listings are on the site.",
       variant: "considerations",
       intro: [
         "Irvington's historic character is the whole draw, but owning a home in a real historic district comes with real responsibilities worth understanding first.",
@@ -2821,6 +2861,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "living in Sexton Mountain Beaverton",
       metaDescription:
         "What to weigh before buying in Sexton Mountain, Beaverton — hillside construction, commute and trail access, explained.",
+      gbp:
+        "Looking at Sexton Mountain in Beaverton, OR? Elevated, hillside lots bring more topography and views than central Beaverton, with real walkable access to the Westside Regional Trail built into the neighborhood. The tradeoffs: hillside construction details — retaining walls, drainage, steep driveways — are worth a close inspection look, and OR-217 congestion is a genuine factor at peak hours, worth testing your actual commute before deciding. Driving the neighborhood's streets at different times of day, not just touring homes, tends to give the clearest read on how the hillside setting actually feels day to day. The full breakdown and current listings are on the site.",
       variant: "considerations",
       intro: [
         "A hillside setting is a real selling point in Sexton Mountain, but it also raises a few questions worth asking before you tour.",
@@ -2934,6 +2976,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "living in Bull Mountain Tigard",
       metaDescription:
         "What living on Bull Mountain near Tigard actually involves — jurisdiction, commute and hillside upkeep, explained.",
+      gbp:
+        "Considering Bull Mountain near Tigard, OR? Newer construction, mostly built within the last two decades, and Bull Mountain Park's 9 trails for hiking and mountain biking are real draws. What's worth confirming first: jurisdiction varies by address, so check whether a specific property is inside Tigard city limits or unincorporated Washington County, and OR-217 congestion is a genuine factor at peak commute hours. The best next step is usually confirming the exact jurisdiction and any HOA details for a specific property before touring, since both can vary block to block on Bull Mountain. The full guide and current listings are on the site.",
       variant: "considerations",
       intro: [
         "The Bull Mountain area's hilltop setting is a real draw, but it's worth understanding a few practical details before you tour.",
@@ -3046,6 +3090,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "living in North Bethany OR",
       metaDescription:
         "What to weigh before buying in North Bethany, OR — HOA structure, commute distance and development stage, explained.",
+      gbp:
+        "Thinking about North Bethany, OR? Newer, consistent construction means more uniform layouts and finishes than older parts of Bethany, with the Rock Creek Regional Trail and Waterhouse Trail both serving the area. The tradeoffs: the community is still developing, so landscaping and amenities may vary by phase — worth asking about the specific section — and an HOA is likely for any specific property, so confirm dues and rules directly. Comparing a few homes across different phases of the development tends to clarify how the community has matured so far. The full breakdown and current North Bethany listings are on the site.",
       variant: "considerations",
       intro: [
         "North Bethany has real advantages as a planned community, but it's worth understanding how it differs from more established Portland-area neighborhoods.",
@@ -3159,6 +3205,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "living in Orenco Station Hillsboro",
       metaDescription:
         "What to weigh before buying in Orenco Station, Hillsboro — density, HOA structure and walkability, explained clearly.",
+      gbp:
+        "Considering Orenco Station in Hillsboro, OR? It's genuinely built around walkability and transit — the Orenco MAX Station, Central Park, a farmers market and a walkable retail district all function as a real neighborhood core. The tradeoff is space: narrower streets and alley-loaded garages mean less traditional yard space, and HOA dues are common across the townhome and condo product here, worth confirming for any specific property. Walking the neighborhood at different times of day, including a stop at the farmers market if the timing works out, tends to show whether the walkable, denser format actually fits how you want to live. The full guide and current listings are on the site.",
       variant: "considerations",
       intro: [
         "Orenco Station's walkable design is the whole point, but it's worth understanding what that trades away before you commit to touring.",
@@ -3272,6 +3320,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "living in Mountain Park Lake Oswego",
       metaDescription:
         "What to weigh before buying in Mountain Park, Lake Oswego — HOA dues, lake access and commute, explained clearly.",
+      gbp:
+        "Looking at Mountain Park in Lake Oswego, OR? The HOA's private trail system — more than 8 miles maintained — is a genuine shared amenity, with housing spanning entry-level condos and townhomes to premium contemporary estates. Two things worth confirming directly: despite the Lake Oswego name, most Mountain Park properties don't carry general lake access (that's tied to specific easements elsewhere in the city), and mandatory monthly HOA dues are a real ongoing cost across nearly every property. Asking to see the HOA's current budget and rules directly, alongside touring a couple of homes, tends to answer the practical questions faster than general research can. The full breakdown and current listings are on the site.",
       variant: "considerations",
       intro: [
         "Mountain Park's HOA is central to daily life here, and it's worth understanding exactly what it does and doesn't include before you buy.",
@@ -3385,6 +3435,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "living in Hidden Springs West Linn",
       metaDescription:
         "What to weigh before buying in Hidden Springs, West Linn — hillside terrain, home variety and commute, explained.",
+      gbp:
+        "Considering Hidden Springs in West Linn, OR? Three local parks — Benski, Palomino and Sunburst — serve the immediate neighborhood, with established, walkable streets and mature trees despite the hilly terrain. What's worth knowing: the real elevation change across the neighborhood matters for daily walkability, and with around 1,236 homes total, inventory is smaller than in larger neighborhoods — fewer listings at any given time. Walking a few blocks in person tends to show how the hillside terrain actually affects daily life here more clearly than a map ever could. The full guide and current Hidden Springs listings are on the site.",
       variant: "considerations",
       intro: [
         "Hidden Springs has real character, but its hilly setting and architectural variety are both worth understanding before you tour.",
@@ -3497,6 +3549,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "living in Canemah Oregon City",
       metaDescription:
         "What owning a historic home in Canemah, Oregon City actually involves — preservation rules, upkeep and commute.",
+      gbp:
+        "Considering a historic home in Canemah, Oregon City? The character is real — a median build year of 1937, some homes dating to the 1800s, set above the Willamette River near Willamette Falls, with Canemah Bluff Nature Park's trails and river overlooks close by. What it involves: preservation guidelines may require additional review for exterior changes as part of the historic district designation, and older systems — wiring, plumbing, mechanical — may need updating depending on the property's history. Touring with an inspector experienced in historic Oregon City homes tends to surface the real condition questions faster than a listing description can. The full breakdown and current listings are on the site.",
       variant: "considerations",
       intro: [
         "Canemah's history is the whole draw, but a genuine historic district comes with genuine responsibilities worth understanding first.",
@@ -3612,6 +3666,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "living in Historic Milwaukie",
       metaDescription:
         "What to weigh before buying in Historic Milwaukie, OR — home age, lot size and transit access, explained clearly.",
+      gbp:
+        "Looking at Historic Milwaukie, OR? Genuine downtown access — Main Street, a real farmers market and MAX Orange Line service — pairs with bungalow-era character, 1920s–1930s homes on tree-lined streets. The tradeoffs worth checking in person: older systems, wiring and mechanical in particular, may need updating depending on the home's age, and lots here tend to run smaller than newer suburban construction. A weekday walk through downtown, paired with a Sunday visit during the farmers market, tends to show both sides of what living here actually feels like. The full guide and current listings are on the site.",
       variant: "considerations",
       intro: [
         "Historic Milwaukie's bungalow character is a real draw, but the age of the housing stock is worth a closer look before you make an offer.",
@@ -3725,6 +3781,8 @@ const TITLES: Record<string, PostSeed[]> = {
       keyword: "living in Rock Creek Happy Valley",
       metaDescription:
         "What to weigh before buying in Rock Creek, Happy Valley — home age, elevation and school district, explained clearly.",
+      gbp:
+        "Considering Rock Creek in Happy Valley, OR? It's an established, practical setting — mature trees, classic multi-level homes, with Mount Talbert and Scouters Mountain nature parks both nearby. The tradeoffs: this isn't new construction, so buyers wanting the newest finishes may prefer other Happy Valley areas, and Rock Creek sits at a lower elevation than some Happy Valley neighborhoods — worth comparing if hillside views are a priority. Comparing a Rock Creek home directly against a newer Happy Valley listing, back to back, tends to clarify which tradeoffs actually matter to you. The full breakdown and current Rock Creek listings are on the site.",
       variant: "considerations",
       intro: [
         "Rock Creek's practical reputation is well-earned, but it's worth understanding how it compares to Happy Valley's newer developments before you tour.",
