@@ -100,6 +100,16 @@ const AREAS: [string, string][] = [
   ["Lake Road, Milwaukie", "lake-road-milwaukie-or"],
   ["Lewelling, Milwaukie", "lewelling-milwaukie-or"],
   ["Linwood, Milwaukie", "linwood-milwaukie-or"],
+  ["Downtown Beaverton, Beaverton", "downtown-beaverton-or"],
+  ["Five Oaks / Triple Creek, Beaverton", "five-oaks-triple-creek-beaverton-or"],
+  ["Greenway, Beaverton", "greenway-beaverton-or"],
+  ["Highland, Beaverton", "highland-beaverton-or"],
+  ["Garden Home / Raleigh Hills, Beaverton", "garden-home-raleigh-hills-beaverton-or"],
+  ["Tanasbourne, Beaverton", "tanasbourne-beaverton-or"],
+  ["Murrayhill, Beaverton", "murrayhill-beaverton-or"],
+  ["Progress Ridge, Beaverton", "progress-ridge-beaverton-or"],
+  ["Cedar Hills, Beaverton", "cedar-hills-beaverton-or"],
+  ["Oak Hills, Beaverton", "oak-hills-beaverton-or"],
 ];
 
 // State grouping for the filter/checklist UI. WA areas above came first (7 original +
@@ -122,6 +132,16 @@ const OR_AREA_NAMES = new Set([
   "Lake Road, Milwaukie",
   "Lewelling, Milwaukie",
   "Linwood, Milwaukie",
+  "Downtown Beaverton, Beaverton",
+  "Five Oaks / Triple Creek, Beaverton",
+  "Greenway, Beaverton",
+  "Highland, Beaverton",
+  "Garden Home / Raleigh Hills, Beaverton",
+  "Tanasbourne, Beaverton",
+  "Murrayhill, Beaverton",
+  "Progress Ridge, Beaverton",
+  "Cedar Hills, Beaverton",
+  "Oak Hills, Beaverton",
 ]);
 const AREA_STATE: Record<string, "WA" | "OR"> = Object.fromEntries(
   AREAS.map(([name]) => [name, OR_AREA_NAMES.has(name) ? ("OR" as const) : ("WA" as const)])
@@ -292,6 +312,19 @@ const SCHOOL_DISTRICTS: Record<string, string> = {
   "Lake Road, Milwaukie": "North Clackamas School District",
   "Lewelling, Milwaukie": "North Clackamas School District",
   "Linwood, Milwaukie": "North Clackamas School District",
+  "Downtown Beaverton, Beaverton": "Beaverton School District",
+  "Five Oaks / Triple Creek, Beaverton": "Beaverton School District",
+  "Greenway, Beaverton": "Beaverton School District",
+  "Highland, Beaverton": "Beaverton School District",
+  "Garden Home / Raleigh Hills, Beaverton":
+    "Beaverton School District or Portland Public Schools area (verify by exact address)",
+  "Tanasbourne, Beaverton":
+    "Beaverton School District or Hillsboro School District area (verify by exact address)",
+  "Murrayhill, Beaverton": "Beaverton School District",
+  "Progress Ridge, Beaverton":
+    "Beaverton School District or Tigard-Tualatin School District area (verify by exact address)",
+  "Cedar Hills, Beaverton": "Beaverton School District",
+  "Oak Hills, Beaverton": "Beaverton School District",
 };
 
 const YOUTUBE_URL = "https://www.youtube.com/@jamiemeushawrealestate";
@@ -4173,6 +4206,456 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       closing: [
         "If real 1930s character on a generous lot — or a more affordable manufactured-home option in the same neighborhood — is what you're after, Linwood is worth a close look at the specific street and property type before you decide.",
+      ],
+    },
+  ],
+  "Downtown Beaverton, Beaverton": [
+    {
+      hook: "A Supremely Walkable Core With a Real Farmers Market",
+      keyword: "Downtown Beaverton OR homes",
+      metaDescription:
+        "Moving to Beaverton, OR? See what Downtown Beaverton is like — walkability, condos and older homes, the farmers market, and current listings.",
+      excerpt:
+        "Thinking about moving to Beaverton, OR? Explore Downtown Beaverton, a supremely walkable core mixing older traditional homes with newer condos and lofts.",
+      gbp:
+        "If you're moving to Beaverton, OR, Downtown Beaverton is worth researching — the city's walkable core, with a Walk Score in the mid-90s. Living here means a mix of newer condos and lofts, some with Juliette-style balconies right in the core, alongside a smaller number of older traditional homes with details like wood-burning fireplaces and Craftsman-style windows. The Downtown Beaverton Farmers Market and a growing restaurant scene are real neighborhood anchors within walking distance. Because vintage single-family homes are a limited share of what's available, buyers specifically wanting a detached house with a yard may want to compare a neighboring area like Five Oaks or West Beaverton. If you're comparing Downtown Beaverton homes for sale or Beaverton OR homes for sale more broadly, the full neighborhood guide covers the walkability, housing mix and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to Beaverton, Oregon, Downtown Beaverton is worth a look — the city's walkable core, with a Walk Score in the mid-90s.",
+        "The neighborhood sits close to Five Oaks, Sexton Mountain and West Beaverton, with the Downtown Beaverton Farmers Market as one of its real anchors.",
+      ],
+      livingIn: [
+        "Downtown Beaverton mixes a small number of older traditional homes — some with wood-burning fireplaces and Craftsman-style windows — with newer condos and loft buildings, including some with Juliette-style balconies right in the downtown core.",
+      ],
+      whereLocated: [
+        "Downtown Beaverton sits at the city's core, close to Five Oaks, Sexton Mountain, Southwest Beaverton and West Beaverton.",
+      ],
+      homesIn: [
+        "Housing here leans toward condos and lofts in the downtown core, with a smaller share of older single-family homes — some retaining original traditional or Craftsman-era details. Vintage single-family inventory is limited, so comparing condo and house options side by side matters more here than in most other Beaverton neighborhoods.",
+      ],
+      parks: [
+        "The Downtown Beaverton Farmers Market is a real neighborhood anchor, alongside a growing cluster of restaurants in the core.",
+      ],
+      commute: [
+        "Downtown Beaverton's Walk Score in the mid-90s means most errands are realistic on foot, with regional transit and the broader Beaverton arterial network connecting toward Portland and surrounding neighborhoods.",
+      ],
+      reasons: [
+        "<strong>Supremely walkable:</strong> a Walk Score in the mid-90s, rare for this part of the metro.",
+        "<strong>Real downtown core:</strong> a farmers market and a growing restaurant scene within walking distance.",
+        "<strong>Housing variety:</strong> condos and lofts alongside a smaller number of older traditional homes.",
+      ],
+      considerations: [
+        "<strong>Limited single-family inventory:</strong> vintage houses are a small share of what's available downtown.",
+        "<strong>Condo-heavy market:</strong> buyers specifically wanting a detached home with a yard may need to look at a neighboring area.",
+        "<strong>Compare specific buildings:</strong> condo age, HOA dues and amenities vary building to building.",
+      ],
+      closing: [
+        "If real walkability and a genuine downtown core are what you're after, Downtown Beaverton is worth comparing against its closer-in neighbors like Five Oaks and West Beaverton before you decide.",
+      ],
+    },
+  ],
+  "Five Oaks / Triple Creek, Beaverton": [
+    {
+      hook: "A Transit-Connected Address Near Nike and Intel",
+      keyword: "Five Oaks Triple Creek Beaverton OR homes",
+      metaDescription:
+        "Moving to Beaverton, OR? See what Five Oaks / Triple Creek is like — MAX access, schools, home styles and current listings.",
+      excerpt:
+        "Thinking about moving to Beaverton, OR? Explore Five Oaks / Triple Creek, a northwest Beaverton neighborhood with real MAX access near Nike and Intel.",
+      gbp:
+        "If you're moving to Beaverton, OR, Five Oaks / Triple Creek is worth researching — a northwest Beaverton neighborhood (97006) with a genuinely diverse mix of single detached homes, apartments and duplexes. Three MAX Blue Line stations — Beaverton Creek, Millikan Way, and Willow Creek/SW 185th Ave TC — serve the area, along with direct US-26 access toward Nike, Intel and downtown Portland. Waterhouse Trail and Magnolia Park are both within reach, and The Streets of Tanasbourne and Costco are close by for everyday shopping. Westview High School, Elmonica Elementary and Five Oaks Middle School serve the neighborhood. Recently reported listing prices have ranged widely, so comparing specific properties matters more than assuming one price point. If you're comparing Five Oaks / Triple Creek homes for sale or Beaverton OR homes for sale more broadly, the full neighborhood guide covers transit access, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to Beaverton, Oregon, Five Oaks / Triple Creek is worth a look — a northwest Beaverton neighborhood with a genuinely diverse mix of housing and real transit access.",
+        "The neighborhood is served by Westview High School, Elmonica Elementary and Five Oaks Middle School.",
+      ],
+      livingIn: [
+        "Five Oaks / Triple Creek offers a diverse housing selection — single detached homes, apartments and duplexes, mostly with two and three bedrooms — within reach of the Beaverton Creek, Millikan Way and Willow Creek/SW 185th Ave MAX Blue Line stations.",
+      ],
+      whereLocated: [
+        "The neighborhood sits in northwest Beaverton (97006), close to Nike, Intel, The Streets of Tanasbourne, Costco, Waterhouse Trail, Magnolia Park and US-26.",
+      ],
+      homesIn: [
+        "Housing here spans single detached homes, apartments and duplexes, mostly two- and three-bedroom. Recently reported listing prices have centered in the $340,000s to $580,000s range, so comparing specific properties matters more than assuming one price point.",
+      ],
+      parks: [
+        "Waterhouse Trail and Magnolia Park are both within reach, and the neighborhood's moderate walkability (Walk Score around 61) means some errands are realistic without a car.",
+      ],
+      commute: [
+        "Three MAX Blue Line stations — Beaverton Creek, Millikan Way, and Willow Creek/SW 185th Ave TC — serve the neighborhood, alongside direct access to US-26 for driving toward Nike, Intel and downtown Portland.",
+      ],
+      reasons: [
+        "<strong>Real MAX access:</strong> three Blue Line stations within reach of the neighborhood.",
+        "<strong>Close to major employers:</strong> Nike and Intel are both nearby, a real draw for tech-sector buyers.",
+        "<strong>Genuine housing variety:</strong> single detached homes, apartments and duplexes across a range of price points.",
+      ],
+      considerations: [
+        "<strong>Homes can sit a while:</strong> recently reported average days on market have run longer than in some other Beaverton neighborhoods.",
+        "<strong>Wide price range:</strong> compare specific listings rather than assuming one price point for the area.",
+        "<strong>Moderate walkability:</strong> a Walk Score around 61 means some errands are easier by car than on foot.",
+      ],
+      closing: [
+        "If real MAX access close to Nike and Intel is what you're after, Five Oaks / Triple Creek is worth comparing against Beaverton's other northwest neighborhoods before you decide.",
+      ],
+    },
+  ],
+  "Greenway, Beaverton": [
+    {
+      hook: "A Mature, Park-Anchored Address in Southeast Beaverton",
+      keyword: "Greenway Beaverton OR homes",
+      metaDescription:
+        "Moving to Beaverton, OR? See what Greenway is like — Greenway Park, Fanno Creek Trail access, home styles and current listings.",
+      excerpt:
+        "Thinking about moving to Beaverton, OR? Explore Greenway, a mature southeast Beaverton neighborhood anchored by its namesake park.",
+      gbp:
+        "If you're moving to Beaverton, OR, Greenway is worth researching — a mature, park-oriented neighborhood in southeast Beaverton widely described as one of the city's most desirable, established communities. Living here means genuine housing variety: ranch-style single-family homes, some dating to the mid-1970s, alongside apartments and condos with shared amenities like pools, tennis courts and a clubhouse. Greenway Park is the defining neighborhood feature, with Tualatin Hills Nature Park and the Fanno Creek Trail both close by for additional green space. Homes here have recently taken a bit longer to sell than in some other Beaverton neighborhoods, so it's worth comparing specific streets and property types rather than assuming uniformity. If you're comparing Greenway homes for sale or Beaverton OR homes for sale more broadly, the full neighborhood guide covers the park, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to Beaverton, Oregon, Greenway is worth a look — a mature, park-oriented neighborhood in southeast Beaverton.",
+        "The neighborhood is widely described as one of Beaverton's most desirable and established communities, anchored by its namesake Greenway Park.",
+      ],
+      livingIn: [
+        "Greenway offers a genuine variety of housing — duplexes, apartments and single detached homes, mostly two and three bedrooms, including ranch-style houses from the 1970s with fenced yards and attached garages.",
+      ],
+      whereLocated: [
+        "Greenway sits in southeast Beaverton, close to Tualatin Hills Nature Park and the Fanno Creek Trail, with single-family homes concentrated closer to South Beaverton.",
+      ],
+      homesIn: [
+        "Housing spans single detached ranch-style homes — some dating to the mid-1970s — alongside apartments and condos, some with shared amenities like pools, tennis courts and a clubhouse.",
+      ],
+      parks: [
+        "Greenway Park is the neighborhood's defining feature, and Tualatin Hills Nature Park and the Fanno Creek Trail are both close by for additional green space.",
+      ],
+      commute: [
+        "Greenway's southeast Beaverton location keeps it within reasonable reach of Beaverton's broader arterial network and transit options, with the usual time-of-day variability on actual drive times.",
+      ],
+      reasons: [
+        "<strong>Greenway Park:</strong> a real, defining neighborhood anchor.",
+        "<strong>Mature, established setting:</strong> widely described as one of Beaverton's most desirable communities.",
+        "<strong>Genuine housing variety:</strong> ranch-style single-family homes alongside apartments and amenity-rich condos.",
+      ],
+      considerations: [
+        "<strong>Homes can take a while to sell:</strong> recently reported average days on market have run close to 3 months.",
+        "<strong>Mixed property types:</strong> confirm whether you're touring a single-family home, condo or apartment-style unit.",
+        "<strong>Compare specific streets:</strong> single-family homes concentrate closer to South Beaverton, so location within the neighborhood varies.",
+      ],
+      closing: [
+        "If a mature, park-anchored setting is what you're after, Greenway is worth comparing against Beaverton's other established southeast neighborhoods before you decide.",
+      ],
+    },
+  ],
+  "Highland, Beaverton": [
+    {
+      hook: "Mid-Century Ranches on Genuinely Varied Lots",
+      keyword: "Highland Beaverton OR homes",
+      metaDescription:
+        "Moving to Beaverton, OR? See what Highland is like — mid-century ranch homes, large lots, nearby parks and current listings.",
+      excerpt:
+        "Thinking about moving to Beaverton, OR? Explore Highland, a southeast Beaverton neighborhood of mid-century ranch and split-level homes on genuinely varied lots.",
+      gbp:
+        "If you're moving to Beaverton, OR, Highland is worth researching — a southeast Beaverton neighborhood of mostly mid-20th-century homes on genuinely varied, larger-than-typical lots. Housing here leans heavily toward one-level ranches and split-levels built in the 1960s and 70s, complemented by small apartment buildings and townhomes. Taliesen Park and the roughly 30-acre Hyland Forest Park both serve the neighborhood, with green space worked throughout rather than concentrated in one spot. Worth noting: some sources also refer to this area as Hyland Hills or Highland Hills, so it's worth confirming the exact boundary for a specific address. If you're comparing Highland homes for sale or Beaverton OR homes for sale more broadly, the full neighborhood guide covers the home styles, park access and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to Beaverton, Oregon, Highland is worth a look — a southeast Beaverton neighborhood of mostly mid-20th-century homes on large, varied lots.",
+        "Some sources also reference this area as Hyland Hills or Highland Hills, so it's worth confirming the exact boundary for a specific address.",
+      ],
+      livingIn: [
+        "Highland's housing stock is primarily single detached homes from the mid-20th century — many one-level ranches and split-levels from the 1960s and 70s — complemented by small apartment buildings and townhomes. Large yards mean homes aren't built side by side the way they are in newer, denser subdivisions.",
+      ],
+      whereLocated: [
+        "Highland sits in southeast Beaverton, with green space located throughout the neighborhood and Taliesen Park and the roughly 30-acre Hyland Forest Park both nearby.",
+      ],
+      homesIn: [
+        "Most homes here are one-level ranches and split-levels built in the 1960s and 70s, on genuinely varied, larger-than-typical lots — residents describe real variety from one home to the next rather than one repeated design.",
+      ],
+      parks: [
+        "Taliesen Park and the roughly 30-acre Hyland Forest Park both serve the neighborhood, with green space worked into the layout throughout rather than concentrated in one spot.",
+      ],
+      commute: [
+        "Highland's southeast Beaverton location keeps it within reasonable reach of the broader Beaverton arterial network, with the usual time-of-day variability on actual drive times.",
+      ],
+      reasons: [
+        "<strong>Genuine lot variety:</strong> large yards and varied home designs rather than one repeated floor plan.",
+        "<strong>Established, well-maintained streets:</strong> described as one of Beaverton's more settled neighborhoods.",
+        "<strong>Real park access:</strong> Taliesen Park and the roughly 30-acre Hyland Forest Park both nearby.",
+      ],
+      considerations: [
+        "<strong>Boundary naming varies:</strong> some sources call this area Hyland Hills or Highland Hills — confirm which applies to a specific address.",
+        "<strong>Mid-century systems:</strong> homes from the 1960s and 70s may need updated wiring, roofing or mechanical systems depending on upkeep history.",
+        "<strong>Mixed property types:</strong> small apartment buildings and townhomes sit alongside single-family homes, so confirm what you're touring.",
+      ],
+      closing: [
+        "If genuine mid-century character on a real, varied lot is what you're after, Highland is worth a close look — just confirm the exact neighborhood naming and boundary for any specific address first.",
+      ],
+    },
+  ],
+  "Garden Home / Raleigh Hills, Beaverton": [
+    {
+      hook: "A Mailing-Address Patchwork Worth Sorting Out Early",
+      keyword: "Garden Home Raleigh Hills Beaverton OR homes",
+      metaDescription:
+        "Moving to the Beaverton, OR area? See what Garden Home / Raleigh Hills is like — mixed mailing addresses, home styles and current listings.",
+      excerpt:
+        "Thinking about moving to the Beaverton, OR area? Explore Garden Home / Raleigh Hills, an unincorporated Washington County area with mostly mid-century homes on generous lots.",
+      gbp:
+        "If you're moving to the Beaverton, OR area, Garden Home / Raleigh Hills is worth researching — a largely unincorporated Washington County area bordering both Portland and Beaverton, with real mid-century character on generous lots. Homes here range from beautifully preserved originals with details like coved ceilings and Dutch doors to more recently remodeled properties, many on lots with mature trees and real separation from neighbors. Because the area is unincorporated, mailing addresses are a genuine patchwork — some streets carry Portland addresses, others Beaverton — so it's worth confirming which applies to a specific property before you get far into a search. If you're comparing Garden Home / Raleigh Hills homes for sale or Beaverton OR homes for sale more broadly, the full neighborhood guide covers the mailing-address situation, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Beaverton, Oregon area, Garden Home / Raleigh Hills is worth a look — a largely unincorporated Washington County area with real mid-century character on generous lots.",
+        "Mailing addresses here are a genuine patchwork — some carry Portland addresses, others Beaverton, depending on the specific street.",
+      ],
+      livingIn: [
+        "Homes here are mostly mid-century or older, with mature trees and larger lots common on specific streets. Listings describe everything from beautifully preserved original-detail homes to more recently remodeled properties and newer apartment development.",
+      ],
+      whereLocated: [
+        "The area sits largely in unincorporated Washington County, bordering both Portland and Beaverton, which is why mailing addresses vary by specific street.",
+      ],
+      homesIn: [
+        "Most homes are single-level ranches, some updated for multigenerational living with bedrooms and bathrooms on multiple levels, set on genuinely generous lots — several with mature trees and landscaping, and at least one listing citing a year-round creek running through the property.",
+      ],
+      parks: [
+        "The area's appeal leans on its larger lots and established, tree-covered setting rather than one single named park — worth touring a specific street to get a feel for the lot sizes and privacy.",
+      ],
+      commute: [
+        "Being unincorporated and bordering both Portland and Beaverton keeps the area within reasonable reach of both cities' arterial networks, with actual drive time depending on the specific street and route.",
+      ],
+      reasons: [
+        "<strong>Genuine mid-century character:</strong> original details like coved ceilings, picture-rail moldings and Dutch doors show up in a number of homes.",
+        "<strong>Generous, varied lots:</strong> mature trees and real separation from neighbors on many streets.",
+        "<strong>New development is arriving:</strong> newer apartment communities point to continued investment in the area.",
+      ],
+      considerations: [
+        "<strong>Mailing address varies by street:</strong> confirm whether a specific property carries a Portland or Beaverton address before assuming either.",
+        "<strong>Unincorporated jurisdiction:</strong> some services and permitting run through Washington County rather than a city — worth confirming for any specific address.",
+        "<strong>Mixed home ages:</strong> compare specific properties, since original mid-century detail and more recent remodels sit on the same streets.",
+      ],
+      closing: [
+        "If generous mid-century lots near both Portland and Beaverton are what you're after, Garden Home / Raleigh Hills is worth a look — just confirm the mailing address and jurisdiction for the specific street before you get too far into a search.",
+      ],
+    },
+  ],
+  "Tanasbourne, Beaverton": [
+    {
+      hook: "A 1970s-Planned Address That Spans Two Cities",
+      keyword: "Tanasbourne Beaverton OR homes",
+      metaDescription:
+        "Moving to the Beaverton, OR area? See what Tanasbourne is like — apartments, townhomes, split school districts and current listings.",
+      excerpt:
+        "Thinking about moving to the Beaverton, OR area? Explore Tanasbourne, a 1970s-planned community spanning Beaverton and Hillsboro with a mostly renter-occupied housing mix.",
+      gbp:
+        "If you're moving to the Beaverton, OR area, Tanasbourne is worth researching — a community that actually spans both Beaverton and Hillsboro, developed starting in the 1970s by Standard Insurance Company along the Sunset Highway near 185th Avenue. Housing here is primarily apartments, high-rises and townhomes, most of it renter-occupied, built mostly between 1970 and 1999 with newer construction since 2000. The Streets of Tanasbourne retail district anchors the area for everyday shopping, with US-26 providing direct access toward Portland and Hillsboro's employment centers. Because the area straddles two cities, school district depends on the specific address — some fall in Hillsboro School District, others in Beaverton School District — so it's worth confirming directly. If you're comparing Tanasbourne homes for sale or Beaverton OR homes for sale more broadly, the full neighborhood guide covers the housing mix, school districts and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Beaverton, Oregon area, Tanasbourne is worth a look — a community that actually spans both Beaverton and Hillsboro, roughly bounded by US-26, Walker Road, 158th Avenue and Cornelius Pass Road.",
+        "The area was developed starting in the 1970s by Standard Insurance Company along the Sunset Highway near 185th Avenue, and school district depends on the specific address — some fall in Hillsboro School District, others in Beaverton School District.",
+      ],
+      livingIn: [
+        "Tanasbourne's housing is primarily small to medium-sized apartment complexes, high-rise apartments and townhomes, with most residential real estate renter-occupied rather than owner-occupied. Homes here were mostly built between 1970 and 1999, with newer construction since 2000.",
+      ],
+      whereLocated: [
+        "Tanasbourne sits along US-26 near 185th Avenue, spanning the Beaverton/Hillsboro line, with a denser, more urban sub-area sometimes distinguished as Tanasbourne East.",
+      ],
+      homesIn: [
+        "Most housing here is apartments and townhomes rather than detached single-family homes, built mostly from the 1970s through the 1990s with some newer construction since 2000. Reported price points vary widely across sources, so comparing specific current listings matters more than relying on any single average.",
+      ],
+      parks: [
+        "The Streets of Tanasbourne retail district anchors the area for everyday shopping, and its proximity to US-26 keeps commuting toward Portland or Hillsboro's employment centers straightforward.",
+      ],
+      commute: [
+        "US-26 provides the primary driving route, with Tanasbourne's location putting both downtown Portland and Hillsboro's employment centers within reasonable reach, depending on time of day.",
+      ],
+      reasons: [
+        "<strong>Genuinely central location:</strong> straddling Beaverton and Hillsboro along US-26.",
+        "<strong>Housing variety:</strong> apartments, high-rises and townhomes across a range of build years.",
+        "<strong>The Streets of Tanasbourne:</strong> a real retail anchor for everyday shopping.",
+      ],
+      considerations: [
+        "<strong>Split school districts:</strong> some addresses fall in Hillsboro School District, others in Beaverton School District — confirm directly for a specific property.",
+        "<strong>Mostly renter-occupied:</strong> buyers specifically wanting a single-family home may find fewer options here than in a traditional subdivision.",
+        "<strong>Price data varies by source:</strong> compare current listings directly rather than relying on a single average.",
+      ],
+      closing: [
+        "If a central, retail-anchored address spanning Beaverton and Hillsboro is what you're after, Tanasbourne is worth a look — just confirm the school district and housing type for the specific address first.",
+      ],
+    },
+  ],
+  "Murrayhill, Beaverton": [
+    {
+      hook: "A Genuine Range of Home Types in South Beaverton",
+      keyword: "Murrayhill Beaverton OR homes",
+      metaDescription:
+        "Moving to Beaverton, OR? See what Murrayhill is like — home types, nearby neighborhoods, schools and current listings.",
+      excerpt:
+        "Thinking about moving to Beaverton, OR? Explore Murrayhill (sometimes spelled Murray Hill), a south Beaverton neighborhood with a genuine range of home types.",
+      gbp:
+        "If you're moving to Beaverton, OR, Murrayhill is worth researching — a south Beaverton neighborhood (sometimes spelled Murray Hill in listings) with a genuinely wide range of housing. Living here means single-family homes with garages, townhouses and condos, including a meaningful share of single-story properties, across a price range that's recently spanned roughly the high $300,000s to the mid-$600,000s depending on property type. The neighborhood sits close to Sexton Mountain, Progress Ridge and South Beaverton, giving buyers several comparable neighborhoods to tour side by side. Homes here have recently taken a bit longer to sell than in some other Beaverton neighborhoods, so it's worth comparing specific property types rather than assuming one price point. If you're comparing Murrayhill homes for sale or Beaverton OR homes for sale more broadly, the full neighborhood guide covers the home types, nearby areas and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to Beaverton, Oregon, Murrayhill is worth a look — a south Beaverton neighborhood (sometimes spelled Murray Hill in listings) with a genuine range of housing types.",
+        "The area sits near Sexton Mountain, Progress Ridge and South Beaverton, giving buyers several nearby neighborhoods to compare directly.",
+      ],
+      livingIn: [
+        "Murrayhill's housing spans single-family homes with garages, townhouses and condos, including a meaningful share of single-story properties and some with views. It's a genuinely varied market rather than one repeated product type.",
+      ],
+      whereLocated: [
+        "Murrayhill sits in south Beaverton (97007), close to Sexton Mountain, Progress Ridge and South Beaverton.",
+      ],
+      homesIn: [
+        "Homes here range from single-family houses with garages to townhouses and condos, with single-story options a meaningful share of what's available. Reported recent median prices have spanned roughly the high $300,000s for condos to the mid-$600,000s for single-family homes with garages — a wide enough range that comparing specific property types matters more than assuming one price point.",
+      ],
+      parks: [
+        "The neighborhood's south Beaverton setting keeps it close to Progress Ridge's shopping and park amenities without being inside that commercial core directly.",
+      ],
+      commute: [
+        "Murrayhill's south Beaverton location keeps it within reasonable reach of Highway 217 and the broader Washington County arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Genuine range of home types:</strong> single-family houses, townhouses and condos across a wide price range.",
+        "<strong>Close to several comparable neighborhoods:</strong> Sexton Mountain, Progress Ridge and South Beaverton are all nearby for easy side-by-side touring.",
+        "<strong>Single-story options:</strong> a meaningful share of the market for buyers who specifically want one-level living.",
+      ],
+      considerations: [
+        "<strong>Homes can sit a while:</strong> recently reported average days on market have run longer than in some other Beaverton neighborhoods.",
+        "<strong>Wide price range:</strong> compare specific property types, since condos, townhouses and single-family homes carry very different price points.",
+        "<strong>Spelling varies:</strong> some listings use \"Murray Hill\" rather than \"Murrayhill\" — worth searching both when comparing listings.",
+      ],
+      closing: [
+        "If a genuinely wide range of home types in south Beaverton is what you're after, Murrayhill is worth comparing directly against Sexton Mountain and Progress Ridge before you decide.",
+      ],
+    },
+  ],
+  "Progress Ridge, Beaverton": [
+    {
+      hook: "Courtyard Townhomes Anchored by the Town Center",
+      keyword: "Progress Ridge Beaverton OR homes",
+      metaDescription:
+        "Moving to Beaverton, OR? See what Progress Ridge is like — townhomes, the Town Center, nearby parks and current listings.",
+      excerpt:
+        "Thinking about moving to Beaverton, OR? Explore Progress Ridge, a townhome-heavy neighborhood anchored by the Progress Ridge Town Center.",
+      gbp:
+        "If you're moving to Beaverton, OR, Progress Ridge is worth researching — a neighborhood anchored by the Progress Ridge Town Center, with real tree cover and a genuine courtyard-townhome feel. Living here means mostly townhomes and condos in Craftsman-style or European-style courtyard-entry buildings, with updated kitchens, hardwood or luxury vinyl flooring, high ceilings and gas fireplaces common across listings, plus a smaller share of single-family homes with larger garages. The Town Center itself is the real neighborhood anchor for everyday shopping and dining. Because the neighborhood sits near the Beaverton/Tigard boundary, some listings label properties as Tigard rather than Beaverton, so it's worth confirming which applies to a specific address. If you're comparing Progress Ridge homes for sale or Beaverton OR homes for sale more broadly, the full neighborhood guide covers the home styles, town center and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to Beaverton, Oregon, Progress Ridge is worth a look — a neighborhood anchored by the Progress Ridge Town Center shopping area, with real tree cover throughout.",
+        "The neighborhood sits near the Tigard boundary, so some listings label properties as Tigard rather than Beaverton — worth confirming for a specific address.",
+      ],
+      livingIn: [
+        "Progress Ridge leans heavily toward townhomes and condominiums — several in Craftsman-style or European-style courtyard-entry buildings — alongside some single-family homes with larger garages. Updated kitchens, hardwood or luxury vinyl flooring, high ceilings and gas fireplaces are common features across listings.",
+      ],
+      whereLocated: [
+        "Progress Ridge sits near the Beaverton/Tigard boundary, about half a mile from the Progress Ridge Town Center and surrounding parks.",
+      ],
+      homesIn: [
+        "Most homes here are townhomes and condos in courtyard-style buildings, with a smaller share of single-family homes on larger lots with bigger garages. Some units offer top-floor forest views, and quiet, treed settings come up often in how the neighborhood is described.",
+      ],
+      parks: [
+        "The Progress Ridge Town Center is the neighborhood's real anchor for everyday shopping and dining, with nearby parks adding additional green space.",
+      ],
+      commute: [
+        "Progress Ridge's location near the Beaverton/Tigard line keeps it within reasonable reach of Highway 217 and the broader Washington County arterial network.",
+      ],
+      reasons: [
+        "<strong>Progress Ridge Town Center:</strong> a real, walkable shopping and dining anchor close by.",
+        "<strong>Genuine courtyard townhome architecture:</strong> Craftsman and European-style courtyard entries rather than a generic subdivision look.",
+        "<strong>Treed, quiet setting:</strong> mature tree cover and some top-floor forest views in specific buildings.",
+      ],
+      considerations: [
+        "<strong>City boundary ambiguity:</strong> some listings label properties as Tigard rather than Beaverton — confirm for a specific address.",
+        "<strong>Townhome/condo-heavy:</strong> buyers specifically wanting a detached single-family home will find fewer options here.",
+        "<strong>Compare specific buildings:</strong> HOA dues, age and amenities vary meaningfully across the different courtyard communities.",
+      ],
+      closing: [
+        "If real townhome architecture anchored by a genuine town center is what you're after, Progress Ridge is worth a look — just confirm the exact city boundary for any specific address first.",
+      ],
+    },
+  ],
+  "Cedar Hills, Beaverton": [
+    {
+      hook: "Mid-Century Modern Homes With Real MAX Access",
+      keyword: "Cedar Hills Beaverton OR homes",
+      metaDescription:
+        "Moving to Beaverton, OR? See what Cedar Hills is like — mid-century homes, MAX access, parks and current listings.",
+      excerpt:
+        "Thinking about moving to Beaverton, OR? Explore Cedar Hills, a mid-century modern neighborhood with real MAX access and tree-lined streets.",
+      gbp:
+        "If you're moving to Beaverton, OR, Cedar Hills is worth researching — a neighborhood known for mid-century modern architecture, tree-lined streets and real transit access via the Millikan Way MAX station and several bus lines. Living here spans single-level ranches and tri-levels from the early 1960s, some with original details intact, up to larger four-plus-bedroom homes. Cedar Hills Park, Tualatin Hills Nature Park and Commonwealth Lake Park are all close by, along with Cedar Hills Crossing for everyday shopping. Recently reported sales for three- and four-bedroom homes have ranged roughly from $545,000 to $689,000. Worth noting: some addresses here carry a Portland 97225 mailing address rather than Beaverton, so it's worth confirming for a specific property. If you're comparing Cedar Hills homes for sale or Beaverton OR homes for sale more broadly, the full neighborhood guide covers the home styles, transit access and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to Beaverton, Oregon, Cedar Hills is worth a look — a neighborhood known for mid-century modern architecture and tree-lined streets, served by the Beaverton School District.",
+        "Some addresses here carry a Portland 97225 mailing address rather than Beaverton, so it's worth checking for a specific property.",
+      ],
+      livingIn: [
+        "Cedar Hills offers a real range of housing — from lofts to spacious four-plus-bedroom homes — with a strong mid-century modern thread running through many properties, including single-level ranches and tri-levels from the early 1960s.",
+      ],
+      whereLocated: [
+        "Cedar Hills is close to Cedar Hills Park, Tualatin Hills Nature Park and Commonwealth Lake Park, with the Millikan Way MAX station and several bus lines serving the area.",
+      ],
+      homesIn: [
+        "Housing spans mid-century single-level ranches and tri-levels, some with original details and fireplaces, up to larger four-plus-bedroom homes. Recently reported sales for three- and four-bedroom homes have ranged roughly from $545,000 to $689,000, with smaller homes selling for less.",
+      ],
+      parks: [
+        "Cedar Hills Park sits close by, with Tualatin Hills Nature Park and Commonwealth Lake Park both reachable for additional green space, and Cedar Hills Crossing nearby for everyday shopping.",
+      ],
+      commute: [
+        "The Millikan Way MAX station and several bus lines serve Cedar Hills directly, giving residents a real transit alternative alongside the broader Beaverton arterial network for driving.",
+      ],
+      reasons: [
+        "<strong>Genuine mid-century architecture:</strong> single-level ranches and tri-levels, some with original details intact.",
+        "<strong>Real MAX and bus access:</strong> the Millikan Way station plus several bus lines serve the neighborhood directly.",
+        "<strong>Strong park access:</strong> Cedar Hills Park, Tualatin Hills Nature Park and Commonwealth Lake Park all nearby.",
+      ],
+      considerations: [
+        "<strong>Mailing address varies:</strong> some properties carry a Portland 97225 address rather than Beaverton — confirm for a specific address.",
+        "<strong>Mid-century systems:</strong> homes from the early 1960s may need updated wiring, roofing or mechanical systems depending on upkeep history.",
+        "<strong>Price range varies by size:</strong> compare specific listings, since smaller homes and larger four-plus-bedroom properties sell at very different price points.",
+      ],
+      closing: [
+        "If genuine mid-century character with real transit access is what you're after, Cedar Hills is worth a look — just confirm the mailing address and specific home's condition before you decide.",
+      ],
+    },
+  ],
+  "Oak Hills, Beaverton": [
+    {
+      hook: "A Master-Planned, NPS-Listed Community With Real Amenities",
+      keyword: "Oak Hills Beaverton OR homes",
+      metaDescription:
+        "Moving to Beaverton, OR? See what Oak Hills is like — a historic master-planned community, amenities, home styles and current listings.",
+      excerpt:
+        "Thinking about moving to Beaverton, OR? Explore Oak Hills, a National Register-listed, master-planned community with real neighborhood amenities.",
+      gbp:
+        "If you're moving to Beaverton, OR, Oak Hills is worth researching — a roughly 240-acre, master-planned community listed on the National Register of Historic Places. Living here means 627 single-family detached homes and four townhouse clusters, mostly mid-century ranches from the late 1960s and early 1970s alongside some newer colonial farmhouse-style homes on cul-de-sacs, all set among mature oak trees. Residents share real amenities built into the original plan: swimming pools, tennis courts, a recreation center, a community room, playgrounds, walking trails and an elementary school. Recently reported sales have ranged roughly from $525,000 to $975,000, with newer or larger homes toward the higher end. If you're comparing Oak Hills homes for sale or Beaverton OR homes for sale more broadly, the full neighborhood guide covers the amenities, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to Beaverton, Oregon, Oak Hills is worth a look — a roughly 240-acre, master-planned community listed on the National Register of Historic Places.",
+        "The community includes 627 single-family detached homes and four townhouse clusters totaling 24 units, along with parks, a school and a recreation center built into the original plan.",
+      ],
+      livingIn: [
+        "Oak Hills is a genuinely cohesive, planned neighborhood — mid-century ranches from the late 1960s and early 1970s alongside some newer colonial farmhouse-style homes on cul-de-sacs, all set among mature oak trees.",
+      ],
+      whereLocated: [
+        "Oak Hills sits as a single, master-planned community in Beaverton, surrounded by newer suburban subdivisions, with more than 40 acres of green space built into the layout.",
+      ],
+      homesIn: [
+        "Most homes are single-family ranches from the late 1960s and early 1970s, often combining original mid-century character with later updates, alongside newer homes on cul-de-sacs backing onto greenspace. Recently reported sales have ranged roughly from $525,000 to $975,000, with newer or larger homes toward the higher end.",
+      ],
+      parks: [
+        "Residents have access to swimming pools, tennis courts, a recreation center, a community room, playgrounds, walking trails and an elementary school — all part of the original planned community rather than added later.",
+      ],
+      commute: [
+        "Oak Hills' Beaverton location keeps it within reasonable reach of the broader Washington County arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Genuinely planned community:</strong> parks, a school and a recreation center built into the original 1960s design.",
+        "<strong>Real shared amenities:</strong> pools, tennis courts, a rec center, playgrounds and walking trails.",
+        "<strong>Mature oak trees throughout:</strong> a settled, established feel across the whole 240-acre community.",
+      ],
+      considerations: [
+        "<strong>Wide price range:</strong> recently reported sales have spanned roughly $525,000 to $975,000 — compare specific homes rather than assuming one price point.",
+        "<strong>Mid-century systems:</strong> homes from the late 1960s and early 1970s may need updated wiring, roofing or mechanical systems depending on upkeep history.",
+        "<strong>HOA or amenity dues likely:</strong> confirm what funds the shared pools, tennis courts and rec center for a specific property.",
+      ],
+      closing: [
+        "If a genuinely planned community with real shared amenities is what you're after, Oak Hills is worth a close look — the pools, trails and rec center are easy to underestimate until you've seen them in person.",
       ],
     },
   ],
