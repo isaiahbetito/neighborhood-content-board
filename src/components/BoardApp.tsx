@@ -94,6 +94,12 @@ const AREAS: [string, string][] = [
   ["Canemah, Oregon City", "canemah-oregon-city-or"],
   ["Historic Milwaukie, Milwaukie", "historic-milwaukie-or"],
   ["Rock Creek, Happy Valley", "rock-creek-happy-valley-or"],
+  ["Ardenwald-Johnson Creek, Milwaukie", "ardenwald-johnson-creek-milwaukie-or"],
+  ["Hector Campbell, Milwaukie", "hector-campbell-milwaukie-or"],
+  ["Island Station, Milwaukie", "island-station-milwaukie-or"],
+  ["Lake Road, Milwaukie", "lake-road-milwaukie-or"],
+  ["Lewelling, Milwaukie", "lewelling-milwaukie-or"],
+  ["Linwood, Milwaukie", "linwood-milwaukie-or"],
 ];
 
 // State grouping for the filter/checklist UI. WA areas above came first (7 original +
@@ -110,6 +116,12 @@ const OR_AREA_NAMES = new Set([
   "Canemah, Oregon City",
   "Historic Milwaukie, Milwaukie",
   "Rock Creek, Happy Valley",
+  "Ardenwald-Johnson Creek, Milwaukie",
+  "Hector Campbell, Milwaukie",
+  "Island Station, Milwaukie",
+  "Lake Road, Milwaukie",
+  "Lewelling, Milwaukie",
+  "Linwood, Milwaukie",
 ]);
 const AREA_STATE: Record<string, "WA" | "OR"> = Object.fromEntries(
   AREAS.map(([name]) => [name, OR_AREA_NAMES.has(name) ? ("OR" as const) : ("WA" as const)])
@@ -274,6 +286,12 @@ const SCHOOL_DISTRICTS: Record<string, string> = {
   "Canemah, Oregon City": "Oregon City School District",
   "Historic Milwaukie, Milwaukie": "North Clackamas School District",
   "Rock Creek, Happy Valley": "North Clackamas School District",
+  "Ardenwald-Johnson Creek, Milwaukie": "North Clackamas School District",
+  "Hector Campbell, Milwaukie": "North Clackamas School District",
+  "Island Station, Milwaukie": "North Clackamas School District",
+  "Lake Road, Milwaukie": "North Clackamas School District",
+  "Lewelling, Milwaukie": "North Clackamas School District",
+  "Linwood, Milwaukie": "North Clackamas School District",
 };
 
 const YOUTUBE_URL = "https://www.youtube.com/@jamiemeushawrealestate";
@@ -3885,6 +3903,276 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       closing: [
         "A weekday drive through Rock Creek alongside a visit to one of Happy Valley's newer hillside developments tends to make the difference in pace and maturity obvious fairly quickly.",
+      ],
+    },
+  ],
+  "Ardenwald-Johnson Creek, Milwaukie": [
+    {
+      hook: "A Family-Oriented Neighborhood Along the Springwater Corridor",
+      keyword: "Ardenwald-Johnson Creek Milwaukie OR homes",
+      metaDescription:
+        "Moving to Milwaukie, OR? See what Ardenwald-Johnson Creek is like — Springwater Corridor access, schools and home styles, plus listings.",
+      excerpt:
+        "Thinking about moving to Milwaukie, OR? Explore Ardenwald-Johnson Creek, a family-oriented neighborhood centered on Ardenwald Elementary with direct access to the Springwater Corridor trail.",
+      gbp:
+        "If you're moving to Milwaukie, OR, Ardenwald-Johnson Creek is worth researching — a family-oriented neighborhood centered on Ardenwald Elementary that straddles the Milwaukie/Portland border. Living here means genuine historic character: an 1888 Italianate house, a 1922 Colonial Revival the city of Milwaukie has cited as one of its finest examples of the style, and a 1941 Arts and Crafts home designed by Portland architect Richard Sundeleaf, alongside newer, smaller cottage-style homes built more recently as permanently affordable housing. The neighborhood runs along Johnson Creek, bordered by Tideman Johnson Park and the Springwater Corridor trail, giving residents direct walking and biking access without leaving the area. Because part of the neighborhood sits across the line in Portland, it's worth confirming which city a specific address falls in. If you're comparing Ardenwald-Johnson Creek homes for sale or Milwaukie OR homes for sale more broadly, the full neighborhood guide covers the historic homes, trail access and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to Milwaukie, Oregon, Ardenwald-Johnson Creek is worth a look — a family-oriented neighborhood that straddles the Milwaukie/Portland border, centered on Ardenwald Elementary.",
+        "The neighborhood runs along Johnson Creek, with the Springwater Corridor trail and Tideman Johnson Park forming its southern edge.",
+      ],
+      livingIn: [
+        "Ardenwald-Johnson Creek mixes genuinely historic homes — including an 1888 Italianate and a 1922 Colonial Revival the city cites as one of Milwaukie's finest examples of the style — with newer construction, including a small cottage development of 960-square-foot, two-bedroom homes built as permanently affordable housing.",
+      ],
+      whereLocated: [
+        "The neighborhood sits on the Milwaukie side of the Milwaukie-Portland border, built around Ardenwald Elementary School, with Johnson Creek and the Springwater Corridor trail along its southern edge.",
+      ],
+      homesIn: [
+        "Housing here spans real history — an 1888 Italianate house, a 1922 Colonial Revival the city of Milwaukie has cited as one of its best examples of the style, and a 1941 Arts and Crafts home designed by Portland architect Richard Sundeleaf — alongside newer, smaller cottage-style construction built more recently as permanently affordable housing.",
+      ],
+      parks: [
+        "Tideman Johnson Park and the Springwater Corridor trail run along Johnson Creek at the neighborhood's edge, giving residents direct walking and biking access to one of the metro's longer multi-use trails.",
+      ],
+      commute: [
+        "Straddling the Milwaukie/Portland border keeps the neighborhood close to both downtowns, with OR-99E and the broader Milwaukie arterial network providing the main driving routes — actual drive time varies by time of day, so it's worth testing your specific route.",
+      ],
+      reasons: [
+        "<strong>Genuine historic homes:</strong> an 1888 Italianate, a city-cited 1922 Colonial Revival, and a 1941 Sundeleaf-designed Arts and Crafts house.",
+        "<strong>Springwater Corridor access:</strong> direct trail and park access along Johnson Creek.",
+        "<strong>Family-oriented setting:</strong> centered on Ardenwald Elementary, with a genuine neighborhood-association community feel.",
+      ],
+      considerations: [
+        "<strong>Straddles two cities:</strong> part of the neighborhood sits in Portland rather than Milwaukie — worth confirming which side a specific address falls on.",
+        "<strong>Mixed housing ages:</strong> genuinely historic homes sit alongside newer cottage-style construction, so comparing specific properties matters more than assuming uniformity.",
+        "<strong>Older home systems:</strong> homes dating to the late 1800s and early 1900s may need updated wiring or mechanical systems.",
+      ],
+      closing: [
+        "If genuine historic character paired with direct Springwater Corridor access is what you're after, Ardenwald-Johnson Creek is worth comparing against Milwaukie's other close-in neighborhoods before you decide.",
+      ],
+    },
+  ],
+  "Hector Campbell, Milwaukie": [
+    {
+      hook: "A Walkable, Mid-Century Address With Real Bus Access",
+      keyword: "Hector Campbell Milwaukie OR homes",
+      metaDescription:
+        "Moving to Milwaukie, OR? See what Hector Campbell is like — 1960s ranch homes, bus access, schools and current listings.",
+      excerpt:
+        "Thinking about moving to Milwaukie, OR? Explore Hector Campbell, a mid-century ranch-and-cottage neighborhood with mature trees and real bus access.",
+      gbp:
+        "If you're moving to Milwaukie, OR, Hector Campbell is worth researching — a mid-century neighborhood of mostly single detached homes built around the 1960s, with a mix of cottage-style and ranch houses plus some duplexes and newer townhomes. Mature trees and a settled, long-tenured feel are common themes among residents here. Several TriMet bus lines run through the neighborhood, giving it a moderately walkable Walk Score and a real transit option beyond driving. Recently sold homes have ranged roughly from the $420,000s to the $650,000s, so comparing specific listings matters more than assuming one price point for the area. Linwood Elementary, Rowe Middle School and Milwaukie High School serve the neighborhood. If you're comparing Hector Campbell homes for sale or Milwaukie OR homes for sale more broadly, the full neighborhood guide covers transit access, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to Milwaukie, Oregon, Hector Campbell is worth a look — a mid-century neighborhood of mostly single detached homes with real transit access.",
+        "The neighborhood is served by Linwood Elementary, Rowe Middle School and Milwaukie High School.",
+      ],
+      livingIn: [
+        "Hector Campbell's housing stock is mainly single detached homes built around the 1960s — a mix of cottage-style and ranch houses, with some duplexes and newer townhomes mixed in. Mature trees and a settled feel are common themes in how residents describe the streets.",
+      ],
+      whereLocated: [
+        "Hector Campbell is a residential neighborhood within Milwaukie, with several TriMet bus lines running through it and a Walk Score in the moderately walkable range.",
+      ],
+      homesIn: [
+        "Most homes here are mid-century single detached houses — cottage-style and ranch floor plans built around the 1960s — with some duplexes and newer townhomes on the same streets. Recently sold homes have ranged roughly from the $420,000s to the $650,000s, so comparing specific listings matters more than assuming one price point for the neighborhood.",
+      ],
+      parks: [
+        "The neighborhood is served by several TriMet bus lines, giving residents a real transit option for errands and commuting without relying solely on a car.",
+      ],
+      commute: [
+        "Multiple bus lines run through Hector Campbell, and its moderate walkability means some errands are realistic on foot. For driving, OR-99E and the broader Milwaukie arterial network connect toward downtown Milwaukie and Portland.",
+      ],
+      reasons: [
+        "<strong>Mid-century housing stock:</strong> mostly 1960s-era cottage and ranch homes with mature trees.",
+        "<strong>Real transit access:</strong> several TriMet bus lines run through the neighborhood.",
+        "<strong>Established, settled feel:</strong> longtime residents and mature landscaping rather than a newer subdivision feel.",
+      ],
+      considerations: [
+        "<strong>Price range varies:</strong> recently sold homes have spanned roughly $420,000 to $655,000 — compare specific listings rather than assuming one price point.",
+        "<strong>Mixed property types:</strong> duplexes and newer townhomes sit alongside single-family homes, so confirm what you're actually touring.",
+        "<strong>Mid-century systems:</strong> homes built in the 1960s may need updated wiring, roofing or mechanical systems depending on upkeep history.",
+      ],
+      closing: [
+        "If a settled, mid-century neighborhood with real transit access is what you're after, Hector Campbell is worth comparing against Milwaukie's other established neighborhoods before you decide.",
+      ],
+    },
+  ],
+  "Island Station, Milwaukie": [
+    {
+      hook: "A Secluded Riverside Address Off the Beaten Path",
+      keyword: "Island Station Milwaukie OR homes",
+      metaDescription:
+        "Moving to Milwaukie, OR? See what Island Station is like — Willamette riverside setting, 1920s homes and current listings.",
+      excerpt:
+        "Thinking about moving to Milwaukie, OR? Explore Island Station, a secluded riverside neighborhood of substantial 1920s-era properties along the Willamette.",
+      gbp:
+        "If you're moving to Milwaukie, OR, Island Station is worth researching — a small, secluded neighborhood along the Willamette River, set apart from the city's main roads. Living here means substantial properties mostly dating to the 1920s, including the William Schindler House, reportedly built in 1888 and cited among the oldest surviving houses in Milwaukie. Elk Rock Park is close by for river access and green space, and the neighborhood sits roughly five minutes from downtown Milwaukie and about fifteen from downtown Portland. Because this is a small pocket neighborhood, listings don't come up often, and the same seclusion that draws some buyers means less everyday walkability than more central Milwaukie neighborhoods. If you're comparing Island Station homes for sale or Milwaukie OR homes for sale more broadly, the full neighborhood guide covers the riverside setting, historic homes and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to Milwaukie, Oregon, Island Station is worth a look — a small, secluded neighborhood along the Willamette River, set apart from Milwaukie's main roads.",
+        "The area is close to Elk Rock Park, roughly five minutes from downtown Milwaukie and about fifteen from downtown Portland.",
+      ],
+      livingIn: [
+        "Island Station is a riverside pocket of substantial properties, most dating to the 1920s, in an area off the beaten path rather than along a through-street. The city of Milwaukie's historic properties inventory includes the William Schindler House, reportedly built in 1888 and among the oldest surviving houses in the city.",
+      ],
+      whereLocated: [
+        "Island Station sits along the Willamette River within Milwaukie, close to Elk Rock Park, with downtown Milwaukie about five minutes away and downtown Portland roughly fifteen.",
+      ],
+      homesIn: [
+        "Most homes here are substantial 1920s-era properties on larger lots, with some genuinely historic examples — including the William Schindler House, dated to 1888 and cited as one of the oldest surviving houses in Milwaukie, though it has reportedly been altered since. Newer homes do appear on occasion, typically marketed for river-adjacent privacy and greenspace views.",
+      ],
+      parks: [
+        "Elk Rock Park is close by for river access and green space, and the neighborhood's secluded, off-main-road setting is itself one of the more frequently cited draws.",
+      ],
+      commute: [
+        "Downtown Milwaukie is about a five-minute drive, and downtown Portland roughly fifteen, though actual drive time depends on the route and time of day.",
+      ],
+      reasons: [
+        "<strong>Riverside, secluded setting:</strong> set apart from Milwaukie's main roads, directly along the Willamette.",
+        "<strong>Genuine 1920s-era character:</strong> substantial older properties, including some of the city's oldest surviving homes.",
+        "<strong>Close to both downtowns:</strong> roughly five minutes to downtown Milwaukie, about fifteen to Portland.",
+      ],
+      considerations: [
+        "<strong>Small, limited inventory:</strong> this is a small pocket neighborhood, so listings don't come up often.",
+        "<strong>Older home systems:</strong> properties dating to the 1920s (and earlier, in some cases) may need updated wiring, plumbing or mechanical systems.",
+        "<strong>Off the main roads:</strong> the same seclusion that's a draw for some buyers means less walkability to everyday retail than more central Milwaukie neighborhoods.",
+      ],
+      closing: [
+        "If a secluded, river-adjacent setting with genuine older character is what you're after, Island Station is worth watching closely — inventory here is limited enough that it's easy to miss a listing if you're not already paying attention.",
+      ],
+    },
+  ],
+  "Lake Road, Milwaukie": [
+    {
+      hook: "A Quieter Mid-Century Pocket Near the River",
+      keyword: "Lake Road Milwaukie OR homes",
+      metaDescription:
+        "Moving to Milwaukie, OR? See what Lake Road is like — mid-century homes, Milwaukie Bay Park access and current listings.",
+      excerpt:
+        "Thinking about moving to Milwaukie, OR? Explore Lake Road, a smaller mid-century neighborhood near Milwaukie Bay Park and the Willamette River.",
+      gbp:
+        "If you're moving to Milwaukie, OR, Lake Road is worth researching — a smaller, mid-century neighborhood with a settled, tree-lined feel. At roughly 2,874 residents, it's noticeably smaller and quieter than many of Milwaukie's other neighborhoods. Housing here leans mid-century, with some genuine period examples — one 1956 home listed with a low-pitched roofline and clerestory windows typical of the era. Milwaukie Bay Park, where the Willamette River meets Kellogg Creek, offers nearby riverfront green space, and Elk Rock Island is a short drive away for additional river access. Because this is one of Milwaukie's smaller neighborhoods, fewer listings turn over here at any given time, so it's worth comparing specific homes rather than waiting for a perfect match. If you're comparing Lake Road homes for sale or Milwaukie OR homes for sale more broadly, the full neighborhood guide covers the mid-century homes, park access and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to Milwaukie, Oregon, Lake Road is worth a look — a smaller, mid-century neighborhood with a settled, tree-lined feel.",
+        "At roughly 2,874 residents, it's smaller than many of Milwaukie's other neighborhoods, which shows up in how quiet its streets tend to be.",
+      ],
+      livingIn: [
+        "Lake Road's housing leans mid-century, with some homes — including a 1956 example with a low-pitched roofline and clerestory windows — showing genuine period architecture. Tree-lined streets and a settled community feel are common themes in how the area is described.",
+      ],
+      whereLocated: [
+        "Lake Road sits within Milwaukie near Milwaukie Bay Park, with Elk Rock Island a short drive away.",
+      ],
+      homesIn: [
+        "Homes here are predominantly mid-century, with some genuine period examples — low-pitched rooflines, clerestory windows and other 1950s design details show up in listings — alongside more recent updates and additions over the decades.",
+      ],
+      parks: [
+        "Milwaukie Bay Park offers riverfront green space where the Willamette River meets Kellogg Creek, and Elk Rock Island is a short drive away for additional river access.",
+      ],
+      commute: [
+        "Lake Road's location within Milwaukie keeps it within reasonable reach of downtown Milwaukie and OR-99E, with the usual time-of-day variability on actual drive times.",
+      ],
+      reasons: [
+        "<strong>Mid-century character:</strong> genuine 1950s-era architectural details in a number of homes.",
+        "<strong>Milwaukie Bay Park access:</strong> riverfront green space where the Willamette meets Kellogg Creek.",
+        "<strong>Smaller, quieter neighborhood:</strong> roughly 2,874 residents, noticeably smaller than many other Milwaukie neighborhoods.",
+      ],
+      considerations: [
+        "<strong>Limited inventory:</strong> being one of Milwaukie's smaller neighborhoods means fewer listings turn over at any given time.",
+        "<strong>Mid-century systems:</strong> homes from the 1950s and 1960s may need updated wiring, roofing or mechanical systems depending on upkeep history.",
+        "<strong>Mixed updates:</strong> compare specific homes, since some have been renovated more thoroughly than others over the decades.",
+      ],
+      closing: [
+        "If a quieter, mid-century neighborhood with real river-park access is what you're after, Lake Road is worth comparing against Milwaukie's other established areas before you decide.",
+      ],
+    },
+  ],
+  "Lewelling, Milwaukie": [
+    {
+      hook: "A Classic Mix of Homes Anchored by the Neighborhood Park",
+      keyword: "Lewelling Milwaukie OR homes",
+      metaDescription:
+        "Moving to Milwaukie, OR? See what Lewelling is like — Lewelling Park, ranch and classic homes, and current listings.",
+      excerpt:
+        "Thinking about moving to Milwaukie, OR? Explore Lewelling, a neighborhood of classic and ranch-style homes anchored by Lewelling Park.",
+      gbp:
+        "If you're moving to Milwaukie, OR, Lewelling is worth researching — a neighborhood of well-kept homes in a mix of classic and modern styles, anchored by Lewelling Park. Housing here runs from older homes with original hardwood floors on tree-shaded lots to ranch-style properties and more recently updated homes. Lewelling Park is the real community anchor, used for both everyday recreation and neighborhood events throughout the year. At roughly 3,511 residents, it's one of Milwaukie's larger neighborhoods, with downtown Milwaukie about 10 to 15 minutes away by car and a moderate Walk Score around 52. Homes here have tended to sit on the market a bit longer than in some other Milwaukie neighborhoods, which is worth factoring into how you time an offer. If you're comparing Lewelling homes for sale or Milwaukie OR homes for sale more broadly, the full neighborhood guide covers the park, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to Milwaukie, Oregon, Lewelling is worth a look — a neighborhood of well-kept homes in a mix of classic and modern styles, anchored by its namesake park.",
+        "At roughly 3,511 residents, it's one of the city's larger neighborhoods, with downtown Milwaukie about 10 to 15 minutes away by car.",
+      ],
+      livingIn: [
+        "Lewelling's housing mixes ranch-style homes and older houses — some with original hardwood floors — on tree-shaded lots, alongside more recently updated properties. Lewelling Park anchors the neighborhood as its main green space, used for both everyday recreation and community events.",
+      ],
+      whereLocated: [
+        "Lewelling sits within Milwaukie, roughly 10 to 15 minutes from downtown by car, with a moderate Walk Score around 52.",
+      ],
+      homesIn: [
+        "Homes here run from older houses with original hardwood floors and tree-shaded lots to ranch-style properties and more recently updated homes — a genuine mix of eras rather than one uniform product.",
+      ],
+      parks: [
+        "Lewelling Park is the neighborhood's main green space, hosting both everyday recreation and community events throughout the year.",
+      ],
+      commute: [
+        "Downtown Milwaukie is roughly 10 to 15 minutes away by car, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Lewelling Park:</strong> a real community anchor used for both recreation and neighborhood events.",
+        "<strong>Genuine mix of home styles:</strong> classic homes with original character alongside ranch-style and updated properties.",
+        "<strong>Tree-shaded lots:</strong> mature landscaping that gives the neighborhood a settled feel.",
+      ],
+      considerations: [
+        "<strong>Mixed home ages:</strong> compare specific properties, since some retain original character while others have been more thoroughly updated.",
+        "<strong>Moderate walkability:</strong> a Walk Score around 52 means some errands are easier by car than on foot.",
+        "<strong>Homes can sit on the market longer:</strong> worth factoring into how you time an offer if you're the buyer or the seller.",
+      ],
+      closing: [
+        "If a classic mix of homes anchored by a real neighborhood park is what you're after, Lewelling is worth comparing against Milwaukie's other established neighborhoods before you decide.",
+      ],
+    },
+  ],
+  "Linwood, Milwaukie": [
+    {
+      hook: "A Generous-Lot, 1930s Pocket of Southeast Milwaukie",
+      keyword: "Linwood Milwaukie OR homes",
+      metaDescription:
+        "Moving to Milwaukie, OR? See what Linwood is like — 1930s homes, Kellogg Creek Park access and current listings.",
+      excerpt:
+        "Thinking about moving to Milwaukie, OR? Explore Linwood, a southeast Milwaukie neighborhood of 1930s homes on generous lots near Kellogg Creek Park.",
+      gbp:
+        "If you're moving to Milwaukie, OR, Linwood is worth researching — a southeast Milwaukie neighborhood with real 1930s character on genuinely generous lots. Living here means a wide mix of housing: original 1930s homes with details like tongue-and-groove paneling, stone fireplaces and corner lots up to a quarter acre, alongside a dedicated manufactured-home community, Linwood Mobile Estates, and some newer, larger homes on other streets. Kellogg Creek Park is the standout nearby green space, and residents describe tree-lined streets with a genuinely friendly feel. Because the neighborhood's Walk Score sits in the minimally walkable range, most errands here mean getting in the car rather than walking. If you're comparing Linwood homes for sale or Milwaukie OR homes for sale more broadly, the full neighborhood guide covers the home styles, park access and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to Milwaukie, Oregon, Linwood is worth a look — a southeast Milwaukie neighborhood with real 1930s character on genuinely generous lots.",
+        "The neighborhood sits near Kellogg Creek Park, with a tree-lined, friendly feel that longtime residents often point to first.",
+      ],
+      livingIn: [
+        "Linwood's housing mixes 1930s-era homes — some with original tongue-and-groove paneling and stone fireplaces on corner lots as large as a quarter acre — with a manufactured-home community (Linwood Mobile Estates) and newer construction on other streets.",
+      ],
+      whereLocated: [
+        "Linwood sits in southeast Milwaukie, near Kellogg Creek Park, with a Walk Score in the minimally walkable range — most errands here mean getting in the car.",
+      ],
+      homesIn: [
+        "Homes here range from genuine 1930s houses — original tongue-and-groove paneling, stone fireplaces, corner lots up to a quarter acre — to a dedicated manufactured-home community, Linwood Mobile Estates, and some newer, larger homes on other streets. It's a genuinely wide mix rather than one uniform product.",
+      ],
+      parks: [
+        "Kellogg Creek Park is the neighborhood's standout nearby green space, giving residents real access without a long drive.",
+      ],
+      commute: [
+        "Linwood's Walk Score sits in the minimally walkable range, so most errands mean getting in the car; OR-99E and the broader Milwaukie arterial network provide the main driving routes toward downtown and I-205.",
+      ],
+      reasons: [
+        "<strong>Genuine 1930s character:</strong> original details and generous, up-to-quarter-acre corner lots in some homes.",
+        "<strong>Kellogg Creek Park access:</strong> real nearby green space without a long drive.",
+        "<strong>Wide range of home types:</strong> from 1930s houses to a dedicated manufactured-home community, giving buyers real options across price points.",
+      ],
+      considerations: [
+        "<strong>Minimally walkable:</strong> a Walk Score around 38 means most errands require a car.",
+        "<strong>Mixed housing types:</strong> manufactured homes, 1930s houses and newer construction all sit within the same neighborhood — confirm what you're actually touring.",
+        "<strong>Older home systems:</strong> 1930s-era houses may need updated wiring, insulation or mechanical systems depending on upkeep history.",
+      ],
+      closing: [
+        "If real 1930s character on a generous lot — or a more affordable manufactured-home option in the same neighborhood — is what you're after, Linwood is worth a close look at the specific street and property type before you decide.",
       ],
     },
   ],
