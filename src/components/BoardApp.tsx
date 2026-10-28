@@ -143,6 +143,16 @@ const AREAS: [string, string][] = [
   ["Scouters Mountain, Happy Valley", "scouters-mountain-happy-valley-or"],
   ["West Mount Scott, Happy Valley", "west-mount-scott-happy-valley-or"],
   ["Eagle Landing, Happy Valley", "eagle-landing-happy-valley-or"],
+  ["Barrington Heights / Hidden Creek Estates / Tanner Woods, West Linn", "bht-west-linn-or"],
+  ["Bolton, West Linn", "bolton-west-linn-or"],
+  ["Marylhurst, West Linn", "marylhurst-west-linn-or"],
+  ["Parker Crest, West Linn", "parker-crest-west-linn-or"],
+  ["Robinwood, West Linn", "robinwood-west-linn-or"],
+  ["Rosemont Summit, West Linn", "rosemont-summit-west-linn-or"],
+  ["Savanna Oaks, West Linn", "savanna-oaks-west-linn-or"],
+  ["Skyline Ridge, West Linn", "skyline-ridge-west-linn-or"],
+  ["Sunset, West Linn", "sunset-west-linn-or"],
+  ["Willamette, West Linn", "willamette-west-linn-or"],
 ];
 
 // State grouping for the filter/checklist UI. WA areas above came first (7 original +
@@ -208,6 +218,16 @@ const OR_AREA_NAMES = new Set([
   "Scouters Mountain, Happy Valley",
   "West Mount Scott, Happy Valley",
   "Eagle Landing, Happy Valley",
+  "Barrington Heights / Hidden Creek Estates / Tanner Woods, West Linn",
+  "Bolton, West Linn",
+  "Marylhurst, West Linn",
+  "Parker Crest, West Linn",
+  "Robinwood, West Linn",
+  "Rosemont Summit, West Linn",
+  "Savanna Oaks, West Linn",
+  "Skyline Ridge, West Linn",
+  "Sunset, West Linn",
+  "Willamette, West Linn",
 ]);
 const AREA_STATE: Record<string, "WA" | "OR"> = Object.fromEntries(
   AREAS.map(([name]) => [name, OR_AREA_NAMES.has(name) ? ("OR" as const) : ("WA" as const)])
@@ -451,6 +471,17 @@ const SCHOOL_DISTRICTS: Record<string, string> = {
   "West Mount Scott, Happy Valley":
     "North Clackamas School District area — some sourcing places this area under a Portland/Sunnyside address; verify jurisdiction and school zoning by exact address",
   "Eagle Landing, Happy Valley": "North Clackamas School District",
+  "Barrington Heights / Hidden Creek Estates / Tanner Woods, West Linn":
+    "West Linn-Wilsonville School District",
+  "Bolton, West Linn": "West Linn-Wilsonville School District",
+  "Marylhurst, West Linn": "West Linn-Wilsonville School District",
+  "Parker Crest, West Linn": "West Linn-Wilsonville School District",
+  "Robinwood, West Linn": "West Linn-Wilsonville School District",
+  "Rosemont Summit, West Linn": "West Linn-Wilsonville School District",
+  "Savanna Oaks, West Linn": "West Linn-Wilsonville School District",
+  "Skyline Ridge, West Linn": "West Linn-Wilsonville School District",
+  "Sunset, West Linn": "West Linn-Wilsonville School District (Sunset Primary School)",
+  "Willamette, West Linn": "West Linn-Wilsonville School District",
 };
 
 const YOUTUBE_URL = "https://www.youtube.com/@jamiemeushawrealestate";
@@ -6248,6 +6279,449 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       closing: [
         "If genuine golf-course amenities and HOA-maintained living appeal to you, Eagle Landing is worth a close look — just confirm exactly what a specific property's HOA dues cover.",
+      ],
+    },
+  ],
+  "Barrington Heights / Hidden Creek Estates / Tanner Woods, West Linn": [
+    {
+      hook: "Custom Homes on Manicured Streets Near Two Real Named Parks",
+      keyword: "Barrington Heights Hidden Creek Estates Tanner Woods West Linn OR homes",
+      metaDescription:
+        "Moving to the West Linn, OR area? See what Barrington Heights / Hidden Creek Estates / Tanner Woods is like — custom homes, parks and current listings.",
+      excerpt:
+        "Thinking about moving to the West Linn, OR area? Explore the BHT neighborhood — Barrington Heights, Hidden Creek Estates and Tanner Woods.",
+      gbp:
+        "If you're moving to the West Linn, OR area, the BHT neighborhood is worth researching — three subdivisions, Barrington Heights, Hidden Creek Estates and Tanner Woods, sharing one combined neighborhood association, per the city's own naming. Homes here are mostly custom, 1990s-2000s construction on manicured streets, often 4+ bedrooms. White Oak Savanna and Tanner Creek Park are both real, named green spaces nearby. This is a car-dependent area with limited walkability. If you're comparing homes for sale here or West Linn OR homes for sale more broadly, the full neighborhood guide covers the home styles, parks and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the West Linn, Oregon area, the BHT neighborhood is worth a look — three subdivisions, Barrington Heights, Hidden Creek Estates and Tanner Woods, that share one combined neighborhood association under the city's own naming.",
+      ],
+      livingIn: [
+        "Homes here are mostly custom-built, 1990s-2000s construction on manicured streets, commonly 4 or more bedrooms, without significant acreage lots.",
+      ],
+      whereLocated: [
+        "This area sits within West Linn, car-dependent with limited walkability, near White Oak Savanna and Tanner Creek Park.",
+      ],
+      homesIn: [
+        "Recently reported listing data has suggested a median price around $1.26 million, though that figure comes from a single, undated snapshot — compare current listings directly.",
+      ],
+      parks: [
+        "White Oak Savanna and Tanner Creek Park are both real, named green spaces near the neighborhood.",
+      ],
+      commute: [
+        "This area is car-dependent — plan on driving for most errands and commuting, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Custom-built housing stock:</strong> 1990s-2000s construction on manicured streets, not a repeated production floor plan.",
+        "<strong>Two real named parks nearby:</strong> White Oak Savanna and Tanner Creek Park.",
+        "<strong>Larger homes:</strong> 4+ bedrooms are common throughout.",
+      ],
+      considerations: [
+        "<strong>Car-dependent:</strong> there's little walkable infrastructure, so daily life here means driving for most trips.",
+        "<strong>Pricing data is a single snapshot:</strong> compare current listings directly rather than assuming one figure.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with West Linn-Wilsonville School District for the specific address.",
+      ],
+      closing: [
+        "If custom-built homes and real nearby park access matter to your search, the BHT neighborhood is worth a close look alongside other West Linn areas.",
+      ],
+    },
+  ],
+  "Bolton, West Linn": [
+    {
+      hook: "An 1850s River-Area Settlement With a Park Named for a Real West Linn Mayor",
+      keyword: "Bolton West Linn OR homes",
+      metaDescription:
+        "Moving to the West Linn, OR area? See what Bolton is like — real 1850s history, Hammerle Park, and current listings.",
+      excerpt:
+        "Thinking about moving to the West Linn, OR area? Explore Bolton, a neighborhood with real history dating to an 1850 donation land claim.",
+      gbp:
+        "If you're moving to the West Linn, OR area, Bolton is worth researching — a neighborhood near the Willamette River and falls with real, documented history going back to Daniel Dean Tompkins' 1850 donation land claim, later bought by the Bolton family, platted as \"Bolton\" in 1890, per the city's own neighborhood-association walking-tour document. Hammerle Park, 5.8 acres with play equipment, athletic fields and a reservable picnic shelter, is named for Frank A. Hammerle, a real 1930s West Linn mayor and paper mill superintendent. Burnside Park, Mary S. Young Park, Hidden Springs Open Space and Camassia Conservancy Park are all nearby. If you're comparing Bolton homes for sale or West Linn OR homes for sale more broadly, the full neighborhood guide covers the history, parks and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the West Linn, Oregon area and real neighborhood history matters to you, Bolton is worth a close look — this is one of the more historically documented areas in the city.",
+        "The neighborhood's roots trace to an 1850 donation land claim near the Willamette River and falls, later bought by the Bolton family and platted in 1890 — real, sourced history from the city's own neighborhood-association walking-tour document, not a marketing story.",
+      ],
+      livingIn: [
+        "Housing in Bolton is mostly single-family, generally 3 or more bedrooms, with a genuine range of ages — quiet streets close to schools.",
+      ],
+      whereLocated: [
+        "Bolton sits along the Willamette River near the falls, close to Hammerle Park, Burnside Park, Mary S. Young Park, Hidden Springs Open Space and Camassia Conservancy Park.",
+      ],
+      homesIn: [
+        "Recently reported sales have suggested a median around $587,000 in one undated snapshot — compare current listings directly rather than relying on a single figure.",
+      ],
+      parks: [
+        "Hammerle Park (5.8 acres) is named for Frank A. Hammerle, a real 1930s West Linn mayor and paper mill superintendent, and includes play equipment, athletic fields and a reservable picnic shelter. Burnside Park adds river beaches and forest trails nearby.",
+      ],
+      commute: [
+        "Bolton's location near the Willamette River keeps it within reasonable reach of the broader West Linn arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Real, documented 1850s history:</strong> sourced from the city's own neighborhood walking-tour document, not inferred.",
+        "<strong>Hammerle Park:</strong> named for an actual former West Linn mayor, with real amenities including athletic fields and a reservable shelter.",
+        "<strong>Close to multiple real parks:</strong> Burnside Park, Mary S. Young Park, Hidden Springs Open Space and Camassia Conservancy Park all nearby.",
+      ],
+      considerations: [
+        "<strong>Pricing data is a single snapshot:</strong> compare current listings directly rather than relying on one figure.",
+        "<strong>Wide range of home ages:</strong> a 1947 cottage and a 1970s house both exist here, with very different systems and maintenance needs.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with West Linn-Wilsonville School District for the specific address.",
+      ],
+      closing: [
+        "If genuine, documented neighborhood history and real park access matter to your search, Bolton is worth a close look — few West Linn neighborhoods carry this much sourced history.",
+      ],
+    },
+  ],
+  "Marylhurst, West Linn": [
+    {
+      hook: "A Ridge-Top Boundary Between Three Other West Linn Neighborhoods",
+      keyword: "Marylhurst West Linn OR homes",
+      metaDescription:
+        "Moving to the West Linn, OR area? See what Marylhurst is like — a ridge-top, 171-acre neighborhood overlooking the Willamette River, and current listings.",
+      excerpt:
+        "Thinking about moving to the West Linn, OR area? Explore Marylhurst, a 171-acre ridge-top neighborhood bordering Skyline, Robinwood and Hidden Springs.",
+      gbp:
+        "If you're moving to the West Linn, OR area, Marylhurst is worth researching — a real, city-documented 171-acre neighborhood sitting on a ridge overlooking the Willamette River, bordered by Skyline to the north, Robinwood to the east and Hidden Springs to the south, per the city's own neighborhood plan. Note: this is West Linn's own Marylhurst neighborhood, distinct from the separate Marylhurst area and former university campus in neighboring Lake Oswego — don't confuse the two. Housing here mixes styles, including mid-century modern homes in the \"Marylhurst Heights\" pocket alongside larger, newer construction. If you're comparing Marylhurst homes for sale or West Linn OR homes for sale more broadly, the full neighborhood guide covers the boundaries, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the West Linn, Oregon area, Marylhurst is worth a look — a real, city-documented 171-acre neighborhood with a genuinely specific ridge-top position.",
+        "One important distinction: this is West Linn's own Marylhurst neighborhood, bordered by Skyline, Robinwood and Hidden Springs. It's a separate place from the Marylhurst area and former university campus in neighboring Lake Oswego — don't confuse the two when researching.",
+      ],
+      livingIn: [
+        "Housing in Marylhurst mixes styles — a mid-century modern pocket known as \"Marylhurst Heights\" sits alongside larger, newer construction elsewhere in the neighborhood.",
+      ],
+      whereLocated: [
+        "Marylhurst covers 171 acres on a ridge overlooking the Willamette River, bordered by Skyline to the north, Robinwood to the east and Hidden Springs to the south — boundaries confirmed by the city's own neighborhood plan.",
+      ],
+      homesIn: [
+        "Recently reported listings have ranged roughly from $650,000 to $1.5 million — comparing specific properties, including whether a home sits in the mid-century \"Marylhurst Heights\" pocket or elsewhere, matters more than assuming one price point.",
+      ],
+      parks: [
+        "Marylhurst's ridge-top position gives it a real overlook of the Willamette River, with Hidden Springs' own open space bordering the neighborhood to the south.",
+      ],
+      commute: [
+        "Marylhurst's ridge-top location keeps it within reasonable reach of the broader West Linn arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Real, city-documented boundaries:</strong> a specific 171-acre area bordered by three other named West Linn neighborhoods.",
+        "<strong>Ridge-top Willamette River overlook:</strong> a genuine geographic feature, not a generic \"river-adjacent\" claim.",
+        "<strong>Architectural variety:</strong> mid-century modern homes in \"Marylhurst Heights\" alongside newer, larger construction.",
+      ],
+      considerations: [
+        "<strong>Easily confused with a different place:</strong> make sure any research is about West Linn's Marylhurst, not the separate Marylhurst area or former university campus in Lake Oswego.",
+        "<strong>Wide price range:</strong> recently reported listings spanned roughly $650,000 to $1.5 million, so compare specific homes rather than assuming one price point.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with West Linn-Wilsonville School District for the specific address.",
+      ],
+      closing: [
+        "If a genuine ridge-top setting with real river views appeals to you, Marylhurst is worth a close look — just make sure you're researching West Linn's Marylhurst, not the similarly-named Lake Oswego area.",
+      ],
+    },
+  ],
+  "Parker Crest, West Linn": [
+    {
+      hook: "Corner Lots Overlooking Tanner Creek Park",
+      keyword: "Parker Crest West Linn OR homes",
+      metaDescription:
+        "Moving to the West Linn, OR area? See what Parker Crest is like — homes overlooking Tanner Creek Park, and current listings.",
+      excerpt:
+        "Thinking about moving to the West Linn, OR area? Explore Parker Crest, a Clackamas County neighborhood near Tanner Creek Park.",
+      gbp:
+        "If you're moving to the West Linn, OR area, Parker Crest is worth researching — a Clackamas County neighborhood with a genuine mix of single-family homes and townhomes, moderately walkable compared to some other West Linn areas. Some properties sit on corner lots directly overlooking Tanner Creek Park. If you're comparing Parker Crest homes for sale or West Linn OR homes for sale more broadly, the full neighborhood guide covers the home styles, park access and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the West Linn, Oregon area, Parker Crest is worth a look — a genuine mix of single-family homes and townhomes with real park-overlook potential on some lots.",
+      ],
+      livingIn: [
+        "Parker Crest combines single-family homes with townhomes, including a sub-area some listings refer to as \"Salamo Terrace\" for its townhome cluster.",
+      ],
+      whereLocated: [
+        "Parker Crest sits in Clackamas County within West Linn, moderately walkable, near Tanner Creek Park.",
+      ],
+      homesIn: [
+        "Recently reported listing data has suggested a median price around $1 million, with homes typically taking a couple of months to sell — compare current listings directly rather than relying on a single snapshot.",
+      ],
+      parks: [
+        "Some Parker Crest properties sit on corner lots directly overlooking Tanner Creek Park — a genuine positional advantage on specific listings, not universal across the neighborhood.",
+      ],
+      commute: [
+        "Parker Crest's Clackamas County location within West Linn keeps it within reasonable reach of the broader area's arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Genuine housing-type mix:</strong> single-family homes alongside townhomes.",
+        "<strong>Some real park-overlook lots:</strong> corner properties with a direct view of Tanner Creek Park.",
+        "<strong>Moderately walkable:</strong> more walkable than some other nearby West Linn areas.",
+      ],
+      considerations: [
+        "<strong>Park-overlook lots aren't universal:</strong> confirm whether a specific listing actually has the view before assuming it does.",
+        "<strong>Housing type affects price:</strong> townhomes and single-family homes carry different price points — compare the specific type you want.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with West Linn-Wilsonville School District for the specific address.",
+      ],
+      closing: [
+        "If a genuine mix of housing types with real park-overlook potential appeals to you, Parker Crest is worth a close look — just confirm the specific lot's view before deciding.",
+      ],
+    },
+  ],
+  "Robinwood, West Linn": [
+    {
+      hook: "Homes That Back Directly Onto Their Own Namesake Park",
+      keyword: "Robinwood West Linn OR homes",
+      metaDescription:
+        "Moving to the West Linn, OR area? See what Robinwood is like — homes backing onto Robinwood Park, a genuine multi-era housing mix, and current listings.",
+      excerpt:
+        "Thinking about moving to the West Linn, OR area? Explore Robinwood, where some homes back directly onto Robinwood Park.",
+      gbp:
+        "If you're moving to the West Linn, OR area, Robinwood is worth researching — a neighborhood with a genuine mix of home eras, from 1950s daylight ranches to 1970s construction, architecture spanning mid-century modern to Craftsman bungalow styles. Some homes back directly onto Robinwood Park, the neighborhood's own namesake green space. Mary S. Young State Park, Willamette Park, hiking trails and river access are all nearby, with I-205 a few minutes away. If you're comparing Robinwood homes for sale or West Linn OR homes for sale more broadly, the full neighborhood guide covers the park access, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the West Linn, Oregon area, Robinwood is worth a look — a neighborhood where some homes genuinely back onto their own namesake park.",
+      ],
+      livingIn: [
+        "Robinwood's housing spans a real mix of eras — 1950s daylight ranches, 1960s single-family homes and 1970s construction with den and bonus rooms, in styles from mid-century modern to Craftsman bungalow.",
+      ],
+      whereLocated: [
+        "Robinwood sits a few minutes from I-205, near Mary S. Young State Park, Willamette Park, hiking trails and river access.",
+      ],
+      homesIn: [
+        "Recently reported listing data has suggested a median price around $1.15 million in one snapshot — compare current listings directly rather than relying on a single figure.",
+      ],
+      parks: [
+        "Some Robinwood homes back directly onto Robinwood Park itself — a real, confirmed feature on specific listings, not universal across the neighborhood. Mary S. Young State Park and Willamette Park are both close by as well.",
+      ],
+      commute: [
+        "Robinwood sits a few minutes from I-205, keeping it within reasonable reach of the broader Portland metro area, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Some homes back directly onto Robinwood Park:</strong> a genuine, confirmed feature on specific properties.",
+        "<strong>Genuine multi-era housing mix:</strong> 1950s through 1970s construction, not one repeated era.",
+        "<strong>Close to I-205:</strong> a few minutes to the highway for broader metro access.",
+      ],
+      considerations: [
+        "<strong>Backing onto the park isn't universal:</strong> confirm whether a specific listing actually has that feature before assuming it does.",
+        "<strong>Older homes need closer inspection:</strong> 1950s-60s construction may need updated systems depending on upkeep history.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with West Linn-Wilsonville School District for the specific address.",
+      ],
+      closing: [
+        "If genuine park-adjacent living and a real mix of home eras appeal to you, Robinwood is worth a close look — just confirm whether a specific listing actually backs onto the park.",
+      ],
+    },
+  ],
+  "Rosemont Summit, West Linn": [
+    {
+      hook: "Northwest Contemporary Custom Homes, Honestly Light on Landmarks",
+      keyword: "Rosemont Summit West Linn OR homes",
+      metaDescription:
+        "Moving to the West Linn, OR area? See what Rosemont Summit is like — Northwest Contemporary custom homes, and current listings.",
+      excerpt:
+        "Thinking about moving to the West Linn, OR area? Explore Rosemont Summit, known for Northwest Contemporary custom-home character.",
+      gbp:
+        "If you're moving to the West Linn, OR area, Rosemont Summit is worth researching — a Clackamas County neighborhood known for Northwest Contemporary custom homes with vaulted ceilings, large windows and updated kitchens. This is a straightforward, low-walkability residential neighborhood rather than one built around a signature park or landmark, and homes here have typically taken a couple of months to sell. If you're comparing Rosemont Summit homes for sale or West Linn OR homes for sale more broadly, the full neighborhood guide covers the home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the West Linn, Oregon area, Rosemont Summit is worth a look — the honest draw here is the custom-home architecture itself rather than a signature park or landmark.",
+      ],
+      livingIn: [
+        "Rosemont Summit's housing stock leans toward Northwest Contemporary custom homes — vaulted ceilings, large windows and updated kitchens are common features.",
+      ],
+      whereLocated: [
+        "Rosemont Summit sits in Clackamas County within West Linn, near Canemah, Far West, Robinwood, Willamette and Hallinan.",
+      ],
+      homesIn: [
+        "Recently reported listing data has suggested a median price in the $800,000s, with homes typically taking two to three months to sell — compare current listings directly rather than relying on a single snapshot.",
+      ],
+      parks: [
+        "Specific park amenities directly in Rosemont Summit weren't confirmed for this writeup — check current listings or the city's park map for what's actually nearby a specific address.",
+      ],
+      commute: [
+        "Rosemont Summit's Clackamas County location within West Linn keeps it within reasonable reach of the broader area's arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Northwest Contemporary custom-home character:</strong> vaulted ceilings, large windows and updated kitchens are genuinely common here.",
+        "<strong>Established residential setting:</strong> a quiet, low-walkability neighborhood.",
+      ],
+      considerations: [
+        "<strong>Fewer documented landmarks than some other West Linn neighborhoods:</strong> Rosemont Summit's draw is the housing stock itself rather than a signature park or amenity.",
+        "<strong>Limited walkability:</strong> plan on driving for most errands and commuting.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with West Linn-Wilsonville School District for the specific address.",
+      ],
+      closing: [
+        "If Northwest Contemporary custom-home architecture is what you're after, Rosemont Summit is worth comparing directly against other custom-home West Linn neighborhoods.",
+      ],
+    },
+  ],
+  "Savanna Oaks, West Linn": [
+    {
+      hook: "A Ridge Above Two Rivers, With a Genuine Flat-to-Steep Terrain Range",
+      keyword: "Savanna Oaks West Linn OR homes",
+      metaDescription:
+        "Moving to the West Linn, OR area? See what Savanna Oaks is like — a 354-acre ridge above the Willamette and Tualatin Rivers, and current listings.",
+      excerpt:
+        "Thinking about moving to the West Linn, OR area? Explore Savanna Oaks, a 354-acre neighborhood on a ridge above two rivers.",
+      gbp:
+        "If you're moving to the West Linn, OR area, Savanna Oaks is worth researching — a real, city-documented 354-acre neighborhood on a ridge above the Willamette and Tualatin Rivers, bordered by Parker Crest, Barrington Heights and Willamette. Topography genuinely ranges from flat to very steep slopes, so lot characteristics vary a lot within the same neighborhood. Housing is mostly single-family with some townhomes, and some elevated, steep lots carry real valley and territorial-hill views. If you're comparing Savanna Oaks homes for sale or West Linn OR homes for sale more broadly, the full neighborhood guide covers the terrain, views and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the West Linn, Oregon area, Savanna Oaks is worth a look — a real, city-documented neighborhood with a genuinely distinct ridge-top position above two rivers.",
+        "The neighborhood covers 354 acres on a ridge above the Willamette and Tualatin Rivers, bordered by Parker Crest, Barrington Heights and Willamette — confirmed boundaries from the city's own neighborhood plan.",
+      ],
+      livingIn: [
+        "Housing in Savanna Oaks is mostly single-family, with some townhomes, and topography genuinely ranges from flat to very steep slopes depending on the specific lot.",
+      ],
+      whereLocated: [
+        "Savanna Oaks sits on a 354-acre ridge above the Willamette and Tualatin Rivers, bordered by Parker Crest, Barrington Heights and Willamette.",
+      ],
+      homesIn: [
+        "Recently reported listing data has ranged roughly from $960,000 to $1.01 million depending on the specific snapshot and filters used — compare current listings directly, and note that homes here have taken anywhere from about 3 to 6 months to sell depending on the listing.",
+      ],
+      parks: [
+        "The neighborhood's elevated, steep lots can carry real valley and territorial-hill views, a direct result of its ridge-top position above the Willamette and Tualatin Rivers.",
+      ],
+      commute: [
+        "Savanna Oaks' ridge-top location keeps it within reasonable reach of the broader West Linn arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Real, city-documented ridge-top position:</strong> above two rivers, bordered by three other named West Linn neighborhoods.",
+        "<strong>Genuine terrain range:</strong> flat to very steep slopes within the same neighborhood.",
+        "<strong>Real view potential on elevated lots:</strong> valley and territorial-hill views, not a generic claim.",
+      ],
+      considerations: [
+        "<strong>Terrain varies significantly by lot:</strong> confirm the specific slope and view situation before assuming it matches the neighborhood's general reputation.",
+        "<strong>Slower-moving market:</strong> recently reported listings have taken anywhere from roughly 3 to 6 months to sell — build in a realistic timeline.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with West Linn-Wilsonville School District for the specific address.",
+      ],
+      closing: [
+        "If a genuine ridge-top setting with real view potential matters to your search, Savanna Oaks is worth a close look — just confirm the specific lot's terrain and view before deciding.",
+      ],
+    },
+  ],
+  "Skyline Ridge, West Linn": [
+    {
+      hook: "A Neighborhood Park With Tennis, Basketball and an Optional Pool",
+      keyword: "Skyline Ridge West Linn OR homes",
+      metaDescription:
+        "Moving to the West Linn, OR area? See what Skyline Ridge is like — Skyline Ridge Park amenities, and current listings.",
+      excerpt:
+        "Thinking about moving to the West Linn, OR area? Explore Skyline Ridge, built around a real neighborhood park with tennis and basketball courts.",
+      gbp:
+        "If you're moving to the West Linn, OR area, Skyline Ridge is worth researching — a neighborhood built around Skyline Ridge Park, which has tennis courts, a basketball court, a playground and picnic areas directly in the neighborhood, plus an optional neighborhood pool on some properties. This is a car-dependent area with limited walkability, and some homes back to wooded views. If you're comparing Skyline Ridge homes for sale or West Linn OR homes for sale more broadly, the full neighborhood guide covers the park amenities and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the West Linn, Oregon area, Skyline Ridge is worth a look — a neighborhood genuinely built around its own named park and real amenities.",
+      ],
+      livingIn: [
+        "Skyline Ridge is mostly single-family homes, with some properties backing to wooded views.",
+      ],
+      whereLocated: [
+        "Skyline Ridge sits within West Linn, car-dependent with limited walkability, built around Skyline Ridge Park.",
+      ],
+      homesIn: [
+        "Recently reported sales have ranged roughly from $825,000 to $1.29 million — comparing specific properties matters more than assuming one price point.",
+      ],
+      parks: [
+        "Skyline Ridge Park sits directly in the neighborhood, with tennis courts, a basketball court, a playground and picnic areas — real, specific amenities, not a generic nearby-park claim. An optional neighborhood pool is available on some properties.",
+      ],
+      commute: [
+        "Skyline Ridge is car-dependent — plan on driving for most errands and commuting, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Skyline Ridge Park directly in the neighborhood:</strong> tennis, basketball, a playground and picnic areas, not just a nearby green space.",
+        "<strong>Optional neighborhood pool:</strong> a real, specific amenity available on some properties.",
+        "<strong>Some wooded-view lots:</strong> genuine privacy and views on certain homes.",
+      ],
+      considerations: [
+        "<strong>Car-dependent:</strong> there's little walkable infrastructure, so daily life here means driving for most trips.",
+        "<strong>Pool access varies by property:</strong> confirm whether a specific listing actually includes the optional pool before assuming it does.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with West Linn-Wilsonville School District — listing copy referencing an \"award-winning\" district is marketing language, not a confirmed specific elementary.",
+      ],
+      closing: [
+        "If a neighborhood with real, named park amenities matters to your search, Skyline Ridge is worth a close look — just confirm pool access on the specific property.",
+      ],
+    },
+  ],
+  "Sunset, West Linn": [
+    {
+      hook: "A Neighborhood, Park and Elementary School That All Share One Name",
+      keyword: "Sunset West Linn OR homes",
+      metaDescription:
+        "Moving to the West Linn, OR area? See what Sunset is like — Sunset Park, Sunset Primary School, and current listings.",
+      excerpt:
+        "Thinking about moving to the West Linn, OR area? Explore Sunset, where the neighborhood, its park and its elementary school share one name.",
+      gbp:
+        "If you're moving to the West Linn, OR area, Sunset is worth researching — a Clackamas County neighborhood where the name itself is a real, checkable anchor: Sunset Park and Sunset Primary School both sit directly in the neighborhood, and listings repeatedly cite proximity to both. Housing here is genuinely varied, from 1970s condos to bungalows right next to Sunset Primary School. If you're comparing Sunset homes for sale or West Linn OR homes for sale more broadly, the full neighborhood guide covers the park, school and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the West Linn, Oregon area, Sunset is worth a look — a rare case where the neighborhood name, its park and its elementary school are all the same, genuine and checkable rather than a coincidence of marketing.",
+      ],
+      livingIn: [
+        "Sunset's housing mix is genuinely varied — a 1970s-built condo, a bungalow right next to Sunset Primary School, and a split-level home close to both the school and park all exist here.",
+      ],
+      whereLocated: [
+        "Sunset sits in Clackamas County within West Linn, built directly around Sunset Park and Sunset Primary School.",
+      ],
+      homesIn: [
+        "Recently reported pricing in the higher-end segment has suggested a median around $899,000 in one snapshot — compare current listings directly, since Sunset's housing mix spans condos to larger single-family homes.",
+      ],
+      parks: [
+        "Sunset Park sits directly in the neighborhood, and Sunset Primary School is the specific, confirmed elementary school serving the area — both genuinely tied to the neighborhood's own name.",
+      ],
+      commute: [
+        "Sunset's Clackamas County location within West Linn keeps it within reasonable reach of the broader area's arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Sunset Park directly in the neighborhood:</strong> real, named green space, not a nearby amenity.",
+        "<strong>Sunset Primary School on-site:</strong> a confirmed, specific elementary school, genuinely distinct from the usual \"verify by address\" situation elsewhere.",
+        "<strong>Genuine housing variety:</strong> condos, bungalows and split-level homes all represented.",
+      ],
+      considerations: [
+        "<strong>Housing type varies significantly:</strong> compare the specific property type you want, since condos and larger homes carry very different price points.",
+        "<strong>Single pricing snapshot:</strong> the available median figure comes from one undated source — compare current listings directly.",
+        "<strong>Confirm current school assignment:</strong> while Sunset Primary School serves the area, always verify directly with West Linn-Wilsonville School District for the specific address.",
+      ],
+      closing: [
+        "If a neighborhood with a genuinely confirmed, name-matching park and elementary school appeals to you, Sunset is worth a close look.",
+      ],
+    },
+  ],
+  "Willamette, West Linn": [
+    {
+      hook: "A National Register Historic District With Real Named 1800s Homes",
+      keyword: "Willamette West Linn OR homes",
+      metaDescription:
+        "Moving to the West Linn, OR area? See what Willamette is like — a real National Register historic district, named historic homes, and current listings.",
+      excerpt:
+        "Thinking about moving to the West Linn, OR area? Explore Willamette, home to a real National Register of Historic Places district.",
+      gbp:
+        "If you're moving to the West Linn, OR area, Willamette is worth researching — home to a real, verifiable National Register of Historic Places district, listed in 2009, with an intact collection of Victorian and early-20th-century architecture built mostly between 1895 and 1929. The city's own count cites 38 historic-designated properties in the district; a separate National Register record under the name \"Willamette Falls Neighborhood Historic District\" cites 64 residences — these two sources genuinely differ, so don't assume one figure without checking current city records. Real, named historic homes include the Nicholas O. Walden House (1847 5th Ave), the Lewthwaite-Moffat House (4891 Willamette Falls Dr) and the McLean House (5350 River St). If you're comparing Willamette homes for sale or West Linn OR homes for sale more broadly, the full neighborhood guide covers the historic district, named homes and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the West Linn, Oregon area and genuine historic architecture matters to you, Willamette is worth a close look — this is the most documented historic neighborhood in the city.",
+        "A real National Register of Historic Places district here was listed in 2009, covering an intact collection of Victorian and early-20th-century homes built mostly between 1895 and 1929, developed originally around trade and manufacturing tied to Willamette Falls.",
+      ],
+      livingIn: [
+        "Architecture in the historic district spans Queen Anne, Craftsman, Colonial Revival and Stick styles, alongside later construction outside the core historic blocks.",
+      ],
+      whereLocated: [
+        "Willamette sits along the Willamette River near Willamette Falls, home to named historic properties including the Nicholas O. Walden House (1847 5th Ave), the Lewthwaite-Moffat House (4891 Willamette Falls Dr) and the McLean House (5350 River St).",
+      ],
+      homesIn: [
+        "Specific, verified pricing wasn't broadly confirmed for this writeup given the wide range of historic and non-historic construction represented — compare current listings directly by era and historic-designation status.",
+      ],
+      parks: [
+        "The neighborhood's river and falls-adjacent setting is itself a real historic landmark, tied to the area's original development around Willamette Falls trade and manufacturing.",
+      ],
+      commute: [
+        "Willamette's location along the Willamette River keeps it within reasonable reach of the broader West Linn arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Real National Register of Historic Places designation:</strong> listed in 2009, not a marketing claim.",
+        "<strong>Named, verifiable historic homes:</strong> the Nicholas O. Walden House, Lewthwaite-Moffat House and McLean House all have specific addresses.",
+        "<strong>Genuine architectural variety within the historic core:</strong> Queen Anne, Craftsman, Colonial Revival and Stick styles all represented.",
+      ],
+      considerations: [
+        "<strong>Historic designation can affect renovations:</strong> homes within the National Register district may have restrictions on exterior changes — confirm before planning any work.",
+        "<strong>Property-count sources genuinely differ:</strong> the city cites 38 historic-designated properties, while a separate National Register record cites 64 — verify current status for a specific address rather than assuming either figure.",
+        "<strong>Not every home in the area is historic-designated:</strong> compare a specific property's actual designation status rather than assuming based on the neighborhood name alone.",
+      ],
+      closing: [
+        "If genuine, verifiable historic architecture matters to your search, Willamette is worth a close look — just confirm a specific property's actual historic-designation status before assuming either source's property count.",
       ],
     },
   ],
