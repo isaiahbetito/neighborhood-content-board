@@ -177,6 +177,33 @@ const AREAS: [string, string][] = [
   ["Eliot, Portland", "eliot-portland-or"],
   ["Humboldt, Portland", "humboldt-portland-or"],
   ["Lloyd District, Portland", "lloyd-district-portland-or"],
+  ["Alameda, Portland", "alameda-portland-or"],
+  ["Argay, Portland", "argay-portland-or"],
+  ["Beaumont-Wilshire, Portland", "beaumont-wilshire-portland-or"],
+  ["Concordia, Portland", "concordia-portland-or"],
+  ["Cully, Portland", "cully-portland-or"],
+  ["Glenfair, Portland", "glenfair-portland-or"],
+  ["Grant Park, Portland", "grant-park-portland-or"],
+  ["Hazelwood, Portland", "hazelwood-portland-or"],
+  ["Hollywood, Portland", "hollywood-portland-or"],
+  ["Kerns, Portland", "kerns-portland-or"],
+  ["King, Portland", "king-portland-or"],
+  ["Laurelhurst, Portland", "laurelhurst-portland-or"],
+  ["Madison South, Portland", "madison-south-portland-or"],
+  ["Montavilla, Portland", "montavilla-portland-or"],
+  ["Parkrose, Portland", "parkrose-portland-or"],
+  ["Parkrose Heights, Portland", "parkrose-heights-portland-or"],
+  ["Rose City Park, Portland", "rose-city-park-portland-or"],
+  ["Roseway, Portland", "roseway-portland-or"],
+  ["Russell, Portland", "russell-portland-or"],
+  ["Sabin, Portland", "sabin-portland-or"],
+  ["Sullivan's Gulch, Portland", "sullivans-gulch-portland-or"],
+  ["Sumner, Portland", "sumner-portland-or"],
+  ["Sunderland, Portland", "sunderland-portland-or"],
+  ["Vernon, Portland", "vernon-portland-or"],
+  ["Wilkes, Portland", "wilkes-portland-or"],
+  ["Woodland Park, Portland", "woodland-park-portland-or"],
+  ["Woodlawn, Portland", "woodlawn-portland-or"],
 ];
 
 // State grouping for the filter/checklist UI. WA areas above came first (7 original +
@@ -276,6 +303,33 @@ const OR_AREA_NAMES = new Set([
   "Eliot, Portland",
   "Humboldt, Portland",
   "Lloyd District, Portland",
+  "Alameda, Portland",
+  "Argay, Portland",
+  "Beaumont-Wilshire, Portland",
+  "Concordia, Portland",
+  "Cully, Portland",
+  "Glenfair, Portland",
+  "Grant Park, Portland",
+  "Hazelwood, Portland",
+  "Hollywood, Portland",
+  "Kerns, Portland",
+  "King, Portland",
+  "Laurelhurst, Portland",
+  "Madison South, Portland",
+  "Montavilla, Portland",
+  "Parkrose, Portland",
+  "Parkrose Heights, Portland",
+  "Rose City Park, Portland",
+  "Roseway, Portland",
+  "Russell, Portland",
+  "Sabin, Portland",
+  "Sullivan's Gulch, Portland",
+  "Sumner, Portland",
+  "Sunderland, Portland",
+  "Vernon, Portland",
+  "Wilkes, Portland",
+  "Woodland Park, Portland",
+  "Woodlawn, Portland",
 ]);
 const AREA_STATE: Record<string, "WA" | "OR"> = Object.fromEntries(
   AREAS.map(([name]) => [name, OR_AREA_NAMES.has(name) ? ("OR" as const) : ("WA" as const)])
@@ -556,6 +610,35 @@ const SCHOOL_DISTRICTS: Record<string, string> = {
   "Eliot, Portland": "Portland Public Schools (Boise-Eliot Elementary, 620 NE Fremont St)",
   "Humboldt, Portland": "Portland Public Schools",
   "Lloyd District, Portland": "Portland Public Schools",
+  "Alameda, Portland": "Portland Public Schools",
+  // Parkrose School District is a real, separate district (not PPS) covering 5 of our areas —
+  // confirmed via the district's own description of the neighborhoods it serves.
+  "Argay, Portland": "Parkrose School District",
+  "Beaumont-Wilshire, Portland": "Portland Public Schools",
+  "Concordia, Portland": "Portland Public Schools",
+  "Cully, Portland": "Portland Public Schools",
+  "Glenfair, Portland": "Portland Public Schools",
+  "Grant Park, Portland": "Portland Public Schools",
+  "Hazelwood, Portland": "Portland Public Schools",
+  "Hollywood, Portland": "Portland Public Schools",
+  "Kerns, Portland": "Portland Public Schools",
+  "King, Portland": "Portland Public Schools",
+  "Laurelhurst, Portland": "Portland Public Schools",
+  "Madison South, Portland": "Portland Public Schools",
+  "Montavilla, Portland": "Portland Public Schools",
+  "Parkrose, Portland": "Parkrose School District",
+  "Parkrose Heights, Portland": "Parkrose School District",
+  "Rose City Park, Portland": "Portland Public Schools",
+  "Roseway, Portland": "Portland Public Schools",
+  "Russell, Portland": "Parkrose School District",
+  "Sabin, Portland": "Portland Public Schools",
+  "Sullivan's Gulch, Portland": "Portland Public Schools",
+  "Sumner, Portland": "Parkrose School District",
+  "Sunderland, Portland": "Portland Public Schools",
+  "Vernon, Portland": "Portland Public Schools",
+  "Wilkes, Portland": "Portland Public Schools",
+  "Woodland Park, Portland": "Portland Public Schools",
+  "Woodlawn, Portland": "Portland Public Schools",
 };
 
 const YOUTUBE_URL = "https://www.youtube.com/@jamiemeushawrealestate";
@@ -7864,6 +7947,1210 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       closing: [
         "If an urban, condo-or-apartment lifestyle near major commercial and civic amenities appeals to you, the Lloyd District is worth a close look — just confirm you're comparing the right type of listing for this area.",
+      ],
+    },
+  ],
+  "Alameda, Portland": [
+    {
+      hook: "Built on an Ice-Age Ridge, With Pre-Car Stairways Still in Use",
+      keyword: "Alameda Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Alameda is like — a real glacial ridge, pedestrian stairways, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Alameda, built along a real ridge formed by Ice Age floods.",
+      gbp:
+        "If you're moving to the Portland, OR area, Alameda is worth researching — a neighborhood built along Alameda Ridge, a real geologic formation shaped by Glacial Lake Missoula floods 13,000-15,000 years ago. Platted in 1909, the neighborhood's custom-built homes from the 1910s-20s boom span Arts and Crafts, Craftsman, Tudor Revival and English Cottage styles; 5 homes are individually listed on the National Register as of 2019. Public stairways built along the ridge's south hillside, from the pre-car era, are still in use today. Alameda Elementary, built in 1922, has operated continuously since, helped into being by a local community group. Like many Portland neighborhoods platted in this era, Alameda's original deed restrictions included racially exclusionary language — a real, documented part of the neighborhood's founding history, long legally unenforceable today. If you're comparing Alameda homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the ridge, stairways and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Alameda is worth a look — a neighborhood built along a real geologic ridge, with genuine early-1900s architectural character.",
+        "Alameda Ridge itself was shaped by Glacial Lake Missoula floods 13,000-15,000 years ago, and public stairways built along its south hillside in the pre-car era are still in everyday use.",
+      ],
+      livingIn: [
+        "Alameda was platted in 1909, with custom-built homes from the 1910s-20s boom spanning Arts and Crafts, Craftsman, Tudor Revival and English Cottage styles — 5 homes are individually listed on the National Register as of 2019.",
+      ],
+      whereLocated: [
+        "Alameda sits along Alameda Ridge in Northeast Portland, adjacent to Irvington, extending south to NE Knott.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly, given the real range of historic home styles here.",
+      ],
+      parks: [
+        "The ridge's pre-car-era pedestrian stairways remain a genuinely distinctive, still-used feature of the neighborhood, alongside Alameda Elementary, built in 1922 with real community-driven roots.",
+      ],
+      commute: [
+        "Alameda's elevated ridge position keeps it within reasonable reach of the broader Northeast Portland arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>A real geologic ridge setting:</strong> Alameda Ridge, shaped by Ice Age floods, not a marketing name.",
+        "<strong>Pre-car-era stairways still in use:</strong> a genuinely distinctive walking feature few other neighborhoods have.",
+        "<strong>National Register-listed homes:</strong> 5 individually listed as of 2019, reflecting real architectural significance.",
+      ],
+      considerations: [
+        "<strong>Historic deed restrictions:</strong> like many Portland neighborhoods platted in this era, Alameda's original restrictions included racially exclusionary language — long unenforceable, but real documented history worth knowing.",
+        "<strong>Older homes need closer inspection:</strong> 1910s-20s construction may need updated systems depending on renovation history.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a neighborhood with real geologic character and genuine early-1900s architecture matters to your search, Alameda is worth a close look.",
+      ],
+    },
+  ],
+  "Argay, Portland": [
+    {
+      hook: "A 1950s Mid-Century Tract With Oregon's Highest Concentration of Backyard Pools",
+      keyword: "Argay Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Argay is like — a real mid-century tract, backyard pools, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Argay, a mid-century neighborhood reportedly with Oregon's highest concentration of backyard pools.",
+      gbp:
+        "If you're moving to the Portland, OR area, Argay (also called Argay Terrace) is worth researching — developed starting in 1957 by homebuilders Art Simonson and Gerhardt \"Gay\" Stavney, whose first names combined to give the neighborhood its own. Restore Oregon calls it the largest tract of mid-century development in East Portland, with ranches, split-entry/split-level homes and some two-story colonials. Restore Oregon has also described it as having the highest concentration of backyard pools in Oregon, along with basement bars — a notable, if attributed rather than independently verified, claim. Argay is served by the Parkrose School District, not Portland Public Schools. If you're comparing Argay homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the mid-century architecture, schools and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area and mid-century architecture appeals to you, Argay is worth a look — developed starting in 1957 and, per Restore Oregon, the largest tract of mid-century development in East Portland.",
+      ],
+      livingIn: [
+        "Argay's housing is genuinely mid-century — ranches, split-entry/split-level homes and some two-story colonials from the 1950s-70s development era.",
+      ],
+      whereLocated: [
+        "Argay sits in Northeast Portland, bounded by the Columbia River to the north, NE 122nd Ave to the west, I-84 to the south and NE 148th Ave to the east.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly, given the consistent mid-century character here.",
+      ],
+      parks: [
+        "Restore Oregon has described Argay as having the highest concentration of backyard pools in Oregon, along with basement bars — a distinctive, attributed claim worth noting, not independently verified elsewhere.",
+      ],
+      commute: [
+        "Argay's location near I-84 keeps it within reasonable reach of the broader Portland arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Genuine mid-century architecture:</strong> per Restore Oregon, the largest tract of its kind in East Portland.",
+        "<strong>A notable pool/bar concentration:</strong> an attributed, distinctive claim about the neighborhood's backyard amenities.",
+        "<strong>Consistent development era:</strong> most homes share the same 1950s-70s design language.",
+      ],
+      considerations: [
+        "<strong>Parkrose School District, not PPS:</strong> confirm school enrollment details directly with the Parkrose School District rather than assuming Portland Public Schools.",
+        "<strong>Mid-century systems:</strong> homes from the 1950s-70s may need updated wiring, roofing or mechanical systems depending on upkeep history.",
+        "<strong>Pool maintenance and liability:</strong> if a specific property includes a pool, factor in upkeep and insurance costs.",
+      ],
+      closing: [
+        "If genuine mid-century architecture — and the possibility of a backyard pool — appeals to you, Argay is worth a close look.",
+      ],
+    },
+  ],
+  "Beaumont-Wilshire, Portland": [
+    {
+      hook: "Two Separate 1910s/1920s Plats, Now One Neighborhood Around Beaumont Village",
+      keyword: "Beaumont-Wilshire Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Beaumont-Wilshire is like — Beaumont Village, a National Register mansion, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Beaumont-Wilshire, two separately platted areas now united around Beaumont Village.",
+      gbp:
+        "If you're moving to the Portland, OR area, Beaumont-Wilshire is worth researching — originally two separate plats: Beaumont (platted 1910, part of the earlier Rose City Park subdivision) south of NE Fremont, and Wilshire (platted 1921) to the north, now one unified neighborhood association. Beaumont Village, the commercial core along Fremont, anchors the area. Housing south of Fremont is mostly early-1900s Tudors, Craftsman homes and bungalows; north of Fremont adds some post-1950 construction, a genuine era split worth knowing. The Barnes Mansion (1913), listed on the National Register in 1983, is a real, named landmark. If you're comparing Beaumont-Wilshire homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the plat history, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Beaumont-Wilshire is worth a look — a neighborhood formed from two separately platted areas that merged into one real community.",
+      ],
+      livingIn: [
+        "Housing south of Fremont is mostly early-1900s Tudors, Craftsman homes and bungalows; north of Fremont (the former Wilshire plat) adds some post-1950 construction alongside the same early styles — a genuine era split, not a uniform neighborhood.",
+      ],
+      whereLocated: [
+        "Beaumont-Wilshire is centered on Beaumont Village, the commercial core along NE Fremont between roughly NE 33rd and NE 50th.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly, given the real mix of eras between the Beaumont and Wilshire sections.",
+      ],
+      parks: [
+        "The Barnes Mansion, built in 1913 and listed on the National Register in 1983, is a real, named historic landmark in the neighborhood.",
+      ],
+      commute: [
+        "Beaumont-Wilshire's Northeast Portland location keeps it within reasonable reach of the broader arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Real, documented plat history:</strong> two separately platted areas, Beaumont (1910) and Wilshire (1921), now one neighborhood.",
+        "<strong>Beaumont Village:</strong> a genuine, walkable commercial core along Fremont.",
+        "<strong>A National Register landmark:</strong> the Barnes Mansion, individually listed in 1983.",
+      ],
+      considerations: [
+        "<strong>Era genuinely varies by section:</strong> homes south of Fremont skew earlier than some built north of Fremont — confirm which section a specific address is in.",
+        "<strong>Older homes need closer inspection:</strong> early-1900s construction may need updated systems depending on renovation history.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a walkable neighborhood with real, documented early-1900s roots matters to your search, Beaumont-Wilshire is worth a close look.",
+      ],
+    },
+  ],
+  "Concordia, Portland": [
+    {
+      hook: "A Closed University Campus Now Run as a Children's Health Program",
+      keyword: "Concordia Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Concordia is like — a real university-to-health-campus transition, McMenamins Kennedy School, and listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Concordia, named for a university whose campus now serves a different real purpose.",
+      gbp:
+        "If you're moving to the Portland, OR area, Concordia is worth researching — named for Concordia University, a Lutheran college that closed in 2020; the University of Oregon then bought the 19-acre campus to run \"UO Portland,\" a children's behavioral-health program, a real, current, checkable transition. Before the \"Concordia\" name (first used in the mid-1970s), the area went by several earlier plat names. McMenamins Kennedy School, a well-known Portland landmark, and most of the Alberta Street Arts District both sit within Concordia. After the 1948 Vanport flood, many displaced Black shipyard workers settled in Concordia and surrounding areas, and it remained largely African American until 1990s urban renewal — real, documented neighborhood history. If you're comparing Concordia homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the campus transition, landmarks and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Concordia is worth a look — a neighborhood whose namesake university campus now serves a genuinely different, current real purpose.",
+        "Concordia University, a Lutheran college, closed in 2020; the University of Oregon then purchased the 19-acre campus for \"UO Portland,\" a children's behavioral-health program — a real, ongoing transition, not just history.",
+      ],
+      livingIn: [
+        "After the 1948 Vanport flood, many displaced Black shipyard workers settled in Concordia and surrounding areas, and the neighborhood remained largely African American until 1990s urban renewal — real, documented history worth understanding alongside the neighborhood's current character.",
+      ],
+      whereLocated: [
+        "Concordia sits in Northeast Portland, bordering Woodlawn, Vernon, Sabin, Sunderland, Cully, Alameda and Beaumont-Wilshire, with most of the Alberta Street Arts District inside its boundaries.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "McMenamins Kennedy School, a well-known Portland landmark, sits within Concordia, alongside the former Concordia University campus, now home to UO Portland's children's behavioral-health program.",
+      ],
+      commute: [
+        "Concordia's Northeast Portland location keeps it within reasonable reach of the broader arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>A real, current campus transition:</strong> the former Concordia University campus now runs UO Portland's children's behavioral-health program.",
+        "<strong>McMenamins Kennedy School:</strong> a genuinely well-known, checkable Portland landmark.",
+        "<strong>Most of the Alberta Street Arts District:</strong> real, walkable commercial and cultural amenities within the neighborhood.",
+      ],
+      considerations: [
+        "<strong>Significant, documented community history:</strong> Concordia's role as a center of Portland's Black community after the 1948 Vanport flood is real neighborhood history, worth understanding factually.",
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a neighborhood with a genuinely current institutional story and real cultural amenities matters to your search, Concordia is worth a close look.",
+      ],
+    },
+  ],
+  "Cully, Portland": [
+    {
+      hook: "A 25-Acre Park Built on a Former Landfill",
+      keyword: "Cully Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Cully is like — Cully Park's real landfill-to-park transformation, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Cully, home to Cully Park, a real former landfill turned 25-acre park.",
+      gbp:
+        "If you're moving to the Portland, OR area, Cully is worth researching — named for 19th-century homesteaders Thomas and Rebecca Cully. Cully Park, a real, documented transformation, opened June 30, 2018 on a former landfill site, giving 517 Portland families their first park within a half-mile walk, per the city's own 2018 release, with real Mt. Hood and Mt. St. Helens views. The neighborhood has seen significant community investment, including a $5.4 million rebuild of Cully Boulevard. If you're comparing Cully homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers Cully Park, the investment and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Cully is worth a look — home to one of the city's most genuinely distinctive park transformations.",
+        "Cully Park opened June 30, 2018 on a former landfill site — a real, documented transformation, not a generic park claim, giving 517 Portland families their first park within a half-mile walk, per the city's own release.",
+      ],
+      livingIn: [
+        "Cully has seen significant recent community investment, including a $5.4 million rebuild of Cully Boulevard, as the neighborhood revitalizes from what was once considered the city's \"hinterlands.\"",
+      ],
+      whereLocated: [
+        "Cully sits in Northeast Portland, named for 19th-century homesteaders Thomas and Rebecca Cully.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "Cully Park, 25 acres on a former landfill site, offers real Mt. Hood and Mt. St. Helens views and gave hundreds of Portland families their first nearby park access when it opened in 2018.",
+      ],
+      commute: [
+        "Cully's Northeast Portland location keeps it within reasonable reach of the broader arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>A real landfill-to-park transformation:</strong> Cully Park, opened 2018, a genuinely distinctive civic achievement.",
+        "<strong>Significant recent investment:</strong> a $5.4 million Cully Boulevard rebuild and other community projects.",
+        "<strong>Real mountain views:</strong> Mt. Hood and Mt. St. Helens visible from the park.",
+      ],
+      considerations: [
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Displacement concerns are real and documented:</strong> a 2015 \"Not in Cully\" report specifically addressed preventing displacement as the area revitalizes — worth understanding as context.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a neighborhood with a genuinely distinctive park transformation and real ongoing investment matters to your search, Cully is worth a close look.",
+      ],
+    },
+  ],
+  "Glenfair, Portland": [
+    {
+      hook: "Mostly Rental Housing Near a Real Neighborhood Park, Honestly Light on Documented History",
+      keyword: "Glenfair Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Glenfair is like — Glenfair Park, new townhome construction, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Glenfair, an outer-Portland neighborhood near the Gresham city line.",
+      gbp:
+        "If you're moving to the Portland, OR area, Glenfair is worth researching — a neighborhood on the city's eastern edge next to Gresham, bordered by Wilkes, Hazelwood and Centennial. Glenfair Park is the city's own cited \"main attraction\" for the area. Housing has historically skewed toward renters, with newer townhome construction now adding ownership options. Specific founding-era history for Glenfair is genuinely thin and sometimes conflicting across sources — the honest approach is to focus on what's verifiable rather than repeat an uncertain origin story. If you're comparing Glenfair homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers Glenfair Park, the housing mix and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Glenfair is worth a look — an outer-Portland neighborhood near the Gresham line, with a real neighborhood park as its central amenity.",
+      ],
+      livingIn: [
+        "Housing in Glenfair has historically skewed toward renters, with newer townhome construction now adding real ownership options to the mix.",
+      ],
+      whereLocated: [
+        "Glenfair sits on Portland's eastern edge next to Gresham, bordered by Wilkes, Hazelwood and Centennial.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly, particularly for newer townhome construction now available in the area.",
+      ],
+      parks: [
+        "Glenfair Park is the city's own cited \"main attraction\" for the neighborhood, a real, named local amenity.",
+      ],
+      commute: [
+        "Glenfair's location on Portland's eastern edge keeps it within reasonable reach of both Portland and Gresham, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Glenfair Park:</strong> a real, named local amenity and the city's own cited highlight for the area.",
+        "<strong>Newer townhome construction:</strong> real ownership options alongside the area's traditionally rental-heavy housing stock.",
+        "<strong>Eastern-edge location:</strong> close to both Portland and Gresham amenities.",
+      ],
+      considerations: [
+        "<strong>Historically renter-majority housing stock:</strong> worth knowing if ownership rate matters to your sense of a neighborhood.",
+        "<strong>Limited, sometimes conflicting founding history:</strong> don't rely on any single source's origin story for the neighborhood without independent verification.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If an outer-Portland location with real new-construction options appeals to you, Glenfair is worth a close look — just compare current listings directly given the area's historically rental-heavy market.",
+      ],
+    },
+  ],
+  "Grant Park, Portland": [
+    {
+      hook: "The Real Klickitat Street From Beverly Cleary's Ramona Books",
+      keyword: "Grant Park Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Grant Park is like — the real-life Klickitat Street from Beverly Cleary's books, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Grant Park, the real neighborhood behind Beverly Cleary's Klickitat Street books.",
+      gbp:
+        "If you're moving to the Portland, OR area, Grant Park is worth researching — home to the real Klickitat Street setting of Beverly Cleary's beloved Ramona book series, a genuinely unique literary connection. The neighborhood, park and Grant High School are all named for Ulysses S. Grant, who visited Portland three times. The park itself, roughly 20 acres, was designed by landscape architect Florence Holmes Gerke. Housing reflects early-20th-century Old Portland and Craftsman styles. If you're comparing Grant Park homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the literary history, park and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Grant Park is worth a look — home to a genuinely unique literary connection few other neighborhoods can claim.",
+        "Beverly Cleary's beloved Ramona book series is set on the real Klickitat Street here — a specific, checkable literary tie, not a loose inspiration claim.",
+      ],
+      livingIn: [
+        "Housing in Grant Park reflects early-20th-century Old Portland and Craftsman styles, tracing back to an 1850s donation land claim later developed by Charles Cardinell.",
+      ],
+      whereLocated: [
+        "Grant Park is bordered by Alameda and Beaumont-Wilshire to the north, Irvington to the west, Rose City Park to the east, and the Hollywood District, Sullivan's Gulch and Laurelhurst to the south.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "Grant Park itself, roughly 20 acres, was designed by landscape architect Florence Holmes Gerke — a real, named designer, not an uncredited civic amenity.",
+      ],
+      commute: [
+        "Grant Park's Northeast Portland location keeps it within reasonable reach of the broader arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>A real literary connection:</strong> the genuine setting for Beverly Cleary's Ramona book series.",
+        "<strong>A professionally designed park:</strong> 20 acres by landscape architect Florence Holmes Gerke.",
+        "<strong>Early-20th-century housing character:</strong> Old Portland and Craftsman styles throughout.",
+      ],
+      considerations: [
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Older homes need closer inspection:</strong> early-1900s construction may need updated systems depending on renovation history.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a genuinely unique literary connection and professionally designed park appeal to you, Grant Park is worth a close look.",
+      ],
+    },
+  ],
+  "Hazelwood, Portland": [
+    {
+      hook: "One of Portland's Most Diverse Neighborhoods, With Real Pioneer-Era Transportation Roots",
+      keyword: "Hazelwood Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Hazelwood is like — real diversity, pioneer-era road history, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Hazelwood, a genuinely diverse Portland neighborhood with roots tied to the city's earliest roads.",
+      gbp:
+        "If you're moving to the Portland, OR area, Hazelwood is worth researching — a neighborhood on the NE/SE Portland border with real, documented pioneer-era roots tied to transportation routes; before 1854, only two routes led east from downtown, one along what's now Foster Road, and a later county road along the baseline became today's SE Stark St. Hazelwood is consistently described as genuinely diverse, earning high diversity ratings, with the neighborhood association's own mission explicitly supporting communities of color, immigrant and refugee communities. Housing is roughly 42% owner-occupied and 51% rented. If you're comparing Hazelwood homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the history, community and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Hazelwood is worth a look — a genuinely diverse neighborhood with real roots tied to the city's earliest transportation routes.",
+      ],
+      livingIn: [
+        "Housing in Hazelwood is roughly 42% owner-occupied and 51% rented, with a real, consistently diverse resident population recognized across multiple sources.",
+      ],
+      whereLocated: [
+        "Hazelwood sits on the NE/SE Portland border, with roots tied to pioneer-era routes — before 1854, only two roads led east from downtown, and a later county road along the baseline became today's SE Stark St.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "The neighborhood association's own stated mission explicitly works with communities of color, immigrant and refugee communities — a real, documented community priority, not marketing language.",
+      ],
+      commute: [
+        "Hazelwood's location along historic SE Stark St keeps it within reasonable reach of the broader Portland arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Genuinely diverse community:</strong> consistently high diversity ratings and an explicit community-support mission.",
+        "<strong>Real pioneer-era transportation roots:</strong> tied to some of Portland's earliest documented roads.",
+        "<strong>A real, active neighborhood association:</strong> explicitly focused on supporting communities of color, immigrants and refugees.",
+      ],
+      considerations: [
+        "<strong>Mixed resident feedback on condition and safety:</strong> some reviews cite concerns worth researching directly rather than assuming based on general neighborhood reputation.",
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a genuinely diverse community with real historic roots matters to your search, Hazelwood is worth a close look — and worth researching current, specific conditions directly rather than relying on general reputation.",
+      ],
+    },
+  ],
+  "Hollywood, Portland": [
+    {
+      hook: "A 1926 Movie Theater That Gave the Neighborhood Its Name, Still Open Today",
+      keyword: "Hollywood District Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what the Hollywood District is like — the real 1926 theater behind the name, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore the Hollywood District, renamed for its real, still-operating 1926 theater.",
+      gbp:
+        "If you're moving to the Portland, OR area, the Hollywood District is worth researching — originally named \"Hollyrood\" (after Scotland's Holyrood), the neighborhood was renamed shortly after the Hollywood Theatre opened in 1926, reportedly at the urging of impressed Rose City Park residents. The Hollywood Theatre still operates today as a nonprofit art-house cinema — a real, current, checkable landmark, not just history. A 1906 streetcar line along Sandy Blvd enabled the area's early residential growth. If you're comparing Hollywood District homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the theater's history, current operations and listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, the Hollywood District is worth a look — a neighborhood genuinely renamed for a theater that's still operating today.",
+        "The Hollywood Theatre opened in 1926, and the neighborhood (previously called \"Hollyrood\") took its current name shortly after — the theater remains a real, currently operating nonprofit art-house cinema, not a historical footnote.",
+      ],
+      livingIn: [
+        "A 1906 streetcar line along Sandy Blvd enabled the neighborhood's early residential growth, giving it genuine early-1900s roots.",
+      ],
+      whereLocated: [
+        "The Hollywood District sits in Northeast Portland, near Sullivan's Gulch, Irvington, Alameda, Beaumont-Wilshire and Rose City Park.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "The Hollywood Theatre, open since 1926, continues to operate as a real, currently active nonprofit art-house cinema — a genuine, ongoing neighborhood amenity.",
+      ],
+      commute: [
+        "The Hollywood District's location along the Sandy Blvd corridor keeps it within reasonable reach of the broader Northeast Portland arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>A real, still-operating 1926 theater:</strong> the Hollywood Theatre, a currently active nonprofit cinema.",
+        "<strong>Genuine early-1900s roots:</strong> growth tied to a real 1906 streetcar line.",
+        "<strong>A specific, checkable naming story:</strong> renamed for the theater, not a vague marketing rebrand.",
+      ],
+      considerations: [
+        "<strong>Neighborhood character can vary by block:</strong> areas closer to I-84 may feel different from the core residential streets — worth touring specific blocks.",
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a neighborhood with a real, still-operating historic landmark matters to your search, the Hollywood District is worth a close look.",
+      ],
+    },
+  ],
+  "Kerns, Portland": [
+    {
+      hook: "An 1850s Land Claim Turned Real Food Destination on NE 28th Ave",
+      keyword: "Kerns Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Kerns is like — real 1850s settler history, a genuine restaurant row, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Kerns, named for an 1850s homesteader, now home to a real restaurant destination.",
+      gbp:
+        "If you're moving to the Portland, OR area, Kerns is worth researching — named for homesteader William Kerns, who cleared a 320-acre land claim here in the 1850s and made a living producing wood shingles; by 1855 he was elected school director and helped lead the effort to buy land for Washington High School, real, specific, documented history. Today, NE 28th Ave between Burnside and Glisan is a genuine, well-documented food and restaurant destination, sometimes called \"Restaurant Row.\" Housing includes large Craftsman-style homes, many converted into multifamily units, mixed among commercial properties. If you're comparing Kerns homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the history, food scene and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Kerns is worth a look — a neighborhood with real 1850s settler roots and a genuinely well-documented current food scene.",
+        "William Kerns cleared a 320-acre land claim here in the 1850s, making a living producing wood shingles, and by 1855 was elected school director, helping lead the effort to buy land for Washington High School — specific, real, citable history.",
+      ],
+      livingIn: [
+        "Housing in Kerns includes large Craftsman-style homes, many converted into multifamily units, mixed among commercial properties — genuinely distinct from neighboring Laurelhurst's mostly single-family stock.",
+      ],
+      whereLocated: [
+        "Kerns is bordered by the Lloyd District and Sullivan's Gulch to the north, Laurelhurst to the east, and Buckman and Sunnyside to the south, with Old Town Chinatown across the Willamette.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly, given the mix of residential and commercial property types here.",
+      ],
+      parks: [
+        "NE 28th Ave between Burnside and Glisan, sometimes called \"Restaurant Row,\" is a real, well-documented food and dining destination, including an outdoor food hall.",
+      ],
+      commute: [
+        "Kerns' central location keeps it within easy reach of downtown Portland and the broader eastside, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Real 1850s settler history:</strong> a specific, documented land claim and civic role tied to William Kerns.",
+        "<strong>A genuine food destination:</strong> NE 28th Ave's well-documented restaurant corridor.",
+        "<strong>Central, well-connected location:</strong> close to downtown and multiple surrounding neighborhoods.",
+      ],
+      considerations: [
+        "<strong>Mixed residential/commercial character:</strong> many homes are converted multifamily units — confirm the specific property type you want.",
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If real 1850s neighborhood history paired with a genuinely well-documented food scene matters to your search, Kerns is worth a close look.",
+      ],
+    },
+  ],
+  "King, Portland": [
+    {
+      hook: "Renamed in 1989 When Its Main Street Became Martin Luther King Jr. Blvd",
+      keyword: "King Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what King is like — a real 1989 renaming, significant community history, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore King, renamed in 1989 when its main street became Martin Luther King Jr. Blvd.",
+      gbp:
+        "If you're moving to the Portland, OR area, King is worth understanding through its real, documented history. Formerly called \"Highland,\" part of the historic Albina area annexed to Portland in 1891, the neighborhood took its current name after Portland City Council renamed the main street Martin Luther King Jr. Blvd in a 1989 ordinance, upheld by the Oregon Supreme Court after a legal challenge. Martin Luther King Jr. School, one of the first schools in the country named for Dr. King, sits in the neighborhood; Dr. King himself visited Portland in 1961. King was once a redlining-designated district and a longtime cultural hub for Portland's Black community, and has seen rapid gentrification since the 1990s. Housing mixes vintage Bungalow, Craftsman and Victorian homes with new construction. If you're comparing King homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers this history, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, King is worth understanding through its real, significant history — a neighborhood whose very name carries a specific, documented civic story.",
+        "Formerly called \"Highland\" and part of the historic Albina area, the neighborhood took its current name after a 1989 Portland City Council ordinance renamed the main street Martin Luther King Jr. Blvd, upheld by the Oregon Supreme Court after a legal challenge.",
+      ],
+      livingIn: [
+        "King was once a redlining-designated district and a longtime cultural hub for Portland's Black community, and has seen rapid gentrification since the 1990s — real, significant history worth understanding alongside the neighborhood's current character.",
+      ],
+      whereLocated: [
+        "King straddles Martin Luther King Jr. Blvd from NE Ainsworth St to NE Fremont St.",
+      ],
+      homesIn: [
+        "Housing mixes vintage Bungalow, Craftsman and Victorian homes alongside new construction — specific, verified current pricing wasn't broadly confirmed for this writeup, so compare current listings directly.",
+      ],
+      parks: [
+        "Martin Luther King Jr. School, one of the first schools in the country named for Dr. King, is a real, specific landmark in the neighborhood — Dr. King himself visited Portland in 1961.",
+      ],
+      commute: [
+        "King's location along Martin Luther King Jr. Blvd keeps it within reasonable reach of the broader Northeast Portland arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>A real, documented 1989 renaming:</strong> a specific civic decision, upheld by the Oregon Supreme Court.",
+        "<strong>A historically significant cultural hub:</strong> real, significant history for Portland's Black community.",
+        "<strong>A genuine architectural mix:</strong> vintage Bungalow, Craftsman and Victorian homes alongside new construction.",
+      ],
+      considerations: [
+        "<strong>Significant documented history of redlining and displacement:</strong> worth understanding honestly as part of the neighborhood's real story, not a footnote.",
+        "<strong>Rapid recent gentrification:</strong> real, documented change since the 1990s — worth factoring into expectations about the neighborhood's current character.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If you're researching King, take the time to understand its full, documented history — including its real significance to Portland's Black community — alongside current listings.",
+      ],
+    },
+  ],
+  "Laurelhurst, Portland": [
+    {
+      hook: "A 2019 National Register Historic District Centered on a Gilded Joan of Arc Statue",
+      keyword: "Laurelhurst Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Laurelhurst is like — a real 2019 historic district, the Joan of Arc statue, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Laurelhurst, home to a real National Register historic district and a gilded WWI memorial statue.",
+      gbp:
+        "If you're moving to the Portland, OR area, Laurelhurst is worth researching — a 442-acre neighborhood developed starting in 1909 by the Laurelhurst Company on land William Sargent Ladd had acquired in the late 1800s. The Laurelhurst Historic District was listed on the National Register of Historic Places in 2019, with well-preserved 1910-1925 Arts and Crafts, Bungalow, Portland Foursquare and Spanish Revival homes. Coe Circle, the neighborhood's center, holds a gilded equestrian Joan of Arc statue, a WWI memorial donated by Dr. Henry Waldo Coe in 1925. Laurelhurst Park (~30 acres) sits at the neighborhood's southwest corner. As documented in the National Register nomination, the original Laurelhurst Company deed restrictions also banned selling homes to Chinese, Japanese or African American buyers — real, disclosed history, long legally unenforceable today. If you're comparing Laurelhurst homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the historic district, the statue and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Laurelhurst is worth a look — a neighborhood with a genuinely significant, nationally recognized historic designation and real, well-preserved early-1900s architecture.",
+        "The Laurelhurst Historic District was listed on the National Register of Historic Places in 2019, covering well-preserved 1910-1925 homes across Arts and Crafts, Bungalow, Portland Foursquare and Spanish Revival styles.",
+      ],
+      livingIn: [
+        "As documented in the National Register nomination for the neighborhood, the original Laurelhurst Company's deed restrictions from its 1909 development also banned selling homes to Chinese, Japanese or African American buyers — real, disclosed history, long legally unenforceable since the 1948 Supreme Court case Shelley v. Kraemer, and standard historical-disclosure material for a district of this era.",
+      ],
+      whereLocated: [
+        "Laurelhurst spans 442 acres across both Northeast and Southeast Portland, bordered by Kerns, Sullivan's Gulch, Hollywood, North Tabor and Sunnyside, with Laurelhurst Park at its southwest corner.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly, given the significant historic-district status here.",
+      ],
+      parks: [
+        "Coe Circle, the neighborhood's center, holds a gilded equestrian Joan of Arc statue, a real WWI memorial donated by Dr. Henry Waldo Coe in 1925; Laurelhurst Park itself covers roughly 30 acres at the southwest corner.",
+      ],
+      commute: [
+        "Laurelhurst's central location keeps it within reasonable reach of both downtown Portland and the broader eastside, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>A real National Register historic district:</strong> listed in 2019, covering well-preserved 1910-1925 architecture.",
+        "<strong>A genuinely distinctive landmark:</strong> the gilded Joan of Arc statue at Coe Circle.",
+        "<strong>A large, well-established park:</strong> roughly 30 acres at the neighborhood's southwest corner.",
+      ],
+      considerations: [
+        "<strong>Historic deed restrictions:</strong> the original 1909 development's deed restrictions included racially exclusionary language, now disclosed in the National Register nomination — real, documented founding history, long unenforceable.",
+        "<strong>Historic designation can affect renovations:</strong> homes within the National Register district may have restrictions on exterior changes — confirm before planning any work.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If genuine, nationally recognized historic architecture matters to your search, Laurelhurst is worth a close look — and worth understanding its full, documented history, including its founding-era restrictions.",
+      ],
+    },
+  ],
+  "Madison South, Portland": [
+    {
+      hook: "Rock-Climbing Walls on a 2.5-Acre Natural Landmark Called Rocky Butte",
+      keyword: "Madison South Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Madison South is like — Rocky Butte's real climbing walls, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Madison South, home to Rocky Butte, a real natural landmark with climbing walls.",
+      gbp:
+        "If you're moving to the Portland, OR area, Madison South is worth researching — platted in 1892, it stayed a rural farm community until after WWII, when Black families moved in during a wartime defense-industry jobs boom. Rocky Butte, roughly 2.5 acres with trails and two real rock-climbing walls, is a genuine, distinctive natural landmark here. Rose City Golf Course, bordering the neighborhood, began as the Rose City Raceway, a racetrack developed in 1910. Dining options line NE 82nd Ave along the western border. If you're comparing Madison South homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers Rocky Butte, the history and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Madison South is worth a look — home to a genuinely distinctive natural landmark most other Portland neighborhoods don't have.",
+      ],
+      livingIn: [
+        "Madison South was platted in 1892 and stayed a rural farm community until after WWII, when Black families moved in during a wartime defense-industry jobs boom.",
+      ],
+      whereLocated: [
+        "Madison South is bounded by I-84 to the south and I-205 to the east, bordering Roseway, Sumner, Cully, Parkrose, Montavilla and Rose City Park.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "Rocky Butte, roughly 2.5 acres with trails and two real rock-climbing walls, is a genuinely distinctive natural landmark; Rose City Golf Course, bordering the neighborhood, began as the Rose City Raceway, a racetrack developed in 1910.",
+      ],
+      commute: [
+        "Madison South's position between I-84 and I-205 gives it genuinely convenient highway access toward both downtown Portland and the broader metro area.",
+      ],
+      reasons: [
+        "<strong>Rocky Butte's real climbing walls:</strong> a genuinely distinctive outdoor amenity.",
+        "<strong>A real racetrack-to-golf-course history:</strong> Rose City Golf Course's roots as the Rose City Raceway.",
+        "<strong>Genuine highway access:</strong> bordered by both I-84 and I-205.",
+      ],
+      considerations: [
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Highway-adjacent noise:</strong> proximity to I-84 and I-205 is convenient but may mean more road noise on some streets.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a neighborhood with a genuinely distinctive natural landmark and real highway access matters to your search, Madison South is worth a close look.",
+      ],
+    },
+  ],
+  "Montavilla, Portland": [
+    {
+      hook: "A Real Restaurant Strip on SE Stark, Plus a Distinct 1950s Ranch-House Pocket",
+      keyword: "Montavilla Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Montavilla is like — SE Stark's dining strip, the Asbahr Addition's ranch homes, and listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Montavilla, home to a real SE Stark dining strip and a distinct 1950s ranch-house pocket.",
+      gbp:
+        "If you're moving to the Portland, OR area, Montavilla is worth researching — likely named as a contraction of \"Mount Tabor Villa Addition,\" the area's first platted subdivision from 1889. SE Stark St is a real, concentrated strip of bars, coffee shops and entertainment venues. Craftsman houses line most of the neighborhood's tree-lined streets, while the Asbahr Addition (SE 89th-92nd Ave), developed in the early-to-mid 1950s, is a distinct pocket of primarily ranch-style homes worth knowing by name. Montavilla Park (9.46 acres) was established in 1921. If you're comparing Montavilla homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the dining strip, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Montavilla is worth a look — a neighborhood with a real, named commercial strip and a genuinely distinct architectural pocket worth knowing about specifically.",
+      ],
+      livingIn: [
+        "Craftsman houses line most of Montavilla's tree-lined streets, while the Asbahr Addition (SE 89th-92nd Ave), developed in the early-to-mid 1950s, is a distinct pocket of primarily ranch-style homes.",
+      ],
+      whereLocated: [
+        "Montavilla sits east of Mount Tabor, roughly bounded by I-84 to the north, SE Division St to the south and I-205 to the east, spanning Northeast and Southeast Portland.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly, and confirm whether a specific property is in the Craftsman-heavy core or the Asbahr Addition's ranch-style pocket.",
+      ],
+      parks: [
+        "SE Stark St is a real, concentrated strip of bars, coffee shops and entertainment venues, and Montavilla Park (9.46 acres), established in 1921, adds real green space.",
+      ],
+      commute: [
+        "In 1970, SE Stark and SE Washington were converted to one-way streets to handle Mall 205 shopper traffic — a real, dated detail still relevant to understanding traffic patterns today.",
+      ],
+      reasons: [
+        "<strong>A real, named dining and entertainment strip:</strong> SE Stark St's genuine concentration of bars, coffee shops and venues.",
+        "<strong>A distinct architectural pocket:</strong> the Asbahr Addition's 1950s ranch-style homes, worth knowing by name.",
+        "<strong>Established green space:</strong> Montavilla Park, dating to 1921.",
+      ],
+      considerations: [
+        "<strong>Architectural style varies by pocket:</strong> confirm whether a specific address is in the Craftsman-heavy core or the Asbahr Addition.",
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a neighborhood with a real dining strip and a genuinely distinct architectural pocket matters to your search, Montavilla is worth a close look.",
+      ],
+    },
+  ],
+  "Parkrose, Portland": [
+    {
+      hook: "Its Own Independent School District, Annexed to Portland Only in the 1980s",
+      keyword: "Parkrose Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Parkrose is like — its own independent school district, a late annexation, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Parkrose, served by its own independent school district and annexed to the city only in the 1980s.",
+      gbp:
+        "If you're moving to the Portland, OR area, Parkrose is worth researching — one of the few Portland-area neighborhoods served by its own independent school district, the Parkrose School District, rather than Portland Public Schools. The district traces to an 1885 one-room schoolhouse and covers roughly 3,300 students across four elementary schools, a middle school and a high school. Parkrose was platted in 1911 as an agricultural community and remained unincorporated Multnomah County for most of its history, not becoming part of Portland until annexation in the 1980s — a genuinely late story compared to most Portland neighborhoods. The Parkrose Community Archive describes the area as one of the most racially and ethnically diverse communities in Oregon. If you're comparing Parkrose homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the school district, annexation history and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Parkrose is worth a look — genuinely distinct from almost every other Portland neighborhood in two specific, verifiable ways.",
+        "Parkrose is served by its own independent Parkrose School District, not Portland Public Schools, tracing back to an 1885 one-room schoolhouse. And the area wasn't annexed into the City of Portland until the 1980s, remaining unincorporated Multnomah County for most of its history.",
+      ],
+      livingIn: [
+        "Parkrose was platted in 1911 as an agricultural community, and the Parkrose Community Archive describes the area today as one of the most racially and ethnically diverse communities in Oregon.",
+      ],
+      whereLocated: [
+        "Parkrose sits in outer Northeast Portland, with its school district also serving Parkrose Heights, Russell, Argay and Sumner.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "The Parkrose School District itself, covering roughly 3,300 students across four elementary schools, a middle school and a high school, functions as a real, distinctive community anchor beyond typical park amenities.",
+      ],
+      commute: [
+        "Parkrose's outer Northeast Portland location keeps it within reasonable reach of the broader metro area, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Its own independent school district:</strong> a genuinely distinctive feature among Portland neighborhoods.",
+        "<strong>A real, late annexation story:</strong> unincorporated Multnomah County until the 1980s.",
+        "<strong>Genuine diversity:</strong> documented by the Parkrose Community Archive as among the most diverse in Oregon.",
+      ],
+      considerations: [
+        "<strong>Confirm Parkrose School District enrollment and boundaries directly:</strong> this is a real, separate district from Portland Public Schools — verify specifics with the district itself.",
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Diversity reflects real community history:</strong> including urban renewal, gentrification and displacement of communities of color elsewhere in Portland — worth understanding as context.",
+      ],
+      closing: [
+        "If a genuinely distinctive school district and a real, late annexation story matter to your search, Parkrose is worth a close look.",
+      ],
+    },
+  ],
+  "Parkrose Heights, Portland": [
+    {
+      hook: "A Parkrose School District Neighborhood With Two Real Named City Parks",
+      keyword: "Parkrose Heights Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Parkrose Heights is like — real named parks, the Parkrose School District, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Parkrose Heights, one of six neighborhoods within the broader Parkrose area.",
+      gbp:
+        "If you're moving to the Portland, OR area, Parkrose Heights is worth researching — one of six neighborhoods within the broader Parkrose area, founded as an agricultural community in the early 20th century, and served by the Parkrose School District rather than Portland Public Schools. Merrifield Park (0.95 acres, NE 117th Ave and Thompson St, acquired 1985) and Knott City Park (12.74 acres, acquired 1986, also the neighborhood's designated Basic Earthquake Emergency Communication Node) are both real, named local parks. If you're comparing Parkrose Heights homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the parks, schools and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Parkrose Heights is worth a look — one of six neighborhoods within the broader Parkrose area, with two real, named local parks.",
+      ],
+      livingIn: [
+        "Parkrose Heights was founded as part of the broader Parkrose area's early-20th-century agricultural community development.",
+      ],
+      whereLocated: [
+        "Parkrose Heights sits in outer Northeast Portland, within the broader Parkrose area and its independent school district.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "Merrifield Park (0.95 acres, acquired 1985) and Knott City Park (12.74 acres, acquired 1986, also the neighborhood's designated Basic Earthquake Emergency Communication Node) are both real, named local parks.",
+      ],
+      commute: [
+        "Parkrose Heights' outer Northeast Portland location keeps it within reasonable reach of the broader metro area, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Two real, named local parks:</strong> Merrifield Park and Knott City Park, both with documented acquisition dates.",
+        "<strong>Part of the Parkrose School District:</strong> a genuinely distinctive feature shared with a small set of Portland neighborhoods.",
+        "<strong>Knott Park's emergency designation:</strong> a real, specific civic role as a Basic Earthquake Emergency Communication Node.",
+      ],
+      considerations: [
+        "<strong>Confirm Parkrose School District enrollment and boundaries directly:</strong> verify specifics with the district itself rather than assuming Portland Public Schools.",
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Some claims about a formal historic district are unconfirmed:</strong> don't assume historic-district protections or restrictions apply without verifying directly.",
+      ],
+      closing: [
+        "If a neighborhood with real named parks and a distinctive school district matters to your search, Parkrose Heights is worth a close look.",
+      ],
+    },
+  ],
+  "Rose City Park, Portland": [
+    {
+      hook: "A 1932 Golf Clubhouse on the National Register, Steps From a 1927 George Washington Statue",
+      keyword: "Rose City Park Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Rose City Park is like — a real National Register clubhouse, a historic statue, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Rose City Park, home to a National Register-listed 1932 golf clubhouse.",
+      gbp:
+        "If you're moving to the Portland, OR area, Rose City Park is worth researching — platted in 1907, the same year as Portland's first Rose Festival, and served by a trolley line from 1907 to 1936. Rose City Golf Course sits at the neighborhood's western edge, on the site of the former Portland Country Club; its clubhouse, dating to 1932, was individually listed on the National Register of Historic Places in 2012. A George Washington statue, dedicated July 4, 1927, originally stood at NE 57th Ave and Sandy Blvd. If you're comparing Rose City Park homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the golf course history, the statue and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Rose City Park is worth a look — home to a real National Register-listed landmark and a specific, dated historic statue.",
+        "Rose City Golf Course's clubhouse, dating to 1932, was individually listed on the National Register of Historic Places in 2012 — a genuine, verifiable architectural designation.",
+      ],
+      livingIn: [
+        "Rose City Park was platted in 1907, the same year as Portland's first Rose Festival, and served by a trolley line from 1907 to 1936 — real, documented early-1900s roots.",
+      ],
+      whereLocated: [
+        "Rose City Park sits in Northeast Portland, with Rose City Golf Course at its western edge, on the site of the former Portland Country Club.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "A George Washington statue, dedicated July 4, 1927, is a real, specific neighborhood landmark, originally sited at NE 57th Ave and Sandy Blvd.",
+      ],
+      commute: [
+        "Rose City Park's Northeast Portland location keeps it within reasonable reach of the broader arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>A real National Register-listed clubhouse:</strong> Rose City Golf Course's 1932 clubhouse, individually listed in 2012.",
+        "<strong>A specific, dated historic statue:</strong> the George Washington statue, dedicated in 1927.",
+        "<strong>Real early-1900s roots:</strong> platted in 1907, the same year as Portland's first Rose Festival.",
+      ],
+      considerations: [
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Older homes need closer inspection:</strong> early-1900s construction may need updated systems depending on renovation history.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If genuine, nationally recognized historic landmarks matter to your search, Rose City Park is worth a close look.",
+      ],
+    },
+  ],
+  "Roseway, Portland": [
+    {
+      hook: "Home to a Single-Screen 1924 Theater, Destroyed by Fire in 2022",
+      keyword: "Roseway Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Roseway is like — the real history of the Roseway Theater, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Roseway, home to the historic Roseway Theater, a single-screen venue open from 1925 until a 2022 fire.",
+      gbp:
+        "If you're moving to the Portland, OR area, Roseway is worth researching — built around NE Sandy Blvd, the neighborhood's best-known landmark was the Roseway Theater, which opened in 1924 and operated continuously from 1925 until it was destroyed by a three-alarm fire on August 6, 2022 (no injuries were reported). The single-screen venue retained much of its original 1920s facade and interior before the fire. Its current, post-fire status wasn't independently confirmed for this writeup, so don't assume it's operating today. If you're comparing Roseway homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the theater's history and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Roseway is worth a look — a neighborhood built around NE Sandy Blvd, best known historically for a real, long-running single-screen theater.",
+      ],
+      livingIn: [
+        "The Roseway Theater opened in 1924 and operated continuously from 1925 until a three-alarm fire destroyed it on August 6, 2022 — real, dated history, though its current, post-fire status wasn't independently confirmed for this writeup.",
+      ],
+      whereLocated: [
+        "Roseway is built around NE Sandy Blvd in Northeast Portland.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup, and detailed residential/housing-stock history for Roseway specifically is genuinely thin — compare current listings directly.",
+      ],
+      parks: [
+        "The former Roseway Theater retained much of its original 1920s facade and interior before the 2022 fire — a real, historically significant landmark, though its current status should be verified directly rather than assumed.",
+      ],
+      commute: [
+        "Roseway's location along NE Sandy Blvd keeps it within reasonable reach of the broader Northeast Portland arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>A real, historically significant theater:</strong> the Roseway Theater's nearly century-long run on the same site.",
+        "<strong>Sandy Blvd location:</strong> a well-connected Northeast Portland arterial corridor.",
+      ],
+      considerations: [
+        "<strong>The theater's post-2022 status is unconfirmed:</strong> don't assume it's currently operating — verify directly before referencing it as an active amenity.",
+        "<strong>Thin documented residential history:</strong> specific housing-stock details for Roseway weren't broadly confirmed — compare current listings directly.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If you're researching Roseway, verify the current status of the Roseway Theater directly rather than assuming it's still operating, and compare current listings for up-to-date housing details.",
+      ],
+    },
+  ],
+  "Russell, Portland": [
+    {
+      hook: "Land Once Pitched as Portland's Main Airport, Now Part of the Parkrose School District",
+      keyword: "Russell Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Russell is like — a real failed-airport-site history, the Parkrose School District, and listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Russell, land once considered for Portland's main airport before becoming housing.",
+      gbp:
+        "If you're moving to the Portland, OR area, Russell is worth researching — the land here was tied to a real, failed 1954 bid to become Portland's main airport; after losing that bid, the site was later redeveloped into housing. Russell is served by the Parkrose School District, not Portland Public Schools, as one of five neighborhoods the district covers. Housing is quiet and suburban, with ranch, split-level and two-story homes mainly from the mid-to-late 20th century. The neighborhood today includes Thompson Park. If you're comparing Russell homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the airport history, schools and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Russell is worth a look — land with a genuinely unusual real history before it became the quiet, suburban neighborhood it is today.",
+        "The site was tied to a real, failed 1954 bid for Portland's main airport; after losing that bid, it was later redeveloped into the housing that makes up the neighborhood now.",
+      ],
+      livingIn: [
+        "Housing in Russell is quiet and suburban, with ranch, split-level and two-story homes mainly from the mid-to-late 20th century.",
+      ],
+      whereLocated: [
+        "Russell sits in outer Northeast Portland, bounded roughly by I-84 to the north, NE Halsey St to the south, NE 122nd Ave to the west and NE 142nd Ave to the east.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "Thompson Park serves the neighborhood today, on land that once competed for a very different civic purpose.",
+      ],
+      commute: [
+        "Russell's outer Northeast Portland location, near I-84, keeps it within reasonable reach of the broader metro area, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>A genuinely unusual land history:</strong> once a real contender to become Portland's main airport.",
+        "<strong>Part of the Parkrose School District:</strong> a distinctive feature shared with a small set of Portland neighborhoods.",
+        "<strong>Quiet, suburban character:</strong> ranch, split-level and two-story homes throughout.",
+      ],
+      considerations: [
+        "<strong>Confirm Parkrose School District enrollment and boundaries directly:</strong> verify specifics with the district itself rather than assuming Portland Public Schools.",
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Mid-century systems:</strong> homes from this era may need updated wiring, roofing or mechanical systems depending on upkeep history.",
+      ],
+      closing: [
+        "If a quiet, suburban neighborhood with a genuinely unusual real history and a distinctive school district matters to your search, Russell is worth a close look.",
+      ],
+    },
+  ],
+  "Sabin, Portland": [
+    {
+      hook: "Redlined Until the Early 1990s, Revitalized Starting With a 1999 Grocery Store",
+      keyword: "Sabin Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Sabin is like — real redlining history, a documented revitalization, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Sabin, just south of the Alberta Arts District, with real, documented redlining history.",
+      gbp:
+        "If you're moving to the Portland, OR area, Sabin is worth understanding through its real, documented history. Developed starting in the 1880s, the neighborhood expanded significantly to house some of the roughly 17,500 refugees from the 1948 Vanport flood. Properties here were denied mortgages by several prominent banks until the early 1990s — real, documented redlining. Revitalization began when city planners and the Portland Development Commission targeted Alberta Street, with a Wild Oats (now Whole Foods) opening in 1999. Housing is primarily early-20th-century homes, with Craftsman bungalows the signature style. If you're comparing Sabin homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers this history, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Sabin is worth understanding through its real, documented history — a neighborhood whose redlining and later revitalization are both specific, dated and verifiable.",
+        "Properties here were denied mortgages by several prominent banks until the early 1990s, a real, documented form of redlining — revitalization later began when city planners and the Portland Development Commission targeted Alberta Street, with a Wild Oats grocery store (now Whole Foods) opening in 1999.",
+      ],
+      livingIn: [
+        "Sabin was developed starting in the 1880s and expanded significantly to house some of the roughly 17,500 refugees from the 1948 Vanport flood — housing is primarily early-20th-century, modest working- and middle-class homes, with Craftsman bungalows the signature style.",
+      ],
+      whereLocated: [
+        "Sabin sits in Northeast Portland, just south of the Alberta Arts District, bordered by King, Vernon, Concordia, Alameda and Irvington.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "The Alberta Arts District, just north of Sabin, offers real, walkable cultural and commercial amenities tied to the neighborhood's documented revitalization.",
+      ],
+      commute: [
+        "Sabin's location near the Alberta Arts District keeps it within reasonable reach of the broader Northeast Portland arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>A real, documented revitalization story:</strong> a specific, dated turning point with the 1999 grocery-store opening.",
+        "<strong>Signature Craftsman bungalow architecture:</strong> modest, early-20th-century homes throughout.",
+        "<strong>Close to the Alberta Arts District:</strong> real, walkable cultural and commercial amenities.",
+      ],
+      considerations: [
+        "<strong>Significant documented redlining history:</strong> properties here were denied mortgages by several prominent banks until the early 1990s — real, significant history worth understanding, not a footnote.",
+        "<strong>Older homes need closer inspection:</strong> early-1900s construction may need updated systems depending on renovation history.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If you're researching Sabin, take the time to understand its full, documented history — including its real redlining and subsequent revitalization — alongside current listings.",
+      ],
+    },
+  ],
+  "Sullivan's Gulch, Portland": [
+    {
+      hook: "A Transportation Corridor First Planned for a Highway in 1926",
+      keyword: "Sullivan's Gulch Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Sullivan's Gulch is like — real 1850s settler roots, 1920s highway planning, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Sullivan's Gulch, a neighborhood modeled on Irvington's early success.",
+      gbp:
+        "If you're moving to the Portland, OR area, Sullivan's Gulch is worth researching — named for Timothy Sullivan, who settled a donation land claim here on January 27, 1851, in what was then dense fir forest well outside Portland's limits. Developers later modeled the area on neighboring Irvington's success, originally building single-family middle-class housing, including restrictive deed covenants; the Reed-Wells House (1905) survives from this early-1900s boom. Today the neighborhood is majority-rental, with only about 26% owner-occupancy per a 2000 census count. The gulch itself carries a major transportation corridor — I-84 (the Banfield Freeway), MAX light rail and a BNSF freight line — with highway planning here dating back to 1926. If you're comparing Sullivan's Gulch homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the history, housing mix and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Sullivan's Gulch is worth a look — a neighborhood with real 1850s settler roots and a genuinely long transportation-planning history.",
+        "Named for Timothy Sullivan, who settled a donation land claim here in 1851, the neighborhood was later developed by builders who modeled it on neighboring Irvington's early success.",
+      ],
+      livingIn: [
+        "Today, Sullivan's Gulch is majority-rental, with only about 26% owner-occupancy per a 2000 census count — a genuine, honest data point about the neighborhood's current housing character, not a flaw to hide.",
+      ],
+      whereLocated: [
+        "Sullivan's Gulch sits along the I-84 corridor, near the Lloyd District, Irvington, Grant Park and Kerns — sources describe its exact boundaries somewhat differently, so confirm the specific area for a given address.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly, and confirm whether you're looking at the historic owner-occupied housing stock or the area's larger rental share.",
+      ],
+      parks: [
+        "The Reed-Wells House (1905) survives from the neighborhood's early-1900s building boom, reflecting the original single-family middle-class housing Irvington-inspired developers built here.",
+      ],
+      commute: [
+        "The gulch itself carries I-84 (the Banfield Freeway), MAX light rail and a BNSF freight line — planning for a highway here dates back to 1926, decades before it was actually built.",
+      ],
+      reasons: [
+        "<strong>Real 1850s settler history:</strong> a specific, documented donation land claim tied to Timothy Sullivan.",
+        "<strong>Genuine transit access:</strong> MAX light rail runs directly through the corridor.",
+        "<strong>A historically significant building:</strong> the Reed-Wells House, surviving from the 1905-era boom.",
+      ],
+      considerations: [
+        "<strong>Majority-rental housing stock:</strong> only about 26% owner-occupancy per a 2000 census count — worth knowing if ownership rate matters to your sense of a neighborhood.",
+        "<strong>Highway and rail noise:</strong> the gulch carries I-84, MAX and a freight line — worth touring at different times of day.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If real early neighborhood history paired with genuine transit access matters to your search, Sullivan's Gulch is worth a close look.",
+      ],
+    },
+  ],
+  "Sumner, Portland": [
+    {
+      hook: "A Genuinely Fast-Moving Market With Higher Owner-Occupancy Than Its Neighbors",
+      keyword: "Sumner Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Sumner is like — a real fast-moving market, the Parkrose School District, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Sumner, a Parkrose School District neighborhood with a genuinely fast-moving housing market.",
+      gbp:
+        "If you're moving to the Portland, OR area, Sumner is worth researching — a Northeast Portland neighborhood that also includes the part of Maywood Park west of I-205. Housing mixes single-family homes and townhomes; one recently reported 1920s two-bedroom listed around $439,000. Roughly 876 households call Sumner home, with about 72% owner-occupancy — a genuinely higher rate than some neighboring areas. Sumner is served by the Parkrose School District, not Portland Public Schools. If you're comparing Sumner homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the housing mix, schools and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Sumner is worth a look — a neighborhood with a genuinely higher owner-occupancy rate than some of its neighbors, and a real mix of housing types.",
+      ],
+      livingIn: [
+        "Sumner mixes single-family homes and townhomes, with roughly 876 households and about 72% owner-occupancy — a genuinely solid rate for this part of Portland.",
+      ],
+      whereLocated: [
+        "Sumner sits in Northeast Portland and also includes the part of Maywood Park west of I-205 — a specific, real geographic detail worth knowing.",
+      ],
+      homesIn: [
+        "One recently reported 1920s two-bedroom listed around $439,000, with homes in the area averaging roughly two weeks on the market in one snapshot — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "Specific park amenities directly in Sumner weren't confirmed for this writeup — check current listings or the city's park map for what's actually nearby a specific address.",
+      ],
+      commute: [
+        "Sumner's Northeast Portland location, near I-205, keeps it within reasonable reach of the broader metro area, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Higher owner-occupancy than some neighboring areas:</strong> roughly 72%, a genuine, specific data point.",
+        "<strong>A genuinely fast-moving market:</strong> homes have averaged around two weeks on the market in recent snapshots.",
+        "<strong>Part of the Parkrose School District:</strong> a distinctive feature shared with a small set of Portland neighborhoods.",
+      ],
+      considerations: [
+        "<strong>Confirm Parkrose School District enrollment and boundaries directly:</strong> verify specifics with the district itself rather than assuming Portland Public Schools.",
+        "<strong>Market pace can shift quickly:</strong> compare current listings directly rather than relying on a past snapshot.",
+        "<strong>Limited documented landmarks or history:</strong> Sumner's strongest draw is its housing mix and market pace rather than a signature amenity.",
+      ],
+      closing: [
+        "If a genuinely fast-moving market with solid owner-occupancy matters to your search, Sumner is worth a close look.",
+      ],
+    },
+  ],
+  "Sunderland, Portland": [
+    {
+      hook: "A Mostly Industrial Neighborhood With One Real Residential Pocket and a Golf Club at Its Center",
+      keyword: "Sunderland Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Sunderland is like — mostly industrial, with one real residential pocket, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Sunderland, a mostly industrial neighborhood with one real residential pocket along the river.",
+      gbp:
+        "If you're moving to the Portland, OR area and are specifically looking at Sunderland, it's worth understanding the area clearly first. The city's own description confirms most of the neighborhood is industrial land, with a small residential pocket along NE Marine Drive. Riverside Golf and Country Club sits directly in the center of the community. The neighborhood has direct access to I-5, I-205, Highways 99 and 30, and shares a border with Portland International Airport. The Sunderland Neighborhood Association is currently listed as inactive by the city, with local representation running through Central Northeast Neighbors instead. If you're comparing Sunderland homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the residential pocket, the golf club and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area and are specifically considering Sunderland, it's worth understanding upfront that this is primarily an industrial neighborhood, not a typical residential one.",
+        "The city's own description confirms most of Sunderland is industrial land, with only a small residential pocket along NE Marine Drive — a real, important distinction to lead with, not bury.",
+      ],
+      livingIn: [
+        "The residential pocket that does exist sits along NE Marine Drive, distinct from the neighborhood's larger industrial footprint.",
+      ],
+      whereLocated: [
+        "Sunderland is bordered by the Columbia River to the north, Woodlawn and Concordia to the south, Portland International Airport and Cully to the east, and East Columbia to the west.",
+      ],
+      homesIn: [
+        "Very limited housing-market data exists for this small residential pocket — compare current listings directly, and confirm whether a specific property sits in the residential or industrial section.",
+      ],
+      parks: [
+        "Riverside Golf and Country Club sits directly in the center of the community, a real, specific, named amenity distinct from a typical neighborhood park.",
+      ],
+      commute: [
+        "Sunderland offers genuinely direct access to I-5, I-205, Highways 99 and 30, and shares a border with Portland International Airport.",
+      ],
+      reasons: [
+        "<strong>Riverside Golf and Country Club:</strong> a real, specific amenity at the center of the community.",
+        "<strong>Genuinely exceptional highway and airport access:</strong> I-5, I-205, Highways 99 and 30, plus a PDX border.",
+        "<strong>A quiet, small residential pocket:</strong> away from the surrounding industrial land.",
+      ],
+      considerations: [
+        "<strong>Primarily industrial land:</strong> confirm whether a specific listing is actually in the small residential pocket before assuming typical neighborhood character.",
+        "<strong>Inactive neighborhood association:</strong> local representation currently runs through Central Northeast Neighbors instead.",
+        "<strong>Very limited housing-market data:</strong> compare current listings directly given the small size of the residential section.",
+      ],
+      closing: [
+        "If you're specifically interested in Sunderland, confirm upfront whether a listing sits in its small residential pocket or its larger industrial footprint before going further.",
+      ],
+    },
+  ],
+  "Vernon, Portland": [
+    {
+      hook: "Brick Rowhouses With a Distinct Local Builder's Signature Oval Windows",
+      keyword: "Vernon Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Vernon is like — a distinct local builder's homes, Alberta Park, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Vernon, home to homes built by a distinct, identifiable local builder.",
+      gbp:
+        "If you're moving to the Portland, OR area, Vernon is worth researching — bordered by Woodlawn, Concordia, Sabin and King, and home to Alberta Park and part of the Alberta Arts District. Many homes here were built in the 1910s-20s, and a local history source identifies Ken Birkemeier as a prolific local builder active from the mid-1930s through the 1950s, whose homes carry a distinct family resemblance, including Roman brick, ornamented brick facades and whimsically placed oval windows, found in Vernon and nearby Northeast Portland neighborhoods. The original Vernon School, which stood from NE Going to Wygant between NE 22nd and NE 23rd, was demolished after a fire, with remains cleared in March 1933. If you're comparing Vernon homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the builder's homes, Alberta Park and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Vernon is worth a look — home to a real, identifiable local builder's distinctive architectural signature.",
+        "Local history identifies Ken Birkemeier as a prolific builder active from the mid-1930s through the 1950s, whose homes carry a real family resemblance — Roman brick, ornamented facades and whimsically placed oval windows — found throughout Vernon and nearby neighborhoods.",
+      ],
+      livingIn: [
+        "Many homes in Vernon were built in the 1910s-20s, an eclectic mix of Craftsman bungalows alongside the later Birkemeier-built homes and mid-century construction.",
+      ],
+      whereLocated: [
+        "Vernon is bordered by Woodlawn, Concordia, Sabin and King, and includes Alberta Park and part of the Alberta Arts District.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly, and look for the distinctive Birkemeier-built homes if that architectural style appeals to you.",
+      ],
+      parks: [
+        "Alberta Park and part of the Alberta Arts District both sit within Vernon, giving real green space and cultural/commercial amenities within the neighborhood.",
+      ],
+      commute: [
+        "Vernon's Northeast Portland location keeps it within reasonable reach of the broader arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>A real, identifiable local builder's homes:</strong> Ken Birkemeier's distinctive brick and oval-window style.",
+        "<strong>Alberta Park and the Alberta Arts District:</strong> real green space and cultural amenities within the neighborhood.",
+        "<strong>Genuine architectural variety:</strong> Craftsman bungalows alongside the later Birkemeier-built homes.",
+      ],
+      considerations: [
+        "<strong>Older homes need closer inspection:</strong> 1910s-20s construction may need updated systems depending on renovation history.",
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address, since the original Vernon School no longer stands.",
+      ],
+      closing: [
+        "If genuinely distinctive local architecture appeals to you, Vernon is worth a close look — keep an eye out for Birkemeier's signature brickwork and oval windows.",
+      ],
+    },
+  ],
+  "Wilkes, Portland": [
+    {
+      hook: "Portland's Northeasternmost Neighborhood, Split Between Suburban Streets and Industrial Land",
+      keyword: "Wilkes Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Wilkes is like — Portland's northeasternmost neighborhood, a real suburban/industrial split, and listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Wilkes, Portland's northeasternmost neighborhood, bordering Gresham.",
+      gbp:
+        "If you're moving to the Portland, OR area, Wilkes is worth researching — Portland's northeasternmost neighborhood, with the Columbia River to the north and Gresham to the east. Settler William Wilkes, son of pioneers Payton and Anna Wilkes, claimed land here in 1850. The neighborhood has a genuine, real character split: land south of the area is largely suburban housing, while land north of Sandy Blvd holds business parks and industrial space — worth knowing which section a specific address falls in. I-84 cuts through the middle of the neighborhood. If you're comparing Wilkes homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the suburban/industrial split and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Wilkes is worth a look — Portland's northeasternmost neighborhood, with a genuine, real character split worth understanding before you start touring.",
+        "Land south of the area is largely suburban housing, while land north of Sandy Blvd holds business parks and industrial space — confirm which section a specific address falls in, rather than assuming the whole neighborhood has one character.",
+      ],
+      livingIn: [
+        "Settler William Wilkes, son of pioneers Payton and Anna Wilkes, claimed land here in 1850 — the area the neighborhood occupies today.",
+      ],
+      whereLocated: [
+        "Wilkes sits at Portland's northeastern edge, with the Columbia River to the north and Gresham to the east, bordering Argay, Russell, Hazelwood and Glenfair, with I-84 cutting through the middle.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly, and confirm whether a specific address sits in the suburban south or the more industrial area north of Sandy Blvd.",
+      ],
+      parks: [
+        "Wilkes is part of the larger \"Gateway\" area of outer Northeast Portland, which includes several surrounding neighborhoods.",
+      ],
+      commute: [
+        "I-84 runs directly through Wilkes, keeping it within genuinely convenient reach of both downtown Portland and Gresham.",
+      ],
+      reasons: [
+        "<strong>Real 1850s settler history:</strong> a specific, documented land claim tied to the Wilkes family.",
+        "<strong>Direct I-84 access:</strong> genuinely convenient highway access running through the neighborhood.",
+        "<strong>A real geographic distinction:</strong> Portland's northeasternmost neighborhood, bordering the Columbia River and Gresham.",
+      ],
+      considerations: [
+        "<strong>A genuine suburban/industrial split:</strong> confirm which section of the neighborhood a specific address is in before assuming its character.",
+        "<strong>Limited, somewhat conflicting market data:</strong> available homeownership figures vary significantly across sources — compare current listings directly.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If you're researching Wilkes, confirm which section — the suburban south or the more industrial north — a specific address falls in before deciding it fits what you're looking for.",
+      ],
+    },
+  ],
+  "Woodland Park, Portland": [
+    {
+      hook: "Officially Portland's Smallest Neighborhood",
+      keyword: "Woodland Park Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Woodland Park is like — officially the city's smallest neighborhood, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Woodland Park, officially the smallest neighborhood in the entire city.",
+      gbp:
+        "If you're moving to the Portland, OR area, Woodland Park is worth knowing about for a genuinely unusual reason — it's officially the smallest neighborhood in the entire city, a small, almost triangular area running parallel to I-84, east of I-84 and west of NE 102nd Ave, north of NE Halsey St. A small cluster of floating homes sits along its north border on NE Marine Drive, a real, distinctive detail for such a compact neighborhood. If you're comparing Woodland Park homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the floating homes and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Woodland Park is worth knowing about for a genuinely unusual reason — it's officially the smallest neighborhood in the entire city.",
+      ],
+      livingIn: [
+        "Given the neighborhood's genuinely small, almost triangular footprint, housing options here are limited compared to most Portland neighborhoods.",
+      ],
+      whereLocated: [
+        "Woodland Park sits east of I-84 and west of NE 102nd Ave, north of NE Halsey St, bordering Madison South, Parkrose Heights and Hazelwood.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly, given the very small inventory this neighborhood's size implies.",
+      ],
+      parks: [
+        "A small cluster of floating homes sits along the neighborhood's north border on NE Marine Drive, a real, distinctive housing type for such a compact area.",
+      ],
+      commute: [
+        "Woodland Park's location along I-84 keeps it within reasonable reach of the broader Portland arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Officially Portland's smallest neighborhood:</strong> a real, checkable superlative.",
+        "<strong>A small floating-home cluster:</strong> a genuinely distinctive housing type for such a compact area.",
+        "<strong>Direct I-84 access:</strong> convenient highway connectivity given the neighborhood's size.",
+      ],
+      considerations: [
+        "<strong>Very limited inventory:</strong> given the neighborhood's genuinely small size, there may rarely be something on the market.",
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a genuinely small, distinctive Portland neighborhood appeals to you, Woodland Park is worth a look — just expect very limited inventory given its size.",
+      ],
+    },
+  ],
+  "Woodlawn, Portland": [
+    {
+      hook: "Angled Streets From an 1888 Rail Depot, Centered on the Dekum Triangle",
+      keyword: "Woodlawn Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Woodlawn is like — real 1860s settlement roots, the Dekum Triangle's revival, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Woodlawn, settled in the 1860s, with angled streets tracing back to an 1888 rail depot.",
+      gbp:
+        "If you're moving to the Portland, OR area, Woodlawn is worth researching — settled in the 1860s as a farming village, once the only independent town outside the City of Albina, until a rail depot built in 1888 at today's NE Dekum/Durham changed its trajectory. The depot's triangular waiting-room park still exists, and the depot's angle is the real reason the neighborhood has distinctive angled streets. The Dekum Triangle commercial core (NE Dekum & Durham) declined by the 1970s but has genuinely revived as a neighborhood hub with restaurants, a coffee house and a brew pub. Housing spans early Portland houses and Victorians through 1920s bungalows, mid-century ramblers and apartments. Woodland Park (east along Dekum) offers sports fields, an amphitheater and a water-play area. If you're comparing Woodlawn homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the rail history, the Dekum Triangle and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Woodlawn is worth a look — a neighborhood whose distinctive street layout traces directly to a real 1888 rail depot.",
+        "Woodlawn was settled in the 1860s as a farming village and was once the only independent town outside the City of Albina, before a rail depot built in 1888 reshaped the area — the depot's angle is the actual, documented reason for the neighborhood's distinctive angled streets.",
+      ],
+      livingIn: [
+        "Housing spans a genuine range of eras — early Portland houses and Victorians (including a cited 1893 Stick-Eastlake Victorian) through 1920s bungalows, mid-century ramblers and apartments.",
+      ],
+      whereLocated: [
+        "Woodlawn sits in Northeast Portland, bordered by Piedmont, Sunderland, Concordia, Vernon and King, centered on the Dekum Triangle (NE Dekum & Durham).",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly, given the genuine range of home eras here.",
+      ],
+      parks: [
+        "Woodlawn Park, east along Dekum, offers sports fields, an amphitheater and a water-play area; the Dekum Triangle's own small waiting-room park, tied to the original 1888 rail depot, still exists today.",
+      ],
+      commute: [
+        "Woodlawn's Northeast Portland location keeps it within reasonable reach of the broader arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>A real, documented origin for the street layout:</strong> the 1888 rail depot's angle directly shaped the neighborhood's distinctive streets.",
+        "<strong>The genuinely revived Dekum Triangle:</strong> restaurants, a coffee house and a brew pub in a once-declined commercial core.",
+        "<strong>Real architectural variety:</strong> Victorians through mid-century ramblers, spanning decades of development.",
+      ],
+      considerations: [
+        "<strong>Significant historic community context:</strong> Woodlawn sat on the northern edge of the historic Albina district, remaining relatively diverse today even as it has gentrified recently — worth understanding as real context.",
+        "<strong>Older homes need closer inspection:</strong> Victorian and early-1900s construction may need updated systems depending on renovation history.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a neighborhood with a genuinely documented street-layout origin and a real, revived commercial core matters to your search, Woodlawn is worth a close look.",
       ],
     },
   ],
