@@ -153,6 +153,15 @@ const AREAS: [string, string][] = [
   ["Skyline Ridge, West Linn", "skyline-ridge-west-linn-or"],
   ["Sunset, West Linn", "sunset-west-linn-or"],
   ["Willamette, West Linn", "willamette-west-linn-or"],
+  ["Arlington Heights, Portland", "arlington-heights-portland-or"],
+  ["Chinatown, Portland", "chinatown-portland-or"],
+  ["Forest Park, Portland", "forest-park-portland-or"],
+  ["Hillside, Portland", "hillside-portland-or"],
+  ["Linnton, Portland", "linnton-portland-or"],
+  ["Northwest District, Portland", "northwest-district-portland-or"],
+  ["Northwest Heights, Portland", "northwest-heights-portland-or"],
+  ["Pearl District, Portland", "pearl-district-portland-or"],
+  ["South Portland, Portland", "south-portland-portland-or"],
 ];
 
 // State grouping for the filter/checklist UI. WA areas above came first (7 original +
@@ -228,6 +237,15 @@ const OR_AREA_NAMES = new Set([
   "Skyline Ridge, West Linn",
   "Sunset, West Linn",
   "Willamette, West Linn",
+  "Arlington Heights, Portland",
+  "Chinatown, Portland",
+  "Forest Park, Portland",
+  "Hillside, Portland",
+  "Linnton, Portland",
+  "Northwest District, Portland",
+  "Northwest Heights, Portland",
+  "Pearl District, Portland",
+  "South Portland, Portland",
 ]);
 const AREA_STATE: Record<string, "WA" | "OR"> = Object.fromEntries(
   AREAS.map(([name]) => [name, OR_AREA_NAMES.has(name) ? ("OR" as const) : ("WA" as const)])
@@ -482,6 +500,15 @@ const SCHOOL_DISTRICTS: Record<string, string> = {
   "Skyline Ridge, West Linn": "West Linn-Wilsonville School District",
   "Sunset, West Linn": "West Linn-Wilsonville School District (Sunset Primary School)",
   "Willamette, West Linn": "West Linn-Wilsonville School District",
+  "Arlington Heights, Portland": "Portland Public Schools",
+  "Chinatown, Portland": "Portland Public Schools",
+  "Forest Park, Portland": "Portland Public Schools",
+  "Hillside, Portland": "Portland Public Schools",
+  "Linnton, Portland": "Portland Public Schools",
+  "Northwest District, Portland": "Portland Public Schools",
+  "Northwest Heights, Portland": "Portland Public Schools",
+  "Pearl District, Portland": "Portland Public Schools",
+  "South Portland, Portland": "Portland Public Schools",
 };
 
 const YOUTUBE_URL = "https://www.youtube.com/@jamiemeushawrealestate";
@@ -6722,6 +6749,407 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       closing: [
         "If genuine, verifiable historic architecture matters to your search, Willamette is worth a close look — just confirm a specific property's actual historic-designation status before assuming either source's property count.",
+      ],
+    },
+  ],
+  "Arlington Heights, Portland": [
+    {
+      hook: "A Small Pocket Wrapped on Three Sides by Washington Park",
+      keyword: "Arlington Heights Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Arlington Heights is like — a small neighborhood wrapped by Washington Park, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Arlington Heights, a small, elevated neighborhood bordered on three sides by Washington Park.",
+      gbp:
+        "If you're moving to the Portland, OR area, Arlington Heights is worth researching — a genuinely small, elevated neighborhood at the end of SW Upper Cascade Drive, wrapped on three sides by Washington Park (home to the Oregon Zoo, Japanese Garden and Hoyt Arboretum), roughly 1,000 feet above the city. This is a couple hundred homes total, most built between 1968 and 1988, with real forest views from many properties. If you're comparing Arlington Heights homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the location, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Arlington Heights is worth a look — a genuinely small neighborhood literally wrapped on three sides by Washington Park, not just nearby it.",
+      ],
+      livingIn: [
+        "Arlington Heights is a couple hundred homes total, most built between 1968 and 1988, with real forest views from many properties given the elevated, park-wrapped setting.",
+      ],
+      whereLocated: [
+        "Arlington Heights sits at the end of SW Upper Cascade Drive, roughly 1,000 feet above the city, bordered on three sides by Washington Park, home to the Oregon Zoo, Japanese Garden and Hoyt Arboretum.",
+      ],
+      homesIn: [
+        "Specific, verified pricing wasn't broadly confirmed for this writeup — compare current listings directly, since this is a small, low-inventory neighborhood.",
+      ],
+      parks: [
+        "Washington Park wraps three sides of the neighborhood, giving direct access to the Oregon Zoo, Japanese Garden and Hoyt Arboretum without a long drive.",
+      ],
+      commute: [
+        "Arlington Heights' elevated position keeps it within reasonable reach of downtown Portland, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Genuinely wrapped by Washington Park:</strong> bordered on three sides, not just nearby.",
+        "<strong>Real forest and city views:</strong> the elevated position gives many homes genuine views.",
+        "<strong>Direct access to major park attractions:</strong> the Oregon Zoo, Japanese Garden and Hoyt Arboretum all within Washington Park.",
+      ],
+      considerations: [
+        "<strong>Very small inventory:</strong> a couple hundred homes total means there may not always be something on the market when you're ready to buy.",
+        "<strong>Boundary can be unclear:</strong> confirm whether a specific address is in Arlington Heights or a neighboring area like Westover or Kings Heights.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a genuinely small, park-wrapped setting with real views appeals to you, Arlington Heights is worth a close look — just confirm exact boundaries and current inventory, since this is a small neighborhood.",
+      ],
+    },
+  ],
+  "Chinatown, Portland": [
+    {
+      hook: "A Real National Register Historic District Behind the 1986 Chinatown Gate",
+      keyword: "Chinatown Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Chinatown is like — a real historic district, the Chinatown Gate, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Chinatown, home to a real National Register-listed historic district.",
+      gbp:
+        "If you're moving to the Portland, OR area, Chinatown is worth researching — home to the New Chinatown/Japantown Historic District, a real National Register of Historic Places listing, adjacent to the separate Portland Skidmore/Old Town Historic District in the neighboring Old Town neighborhood. The real, documented history here includes Chinese businesses moving into the area in the 1920s-30s next to what was then Nihonmachi (Japantown), a community devastated by Japanese internment during WWII. The Chinatown Gate, built in 1986, marks the district today. If you're comparing Chinatown homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the history and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area and real, documented history matters to you, Chinatown is worth a careful look — this is one of the more historically significant neighborhoods in the city, with a complicated past worth understanding honestly.",
+      ],
+      livingIn: [
+        "Chinatown is downtown-adjacent, between NW Broadway and the Willamette River, anchored by the New Chinatown/Japantown Historic District, a real National Register of Historic Places listing.",
+      ],
+      whereLocated: [
+        "Chinatown sits downtown-adjacent, marked by the 1986 Chinatown Gate, next to the separate Portland Skidmore/Old Town Historic District in the neighboring Old Town neighborhood.",
+      ],
+      homesIn: [
+        "Specific, verified current housing-market data wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date pricing and availability.",
+      ],
+      parks: [
+        "The Chinatown Gate itself is a real, significant landmark marking the district, alongside the historic commercial buildings that make up the New Chinatown/Japantown Historic District.",
+      ],
+      commute: [
+        "Chinatown's downtown-adjacent location keeps most errands and transit walkable, reducing reliance on driving compared to neighborhoods farther out.",
+      ],
+      reasons: [
+        "<strong>Real National Register historic district:</strong> the New Chinatown/Japantown Historic District is a genuine, verifiable designation.",
+        "<strong>Significant, documented history:</strong> Chinese and Japanese immigrant community history dating to the 1920s-30s.",
+        "<strong>Downtown-adjacent walkability:</strong> many errands and transit options within walking distance.",
+      ],
+      considerations: [
+        "<strong>Complicated history worth understanding:</strong> the neighborhood's Japantown community was devastated by WWII-era internment — a real, significant part of the area's story.",
+        "<strong>Limited current housing-market data:</strong> compare current listings directly rather than relying on general neighborhood color.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If genuine, significant neighborhood history matters to your search, Chinatown is worth a close look — just approach the area's full history, including its harder chapters, honestly.",
+      ],
+    },
+  ],
+  "Forest Park, Portland": [
+    {
+      hook: "A Small Residential Pocket Along Skyline Boulevard, Not the Park Itself",
+      keyword: "Forest Park Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what the Forest Park neighborhood is like — distinct from the park itself, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore the Forest Park neighborhood — a real, defined residential area, not the park.",
+      gbp:
+        "If you're moving to the Portland, OR area, the Forest Park neighborhood is worth understanding clearly — it's a real, officially defined Portland neighborhood, distinct from (though adjacent to and partly surrounded by) the roughly 5,000-acre Forest Park itself, one of the largest urban forest reserves in the US. The neighborhood is bordered by Northwest Heights, the Northwest District and Linnton, part of the Neighbors West/Northwest coalition, with its neighborhood association meeting along NW Skyline Blvd. Public, detailed information on this specific neighborhood's housing stock is genuinely limited — compare current listings directly. If you're comparing Forest Park homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the location and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, it's worth understanding that the Forest Park neighborhood is a real, officially defined residential area — distinct from the roughly 5,000-acre Forest Park itself, one of the largest urban forest reserves in the US, even though the two share a name and border each other.",
+      ],
+      livingIn: [
+        "This is a genuinely small residential pocket along the NW Skyline Blvd corridor — detailed public information on housing stock specific to this neighborhood (as opposed to the park) is limited.",
+      ],
+      whereLocated: [
+        "The Forest Park neighborhood is bordered by Northwest Heights, the Northwest District and Linnton, part of the Neighbors West/Northwest coalition area.",
+      ],
+      homesIn: [
+        "Specific, verified pricing wasn't broadly confirmed for this writeup, given how little distinct public data exists for this neighborhood apart from the park — compare current listings directly.",
+      ],
+      parks: [
+        "The neighborhood's defining feature is its position in and around the roughly 5,000-acre Forest Park itself, one of the largest urban forest reserves in the country.",
+      ],
+      commute: [
+        "The Forest Park neighborhood's Skyline Blvd corridor location keeps it within reasonable reach of the broader Portland arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Immediate forest access:</strong> genuinely surrounded by one of the largest urban forest reserves in the US.",
+        "<strong>A real, distinct residential identity:</strong> an officially defined neighborhood, not just the park.",
+        "<strong>Quiet, low-density setting:</strong> a genuinely different feel from denser nearby neighborhoods.",
+      ],
+      considerations: [
+        "<strong>Thin public data on this specific neighborhood:</strong> most available information describes the park rather than residential streets or housing stock — compare current listings directly.",
+        "<strong>Boundary can be confused with the park itself:</strong> confirm whether a specific address is in the residential neighborhood or simply near the park.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If genuine forest-adjacent living is what you're after, the Forest Park neighborhood is worth a look — just confirm you're researching the residential neighborhood itself, not just general proximity to the park.",
+      ],
+    },
+  ],
+  "Hillside, Portland": [
+    {
+      hook: "A West Hills Neighborhood Anchored by Its Own Community Center",
+      keyword: "Hillside Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Hillside is like — a West Hills neighborhood with its own community center, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Hillside, a West Hills neighborhood anchored by the Hillside Community Center.",
+      gbp:
+        "If you're moving to the Portland, OR area, Hillside is worth researching — a West Hills neighborhood anchored by the Hillside Community Center, a real, specific local landmark. Recently reported listing data has suggested a median around $875,000 for homes and roughly $463,000 for condos, though these figures come from undated snapshots. The boundary with neighboring Westover and Kings Heights isn't clearly documented, so confirm the specific area for a given address rather than assuming. If you're comparing Hillside homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the community center, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Hillside is worth a look — a West Hills neighborhood with a real, named community anchor.",
+      ],
+      livingIn: [
+        "Hillside includes a mix of single-family homes and condos, with the Hillside Community Center serving as a genuine local gathering point.",
+      ],
+      whereLocated: [
+        "Hillside sits in Portland's West Hills, near the Westover and Kings Heights areas — the exact boundary between them isn't clearly documented, so confirm the specific area for a given address.",
+      ],
+      homesIn: [
+        "Recently reported listing data has suggested a median around $875,000 for homes and roughly $463,000 for condos, though these figures come from undated snapshots — compare current listings directly.",
+      ],
+      parks: [
+        "The Hillside Community Center is the neighborhood's real, named anchor, offering a genuine local gathering point beyond just a park.",
+      ],
+      commute: [
+        "Hillside's West Hills location keeps it within reasonable reach of downtown Portland, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Hillside Community Center:</strong> a real, specific neighborhood anchor, not a generic nearby amenity.",
+        "<strong>West Hills setting:</strong> elevated terrain with real character distinct from flatter Portland neighborhoods.",
+        "<strong>Housing-type variety:</strong> both single-family homes and condos represented.",
+      ],
+      considerations: [
+        "<strong>Boundary with Westover/Kings Heights is unclear:</strong> confirm the specific area for a given address before assuming.",
+        "<strong>Housing type affects price significantly:</strong> condos and single-family homes carry very different price points — compare the specific type you want.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a West Hills neighborhood with a real community anchor appeals to you, Hillside is worth a close look — just confirm the exact boundary for a specific address first.",
+      ],
+    },
+  ],
+  "Linnton, Portland": [
+    {
+      hook: "A Real Early-1900s Mill Town Tucked Inside Forest Park's Edge",
+      keyword: "Linnton Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Linnton is like — a real former mill town along the Willamette River, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Linnton, a real former mill town between Forest Park and the Willamette River.",
+      gbp:
+        "If you're moving to the Portland, OR area, Linnton is worth researching — a genuinely historic former mill town between Forest Park and the Willamette River along US-30, annexed to Portland in 1915. Real, documented history includes the 1904 opening of its first lumber mill (population grew from about 400 to 2,000 by 1914, largely immigrant workers) and the Linnton Plywood Association, a worker-owned co-op that operated from 1951 to 2001, whose former site is now a Superfund-cleanup nature park not currently open for public use. Most homes are pre-1939 construction, from small studios to 3-4 bedroom single-family homes, many on steep driveways tucked into Forest Park's edge. The riverfront corridor includes fuel storage tanks, and some residents have raised real environmental-justice concerns worth knowing about. If you're comparing Linnton homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the history, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area and real neighborhood history matters to you, Linnton is worth a look — a genuinely documented former mill town with a distinct identity from the rest of the city.",
+        "Linnton was annexed to Portland in 1915, after growing from about 400 to 2,000 residents between 1904 and 1914 around its first lumber mill — largely an immigrant worker community, a real and specific history.",
+      ],
+      livingIn: [
+        "Most homes in Linnton are pre-1939 construction, ranging from small studios and 1-2 bedroom units to 3-4 bedroom single-family homes, alongside modest mid-century homes and some newer builds on steep driveways.",
+      ],
+      whereLocated: [
+        "Linnton sits between Forest Park and the Willamette River along US-30, with the St. Johns Bridge providing an east link to St. Johns.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly, given the genuine range of home ages and sizes here.",
+      ],
+      parks: [
+        "Many homes are tucked directly into Forest Park's edge on steep lots, giving real, immediate forest access distinct from most other Portland neighborhoods.",
+      ],
+      commute: [
+        "US-30 is the main route through Linnton, connecting toward downtown Portland and north toward St. Helens, with the St. Johns Bridge providing access across the river.",
+      ],
+      reasons: [
+        "<strong>Real, documented mill-town history:</strong> a specific, verifiable origin story dating to 1904.",
+        "<strong>Forest Park-edge lots:</strong> many homes sit directly against the park on steep, wooded lots.",
+        "<strong>Genuine architectural variety:</strong> pre-1939 construction alongside mid-century and newer homes.",
+      ],
+      considerations: [
+        "<strong>Real environmental-justice considerations:</strong> the riverfront corridor includes fuel storage tanks, and the former Linnton Plywood Association site requires ongoing Superfund cleanup and isn't currently open for public use — worth understanding factually before deciding.",
+        "<strong>Older homes need closer inspection:</strong> pre-1939 construction may need updated systems depending on renovation history.",
+        "<strong>Steep lots and driveways:</strong> factor terrain into both the property itself and everyday access.",
+      ],
+      closing: [
+        "If genuine, documented neighborhood history and direct Forest Park access matter to your search, Linnton is worth a close look — just go in with a clear, factual understanding of both its history and its current riverfront industrial context.",
+      ],
+    },
+  ],
+  "Northwest District, Portland": [
+    {
+      hook: "A Real National Register District Along the Alphabet Streets",
+      keyword: "Northwest District Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what the Northwest District is like — a real historic district, NW 23rd Ave, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore the Northwest District, also known as Nob Hill, home to the Alphabet Historic District.",
+      gbp:
+        "If you're moving to the Portland, OR area, the Northwest District (also called Nob Hill or Uptown) is worth researching — home to the Alphabet Historic District, a real National Register of Historic Places listing dating to 2000, covering an area roughly bounded by NW Lovejoy and Marshall Streets, NW 17th Ave, W Burnside St and NW 24th Ave. The district's streets were historically named in alphabetical order, giving the neighborhood its nickname. NW 21st and 23rd Avenues form a well-known boutique and restaurant shopping corridor, a former streetcar line. The neighborhood's population quadrupled after the 1905 Lewis & Clark Exposition, driving a real wave of early apartment construction alongside large Victorian and Craftsman homes. If you're comparing Northwest District homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the historic district, shopping corridor and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, the Northwest District — also called Nob Hill or Uptown — is worth a look, home to a real, National Register-listed historic district.",
+        "The Alphabet Historic District, listed in 2000, gets its name from the neighborhood's streets, which were historically named in alphabetical order — a genuine, documented naming convention, not folklore.",
+      ],
+      livingIn: [
+        "Housing includes large Victorian and Craftsman homes from before and after 1900, alongside apartment buildings built during a real population boom following the 1905 Lewis & Clark Exposition.",
+      ],
+      whereLocated: [
+        "The Northwest District is centered on NW 21st and 23rd Avenues, a well-known boutique and restaurant shopping corridor along a former streetcar line, within the Alphabet Historic District's boundaries roughly between NW Lovejoy/Marshall Streets, NW 17th Ave, W Burnside St and NW 24th Ave.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly, since this neighborhood spans everything from historic single-family homes to apartments and condos.",
+      ],
+      parks: [
+        "NW 23rd Ave is a real, well-known shopping and dining corridor in its own right, functioning as a genuine neighborhood amenity beyond traditional green space.",
+      ],
+      commute: [
+        "The Northwest District's central location keeps most errands walkable, with easy access to downtown Portland and the broader westside arterial network.",
+      ],
+      reasons: [
+        "<strong>Real National Register historic district:</strong> the Alphabet Historic District, listed in 2000.",
+        "<strong>Genuine architectural history:</strong> Victorian and Craftsman homes alongside early-1900s apartment construction.",
+        "<strong>A real, well-known shopping corridor:</strong> NW 21st and 23rd Avenues, not a generic \"close to shops\" claim.",
+      ],
+      considerations: [
+        "<strong>Historic designation can affect renovations:</strong> homes within the Alphabet Historic District may have restrictions on exterior changes — confirm before planning any work.",
+        "<strong>Housing type varies widely:</strong> single-family homes, apartments and condos all coexist here — compare the specific type you want.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If genuine historic character paired with a real, walkable shopping district matters to your search, the Northwest District is worth a close look.",
+      ],
+    },
+  ],
+  "Northwest Heights, Portland": [
+    {
+      hook: "A Quiet West Hills Pocket Easily Confused With Neighboring Forest Heights",
+      keyword: "Northwest Heights Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Northwest Heights is like — a quiet West Hills neighborhood, a real naming mix-up to avoid, and listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Northwest Heights, a quiet neighborhood near Washington Park — distinct from Forest Heights.",
+      gbp:
+        "If you're moving to the Portland, OR area, Northwest Heights is worth researching carefully — a quiet, suburban-feeling neighborhood roughly 15-20 minutes from downtown, near Washington Park (Oregon Zoo, Japanese Garden, Hoyt Arboretum). One genuine source of confusion worth knowing about: Northwest Heights is a separate, distinct area from the nearby Forest Heights neighborhood, a different planned community in the 97229 ZIP with its own Village Center and Mill Pond Park — the two are easy to mix up, so confirm which a specific address is actually in. Recently reported listing data for Northwest Heights has suggested a median around $945,000. If you're comparing Northwest Heights homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the location, the Forest Heights distinction and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Northwest Heights is worth a look — just make sure you're researching the right neighborhood, since it's genuinely easy to confuse with nearby Forest Heights.",
+        "Northwest Heights and Forest Heights are two separate, distinct areas — Forest Heights is its own planned community in the 97229 ZIP with its own Village Center and Mill Pond Park. Confirm which one a specific address is actually in before relying on either neighborhood's reputation.",
+      ],
+      livingIn: [
+        "Northwest Heights has a quiet, suburban feel despite its in-city location, roughly 15-20 minutes from downtown Portland.",
+      ],
+      whereLocated: [
+        "Northwest Heights sits near Washington Park, home to the Oregon Zoo, Japanese Garden and Hoyt Arboretum.",
+      ],
+      homesIn: [
+        "Recently reported listing data has suggested a median around $945,000, though this comes from an undated snapshot — compare current listings directly.",
+      ],
+      parks: [
+        "Washington Park and its attractions — the Oregon Zoo, Japanese Garden and Hoyt Arboretum — are all within reasonable reach of the neighborhood.",
+      ],
+      commute: [
+        "Northwest Heights' West Hills location keeps it within reasonable reach of downtown Portland, roughly 15-20 minutes depending on traffic.",
+      ],
+      reasons: [
+        "<strong>Quiet, suburban feel in-city:</strong> a genuinely different pace than denser Portland neighborhoods.",
+        "<strong>Close to Washington Park's attractions:</strong> the Oregon Zoo, Japanese Garden and Hoyt Arboretum all within reach.",
+        "<strong>Distinct identity from Forest Heights:</strong> its own character, separate from the nearby planned community of a similar name.",
+      ],
+      considerations: [
+        "<strong>Easily confused with Forest Heights:</strong> confirm which neighborhood a specific address is actually in before relying on either one's reputation or amenities.",
+        "<strong>Single pricing snapshot:</strong> the available median figure comes from one undated source — compare current listings directly.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a quiet, West Hills setting near Washington Park appeals to you, Northwest Heights is worth a close look — just double-check you're not actually looking at neighboring Forest Heights instead.",
+      ],
+    },
+  ],
+  "Pearl District, Portland": [
+    {
+      hook: "From 1980s Artist Warehouses to High-Rise Lofts, a Real Documented Conversion",
+      keyword: "Pearl District Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what the Pearl District is like — a real warehouse-to-loft conversion history, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore the Pearl District, a former industrial area with a real, documented loft-conversion history.",
+      gbp:
+        "If you're moving to the Portland, OR area, the Pearl District is worth researching — a former industrial railyard area with one of the most concretely documented development histories in the city. Artists occupied NW 13th Ave warehouses in the 1980s, leading to the Thirteenth Avenue Historic District designation in 1987, followed by tax-incentivized loft conversions including the Irving Street Lofts (1988-89) and the Chown Pella building (1996, the first historic warehouse condo conversion). The \"Pearl\" name took hold around 1989. Later construction brought modern high-rise condo towers, including The Elizabeth (2005, 15 stories, 182 units) and The Cosmopolitan, now the district's tallest building — a genuine old-meets-new architectural mix. If you're comparing Pearl District homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the development history, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, the Pearl District is worth a look — few Portland neighborhoods have as concretely documented a transformation story as this one.",
+        "What's now the Pearl started as artist-occupied warehouses in the 1980s on NW 13th Ave, leading to a real historic district designation in 1987 and, from there, a wave of tax-incentivized loft conversions.",
+      ],
+      livingIn: [
+        "Housing here is mostly condos — historic warehouse loft conversions like the Chown Pella building (1996) alongside modern high-rise towers like The Elizabeth (2005) and The Cosmopolitan, the district's tallest building.",
+      ],
+      whereLocated: [
+        "The Pearl District sits downtown-adjacent, in what was formerly an industrial railyard area, centered on the Thirteenth Avenue Historic District.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly, since the Pearl spans everything from historic loft conversions to modern high-rise condos.",
+      ],
+      parks: [
+        "The district's real architectural identity, genuine warehouse-to-loft conversions standing alongside modern towers, functions as its own kind of landmark beyond traditional green space.",
+      ],
+      commute: [
+        "The Pearl District's downtown-adjacent location keeps most errands walkable, with easy access to the broader downtown Portland core.",
+      ],
+      reasons: [
+        "<strong>Real, documented conversion history:</strong> from 1980s artist warehouses to a 1987 historic district to tax-incentivized loft conversions.",
+        "<strong>Genuine old-meets-new architecture:</strong> historic warehouse lofts alongside modern high-rise towers.",
+        "<strong>Downtown-adjacent walkability:</strong> most errands within walking distance.",
+      ],
+      considerations: [
+        "<strong>Mostly condo living:</strong> traditional single-family homes are rare here — confirm this fits what you're looking for.",
+        "<strong>HOA fees likely apply:</strong> confirm what a specific condo's dues cover.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a genuinely documented warehouse-to-loft transformation and real downtown walkability matter to your search, the Pearl District is worth a close look.",
+      ],
+    },
+  ],
+  "South Portland, Portland": [
+    {
+      hook: "Three Historic Sub-Areas Renamed by a Real 2006 Association Vote",
+      keyword: "South Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what South Portland is like — three historic sub-areas, a real 2006 name change, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore South Portland, covering the historic Lair Hill, Corbett and Terwilliger sub-areas.",
+      gbp:
+        "If you're moving to the Portland, OR area, South Portland is worth researching — a neighborhood covering three historically distinct sub-areas: Lair Hill (named for lawyer/editor William Lair Hill), Corbett (named for Senator Henry Winslow Corbett) and Terwilliger. The neighborhood was formerly called Corbett-Terwilliger-Lair Hill (CTLH) until a real, dated neighborhood-association vote renamed it South Portland on September 6, 2006. The area was once home to a district of Italian, Irish and Jewish immigrants, largely demolished by a 1958 urban renewal project — a significant, documented piece of the neighborhood's history. Recently reported data has suggested a median home value around $502,000. If you're comparing South Portland homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the history, sub-areas and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area and real neighborhood history matters to you, South Portland is worth a look — a genuinely documented name change and a significant, honest history worth knowing.",
+        "The neighborhood was formerly called Corbett-Terwilliger-Lair Hill (CTLH) until a real neighborhood-association vote renamed it South Portland on September 6, 2006 — a specific, verifiable date, not an approximate one.",
+      ],
+      livingIn: [
+        "South Portland covers three historically distinct sub-areas — Lair Hill, Corbett and Terwilliger — each with preserved early-20th-century homes on tree-lined streets.",
+      ],
+      whereLocated: [
+        "Lair Hill sits roughly between I-405, SW Barbur Blvd and SW Naito Pkwy; Corbett and Terwilliger sit farther south toward SW Macadam Ave — the exact line between Corbett and Terwilliger isn't consistently documented across sources, so confirm the specific sub-area for a given address.",
+      ],
+      homesIn: [
+        "Recently reported data has suggested a median home value around $502,000, with 3-bedroom homes averaging closer to $619,000 in one snapshot — compare current listings directly.",
+      ],
+      parks: [
+        "South Portland's real, documented history includes a once-thriving district of Italian, Irish and Jewish immigrant residents, largely demolished by a 1958 urban renewal project — a significant part of the neighborhood's story worth understanding honestly.",
+      ],
+      commute: [
+        "South Portland's location keeps it within reasonable reach of downtown Portland, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Real, documented name change:</strong> a specific 2006 neighborhood-association vote, not an informal rebrand.",
+        "<strong>Three distinct historic sub-areas:</strong> Lair Hill, Corbett and Terwilliger, each with its own identity.",
+        "<strong>Preserved early-20th-century homes:</strong> tree-lined streets with genuine period character.",
+      ],
+      considerations: [
+        "<strong>Significant historical displacement:</strong> a 1958 urban renewal project demolished much of a once-thriving immigrant district here — worth understanding as real neighborhood history, not just a footnote.",
+        "<strong>Sub-area boundaries aren't precisely documented:</strong> confirm whether a specific address falls in Lair Hill, Corbett or Terwilliger.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If genuine, documented neighborhood history and preserved early-20th-century character matter to your search, South Portland is worth a close look.",
       ],
     },
   ],
