@@ -225,6 +225,27 @@ const AREAS: [string, string][] = [
   ["South Tabor, Portland", "south-tabor-portland-or"],
   ["Sunnyside, Portland", "sunnyside-portland-or"],
   ["Woodstock, Portland", "woodstock-portland-or"],
+  ["Arnold Creek, Portland", "arnold-creek-portland-or"],
+  ["Ashcreek, Portland", "ashcreek-portland-or"],
+  ["Bridlemile, Portland", "bridlemile-portland-or"],
+  ["Collins View, Portland", "collins-view-portland-or"],
+  ["Crestwood, Portland", "crestwood-portland-or"],
+  ["Downtown, Portland", "downtown-portland-or"],
+  ["Far Southwest, Portland", "far-southwest-portland-or"],
+  ["Goose Hollow, Portland", "goose-hollow-portland-or"],
+  ["Hayhurst, Portland", "hayhurst-portland-or"],
+  ["Healy Heights, Portland", "healy-heights-portland-or"],
+  ["Hillsdale, Portland", "hillsdale-portland-or"],
+  ["Homestead, Portland", "homestead-portland-or"],
+  ["Markham, Portland", "markham-portland-or"],
+  ["Maplewood, Portland", "maplewood-portland-or"],
+  ["Marshall Park, Portland", "marshall-park-portland-or"],
+  ["Multnomah, Portland", "multnomah-portland-or"],
+  ["Old Town, Portland", "old-town-portland-or"],
+  ["South Burlingame, Portland", "south-burlingame-portland-or"],
+  ["Southwest Hills, Portland", "southwest-hills-portland-or"],
+  ["Sylvan-Highlands, Portland", "sylvan-highlands-portland-or"],
+  ["West Portland Park, Portland", "west-portland-park-portland-or"],
 ];
 
 // State grouping for the filter/checklist UI. WA areas above came first (7 original +
@@ -372,6 +393,27 @@ const OR_AREA_NAMES = new Set([
   "South Tabor, Portland",
   "Sunnyside, Portland",
   "Woodstock, Portland",
+  "Arnold Creek, Portland",
+  "Ashcreek, Portland",
+  "Bridlemile, Portland",
+  "Collins View, Portland",
+  "Crestwood, Portland",
+  "Downtown, Portland",
+  "Far Southwest, Portland",
+  "Goose Hollow, Portland",
+  "Hayhurst, Portland",
+  "Healy Heights, Portland",
+  "Hillsdale, Portland",
+  "Homestead, Portland",
+  "Markham, Portland",
+  "Maplewood, Portland",
+  "Marshall Park, Portland",
+  "Multnomah, Portland",
+  "Old Town, Portland",
+  "South Burlingame, Portland",
+  "Southwest Hills, Portland",
+  "Sylvan-Highlands, Portland",
+  "West Portland Park, Portland",
 ]);
 const AREA_STATE: Record<string, "WA" | "OR"> = Object.fromEntries(
   AREAS.map(([name]) => [name, OR_AREA_NAMES.has(name) ? ("OR" as const) : ("WA" as const)])
@@ -706,6 +748,33 @@ const SCHOOL_DISTRICTS: Record<string, string> = {
   "South Tabor, Portland": "Portland Public Schools (Atkinson Elementary)",
   "Sunnyside, Portland": "Portland Public Schools (Sunnyside Environmental School)",
   "Woodstock, Portland": "Portland Public Schools",
+  "Arnold Creek, Portland": "Portland Public Schools",
+  "Ashcreek, Portland": "Portland Public Schools",
+  // A real jurisdictional split — the Portland city limit runs through the neighborhood
+  // along SW Thomas St; the northern part is unincorporated Multnomah County.
+  "Bridlemile, Portland":
+    "Portland Public Schools (Bridlemile Elementary) — the neighborhood straddles Portland's city limit; verify jurisdiction and school zoning by exact address",
+  "Collins View, Portland": "Portland Public Schools",
+  "Crestwood, Portland": "Portland Public Schools (Markham Elementary, Jackson Middle School, Ida B. Wells-Barnett High School)",
+  "Downtown, Portland": "Portland Public Schools",
+  "Far Southwest, Portland": "Portland Public Schools",
+  "Goose Hollow, Portland": "Portland Public Schools (Lincoln High School)",
+  "Hayhurst, Portland": "Portland Public Schools",
+  "Healy Heights, Portland": "Portland Public Schools",
+  "Hillsdale, Portland": "Portland Public Schools (Ida B. Wells-Barnett High School)",
+  "Homestead, Portland": "Portland Public Schools",
+  "Markham, Portland": "Portland Public Schools",
+  "Maplewood, Portland": "Portland Public Schools",
+  "Marshall Park, Portland": "Portland Public Schools",
+  "Multnomah, Portland": "Portland Public Schools",
+  "Old Town, Portland": "Portland Public Schools",
+  "South Burlingame, Portland": "Portland Public Schools",
+  // Much of the neighborhood's western side lies outside city limits in unincorporated
+  // Multnomah County — a real, documented jurisdictional note.
+  "Southwest Hills, Portland":
+    "Portland Public Schools area — part of the neighborhood lies outside city limits in unincorporated Multnomah County; verify jurisdiction by exact address",
+  "Sylvan-Highlands, Portland": "Portland Public Schools",
+  "West Portland Park, Portland": "Portland Public Schools",
 };
 
 const YOUTUBE_URL = "https://www.youtube.com/@jamiemeushawrealestate";
@@ -10158,6 +10227,941 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       closing: [
         "If you're researching Woodstock, confirm which part of the neighborhood — the older north or the post-WWII sections — a specific address falls in before assuming its character.",
+      ],
+    },
+  ],
+  "Arnold Creek, Portland": [
+    {
+      hook: "Wooded Ravines With Direct Access to the Tryon Creek Trailhead",
+      keyword: "Arnold Creek Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Arnold Creek is like — wooded ravines, direct trailhead access, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Arnold Creek, a wooded SW Portland neighborhood centered on a real trailhead.",
+      gbp:
+        "If you're moving to the Portland, OR area, Arnold Creek is worth researching — a wooded, residential SW Portland neighborhood between Tryon Creek State Natural Area and the Tualatin River corridor, with steep ravines and winding lanes centered on the Arnold Creek Trailhead. Most homes are mid-century and late-20th-century construction among conifers and maples, with decks and large windows facing the trees. If you're comparing Arnold Creek homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the trailhead access, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Arnold Creek is worth a look — a genuinely wooded neighborhood with direct access to a real state natural area trailhead.",
+      ],
+      livingIn: [
+        "Most homes in Arnold Creek are mid-century and late-20th-century construction among conifers and maples, with decks and large windows facing the trees.",
+      ],
+      whereLocated: [
+        "Arnold Creek sits between Tryon Creek State Natural Area and the Tualatin River corridor, centered on the Arnold Creek Trailhead.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "The Arnold Creek Trailhead provides direct access to Tryon Creek State Natural Area's trails, a real amenity built directly into the neighborhood's identity.",
+      ],
+      commute: [
+        "Arnold Creek is car-dependent, with winding lanes through steep ravines — plan on driving for most errands and commuting.",
+      ],
+      reasons: [
+        "<strong>Direct access to Tryon Creek State Natural Area:</strong> a real trailhead, not just general proximity.",
+        "<strong>Genuinely wooded setting:</strong> conifers and maples throughout the neighborhood.",
+        "<strong>Steep ravines and winding lanes:</strong> real topographic character distinct from flatter Portland neighborhoods.",
+      ],
+      considerations: [
+        "<strong>Car-dependent, hilly terrain:</strong> limited walkable infrastructure and real elevation change.",
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If genuine wooded, trailhead-adjacent living appeals to you, Arnold Creek is worth a close look.",
+      ],
+    },
+  ],
+  "Ashcreek, Portland": [
+    {
+      hook: "A Consistent Early-1980s Build Era on Hilly, Minimally Walkable Streets",
+      keyword: "Ashcreek Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Ashcreek is like — a consistent early-1980s housing stock, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Ashcreek, an SW Portland neighborhood with a consistent early-1980s build era.",
+      gbp:
+        "If you're moving to the Portland, OR area, Ashcreek is worth researching — a Southwest Portland neighborhood (ZIP 97219) near Multnomah Village, Hillsdale and Garden Home, with housing mostly single detached homes, primarily early-1980s construction with spacious floor plans. The terrain is hilly, with minimal walkability. If you're comparing Ashcreek homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Ashcreek is worth a look — a neighborhood with a genuinely consistent housing stock from one specific building era.",
+      ],
+      livingIn: [
+        "Housing in Ashcreek is mostly single detached homes, primarily early-1980s construction with spacious floor plans.",
+      ],
+      whereLocated: [
+        "Ashcreek sits in Southwest Portland (ZIP 97219), near Multnomah Village, Hillsdale and Garden Home.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "Specific park amenities directly in Ashcreek weren't confirmed for this writeup — check current listings or the city's park map for what's actually nearby a specific address.",
+      ],
+      commute: [
+        "Ashcreek's hilly terrain and minimal walkability mean plan on driving for most errands and commuting.",
+      ],
+      reasons: [
+        "<strong>A consistent early-1980s housing stock:</strong> spacious floor plans from one specific building era.",
+        "<strong>Close to Multnomah Village and Hillsdale:</strong> nearby commercial and community amenities.",
+      ],
+      considerations: [
+        "<strong>Hilly, minimally walkable terrain:</strong> cycling can be genuinely difficult here — plan on driving for most trips.",
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a consistent early-1980s housing stock near Multnomah Village appeals to you, Ashcreek is worth a close look.",
+      ],
+    },
+  ],
+  "Bridlemile, Portland": [
+    {
+      hook: "A Neighborhood Split by Portland's Actual City Limit Line",
+      keyword: "Bridlemile Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Bridlemile is like — a real city-limit split, a named elementary school, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Bridlemile, genuinely split between Portland and unincorporated Multnomah County.",
+      gbp:
+        "If you're moving to the Portland, OR area, Bridlemile is worth researching carefully — the Portland city limit genuinely runs through the neighborhood along SW Thomas St: the southern part is inside Portland, the northern part is unincorporated Multnomah County. Bridlemile Elementary (SW 47th Dr, roughly 450 students) sits directly in the neighborhood next to Hamilton Park, per the school's own PPS description. Housing includes single detached homes, lofts, bungalows and ranches, mostly 1960s-70s construction, with low street noise. If you're comparing Bridlemile homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the jurisdiction split, the school and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Bridlemile is worth a look — just confirm which side of a real, documented jurisdictional line a specific address falls on.",
+        "The Portland city limit runs through the neighborhood along SW Thomas St — the southern part is inside Portland, the northern part is unincorporated Multnomah County. Confirm jurisdiction for a specific address directly rather than assuming.",
+      ],
+      livingIn: [
+        "Housing includes single detached homes, lofts, bungalows and ranches, mostly 1960s-70s construction, with low street noise throughout.",
+      ],
+      whereLocated: [
+        "Bridlemile Elementary (SW 47th Dr) sits directly in the neighborhood next to Hamilton Park, bordering Southwest Hills, Hillsdale, Healy Heights and Hayhurst.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "Hamilton Park sits directly next to Bridlemile Elementary, a real, walkable school-park pairing in the neighborhood.",
+      ],
+      commute: [
+        "Bridlemile's Southwest Portland location keeps it within reasonable reach of the broader arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Bridlemile Elementary directly in the neighborhood:</strong> a real, confirmed school next to Hamilton Park.",
+        "<strong>Low street noise:</strong> a genuinely quiet residential feel.",
+        "<strong>1960s-70s housing character:</strong> a consistent architectural era throughout much of the neighborhood.",
+      ],
+      considerations: [
+        "<strong>A real jurisdictional split:</strong> confirm whether a specific address is inside Portland or unincorporated Multnomah County before relying on city services.",
+        "<strong>Middle school assignment is inconsistent across sources:</strong> some point to West Sylvan, others to Gray — verify directly with the district.",
+        "<strong>Older homes need closer inspection:</strong> 1960s-70s construction may need updated systems depending on upkeep history.",
+      ],
+      closing: [
+        "If walkable access to a real neighborhood elementary school matters to your search, Bridlemile is worth a close look — just confirm jurisdiction and middle-school zoning for the specific address first.",
+      ],
+    },
+  ],
+  "Collins View, Portland": [
+    {
+      hook: "A Genuine Mix of Acre Lots and Small Lots Near Gabriel Park",
+      keyword: "Collins View Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Collins View is like — real lot-size variety, Gabriel Park proximity, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Collins View, with a genuine mix of acre lots and smaller properties.",
+      gbp:
+        "If you're moving to the Portland, OR area, Collins View is worth researching — a Southwest Portland neighborhood (ZIP 97219) with a real mix of large acre-lot homes and smaller-lot homes, including older fixer-uppers alongside new construction. The neighborhood is near Gabriel Park, with walking trails, basketball and a playground, and has easy Hwy 26 access to downtown. If you're comparing Collins View homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the lot-size variety, Gabriel Park and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Collins View is worth a look — a neighborhood with genuine property-size variety, from acre lots to smaller ones, near a real, well-equipped park.",
+      ],
+      livingIn: [
+        "Collins View has a real mix of large acre-lot homes and smaller-lot homes, including older fixer-uppers alongside new construction.",
+      ],
+      whereLocated: [
+        "Collins View sits in Southwest Portland (ZIP 97219), near Gabriel Park, with easy Hwy 26 access to downtown.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly, given the genuine lot-size variety here.",
+      ],
+      parks: [
+        "Gabriel Park offers walking trails, basketball and a playground, a real, well-equipped amenity close to the neighborhood.",
+      ],
+      commute: [
+        "Collins View's easy Hwy 26 access keeps it within reasonable reach of downtown Portland, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Genuine lot-size variety:</strong> acre lots alongside smaller properties, a real range of options.",
+        "<strong>Close to Gabriel Park:</strong> walking trails, basketball and a playground nearby.",
+        "<strong>Easy highway access:</strong> genuinely convenient Hwy 26 access to downtown.",
+      ],
+      considerations: [
+        "<strong>Condition varies significantly:</strong> older fixer-uppers and new construction both exist here — compare specific properties rather than assuming uniform condition.",
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If genuine lot-size variety and easy highway access matter to your search, Collins View is worth a close look.",
+      ],
+    },
+  ],
+  "Crestwood, Portland": [
+    {
+      hook: "Confirmed Schools and Occasional Elk Sightings at Woods Memorial Natural Area",
+      keyword: "Crestwood Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Crestwood is like — confirmed schools, real elk sightings, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Crestwood, with confirmed schools and real elk sightings at a nearby natural area.",
+      gbp:
+        "If you're moving to the Portland, OR area, Crestwood is worth researching — a Southwest Portland neighborhood between SW 45th Ave and Barbur Blvd, next to Multnomah and Ashcreek. Assigned schools are genuinely confirmed: Markham Elementary, Jackson Middle School and Ida B. Wells-Barnett High School. Woods Memorial Natural Area, the neighborhood's main park, has occasional real elk sightings, with Dickinson Park also nearby. Housing is mostly single-family, including a 1947 split-level farmhouse example alongside newer construction. If you're comparing Crestwood homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the schools, natural area and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Crestwood is worth a look — a neighborhood with genuinely confirmed school assignments and a real, occasionally wild natural area nearby.",
+      ],
+      livingIn: [
+        "Housing in Crestwood is mostly single-family, including a 1947 split-level farmhouse example alongside newer 2020s-era new construction.",
+      ],
+      whereLocated: [
+        "Crestwood sits between SW 45th Ave and Barbur Blvd, next to Multnomah and Ashcreek, roughly 10 minutes to downtown via I-5/Barbur.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "Woods Memorial Natural Area, the neighborhood's main park, has occasional real elk sightings — a genuinely distinctive urban-meets-nature detail. Dickinson Park adds further nearby green space.",
+      ],
+      commute: [
+        "Crestwood's position near I-5/Barbur Blvd keeps it roughly 10 minutes from downtown Portland, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Genuinely confirmed school assignments:</strong> Markham Elementary, Jackson Middle School and Ida B. Wells-Barnett High School.",
+        "<strong>Real elk sightings at Woods Memorial Natural Area:</strong> a genuinely distinctive urban-wildlife detail.",
+        "<strong>Quick downtown access:</strong> roughly 10 minutes via I-5/Barbur Blvd.",
+      ],
+      considerations: [
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Older homes need closer inspection:</strong> 1940s-era construction may need updated systems depending on renovation history.",
+        "<strong>Confirm current school boundaries:</strong> school assignments can shift — verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If confirmed schools and genuine access to urban wildlife matter to your search, Crestwood is worth a close look.",
+      ],
+    },
+  ],
+  "Downtown, Portland": [
+    {
+      hook: "Portland's Actual Downtown Core, Genuinely Renter-Majority Condo and Apartment Living",
+      keyword: "Downtown Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Downtown is like — mostly condos and apartments, real renter-majority housing, and listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Downtown, Portland's actual core, predominantly condos and apartments.",
+      gbp:
+        "If you're moving to the Portland, OR area and want genuinely urban, condo-or-apartment living, Downtown is worth researching — Portland's actual core neighborhood, running west from the Willamette River to I-405, south from Burnside St to just south of Portland State University's campus, with its northeast corner carved out for the separate Old Town Chinatown neighborhood. This is a genuinely renter-majority area — 2010 figures show roughly 74% of households renting and only 13% owner-occupied — so traditional single-family \"homes for sale\" framing doesn't fit well here. Downtown covers parts of the South Park Blocks, Downtown Waterfront, River District and North Macadam urban renewal areas. If you're comparing Downtown homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the housing mix and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area and want genuinely urban, condo-or-apartment living, Downtown is worth a look — this is a real, distinct neighborhood, not just a general area description.",
+        "This is a genuinely renter-majority neighborhood — 2010 figures show roughly 74% of households renting, only 13% owner-occupied — so a traditional single-family \"homes for sale\" framing doesn't fit well here; expect condo and apartment inventory.",
+      ],
+      livingIn: [
+        "Downtown covers parts of the South Park Blocks, Downtown Waterfront, River District and North Macadam urban renewal areas, with Portland State University's campus at its south end.",
+      ],
+      whereLocated: [
+        "Downtown runs west from the Willamette River to I-405, south from Burnside St to just south of Portland State University, with its northeast corner carved out for the separate Old Town Chinatown neighborhood.",
+      ],
+      homesIn: [
+        "Specific, verified current condo/apartment pricing wasn't broadly confirmed for this writeup — compare current listings directly, and confirm you're looking at residential units given the area's genuinely mixed commercial/residential character.",
+      ],
+      parks: [
+        "The South Park Blocks and Downtown Waterfront give Downtown real, walkable green space within an otherwise dense urban core.",
+      ],
+      commute: [
+        "Downtown's central location keeps nearly everything walkable, with strong transit access given its position as the city's actual core.",
+      ],
+      reasons: [
+        "<strong>Genuinely urban, walkable living:</strong> the city's actual core, with strong transit access.",
+        "<strong>Real park access within the core:</strong> the South Park Blocks and Downtown Waterfront.",
+        "<strong>Close to Portland State University:</strong> real institutional and cultural amenities nearby.",
+      ],
+      considerations: [
+        "<strong>Genuinely renter-majority housing:</strong> only about 13% owner-occupied per 2010 figures — confirm this fits what you're looking for.",
+        "<strong>Not a traditional single-family neighborhood:</strong> expect condos and apartments, not houses.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If genuinely urban, walkable condo or apartment living in the city's actual core appeals to you, Downtown is worth a close look.",
+      ],
+    },
+  ],
+  "Far Southwest, Portland": [
+    {
+      hook: "Shaped by the Portland Community College Sylvania Campus",
+      keyword: "Far Southwest Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Far Southwest is like — the real PCC Sylvania campus, high owner-occupancy, and listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Far Southwest, largely shaped by the Portland Community College Sylvania Campus.",
+      gbp:
+        "If you're moving to the Portland, OR area, Far Southwest is worth researching — bordered by I-5, SW Pasadena/Pomona St, SW 49th Ave, Kerr Parkway and SW Kruse Ridge Dr, neighboring Tigard, Ashcreek, Crestwood, West Portland Park and Lake Oswego. The neighborhood is largely shaped by the Portland Community College Sylvania Campus, which occupies much of the area — a real, specific institutional anchor. Lesser Park and Sylvania Park are both real, named local parks. Homeownership here is genuinely high, around 80% per census data. If you're comparing Far Southwest homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the PCC campus, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Far Southwest is worth a look — a neighborhood genuinely shaped by a real, specific institutional anchor most other Portland neighborhoods don't have.",
+      ],
+      livingIn: [
+        "Homeownership here is genuinely high, around 80% per census data — mostly homes built in the 1940s-70s, often on larger lots.",
+      ],
+      whereLocated: [
+        "Far Southwest is bordered by I-5, SW Pasadena/Pomona St, SW 49th Ave, Kerr Parkway and SW Kruse Ridge Dr, neighboring Tigard, Ashcreek, Crestwood, West Portland Park and Lake Oswego.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "Lesser Park and Sylvania Park are both real, named local parks, alongside the Portland Community College Sylvania Campus itself, which occupies much of the neighborhood.",
+      ],
+      commute: [
+        "Far Southwest's position near I-5 keeps it within reasonable reach of both Portland and Lake Oswego, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>A real, specific institutional anchor:</strong> the Portland Community College Sylvania Campus occupies much of the neighborhood.",
+        "<strong>Genuinely high homeownership:</strong> around 80%, a real, verifiable figure.",
+        "<strong>Larger lots:</strong> common among the mostly 1940s-70s homes here.",
+      ],
+      considerations: [
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Older homes need closer inspection:</strong> 1940s-70s construction may need updated systems depending on upkeep history.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a neighborhood with a real institutional anchor and genuinely high homeownership matters to your search, Far Southwest is worth a close look.",
+      ],
+    },
+  ],
+  "Goose Hollow, Portland": [
+    {
+      hook: "The Subject of Its Own Published Neighborhood History Book",
+      keyword: "Goose Hollow Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Goose Hollow is like — real, well-documented history, Lincoln High School, and listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Goose Hollow, named for a creek-carved hollow, with its own published history book.",
+      gbp:
+        "If you're moving to the Portland, OR area, Goose Hollow is worth researching — named for a hollow carved by Tanner Creek, west of downtown, with genuinely substantial documented history, including a dedicated 2011 book, Tracy J. Prince's \"Portland's Goose Hollow.\" Daniel Lownsdale claimed land here in 1845 and opened a tannery where Civic Stadium (now Providence Park) now stands. Lincoln High School, founded in 1869 as Portland High School, is the oldest high school in the Pacific Northwest, with its current main building opening in 2022. If you're comparing Goose Hollow homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers this real history, Lincoln High School and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area and real, documented neighborhood history matters to you, Goose Hollow is worth a look — few Portland neighborhoods have an entire published book dedicated to their history.",
+        "Daniel Lownsdale claimed land here in 1845 and opened a tannery where Civic Stadium, now Providence Park, now stands — real, specific, sourced history, not a generic founding story.",
+      ],
+      livingIn: [
+        "Chinese farmers rented land here from the 1870s until 1910, and immigrant German, Jewish and British families later built up the neighborhood — a genuinely layered, documented community history.",
+      ],
+      whereLocated: [
+        "Goose Hollow sits west of downtown Portland, home to Lincoln High School, founded in 1869 as Portland High School, the oldest high school in the Pacific Northwest.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "Providence Park, formerly Civic Stadium, sits on the site of Daniel Lownsdale's original 1845 tannery — a real, documented, specific piece of neighborhood history.",
+      ],
+      commute: [
+        "Goose Hollow's position west of downtown keeps most errands walkable, with strong transit access given its central location.",
+      ],
+      reasons: [
+        "<strong>An entire published book about the neighborhood:</strong> Tracy J. Prince's 2011 \"Portland's Goose Hollow,\" genuinely substantial documented history.",
+        "<strong>Lincoln High School:</strong> the oldest high school in the Pacific Northwest, founded 1869.",
+        "<strong>A layered, documented immigrant community history:</strong> Chinese, German, Jewish and British families all part of the neighborhood's real story.",
+      ],
+      considerations: [
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Stadium-adjacent noise and traffic:</strong> proximity to Providence Park means game-day activity on some streets.",
+        "<strong>Confirm specific school assignment:</strong> Lincoln High School serves part of the area — verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If genuinely well-documented neighborhood history matters to your search, Goose Hollow is worth a close look — read Tracy J. Prince's book if you want the full story.",
+      ],
+    },
+  ],
+  "Hayhurst, Portland": [
+    {
+      hook: "Gabriel Park's Real 1950 Purchase, Near a Dairy That Stood Until 2025",
+      keyword: "Hayhurst Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Hayhurst is like — Gabriel Park's real 1950 history, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Hayhurst, home to Gabriel Park, purchased by the city in 1950.",
+      gbp:
+        "If you're moving to the Portland, OR area, Hayhurst is worth researching — named for Hayhurst School, itself named for Elizabeth Hayhurst, the first president of the Oregon Parent Teacher Association in the early 1900s. Gabriel Park, 87 acres purchased by the Parks Bureau in October 1950 for $120,000, sits on the neighborhood's southern edge at 45th Ave and Vermont St, with two small creeks, wooded areas and the Southwest Community Center. Alpenrose Dairy, which stood in the western part of the neighborhood since 1916 with a velodrome, baseball park and a replica frontier town, was demolished in May 2025 as part of the Raleigh Crest development — real, recent history, not a current amenity. If you're comparing Hayhurst homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers Gabriel Park, the Alpenrose history and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Hayhurst is worth a look — home to a real, dated park history and a recently closed neighborhood landmark worth knowing about.",
+        "Alpenrose Dairy, which stood in the western part of the neighborhood since 1916 with a velodrome, baseball park and a replica frontier town, was demolished in May 2025 as part of the Raleigh Crest development — it's real, recent history, not a current amenity you'll find when you visit.",
+      ],
+      livingIn: [
+        "The neighborhood includes the Vermont Hills area, with larger lots and varied home styles, alongside more standard-sized properties elsewhere.",
+      ],
+      whereLocated: [
+        "Hayhurst is bordered by Raleigh Hills and Beaverton to the west, Bridlemile to the north, Hillsdale to the east, and Maplewood and Multnomah to the south.",
+      ],
+      homesIn: [
+        "One recently reported listing included a 1953 cottage-style ranch near Gabriel Park — a single data point, not a stated range, so compare current listings directly.",
+      ],
+      parks: [
+        "Gabriel Park, 87 acres purchased by the Parks Bureau in October 1950 for $120,000, sits on the neighborhood's southern edge, with two small creeks, wooded areas and the Southwest Community Center.",
+      ],
+      commute: [
+        "Hayhurst's Southwest Portland location keeps it within reasonable reach of the broader arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Gabriel Park's real, dated history:</strong> a specific 1950 city purchase, not a vague \"nearby park\" claim.",
+        "<strong>Varied home styles and lot sizes:</strong> including the larger-lot Vermont Hills area.",
+        "<strong>A real, documented naming origin:</strong> tied to Oregon PTA figure Elizabeth Hayhurst.",
+      ],
+      considerations: [
+        "<strong>Alpenrose Dairy is no longer standing:</strong> demolished in May 2025 — don't expect to visit it as a current amenity.",
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than relying on a single reported sale.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If real park access and varied home styles matter to your search, Hayhurst is worth a close look — just know the historic Alpenrose Dairy site is now part of a new development, not a visitable landmark.",
+      ],
+    },
+  ],
+  "Healy Heights, Portland": [
+    {
+      hook: "A Neighborhood Entirely Nested Inside Another Neighborhood's Boundaries",
+      keyword: "Healy Heights Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Healy Heights is like — a real neighborhood nested inside Southwest Hills, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Healy Heights, a small West Hills neighborhood entirely within Southwest Hills' boundaries.",
+      gbp:
+        "If you're moving to the Portland, OR area, Healy Heights is worth understanding first — a genuinely distinctive geographic situation: this small West Hills neighborhood sits entirely within the boundaries of the separate Southwest Hills neighborhood, yet the city recognizes it as its own distinct neighborhood. Housing includes mid-century homes and contemporary rebuilds on steep lots with mature evergreens, mostly single detached homes and row houses, overwhelmingly owner-occupied. If you're comparing Healy Heights homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers this unusual geography and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Healy Heights is worth a look — a genuinely unusual case of one official Portland neighborhood sitting entirely inside another one's boundaries.",
+        "Healy Heights sits entirely within the boundaries of the separate Southwest Hills neighborhood, yet the city recognizes it as its own distinct neighborhood — a real, verifiable geographic nesting, not an error.",
+      ],
+      livingIn: [
+        "Housing includes mid-century homes and contemporary rebuilds on steep lots with mature evergreens, mostly single detached homes and row houses, overwhelmingly owner-occupied.",
+      ],
+      whereLocated: [
+        "Healy Heights borders Hayhurst, Bridlemile, Southwest Hills, Homestead and Hillsdale, while sitting entirely within Southwest Hills' own boundaries.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "The neighborhood's steep, mature-evergreen lots give it real West Hills character distinct from flatter Portland neighborhoods.",
+      ],
+      commute: [
+        "Healy Heights' West Hills location keeps it within reasonable reach of downtown Portland, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>A genuinely unusual geographic distinction:</strong> one of the few Portland neighborhoods entirely nested inside another's boundaries.",
+        "<strong>Steep, wooded lots:</strong> mature evergreens throughout.",
+        "<strong>High owner-occupancy:</strong> a genuinely stable, owner-heavy community.",
+      ],
+      considerations: [
+        "<strong>Easy to confuse with Southwest Hills:</strong> confirm which neighborhood designation a specific listing actually uses.",
+        "<strong>Steep terrain:</strong> factor elevation into both the property itself and everyday driving.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a genuinely unusual, steep, wooded West Hills setting appeals to you, Healy Heights is worth a close look.",
+      ],
+    },
+  ],
+  "Hillsdale, Portland": [
+    {
+      hook: "Oregon's First Brewpub and a High School Renamed for Ida B. Wells-Barnett in 2021",
+      keyword: "Hillsdale Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Hillsdale is like — Oregon's first brewpub, a 2021 school renaming, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Hillsdale, home to Oregon's first brewpub and a high school renamed in 2021.",
+      gbp:
+        "If you're moving to the Portland, OR area, Hillsdale is worth researching — centered on Ida B. Wells-Barnett High School (1151 SW Vermont St), known as Woodrow Wilson High School from its 1956 opening until a 2021 renaming, a real, dated, verifiable change. McMenamins Hillsdale Brewery opened in 1985 as Oregon's first brewpub, a genuine, checkable landmark. The Hillsdale Library opened in 1957. Housing is mostly mid-century, built 1940-1969, predominantly single-family and owner-occupied. Note: this is a separate neighborhood from Hillside, already covered elsewhere — don't confuse the two similarly-named areas. If you're comparing Hillsdale homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the school history, the brewpub and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Hillsdale is worth a look — home to a real, documented 2021 school renaming and Oregon's first brewpub.",
+        "Ida B. Wells-Barnett High School, known as Woodrow Wilson High School from its 1956 opening until a 2021 renaming, is a real, specific, dated institutional history — note this is a separate neighborhood from the similarly-named Hillside.",
+      ],
+      livingIn: [
+        "Housing in Hillsdale is mostly mid-century, built 1940-1969, predominantly single-family and owner-occupied.",
+      ],
+      whereLocated: [
+        "Hillsdale is centered on Ida B. Wells-Barnett High School (1151 SW Vermont St), built after a 1945 bond measure.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "McMenamins Hillsdale Brewery, open since 1985 as Oregon's first brewpub, and the Hillsdale Library, which opened in 1957, are both real, dated neighborhood landmarks.",
+      ],
+      commute: [
+        "Hillsdale's Southwest Portland location keeps it within reasonable reach of the broader arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>A real, dated 2021 school renaming:</strong> Ida B. Wells-Barnett High School, formerly Woodrow Wilson High School.",
+        "<strong>Oregon's first brewpub:</strong> McMenamins Hillsdale Brewery, open since 1985.",
+        "<strong>Consistent mid-century housing stock:</strong> 1940-1969 construction, predominantly single-family and owner-occupied.",
+      ],
+      considerations: [
+        "<strong>Easily confused with the similarly-named Hillside neighborhood:</strong> confirm you're researching Hillsdale, not Hillside.",
+        "<strong>Older homes need closer inspection:</strong> 1940s-60s construction may need updated systems depending on upkeep history.",
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+      ],
+      closing: [
+        "If real, documented institutional history and a genuine neighborhood brewpub matter to your search, Hillsdale is worth a close look.",
+      ],
+    },
+  ],
+  "Homestead, Portland": [
+    {
+      hook: "Home to OHSU and the Portland VA Medical Center on Marquam Hill",
+      keyword: "Homestead Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Homestead is like — real OHSU and VA campuses, Marquam Nature Park, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Homestead, home to the OHSU campus and the Portland VA Medical Center.",
+      gbp:
+        "If you're moving to the Portland, OR area, Homestead is worth researching — its northern portion includes two real institutional complexes on Marquam Hill: the main OHSU campus and the Portland VA Medical Center, confirmed by the city's own neighborhood description, alongside hundreds of acres of undeveloped forest and parks. The historic Terwilliger Parkway runs through the neighborhood, with Marquam Nature Park nearby. If you're comparing Homestead homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the institutional campuses, nature access and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Homestead is worth a look — a neighborhood genuinely defined by major real institutional campuses alongside real, substantial undeveloped nature.",
+      ],
+      livingIn: [
+        "The neighborhood's northern portion includes two real institutional complexes on Marquam Hill: the main OHSU campus and the Portland VA Medical Center, confirmed by the city's own neighborhood description.",
+      ],
+      whereLocated: [
+        "Homestead includes the historic Terwilliger Parkway, which runs through the neighborhood, with Marquam Nature Park nearby.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "Marquam Nature Park and hundreds of acres of undeveloped forest and parks, confirmed by the city's own neighborhood description, give Homestead real, substantial nature access.",
+      ],
+      commute: [
+        "Homestead's position on Marquam Hill, near OHSU and the historic Terwilliger Parkway, keeps it within reasonable reach of downtown Portland.",
+      ],
+      reasons: [
+        "<strong>Real major institutional campuses:</strong> OHSU and the Portland VA Medical Center, both confirmed by the city.",
+        "<strong>Substantial real nature access:</strong> hundreds of acres of undeveloped forest and parks.",
+        "<strong>The historic Terwilliger Parkway:</strong> a real, scenic route running through the neighborhood.",
+      ],
+      considerations: [
+        "<strong>Limited verified residential history:</strong> specific architectural details for Homestead's housing stock weren't broadly confirmed — compare current listings directly rather than relying on general claims.",
+        "<strong>Institutional-adjacent traffic:</strong> proximity to OHSU and the VA Medical Center means real activity on some streets.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If real institutional proximity alongside substantial nature access matters to your search, Homestead is worth a close look.",
+      ],
+    },
+  ],
+  "Markham, Portland": [
+    {
+      hook: "A Suburban-Feeling Mix of 1970s and New Construction, Honestly Light on Documented Landmarks",
+      keyword: "Markham Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Markham is like — a suburban feel, a mix of home eras, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Markham, a suburban-feeling SW Portland neighborhood.",
+      gbp:
+        "If you're moving to the Portland, OR area, Markham is worth researching — a suburban-feeling Southwest Portland neighborhood with a genuine mix of homes from 1970s-era construction to new builds. Specific, well-documented history and standout landmarks are genuinely limited for this neighborhood compared to some nearby areas — the honest approach is to focus on the real housing-era mix and suburban character rather than repeat unverified origin claims. If you're comparing Markham homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Markham is worth a look — a suburban-feeling neighborhood with a genuine range of home construction eras.",
+      ],
+      livingIn: [
+        "Markham's housing spans from 1970s-era homes to new construction, giving the neighborhood a real range of ages and styles.",
+      ],
+      whereLocated: [
+        "Markham sits in Southwest Portland, with a suburban feel distinct from denser inner-city neighborhoods.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "Specific park amenities directly in Markham weren't confirmed for this writeup — check current listings or the city's park map for what's actually nearby a specific address.",
+      ],
+      commute: [
+        "Markham's Southwest Portland location keeps it within reasonable reach of the broader arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>A genuine mix of construction eras:</strong> 1970s-era homes alongside new construction.",
+        "<strong>A suburban feel:</strong> a different pace than denser inner-city Portland neighborhoods.",
+      ],
+      considerations: [
+        "<strong>Limited documented history or landmarks:</strong> be cautious of unverified origin claims found in some sources — this neighborhood's distinguishing material is genuinely thinner than some nearby areas.",
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a suburban-feeling neighborhood with a genuine range of home construction eras matters to your search, Markham is worth a close look.",
+      ],
+    },
+  ],
+  "Maplewood, Portland": [
+    {
+      hook: "Streets Named for US States, Breaking From Portland's Standard Grid",
+      keyword: "Maplewood Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Maplewood is like — streets named for US states, a wetland boardwalk, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Maplewood, where hilly terrain breaks the street grid into state-named roads.",
+      gbp:
+        "If you're moving to the Portland, OR area, Maplewood is worth researching — farmland in the early 1900s, now a leafy residential neighborhood with knolls and rolling hills. Because of the hills, the street grid genuinely breaks from Portland's standard layout — many east/west streets are named after U.S. states, like Nevada, Texas, California and Florida, a real, distinctive pattern. Two creeks, Woods Creek and Vermont Creek, tributaries of the Tualatin/Fanno Creek system, cross the area. April Hill Park includes a real wetland boardwalk, and Gabriel Park is also nearby. If you're comparing Maplewood homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the street layout, parks and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Maplewood is worth a look — a neighborhood whose hilly terrain genuinely broke Portland's standard street grid into something distinctive.",
+        "Because of the hills, many east/west streets here are named after U.S. states — Nevada, Texas, California, Florida — a real, documented pattern, not a coincidence.",
+      ],
+      livingIn: [
+        "Maplewood is almost exclusively residential, with commercial businesses only along the outer edge, and a wide variety of architectural styles, some with hillside views.",
+      ],
+      whereLocated: [
+        "Maplewood sits west of SW 45th Ave to the city limit near SW 66th Ave, between SW Vermont St and SW Multnomah Blvd, crossed by Woods Creek and Vermont Creek.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly, given the genuine architectural variety here.",
+      ],
+      parks: [
+        "April Hill Park includes a real wetland boardwalk, a genuinely distinctive amenity, with Gabriel Park also nearby.",
+      ],
+      commute: [
+        "Maplewood's hilly, state-named-street layout keeps it within reasonable reach of the broader Southwest Portland arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>A genuinely distinctive street layout:</strong> state-named streets, a real break from Portland's standard grid.",
+        "<strong>April Hill Park's wetland boardwalk:</strong> a real, specific natural amenity.",
+        "<strong>Architectural variety:</strong> a wide range of styles, some with real hillside views.",
+      ],
+      considerations: [
+        "<strong>Hilly terrain:</strong> factor elevation into both the property itself and everyday driving.",
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a genuinely distinctive street layout and real wetland park access matter to your search, Maplewood is worth a close look.",
+      ],
+    },
+  ],
+  "Marshall Park, Portland": [
+    {
+      hook: "A Park Donated by Name in 1948, Covering Nearly Half the Neighborhood",
+      keyword: "Marshall Park Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Marshall Park is like — a real 1948 donated park, Tryon Creek access, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Marshall Park, named for a real park donated to the city in 1948.",
+      gbp:
+        "If you're moving to the Portland, OR area, Marshall Park is worth researching — named for Marshall Park itself, donated to the City of Portland in 1948 by Frederick C. and Addie Mae Marshall, a real, dated, named gift. Tryon Creek flows through the park's natural area, which has walking trails, bridges and a playground; the park takes up almost half of the neighborhood's land. Jensen Natural Area and Foley-Balmer Natural Area, both acquired in 1996, add further real, dated green space. Housing here is more suburban in character than communities closer to the city center. If you're comparing Marshall Park homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the park's history and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Marshall Park is worth a look — a neighborhood genuinely named for, and largely defined by, a real, dated, donated park.",
+        "Marshall Park itself was donated to the City of Portland in 1948 by Frederick C. and Addie Mae Marshall — a real, specific, named gift, with Tryon Creek flowing through its natural area.",
+      ],
+      livingIn: [
+        "Housing here is more suburban in character than communities closer to the city center, with real, verifiable high owner-occupancy.",
+      ],
+      whereLocated: [
+        "Marshall Park sits between West Portland Park, Markham, South Burlingame, Collins View and Arnold Creek, per the city's own description.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "Marshall Park takes up almost half of the neighborhood's land, with Tryon Creek flowing through its natural area, walking trails, bridges and a playground. Jensen Natural Area and Foley-Balmer Natural Area, both acquired in 1996, add further green space.",
+      ],
+      commute: [
+        "Marshall Park's Southwest Portland location keeps it within reasonable reach of the broader arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>A real, named, dated park donation:</strong> Marshall Park itself, given to the city in 1948.",
+        "<strong>The park covers nearly half the neighborhood:</strong> a genuinely substantial green-space presence.",
+        "<strong>Multiple real natural areas:</strong> Jensen and Foley-Balmer, both acquired in 1996.",
+      ],
+      considerations: [
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Suburban pace:</strong> a different feel than denser neighborhoods closer to the city center.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a neighborhood genuinely defined by a real, substantial donated park matters to your search, Marshall Park is worth a close look.",
+      ],
+    },
+  ],
+  "Multnomah, Portland": [
+    {
+      hook: "Grown Around a 1908 Railroad Station, Still Home to One of the City's Oldest Street Fairs",
+      keyword: "Multnomah Village Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Multnomah is like — a real 1908 railroad origin, Multnomah Days, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Multnomah, grown around a real 1908 Oregon Electric Railroad station.",
+      gbp:
+        "If you're moving to the Portland, OR area, Multnomah (Multnomah Village) is worth researching — the community grew up around an Oregon Electric Railroad station placed here in 1908, connecting Portland to Salem; within 20 years it had its own post office, grocery stores, pharmacy, movie house, churches, school and bank. Piecemeal annexation into Portland began around 1950, and revitalization started in the 1970s with antique shops and local businesses occupying historic buildings. Some buildings along SW Capitol Highway and lower Multnomah Blvd are more than a century old. Multnomah Days, one of the city's oldest street fairs, is still held every summer. If you're comparing Multnomah homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the railroad history, Multnomah Days and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Multnomah is worth a look — a neighborhood with a real, specific railroad-era origin and a genuinely still-running historic street fair.",
+        "The community grew up around an Oregon Electric Railroad station placed here in 1908, connecting Portland to Salem — within 20 years it had its own post office, grocery stores, pharmacy, movie house, churches, school and bank.",
+      ],
+      livingIn: [
+        "Some buildings along SW Capitol Highway and lower Multnomah Blvd are more than a century old, following revitalization that started in the 1970s with antique shops and local businesses occupying historic buildings.",
+      ],
+      whereLocated: [
+        "Multnomah is centered on the Multnomah Village commercial district, anchored by the Multnomah Arts Center (Portland Parks & Recreation), rated very walkable.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "Multnomah Days, one of the city's oldest street fairs, is still held every summer, a real, genuinely ongoing community event tied directly to the neighborhood's identity.",
+      ],
+      commute: [
+        "Multnomah's walkable village center keeps many daily errands on foot, with the broader Southwest Portland arterial network close by.",
+      ],
+      reasons: [
+        "<strong>A real, specific 1908 railroad-era origin:</strong> the community grew directly around a historic station.",
+        "<strong>Multnomah Days:</strong> a real, genuinely still-running historic street fair.",
+        "<strong>Century-old buildings along Capitol Highway:</strong> real, documented historic character in the village core.",
+      ],
+      considerations: [
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Village-center traffic and parking:</strong> popular commercial streets can mean more activity on some blocks.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a neighborhood with a real railroad-era origin and a genuinely still-running historic street fair matters to your search, Multnomah is worth a close look.",
+      ],
+    },
+  ],
+  "Old Town, Portland": [
+    {
+      hook: "A Real National Historic Landmark District, Mostly Lofts and Apartments",
+      keyword: "Old Town Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Old Town is like — a real National Historic Landmark District, mostly lofts, and listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Old Town, home to a real National Historic Landmark District.",
+      gbp:
+        "If you're moving to the Portland, OR area and want genuinely historic, condo-or-loft living, Old Town is worth researching — the Portland Skidmore/Old Town Historic District covers about 20 blocks centered on Burnside St, named for the Skidmore Fountain, part of the original 1843 land claim that led to Portland's founding. It was listed on the National Register of Historic Places on December 6, 1975, and designated a National Historic Landmark District on May 5, 1977 — both real, dated, verifiable designations. Architecture spans High Victorian Italianate, Renaissance Revival, Richardsonian Romanesque and Sullivanesque styles, with the National Park Service rating its collection of cast-iron commercial buildings among the finest in the nation. Buildings here are historically commercial, now mixed as apartments and hotels alongside business use — this is predominantly a lofts-and-apartments neighborhood, not single-family homes. If you're comparing Old Town homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the historic district and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area and want genuinely historic, urban loft or apartment living, Old Town is worth a look — this is one of the most significantly recognized historic districts in the city.",
+        "The Portland Skidmore/Old Town Historic District was listed on the National Register of Historic Places in 1975 and designated a National Historic Landmark District in 1977 — both real, dated, verifiable federal designations, among the strongest of any Portland neighborhood.",
+      ],
+      livingIn: [
+        "Buildings here are historically commercial, now mixed as apartments and hotels alongside business use — this is predominantly a lofts-and-apartments neighborhood, not a traditional single-family area.",
+      ],
+      whereLocated: [
+        "Old Town covers about 20 blocks centered on Burnside St, named for the Skidmore Fountain, part of the original 1843 land claim that led to Portland's founding.",
+      ],
+      homesIn: [
+        "Specific, verified current condo/loft pricing wasn't broadly confirmed for this writeup — compare current listings directly, and confirm you're looking at residential units given the area's historically commercial building stock.",
+      ],
+      parks: [
+        "The district's architecture — High Victorian Italianate, Renaissance Revival, Richardsonian Romanesque and Sullivanesque styles — includes a collection of cast-iron commercial buildings the National Park Service rates among the finest in the nation.",
+      ],
+      commute: [
+        "Old Town's central, riverfront location keeps most errands walkable, with strong transit access given its position near downtown.",
+      ],
+      reasons: [
+        "<strong>A real National Historic Landmark District:</strong> designated in 1977, one of the strongest federal recognitions of any Portland neighborhood.",
+        "<strong>Genuinely significant architecture:</strong> a nationally notable collection of cast-iron commercial buildings.",
+        "<strong>Central, walkable location:</strong> close to downtown and the riverfront.",
+      ],
+      considerations: [
+        "<strong>Not a traditional single-family neighborhood:</strong> expect lofts and apartments, not houses.",
+        "<strong>Historic designation can affect renovations:</strong> properties within the Landmark District may have restrictions on exterior changes — confirm before planning any work.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If genuinely significant historic architecture paired with urban loft living appeals to you, Old Town is worth a close look.",
+      ],
+    },
+  ],
+  "South Burlingame, Portland": [
+    {
+      hook: "Nicknamed 'Hummingbird Hill,' Renamed in 1910",
+      keyword: "South Burlingame Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what South Burlingame is like — a real 1888 founding, a 1910 renaming, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore South Burlingame, once nicknamed Hummingbird Hill before its 1910 renaming.",
+      gbp:
+        "If you're moving to the Portland, OR area, South Burlingame is worth researching — grown out of the 411-acre Fulton Park District, formed July 20, 1888 when Philip A. Marquam sold the land to the South West Portland Company for $150,000. Earlier called Carson Heights and nicknamed \"Hummingbird Hill\" for its hummingbirds, it became South Burlingame in 1910, per the neighborhood association. Many original houses remain, including Arts and Crafts-era homes, alongside modern builds. If you're comparing South Burlingame homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers this history, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, South Burlingame is worth a look — a neighborhood with a real, dated founding story and a genuinely charming earlier nickname.",
+        "Grown out of the 411-acre Fulton Park District, formed July 20, 1888, the area was earlier called Carson Heights and nicknamed \"Hummingbird Hill\" for its hummingbirds, before becoming South Burlingame in 1910, per the neighborhood association.",
+      ],
+      livingIn: [
+        "Many original houses remain, including Arts and Crafts-era homes, alongside modern builds — a real mix of early-1900s streetcar-suburb character and newer construction.",
+      ],
+      whereLocated: [
+        "South Burlingame sits in Southwest Portland, developed as an early-1900s streetcar suburb.",
+      ],
+      homesIn: [
+        "One recently reported sale included a 1938 single-family home at $479,000 (4bd/2ba/1,692 sqft) — a single data point, not a stated range, so compare current listings directly.",
+      ],
+      parks: [
+        "The neighborhood's real, documented history as the former Fulton Park District and earlier \"Hummingbird Hill\" gives it a genuinely distinctive identity beyond typical park amenities.",
+      ],
+      commute: [
+        "South Burlingame's Southwest Portland location keeps it within reasonable reach of the broader arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>A real, dated 1888 founding story:</strong> the former 411-acre Fulton Park District.",
+        "<strong>A genuinely charming earlier nickname:</strong> \"Hummingbird Hill,\" before the 1910 renaming.",
+        "<strong>Preserved Arts and Crafts-era homes:</strong> alongside modern construction.",
+      ],
+      considerations: [
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than relying on a single reported sale.",
+        "<strong>Older homes need closer inspection:</strong> Arts and Crafts-era construction may need updated systems depending on renovation history.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If genuine early-1900s streetcar-suburb history and preserved architecture matter to your search, South Burlingame is worth a close look.",
+      ],
+    },
+  ],
+  "Southwest Hills, Portland": [
+    {
+      hook: "Council Crest's Cascade Views, With Part of the Neighborhood Outside City Limits",
+      keyword: "Southwest Hills Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Southwest Hills is like — Council Crest's real views, a genuine boundary note, and listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Southwest Hills, home to Council Crest and real Cascade peak views.",
+      gbp:
+        "If you're moving to the Portland, OR area, Southwest Hills is worth researching — a collective of neighborhoods on the Tualatin Mountains, whose northeast part, above Goose Hollow and Downtown, is known as Portland Heights. Council Crest Park, 1,073 feet above sea level, offers real views of several Cascade peaks. One genuine detail worth knowing: much of the neighborhood's western side lies outside city limits in unincorporated Multnomah County — confirm jurisdiction for a specific address. The 1918 Frank J. Cobbs House is cited as one of the oldest, most notable homes in the area. If you're comparing Southwest Hills homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers Council Crest, the boundary situation and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Southwest Hills is worth a look — home to real, genuinely panoramic Cascade views, with one jurisdictional detail worth confirming first.",
+        "Much of the neighborhood's western side lies outside city limits in unincorporated Multnomah County — a real, documented boundary situation, so confirm jurisdiction for a specific address rather than assuming.",
+      ],
+      livingIn: [
+        "The 1918 Frank J. Cobbs House is cited as one of the oldest, most notable homes in the area, reflecting the neighborhood's genuine early-1900s roots alongside newer construction.",
+      ],
+      whereLocated: [
+        "Southwest Hills sits on the Tualatin Mountains, with its northeast part, above Goose Hollow and Downtown, known as Portland Heights.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "Council Crest Park, 1,073 feet above sea level, offers real views of several Cascade peaks — a genuine, checkable natural landmark.",
+      ],
+      commute: [
+        "Southwest Hills' elevated position keeps it within reasonable reach of downtown Portland, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Council Crest's real Cascade views:</strong> 1,073 feet above sea level, a genuine, checkable landmark.",
+        "<strong>Genuine early-1900s architecture:</strong> homes like the 1918 Frank J. Cobbs House.",
+        "<strong>Elevated, scenic setting:</strong> real terrain distinct from flatter Portland neighborhoods.",
+      ],
+      considerations: [
+        "<strong>Real jurisdictional split:</strong> confirm whether a specific address is inside Portland city limits or unincorporated Multnomah County.",
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If genuine elevated views and early-1900s architecture matter to your search, Southwest Hills is worth a close look — just confirm jurisdiction for the specific address first.",
+      ],
+    },
+  ],
+  "Sylvan-Highlands, Portland": [
+    {
+      hook: "Home to the Aubrey Watzek House, Designed by Architect John Yeon",
+      keyword: "Sylvan-Highlands Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Sylvan-Highlands is like — a real John Yeon-designed home, wooded lots, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Sylvan-Highlands, home to the Aubrey Watzek House, designed by John Yeon.",
+      gbp:
+        "If you're moving to the Portland, OR area, Sylvan-Highlands is worth researching — bordering Forest Park, Arlington Heights and Southwest Hills, next to Washington Park, with secluded, wooded lots throughout. The Aubrey Watzek House, a real 1930s home designed by John Yeon, a nationally significant architect, is a genuinely distinctive architectural landmark here. If you're comparing Sylvan-Highlands homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the Watzek House, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Sylvan-Highlands is worth a look — home to a real, nationally significant architectural landmark most other Portland neighborhoods can't match.",
+        "The Aubrey Watzek House, a real 1930s home designed by John Yeon, a nationally significant architect, is a genuine, checkable architectural landmark in the neighborhood.",
+      ],
+      livingIn: [
+        "Sylvan-Highlands has secluded, wooded lots throughout, with homes often set back among mature trees.",
+      ],
+      whereLocated: [
+        "Sylvan-Highlands borders Forest Park, Arlington Heights and Southwest Hills, next to Washington Park.",
+      ],
+      homesIn: [
+        "Recently reported sales for vintage homes have suggested a median around $769,000 in one undated snapshot, with homes averaging roughly 86 days on market — compare current listings directly.",
+      ],
+      parks: [
+        "The neighborhood's proximity to Forest Park and Washington Park gives it real, substantial nature access alongside its secluded, wooded residential lots.",
+      ],
+      commute: [
+        "Sylvan-Highlands is car-dependent, with a Walk Score around 19 — plan on driving for most errands and commuting.",
+      ],
+      reasons: [
+        "<strong>The Aubrey Watzek House:</strong> a real, nationally significant architectural landmark designed by John Yeon.",
+        "<strong>Secluded, wooded lots:</strong> genuine privacy among mature trees.",
+        "<strong>Proximity to Forest Park and Washington Park:</strong> substantial real nature access.",
+      ],
+      considerations: [
+        "<strong>Car-dependent:</strong> limited walkable infrastructure, so daily life here means driving for most trips.",
+        "<strong>Wide price range:</strong> recently reported sales spanned a real range — compare current listings directly rather than assuming one price point.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If genuinely significant architecture and secluded, wooded living appeal to you, Sylvan-Highlands is worth a close look.",
+      ],
+    },
+  ],
+  "West Portland Park, Portland": [
+    {
+      hook: "A Capitol Hill Pocket With Real Mosques, an Islamic School and a Library",
+      keyword: "West Portland Park Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what West Portland Park is like — a real Capitol Hill community cluster, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore West Portland Park, home to the Capitol Hill area's real community cluster.",
+      gbp:
+        "If you're moving to the Portland, OR area, West Portland Park is worth researching — between SW 53rd Ave and SW 35th Ave, I-5 and SW Stephenson St/the city limits. Its northern part, Capitol Hill, includes the Capitol Hill Library and several mosques and an Islamic school — a real, specific, checkable community feature. Recently reported market data has shown a median around $538,000, up 7.5% year over year, with homes averaging 41 days on market. If you're comparing West Portland Park homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the Capitol Hill area and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, West Portland Park is worth a look — home to a real, distinctive community cluster in its northern Capitol Hill section.",
+      ],
+      livingIn: [
+        "The neighborhood's northern part, Capitol Hill, includes the Capitol Hill Library and several mosques and an Islamic school — a real, specific community feature.",
+      ],
+      whereLocated: [
+        "West Portland Park sits between SW 53rd Ave and SW 35th Ave, I-5 to the north and SW Stephenson St/the city limits to the south.",
+      ],
+      homesIn: [
+        "Recently reported market data has shown a median around $538,000, up 7.5% year over year, with homes averaging 41 days on market — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "The Capitol Hill Library serves the neighborhood's northern section, alongside the area's real mosques and Islamic school.",
+      ],
+      commute: [
+        "West Portland Park's position near I-5 keeps it within reasonable reach of the broader Portland arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>A real, distinctive community cluster:</strong> mosques, an Islamic school and a library in the Capitol Hill section.",
+        "<strong>Recently reported market momentum:</strong> a real year-over-year price increase.",
+        "<strong>I-5 proximity:</strong> convenient highway access.",
+      ],
+      considerations: [
+        "<strong>Market pace can shift:</strong> compare current listings directly rather than relying on a past snapshot.",
+        "<strong>Confirm which section a specific address is in:</strong> the Capitol Hill sub-area has its own distinct community character.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a neighborhood with a real, distinctive community cluster and recent market momentum matters to your search, West Portland Park is worth a close look.",
       ],
     },
   ],
