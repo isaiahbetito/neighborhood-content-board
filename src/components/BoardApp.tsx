@@ -110,6 +110,11 @@ const AREAS: [string, string][] = [
   ["Progress Ridge, Beaverton", "progress-ridge-beaverton-or"],
   ["Cedar Hills, Beaverton", "cedar-hills-beaverton-or"],
   ["Oak Hills, Beaverton", "oak-hills-beaverton-or"],
+  ["Metzger, Tigard", "metzger-tigard-or"],
+  ["River Terrace, Tigard", "river-terrace-tigard-or"],
+  ["Tigard Triangle, Tigard", "tigard-triangle-tigard-or"],
+  ["Summerlake, Tigard", "summerlake-tigard-or"],
+  ["Summerfield, Tigard", "summerfield-tigard-or"],
 ];
 
 // State grouping for the filter/checklist UI. WA areas above came first (7 original +
@@ -142,6 +147,11 @@ const OR_AREA_NAMES = new Set([
   "Progress Ridge, Beaverton",
   "Cedar Hills, Beaverton",
   "Oak Hills, Beaverton",
+  "Metzger, Tigard",
+  "River Terrace, Tigard",
+  "Tigard Triangle, Tigard",
+  "Summerlake, Tigard",
+  "Summerfield, Tigard",
 ]);
 const AREA_STATE: Record<string, "WA" | "OR"> = Object.fromEntries(
   AREAS.map(([name]) => [name, OR_AREA_NAMES.has(name) ? ("OR" as const) : ("WA" as const)])
@@ -325,6 +335,19 @@ const SCHOOL_DISTRICTS: Record<string, string> = {
     "Beaverton School District or Tigard-Tualatin School District area (verify by exact address)",
   "Cedar Hills, Beaverton": "Beaverton School District",
   "Oak Hills, Beaverton": "Beaverton School District",
+  // Metzger is unincorporated Washington County, not inside Tigard's city limits — but
+  // Metzger Elementary (Tigard-Tualatin SD) sits in the heart of the neighborhood.
+  "Metzger, Tigard": "Tigard-Tualatin School District",
+  // Genuinely split by exact address — River Terrace's two newest elementary schools
+  // (Art Rutkin and Alberta Rider) both serve parts of the development; see TITLES entry.
+  "River Terrace, Tigard":
+    "Tigard-Tualatin School District (Art Rutkin or Alberta Rider Elementary area — verify by exact address)",
+  "Tigard Triangle, Tigard": "Tigard-Tualatin School District",
+  // Summerlake genuinely spans two districts depending on the exact street, same pattern
+  // as Tanasbourne/Progress Ridge above.
+  "Summerlake, Tigard":
+    "Tigard-Tualatin School District or Beaverton School District area (verify by exact address)",
+  "Summerfield, Tigard": "Tigard-Tualatin School District",
 };
 
 const YOUTUBE_URL = "https://www.youtube.com/@jamiemeushawrealestate";
@@ -4656,6 +4679,231 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       closing: [
         "If a genuinely planned community with real shared amenities is what you're after, Oak Hills is worth a close look — the pools, trails and rec center are easy to underestimate until you've seen them in person.",
+      ],
+    },
+  ],
+  "Metzger, Tigard": [
+    {
+      hook: "An Unincorporated, Washington Square-Adjacent Address With a School-Park Garden",
+      keyword: "Metzger Tigard OR homes",
+      metaDescription:
+        "Moving to the Tigard, OR area? See what Metzger is like — unincorporated Washington County, Washington Square access, a school-park garden and current listings.",
+      excerpt:
+        "Thinking about moving to the Tigard, OR area? Explore Metzger, an unincorporated Washington County community next to Washington Square.",
+      gbp:
+        "If you're moving to the Tigard, OR area, Metzger is worth researching — a community just east of Washington Square mall that's actually unincorporated Washington County land, not inside Tigard's city limits, even though it carries a Tigard mailing address and the 97223 ZIP code. Metzger School Park sits on the grounds of Metzger Elementary (Tigard-Tualatin School District), a shared-use arrangement between the city and the school district that includes a community garden with reservable plots. Highway 217 and the Washington Square Transit Center are both close by, which keeps everyday errands and transit access convenient. Because Metzger is unincorporated, land-use decisions here run through Washington County rather than the City of Tigard — worth knowing going in. If you're comparing Metzger homes for sale or Tigard OR homes for sale more broadly, the full neighborhood guide covers the jurisdiction situation, schools and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Tigard, Oregon area, Metzger is worth a look — a long-established community immediately east of Washington Square, with one real wrinkle worth understanding before you start touring.",
+        "Metzger carries a Tigard mailing address and the 97223 ZIP code, but it's actually unincorporated Washington County land, not inside Tigard's city limits. That distinction matters for permitting and local governance, even though day-to-day life here feels like any other Tigard-area neighborhood.",
+      ],
+      livingIn: [
+        "Housing in Metzger is a mix of older single-family homes on established lots alongside some newer infill, reflecting a neighborhood that's been built out gradually over decades rather than all at once by a single developer.",
+      ],
+      whereLocated: [
+        "Metzger sits directly east of Washington Square, one of the Portland area's larger shopping malls, with Highway 217 and the Washington Square Transit Center both close by for everyday access and transit.",
+      ],
+      homesIn: [
+        "Expect a genuine range of home ages and styles rather than a single repeated floor plan — this is an established, incrementally developed area, so comparing a few specific listings tells you more than any neighborhood-wide generalization.",
+      ],
+      parks: [
+        "Metzger School Park, at the Metzger Elementary site, is a shared-use arrangement between the city and the school district — it includes a community garden with plots residents can reserve through the city, in addition to the usual school-grounds recreation space.",
+      ],
+      commute: [
+        "Highway 217 runs along Metzger's edge, giving fairly direct access toward Beaverton, Tigard and the broader Washington County arterial network — actual drive time still depends heavily on time of day.",
+      ],
+      reasons: [
+        "<strong>Washington Square proximity:</strong> major shopping, dining and the transit center are essentially next door.",
+        "<strong>Established, incrementally built neighborhood:</strong> a genuine mix of home ages rather than one development-era floor plan.",
+        "<strong>Metzger School Park's community garden:</strong> a real, reservable amenity tied to the school grounds.",
+      ],
+      considerations: [
+        "<strong>Unincorporated status:</strong> Metzger is governed by Washington County, not the City of Tigard, for land use and permitting — worth confirming how that affects a specific property.",
+        "<strong>Mixed home ages:</strong> some properties will need more updating than others; compare a few listings rather than assuming uniform condition.",
+        "<strong>Commercial-adjacent location:</strong> proximity to Washington Square is a convenience for some buyers and a traffic consideration for others.",
+      ],
+      closing: [
+        "If being minutes from Washington Square and transit matters more to you than being inside Tigard's formal city limits, Metzger is worth comparing against nearby Tigard neighborhoods directly.",
+      ],
+    },
+  ],
+  "River Terrace, Tigard": [
+    {
+      hook: "Tigard's Newest Master-Planned Build-Out, Still Taking Shape",
+      keyword: "River Terrace Tigard OR homes",
+      metaDescription:
+        "Moving to the Tigard, OR area? See what River Terrace is like — a new master-planned community still under construction, schools and current listings.",
+      excerpt:
+        "Thinking about moving to the Tigard, OR area? Explore River Terrace, a roughly 500-acre master-planned community still being built out.",
+      gbp:
+        "If you're moving to the Tigard, OR area and want new construction, River Terrace is worth researching. It's a roughly 500-acre master-planned community on Tigard's western edge, transitioning from farmland to an eventual 2,500-plus homes over about 20 years — builders including Toll Brothers and David Weekley Homes are actively building here now, so inventory, amenities and even which school a home is zoned for can all still be changing. Because the community is new, elementary school zoning genuinely splits by address between Art Rutkin Elementary and Alberta Rider Elementary, both feeding Twality Middle School and Tualatin High School in the Tigard-Tualatin School District — confirm zoning for any specific address before deciding. A trail connection runs directly to the newer elementary school from parts of the development. If you're comparing River Terrace homes for sale or Tigard OR homes for sale more broadly, the full neighborhood guide covers the build-out timeline, school zoning and current listings.",
+      variant: "guide",
+      intro: [
+        "If new construction matters to your move to the Tigard, Oregon area, River Terrace is worth a close look — it's the newest neighborhood Tigard has, and it's still actively being built.",
+        "The community covers roughly 500 acres on Tigard's western edge, land that was agricultural until recently, with a planned build-out of more than 2,500 homes over about two decades. That means buying here now means buying into a neighborhood that's genuinely still taking shape, not a finished, settled one.",
+      ],
+      livingIn: [
+        "Everything here is new construction — builders including Toll Brothers and David Weekley Homes are actively selling and building in River Terrace right now, so available floor plans, pricing and amenities can change from one phase of the development to the next.",
+      ],
+      whereLocated: [
+        "River Terrace sits on Tigard's western edge, bordering Beef Bend Road and Roy Rogers Road, in an area that was farmland before this development began.",
+      ],
+      homesIn: [
+        "Expect newer single-family floor plans across multiple builders and price tiers rather than a single uniform product — because the build-out is ongoing, what's actively for sale will keep changing phase to phase.",
+      ],
+      parks: [
+        "A trail connection runs directly from parts of the development to the newer elementary school, and additional parks and open space are planned as build-out continues — not all of it exists yet, so confirm what's actually built near a specific address.",
+      ],
+      commute: [
+        "Beef Bend Road and Roy Rogers Road provide the main access into River Terrace, connecting to the broader Tigard and Tualatin arterial network — as with any growing area, expect construction-related traffic changes while build-out continues.",
+      ],
+      reasons: [
+        "<strong>New construction:</strong> multiple active builders means real choice in floor plans and finishes.",
+        "<strong>Master-planned from the start:</strong> parks, trails and schools were designed into the plan rather than retrofitted later.",
+        "<strong>Still growing:</strong> early buyers get in before the full build-out and its eventual amenities are complete.",
+      ],
+      considerations: [
+        "<strong>Active construction nearby:</strong> living in a neighborhood that's still being built means ongoing nearby construction for the foreseeable future.",
+        "<strong>School zoning is genuinely split:</strong> Art Rutkin and Alberta Rider Elementary both serve parts of River Terrace — verify zoning for the exact address, not just the neighborhood name.",
+        "<strong>Amenities still arriving:</strong> some planned parks, trails and retail aren't built yet — confirm what currently exists versus what's still planned.",
+      ],
+      closing: [
+        "If you want new construction and are comfortable buying into a neighborhood that's still being built out, River Terrace is worth comparing against other new-construction options in the wider Tigard-Tualatin area.",
+      ],
+    },
+  ],
+  "Tigard Triangle, Tigard": [
+    {
+      hook: "An Urban-Renewal District Reinventing Itself Inside the 99W/I-5/217 Interchange",
+      keyword: "Tigard Triangle OR homes",
+      metaDescription:
+        "Moving to the Tigard, OR area? See what the Tigard Triangle is like — a mixed-use urban-renewal district, transit access and current listings.",
+      excerpt:
+        "Thinking about moving to the Tigard, OR area? Explore the Tigard Triangle, a roughly 550-acre district being redeveloped into a mixed-use town center.",
+      gbp:
+        "If you're moving to the Tigard, OR area and want a genuinely urban feel, the Tigard Triangle is worth researching. Named for the highways that bound it — Highway 99W, I-5 and OR-217 — this roughly 550-acre district was adopted as an urban renewal area by the City of Tigard in December 2016 and approved by voters in May 2017. The Triangle Strategic Plan envisions a walkable town center along SW 69th Avenue with housing, offices and retail, and the Red Rock Creek Commons affordable housing development was the first project to receive tax-increment financing here. Because this is still an actively redeveloping district, housing options skew toward newer apartments and mixed-use buildings rather than traditional single-family homes, and what's available continues to change as redevelopment moves forward. If you're comparing Tigard Triangle homes for sale or Tigard OR homes for sale more broadly, the full neighborhood guide covers the redevelopment plan, transit access and current listings.",
+      variant: "guide",
+      intro: [
+        "If an urban, transit-connected setting matters to your move to the Tigard, Oregon area, the Tigard Triangle is worth a look — it's one of the more actively changing districts in the city right now.",
+        "The name comes from its shape: the district sits inside the triangle formed by Highway 99W, I-5 and OR-217, just east of downtown Tigard.",
+      ],
+      livingIn: [
+        "The City of Tigard adopted the Tigard Triangle Urban Renewal Plan in December 2016, approved by voters in May 2017, with a Strategic Plan envisioning a walkable town center along SW 69th Avenue featuring housing, offices and retail together.",
+      ],
+      whereLocated: [
+        "The Triangle sits just east of downtown Tigard, bounded by Highway 99W, I-5 and OR-217 — a location that puts it close to major highway access in every direction.",
+      ],
+      homesIn: [
+        "Because this is an actively redeveloping urban renewal district, housing here leans toward newer apartments and mixed-use buildings rather than traditional single-family homes — the Red Rock Creek Commons affordable housing development, the first project funded through the district's tax-increment financing, is one example of what's been built so far.",
+      ],
+      parks: [
+        "Open space and pedestrian infrastructure, including the planned SW 69th Avenue pedestrian spine, are part of the Triangle's redevelopment plan — some of it is built, some is still planned, so confirm what currently exists near a specific address.",
+      ],
+      commute: [
+        "The Triangle's location inside the 99W/I-5/217 interchange gives genuinely fast highway access in multiple directions — the tradeoff is highway noise and traffic that comes with sitting this close to three major routes.",
+      ],
+      reasons: [
+        "<strong>Major highway access in every direction:</strong> 99W, I-5 and OR-217 all border the district directly.",
+        "<strong>Active redevelopment:</strong> a genuinely walkable, mixed-use town center is being built out, not just proposed.",
+        "<strong>Close to downtown Tigard:</strong> the historic Main Street core and Tigard Transit Center are just to the west.",
+      ],
+      considerations: [
+        "<strong>Still an industrial/commercial mix:</strong> redevelopment is ongoing, so the district isn't a finished, purely residential neighborhood yet.",
+        "<strong>Housing stock is mostly newer apartments and mixed-use buildings:</strong> buyers specifically wanting a traditional single-family home may want to look elsewhere in Tigard.",
+        "<strong>Highway-adjacent noise:</strong> the same highway access that's convenient also means more road noise than a typical residential subdivision.",
+      ],
+      closing: [
+        "If an urban, highway-connected, actively-redeveloping setting appeals to you more than a traditional suburban subdivision, the Tigard Triangle is worth comparing against downtown Tigard directly.",
+      ],
+    },
+  ],
+  "Summerlake, Tigard": [
+    {
+      hook: "Trail and Court Access Around Summerlake Park, With a School-District Split to Confirm",
+      keyword: "Summerlake Tigard OR homes",
+      metaDescription:
+        "Moving to the Tigard, OR area? See what Summerlake is like — Summerlake Park access, home styles, a split school district and current listings.",
+      excerpt:
+        "Thinking about moving to the Tigard, OR area? Explore Summerlake, a neighborhood built around Summerlake Park's trails and courts.",
+      gbp:
+        "If you're moving to the Tigard, OR area, Summerlake is worth researching — a neighborhood built around Summerlake Park, with trails, basketball, tennis and pickleball courts, fields and playgrounds that some homes back directly onto. Homes here are a mix of single-level and two-story construction, mostly built in the 1980s and 1990s, with recently reported sales ranging roughly from $590,000 to $700,000 — comparing specific properties matters more than assuming one price point. One genuine wrinkle: Summerlake spans both the Tigard-Tualatin School District and the Beaverton School District depending on the exact address, so confirming school zoning before you get attached to a specific home is worth doing early. If you're comparing Summerlake homes for sale or Tigard OR homes for sale more broadly, the full neighborhood guide covers the park access, home styles, school zoning and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Tigard, Oregon area and want real park access built into daily life, Summerlake is worth a look — the neighborhood takes its name from Summerlake Park, and that's genuinely the center of it.",
+        "Homes here were built mostly in the 1980s and 1990s, giving the area an established, settled feel rather than the bare-lot look of newer construction.",
+      ],
+      livingIn: [
+        "Summerlake's housing mix includes both single-level and two-story homes from the 1980s and 1990s building boom, with some properties backing directly onto Summerlake Park's trails and open space.",
+      ],
+      whereLocated: [
+        "Summerlake sits near Scholls Ferry Road in Tigard, close enough to the Beaverton border that school-district boundaries genuinely split within the neighborhood — see the school note below.",
+      ],
+      homesIn: [
+        "Recently reported sales in Summerlake have ranged roughly from $590,000 to $700,000, spanning a mix of single-level and two-story floor plans — comparing a few specific listings tells you more than any single price point.",
+      ],
+      parks: [
+        "Summerlake Park anchors the neighborhood, with trails, basketball, tennis and pickleball courts, fields and playgrounds — some homes have a private path leading directly from the backyard into the park.",
+      ],
+      commute: [
+        "Scholls Ferry Road is the main route through Summerlake, connecting toward both Tigard's core and Beaverton — actual drive time still depends on time of day.",
+      ],
+      reasons: [
+        "<strong>Summerlake Park access:</strong> trails, multiple sport courts, fields and playgrounds, some reachable directly from the backyard.",
+        "<strong>Established 1980s–90s neighborhood:</strong> mature landscaping and a settled feel.",
+        "<strong>Home-style variety:</strong> both single-level and two-story floor plans within the same area.",
+      ],
+      considerations: [
+        "<strong>School district genuinely splits by address:</strong> Summerlake spans both the Tigard-Tualatin and Beaverton School Districts — verify zoning for the exact property, not just the neighborhood name.",
+        "<strong>Price range is wide:</strong> recently reported sales spanned roughly $590,000 to $700,000, so compare specific homes rather than assuming one price point.",
+        "<strong>Homes aren't new construction:</strong> built mostly in the 1980s and 1990s, so condition and updates vary property to property.",
+      ],
+      closing: [
+        "If daily park access and an established setting matter to your search, Summerlake is worth comparing against other Tigard neighborhoods — just confirm school zoning for the specific address before you get too attached to a listing.",
+      ],
+    },
+  ],
+  "Summerfield, Tigard": [
+    {
+      hook: "A 203-Acre, Golf-Centered 55+ Community, Resale Only",
+      keyword: "Summerfield Tigard OR homes",
+      metaDescription:
+        "Moving to the Tigard, OR area? See what Summerfield is like — a 203-acre, golf-centered 55+ community with real amenities and current listings.",
+      excerpt:
+        "Thinking about moving to the Tigard, OR area? Explore Summerfield, a 203-acre, 55+ age-restricted community built around a public golf course.",
+      gbp:
+        "If you're researching 55+ communities in the Tigard, OR area, Summerfield is worth a look — a 203-acre, age-restricted community of roughly 1,231 homes, all resale, built around a year-round 9-hole public golf course. Residents have access to a clubhouse with a pool, a fitness center, a ballroom, tennis and pickleball courts, and walking and biking trails, plus an active schedule of resident clubs and classes through an on-site activity director. Golf access is optional for an additional resident pass fee, separate from the community's regular annual due — confirm current figures directly, since both can change. Because homes here are resale only, buyers specifically wanting new construction should look elsewhere in the Tigard area. If you're comparing Summerfield homes for sale or Tigard OR homes for sale more broadly, the full neighborhood guide covers the amenities, fees and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're researching 55+ communities in the Tigard, Oregon area, Summerfield is worth a close look — a genuinely amenity-rich, age-restricted community built around its own golf course.",
+        "The community covers 203 acres and includes roughly 1,231 homes, all resale — there's no new construction being added here.",
+      ],
+      livingIn: [
+        "Summerfield is organized around a year-round 9-hole public golf course, with homes arranged across the 203-acre site to take advantage of the course and the community's other shared amenities.",
+      ],
+      whereLocated: [
+        "Summerfield sits within Tigard, with its own internal street network and amenities set apart from the surrounding city, centered on SW Summerfield Drive.",
+      ],
+      homesIn: [
+        "All 1,231 homes in Summerfield are resale — there's no new construction here, so buyers wanting the newest finishes should expect to budget for updates rather than finding a move-in-ready brand-new floor plan.",
+      ],
+      parks: [
+        "Beyond the golf course itself, residents have access to a clubhouse with a pool, a fitness center, a ballroom, tennis and pickleball courts, and walking and biking trails — along with resident clubs, classes and an on-site activity director.",
+      ],
+      commute: [
+        "Summerfield's Tigard location keeps it within reasonable reach of the broader Tigard-Tualatin arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Real, extensive shared amenities:</strong> golf course, pool, fitness center, ballroom, tennis and pickleball courts, and trails all on-site.",
+        "<strong>Active community life:</strong> resident clubs, classes and an on-site activity director.",
+        "<strong>203 acres of established, settled grounds:</strong> a genuinely cohesive, long-developed community rather than a newer build-out.",
+      ],
+      considerations: [
+        "<strong>Age-restricted:</strong> Summerfield is a 55+ community, so it isn't an option for buyers outside that age requirement.",
+        "<strong>Resale only:</strong> no new construction means budgeting for updates is part of buying here, even on a well-maintained home.",
+        "<strong>Separate fees apply:</strong> the community's regular annual due and the optional golf pass are billed separately and can change — confirm current figures directly rather than relying on an older listing.",
+      ],
+      closing: [
+        "If a genuinely amenity-rich, golf-centered 55+ community is what you're looking for, Summerfield is worth a close look — just confirm current fees and golf-access terms directly before deciding.",
       ],
     },
   ],
