@@ -162,6 +162,21 @@ const AREAS: [string, string][] = [
   ["Northwest Heights, Portland", "northwest-heights-portland-or"],
   ["Pearl District, Portland", "pearl-district-portland-or"],
   ["South Portland, Portland", "south-portland-portland-or"],
+  ["Arbor Lodge, Portland", "arbor-lodge-portland-or"],
+  ["Cathedral Park, Portland", "cathedral-park-portland-or"],
+  ["Hayden Island, Portland", "hayden-island-portland-or"],
+  ["Kenton, Portland", "kenton-portland-or"],
+  ["Overlook, Portland", "overlook-portland-or"],
+  ["Piedmont, Portland", "piedmont-portland-or"],
+  ["Portsmouth, Portland", "portsmouth-portland-or"],
+  ["St. Johns, Portland", "st-johns-portland-or"],
+  ["University Park, Portland", "university-park-portland-or"],
+  ["East Columbia, Portland", "east-columbia-portland-or"],
+  ["Bridgeton, Portland", "bridgeton-portland-or"],
+  ["Boise, Portland", "boise-portland-or"],
+  ["Eliot, Portland", "eliot-portland-or"],
+  ["Humboldt, Portland", "humboldt-portland-or"],
+  ["Lloyd District, Portland", "lloyd-district-portland-or"],
 ];
 
 // State grouping for the filter/checklist UI. WA areas above came first (7 original +
@@ -246,6 +261,21 @@ const OR_AREA_NAMES = new Set([
   "Northwest Heights, Portland",
   "Pearl District, Portland",
   "South Portland, Portland",
+  "Arbor Lodge, Portland",
+  "Cathedral Park, Portland",
+  "Hayden Island, Portland",
+  "Kenton, Portland",
+  "Overlook, Portland",
+  "Piedmont, Portland",
+  "Portsmouth, Portland",
+  "St. Johns, Portland",
+  "University Park, Portland",
+  "East Columbia, Portland",
+  "Bridgeton, Portland",
+  "Boise, Portland",
+  "Eliot, Portland",
+  "Humboldt, Portland",
+  "Lloyd District, Portland",
 ]);
 const AREA_STATE: Record<string, "WA" | "OR"> = Object.fromEntries(
   AREAS.map(([name]) => [name, OR_AREA_NAMES.has(name) ? ("OR" as const) : ("WA" as const)])
@@ -509,6 +539,23 @@ const SCHOOL_DISTRICTS: Record<string, string> = {
   "Northwest Heights, Portland": "Portland Public Schools",
   "Pearl District, Portland": "Portland Public Schools",
   "South Portland, Portland": "Portland Public Schools",
+  "Arbor Lodge, Portland": "Portland Public Schools",
+  "Cathedral Park, Portland": "Portland Public Schools",
+  "Hayden Island, Portland": "Portland Public Schools",
+  "Kenton, Portland": "Portland Public Schools",
+  "Overlook, Portland": "Portland Public Schools",
+  "Piedmont, Portland": "Portland Public Schools",
+  "Portsmouth, Portland": "Portland Public Schools",
+  "St. Johns, Portland": "Portland Public Schools",
+  "University Park, Portland": "Portland Public Schools",
+  // Historically its own Columbia School District (1920-1964) before merging into PPS —
+  // the old school building is now the Columbia Children's Arboretum.
+  "East Columbia, Portland": "Portland Public Schools (historically its own Columbia School District, 1920-1964)",
+  "Bridgeton, Portland": "Portland Public Schools",
+  "Boise, Portland": "Portland Public Schools (Boise-Eliot Elementary, 620 NE Fremont St)",
+  "Eliot, Portland": "Portland Public Schools (Boise-Eliot Elementary, 620 NE Fremont St)",
+  "Humboldt, Portland": "Portland Public Schools",
+  "Lloyd District, Portland": "Portland Public Schools",
 };
 
 const YOUTUBE_URL = "https://www.youtube.com/@jamiemeushawrealestate";
@@ -7150,6 +7197,673 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       closing: [
         "If genuine, documented neighborhood history and preserved early-20th-century character matter to your search, South Portland is worth a close look.",
+      ],
+    },
+  ],
+  "Arbor Lodge, Portland": [
+    {
+      hook: "Home to Harper's Playground, Portland's First Fully Accessible Playground",
+      keyword: "Arbor Lodge Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Arbor Lodge is like — Harper's Playground, Arbor Lodge Park, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Arbor Lodge, home to Harper's Playground, the city's first fully accessible playground.",
+      gbp:
+        "If you're moving to the Portland, OR area, Arbor Lodge is worth researching — a North Portland neighborhood, platted in 1889, with most homes built between 1910 and 1930. Arbor Lodge Park, created in 1940 at N Bryant St and Delaware Ave, is home to Harper's Playground (2012), Portland's first fully accessible playground — a real, distinctive, checkable landmark. New Seasons Market and a Fred Meyer anchor the area, with MAX light rail running along Interstate Ave. If you're comparing Arbor Lodge homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the park, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Arbor Lodge is worth a look — home to a genuinely distinctive, checkable landmark most other neighborhoods don't have.",
+      ],
+      livingIn: [
+        "Arbor Lodge was platted in 1889, with most homes built between 1910 and 1930, giving the neighborhood real early-20th-century character throughout.",
+      ],
+      whereLocated: [
+        "Arbor Lodge sits in North Portland, east of I-5, with New Seasons Market and a Fred Meyer anchoring the area and MAX light rail running along Interstate Ave.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly, given the real range of home ages here.",
+      ],
+      parks: [
+        "Arbor Lodge Park, roughly 8.5 acres at N Bryant St and Delaware Ave, is home to Harper's Playground, Portland's first fully accessible playground, built in 2012 — a genuine, distinctive amenity.",
+      ],
+      commute: [
+        "MAX light rail runs along Interstate Ave through the neighborhood, with I-5 nearby for broader regional access.",
+      ],
+      reasons: [
+        "<strong>Harper's Playground:</strong> Portland's first fully accessible playground, a real and distinctive anchor.",
+        "<strong>Early-20th-century housing stock:</strong> most homes built 1910-1930, giving the neighborhood genuine period character.",
+        "<strong>MAX light rail access:</strong> real transit options along Interstate Ave.",
+      ],
+      considerations: [
+        "<strong>Founding date has some conflicting sources:</strong> most point to an 1889 platting, though this detail isn't universally agreed upon — not something that affects buying a home here, just worth a note.",
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Older homes need closer inspection:</strong> 1910s-1930s construction may need updated systems depending on renovation history.",
+      ],
+      closing: [
+        "If a neighborhood with a genuinely distinctive park landmark and real transit access matters to your search, Arbor Lodge is worth a close look.",
+      ],
+    },
+  ],
+  "Cathedral Park, Portland": [
+    {
+      hook: "A Park and Neighborhood Named for a Bridge's Gothic Arches",
+      keyword: "Cathedral Park Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Cathedral Park is like — the real St. Johns Bridge story, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Cathedral Park, named for the St. Johns Bridge's cathedral-like Gothic arches.",
+      gbp:
+        "If you're moving to the Portland, OR area, Cathedral Park is worth researching — a small North Portland neighborhood directly beneath the east end of the St. Johns Bridge, which opened in 1931 and was, at the time, the longest suspension bridge west of the Mississippi. Both the neighborhood and its namesake park are named for the bridge's Gothic arches, which resemble a cathedral. The area was part of the independent City of St. Johns until voters approved annexation to Portland in 1915. The park itself, on what was previously industrial land, was completed in 1980 after a $7.5 million fundraising effort. If you're comparing Cathedral Park homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the bridge history, park and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Cathedral Park is worth a look — a small neighborhood with a real, specific namesake story.",
+        "Both the neighborhood and its park take their name from the nearby St. Johns Bridge's Gothic-style arches, which resemble a cathedral — a real architectural detail, not a marketing invention.",
+      ],
+      livingIn: [
+        "Cathedral Park is a small North Portland neighborhood that was part of the independent City of St. Johns until voters approved annexation to Portland in 1915.",
+      ],
+      whereLocated: [
+        "The neighborhood sits directly beneath the east end of the St. Johns Bridge, which opened in 1931 and connects across the Willamette River to Linnton in Northwest Portland.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "Cathedral Park itself, completed in 1980 after a $7.5 million fundraising effort, sits directly beneath the bridge's Gothic arches on what was previously industrial land.",
+      ],
+      commute: [
+        "The St. Johns Bridge provides direct access across the Willamette River toward Northwest Portland, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Real, specific namesake story:</strong> both the neighborhood and park are named for the St. Johns Bridge's Gothic arches.",
+        "<strong>A historically significant bridge:</strong> the longest suspension bridge west of the Mississippi when it opened in 1931.",
+        "<strong>Direct river and bridge access:</strong> a genuine, walkable connection to the park and waterfront.",
+      ],
+      considerations: [
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than relying on general neighborhood color.",
+        "<strong>Small neighborhood:</strong> inventory may be limited given the area's compact size.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a neighborhood with a real, specific namesake landmark and direct river access matters to your search, Cathedral Park is worth a close look.",
+      ],
+    },
+  ],
+  "Hayden Island, Portland": [
+    {
+      hook: "A Columbia River Island Where 'Home' Often Means a Floating One",
+      keyword: "Hayden Island Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Hayden Island is like — floating homes, marinas, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Hayden Island, where real floating-home communities make this genuinely different from a typical neighborhood.",
+      gbp:
+        "If you're moving to the Portland, OR area and floating-home living interests you, Hayden Island is worth researching. This is a genuinely distinct Columbia River island neighborhood, not a typical land-based residential area — housing here leans heavily toward condos and real, documented floating-home communities, with several gated floating-home communities and marinas including Hayden Bay Condominium Marina, Island Cove Marina, Riverhouse Marina and Jantzen Beach Moorage. Recently reported listings have included a 1935 floating bungalow at $299,900. If you're comparing Hayden Island homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the floating-home communities, marinas and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area and want something genuinely different from a typical neighborhood, Hayden Island is worth a look — this is a Columbia River island where floating-home living is a real, established housing type, not a novelty.",
+      ],
+      livingIn: [
+        "Housing here is mostly condos and real floating homes, organized into several gated floating-home communities — this is not primarily a land-based single-family-home neighborhood, so confirm what type of property you're actually looking at.",
+      ],
+      whereLocated: [
+        "Hayden Island sits in the Columbia River, with several named marinas including Hayden Bay Condominium Marina, Island Cove Marina, Riverhouse Marina and Jantzen Beach Moorage.",
+      ],
+      homesIn: [
+        "Recently reported listings have included a 1935 floating bungalow at $299,900 — compare current listings directly, and confirm whether a specific listing is a floating home, a condo, or a land-based property, since all three exist here.",
+      ],
+      parks: [
+        "The island's marinas themselves function as a real amenity — Hayden Bay Condominium Marina offers full-service slips with power, water and storage for residents.",
+      ],
+      commute: [
+        "Hayden Island's Columbia River location keeps it within reasonable reach of both Portland and Vancouver, WA, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Real floating-home communities:</strong> a genuinely distinctive housing type, uncommon elsewhere in the Portland area.",
+        "<strong>Multiple full-service marinas:</strong> real, named amenities for boat and floating-home owners.",
+        "<strong>A genuinely unique setting:</strong> island living within easy reach of both Portland and Vancouver, WA.",
+      ],
+      considerations: [
+        "<strong>Floating-home ownership works differently:</strong> financing, insurance and maintenance for a floating home differ meaningfully from a standard house — research this specifically before assuming it works like a typical home purchase.",
+        "<strong>Housing type varies significantly:</strong> condos, floating homes and land-based properties all exist here — confirm which type a specific listing actually is.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address, since island geography can affect zoning and busing.",
+      ],
+      closing: [
+        "If genuinely unique floating-home or marina living appeals to you, Hayden Island is worth a close look — just go in understanding that financing and ownership work differently here than for a typical house.",
+      ],
+    },
+  ],
+  "Kenton, Portland": [
+    {
+      hook: "A Real Company Town With a Nationally Registered Paul Bunyan Statue",
+      keyword: "Kenton Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Kenton is like — a real company-town history, the Paul Bunyan statue, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Kenton, a former company town home to a nationally registered Paul Bunyan statue.",
+      gbp:
+        "If you're moving to the Portland, OR area, Kenton is worth researching — a North Portland neighborhood that began as a real company town for the Swift Meat Packing Company. The Kenton Commercial Historic District was listed on the National Register of Historic Places in 2001, and a 31-foot Paul Bunyan statue, built in 1959 for Oregon's statehood centennial, was individually listed on the National Register in January 2009 as an example of roadside novelty architecture — restored most recently in 2017, with a companion \"Babe the Blue Ox\" hooves display across the street. If you're comparing Kenton homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the history, landmarks and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Kenton is worth a look — a neighborhood with a real industrial-town origin and a nationally recognized roadside landmark few other Portland neighborhoods can match.",
+      ],
+      livingIn: [
+        "Kenton is mostly residential, built around a walkable historic commercial core that began as a real company town for the Swift Meat Packing Company.",
+      ],
+      whereLocated: [
+        "Kenton sits in North Portland, centered on the Kenton Commercial Historic District, listed on the National Register of Historic Places in 2001.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "The 31-foot Paul Bunyan statue, built in 1959 and individually listed on the National Register in 2009, anchors the neighborhood, along with a companion \"Babe the Blue Ox\" hooves display across the street.",
+      ],
+      commute: [
+        "Kenton's North Portland location keeps it within reasonable reach of the broader Portland arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Real company-town origin:</strong> a documented history tied to the Swift Meat Packing Company.",
+        "<strong>A nationally registered landmark:</strong> the Paul Bunyan statue, individually listed on the National Register in 2009.",
+        "<strong>A walkable historic commercial core:</strong> the Kenton Commercial Historic District, listed in 2001.",
+      ],
+      considerations: [
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Historic district designation can affect renovations:</strong> confirm whether a specific property is within the historic district before planning exterior changes.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a neighborhood with real industrial history and a genuinely unique landmark matters to your search, Kenton is worth a close look.",
+      ],
+    },
+  ],
+  "Overlook, Portland": [
+    {
+      hook: "A Volunteer-Run 1928 Tudor House at the Center of the Neighborhood",
+      keyword: "Overlook Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Overlook is like — the historic Overlook House, river-bluff views, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Overlook, home to the historic Overlook House, a real 1928 Tudor community center.",
+      gbp:
+        "If you're moving to the Portland, OR area, Overlook is worth researching — a North Portland neighborhood on bluffs above the Willamette River, bordering University Park, Arbor Lodge, Humboldt, Boise and Eliot. The historic Overlook House, built in 1928 by Herman and Elvira Raven in Tudor style, was donated to the city in 1951 as a community center and has been run by volunteer \"Friends of the Overlook House\" since 2003 — a real, specific, verifiable landmark. Overlook Park (10 acres, acquired 1930, with a WPA-built shelter from 1938) offers view points, off-leash dog areas and recreational fields. 1960s I-5 construction physically cut North Portland off from the rest of the city, a real planning-history detail behind the area's later decline and revival. Housing is mostly bungalows and Craftsman-style homes alongside newer apartment complexes. If you're comparing Overlook homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the history, parks and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Overlook is worth a look — a neighborhood with a real, volunteer-run historic landmark at its center.",
+        "The historic Overlook House, a 1928 Tudor-style home built by Herman and Elvira Raven, was donated to the city in 1951 and has been run as a community center by volunteer \"Friends of the Overlook House\" since 2003.",
+      ],
+      livingIn: [
+        "Overlook's housing is mostly bungalows and Craftsman-style homes, alongside some newer apartment complexes.",
+      ],
+      whereLocated: [
+        "Overlook sits on bluffs above the Willamette River in North Portland, bordering University Park, Arbor Lodge, Humboldt, Boise and Eliot.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "Overlook Park, 10 acres acquired in 1930 with a WPA-built shelter from 1938, offers view points, off-leash dog areas and recreational fields; Madrona Park nearby adds a basketball court, playground and paths.",
+      ],
+      commute: [
+        "1960s I-5 construction physically cut North Portland off from the rest of the city, a real planning-history detail still relevant to understanding the area's commute patterns today.",
+      ],
+      reasons: [
+        "<strong>The historic Overlook House:</strong> a real, volunteer-run 1928 Tudor community center, genuinely distinctive.",
+        "<strong>Bluff-top river views:</strong> a real geographic feature from Overlook Park and nearby streets.",
+        "<strong>Two named neighborhood parks:</strong> Overlook Park and Madrona Park, both with real, specific amenities.",
+      ],
+      considerations: [
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Older homes need closer inspection:</strong> bungalow and Craftsman-era construction may need updated systems depending on renovation history.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a neighborhood with real bluff-top views and a genuinely distinctive volunteer-run historic landmark matters to your search, Overlook is worth a close look.",
+      ],
+    },
+  ],
+  "Piedmont, Portland": [
+    {
+      hook: "Portland's Original Rose Garden, Built on a Former Racetrack",
+      keyword: "Piedmont Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Piedmont is like — Peninsula Park's rose garden, real history, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Piedmont, home to Peninsula Park, Portland's original rose garden.",
+      gbp:
+        "If you're moving to the Portland, OR area, Piedmont is worth researching — a North Portland neighborhood platted in 1889 by developer Edward Quackenbush, with more than 140 dwellings built within the following two decades, many still standing. Peninsula Park, the neighborhood's real anchor, is Portland's original rose garden, drawing over 300,000 visitors in its first bloom year (1913); before the park, the site held a quarter-mile racetrack, a campground and an auto park, and the land was previously owned by a private citizen before the city purchased it for $60,000. Housing includes Victorians, Craftsman bungalows and newer construction. If you're comparing Piedmont homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers Peninsula Park's history, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Piedmont is worth a look — home to a real, documented park history that goes well beyond a typical neighborhood green space.",
+        "Peninsula Park, the neighborhood's anchor, was Portland's original rose garden and drew more than 300,000 visitors in its first bloom year, 1913 — before that, the same site held a quarter-mile racetrack, a campground and an auto park.",
+      ],
+      livingIn: [
+        "Piedmont was platted in 1889 by developer Edward Quackenbush, with more than 140 dwellings built within two decades — many original Victorian homes still stand today, alongside Craftsman bungalows and newer construction.",
+      ],
+      whereLocated: [
+        "Piedmont sits in North Portland, south of Rosa Parks Way, near the Humboldt and King neighborhoods and close to Kenton.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly, given the genuine range of home ages here.",
+      ],
+      parks: [
+        "Peninsula Park is Portland's original rose garden, a real, documented landmark with a genuinely unusual history as a former racetrack and auto park before it became a garden.",
+      ],
+      commute: [
+        "Piedmont's North Portland location keeps it within reasonable reach of the broader Portland arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Peninsula Park's real history:</strong> Portland's original rose garden, with a genuinely unusual racetrack-to-garden backstory.",
+        "<strong>Preserved Victorian-era housing:</strong> many original homes from the neighborhood's 1889 platting still stand.",
+        "<strong>Architectural variety:</strong> Victorians, Craftsman bungalows and newer construction all represented.",
+      ],
+      considerations: [
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Older homes need closer inspection:</strong> Victorian and early-1900s construction may need updated systems depending on renovation history.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a neighborhood with a genuinely unusual, well-documented park history and preserved early architecture matters to your search, Piedmont is worth a close look.",
+      ],
+    },
+  ],
+  "Portsmouth, Portland": [
+    {
+      hook: "Home to New Columbia, an 82-Acre Mixed-Income Housing Development",
+      keyword: "Portsmouth Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Portsmouth is like — New Columbia, real 1880s platting history, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Portsmouth, home to New Columbia, an 82-acre mixed-income housing development.",
+      gbp:
+        "If you're moving to the Portland, OR area, Portsmouth is worth researching — a North Portland neighborhood platted in 1883 as the unincorporated \"City of Portsmouth\" by a group of realtors, with \"Portsmouth Villa\" platted separately in 1889 by the Electric Land Company. New Columbia, a real, substantial 82-acre mixed-income housing development, occupies a large part of the neighborhood today. Housing is primarily modest one- and two-story homes, with a mix of renters and owners. If you're comparing Portsmouth homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers New Columbia, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Portsmouth is worth a look — a neighborhood anchored by a real, substantial modern housing development alongside genuine 1880s platting history.",
+      ],
+      livingIn: [
+        "Portsmouth is primarily residential, with modest one- and two-story homes and a real mix of renters and owners throughout.",
+      ],
+      whereLocated: [
+        "Portsmouth sits in North Portland, platted in 1883 as the unincorporated \"City of Portsmouth\" (no municipality ever actually formed), with \"Portsmouth Villa\" platted separately in 1889.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "New Columbia, an 82-acre mixed-income housing development, occupies a large part of the neighborhood — a real, substantial anchor distinct from most other North Portland neighborhoods.",
+      ],
+      commute: [
+        "Portsmouth's North Portland location keeps it within reasonable reach of the broader Portland arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>New Columbia:</strong> a real, substantial 82-acre mixed-income housing development occupying a large part of the neighborhood.",
+        "<strong>Real 1880s platting history:</strong> a documented, specific origin as the unincorporated \"City of Portsmouth.\"",
+        "<strong>Modest, approachable housing stock:</strong> primarily one- and two-story homes.",
+      ],
+      considerations: [
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Name origin is unconfirmed:</strong> sources don't agree on exactly why the neighborhood is called Portsmouth — not something that affects buying here, just worth noting as an open question.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a neighborhood anchored by a real, substantial modern housing development matters to your search, Portsmouth is worth a close look.",
+      ],
+    },
+  ],
+  "St. Johns, Portland": [
+    {
+      hook: "A Former Independent City Beneath a Real Portland Historic Landmark Bridge",
+      keyword: "St. Johns Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what St. Johns is like — a former independent city, the St. Johns Bridge, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore St. Johns, a former independent city home to the landmark St. Johns Bridge.",
+      gbp:
+        "If you're moving to the Portland, OR area, St. Johns is worth researching — a far North Portland neighborhood that was its own incorporated city from 1903 to 1915, when voters in both St. Johns and Portland approved annexation. The St. Johns Bridge, opened in 1931 and designed by David B. Steinman at a cost of $4.5 million, is a real Portland Historic Landmark — a Gothic-arch steel suspension bridge connecting across the Willamette River to Linnton in Northwest Portland, with Cathedral Park sitting directly beneath it. A historic downtown commercial core includes a revitalized theater, shops and restaurants. If you're comparing St. Johns homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the history, bridge and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area and real municipal history matters to you, St. Johns is worth a look — this was genuinely its own incorporated city before becoming part of Portland.",
+        "St. Johns operated as an independent city from 1903 to 1915, when voters in both St. Johns and Portland approved annexation — a specific, documented history, not a vague \"once separate\" claim.",
+      ],
+      livingIn: [
+        "St. Johns has a historic downtown commercial core, including a revitalized theater, shops and restaurants, alongside its residential streets.",
+      ],
+      whereLocated: [
+        "St. Johns sits in far North Portland on the west bank of the Willamette River, connected to Linnton and the rest of Northwest Portland via the St. Johns Bridge.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "The St. Johns Bridge, opened in 1931 and designed by David B. Steinman at a cost of $4.5 million, is a real Portland Historic Landmark; Cathedral Park, named for the bridge's Gothic arches, sits directly beneath it.",
+      ],
+      commute: [
+        "The St. Johns Bridge provides direct access across the Willamette River toward Northwest Portland, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Real former-independent-city history:</strong> St. Johns was its own incorporated city from 1903 to 1915.",
+        "<strong>A real Portland Historic Landmark:</strong> the St. Johns Bridge, a genuine architectural and civic landmark.",
+        "<strong>A revitalized historic commercial core:</strong> a real downtown with a theater, shops and restaurants.",
+      ],
+      considerations: [
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than relying on general neighborhood color.",
+        "<strong>Commercial core history includes real hardship:</strong> the downtown weathered historical labor disputes and fires — worth understanding as real neighborhood history.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If genuine municipal history and a real landmark bridge matter to your search, St. Johns is worth a close look.",
+      ],
+    },
+  ],
+  "University Park, Portland": [
+    {
+      hook: "Named for a College Whose Original Hall Is on the National Register",
+      keyword: "University Park Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what University Park is like — real ties to a National Register historic building, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore University Park, named for the college that became the University of Portland.",
+      gbp:
+        "If you're moving to the Portland, OR area, University Park is worth researching — named for Portland University, a Methodist college founded in 1891 and closed in 1900, whose original building, West Hall (now Waldschmidt Hall at the University of Portland), is listed on the National Register of Historic Places. Housing is mostly modest, non-grand homes, primarily built between 1940 and 1969 with some pre-1940 construction, in Craftsman and bungalow styles. The neighborhood's namesake park was acquired by the city in 1953. If you're comparing University Park homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the university history, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, University Park is worth a look — a neighborhood with a real, National Register-documented institutional history behind its name.",
+        "The neighborhood takes its name from Portland University, a Methodist college founded in 1891 and closed in 1900 — its original building, West Hall, still stands as Waldschmidt Hall at the University of Portland and is listed on the National Register of Historic Places.",
+      ],
+      livingIn: [
+        "Housing in University Park is mostly modest, non-grand homes, primarily built between 1940 and 1969 with some pre-1940 construction, in Craftsman and bungalow styles.",
+      ],
+      whereLocated: [
+        "University Park sits in North Portland on the east bank of the Willamette River, near the University of Portland campus.",
+      ],
+      homesIn: [
+        "Older market data (from a 2000 census-based profile) cited roughly 73% owner-occupancy, with some student rentals tied to the university — treat this as historical color rather than a current figure, and compare current listings directly.",
+      ],
+      parks: [
+        "The neighborhood's namesake park was acquired by the city in 1953, and the University of Portland campus itself, including the National Register-listed Waldschmidt Hall, sits within the neighborhood.",
+      ],
+      commute: [
+        "University Park's North Portland location keeps it within reasonable reach of the broader Portland arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Real National Register connection:</strong> Waldschmidt Hall, the original Portland University building, is individually listed.",
+        "<strong>Modest, approachable housing stock:</strong> mostly Craftsman and bungalow-style homes.",
+        "<strong>University-adjacent setting:</strong> genuine proximity to University of Portland's campus and amenities.",
+      ],
+      considerations: [
+        "<strong>Older market data:</strong> available occupancy figures are from a 2000 census-based profile — compare current listings directly.",
+        "<strong>Some rental presence tied to the university:</strong> worth knowing if that matters to the feel of a specific block.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a neighborhood with real institutional history and modest, approachable housing matters to your search, University Park is worth a close look.",
+      ],
+    },
+  ],
+  "East Columbia, Portland": [
+    {
+      hook: "Its Own School District Until 1964, With a Houseboat Pocket Today",
+      keyword: "East Columbia Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what East Columbia is like — a real former school district, houseboats, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore East Columbia, home to real houseboats and a genuinely late annexation history.",
+      gbp:
+        "If you're moving to the Portland, OR area, East Columbia is worth researching — a North Portland neighborhood bounded by Marine Drive, the Columbia Slough, I-5 and the Levee Road dike. The area had its own Columbia School District from 1920 to 1964 before merging into Portland Public Schools, a genuinely distinctive, verifiable fact; the old school building is now the Columbia Children's Arboretum. Portland annexed East Columbia only in the early 1970s — as recently as 1980, the area still had widely-spaced homes, open meadows, farms and horse stables, a genuinely late urbanization story for a Portland neighborhood. A small northern pocket is home to real houseboats. The area sits in a flood zone with dikes present since 1905, strengthened after the 1948 Vanport Flood. If you're comparing East Columbia homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the history, houseboats and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, East Columbia is worth a look — a neighborhood with a genuinely late urbanization story and its own distinct housing types.",
+        "The area had its own Columbia School District from 1920 to 1964, a real, documented fact — the old school building is now the Columbia Children's Arboretum, not a generic PPS history.",
+      ],
+      livingIn: [
+        "East Columbia has two genuinely distinct sections — a mixed residential/industrial main area, and a small northern pocket of real houseboats. Portland annexed the area only in the early 1970s; as recently as 1980 it still had widely-spaced homes, open meadows, farms and horse stables.",
+      ],
+      whereLocated: [
+        "East Columbia is bounded by Marine Drive to the north, the Columbia Slough to the south, I-5 to the west, and the Levee Road dike to the east, with Hayden Island across the water.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly, and confirm whether a listing is a houseboat or a land-based property, since both exist here.",
+      ],
+      parks: [
+        "The Columbia Children's Arboretum occupies the former Columbia School building, a real, repurposed piece of the neighborhood's own former school-district history.",
+      ],
+      commute: [
+        "East Columbia's location along I-5 and Marine Drive keeps it within reasonable reach of the broader Portland and Vancouver, WA arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>A real former school district:</strong> East Columbia operated its own Columbia School District from 1920 to 1964.",
+        "<strong>Real houseboats:</strong> a genuinely distinctive housing type in the neighborhood's northern pocket.",
+        "<strong>A genuinely late urbanization story:</strong> still largely rural as recently as 1980, unlike most Portland neighborhoods.",
+      ],
+      considerations: [
+        "<strong>Flood-zone status:</strong> the area has real flood-zone considerations, with dikes present since 1905 and strengthened after the 1948 Vanport Flood — factual, worth understanding, not alarmist.",
+        "<strong>Housing type varies significantly:</strong> houseboats and land-based properties both exist here — confirm which type a specific listing actually is.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a neighborhood with a genuinely distinct history and real houseboat living appeals to you, East Columbia is worth a close look — just go in with a clear, factual understanding of its flood-zone status.",
+      ],
+    },
+  ],
+  "Bridgeton, Portland": [
+    {
+      hook: "A Post Office Renamed 'Faloma' Because 'Bridgeton' Was Too Common",
+      keyword: "Bridgeton Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Bridgeton is like — a real 1920s post-office naming quirk, floating homes, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Bridgeton, a Columbia River neighborhood with a genuinely odd piece of postal history.",
+      gbp:
+        "If you're moving to the Portland, OR area, Bridgeton is worth researching — a North Portland neighborhood along the Columbia River, with Hayden Island just across the water. Most housing dates from 1915 to 1930, when the neighborhood was the end of the Vancouver Interurban streetcar line. A genuinely odd, documented piece of history: the local post office briefly operated under the name \"Faloma\" from 1921 to 1935, because the U.S. Postal Service rejected \"Bridgeton\" as too common a name. Housing here is a compact mix — detached houses, rowhouses, apartments, condos and real floating homes and houseboats. The neighborhood association, formed in 1992, successfully defeated a superstore rezoning effort. If you're comparing Bridgeton homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the history, housing mix and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Bridgeton is worth a look — a neighborhood with a genuinely odd, documented piece of postal history and a real mix of housing types.",
+        "The local post office operated under the name \"Faloma\" from 1921 to 1935, because the U.S. Postal Service rejected \"Bridgeton\" as too common a name — a real, specific, citable quirk, not neighborhood folklore.",
+      ],
+      livingIn: [
+        "Most housing in Bridgeton dates from 1915 to 1930, when the neighborhood was the end of the Vancouver Interurban streetcar line, with a compact mix of detached houses, rowhouses, apartments, condos, floating homes and houseboats.",
+      ],
+      whereLocated: [
+        "Bridgeton sits in North Portland along the Columbia River, with Hayden Island just across the water — sources disagree on whether I-84 or the river marks the exact northern edge of the neighborhood.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly, and confirm whether a specific listing is a floating home or land-based, since both exist here.",
+      ],
+      parks: [
+        "The neighborhood's Columbia River frontage supports real floating-home and houseboat living, a genuinely distinctive housing type for this part of Portland.",
+      ],
+      commute: [
+        "Bridgeton's Columbia River location keeps it within reasonable reach of both Portland and Vancouver, WA, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>A real, documented postal-history quirk:</strong> the \"Faloma\" post office name, used from 1921 to 1935.",
+        "<strong>Genuine housing-type variety:</strong> detached houses, rowhouses, apartments, condos, floating homes and houseboats all represented.",
+        "<strong>An active, engaged neighborhood association:</strong> successfully defeated a superstore rezoning effort in the 1990s.",
+      ],
+      considerations: [
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Housing type varies significantly:</strong> floating homes work differently than standard houses for financing and insurance — research this specifically if considering one.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a neighborhood with a genuinely distinctive history and real housing-type variety appeals to you, Bridgeton is worth a close look.",
+      ],
+    },
+  ],
+  "Boise, Portland": [
+    {
+      hook: "A 1927 Elementary School With Real, Documented Community History",
+      keyword: "Boise Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Boise is like — a documented school history, Albina-area roots, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Boise, named for a 19th-century Portland attorney, with real local school history.",
+      gbp:
+        "If you're moving to the Portland, OR area, Boise is worth researching — a North/Northeast Portland neighborhood named for Reuben P. Boise, a 19th-century Portland attorney and school board member. The neighborhood was originally part of the Town of Albina before it became part of Portland. Boise-Eliot Elementary, at 620 NE Fremont St, built in 1927 in Classical Revival style with cast-stone ornamentation, is a real, documented, historically significant institution in Portland's Black community — it replaced earlier school buildings and absorbed Humboldt School in 2012. Housing includes single-family homes, multi-story apartments and commercial buildings built mostly between 1910 and 1950. If you're comparing Boise homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the school history, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Boise is worth a look — a neighborhood with real, documented community history centered on a historically significant local school.",
+      ],
+      livingIn: [
+        "Housing in Boise includes single-family homes, multi-story apartments and commercial buildings, built mostly between 1910 and 1950.",
+      ],
+      whereLocated: [
+        "Boise sits in North/Northeast Portland, originally part of the Town of Albina before it became part of Portland — sources genuinely differ on the exact annexation year, so this is noted as real but not precisely dated.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "Boise-Eliot Elementary (620 NE Fremont St), built in 1927 in Classical Revival style, is a real, documented, historically significant institution in Portland's Black community.",
+      ],
+      commute: [
+        "Boise's North/Northeast Portland location keeps it within reasonable reach of the broader Portland arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>A real, documented school history:</strong> Boise-Eliot Elementary, built in 1927, holds genuine significance in the neighborhood's community history.",
+        "<strong>Early-20th-century housing stock:</strong> homes built mostly 1910-1950, giving the neighborhood real period character.",
+        "<strong>Genuine Albina-area roots:</strong> originally part of the historic Town of Albina.",
+      ],
+      considerations: [
+        "<strong>Annexation date is genuinely unclear:</strong> sources disagree on exactly when the area became part of Portland.",
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a neighborhood with real, documented community and school history matters to your search, Boise is worth a close look.",
+      ],
+    },
+  ],
+  "Eliot, Portland": [
+    {
+      hook: "A Documented History of Displacement — and a Current Project Addressing It",
+      keyword: "Eliot Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Eliot is like — real documented history, a current affordable-housing project, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Eliot, part of the original Town of Albina, with real documented 20th-century history.",
+      gbp:
+        "If you're moving to the Portland, OR area, Eliot is worth understanding through its real, documented history. The original Town of Albina was platted here in 1873 and was the fastest-growing city in Oregon by the late 1880s before Portland annexed it in 1891 — the 1894 Van Vleet House, on the National Register of Historic Places, survives from that era. During and after WWII, many Black shipyard workers settled in the area; after the 1948 Vanport flood, many displaced Black residents moved into Albina/Eliot. 1960s I-5 construction then cut through the neighborhood — Portland's own Housing Bureau documents that Eliot alone lost roughly 3,000 residents to involuntary displacement between 1960 and 1970. The 1993 Albina Community Plan created conservation districts protecting historic structures. A current project, Albina One, is building 94 units of affordable housing prioritizing displaced and longtime residents. If you're comparing Eliot homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers this history, the National Register home and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Eliot is worth understanding through its real, well-documented history — this neighborhood's story is significant, and worth approaching honestly rather than glossing over.",
+        "The original Town of Albina was platted here in 1873 and was the fastest-growing city in Oregon by the late 1880s before Portland annexed it in 1891. The 1894 Van Vleet House, a Queen Anne-style home on the National Register of Historic Places, survives from that era.",
+      ],
+      livingIn: [
+        "Many Black shipyard workers settled in the area during WWII, and after the 1948 Vanport flood, many displaced Black residents moved into Albina/Eliot. 1960s I-5 construction then cut through the neighborhood — Portland's own Housing Bureau documents that Eliot alone lost roughly 3,000 residents to involuntary displacement between 1960 and 1970, a real, significant, officially recorded piece of the neighborhood's history.",
+      ],
+      whereLocated: [
+        "Eliot sits in inner North/Northeast Portland, encompassing the original platted area of the historic Town of Albina.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "A current project, Albina One, is building 94 units of affordable housing, prioritizing displaced and longtime residents, with roughly a third of units reserved at 30% of area median income — a real, current effort addressing some of the neighborhood's documented history.",
+      ],
+      commute: [
+        "Eliot's inner North/Northeast Portland location keeps it within easy reach of downtown and the broader city, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Real, National Register-listed history:</strong> the 1894 Van Vleet House survives from Eliot's founding era as part of the original Town of Albina.",
+        "<strong>Central, well-connected location:</strong> inner North/Northeast Portland, close to downtown.",
+        "<strong>Current affordable-housing investment:</strong> the Albina One project is a real, ongoing effort in the neighborhood.",
+      ],
+      considerations: [
+        "<strong>Significant documented displacement history:</strong> Portland's own Housing Bureau records roughly 3,000 residents involuntarily displaced from Eliot between 1960 and 1970 — a real, significant part of understanding this neighborhood honestly, not a footnote.",
+        "<strong>Confirm current project status:</strong> verify the Albina One project's completion status directly, since availability and timelines can change.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If you're researching Eliot, take the time to understand its full, documented history — including the real displacement it experienced — alongside its current listings and ongoing community investment.",
+      ],
+    },
+  ],
+  "Humboldt, Portland": [
+    {
+      hook: "Part of North Portland's Broader Albina-Area Story",
+      keyword: "Humboldt Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what Humboldt is like — its place in the broader Albina-area history, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore Humboldt, part of North Portland's broader Albina-area story.",
+      gbp:
+        "If you're moving to the Portland, OR area, Humboldt is worth researching — a neighborhood bordered by Piedmont to the north, King to the east, Boise to the south and Overlook to the west, sharing the broader Albina-area history common to this part of North/Northeast Portland (early-1900s Black community growth tied to rail and shipyard work, post-1948 Vanport flood migration, and later revitalization). Specific, Humboldt-only landmarks or founding details weren't broadly confirmed in research for this writeup — the honest approach here is understanding Humboldt in the context of its immediate neighbors rather than claiming a unique landmark it may not have. If you're comparing Humboldt homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the location and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area, Humboldt is worth a look — a neighborhood whose honest story is its place within North Portland's broader Albina-area history, shared with neighbors like Boise and Eliot, rather than one standalone landmark.",
+      ],
+      livingIn: [
+        "Humboldt shares the broader Albina-area history common to this part of North/Northeast Portland, though specific, neighborhood-only founding details weren't broadly confirmed for this writeup.",
+      ],
+      whereLocated: [
+        "Humboldt is bordered by Piedmont to the north, King to the east, Boise to the south and Overlook to the west, in North/Northeast Portland.",
+      ],
+      homesIn: [
+        "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly for up-to-date figures.",
+      ],
+      parks: [
+        "Specific park amenities directly in Humboldt weren't confirmed for this writeup — check current listings or the city's park map for what's actually nearby a specific address.",
+      ],
+      commute: [
+        "Humboldt's North/Northeast Portland location keeps it within reasonable reach of the broader Portland arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Central North/Northeast Portland location:</strong> bordered by four other named neighborhoods, keeping it well-connected.",
+        "<strong>Shared Albina-area history:</strong> part of a significant, well-documented broader neighborhood story.",
+      ],
+      considerations: [
+        "<strong>Fewer documented standalone landmarks than neighboring areas:</strong> Humboldt's identity is closely tied to its neighbors rather than one unique feature.",
+        "<strong>Limited verified pricing and amenity data:</strong> compare current listings directly rather than assuming specifics.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If a well-connected North/Northeast Portland location within the broader Albina-area story appeals to you, Humboldt is worth comparing directly against its immediate neighbors.",
+      ],
+    },
+  ],
+  "Lloyd District, Portland": [
+    {
+      hook: "Portland's First Eco-District, Mostly Condos and Apartments Rather Than Houses",
+      keyword: "Lloyd District Portland OR homes",
+      metaDescription:
+        "Moving to the Portland, OR area? See what the Lloyd District is like — a real eco-district designation, mostly condos, and current listings.",
+      excerpt:
+        "Thinking about moving to the Portland, OR area? Explore the Lloyd District, Portland's first eco-district, mostly condos and apartments.",
+      gbp:
+        "If you're moving to the Portland, OR area and want a primarily condo/apartment lifestyle, the Lloyd District is worth researching — a largely commercial area named for early-1900s developer Ralph Bramel Lloyd, home to the Oregon Convention Center and Lloyd Center Mall, which opened in 1960 (initially billed as one of the largest shopping malls in the world) after Lloyd first conceived the mixed-use development in the early 1920s. Before urban renewal, this was an African American residential community, including Vanport flood survivors. The Lloyd District became Portland's first \"eco-district\" in 2010, focused on neighborhood-scale sustainability. Housing is genuinely limited to condos, apartments and some office space mixed with retail and hotels — this is not a traditional single-family-home neighborhood. If you're comparing Lloyd District homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the eco-district designation, housing mix and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Portland, Oregon area and want a primarily urban, condo-and-apartment lifestyle, the Lloyd District is worth a look — this is a genuinely different kind of neighborhood than a traditional residential area.",
+      ],
+      livingIn: [
+        "Housing in the Lloyd District is genuinely limited to condos, apartments and some office space mixed with retail and hotels — this is a predominantly commercial and institutional area, not a traditional single-family-home neighborhood.",
+      ],
+      whereLocated: [
+        "The Lloyd District sits mostly east of I-5, anchored by the Oregon Convention Center and Lloyd Center Mall, which opened in 1960.",
+      ],
+      homesIn: [
+        "Specific, verified current condo/apartment pricing wasn't broadly confirmed for this writeup — compare current listings directly, and confirm you're looking at residential units rather than commercial space.",
+      ],
+      parks: [
+        "The Lloyd District became Portland's first \"eco-district\" in 2010, a real designation focused on neighborhood-scale sustainability — a genuine distinguishing feature beyond traditional park access.",
+      ],
+      commute: [
+        "The Lloyd District's central, east-of-I-5 location keeps most errands walkable, with strong transit access given the Oregon Convention Center's presence.",
+      ],
+      reasons: [
+        "<strong>Portland's first eco-district:</strong> a real, specific sustainability designation from 2010.",
+        "<strong>Genuinely urban, walkable setting:</strong> condos and apartments close to major commercial and civic amenities.",
+        "<strong>Real history behind the mall's development:</strong> Lloyd Center's conception in the 1920s versus its 1960 opening is a documented, specific timeline.",
+      ],
+      considerations: [
+        "<strong>Not a traditional residential neighborhood:</strong> housing options are genuinely limited to condos and apartments, not single-family homes.",
+        "<strong>Significant pre-urban-renewal history:</strong> this was previously an African American residential community, including Vanport flood survivors, before redevelopment — worth understanding as real neighborhood history.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
+      ],
+      closing: [
+        "If an urban, condo-or-apartment lifestyle near major commercial and civic amenities appeals to you, the Lloyd District is worth a close look — just confirm you're comparing the right type of listing for this area.",
       ],
     },
   ],
