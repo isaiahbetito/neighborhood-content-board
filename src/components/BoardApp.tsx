@@ -138,6 +138,11 @@ const AREAS: [string, string][] = [
   ["Westlake, Lake Oswego", "westlake-lake-oswego-or"],
   ["Westridge, Lake Oswego", "westridge-lake-oswego-or"],
   ["First Addition / Forest Hills, Lake Oswego", "first-addition-forest-hills-lake-oswego-or"],
+  ["Pleasant Valley, Happy Valley", "pleasant-valley-happy-valley-or"],
+  ["Jackson Hills, Happy Valley", "jackson-hills-happy-valley-or"],
+  ["Scouters Mountain, Happy Valley", "scouters-mountain-happy-valley-or"],
+  ["West Mount Scott, Happy Valley", "west-mount-scott-happy-valley-or"],
+  ["Eagle Landing, Happy Valley", "eagle-landing-happy-valley-or"],
 ];
 
 // State grouping for the filter/checklist UI. WA areas above came first (7 original +
@@ -198,6 +203,11 @@ const OR_AREA_NAMES = new Set([
   "Westlake, Lake Oswego",
   "Westridge, Lake Oswego",
   "First Addition / Forest Hills, Lake Oswego",
+  "Pleasant Valley, Happy Valley",
+  "Jackson Hills, Happy Valley",
+  "Scouters Mountain, Happy Valley",
+  "West Mount Scott, Happy Valley",
+  "Eagle Landing, Happy Valley",
 ]);
 const AREA_STATE: Record<string, "WA" | "OR"> = Object.fromEntries(
   AREAS.map(([name]) => [name, OR_AREA_NAMES.has(name) ? ("OR" as const) : ("WA" as const)])
@@ -433,6 +443,14 @@ const SCHOOL_DISTRICTS: Record<string, string> = {
   "Westlake, Lake Oswego": "Lake Oswego School District",
   "Westridge, Lake Oswego": "Lake Oswego School District",
   "First Addition / Forest Hills, Lake Oswego": "Lake Oswego School District",
+  "Pleasant Valley, Happy Valley": "North Clackamas School District",
+  "Jackson Hills, Happy Valley": "North Clackamas School District",
+  "Scouters Mountain, Happy Valley": "North Clackamas School District",
+  // Listings file this area under a Sunnyside/Portland address while also calling it a
+  // "gated enclave of Happy Valley" — a real jurisdictional overlap, not settled sourcing.
+  "West Mount Scott, Happy Valley":
+    "North Clackamas School District area — some sourcing places this area under a Portland/Sunnyside address; verify jurisdiction and school zoning by exact address",
+  "Eagle Landing, Happy Valley": "North Clackamas School District",
 };
 
 const YOUTUBE_URL = "https://www.youtube.com/@jamiemeushawrealestate";
@@ -6008,6 +6026,228 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       closing: [
         "If genuine neighborhood history and real walkability matter to your search, First Addition / Forest Hills is worth a close look — few Lake Oswego neighborhoods carry this much documented character.",
+      ],
+    },
+  ],
+  "Pleasant Valley, Happy Valley": [
+    {
+      hook: "A 2021 Street of Dreams Address Zoned for a 10-Rated Elementary School",
+      keyword: "Pleasant Valley Happy Valley OR homes",
+      metaDescription:
+        "Moving to the Happy Valley, OR area? See what Pleasant Valley is like — a Street of Dreams community, schools, amenities and current listings.",
+      excerpt:
+        "Thinking about moving to the Happy Valley, OR area? Explore Pleasant Valley, a new-construction community featured in the 2021 Street of Dreams.",
+      gbp:
+        "If you're moving to the Happy Valley, OR area, Pleasant Valley is worth researching — a new-construction community just off Sunnyside Road, built by builders including Holt Homes and Lennar, that was featured in the 2021 NW Natural Street of Dreams show. Amenities include a pool, trails, a clubhouse, playgrounds, parks and basketball courts, and the area sits close to New Seasons, Fred Meyer, Costco, Clackamas Town Center, Powell Butte Nature Park and the Clackamas River. Listings commonly cite Scouters Mountain Elementary, Happy Valley Middle School and Adrienne C. Nelson High School, all North Clackamas School District — confirm current zoning directly with the district rather than relying on a single listing. If you're comparing Pleasant Valley homes for sale or Happy Valley OR homes for sale more broadly, the full neighborhood guide covers the amenities, schools and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Happy Valley, Oregon area, Pleasant Valley is worth a look — a new-construction community with a genuinely notable design pedigree.",
+        "Part of the community was featured in the 2021 NW Natural Street of Dreams show, a real, juried showcase event, not a marketing label applied after the fact.",
+      ],
+      livingIn: [
+        "Pleasant Valley is new construction from multiple builders, including Holt Homes and Lennar, just off Sunnyside Road.",
+      ],
+      whereLocated: [
+        "Pleasant Valley sits close to New Seasons, Fred Meyer, Costco and Clackamas Town Center for everyday shopping, with Powell Butte Nature Park and the Clackamas River both nearby for outdoor access.",
+      ],
+      homesIn: [
+        "Recently reported new-construction pricing has included a 4-bedroom, 2,341-square-foot home at $733,400 — compare current builder pricing directly, since new-construction communities adjust pricing by phase.",
+      ],
+      parks: [
+        "On-site amenities include a pool, trails, a clubhouse, playgrounds, parks and basketball courts, in addition to nearby Powell Butte Nature Park.",
+      ],
+      commute: [
+        "Sunnyside Road is the main route through Pleasant Valley, connecting toward the broader Happy Valley and Clackamas County arterial network.",
+      ],
+      reasons: [
+        "<strong>Real Street of Dreams pedigree:</strong> part of the community was featured in the 2021 juried showcase.",
+        "<strong>Extensive on-site amenities:</strong> pool, trails, clubhouse, playgrounds and basketball courts built into the community.",
+        "<strong>Close to major shopping and outdoor recreation:</strong> Clackamas Town Center, Costco and Powell Butte Nature Park all nearby.",
+      ],
+      considerations: [
+        "<strong>New-construction pricing shifts by phase:</strong> compare current builder pricing directly rather than relying on an older listing.",
+        "<strong>Confirm specific school zoning:</strong> verify directly with North Clackamas School District rather than relying on listing copy alone.",
+        "<strong>Multiple builders, multiple sub-communities:</strong> \"Pleasant Valley\" covers more than one builder's development — compare the specific section you're considering.",
+      ],
+      closing: [
+        "If genuine new-construction amenities and a real design pedigree matter to your search, Pleasant Valley is worth a close look — just confirm current builder pricing and school zoning directly.",
+      ],
+    },
+  ],
+  "Jackson Hills, Happy Valley": [
+    {
+      hook: "Large Lots, Three-Car Garages and a Real Annual Block Party",
+      keyword: "Jackson Hills Happy Valley OR homes",
+      metaDescription:
+        "Moving to the Happy Valley, OR area? See what Jackson Hills is like — larger lots, home features, schools and current listings.",
+      excerpt:
+        "Thinking about moving to the Happy Valley, OR area? Explore Jackson Hills, a Clackamas County neighborhood of larger single-family homes.",
+      gbp:
+        "If you're moving to the Happy Valley, OR area, Jackson Hills is worth researching — a Clackamas County neighborhood of larger single-family homes, generally 4-6 bedrooms and roughly 3,400 to 4,800 square feet, with three-car garages and large, level lots common throughout. Recently reported sales have ranged roughly from $935,000 to $1.35 million. Nearby parks are within walking distance, and the neighborhood is in the North Clackamas School District, with HOA fees on recent listings running roughly $42-$52 per month. If you're comparing Jackson Hills homes for sale or Happy Valley OR homes for sale more broadly, the full neighborhood guide covers the home styles, HOA details and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Happy Valley, Oregon area and want real space, Jackson Hills is worth a look — larger lots and larger homes define this neighborhood.",
+      ],
+      livingIn: [
+        "Jackson Hills is built around larger single-family homes, generally 4-6 bedrooms and roughly 3,400 to 4,800 square feet, with three-car garages common throughout.",
+      ],
+      whereLocated: [
+        "Jackson Hills sits in Clackamas County within the Happy Valley area, with nearby parks within walking distance of much of the neighborhood.",
+      ],
+      homesIn: [
+        "Recently reported sales have ranged roughly from $935,000 to $1.35 million — comparing specific properties, including lot size and garage configuration, matters more than assuming one price point.",
+      ],
+      parks: [
+        "Nearby parks are within walking distance for much of the neighborhood, and some homes include real backyard amenities like sports courts and fire pits.",
+      ],
+      commute: [
+        "Jackson Hills' Happy Valley-area location keeps it within reasonable reach of the broader Clackamas County arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Genuinely larger lots and homes:</strong> three-car garages and 3,400+ square feet are common, not exceptions.",
+        "<strong>Walkable parks nearby:</strong> real green space within reach for much of the neighborhood.",
+        "<strong>Real community life:</strong> an annual neighborhood party has been cited on more than one listing.",
+      ],
+      considerations: [
+        "<strong>HOA fees apply:</strong> recent listings show roughly $42-$52 per month — confirm current dues directly.",
+        "<strong>Wide price range:</strong> recently reported sales spanned roughly $935,000 to $1.35 million, so compare specific homes rather than assuming one price point.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with North Clackamas School District for the specific address.",
+      ],
+      closing: [
+        "If larger lots, larger homes and real three-car-garage practicality matter to your search, Jackson Hills is worth a close look.",
+      ],
+    },
+  ],
+  "Scouters Mountain, Happy Valley": [
+    {
+      hook: "New Construction Built to the Edge of a 100-Acre Metro Nature Park",
+      keyword: "Scouters Mountain Happy Valley OR homes",
+      metaDescription:
+        "Moving to the Happy Valley, OR area? See what Scouters Mountain is like — a new-home community next to a real 100-acre nature park, and current listings.",
+      excerpt:
+        "Thinking about moving to the Happy Valley, OR area? Explore Scouters Mountain, a new-home community beside a real Metro-managed nature park.",
+      gbp:
+        "If you're moving to the Happy Valley, OR area, Scouters Mountain is worth researching — a new-home community, including homes by Holt Homes, built right up to the edge of Scouters Mountain Nature Park, a real, 100-acre, Metro-managed park on a former Boy Scouts campsite with forest trails, Mt. Hood views and a reservable picnic shelter. Nearby recreation also includes Eagle Landing Golf and Hood View Sports Park, and the community is in the North Clackamas School District. If you're comparing Scouters Mountain homes for sale or Happy Valley OR homes for sale more broadly, the full neighborhood guide covers the park access, schools and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Happy Valley, Oregon area and want real, adjacent nature access, Scouters Mountain is worth a look — new construction built right up against an actual 100-acre park, not just a development named after a nearby feature.",
+      ],
+      livingIn: [
+        "Scouters Mountain is new construction, including homes from Holt Homes, built to the edge of Scouters Mountain Nature Park's boundary.",
+      ],
+      whereLocated: [
+        "The neighborhood sits beside Scouters Mountain Nature Park, with Eagle Landing Golf and Hood View Sports Park also nearby for recreation.",
+      ],
+      homesIn: [
+        "Pricing varies by builder and phase for this new-construction community — compare current builder pricing directly rather than relying on an older listing.",
+      ],
+      parks: [
+        "Scouters Mountain Nature Park is a real, 100-acre, Metro-managed park on a former Boy Scouts campsite, with forest trails, Mt. Hood views, picnic spots and a reservable picnic shelter — dogs and alcohol aren't allowed in the park.",
+      ],
+      commute: [
+        "Scouters Mountain's Happy Valley location keeps it within reasonable reach of the broader Clackamas County arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Direct access to a real 100-acre nature park:</strong> forest trails, Mt. Hood views and a picnic shelter right at the neighborhood's edge.",
+        "<strong>New construction:</strong> multiple builders means real choice in floor plans and finishes.",
+        "<strong>Close to Eagle Landing Golf and Hood View Sports Park:</strong> additional recreation nearby.",
+      ],
+      considerations: [
+        "<strong>Active construction nearby:</strong> as a newer community, expect ongoing nearby construction for the foreseeable future.",
+        "<strong>Park rules apply:</strong> Scouters Mountain Nature Park doesn't allow dogs or alcohol — worth knowing if that affects how you'd use it.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with North Clackamas School District for the specific address.",
+      ],
+      closing: [
+        "If genuine adjacent nature-park access matters to your search, Scouters Mountain is worth a close look — few new-construction communities in the area sit this close to a real 100-acre park.",
+      ],
+    },
+  ],
+  "West Mount Scott, Happy Valley": [
+    {
+      hook: "A Gated Enclave With a Genuine Portland/Happy Valley Boundary Overlap",
+      keyword: "West Mount Scott Happy Valley OR homes",
+      metaDescription:
+        "Moving to the Happy Valley, OR area? See what West Mount Scott is like — hilly terrain, real boundary questions, and current listings.",
+      excerpt:
+        "Thinking about moving to the Happy Valley, OR area? Explore West Mount Scott, a hilly, view-oriented neighborhood with a genuine boundary overlap.",
+      gbp:
+        "If you're moving to the Happy Valley, OR area, West Mount Scott is worth researching carefully — some sourcing files this area under a Sunnyside/Portland address, while other listings describe it as a gated enclave of Happy Valley with views of several Cascade peaks. This is a genuine jurisdictional overlap worth confirming before you get attached to a specific address, not a settled fact. Terrain is hilly, with a variety of architectural styles, from charming single-family homes to more contemporary designs. If you're comparing West Mount Scott homes for sale or Happy Valley OR homes for sale more broadly, the full neighborhood guide covers the boundary situation, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Happy Valley, Oregon area, West Mount Scott is worth a look — just with one genuine wrinkle worth sorting out early.",
+        "Sourcing on this area is genuinely split: some real estate data files it under a Sunnyside/Portland address, while other listings describe it as a gated enclave specifically of Happy Valley. Confirm jurisdiction for a specific address directly rather than assuming either way.",
+      ],
+      livingIn: [
+        "West Mount Scott has hilly terrain and a real variety of architectural styles, from charming single-family homes to more contemporary designs, with some homes offering sweeping Cascade-peak views.",
+      ],
+      whereLocated: [
+        "West Mount Scott sits at a genuine overlap between Happy Valley and the Sunnyside/southeast Portland area — confirm the exact jurisdiction for a specific address.",
+      ],
+      homesIn: [
+        "Recently reported listing data has suggested a median price roughly in the $680,000 to $712,000 range, though figures varied across undated snapshots — compare current listings directly.",
+      ],
+      parks: [
+        "Specific park amenities directly in West Mount Scott weren't confirmed for this writeup — check current listings or local park maps for what's actually nearby a specific address.",
+      ],
+      commute: [
+        "West Mount Scott's hilly terrain and boundary location keep it within reach of both the Happy Valley and southeast Portland arterial networks, depending on the specific address.",
+      ],
+      reasons: [
+        "<strong>Real view potential:</strong> hilly terrain means some homes offer genuine Cascade-peak views.",
+        "<strong>Architectural variety:</strong> a real mix of styles rather than one repeated floor plan.",
+        "<strong>Some gated-enclave properties:</strong> added privacy on certain listings within the area.",
+      ],
+      considerations: [
+        "<strong>Jurisdiction genuinely varies:</strong> confirm whether a specific address sits in Happy Valley or the Sunnyside/Portland area before relying on any one city's services or school assignment.",
+        "<strong>Thin, inconsistent pricing data:</strong> available figures vary across sources — compare current listings directly.",
+        "<strong>Hilly terrain:</strong> worth factoring into both the property itself and everyday driving.",
+      ],
+      closing: [
+        "If view potential and architectural variety matter to your search, West Mount Scott is worth a look — just confirm jurisdiction and school zoning for the specific address first.",
+      ],
+    },
+  ],
+  "Eagle Landing, Happy Valley": [
+    {
+      hook: "Golf-Course HOA Living With 27 Holes and a Private Fitness Center",
+      keyword: "Eagle Landing Happy Valley OR homes",
+      metaDescription:
+        "Moving to the Happy Valley, OR area? See what Eagle Landing is like — a golf-course community, HOA amenities, and current listings.",
+      excerpt:
+        "Thinking about moving to the Happy Valley, OR area? Explore Eagle Landing, a townhome and single-family community built around its own golf course.",
+      gbp:
+        "If you're moving to the Happy Valley, OR area, Eagle Landing is worth researching — a townhome and single-family community built around Eagle Landing Golf Course (also marketed as \"Arie\"), with 27 holes of par-3 golf, mini golf, soccer fields and a private fitness center among the club's amenities. HOA dues typically cover front and back landscaping, exterior paint and common-area upkeep, and vary by listing — some include golf and gym membership, others don't, so confirm what a specific property's dues actually cover. Recently reported sales have included a 2007 townhome at $439,000 and a 2021 six-bedroom single-family home listed at $715,000. If you're comparing Eagle Landing homes for sale or Happy Valley OR homes for sale more broadly, the full neighborhood guide covers the golf amenities, HOA details and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Happy Valley, Oregon area and want genuine golf-course living, Eagle Landing is worth a look — a real, amenity-rich community built around its own course.",
+      ],
+      livingIn: [
+        "Eagle Landing mixes townhomes and single-family homes, all built around Eagle Landing Golf Course, which is also marketed under the name \"Arie\" in some listings.",
+      ],
+      whereLocated: [
+        "Eagle Landing sits in Happy Valley, centered on its own golf course and clubhouse amenities.",
+      ],
+      homesIn: [
+        "Recently reported sales have included a 2007 townhome at $439,000 and a 2021 six-bedroom single-family home listed at $715,000 — comparing specific property types matters more than assuming one price point, since townhomes and single-family homes here carry real price differences.",
+      ],
+      parks: [
+        "Club amenities include 27 holes of par-3 golf, mini golf, soccer fields and a private fitness center — a genuinely extensive set of on-site amenities beyond the golf course itself.",
+      ],
+      commute: [
+        "Eagle Landing's Happy Valley location keeps it within reasonable reach of the broader Clackamas County arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>27 holes of golf plus mini golf:</strong> a genuinely extensive on-site golf amenity.",
+        "<strong>Private fitness center and soccer fields:</strong> real amenities beyond golf alone.",
+        "<strong>HOA-maintained exteriors:</strong> landscaping and exterior paint are typically covered, reducing maintenance for owners.",
+      ],
+      considerations: [
+        "<strong>HOA dues vary by what's included:</strong> some cover golf and gym membership, others don't — confirm exactly what a specific property's dues include.",
+        "<strong>Townhome vs. single-family pricing differs significantly:</strong> compare the specific property type you want.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with North Clackamas School District for the specific address.",
+      ],
+      closing: [
+        "If genuine golf-course amenities and HOA-maintained living appeal to you, Eagle Landing is worth a close look — just confirm exactly what a specific property's HOA dues cover.",
       ],
     },
   ],
