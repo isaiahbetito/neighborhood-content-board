@@ -115,6 +115,29 @@ const AREAS: [string, string][] = [
   ["Tigard Triangle, Tigard", "tigard-triangle-tigard-or"],
   ["Summerlake, Tigard", "summerlake-tigard-or"],
   ["Summerfield, Tigard", "summerfield-tigard-or"],
+  ["Birdshill, Lake Oswego", "birdshill-lake-oswego-or"],
+  ["Blue Heron, Lake Oswego", "blue-heron-lake-oswego-or"],
+  ["Bryant, Lake Oswego", "bryant-lake-oswego-or"],
+  ["Evergreen, Lake Oswego", "evergreen-lake-oswego-or"],
+  ["Forest Highlands, Lake Oswego", "forest-highlands-lake-oswego-or"],
+  ["Glenmorrie, Lake Oswego", "glenmorrie-lake-oswego-or"],
+  ["Hallinan Heights, Lake Oswego", "hallinan-heights-lake-oswego-or"],
+  ["Holly Orchard, Lake Oswego", "holly-orchard-lake-oswego-or"],
+  ["Lake Forest, Lake Oswego", "lake-forest-lake-oswego-or"],
+  ["Lake Grove, Lake Oswego", "lake-grove-lake-oswego-or"],
+  ["Lakewood, Lake Oswego", "lakewood-lake-oswego-or"],
+  ["McVey-South Shore, Lake Oswego", "mcvey-south-shore-lake-oswego-or"],
+  ["North Shore-Country Club District, Lake Oswego", "north-shore-country-club-district-lake-oswego-or"],
+  ["Oak Creek, Lake Oswego", "oak-creek-lake-oswego-or"],
+  ["Old Town, Lake Oswego", "old-town-lake-oswego-or"],
+  ["Palisades, Lake Oswego", "palisades-lake-oswego-or"],
+  ["Rosewood, Lake Oswego", "rosewood-lake-oswego-or"],
+  ["Skylands, Lake Oswego", "skylands-lake-oswego-or"],
+  ["Uplands, Lake Oswego", "uplands-lake-oswego-or"],
+  ["Waluga, Lake Oswego", "waluga-lake-oswego-or"],
+  ["Westlake, Lake Oswego", "westlake-lake-oswego-or"],
+  ["Westridge, Lake Oswego", "westridge-lake-oswego-or"],
+  ["First Addition / Forest Hills, Lake Oswego", "first-addition-forest-hills-lake-oswego-or"],
 ];
 
 // State grouping for the filter/checklist UI. WA areas above came first (7 original +
@@ -152,6 +175,29 @@ const OR_AREA_NAMES = new Set([
   "Tigard Triangle, Tigard",
   "Summerlake, Tigard",
   "Summerfield, Tigard",
+  "Birdshill, Lake Oswego",
+  "Blue Heron, Lake Oswego",
+  "Bryant, Lake Oswego",
+  "Evergreen, Lake Oswego",
+  "Forest Highlands, Lake Oswego",
+  "Glenmorrie, Lake Oswego",
+  "Hallinan Heights, Lake Oswego",
+  "Holly Orchard, Lake Oswego",
+  "Lake Forest, Lake Oswego",
+  "Lake Grove, Lake Oswego",
+  "Lakewood, Lake Oswego",
+  "McVey-South Shore, Lake Oswego",
+  "North Shore-Country Club District, Lake Oswego",
+  "Oak Creek, Lake Oswego",
+  "Old Town, Lake Oswego",
+  "Palisades, Lake Oswego",
+  "Rosewood, Lake Oswego",
+  "Skylands, Lake Oswego",
+  "Uplands, Lake Oswego",
+  "Waluga, Lake Oswego",
+  "Westlake, Lake Oswego",
+  "Westridge, Lake Oswego",
+  "First Addition / Forest Hills, Lake Oswego",
 ]);
 const AREA_STATE: Record<string, "WA" | "OR"> = Object.fromEntries(
   AREAS.map(([name]) => [name, OR_AREA_NAMES.has(name) ? ("OR" as const) : ("WA" as const)])
@@ -348,6 +394,45 @@ const SCHOOL_DISTRICTS: Record<string, string> = {
   "Summerlake, Tigard":
     "Tigard-Tualatin School District or Beaverton School District area (verify by exact address)",
   "Summerfield, Tigard": "Tigard-Tualatin School District",
+  // Birdshill genuinely straddles Lake Oswego and adjacent unincorporated Clackamas
+  // County/Portland-area boundaries — stronger ambiguity than the usual split-district note.
+  "Birdshill, Lake Oswego":
+    "Lake Oswego School District area — this neighborhood straddles city/county boundaries; verify by exact address",
+  "Blue Heron, Lake Oswego": "Lake Oswego School District",
+  // Genuinely conflicting across real listings — some point to River Grove Elementary, at
+  // least one to Westridge Elementary.
+  "Bryant, Lake Oswego":
+    "Lake Oswego School District (River Grove or Westridge Elementary area — verify by exact address)",
+  "Evergreen, Lake Oswego": "Lake Oswego School District",
+  "Forest Highlands, Lake Oswego": "Lake Oswego School District",
+  "Glenmorrie, Lake Oswego": "Lake Oswego School District",
+  "Hallinan Heights, Lake Oswego": "Lake Oswego School District",
+  "Holly Orchard, Lake Oswego": "Lake Oswego School District",
+  "Lake Forest, Lake Oswego": "Lake Oswego School District",
+  "Lake Grove, Lake Oswego": "Lake Oswego School District",
+  "Lakewood, Lake Oswego": "Lake Oswego School District",
+  "McVey-South Shore, Lake Oswego": "Lake Oswego School District",
+  "North Shore-Country Club District, Lake Oswego": "Lake Oswego School District",
+  "Oak Creek, Lake Oswego": "Lake Oswego School District",
+  "Old Town, Lake Oswego": "Lake Oswego School District",
+  // A genuine 3-way split across real listings — Palisades, Hallinan and Westridge
+  // Elementary have all been named for addresses in this neighborhood.
+  "Palisades, Lake Oswego":
+    "Lake Oswego School District (Palisades, Hallinan, or Westridge Elementary area — verify by exact address)",
+  // Rosewood is unincorporated Clackamas County, flagged for eventual annexation by the
+  // city's own planning documents — not actually inside Lake Oswego's city limits today.
+  "Rosewood, Lake Oswego":
+    "Lake Oswego School District area — Rosewood itself is unincorporated Clackamas County, pending eventual annexation; verify by exact address",
+  "Skylands, Lake Oswego": "Lake Oswego School District",
+  // Genuinely in flux, not just address-dependent — current listings disagree on whether
+  // Uplands or Forest Hills Elementary serves this neighborhood for the 2026/27-2027/28
+  // school years.
+  "Uplands, Lake Oswego":
+    "Lake Oswego School District — Uplands/Forest Hills Elementary boundary is actively changing; verify directly with the district",
+  "Waluga, Lake Oswego": "Lake Oswego School District",
+  "Westlake, Lake Oswego": "Lake Oswego School District",
+  "Westridge, Lake Oswego": "Lake Oswego School District",
+  "First Addition / Forest Hills, Lake Oswego": "Lake Oswego School District",
 };
 
 const YOUTUBE_URL = "https://www.youtube.com/@jamiemeushawrealestate";
@@ -4904,6 +4989,1025 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       closing: [
         "If a genuinely amenity-rich, golf-centered 55+ community is what you're looking for, Summerfield is worth a close look — just confirm current fees and golf-access terms directly before deciding.",
+      ],
+    },
+  ],
+  "Birdshill, Lake Oswego": [
+    {
+      hook: "Large Wooded Lots in an Area That Genuinely Straddles City Lines",
+      keyword: "Birdshill Lake Oswego OR homes",
+      metaDescription:
+        "Moving to the Lake Oswego, OR area? See what Birdshill is like — large wooded lots, a real boundary overlap, and current listings.",
+      excerpt:
+        "Thinking about moving to the Lake Oswego, OR area? Explore Birdshill, a wooded, large-lot neighborhood that straddles city and county lines.",
+      gbp:
+        "If you're moving to the Lake Oswego, OR area and want real acreage, Birdshill is worth researching. Lots here typically run from roughly 0.4 to over an acre, wooded and quiet, with numerous nearby green spaces. One genuine wrinkle: Birdshill sits at a boundary overlap between Lake Oswego and adjacent unincorporated Clackamas County and Portland-area ZIP codes, so confirming jurisdiction and school zoning for a specific address is worth doing early rather than assuming. If you're comparing Birdshill homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the boundary situation, lot sizes and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Lake Oswego, Oregon area and want real space around your home, Birdshill is worth a look — large, wooded lots are the defining feature here.",
+        "One thing worth knowing upfront: Birdshill genuinely straddles city and county lines, overlapping Lake Oswego, unincorporated Clackamas County and nearby Portland-area ZIP codes — not every address here sits in the same jurisdiction.",
+      ],
+      livingIn: [
+        "Birdshill is a quiet, car-dependent, wooded neighborhood built around larger single-family lots rather than a dense subdivision layout.",
+      ],
+      whereLocated: [
+        "Birdshill sits at a genuine boundary overlap — Lake Oswego, unincorporated Clackamas County and adjacent Portland-area ZIP codes all meet here, so jurisdiction can vary address to address.",
+      ],
+      homesIn: [
+        "Homes typically sit on lots running roughly 0.4 acres up to more than an acre — a genuinely large-lot neighborhood compared to a standard suburban subdivision.",
+      ],
+      parks: [
+        "Numerous green spaces sit near Birdshill, consistent with the neighborhood's wooded, low-density character.",
+      ],
+      commute: [
+        "Birdshill is car-dependent — there isn't meaningful walkable transit access, so plan on driving for most errands and commuting.",
+      ],
+      reasons: [
+        "<strong>Genuinely large lots:</strong> roughly 0.4 acres up to more than an acre, wooded and private.",
+        "<strong>Quiet, low-density setting:</strong> a real contrast to denser subdivisions closer to downtown Lake Oswego.",
+        "<strong>Green space nearby:</strong> numerous wooded areas close to the neighborhood.",
+      ],
+      considerations: [
+        "<strong>Jurisdiction genuinely varies:</strong> confirm whether a specific address sits in Lake Oswego, unincorporated Clackamas County, or an adjacent Portland-area ZIP before relying on any one city's services or school assignment.",
+        "<strong>Car-dependent:</strong> there's little walkable infrastructure, so daily life here means driving for most trips.",
+        "<strong>Lot condition varies:</strong> wooded acreage can mean more maintenance (trees, drainage, septic in some cases) than a standard suburban lot — worth checking specifics on any property you tour.",
+      ],
+      closing: [
+        "If genuine acreage and wooded privacy matter more to you than walkability, Birdshill is worth comparing against other larger-lot areas near Lake Oswego — just confirm jurisdiction and school zoning for the specific address first.",
+      ],
+    },
+  ],
+  "Blue Heron, Lake Oswego": [
+    {
+      hook: "Lake-Easement Access That Isn't the Same on Every Lot",
+      keyword: "Blue Heron Lake Oswego OR homes",
+      metaDescription:
+        "Moving to the Lake Oswego, OR area? See what Blue Heron is like — homes from multiple eras, lake-easement nuances, and current listings.",
+      excerpt:
+        "Thinking about moving to the Lake Oswego, OR area? Explore Blue Heron, where some homes carry real lake easements or canal frontage.",
+      gbp:
+        "If you're moving to the Lake Oswego, OR area, Blue Heron is worth researching — homes here span a real range of ages, from a 1938 Tudor to a 1987 canal-front property, with most construction clustering around 1980. Oswego Lake itself is private, and access is limited to waterfront owners and easement holders; some Blue Heron homes carry lake easements or direct canal frontage, but not every property in the neighborhood does, so confirm what a specific listing actually includes rather than assuming lake access comes standard. Tryon Creek State Natural Area and George Rogers Park (picnic areas, playground, Willamette River access) are both a short drive away. If you're comparing Blue Heron homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the lake-access details, home ages and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Lake Oswego, Oregon area and lake access is part of what you're after, Blue Heron is worth a careful look — just not for the reason some listings imply.",
+        "Oswego Lake is private, and access is limited to waterfront owners and easement holders. Some homes in Blue Heron carry a real lake easement or direct canal frontage, but that's genuinely not true of every property here.",
+      ],
+      livingIn: [
+        "Blue Heron's housing stock spans a real range of ages — a 1938 Tudor and a 1987 canal-front home both exist here, with most construction clustering around 1980, generally 3-4 bedrooms.",
+      ],
+      whereLocated: [
+        "Blue Heron sits within Lake Oswego, within reach of Tryon Creek State Natural Area and a short drive from George Rogers Park on the Willamette River.",
+      ],
+      homesIn: [
+        "Recently reported sales have ranged roughly from $950,000 to $1.8 million — comparing specific properties, including whether each one actually carries a lake easement, matters more than assuming one price point.",
+      ],
+      parks: [
+        "Tryon Creek State Natural Area is nearby, and George Rogers Park — with picnic areas, a playground and Willamette River access — is a short drive away.",
+      ],
+      commute: [
+        "Blue Heron's Lake Oswego location keeps it within reasonable reach of the broader area's arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Genuine age variety:</strong> homes spanning a 1938 Tudor to 1980s canal-front construction, not one repeated era.",
+        "<strong>Some lots carry real lake access:</strong> easements or direct canal frontage exist here, worth confirming property by property.",
+        "<strong>Close to Tryon Creek and George Rogers Park:</strong> real outdoor access beyond the private lake itself.",
+      ],
+      considerations: [
+        "<strong>Lake access isn't universal:</strong> not every Blue Heron home carries a lake easement or frontage — confirm what a specific listing actually includes.",
+        "<strong>Wide price range:</strong> recently reported sales spanned roughly $950,000 to $1.8 million, so compare specific homes rather than assuming one price point.",
+        "<strong>Mixed home ages:</strong> a 1938 property and a 1980s one will have very different systems and maintenance needs.",
+      ],
+      closing: [
+        "If lake access is a priority, Blue Heron is worth a close look — just confirm the specific easement or frontage situation on any listing before assuming it comes with the neighborhood.",
+      ],
+    },
+  ],
+  "Bryant, Lake Oswego": [
+    {
+      hook: "A Walk to Lakeridge Middle School, With a Real Elementary-Zone Split",
+      keyword: "Bryant Lake Oswego OR homes",
+      metaDescription:
+        "Moving to the Lake Oswego, OR area? See what Bryant is like — Bryant Woods Park, a split elementary zone, and current listings.",
+      excerpt:
+        "Thinking about moving to the Lake Oswego, OR area? Explore Bryant, a southeast Lake Oswego neighborhood built around Bryant Woods Park.",
+      gbp:
+        "If you're moving to the Lake Oswego, OR area, Bryant is worth researching — a southeast Lake Oswego neighborhood with mature trees, established streets, and Bryant Woods Park (walking trails, green space and a playground) as a real local amenity. Some homes have a direct walking path to Lakeridge Middle School. One genuine wrinkle: elementary school zoning isn't uniform across Bryant — most listings point to River Grove Elementary, but at least one address in the neighborhood is zoned for Westridge Elementary instead, so confirm zoning for the specific property. Recently reported sales have ranged roughly from $800,000 to $1.65 million. If you're comparing Bryant homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the park, school zoning and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Lake Oswego, Oregon area, Bryant is worth a look — an established southeast Lake Oswego neighborhood with real walkable amenities built in.",
+        "Bryant Woods Park anchors the neighborhood, and some homes have a direct walking path to Lakeridge Middle School — a genuinely concrete, checkable feature rather than a general walkability claim.",
+      ],
+      livingIn: [
+        "Homes here range from a 1974 single-level in the Bryant Woods area to a 1979 home on about half an acre backing greenspace, alongside newer custom 4-bedroom construction — a real mix of ages rather than one era.",
+      ],
+      whereLocated: [
+        "Bryant sits in southeast Lake Oswego, with mature trees and established streets throughout.",
+      ],
+      homesIn: [
+        "Recently reported sales have ranged roughly from $800,000 to $1.65 million, spanning everything from older single-level homes to newer custom construction — comparing specific properties matters more than assuming one price point.",
+      ],
+      parks: [
+        "Bryant Woods Park provides walking trails, green space and a playground directly in the neighborhood, and some homes have a direct walking path to Lakeridge Middle School.",
+      ],
+      commute: [
+        "Bryant's southeast Lake Oswego location keeps it within reasonable reach of the broader area's arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Bryant Woods Park:</strong> trails, green space and a playground built directly into the neighborhood.",
+        "<strong>Walkable to Lakeridge Middle School:</strong> some homes have a direct path, not just general proximity.",
+        "<strong>Genuine home-age variety:</strong> 1970s single-level homes alongside newer custom construction.",
+      ],
+      considerations: [
+        "<strong>Elementary zoning genuinely splits:</strong> most of Bryant is zoned for River Grove Elementary, but at least one address is zoned for Westridge Elementary instead — verify for the specific property.",
+        "<strong>Wide price range:</strong> recently reported sales spanned roughly $800,000 to $1.65 million, so compare specific homes rather than assuming one price point.",
+        "<strong>Older homes need closer inspection:</strong> 1970s-era properties may need updated systems depending on upkeep history.",
+      ],
+      closing: [
+        "If walkable access to Bryant Woods Park and Lakeridge Middle School matters to your search, Bryant is worth a close look — just confirm elementary zoning for the specific address before you get attached to a listing.",
+      ],
+    },
+  ],
+  "Evergreen, Lake Oswego": [
+    {
+      hook: "Close Enough to Millennium Park for the Farmers Market to Be a Weekly Habit",
+      keyword: "Evergreen Lake Oswego OR homes",
+      metaDescription:
+        "Moving to the Lake Oswego, OR area? See what Evergreen is like — proximity to Millennium Park and the Farmers Market, and current listings.",
+      excerpt:
+        "Thinking about moving to the Lake Oswego, OR area? Explore Evergreen, a southeastern Lake Oswego neighborhood near Millennium Park.",
+      gbp:
+        "If you're moving to the Lake Oswego, OR area, Evergreen is worth researching — a southeastern Lake Oswego neighborhood that borders Oswego Lake on its south side. Millennium Park, which hosts the Lake Oswego Farmers Market, is a real, checkable civic landmark close to the neighborhood. If you're comparing Evergreen homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the location, nearby amenities and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Lake Oswego, Oregon area, Evergreen is worth a look — a southeastern neighborhood that borders Oswego Lake itself on its south side.",
+      ],
+      livingIn: [
+        "Evergreen is a southeastern Lake Oswego neighborhood, close enough to Millennium Park and the weekly Lake Oswego Farmers Market there that it's a realistic regular habit rather than an occasional trip.",
+      ],
+      whereLocated: [
+        "Evergreen borders Oswego Lake on its south side and sits close to Millennium Park and downtown Lake Oswego.",
+      ],
+      homesIn: [
+        "Specific, verified pricing wasn't available for this writeup — compare current listings directly rather than relying on an assumed price point for the area.",
+      ],
+      parks: [
+        "Millennium Park, home to the weekly Lake Oswego Farmers Market, is close to the neighborhood — a real, checkable civic landmark and a genuine weekly draw.",
+      ],
+      commute: [
+        "Evergreen's proximity to downtown Lake Oswego keeps most errands and civic amenities within easy reach, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Borders Oswego Lake directly:</strong> a real lakefront-adjacent location on the lake's south side.",
+        "<strong>Millennium Park and the Farmers Market close by:</strong> a genuine weekly amenity, not just a nearby park.",
+        "<strong>Close to downtown Lake Oswego:</strong> civic and commercial amenities within easy reach.",
+      ],
+      considerations: [
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range for this area.",
+        "<strong>Confirm specific school assignment:</strong> verify the exact elementary school serving a given address before deciding.",
+        "<strong>Lake access rules apply:</strong> Oswego Lake itself is private — bordering the lake doesn't automatically mean a given property has lake access.",
+      ],
+      closing: [
+        "If being minutes from Millennium Park and the Farmers Market matters to your search, Evergreen is worth comparing against other southeast Lake Oswego neighborhoods directly.",
+      ],
+    },
+  ],
+  "Forest Highlands, Lake Oswego": [
+    {
+      hook: "A Slower-Moving Market for Custom Luxury Construction",
+      keyword: "Forest Highlands Lake Oswego OR homes",
+      metaDescription:
+        "Moving to the Lake Oswego, OR area? See what Forest Highlands is like — custom luxury homes, market pace, and current listings.",
+      excerpt:
+        "Thinking about moving to the Lake Oswego, OR area? Explore Forest Highlands, an area known for custom-built luxury construction.",
+      gbp:
+        "If you're moving to the Lake Oswego, OR area and are looking at custom luxury construction, Forest Highlands is worth researching. Recently reported listings have included a 2022-built custom home at 5,404 square feet on a 0.6-acre lot, among other high-end properties — this area trends toward larger, newer, architect-level construction rather than production-built subdivisions. Recently reported listings have taken longer than average to sell, consistent with a smaller pool of buyers for custom luxury construction at this price point. If you're comparing Forest Highlands homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the home styles, market pace and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Lake Oswego, Oregon area and custom luxury construction is what you're after, Forest Highlands is worth a look.",
+      ],
+      livingIn: [
+        "Forest Highlands trends toward larger, newer, architect-level custom homes rather than production-built subdivisions — a recently reported example included a 2022-built, 5,404-square-foot home on a 0.6-acre lot.",
+      ],
+      whereLocated: [
+        "Forest Highlands is a Lake Oswego neighborhood — confirm the exact boundary and nearby landmarks for a specific address directly, since detailed public boundary information is limited.",
+      ],
+      homesIn: [
+        "Recently reported listings have skewed toward the luxury end of the market, with homes taking longer than average to sell — consistent with a smaller pool of buyers at this price point rather than a sign of declining interest.",
+      ],
+      parks: [
+        "Specific park or trail amenities directly in Forest Highlands weren't confirmed for this writeup — check current listings or the city's park map for what's actually nearby a specific address.",
+      ],
+      commute: [
+        "Forest Highlands' Lake Oswego location keeps it within reasonable reach of the broader area's arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Custom, architect-level construction:</strong> newer, larger homes rather than a repeated production floor plan.",
+        "<strong>Larger lots:</strong> recently reported listings have included lots around half an acre or more.",
+        "<strong>A genuinely distinct market segment:</strong> this area trades more on construction quality than on a particular lifestyle amenity.",
+      ],
+      considerations: [
+        "<strong>Slower-moving market:</strong> recently reported listings have taken longer than average to sell, so timeline expectations should be realistic.",
+        "<strong>Thin public boundary information:</strong> confirm the exact neighborhood boundary for a specific address directly rather than assuming.",
+        "<strong>Price point limits the buyer pool:</strong> fewer comparable sales means pricing a specific home takes more care.",
+      ],
+      closing: [
+        "If custom luxury construction is what you're searching for, Forest Highlands is worth comparing against other higher-end Lake Oswego neighborhoods — just build in a realistic timeline given the market pace here.",
+      ],
+    },
+  ],
+  "Glenmorrie, Lake Oswego": [
+    {
+      hook: "A Small, Tucked-Away Neighborhood With Real Willamette River Frontage",
+      keyword: "Glenmorrie Lake Oswego OR homes",
+      metaDescription:
+        "Moving to the Lake Oswego, OR area? See what Glenmorrie is like — Willamette River frontage, a small scale, and current listings.",
+      excerpt:
+        "Thinking about moving to the Lake Oswego, OR area? Explore Glenmorrie, a small, historic neighborhood with Willamette River access.",
+      gbp:
+        "If you're moving to the Lake Oswego, OR area, Glenmorrie is worth researching — one of the city's smallest, most tucked-away neighborhoods, with some homes sharing private Willamette River frontage or access, distinct from Oswego Lake's own private-easement system elsewhere in the city. The area traces its roots to the former P. Farnsworth Morey estate, and leafy walks to George Rogers Park are part of daily life here. If you're comparing Glenmorrie homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the river access, scale and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Lake Oswego, Oregon area and want a genuinely small, tucked-away setting, Glenmorrie is worth a look.",
+        "This is one of the city's smallest neighborhoods, developed from the former P. Farnsworth Morey estate, with some homes sharing private Willamette River frontage or access — distinct from the Oswego Lake easement system used elsewhere in Lake Oswego.",
+      ],
+      livingIn: [
+        "Glenmorrie is genuinely small-scale and quiet, with a real sense of history tied to its origins as the Morey estate.",
+      ],
+      whereLocated: [
+        "Glenmorrie sits along the Willamette River in Lake Oswego, within walking distance of George Rogers Park.",
+      ],
+      homesIn: [
+        "Specific, verified pricing wasn't available for this writeup — compare current listings directly rather than relying on an assumed price point for this small neighborhood.",
+      ],
+      parks: [
+        "George Rogers Park is a leafy walk away, and some Glenmorrie homes share private Willamette River frontage or access directly.",
+      ],
+      commute: [
+        "Glenmorrie's Lake Oswego location keeps it within reasonable reach of the broader area's arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Real Willamette River frontage:</strong> some homes share private river access, distinct from the lake-easement system used elsewhere in the city.",
+        "<strong>Genuinely small and tucked-away:</strong> one of Lake Oswego's smaller neighborhoods by scale.",
+        "<strong>Walkable to George Rogers Park:</strong> leafy access to a real, established city park.",
+      ],
+      considerations: [
+        "<strong>River access isn't universal:</strong> not every Glenmorrie home shares river frontage — confirm what a specific listing includes.",
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Small inventory:</strong> given the neighborhood's limited size, there may not always be something on the market when you're ready to buy.",
+      ],
+      closing: [
+        "If a small, historic, river-adjacent setting appeals to you, Glenmorrie is worth a close look — just confirm the specific river-access situation on any listing before assuming it's included.",
+      ],
+    },
+  ],
+  "Hallinan Heights, Lake Oswego": [
+    {
+      hook: "Mid-Century Ranches on a Walk-to-Elementary Layout",
+      keyword: "Hallinan Heights Lake Oswego OR homes",
+      metaDescription:
+        "Moving to the Lake Oswego, OR area? See what Hallinan Heights is like — mid-century ranches, walkable to Hallinan Elementary, and current listings.",
+      excerpt:
+        "Thinking about moving to the Lake Oswego, OR area? Explore Hallinan Heights, a south Lake Oswego neighborhood built mostly in the 1950s-60s.",
+      gbp:
+        "If you're moving to the Lake Oswego, OR area, Hallinan Heights is worth researching — a south Lake Oswego neighborhood built mostly in the 1950s and 1960s, with some newer contemporary infill. Hallinan Elementary (16800 Hawthorne Dr, Lake Oswego School District) sits within walking distance of much of the neighborhood. Streets are tree-lined and quiet, with proximity to George Rogers Park and the Lake Oswego Farmers Market, and some homes have territorial mountain views. Recently reported sales have ranged roughly from $685,000 to $1.3 million. If you're comparing Hallinan Heights homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the schools, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Lake Oswego, Oregon area, Hallinan Heights is worth a look — a south Lake Oswego neighborhood built mostly in the 1950s and 1960s, with a genuinely walkable layout around its own elementary school.",
+      ],
+      livingIn: [
+        "Hallinan Heights is tree-lined and quiet, with mid-century ranch homes making up most of the housing stock alongside some newer contemporary infill.",
+      ],
+      whereLocated: [
+        "Hallinan Heights sits in south Lake Oswego, within walking distance of Hallinan Elementary (16800 Hawthorne Dr), and close to George Rogers Park and the Lake Oswego Farmers Market.",
+      ],
+      homesIn: [
+        "Recently reported sales have ranged roughly from $685,000 to $1.3 million, spanning 1950s-60s ranches to newer contemporary construction — comparing specific properties matters more than assuming one price point.",
+      ],
+      parks: [
+        "George Rogers Park and the Lake Oswego Farmers Market are both close by, and some homes have territorial views of Mt. Hood, Mt. Adams or Mt. St. Helens.",
+      ],
+      commute: [
+        "Hallinan Heights' south Lake Oswego location keeps it within reasonable reach of the broader area's arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Walkable to Hallinan Elementary:</strong> much of the neighborhood sits within walking distance of the school.",
+        "<strong>Mid-century ranch character:</strong> 1950s-60s homes with mature, tree-lined streets.",
+        "<strong>Some territorial mountain views:</strong> a genuine feature on certain lots, not universal across the neighborhood.",
+      ],
+      considerations: [
+        "<strong>Boundary is somewhat fuzzy:</strong> \"Hallinan\" and \"Hallinan Heights\" are used interchangeably in some sourcing — confirm the exact boundary for a specific address.",
+        "<strong>Wide price range:</strong> recently reported sales spanned roughly $685,000 to $1.3 million, so compare specific homes rather than assuming one price point.",
+        "<strong>Older homes need closer inspection:</strong> 1950s-60s construction may need updated systems depending on upkeep history.",
+      ],
+      closing: [
+        "If a walkable, mid-century neighborhood built around its own elementary school appeals to you, Hallinan Heights is worth a close look alongside other south Lake Oswego areas.",
+      ],
+    },
+  ],
+  "Holly Orchard, Lake Oswego": [
+    {
+      hook: "A Real 1980 Street of Dreams Showcase-Home Neighborhood",
+      keyword: "Holly Orchard Lake Oswego OR homes",
+      metaDescription:
+        "Moving to the Lake Oswego, OR area? See what Holly Orchard is like — a 1980 Street of Dreams history, home styles, and current listings.",
+      excerpt:
+        "Thinking about moving to the Lake Oswego, OR area? Explore Holly Orchard, a south Lake Oswego neighborhood with a real Street of Dreams history.",
+      gbp:
+        "If you're moving to the Lake Oswego, OR area, Holly Orchard is worth researching — a south Lake Oswego neighborhood that includes a real 1980 Street of Dreams showcase home, architect-designed, on Sundew Court, giving part of the neighborhood a genuinely distinctive design pedigree. Housing is mostly single-family detached, 3-4 bedroom, and the area is car-dependent with some hills. Recently reported sales include a 1983 English Tudor on a cul-de-sac that sold for $1,265,000. If you're comparing Holly Orchard homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the Street of Dreams history, home styles and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Lake Oswego, Oregon area, Holly Orchard is worth a look — a south Lake Oswego neighborhood with a genuinely distinctive piece of design history.",
+        "Part of Holly Orchard was featured in the 1980 Street of Dreams, a real, architect-designed showcase-home event centered on Sundew Court.",
+      ],
+      livingIn: [
+        "Housing in Holly Orchard is mostly single-family detached, generally 3-4 bedroom homes, with some hills throughout the neighborhood.",
+      ],
+      whereLocated: [
+        "Holly Orchard sits in south Lake Oswego (ZIP 97035) and is car-dependent, with limited walkable transit access.",
+      ],
+      homesIn: [
+        "Recently reported sales include a 1983 English Tudor on a cul-de-sac that sold for $1,265,000 — comparing specific properties, including whether a given home was part of the original Street of Dreams showcase, tells you more than any single price point.",
+      ],
+      parks: [
+        "Specific park amenities directly in Holly Orchard weren't confirmed for this writeup — check current listings or the city's park map for what's actually nearby a specific address.",
+      ],
+      commute: [
+        "Holly Orchard is car-dependent with some hills — plan on driving for most errands and commuting, and factor in the terrain.",
+      ],
+      reasons: [
+        "<strong>Real Street of Dreams history:</strong> a 1980 architect-designed showcase home on Sundew Court gives part of the neighborhood a genuine design pedigree.",
+        "<strong>Single-family, 3-4 bedroom housing stock:</strong> a consistent home type throughout.",
+        "<strong>South Lake Oswego location:</strong> within reach of the broader area's amenities.",
+      ],
+      considerations: [
+        "<strong>Car-dependent with hills:</strong> limited walkable infrastructure and real terrain to factor in.",
+        "<strong>Confirm specific school assignment:</strong> verify the exact elementary school serving a given address before deciding.",
+        "<strong>Not every home was part of the showcase:</strong> the Street of Dreams history applies to a specific pocket of the neighborhood, not every property.",
+      ],
+      closing: [
+        "If a south Lake Oswego neighborhood with real architectural history appeals to you, Holly Orchard is worth a close look — just confirm whether a specific home was part of the original Street of Dreams showcase.",
+      ],
+    },
+  ],
+  "Lake Forest, Lake Oswego": [
+    {
+      hook: "Just Above Westridge School and Park",
+      keyword: "Lake Forest Lake Oswego OR homes",
+      metaDescription:
+        "Moving to the Lake Oswego, OR area? See what Lake Forest is like — proximity to Westridge Elementary and Park, and current listings.",
+      excerpt:
+        "Thinking about moving to the Lake Oswego, OR area? Explore Lake Forest, a Lake Oswego neighborhood just above Westridge School and Park.",
+      gbp:
+        "If you're moving to the Lake Oswego, OR area, Lake Forest is worth a look — an established neighborhood with mature trees sitting just above Westridge Elementary (3400 Royce Way) and Westridge Park, with some newer custom infill construction alongside older homes. If you're comparing Lake Forest homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the location, schools and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Lake Oswego, Oregon area, Lake Forest is worth a look — an established neighborhood positioned just above Westridge Elementary and Westridge Park.",
+      ],
+      livingIn: [
+        "Lake Forest is an established, mature-tree neighborhood with a mix of older homes and some newer custom infill construction.",
+      ],
+      whereLocated: [
+        "Lake Forest sits just above Westridge Elementary (3400 Royce Way) and Westridge Park in Lake Oswego.",
+      ],
+      homesIn: [
+        "Specific, verified pricing for this neighborhood is limited — compare current listings directly rather than relying on an assumed price point.",
+      ],
+      parks: [
+        "Westridge Park sits just below the neighborhood, giving residents easy access to its green space.",
+      ],
+      commute: [
+        "Lake Forest's Lake Oswego location keeps it within reasonable reach of the broader area's arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Walkable to Westridge Elementary and Park:</strong> both sit just below the neighborhood.",
+        "<strong>Established, mature-tree setting:</strong> a settled feel alongside some newer custom infill.",
+      ],
+      considerations: [
+        "<strong>Limited verified pricing and boundary data:</strong> compare current listings directly and confirm the exact neighborhood boundary for a specific address.",
+        "<strong>Confirm specific school assignment:</strong> verify directly rather than assuming based on proximity alone.",
+      ],
+      closing: [
+        "If proximity to Westridge Elementary and Park matters to your search, Lake Forest is worth comparing directly against other established Lake Oswego neighborhoods nearby.",
+      ],
+    },
+  ],
+  "Lake Grove, Lake Oswego": [
+    {
+      hook: "Boones Ferry Road's Namesake History and an Active Village Redevelopment",
+      keyword: "Lake Grove Lake Oswego OR homes",
+      metaDescription:
+        "Moving to the Lake Oswego, OR area? See what Lake Grove is like — Lake Grove Village, schools, an active redevelopment, and current listings.",
+      excerpt:
+        "Thinking about moving to the Lake Oswego, OR area? Explore Lake Grove, centered on the historic Boones Ferry corridor and its village district.",
+      gbp:
+        "If you're moving to the Lake Oswego, OR area, Lake Grove is worth researching — a southwest Lake Oswego neighborhood centered on the Lake Grove Village commercial district along Boones Ferry Road, named for Alphonso Boone's real historic Willamette River ferry crossing. Lake Grove Elementary (15777 SW Boones Ferry Rd) feeds Lake Oswego Junior High and Lake Oswego High. The area is described as undergoing a bond-financed shift toward more of a walkable village atmosphere — a real, ongoing redevelopment worth knowing about going in. Market data here is genuinely mixed: condos along the Boones Ferry corridor run closer to $450,000, while newer homes have reported medians around $2.19 million — these represent different housing types in the same named area, not one typical price. If you're comparing Lake Grove homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the village redevelopment, schools and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Lake Oswego, Oregon area, Lake Grove is worth a look — a neighborhood with genuine historic roots and an active redevelopment underway.",
+        "Lake Grove Village, the commercial district along Boones Ferry Road, is named for Alphonso Boone's real historic Willamette River ferry crossing — not a marketing invention.",
+      ],
+      livingIn: [
+        "Lake Grove is quiet and well-kept, with Lake Grove Village genuinely undergoing a bond-financed shift toward a more walkable village atmosphere.",
+      ],
+      whereLocated: [
+        "Lake Grove sits in southwest Lake Oswego, centered on the Lake Grove Village commercial district along Boones Ferry Road, within reach of the lake.",
+      ],
+      homesIn: [
+        "Market data here is genuinely mixed by housing type — condos along the Boones Ferry corridor have run closer to $450,000, while newer homes have reported medians around $2.19 million. Compare specific housing types rather than assuming one price point represents the whole neighborhood.",
+      ],
+      parks: [
+        "The Lake Grove Village redevelopment is bringing more walkable village-style amenities to the commercial corridor, in addition to the neighborhood's existing proximity to the lake.",
+      ],
+      commute: [
+        "Boones Ferry Road is the main corridor through Lake Grove, connecting toward downtown Lake Oswego and the broader area.",
+      ],
+      reasons: [
+        "<strong>Real historic roots:</strong> Boones Ferry Road's name traces to an actual historic Willamette River ferry crossing.",
+        "<strong>Active village redevelopment:</strong> a bond-financed shift toward a more walkable commercial district is genuinely underway, not just proposed.",
+        "<strong>School-feeder clarity:</strong> Lake Grove Elementary, Lake Oswego Junior High and Lake Oswego High are all confirmed for this area.",
+      ],
+      considerations: [
+        "<strong>Housing type varies widely:</strong> condos and newer custom homes carry very different price points — compare the specific type you want.",
+        "<strong>Construction nearby:</strong> an active redevelopment means ongoing construction in and around the village district for the time being.",
+        "<strong>Walkability still developing:</strong> the village-style upgrade is underway but not complete — confirm current conditions before assuming full walkability.",
+      ],
+      closing: [
+        "If genuine neighborhood history and an active, improving village district matter to your search, Lake Grove is worth a close look — just compare specific housing types rather than assuming one price point.",
+      ],
+    },
+  ],
+  "Lakewood, Lake Oswego": [
+    {
+      hook: "Built Around a Real Waterfront Park and the City's Own Arts Center",
+      keyword: "Lakewood Lake Oswego OR homes",
+      metaDescription:
+        "Moving to the Lake Oswego, OR area? See what Lakewood is like — Lakewood Bay Park, the Lakewood Center for the Arts, and current listings.",
+      excerpt:
+        "Thinking about moving to the Lake Oswego, OR area? Explore Lakewood, home to Lakewood Bay Park and the Lakewood Center for the Arts.",
+      gbp:
+        "If you're moving to the Lake Oswego, OR area, Lakewood is worth researching — a southeast Lake Oswego neighborhood built around two real, named landmarks: Lakewood Bay Park, a waterfront park, and the Lakewood Center for the Arts, an actual theater and exhibit venue hosting concerts and performances. Housing spans a real range, from a 1948 townhouse to a 1996 home, and some homes near George Rogers Park carry lake easement access. There's no \"Lakewood Elementary\" in the Lake Oswego School District — children here feed into a neighboring district elementary school, so confirm which one serves a specific address. If you're comparing Lakewood homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the park, arts center and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Lake Oswego, Oregon area, Lakewood is worth a look — a neighborhood built around two real, distinctive landmarks most other Lake Oswego areas don't have.",
+        "Lakewood Bay Park gives the neighborhood real waterfront access, and the Lakewood Center for the Arts is an actual theater and exhibit venue, not a generic \"close to culture\" claim.",
+      ],
+      livingIn: [
+        "Housing in Lakewood spans a genuine range of ages, from a 1948 townhouse up to a 1996 home, and some properties near George Rogers Park carry lake easement access.",
+      ],
+      whereLocated: [
+        "Lakewood sits in southeast Lake Oswego, built around Lakewood Bay Park and the Lakewood Center for the Arts.",
+      ],
+      homesIn: [
+        "Recently reported waterfront sales have run around $1.49 million in one snapshot — treat this as a single reference point, not a stated range, and compare specific listings directly.",
+      ],
+      parks: [
+        "Lakewood Bay Park is the neighborhood's defining waterfront amenity, and the Lakewood Center for the Arts hosts real theater, concerts and exhibits close by.",
+      ],
+      commute: [
+        "Lakewood's southeast Lake Oswego location keeps it within reasonable reach of the broader area's arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Lakewood Bay Park:</strong> real, named waterfront green space built into the neighborhood.",
+        "<strong>Lakewood Center for the Arts:</strong> an actual theater and exhibit venue close by — genuinely distinctive among Lake Oswego neighborhoods.",
+        "<strong>Some homes carry lake easement access:</strong> properties near George Rogers Park can include real lake access.",
+      ],
+      considerations: [
+        "<strong>No dedicated elementary school:</strong> there's no \"Lakewood Elementary\" — confirm which neighboring Lake Oswego School District elementary actually serves a specific address.",
+        "<strong>Mixed home ages:</strong> a 1948 property and a 1996 one will have very different systems and maintenance needs.",
+        "<strong>Lake access isn't universal:</strong> only some homes near George Rogers Park carry easement access — confirm what a specific listing includes.",
+      ],
+      closing: [
+        "If a waterfront park and a real local arts scene matter to your search, Lakewood is worth a close look — just confirm school assignment and any lake-access details for the specific address.",
+      ],
+    },
+  ],
+  "McVey-South Shore, Lake Oswego": [
+    {
+      hook: "A Mid-Century and New-Construction Mix With Real Lake and Mountain Views on Some Lots",
+      keyword: "McVey-South Shore Lake Oswego OR homes",
+      metaDescription:
+        "Moving to the Lake Oswego, OR area? See what McVey-South Shore is like — a mid-century and new-construction mix with view lots, and current listings.",
+      excerpt:
+        "Thinking about moving to the Lake Oswego, OR area? Explore McVey-South Shore, a Clackamas County-side neighborhood with a mix of home eras.",
+      gbp:
+        "If you're moving to the Lake Oswego, OR area, McVey-South Shore is worth researching — a neighborhood on the Clackamas County side of Lake Oswego with a genuine mix of mid-century homes on quiet cul-de-sacs and newer custom builds, some with peek-a-boo lake or Mt. Hood views. Recently reported sales have suggested a median listing price around $1.2 million, though that figure comes from a single, undated snapshot and shouldn't be treated as a current quote. If you're comparing McVey-South Shore homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the home mix, view lots and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Lake Oswego, Oregon area, McVey-South Shore is worth a look — a genuine mix of mid-century homes and newer custom construction, some with real view potential.",
+      ],
+      livingIn: [
+        "McVey-South Shore combines mid-century homes on quiet cul-de-sacs with newer custom builds — a real architectural mix rather than one repeated era.",
+      ],
+      whereLocated: [
+        "McVey-South Shore sits on the Clackamas County side of Lake Oswego, near comparable areas like Dunthorpe, Mountain Park and Lake Grove.",
+      ],
+      homesIn: [
+        "Some lots here offer peek-a-boo lake or Mt. Hood views — a genuine feature on certain properties, not universal across the neighborhood. Recently reported listing data has suggested a median around $1.2 million, though treat that as a rough, dated figure and compare current listings directly.",
+      ],
+      parks: [
+        "Specific park amenities directly in McVey-South Shore weren't confirmed for this writeup — check current listings or the city's park map for what's actually nearby a specific address.",
+      ],
+      commute: [
+        "McVey-South Shore's location keeps it within reasonable reach of the broader Lake Oswego arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Genuine architectural mix:</strong> mid-century homes alongside newer custom construction.",
+        "<strong>Some real view lots:</strong> peek-a-boo lake or Mt. Hood views on certain properties.",
+        "<strong>Relatively low density:</strong> quiet cul-de-sac layouts throughout much of the neighborhood.",
+      ],
+      considerations: [
+        "<strong>Views aren't universal:</strong> only some lots carry lake or mountain views — confirm what a specific listing actually offers.",
+        "<strong>Pricing data is dated:</strong> the available median figure comes from an unsourced snapshot — compare current listings directly.",
+        "<strong>Confirm specific school assignment:</strong> verify directly rather than relying on general \"top-rated schools\" claims in listing copy.",
+      ],
+      closing: [
+        "If a genuine mix of mid-century character and newer construction appeals to you, with the possibility of real lake or mountain views, McVey-South Shore is worth a close look.",
+      ],
+    },
+  ],
+  "North Shore-Country Club District, Lake Oswego": [
+    {
+      hook: "Private Lake Access That Depends on Easement, Not Just Address",
+      keyword: "North Shore Country Club District Lake Oswego OR homes",
+      metaDescription:
+        "Moving to the Lake Oswego, OR area? See what North Shore-Country Club District is like — private lake easements, Oswego Lake Country Club, and current listings.",
+      excerpt:
+        "Thinking about moving to the Lake Oswego, OR area? Explore North Shore-Country Club District, built around Oswego Lake Country Club.",
+      gbp:
+        "If you're moving to the Lake Oswego, OR area, North Shore-Country Club District is worth researching — a neighborhood on the north side of Oswego Lake, built around Oswego Lake Country Club. Oswego Lake itself is private, and access comes only through waterfront ownership or a lake easement; the Lake Oswego Corporation owns a set of lakeside \"swim park\" properties where eligible easement holders can exercise access. Public-access rules around the lake have been the subject of recent legal dispute, so don't assume general public access applies — confirm the specific access rights tied to any listing directly rather than assuming. If you're comparing North Shore-Country Club District homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the lake-access mechanics and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Lake Oswego, Oregon area and lake access is a priority, North Shore-Country Club District is worth understanding carefully — this is one of the more lake-access-focused neighborhoods in the city, but the access itself works differently than many buyers expect.",
+      ],
+      livingIn: [
+        "The neighborhood is built around Oswego Lake Country Club, on the lake's north side.",
+      ],
+      whereLocated: [
+        "North Shore-Country Club District sits on the north side of Oswego Lake, centered on the country club itself.",
+      ],
+      homesIn: [
+        "Specific, verified pricing wasn't available for this writeup — compare current listings directly rather than relying on an assumed price point.",
+      ],
+      parks: [
+        "Oswego Lake is private; access comes only through waterfront ownership or a lake easement. The Lake Oswego Corporation owns a set of lakeside \"swim park\" properties where eligible easement holders can exercise access — a real, specific mechanism, not general public access.",
+      ],
+      commute: [
+        "North Shore-Country Club District's Lake Oswego location keeps it within reasonable reach of the broader area's arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Built around Oswego Lake Country Club:</strong> a genuine, established amenity anchoring the neighborhood.",
+        "<strong>Lake easement access available to some properties:</strong> a real mechanism for private lake access, distinct from general public access.",
+        "<strong>North-side lake location:</strong> a defined, identifiable position relative to the rest of Lake Oswego.",
+      ],
+      considerations: [
+        "<strong>Lake access depends on easement, not just address:</strong> confirm the specific access rights tied to a listing rather than assuming lake-adjacent means lake access.",
+        "<strong>Public-access rules have been legally contested:</strong> don't assume general public access to the lake applies — verify current rules directly.",
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+      ],
+      closing: [
+        "If lake access matters to your search, North Shore-Country Club District is worth a close look — just confirm the specific easement or access rights tied to any listing before deciding.",
+      ],
+    },
+  ],
+  "Oak Creek, Lake Oswego": [
+    {
+      hook: "Walkable to Its Own Elementary School and Westlake Park",
+      keyword: "Oak Creek Lake Oswego OR homes",
+      metaDescription:
+        "Moving to the Lake Oswego, OR area? See what Oak Creek is like — walkable to Oak Creek Elementary and Westlake Park, and current listings.",
+      excerpt:
+        "Thinking about moving to the Lake Oswego, OR area? Explore Oak Creek, built around Oak Creek Elementary and Westlake Park.",
+      gbp:
+        "If you're moving to the Lake Oswego, OR area, Oak Creek is worth researching — a neighborhood built around Oak Creek Elementary (55 Kingsgate Rd, K-5, Lake Oswego School District), with homes repeatedly described as walking distance to both the school and nearby Westlake Park. Housing here reads as 1980s-era single-family construction. If you're comparing Oak Creek homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the school, park access and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Lake Oswego, Oregon area, Oak Creek is worth a look — a neighborhood genuinely built around its own elementary school and a nearby park, not just generally close to both.",
+      ],
+      livingIn: [
+        "Oak Creek's housing stock reads as mostly 1980s-era single-family construction.",
+      ],
+      whereLocated: [
+        "Oak Creek sits around Oak Creek Elementary (55 Kingsgate Rd) and within walking distance of Westlake Park.",
+      ],
+      homesIn: [
+        "One recently reported sale included a 5-bedroom, 3-bath, 3,224-square-foot home at $919,000 — a single data point, not a stated range, so compare current listings directly.",
+      ],
+      parks: [
+        "Westlake Park is within walking distance of much of the neighborhood, alongside Oak Creek Elementary itself.",
+      ],
+      commute: [
+        "Oak Creek's Lake Oswego location keeps it within reasonable reach of the broader area's arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Walkable to Oak Creek Elementary:</strong> the school sits directly in the neighborhood, not just nearby.",
+        "<strong>Walkable to Westlake Park:</strong> real green space within reach on foot.",
+        "<strong>Consistent 1980s-era housing stock:</strong> a cohesive neighborhood character rather than mixed eras.",
+      ],
+      considerations: [
+        "<strong>Single pricing data point:</strong> the one confirmed recent sale isn't necessarily representative — compare current listings directly.",
+        "<strong>Older homes need closer inspection:</strong> 1980s-era construction may need updated systems depending on upkeep history.",
+        "<strong>Enrollment figures vary by source:</strong> don't rely on any single school-enrollment number without checking directly with the district.",
+      ],
+      closing: [
+        "If a walkable layout built around a neighborhood elementary school and park matters to your search, Oak Creek is worth a close look.",
+      ],
+    },
+  ],
+  "Old Town, Lake Oswego": [
+    {
+      hook: "1920s Tudor and English Cottage Character Near George Rogers Park",
+      keyword: "Old Town Lake Oswego OR homes",
+      metaDescription:
+        "Moving to the Lake Oswego, OR area? See what Old Town is like — 1920s architecture, George Rogers Park, downtown walkability, and current listings.",
+      excerpt:
+        "Thinking about moving to the Lake Oswego, OR area? Explore Old Town, a downtown-adjacent neighborhood with real 1920s architecture.",
+      gbp:
+        "If you're moving to the Lake Oswego, OR area, Old Town is worth researching — a downtown-adjacent neighborhood with genuine architectural character, including Tudor Revival and English Cottage-style homes popular in the 1920s. One real example: a 1928 Craftsman across from George Rogers Park, walkable to downtown Lake Oswego's restaurants, theaters and lakefront parks. No source confirms a formal historic-district designation, so don't assume one applies — but the architectural character itself is real and well-documented. If you're comparing Old Town homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the architecture, walkability and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Lake Oswego, Oregon area and want genuine early-20th-century architectural character, Old Town is worth a look — just downtown-adjacent, with real walkability to match.",
+      ],
+      livingIn: [
+        "Old Town's housing includes Tudor Revival and English Cottage-style homes popular in the 1920s, alongside other home styles — a real architectural identity, though no formal historic-district designation has been confirmed.",
+      ],
+      whereLocated: [
+        "Old Town sits just blocks from downtown Lake Oswego, across from George Rogers Park, walkable to the city's restaurants, theaters and lakefront parks.",
+      ],
+      homesIn: [
+        "One real example found: a 1928 Craftsman across from George Rogers Park — specific pricing wasn't broadly confirmed for this writeup, so compare current listings directly.",
+      ],
+      parks: [
+        "George Rogers Park sits directly across from part of the neighborhood, and downtown Lake Oswego's lakefront parks are within walking distance.",
+      ],
+      commute: [
+        "Old Town's downtown-adjacent location means many errands and amenities are walkable, reducing reliance on driving compared to neighborhoods farther out.",
+      ],
+      reasons: [
+        "<strong>Genuine 1920s architectural character:</strong> real Tudor Revival and English Cottage-style homes, not a marketing label.",
+        "<strong>Walkable to downtown Lake Oswego:</strong> restaurants, theaters and lakefront parks within walking distance.",
+        "<strong>Across from George Rogers Park:</strong> direct access to one of the city's established parks.",
+      ],
+      considerations: [
+        "<strong>No confirmed historic-district designation:</strong> the architectural character is real, but don't assume formal historic-district rules apply without checking directly.",
+        "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
+        "<strong>Older homes need closer inspection:</strong> 1920s-era construction may need updated systems depending on renovation history.",
+      ],
+      closing: [
+        "If genuine early-20th-century character and real downtown walkability matter to your search, Old Town is worth a close look alongside First Addition / Forest Hills nearby.",
+      ],
+    },
+  ],
+  "Palisades, Lake Oswego": [
+    {
+      hook: "Mature Lots With a Genuine Three-Way School-Zone Split",
+      keyword: "Palisades Lake Oswego OR homes",
+      metaDescription:
+        "Moving to the Lake Oswego, OR area? See what Palisades is like — mature-tree lots, a split school zone, and current listings.",
+      excerpt:
+        "Thinking about moving to the Lake Oswego, OR area? Explore Palisades, known for mature-tree, larger-lot character and real school-zone variation.",
+      gbp:
+        "If you're moving to the Lake Oswego, OR area, Palisades is worth researching — a neighborhood (ZIP 97034) with mid-century and contemporary homes on larger, mature-tree lots, near Foothills Park and its trails. Recently reported sales span a genuinely wide range, from a 1953 daylight ranch on 0.35 acres at $870,000 to a 1982 contemporary on about half an acre at $1,795,000. One real wrinkle: elementary school zoning in Palisades is genuinely inconsistent across sources — some listings name Palisades Elementary, others Hallinan Elementary, and at least one names Westridge Elementary, so confirm zoning for the specific address directly with the district rather than assuming. If you're comparing Palisades homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the home styles, school zoning and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Lake Oswego, Oregon area, Palisades is worth a look — mature trees and larger lots define the neighborhood, with one genuine complication worth knowing about upfront.",
+        "Elementary school zoning in Palisades is honestly inconsistent across sources — some listings point to Palisades Elementary, others to Hallinan Elementary, and at least one to Westridge Elementary. Confirm zoning for a specific address directly with Lake Oswego School District rather than assuming based on the neighborhood name.",
+      ],
+      livingIn: [
+        "Palisades combines mid-century and contemporary homes on larger lots with mature trees — a genuinely established, spacious feel.",
+      ],
+      whereLocated: [
+        "Palisades (ZIP 97034) sits near Foothills Park, with trail access close by.",
+      ],
+      homesIn: [
+        "Recently reported sales span a genuinely wide range — a 1953 daylight ranch on 0.35 acres at $870,000, and a 1982 contemporary on about half an acre at $1,795,000. Compare specific properties rather than assuming any single price point represents the neighborhood.",
+      ],
+      parks: [
+        "Foothills Park and its trails sit close to the neighborhood, giving residents real outdoor access without a long drive.",
+      ],
+      commute: [
+        "Palisades' location keeps it within reasonable reach of the broader Lake Oswego arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Mature-tree, larger-lot character:</strong> a genuinely spacious, established feel compared to denser subdivisions.",
+        "<strong>Close to Foothills Park:</strong> real trail access nearby.",
+        "<strong>Wide home-style variety:</strong> mid-century ranches alongside contemporary construction.",
+      ],
+      considerations: [
+        "<strong>Elementary zoning genuinely varies:</strong> confirm directly with the district — Palisades, Hallinan and Westridge Elementary have all been named for addresses here.",
+        "<strong>Very wide price range:</strong> recently reported sales spanned roughly $870,000 to $1.8 million, so compare specific homes rather than assuming one price point.",
+        "<strong>Older homes need closer inspection:</strong> 1950s-era construction may need updated systems depending on upkeep history.",
+      ],
+      closing: [
+        "If mature-tree, larger-lot character appeals to you, Palisades is worth a close look — just confirm elementary school zoning directly with the district before you get attached to a specific address.",
+      ],
+    },
+  ],
+  "Rosewood, Lake Oswego": [
+    {
+      hook: "An Unincorporated Area Pending Eventual Annexation",
+      keyword: "Rosewood Lake Oswego OR homes",
+      metaDescription:
+        "Moving to the Lake Oswego, OR area? See what Rosewood is like — unincorporated Clackamas County status, schools, and current listings.",
+      excerpt:
+        "Thinking about moving to the Lake Oswego, OR area? Explore Rosewood, an unincorporated area the city has planned for eventual annexation.",
+      gbp:
+        "If you're moving to the Lake Oswego, OR area, Rosewood is worth understanding clearly before you tour — it's one of the city's 25 recognized neighborhood associations, but it's actually unincorporated Clackamas County land today, not inside Lake Oswego's city limits. The city's own planning documents describe Rosewood as intended for eventual annexation into Lake Oswego, similar to how some other unincorporated areas near the city have been handled historically. If you're comparing Rosewood homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the jurisdiction situation and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Lake Oswego, Oregon area, Rosewood is worth a clear-eyed look — it's recognized by the city as one of its 25 neighborhood associations, but it's genuinely unincorporated Clackamas County land today, not inside Lake Oswego's city limits.",
+      ],
+      livingIn: [
+        "Rosewood functions as a real, organized neighborhood association community despite its unincorporated status, consistent with the city's own planning documents, which describe it as intended for eventual annexation.",
+      ],
+      whereLocated: [
+        "Rosewood sits in unincorporated Clackamas County adjacent to Lake Oswego, carrying a Lake Oswego-area identity through its recognized neighborhood association despite not being inside city limits.",
+      ],
+      homesIn: [
+        "Specific, verified pricing wasn't available for this writeup — compare current listings directly rather than relying on an assumed price point.",
+      ],
+      parks: [
+        "Specific park amenities directly in Rosewood weren't confirmed for this writeup — check current listings or Clackamas County's park resources for what's actually nearby a specific address.",
+      ],
+      commute: [
+        "Rosewood's location near Lake Oswego keeps it within reasonable reach of the broader area's arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Recognized neighborhood association:</strong> Rosewood has real organized representation despite its unincorporated status.",
+        "<strong>Lake Oswego-area identity:</strong> close proximity to the city and its amenities, even while governed separately today.",
+      ],
+      considerations: [
+        "<strong>Unincorporated status:</strong> Rosewood is governed by Clackamas County, not the City of Lake Oswego, for land use and permitting — confirm how that affects a specific property.",
+        "<strong>Annexation is planned but not final:</strong> the city's own documents describe eventual annexation as intended, not yet completed — don't assume city services or school assignment without verifying.",
+        "<strong>Limited verified pricing and amenity data:</strong> compare current listings directly rather than assuming specifics.",
+      ],
+      closing: [
+        "If Lake Oswego-area proximity matters more to you than being inside the city's formal limits today, Rosewood is worth understanding fully before you tour — confirm jurisdiction and services directly.",
+      ],
+    },
+  ],
+  "Skylands, Lake Oswego": [
+    {
+      hook: "Acreage Estates With Real Territorial Mountain and River Views",
+      keyword: "Skylands Lake Oswego OR homes",
+      metaDescription:
+        "Moving to the Lake Oswego, OR area? See what Skylands is like — large wooded lots, territorial views, and current listings.",
+      excerpt:
+        "Thinking about moving to the Lake Oswego, OR area? Explore Skylands, an upscale hillside neighborhood with real territorial views.",
+      gbp:
+        "If you're moving to the Lake Oswego, OR area and want real acreage with views, Skylands is worth researching — an upscale, hillside, wooded-lot neighborhood where multiple listings have cited genuine territorial views of Mt. Hood, Mt. St. Helens, Mt. Adams and the Willamette River. Lots here typically run large, roughly 0.9 to more than 3.5 acres — genuinely larger than a typical suburban lot. Recently reported listings have ranged widely, from around $1.6 million to over $5 million, reflecting a real mix of home ages and sizes rather than one typical property. If you're comparing Skylands homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the lot sizes, views and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Lake Oswego, Oregon area and want genuine acreage with real views, Skylands is worth a look — this is one of the more spacious, elevated neighborhoods in the city.",
+      ],
+      livingIn: [
+        "Skylands is an upscale, hillside, wooded-lot neighborhood with homes spanning a real range of eras, from 1960s construction to more recent custom builds.",
+      ],
+      whereLocated: [
+        "Skylands sits on elevated terrain within Lake Oswego, which is part of what makes the territorial views here genuinely possible, not a listing exaggeration.",
+      ],
+      homesIn: [
+        "Recently reported listings have ranged roughly from $1.6 million to over $5 million, reflecting real differences in lot size, age and construction quality — compare specific properties rather than assuming one price point.",
+      ],
+      parks: [
+        "The neighborhood's elevation itself is the main amenity here — multiple listings have cited genuine territorial views of Mt. Hood, Mt. St. Helens, Mt. Adams and the Willamette River from specific lots.",
+      ],
+      commute: [
+        "Skylands' hillside Lake Oswego location keeps it within reasonable reach of the broader area's arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Genuinely large wooded lots:</strong> roughly 0.9 to more than 3.5 acres, well above a typical suburban lot size.",
+        "<strong>Real territorial views:</strong> Mt. Hood, Mt. St. Helens, Mt. Adams and the Willamette River have all been cited from specific lots.",
+        "<strong>A real mix of home ages:</strong> 1960s construction alongside modern custom builds.",
+      ],
+      considerations: [
+        "<strong>Views aren't universal:</strong> not every lot has the same view profile — confirm what a specific listing actually offers.",
+        "<strong>Very wide price range:</strong> recently reported listings spanned roughly $1.6 million to over $5 million, so compare specific homes rather than assuming one price point.",
+        "<strong>Confirm specific school assignment:</strong> listing-sourced school names should be verified directly with the district, especially given how many elementary zones exist nearby.",
+      ],
+      closing: [
+        "If genuine acreage and real territorial views are what you're after, Skylands is worth a close look — just confirm the specific view and lot details on any listing before deciding.",
+      ],
+    },
+  ],
+  "Uplands, Lake Oswego": [
+    {
+      hook: "Golf-Course-Adjacent, With a School Boundary Actively in Flux",
+      keyword: "Uplands Lake Oswego OR homes",
+      metaDescription:
+        "Moving to the Lake Oswego, OR area? See what Uplands is like — golf-course proximity, a lake easement, a changing school boundary, and current listings.",
+      excerpt:
+        "Thinking about moving to the Lake Oswego, OR area? Explore Uplands, a small, upscale neighborhood bordering Oswego Lake Country Club.",
+      gbp:
+        "If you're moving to the Lake Oswego, OR area, Uplands is worth researching — a small, upscale neighborhood bordering the Oswego Lake Country Club golf course, with some homes carrying a real Uplands lake easement for lake access. Housing mixes mid-century-modern-influenced homes with newer high-end construction. One important, currently unsettled detail: school zoning here is genuinely in flux, not just address-dependent — recent listings disagree on whether Uplands Elementary or Forest Hills Elementary serves specific Uplands addresses for the 2026/27-2027/28 school years, so confirm directly with Lake Oswego School District rather than relying on any single listing. If you're comparing Uplands homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the golf-course access, lake easement and current school situation.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Lake Oswego, Oregon area, Uplands is worth a look — a small, upscale neighborhood with genuine golf-course and lake-easement access, plus one detail worth confirming directly before you buy.",
+        "School zoning in Uplands is actively changing, not just a matter of checking an address — recent listings disagree on whether Uplands Elementary or Forest Hills Elementary serves specific addresses for the upcoming school years. Confirm directly with Lake Oswego School District rather than trusting any single listing.",
+      ],
+      livingIn: [
+        "Uplands mixes mid-century-modern-influenced homes with newer high-end construction, bordering the Oswego Lake Country Club golf course.",
+      ],
+      whereLocated: [
+        "Uplands borders Oswego Lake Country Club's golf course, and some homes carry a real Uplands lake easement for lake access.",
+      ],
+      homesIn: [
+        "Recently reported listings have ranged from around $1.9 million for newer construction up to roughly $3 million, alongside some older mid-century homes on smaller lots — compare specific properties directly.",
+      ],
+      parks: [
+        "The Oswego Lake Country Club golf course borders the neighborhood, and some homes carry a documented lake easement for direct access.",
+      ],
+      commute: [
+        "Uplands' Lake Oswego location keeps it within reasonable reach of the broader area's arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Golf-course-adjacent:</strong> borders the Oswego Lake Country Club directly.",
+        "<strong>Real lake easement on some properties:</strong> a documented mechanism for lake access, not a generic proximity claim.",
+        "<strong>Genuine architectural mix:</strong> mid-century-modern-influenced homes alongside newer high-end construction.",
+      ],
+      considerations: [
+        "<strong>School boundary is actively changing:</strong> confirm directly with Lake Oswego School District — sources currently disagree between Uplands and Forest Hills Elementary for upcoming school years.",
+        "<strong>Lake easement isn't universal:</strong> confirm what a specific listing actually includes rather than assuming.",
+        "<strong>Small inventory:</strong> given the neighborhood's limited size, there may not always be something on the market when you're ready to buy.",
+      ],
+      closing: [
+        "If golf-course proximity and potential lake access matter to your search, Uplands is worth a close look — just confirm the current school assignment directly with the district before deciding.",
+      ],
+    },
+  ],
+  "Waluga, Lake Oswego": [
+    {
+      hook: "A Twin-Park Layout With Both Single-Family Homes and Townhomes",
+      keyword: "Waluga Lake Oswego OR homes",
+      metaDescription:
+        "Moving to the Lake Oswego, OR area? See what Waluga is like — East and West Waluga Park, a mixed housing stock, and current listings.",
+      excerpt:
+        "Thinking about moving to the Lake Oswego, OR area? Explore Waluga, organized around East and West Waluga Park.",
+      gbp:
+        "If you're moving to the Lake Oswego, OR area, Waluga is worth researching — a southeast Lake Oswego neighborhood organized around East and West Waluga Park, with ponds, greenery and trails as a real, defining amenity. Housing here genuinely mixes single-family homes with townhomes, including the Trillium Woods area's duplex-style units with direct park access. Lake Grove Elementary, Lake Oswego Middle and Lake Oswego High serve the area. Lake Grove Village is close by for shopping, and downtown Lake Oswego is roughly 10-15 minutes away. If you're comparing Waluga homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the parks, housing mix and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Lake Oswego, Oregon area, Waluga is worth a look — a neighborhood genuinely organized around its own twin parks, with a real mix of housing types.",
+      ],
+      livingIn: [
+        "Waluga combines single-family homes with townhomes, including the Trillium Woods area's duplex-style units with direct park access — a genuine housing-type mix, not just one product.",
+      ],
+      whereLocated: [
+        "Waluga sits in southeast Lake Oswego, organized around East and West Waluga Park, close to Lake Grove Village and roughly 10-15 minutes from downtown Lake Oswego.",
+      ],
+      homesIn: [
+        "Recently reported sales include a 2004 Craftsman around 3,000 square feet at $1.05 million and a 3-bedroom home near the park at $775,000 — comparing specific properties, including housing type, tells you more than any single price point.",
+      ],
+      parks: [
+        "East and West Waluga Park anchor the neighborhood, with ponds, greenery and trails as a real, defining amenity — not a nearby park, but the neighborhood's own namesake.",
+      ],
+      commute: [
+        "Waluga is close to Lake Grove Village for everyday shopping, with downtown Lake Oswego roughly 10-15 minutes away depending on traffic.",
+      ],
+      reasons: [
+        "<strong>East and West Waluga Park:</strong> ponds, greenery and trails built directly into the neighborhood's identity.",
+        "<strong>Genuine housing-type mix:</strong> single-family homes alongside townhomes, including park-adjacent duplex-style units.",
+        "<strong>Close to Lake Grove Village:</strong> everyday shopping within easy reach.",
+      ],
+      considerations: [
+        "<strong>Housing type affects price significantly:</strong> townhomes and single-family homes carry different price points — compare the specific type you want.",
+        "<strong>Wide price range:</strong> recently reported sales spanned roughly $775,000 to $1.05 million in these examples — compare current listings directly.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with the district rather than assuming based on the neighborhood name alone.",
+      ],
+      closing: [
+        "If a real mix of park access and housing types appeals to you, Waluga is worth a close look — just compare the specific housing type and price point you're after.",
+      ],
+    },
+  ],
+  "Westlake, Lake Oswego": [
+    {
+      hook: "Cul-de-Sac Layouts With Genuinely Easy Highway Access",
+      keyword: "Westlake Lake Oswego OR homes",
+      metaDescription:
+        "Moving to the Lake Oswego, OR area? See what Westlake is like — cul-de-sac layouts, highway access, Westlake Park, and current listings.",
+      excerpt:
+        "Thinking about moving to the Lake Oswego, OR area? Explore Westlake, a southeast Lake Oswego neighborhood with real highway access.",
+      gbp:
+        "If you're moving to the Lake Oswego, OR area, Westlake is worth a look — a southeast Lake Oswego neighborhood built mostly in the 1980s and 1990s, laid out around cul-de-sac streets, with genuinely easy access to both I-5 and OR-217. Westlake Park (playgrounds, sports fields) is the neighborhood's local green space, and Oak Creek Elementary serves at least part of the area. Recently reported sales have ranged roughly from $950,000 to $1.4 million. If you're comparing Westlake homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the layout, highway access and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Lake Oswego, Oregon area and commute flexibility matters, Westlake is worth a look — it's a straightforward, well-located neighborhood rather than one built around a singular standout feature.",
+      ],
+      livingIn: [
+        "Westlake is mostly 1980s-90s single-family construction, laid out around cul-de-sac streets throughout much of the neighborhood.",
+      ],
+      whereLocated: [
+        "Westlake sits in southeast Lake Oswego, with genuinely easy access to both I-5 and OR-217 — a real commute advantage compared to some other Lake Oswego neighborhoods farther from the highway.",
+      ],
+      homesIn: [
+        "Recently reported sales have ranged roughly from $950,000 to $1.4 million — comparing specific properties matters more than assuming one price point.",
+      ],
+      parks: [
+        "Westlake Park, with playgrounds and sports fields, is the neighborhood's local green-space amenity.",
+      ],
+      commute: [
+        "Westlake's genuine proximity to both I-5 and OR-217 makes it one of the more commute-friendly Lake Oswego neighborhoods for reaching Portland or the broader metro area.",
+      ],
+      reasons: [
+        "<strong>Genuinely easy highway access:</strong> close to both I-5 and OR-217.",
+        "<strong>Cul-de-sac layout:</strong> quieter streets throughout much of the neighborhood.",
+        "<strong>Westlake Park nearby:</strong> playgrounds and sports fields as a real local amenity.",
+      ],
+      considerations: [
+        "<strong>Fewer standout amenities than some other Lake Oswego neighborhoods:</strong> Westlake's main draw is practical — layout and commute access — rather than a singular landmark feature.",
+        "<strong>Wide price range:</strong> recently reported sales spanned roughly $950,000 to $1.4 million, so compare specific homes rather than assuming one price point.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with the district for the specific address.",
+      ],
+      closing: [
+        "If a practical, well-located neighborhood with genuinely easy highway access is what you're after, Westlake is worth a close look alongside other southeast Lake Oswego areas.",
+      ],
+    },
+  ],
+  "Westridge, Lake Oswego": [
+    {
+      hook: "A Real Spread From Fixer-Uppers to Custom Estates",
+      keyword: "Westridge Lake Oswego OR homes",
+      metaDescription:
+        "Moving to the Lake Oswego, OR area? See what Westridge is like — a wide range of home conditions and prices, and current listings.",
+      excerpt:
+        "Thinking about moving to the Lake Oswego, OR area? Explore Westridge, where listings range from fixer-uppers to custom estates.",
+      gbp:
+        "If you're moving to the Lake Oswego, OR area, Westridge is worth researching — a southeast Lake Oswego neighborhood with tree-lined streets and a genuinely wide range of home conditions, from older homes explicitly marketed as equity-building fixer-uppers to large custom estates with features like elevators. Westridge Park provides local green space. Recently reported sales have included a 1981 fixer at $1.015 million, a 2003 custom estate at $2.099 million, and a 1982 home on a cul-de-sac at $1.548 million — a real spread, not one typical price. If you're comparing Westridge homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the home-condition range and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Lake Oswego, Oregon area, Westridge is worth a look — this is a neighborhood where the honest story is the real range, from fixer-uppers to custom estates, rather than one consistent product.",
+      ],
+      livingIn: [
+        "Westridge has tree-lined streets and a genuinely wide range of home conditions — some older homes are explicitly marketed as equity-building opportunities, while others are large custom estates.",
+      ],
+      whereLocated: [
+        "Westridge sits in southeast Lake Oswego, with Westridge Park and Westridge Elementary both close by.",
+      ],
+      homesIn: [
+        "Recently reported sales include a 1981 home needing updates at $1.015 million, a 2003 custom estate with an elevator at $2.099 million, and a 1982 cul-de-sac home at $1.548 million — a real, wide spread rather than one typical price point.",
+      ],
+      parks: [
+        "Westridge Park gives the neighborhood local green space, with tree-lined streets throughout.",
+      ],
+      commute: [
+        "Westridge's southeast Lake Oswego location keeps it within reasonable reach of the broader area's arterial network, with the usual time-of-day variability on actual drive time.",
+      ],
+      reasons: [
+        "<strong>Genuine range of home conditions:</strong> from fixer-uppers with real equity potential to large custom estates.",
+        "<strong>Tree-lined, established streets:</strong> a settled feel throughout the neighborhood.",
+        "<strong>Westridge Park and Elementary nearby:</strong> both close to much of the neighborhood.",
+      ],
+      considerations: [
+        "<strong>Very wide price range:</strong> recently reported sales spanned roughly $1 million to over $2 million depending on condition and size — compare specific homes directly.",
+        "<strong>Older homes may need real investment:</strong> some listings are explicitly marketed as fixer-uppers, not move-in ready.",
+        "<strong>Confirm specific school assignment:</strong> verify directly with the district for the specific address.",
+      ],
+      closing: [
+        "Whether you're looking for a fixer-upper with real upside or a finished custom estate, Westridge is worth comparing listings carefully — the range here is genuinely wide.",
+      ],
+    },
+  ],
+  "First Addition / Forest Hills, Lake Oswego": [
+    {
+      hook: "An APA 'Great Neighborhood' Platted in 1888 for Iron and Steel Workers",
+      keyword: "First Addition Forest Hills Lake Oswego OR homes",
+      metaDescription:
+        "Moving to the Lake Oswego, OR area? See what First Addition / Forest Hills is like — a real APA-honored historic neighborhood, and current listings.",
+      excerpt:
+        "Thinking about moving to the Lake Oswego, OR area? Explore First Addition / Forest Hills, one of the city's oldest, most walkable neighborhoods.",
+      gbp:
+        "If you're moving to the Lake Oswego, OR area, First Addition / Forest Hills is worth researching — one of the city's oldest neighborhoods, platted in 1888 and 1925, originally built to house workers for the Oregon Iron and Steel Company. The American Planning Association named it a \"Great Neighborhood in America\" in 2007. Architecture spans Gothic, Craftsman, bungalow and ranch styles under the city's own adopted local design guidelines, and the neighborhood is genuinely walkable, with its own grocery store, library, elementary school (Forest Hills Elementary, 1133 Andrews Rd) and adult community center, plus proximity to downtown, the Lakewood Theatre and Tryon Creek State Natural Area. If you're comparing First Addition / Forest Hills homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the history, walkability and current listings.",
+      variant: "guide",
+      intro: [
+        "If you're thinking about moving to the Lake Oswego, Oregon area and real neighborhood history matters to you, First Addition / Forest Hills is worth a close look — this is one of the city's oldest and most recognized neighborhoods.",
+        "The American Planning Association named it a \"Great Neighborhood in America\" in 2007, and its roots go back to 1888 and 1925 platting, originally built to house workers for the Oregon Iron and Steel Company.",
+      ],
+      livingIn: [
+        "Architecture here spans Gothic, Craftsman, bungalow and ranch styles, shaped by the city's own adopted local design guidelines for the area — a genuinely distinct architectural identity.",
+      ],
+      whereLocated: [
+        "First Addition / Forest Hills sits close to downtown Lake Oswego, the Lakewood Theatre and Tryon Creek State Natural Area, with Forest Hills Elementary (1133 Andrews Rd) serving the area.",
+      ],
+      homesIn: [
+        "Specific, verified pricing wasn't broadly confirmed for this writeup given the wide range of architectural eras represented — compare current listings directly by style and era.",
+      ],
+      parks: [
+        "The neighborhood includes its own grocery store, library, elementary school and adult community center, plus walkable access to Tryon Creek State Natural Area and downtown Lake Oswego's amenities.",
+      ],
+      commute: [
+        "First Addition / Forest Hills' proximity to downtown Lake Oswego means many daily errands are genuinely walkable, reducing reliance on driving compared to neighborhoods farther out.",
+      ],
+      reasons: [
+        "<strong>Real, documented history:</strong> platted in 1888 and 1925, originally built for Oregon Iron and Steel Company workers.",
+        "<strong>APA-recognized:</strong> named a \"Great Neighborhood in America\" by the American Planning Association in 2007.",
+        "<strong>Genuinely walkable:</strong> its own grocery store, library, elementary school and community center, plus downtown and Tryon Creek nearby.",
+      ],
+      considerations: [
+        "<strong>Design guidelines apply:</strong> the city's adopted local design standards for this area may affect what renovations or additions are allowed — confirm before planning any changes.",
+        "<strong>Wide range of home eras and styles:</strong> compare specific properties by architectural era rather than assuming uniform pricing or condition.",
+        "<strong>High demand for a historic, walkable neighborhood:</strong> inventory can be limited given the area's recognized desirability.",
+      ],
+      closing: [
+        "If genuine neighborhood history and real walkability matter to your search, First Addition / Forest Hills is worth a close look — few Lake Oswego neighborhoods carry this much documented character.",
       ],
     },
   ],
