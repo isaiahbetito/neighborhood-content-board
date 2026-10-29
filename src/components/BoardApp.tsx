@@ -11316,6 +11316,11 @@ const AREA_GENERATED_PHOTOS: Record<string, string> = {
   "Canemah, Oregon City": "/neighborhood-photos/canemah-oregon-city.jpeg",
   "Historic Milwaukie, Milwaukie": "/neighborhood-photos/historic-milwaukie-milwaukie.jpeg",
   "Rock Creek, Happy Valley": "/neighborhood-photos/rock-creek-happy-valley.jpeg",
+  "Metzger, Tigard": "/neighborhood-photos/metzger-tigard.jpeg",
+  "River Terrace, Tigard": "/neighborhood-photos/river-terrace-tigard.jpeg",
+  "Tigard Triangle, Tigard": "/neighborhood-photos/tigard-triangle-tigard.jpeg",
+  "Summerlake, Tigard": "/neighborhood-photos/summerlake-tigard.jpeg",
+  "Summerfield, Tigard": "/neighborhood-photos/summerfield-tigard.jpeg",
 };
 
 function titleIndexForPost(post: Post): number {
