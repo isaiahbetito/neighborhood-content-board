@@ -11321,6 +11321,12 @@ const AREA_GENERATED_PHOTOS: Record<string, string> = {
   "Tigard Triangle, Tigard": "/neighborhood-photos/tigard-triangle-tigard.jpeg",
   "Summerlake, Tigard": "/neighborhood-photos/summerlake-tigard.jpeg",
   "Summerfield, Tigard": "/neighborhood-photos/summerfield-tigard.jpeg",
+  "Birdshill, Lake Oswego": "/neighborhood-photos/birdshill-lake-oswego.jpeg",
+  "Blue Heron, Lake Oswego": "/neighborhood-photos/blue-heron-lake-oswego.jpeg",
+  "Bryant, Lake Oswego": "/neighborhood-photos/bryant-lake-oswego.jpeg",
+  "Evergreen, Lake Oswego": "/neighborhood-photos/evergreen-lake-oswego.jpeg",
+  "Forest Highlands, Lake Oswego": "/neighborhood-photos/forest-highlands-lake-oswego.jpeg",
+  "Glenmorrie, Lake Oswego": "/neighborhood-photos/glenmorrie-lake-oswego.jpeg",
 };
 
 function titleIndexForPost(post: Post): number {
