@@ -11327,6 +11327,12 @@ const AREA_GENERATED_PHOTOS: Record<string, string> = {
   "Evergreen, Lake Oswego": "/neighborhood-photos/evergreen-lake-oswego.jpeg",
   "Forest Highlands, Lake Oswego": "/neighborhood-photos/forest-highlands-lake-oswego.jpeg",
   "Glenmorrie, Lake Oswego": "/neighborhood-photos/glenmorrie-lake-oswego.jpeg",
+  "Hallinan Heights, Lake Oswego": "/neighborhood-photos/hallinan-heights-lake-oswego.jpeg",
+  "Holly Orchard, Lake Oswego": "/neighborhood-photos/holly-orchard-lake-oswego.jpeg",
+  "Lake Forest, Lake Oswego": "/neighborhood-photos/lake-forest-lake-oswego.jpeg",
+  "Lake Grove, Lake Oswego": "/neighborhood-photos/lake-grove-lake-oswego.jpeg",
+  "Lakewood, Lake Oswego": "/neighborhood-photos/lakewood-lake-oswego.jpeg",
+  "McVey-South Shore, Lake Oswego": "/neighborhood-photos/mcvey-south-shore-lake-oswego.jpeg",
 };
 
 function titleIndexForPost(post: Post): number {
