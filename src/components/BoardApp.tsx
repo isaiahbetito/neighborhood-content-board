@@ -11333,6 +11333,13 @@ const AREA_GENERATED_PHOTOS: Record<string, string> = {
   "Lake Grove, Lake Oswego": "/neighborhood-photos/lake-grove-lake-oswego.jpeg",
   "Lakewood, Lake Oswego": "/neighborhood-photos/lakewood-lake-oswego.jpeg",
   "McVey-South Shore, Lake Oswego": "/neighborhood-photos/mcvey-south-shore-lake-oswego.jpeg",
+  "North Shore-Country Club District, Lake Oswego": "/neighborhood-photos/north-shore-country-club-district-lake-oswego.jpeg",
+  "Oak Creek, Lake Oswego": "/neighborhood-photos/oak-creek-lake-oswego.jpeg",
+  "Old Town, Lake Oswego": "/neighborhood-photos/old-town-lake-oswego.jpeg",
+  "Palisades, Lake Oswego": "/neighborhood-photos/palisades-lake-oswego.jpeg",
+  "Rosewood, Lake Oswego": "/neighborhood-photos/rosewood-lake-oswego.jpeg",
+  "Skylands, Lake Oswego": "/neighborhood-photos/skylands-lake-oswego.jpeg",
+  "Uplands, Lake Oswego": "/neighborhood-photos/uplands-lake-oswego.jpeg",
 };
 
 function titleIndexForPost(post: Post): number {
