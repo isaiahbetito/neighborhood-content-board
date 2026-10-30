@@ -11340,6 +11340,10 @@ const AREA_GENERATED_PHOTOS: Record<string, string> = {
   "Rosewood, Lake Oswego": "/neighborhood-photos/rosewood-lake-oswego.jpeg",
   "Skylands, Lake Oswego": "/neighborhood-photos/skylands-lake-oswego.jpeg",
   "Uplands, Lake Oswego": "/neighborhood-photos/uplands-lake-oswego.jpeg",
+  "Waluga, Lake Oswego": "/neighborhood-photos/waluga-lake-oswego.jpeg",
+  "Westlake, Lake Oswego": "/neighborhood-photos/westlake-lake-oswego.jpeg",
+  "Westridge, Lake Oswego": "/neighborhood-photos/westridge-lake-oswego.jpeg",
+  "First Addition / Forest Hills, Lake Oswego": "/neighborhood-photos/first-addition-forest-hills-lake-oswego.jpeg",
 };
 
 function titleIndexForPost(post: Post): number {
