@@ -11319,6 +11319,8 @@ const AREA_GENERATED_PHOTOS: Record<string, string> = {
   "Pleasant Valley, Happy Valley": "/neighborhood-photos/pleasant-valley-happy-valley.jpeg",
   "Jackson Hills, Happy Valley": "/neighborhood-photos/jackson-hills-happy-valley.jpeg",
   "Scouters Mountain, Happy Valley": "/neighborhood-photos/scouters-mountain-happy-valley.jpeg",
+  "West Mount Scott, Happy Valley": "/neighborhood-photos/west-mount-scott-happy-valley.jpeg",
+  "Eagle Landing, Happy Valley": "/neighborhood-photos/eagle-landing-happy-valley.jpeg",
   "Metzger, Tigard": "/neighborhood-photos/metzger-tigard.jpeg",
   "River Terrace, Tigard": "/neighborhood-photos/river-terrace-tigard.jpeg",
   "Tigard Triangle, Tigard": "/neighborhood-photos/tigard-triangle-tigard.jpeg",
