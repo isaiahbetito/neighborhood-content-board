@@ -11321,6 +11321,8 @@ const AREA_GENERATED_PHOTOS: Record<string, string> = {
   "Rosemont Summit, West Linn": "/neighborhood-photos/rosemont-summit-west-linn.jpeg",
   "Savanna Oaks, West Linn": "/neighborhood-photos/savanna-oaks-west-linn.jpeg",
   "Skyline Ridge, West Linn": "/neighborhood-photos/skyline-ridge-west-linn.jpeg",
+  "Sunset, West Linn": "/neighborhood-photos/sunset-west-linn.jpeg",
+  "Willamette, West Linn": "/neighborhood-photos/willamette-west-linn.jpeg",
   "Canemah, Oregon City": "/neighborhood-photos/canemah-oregon-city.jpeg",
   "Historic Milwaukie, Milwaukie": "/neighborhood-photos/historic-milwaukie-milwaukie.jpeg",
   "Rock Creek, Happy Valley": "/neighborhood-photos/rock-creek-happy-valley.jpeg",
