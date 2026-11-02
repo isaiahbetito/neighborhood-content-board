@@ -11577,7 +11577,7 @@ function comparisonArticleParagraphs(seed: ComparisonSeed): string[] {
   const publishedB = PUBLISHED_POST_URLS[seed.cityB];
 
   return [
-    `${aName} and ${bName} are two of the cities Jamie Meushaw Real Estate serves most often — this is a direct, side-by-side look at how they actually compare for a buyer deciding between them.`,
+    `${aName} and ${bName} are two of the cities I work in most often, and buyers weighing one against the other ask me the same handful of questions nearly every time. Here's a direct, side-by-side look at how the two actually compare, based on what I see with real listings and real buyers.`,
     h2("Executive Summary"),
     ...seed.execSummary,
     h2(`${aName} at a Glance`),
