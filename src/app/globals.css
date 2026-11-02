@@ -281,6 +281,18 @@ h1{
   text-transform:none;
 }
 .card-when{font-size:11px;color:var(--ink-soft);white-space:nowrap;}
+.card-kind-tag{
+  display:inline-block;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.03em;
+  text-transform:uppercase;
+  color:var(--sand);
+  background:var(--brass);
+  border-radius:4px;
+  padding:2px 6px;
+  margin-bottom:6px;
+}
 .card-title{
   font-family:'Fraunces',serif;
   font-size:15px;

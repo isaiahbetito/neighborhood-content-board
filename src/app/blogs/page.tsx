@@ -57,6 +57,10 @@ export default function BlogsPage() {
           </button>
           <div className="area-filters" id="areaFilters" hidden></div>
           <div className="filter-divider"></div>
+          <button className="filter-toggle" id="comparisonsToggle">
+            City Comparisons
+          </button>
+          <div className="filter-divider"></div>
           <button className="filter-toggle" id="archivedToggle">
             Archived
           </button>

@@ -40,6 +40,18 @@ type Post = {
   // modal's permanent "Delete this card", this is meant to be reversible via the same
   // button (it just flips back).
   archived?: boolean;
+  // Marks this as a city-comparison post instead of a single-neighborhood one (added
+  // 2026-11-03 per Jamie's "City Comparison Blog Strategy" guide). Absent/undefined means
+  // a normal neighborhood post — every pre-existing post keeps working exactly as before.
+  // When set, cityA/cityB carry the two compared cities and `area` holds a plain display
+  // label ("Camas, WA vs. Ridgefield, WA") rather than a real AREAS entry — functions that
+  // key off `area` (TITLES, NEIGHBORHOOD_URLS, AREA_STATE, etc.) simply find nothing for it
+  // and fall back gracefully, which is why comparison posts are handled as an explicit
+  // branch in articleParagraphs/contentPackageText/gbpPostText/imagePromptText/seoChecklist
+  // rather than trying to force them through the neighborhood-shaped helpers.
+  kind?: "comparison";
+  cityA?: string;
+  cityB?: string;
 };
 
 const STATUS_ORDER: Status[] = [
@@ -461,6 +473,62 @@ const CITY_URLS: Record<string, string> = {
   Milwaukie: "https://jamiemeushawrealestate.com/properties/place-Milwaukie,%20OR/",
   "Happy Valley": "https://jamiemeushawrealestate.com/properties/city-Happy%20Valley,%20OR/",
 };
+
+// City-comparison posts (added 2026-11-03) link to a DIFFERENT kind of page than CITY_URLS
+// above — Jamie's "City Comparison Blog Strategy" guide requires linking directly to each
+// city's individual /communities/<slug>/ page, not the /properties/city-X/ IDX search link.
+// Pulled from the live shared Google Sheet's "Community Page Directory" tab (VA has editor
+// access) on 2026-11-03. That sheet itself flags these as unverified — "sitemap fetches
+// returned 403... most individual URL slugs in this workbook are candidate paths, NOT
+// independently confirmed" — only Washougal is marked "Verified search" there. Treat every
+// other value here the same way: a real, sourced candidate URL, not a confirmed-live one —
+// check it resolves before it ships in a real published post. `null` means the Sheet has no
+// community page for that city at all yet (flagged "No verified community page" there).
+const COMMUNITY_PAGE_URLS: Record<string, string | null> = {
+  "Camas, WA": "https://jamiemeushawrealestate.com/communities/camas/",
+  "Ridgefield, WA": "https://jamiemeushawrealestate.com/communities/ridgefield/",
+  "Vancouver, WA": "https://jamiemeushawrealestate.com/communities/vancouver/",
+  "Portland, OR": "https://jamiemeushawrealestate.com/communities/portland/",
+  "Beaverton, OR": "https://jamiemeushawrealestate.com/communities/beaverton/",
+  "Lake Oswego, OR": "https://jamiemeushawrealestate.com/communities/lake-oswego/",
+  "West Linn, OR": "https://jamiemeushawrealestate.com/communities/west-linn/",
+  "Battle Ground, WA": "https://jamiemeushawrealestate.com/communities/battle-ground/",
+  // Sheet marks this one "Verified search" — the one city in the directory actually confirmed.
+  "Washougal, WA": "https://jamiemeushawrealestate.com/communities/washougal/",
+  "Brush Prairie, WA": "https://jamiemeushawrealestate.com/communities/brush-prairie/",
+  "Hockinson, WA": "https://jamiemeushawrealestate.com/communities/hockinson/",
+  "La Center, WA": "https://jamiemeushawrealestate.com/communities/la-center/",
+  "Happy Valley, OR": "https://jamiemeushawrealestate.com/communities/happy-valley/",
+  "Tigard, OR": "https://jamiemeushawrealestate.com/communities/tigard/",
+  "Tualatin, OR": "https://jamiemeushawrealestate.com/communities/tualatin/",
+  "Sherwood, OR": "https://jamiemeushawrealestate.com/communities/sherwood/",
+  "Milwaukie, OR": "https://jamiemeushawrealestate.com/communities/milwaukie/",
+  "Oregon City, OR": "https://jamiemeushawrealestate.com/communities/oregon-city/",
+  // Sheet explicitly has no community page for these yet ("No verified community page") —
+  // keep as null (never invent a URL); a comparison post for one of these must link to the
+  // best existing relevant page instead and flag "community page needed," per the guide.
+  "Gresham, OR": null,
+  "Hillsboro, OR": null,
+  "Newberg, OR": null,
+  "Forest Grove, OR": null,
+  "Wilsonville, OR": null,
+  "Clackamas, OR": null,
+  "Gladstone, OR": null,
+  "Scappoose, OR": null,
+  "Troutdale, OR": null,
+  "Fairview, OR": null,
+  "Wood Village, OR": null,
+};
+
+// Posts that have actually gone live on jamiemeushawrealestate.com, keyed by whatever this
+// board uses to identify the post (an AREAS name for a neighborhood post, or "CityA|CityB"
+// for a comparison post — see comparisonKey()). This is the in-app mirror of the Sheet's own
+// "Link Library" tab: it starts empty and only ever grows by hand, as a real URL is recorded
+// here the moment a post is actually published — never auto-populated or guessed. This is
+// what lets a FUTURE draft backlink to an already-published post (Phase 1 of the guide's
+// two-stage internal-link plan). Retrofitting links into posts that were already published
+// before this existed is Phase 2 — a separate, later pass — not something this map drives.
+const PUBLISHED_POST_URLS: Record<string, string> = {};
 
 // Per the official SOP, a real neighborhood search URL must be generated + tested via the
 // live property search on jamiemeushawrealestate.com (requires an account the VA doesn't
@@ -973,6 +1041,97 @@ function seedTitle(area: string, seed: PostSeed): string {
   const city = area.split(",")[1].trim();
   return `Moving to ${city}, ${AREA_STATE[area] ?? "WA"}? Consider ${neighborhood}: ${seed.hook}`;
 }
+
+// City-comparison content (added 2026-11-03, per Jamie's "City Comparison Blog Strategy"
+// guide — the real prompt it must follow is reproduced verbatim in COMPARISON_PROMPT below).
+// Distinct shape from PostSeed: two cities, not one area, plus the guide's required
+// executive-summary/bullets/paragraph-form/price-and-amenities structure. keyed by
+// comparisonKey(cityA, cityB) so a Post can look its content up from cityA/cityB alone.
+type ComparisonSeed = {
+  cityA: string; // "Camas, WA" — must match a COMMUNITY_PAGE_URLS key
+  cityB: string; // "Ridgefield, WA"
+  keyword: string;
+  metaDescription: string;
+  execSummary: string[];
+  bulletsA: string[];
+  bulletsB: string[];
+  priceAmenitiesA: string[];
+  priceAmenitiesB: string[];
+  paragraphs: string[];
+  closing: string[];
+};
+
+function comparisonKey(cityA: string, cityB: string): string {
+  return `${cityA}|${cityB}`;
+}
+
+function comparisonTitle(seed: ComparisonSeed): string {
+  const a = seed.cityA.split(",")[0].trim();
+  const b = seed.cityB.split(",")[0].trim();
+  return `${a} vs. ${b}: City Comparison`;
+}
+
+// Reproduced exactly from Jamie's guide (Section 3) — never edit/paraphrase this string,
+// only the operational guidance around it. Shown to whoever drafts the next comparison so
+// the real prompt is always one click away, same spirit as the image-prompt workflow.
+const COMPARISON_PROMPT =
+  `Create blogs comparing two cities each from my sitemap. Each blog should be at least 1000 words long.  Include reasons why people should consider moving to each.  Reference price points and city amenities. Provide these details in bullet points, executive summary, and also in paragraph form.  Add schema to the blog as needed. Provide deep links to pages in my site which are important.  Remember fair housing laws and do not describe the people who should live there, including terms like "family" and "kids". Include deep links to my website where appropriate. At the end of each blog include a call to action including my name, my phone number, my email address and my website.  Include meta description and keywords at the end of each blog.`;
+
+// Real, worked example — priority #1 on the live Comparison Master sheet (Camas vs.
+// Ridgefield). Price/amenity figures are sourced and dated, never invented, per the guide's
+// explicit requirement. More pairs get added here the same way, in the sheet's priority
+// order, as they're actually drafted — this isn't meant to be filled in for all ~350 rows
+// at once.
+const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
+  [comparisonKey("Camas, WA", "Ridgefield, WA")]: {
+    cityA: "Camas, WA",
+    cityB: "Ridgefield, WA",
+    keyword: "Camas WA vs Ridgefield WA",
+    metaDescription:
+      "Comparing Camas and Ridgefield, WA: housing prices, amenities, parks, commute and what genuinely sets these two Clark County cities apart.",
+    execSummary: [
+      "Camas and Ridgefield are both Clark County, Washington cities in the Portland-Vancouver metro, with no Washington state income tax and straightforward access to Portland, Oregon via SR-14 or I-5.",
+      "Camas is the larger, more established of the two, with a historic downtown, Lacamas Lake and a mix of long-established neighborhoods alongside newer subdivisions.",
+      "Ridgefield is smaller and newer, with most of its housing built within roughly the last 15 years, direct access to I-5 Exit 14, and the Ridgefield National Wildlife Refuge nearby.",
+      "As of November 2025, Camas carried a meaningfully higher median sale price than Ridgefield, reflecting its larger and more built-out housing stock.",
+    ],
+    bulletsA: [
+      "An established historic downtown along NE 4th Avenue, with local shops and restaurants that predate the area's more recent growth.",
+      "Lacamas Lake, the Lacamas Heritage Trail and Round Lake Park, for lake access, trails and year-round outdoor recreation close to the city center.",
+      "A long-running industrial and employment base on the waterfront, plus semiconductor manufacturing in the surrounding area.",
+      "Direct access to SR-14 and I-205, with a broader mix of established and newer neighborhoods to choose from than a smaller, newer city typically offers.",
+    ],
+    bulletsB: [
+      "Close proximity to the Ridgefield National Wildlife Refuge, more than 5,300 acres of protected habitat along the Columbia River.",
+      "A smaller, newer city where a large share of the housing stock is new construction built within the last 10 to 15 years.",
+      "Direct access to I-5 at Exit 14, with a compact, walkable downtown core that has grown alongside the city.",
+      "A lower median sale price than Camas as of late 2025, per Redfin — relevant for buyers comparing overall affordability between the two.",
+    ],
+    priceAmenitiesA: [
+      "Median sale price: $809,700 as of November 2025, up 9.8% year over year, per Redfin's Camas housing market data.",
+      "Typical time on market: about 59 days, per the same Redfin report.",
+      "Housing stock: a mix of established single-family neighborhoods, newer subdivisions and some ongoing new construction, spanning several decades of development.",
+    ],
+    priceAmenitiesB: [
+      "Median sale price: $641,318 across all home types, per Redfin's Ridgefield city guide; single-family homes alone carried a higher median of $687,450.",
+      "Typical time on market: about 52 days, per the same source.",
+      "Housing stock: predominantly newer construction, concentrated in subdivisions built since the 2010s.",
+    ],
+    paragraphs: [
+      "Camas and Ridgefield sit about 20 minutes apart in Clark County, Washington, and both show up often in the same conversation for buyers relocating to the Portland-Vancouver area. They share a state (no Washington income tax), a general commute pattern into Portland, and a reputation as quieter alternatives to Vancouver proper — but the two cities themselves have grown very differently, and that shows up directly in price, home age and day-to-day feel.",
+      "Camas is the more established city of the two. Its downtown along NE 4th Avenue developed around a working waterfront — a paper mill has operated there for more than a century, and the city grew up around that industrial base long before it became a draw for Portland-area commuters. That history is still visible: a walkable historic core, a mix of home ages from early-1900s construction through recent subdivisions, and a semiconductor manufacturing facility in the surrounding area that's added a modern layer to the local job base. Lacamas Lake and the Lacamas Heritage Trail sit just north of downtown, giving residents lake access and miles of trail without leaving the city.",
+      "Ridgefield's growth has taken a different path. Its historic downtown is smaller and older, but the city around it has expanded rapidly over roughly the last 15 years, largely through new-construction subdivisions built out from the I-5 Exit 14 interchange. Buyers who want a newer home with a builder's warranty, rather than an older home that needs updating, tend to find more of that inventory in Ridgefield than in Camas. The Ridgefield National Wildlife Refuge, more than 5,300 acres of protected wetland and upland habitat along the Columbia River, sits adjacent to the city and is a defining feature of the area.",
+      "Price is where the two cities diverge most clearly. As of November 2025, Camas carried a median sale price of $809,700, up 9.8% year over year, according to Redfin's Camas housing market report — homes there were taking about 59 days to sell. Ridgefield's median sale price across all home types was $641,318, per Redfin's Ridgefield city guide, with single-family homes specifically carrying a higher median of $687,450; homes there were taking about 52 days to sell. The gap is meaningful enough that it's worth factoring into a side-by-side comparison rather than treating the two cities as interchangeable on cost alone — though both figures move with the broader market and should be checked against current listings rather than treated as fixed.",
+      "Commute patterns are similar for both cities, since each sits along a different highway corridor into the Portland-Vancouver core. Camas connects via SR-14 (the Lewis and Clark Highway) along the Columbia River, with access to I-205 as well, putting it within reach of both Vancouver and Portland's east side. Ridgefield connects via I-5 at Exit 14, putting it on the more direct north-south corridor through Vancouver into Portland. Actual drive times depend heavily on time of day in both cases and are worth testing directly during the hours a buyer would actually be commuting, rather than relying on a typical off-peak estimate.",
+      "Parks and outdoor recreation look different in each city because of how each one grew. Camas residents have walkable access to Lacamas Lake, Lacamas Heritage Trail and Round Lake Park, all close to the established part of the city. Ridgefield's signature outdoor feature is the Ridgefield National Wildlife Refuge itself, along with the newer parks that have been built into its more recent subdivisions as they were platted. Neither city's park access should be assumed identical to the other's — a buyer who specifically wants lake access, for example, should weigh that against a buyer who's drawn to wetland trails and refuge access.",
+      "Both cities sit within their own public school districts — Camas School District and Ridgefield School District, respectively — and school assignment depends on the specific address within each city. School boundaries and assignments can change, so buyers should verify current school assignments directly with the relevant district rather than relying on a neighborhood's general reputation.",
+      "Neither city is a straightforward upgrade over the other — they're genuinely different kinds of places. Camas offers more established infrastructure, a longer commercial history, lake access close to downtown and a wider range of home ages and price points, at a meaningfully higher overall price level. Ridgefield offers newer construction, a lower median price, direct interstate access and immediate proximity to a major wildlife refuge, in a smaller and more recently built-out city. A side-by-side comparison of current listings in both is the most direct way to see how those differences actually show up in available inventory right now.",
+    ],
+    closing: [
+      "Both Camas and Ridgefield are worth a direct look for anyone comparing Clark County, Washington cities — the right fit comes down to budget, home age preference and which set of amenities matters more day to day.",
+    ],
+  },
+};
 
 const TITLES: Record<string, PostSeed[]> = {
   "Holly Ridge, Camas": [
@@ -11390,7 +11549,67 @@ function photoForPost(post: Post): string {
   return photoUrl(key);
 }
 
+function comparisonSeedForPost(post: Post): ComparisonSeed | undefined {
+  if (post.kind !== "comparison" || !post.cityA || !post.cityB) return undefined;
+  return COMPARISON_TITLES[comparisonKey(post.cityA, post.cityB)];
+}
+
+// Same fallback shape as neighborhoodLinkLine, but for a COMMUNITY_PAGE_URLS lookup
+// (comparison posts link to each city's /communities/ page, not a property search) — and
+// when that's null, falls back to the city-level property-search link as a *temporary*
+// substitute and flags it, per the guide's explicit "link to that verified page temporarily
+// ... flag community page needed" instruction, rather than silently showing nothing.
+function communityLinkLine(label: string, cityFullName: string): string {
+  const url = COMMUNITY_PAGE_URLS[cityFullName];
+  if (url) return `${label}: <a href="${url}" target="_blank" rel="noopener">${url}</a>`;
+  const cityOnly = cityFullName.split(",")[0].trim();
+  const fallback = CITY_URLS[cityOnly];
+  if (fallback) {
+    return `${label}: <a href="${fallback}" target="_blank" rel="noopener">${fallback}</a> <em>(community page needed — using the property-search page as a temporary substitute per the comparison-blog guide)</em>`;
+  }
+  return `${label}: <em>community page needed — no verified page or fallback link exists yet for ${cityOnly}</em>`;
+}
+
+function comparisonArticleParagraphs(seed: ComparisonSeed): string[] {
+  const aName = seed.cityA.split(",")[0].trim();
+  const bName = seed.cityB.split(",")[0].trim();
+  const publishedA = PUBLISHED_POST_URLS[seed.cityA];
+  const publishedB = PUBLISHED_POST_URLS[seed.cityB];
+
+  return [
+    `${aName} and ${bName} are two of the cities Jamie Meushaw Real Estate serves most often — this is a direct, side-by-side look at how they actually compare for a buyer deciding between them.`,
+    h2("Executive Summary"),
+    ...seed.execSummary,
+    h2(`${aName} at a Glance`),
+    ...seed.bulletsA,
+    h3(`${aName} Price Points & Amenities`),
+    ...seed.priceAmenitiesA,
+    communityLinkLine(`${aName} community page`, seed.cityA),
+    ...(publishedA
+      ? [`Related reading: <a href="${publishedA}" target="_blank" rel="noopener">${aName} neighborhood guide</a>`]
+      : []),
+    h2(`${bName} at a Glance`),
+    ...seed.bulletsB,
+    h3(`${bName} Price Points & Amenities`),
+    ...seed.priceAmenitiesB,
+    communityLinkLine(`${bName} community page`, seed.cityB),
+    ...(publishedB
+      ? [`Related reading: <a href="${publishedB}" target="_blank" rel="noopener">${bName} neighborhood guide</a>`]
+      : []),
+    h2(`Comparing ${aName} and ${bName}`),
+    ...seed.paragraphs,
+    h2(`Should You Consider ${aName} or ${bName}?`),
+    ...seed.closing,
+    ...workWithJamieBlock(),
+  ];
+}
+
 function articleParagraphs(post: Post): string[] {
+  if (post.kind === "comparison") {
+    const seed = comparisonSeedForPost(post);
+    return seed ? comparisonArticleParagraphs(seed) : [];
+  }
+
   const idx = titleIndexForPost(post);
   const seed = idx >= 0 ? TITLES[post.area]?.[idx] : undefined;
   if (!seed) return [];
@@ -11557,6 +11776,53 @@ function stripHtmlForCopy(html: string): string {
 // (TITLE / EXCERPT / SEO-PUBLISHING INFO / BLOG) as plain text, ready to copy sections
 // straight into WordPress/Yoast rather than re-typing them from the on-screen preview.
 function contentPackageText(post: Post): string {
+  if (post.kind === "comparison") {
+    const seed = comparisonSeedForPost(post);
+    if (!seed) return "No comparison content found for this post.";
+    const aName = seed.cityA.split(",")[0].trim();
+    const bName = seed.cityB.split(",")[0].trim();
+    const lines = [
+      "TITLE",
+      post.title,
+      "",
+      "EXECUTIVE SUMMARY",
+      ...seed.execSummary,
+      "",
+      "SEO / PUBLISHING INFORMATION",
+      "",
+      "PRIMARY KEYWORD:",
+      post.keyword,
+      "",
+      "SECONDARY KEYWORDS:",
+      `${aName} real estate`,
+      `${bName} real estate`,
+      `${aName} vs ${bName}`,
+      `moving to ${aName}`,
+      `moving to ${bName}`,
+      "",
+      "SEO TITLE:",
+      post.title,
+      "",
+      "META DESCRIPTION:",
+      post.metaDescription,
+      "",
+      "SUGGESTED URL SLUG:",
+      slugify(post.title),
+      "",
+      "SUGGESTED IMAGE ALT TEXT:",
+      `${aName} and ${bName} city comparison`,
+      "",
+      "BLOG",
+      "",
+      ...articleParagraphs(post).map((p) => {
+        if (p.startsWith("### ")) return stripHtmlForCopy(p.slice(4)).toUpperCase();
+        if (p.startsWith("## ")) return stripHtmlForCopy(p.slice(3)).toUpperCase();
+        return stripHtmlForCopy(p);
+      }),
+    ];
+    return lines.join("\n");
+  }
+
   const seed = seedForPost(post);
   const stateAbbr = AREA_STATE[post.area] ?? "WA";
   const variant = post.variant ?? seed?.variant ?? "guide";
@@ -11606,6 +11872,19 @@ function contentPackageText(post: Post): string {
 // rule) may not have one written — surfaces a clear placeholder instead of silently
 // showing nothing or fabricating content on the fly.
 function gbpPostText(post: Post): string {
+  if (post.kind === "comparison") {
+    const seed = comparisonSeedForPost(post);
+    if (!seed) return "No Google Business Profile post has been written yet for this comparison.";
+    const aName = seed.cityA.split(",")[0].trim();
+    const bName = seed.cityB.split(",")[0].trim();
+    return [
+      `Comparing ${aName} and ${bName}, ${seed.cityA.split(", ")[1]}? ${seed.execSummary[1] ?? ""}`,
+      seed.priceAmenitiesA[0],
+      seed.priceAmenitiesB[0],
+      `Read the full comparison, or reach out directly to talk through which fits your plans.`,
+      `— Jamie Meushaw | ${CONTACT_PHONE} | ${CONTACT_EMAIL} | ${WEBSITE_URL}`,
+    ].join("\n\n");
+  }
   const seed = seedForPost(post);
   if (seed?.gbp) return seed.gbp;
   return `No Google Business Profile post has been written yet for this draft (${areaDisplayLabel(post.area)}, ${post.variant ?? "unknown"} variant). Write one using the client's GBP prompt once this becomes the active post for this neighborhood.`;
@@ -11618,6 +11897,25 @@ function gbpPostText(post: Post): string {
 // what makes the resulting image actually match the neighborhood instead of defaulting to
 // a generic modern-home look.
 function imagePromptText(post: Post): string {
+  if (post.kind === "comparison") {
+    const seed = comparisonSeedForPost(post);
+    if (!seed) return "";
+    const blogText = articleParagraphs(post)
+      .map((p) => {
+        if (p.startsWith("### ")) return stripHtmlForCopy(p.slice(4)).toUpperCase();
+        if (p.startsWith("## ")) return stripHtmlForCopy(p.slice(3)).toUpperCase();
+        return stripHtmlForCopy(p);
+      })
+      .join("\n");
+    return [
+      blogText,
+      "",
+      "---",
+      "",
+      `Create an image that represents a side-by-side comparison of ${seed.cityA} and ${seed.cityB}. Use information from the blog above about the style of home, era of home and landscape of each city to create the image — a split or paired composition contrasting the two places, not a single generic home. No text, labels, or watermarks.`,
+    ].join("\n");
+  }
+
   const neighborhood = post.area.split(",")[0].trim();
   const city = post.area.split(",")[1].trim();
   const stateAbbr = AREA_STATE[post.area] ?? "WA";
@@ -11686,6 +11984,73 @@ function findBannedPhrase(text: string): string | null {
 }
 
 function seoChecklist(post: Post): SeoCheck[] {
+  if (post.kind === "comparison") {
+    const seed = comparisonSeedForPost(post);
+    const paragraphs = articleParagraphs(post);
+    const wordCount = paragraphs.join(" ").split(/\s+/).filter(Boolean).length;
+    const descLen = post.metaDescription.length;
+    const fullText = `${post.title} ${post.metaDescription} ${paragraphs.join(" ")}`;
+    const bannedHit = findBannedPhrase(fullText);
+    const hasWhoFraming =
+      /\bwho (buys|should|actually|thrives)\b|attracts\b[^.]{0,40}buyers\b|right for you\b/i.test(
+        `${post.title} ${paragraphs.join(" ")}`
+      );
+    const hasPrice = /\$\d/.test(fullText);
+    const bothCitiesLinked = !!(
+      seed &&
+      COMMUNITY_PAGE_URLS[seed.cityA] &&
+      COMMUNITY_PAGE_URLS[seed.cityB]
+    );
+    const followsComparisonTitleFormat = /^.+ vs\.? .+: City Comparison$/.test(post.title);
+    return [
+      {
+        label: "Comparison title format",
+        pass: followsComparisonTitleFormat,
+        detail: followsComparisonTitleFormat
+          ? 'Follows "{City A} vs. {City B}: City Comparison"'
+          : 'Title should follow "{City A} vs. {City B}: City Comparison"',
+      },
+      {
+        label: "Meta description length",
+        pass: descLen >= 110 && descLen <= 160,
+        detail: `${descLen} characters (aim for 110–160)`,
+      },
+      {
+        label: "At least 1,000 words",
+        pass: wordCount >= 1000,
+        detail: `${wordCount} words (the guide requires 1,000+)`,
+      },
+      {
+        label: "Real, sourced price points for both cities",
+        pass: hasPrice,
+        detail: hasPrice
+          ? "Price figures are present and sourced — re-verify they're still current before publishing"
+          : "No price figures found — the guide requires referencing real price points for both cities",
+      },
+      {
+        label: "Both city community links present",
+        pass: bothCitiesLinked,
+        detail: bothCitiesLinked
+          ? "Both cities have a direct community-page link"
+          : "At least one city has no verified community page yet — a temporary fallback link is used and flagged in the article",
+      },
+      {
+        label: "Neutral, hype-free language",
+        pass: !bannedHit,
+        detail: bannedHit
+          ? `Avoid "${bannedHit}" — flagged by the voice guide's banned-phrase list`
+          : "No flagged hype words found",
+      },
+      {
+        label: "Fair Housing-neutral framing",
+        pass: !hasWhoFraming,
+        detail: hasWhoFraming
+          ? `Describe objective features, not who a city is "for"`
+          : "Framed around objective features, not buyer type",
+      },
+    ];
+  }
+
   const descLen = post.metaDescription.length;
   const paragraphs = articleParagraphs(post);
   const wordCount = paragraphs.join(" ").split(/\s+/).filter(Boolean).length;
@@ -11816,6 +12181,7 @@ export default function BoardApp() {
     let modalPostId: string | null = null;
     let areaFiltersOpen = false;
     let showArchived = false;
+    let showComparisonsOnly = false;
     let checklistOpen = false;
     // Counts saveData() calls currently in flight. autoPublishDuePosts() re-fetches from the
     // server every 60s and blindly replaces boardData with whatever it gets back — if that
@@ -11888,6 +12254,60 @@ export default function BoardApp() {
               .filter((p) => missingAreaNames.has(p.area))
               .map((p) => ({ ...p, id: "p" + nextId++ }));
             boardData = [...boardData, ...newPosts];
+            migrated = true;
+          }
+
+          // Same additive pattern, for city-comparison posts (added 2026-11-03) — matched
+          // by cityA/cityB since they don't live in AREAS at all. Only ever appends a
+          // comparison that isn't already saved; never touches existing posts/progress.
+          const existingComparisons = new Set(
+            boardData
+              .filter((p) => p.kind === "comparison" && p.cityA && p.cityB)
+              .map((p) => comparisonKey(p.cityA!, p.cityB!))
+          );
+          const missingComparisons = Object.values(COMPARISON_TITLES).filter(
+            (seed) => !existingComparisons.has(comparisonKey(seed.cityA, seed.cityB))
+          );
+          if (missingComparisons.length) {
+            let nextId =
+              1 + Math.max(0, ...boardData.map((p) => parseInt(p.id.slice(1), 10) || 0));
+            const todayPacific = pacificDateParts(new Date());
+            const todayUTCNoon = new Date(
+              Date.UTC(todayPacific.year, todayPacific.month, todayPacific.day, 12)
+            );
+            const dayName = todayUTCNoon.toLocaleDateString("en-US", {
+              weekday: "long",
+              timeZone: "UTC",
+            });
+            const dateLabel = todayUTCNoon.toLocaleDateString("en-US", {
+              month: "short",
+              day: "numeric",
+              timeZone: "UTC",
+            });
+            const newComparisonPosts: Post[] = missingComparisons.map((seed) => ({
+              id: "p" + nextId++,
+              date: dateLabel,
+              day: dayName,
+              time: TIME_SLOTS[0],
+              area: `${seed.cityA} vs. ${seed.cityB}`,
+              areaUrl:
+                COMMUNITY_PAGE_URLS[seed.cityA] ?? CITY_URLS[seed.cityA.split(",")[0].trim()] ?? "",
+              title: comparisonTitle(seed),
+              keyword: seed.keyword,
+              metaDescription: seed.metaDescription,
+              status: "Drafted",
+              kind: "comparison",
+              cityA: seed.cityA,
+              cityB: seed.cityB,
+              platforms: {
+                gbp: "Not Started",
+                w1: "Not Started",
+                w2: "Not Started",
+                li: "Not Started",
+                fb: "Not Started",
+              },
+            }));
+            boardData = [...boardData, ...newComparisonPosts];
             migrated = true;
           }
 
@@ -11997,6 +12417,17 @@ export default function BoardApp() {
         showArchived = !showArchived;
         renderAll();
       };
+
+      const comparisonCount = boardData.filter((p) => p.kind === "comparison" && !p.archived).length;
+      const comparisonsToggle = el<HTMLButtonElement>("comparisonsToggle");
+      comparisonsToggle.classList.toggle("active", showComparisonsOnly);
+      comparisonsToggle.textContent = showComparisonsOnly
+        ? "← All posts"
+        : `City Comparisons (${comparisonCount})`;
+      comparisonsToggle.onclick = () => {
+        showComparisonsOnly = !showComparisonsOnly;
+        renderAll();
+      };
     }
 
     function renderLegend() {
@@ -12011,7 +12442,8 @@ export default function BoardApp() {
         (p) =>
           (showArchived ? !!p.archived : !p.archived) &&
           (activeDay === "All" || p.day === activeDay) &&
-          (activeArea === "All" || p.area === activeArea)
+          (activeArea === "All" || p.area === activeArea) &&
+          (!showComparisonsOnly || p.kind === "comparison")
       );
     }
 
@@ -12346,6 +12778,7 @@ export default function BoardApp() {
           <span class="card-area">${areaDisplayLabel(post.area)}</span>
           <span class="card-when">${post.date} · ${post.time}</span>
         </div>
+        ${post.kind === "comparison" ? `<span class="card-kind-tag">City Comparison</span>` : ""}
         <p class="card-title">${post.title}</p>
         <div class="platform-row">${platRow}</div>
         <div class="card-footer">
