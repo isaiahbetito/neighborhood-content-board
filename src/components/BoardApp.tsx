@@ -1420,6 +1420,293 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "Camas and Washougal are worth comparing directly for anyone focused on this stretch of the Columbia River in Clark County, Washington — the right fit often comes down to budget, city scale and whether lake access or refuge access matters more day to day.",
     ],
   },
+  [comparisonKey("Ridgefield, WA", "Vancouver, WA")]: {
+    cityA: "Ridgefield, WA",
+    cityB: "Vancouver, WA",
+    keyword: "Ridgefield WA vs Vancouver WA",
+    metaDescription:
+      "Comparing Ridgefield and Vancouver, WA: housing prices, downtown character, parks, commute and what genuinely sets these two Clark County cities apart.",
+    execSummary: [
+      "Ridgefield and Vancouver are both Clark County, Washington cities along the Columbia River, but represent very different scales — a small, fast-growing newer city compared to the county's largest city by a wide margin.",
+      "Ridgefield has grown rapidly over roughly the past 15 years, expanding out from the I-5 Exit 14 interchange through new-construction subdivisions, while keeping a small historic downtown along Pioneer Street.",
+      "Vancouver is Clark County's seat and largest city, with a downtown core built around Fort Vancouver National Historic Site and a redeveloped Columbia River waterfront.",
+      "As of mid-2026, Ridgefield's median sold price ran meaningfully higher than Vancouver's citywide median, reflecting Ridgefield's newer, more uniform housing stock against Vancouver's much larger and more varied market.",
+    ],
+    bulletsA: [
+      "Close proximity to the Ridgefield National Wildlife Refuge, more than 5,300 acres of protected habitat along the Columbia River.",
+      "A small historic downtown along Pioneer Street (also State Route 501), with a self-guided walking tour past buildings more than a century old.",
+      "A smaller, newer city — the city's own 2025 estimate put the population at roughly 17,819, with an annual growth rate near 8.5% since 2020.",
+      "Direct access to I-5 at Exit 14, with one public school district, Ridgefield School District, serving the whole city.",
+    ],
+    bulletsB: [
+      "A downtown core built around Fort Vancouver National Historic Site — Vancouver is one of only two Pacific Northwest cities with a U.S. National Park Service historic site downtown.",
+      "A redeveloped Columbia River waterfront, including Vancouver Waterfront Park (added 2018) and the roughly five-mile Waterfront Renaissance Trail connecting Esther Short Park to Wintler Park.",
+      "By far the largest city in Clark County, with a much wider range of neighborhoods, home ages and price points than a smaller city like Ridgefield.",
+      "More than one school district depending on address — Vancouver Public Schools covers much of the city, but Evergreen Public Schools also serves parts of Vancouver.",
+    ],
+    priceAmenitiesA: [
+      "Median sold price: $657,428 across 242 closed sales over the prior six months, per Resideline's market report as of August 2026.",
+      "Housing stock: predominantly newer construction, concentrated in subdivisions built out from the I-5 Exit 14 interchange over roughly the last 15 years.",
+      "Population: approximately 17,819 as of the city's 2025 estimate, with an annual growth rate near 8.5% since 2020.",
+    ],
+    priceAmenitiesB: [
+      "Median sold price: $500,000 over the prior six months, with the middle half of sales falling between $421,300 and $625,000, per Resideline's market report as of August 2026.",
+      "That citywide figure covers a wide range — individual Vancouver neighborhoods can run well above or below it, so it's a starting point rather than a substitute for checking a specific area.",
+      "Housing stock: broad and varied, spanning a much larger footprint and many more decades of development than Ridgefield's newer, more concentrated market.",
+    ],
+    paragraphs: [
+      "Ridgefield and Vancouver sit along the same stretch of the Columbia River in Clark County, Washington, but represent two very different scales of city — a small, fast-growing newer community compared to the county seat and by far its largest city. Buyers who ask about both are usually weighing a compact, newer town against the variety, history and job base of a much bigger city.",
+      "Ridgefield has grown rapidly over roughly the past 15 years, expanding outward from the I-5 Exit 14 interchange through a wave of new-construction subdivisions. Its older, smaller historic downtown runs along Pioneer Street, also known as State Route 501, which the city describes as its primary corridor connecting downtown to the I-5 interchange — a self-guided walking tour there covers about 1.15 miles past buildings more than a century old. The city's own 2025 estimate put the population at roughly 17,819, with an annual growth rate near 8.5% since 2020, a pace that's drawn real local debate over keeping downtown's historic character as new subdivisions expand around it. The Ridgefield National Wildlife Refuge, more than 5,300 acres of protected wetland and upland habitat along the Columbia River, sits adjacent to the city and is one of its defining features. Ridgefield School District serves the entire city.",
+      "Vancouver is Clark County's largest city by a wide margin, with a downtown core built around Fort Vancouver National Historic Site — Vancouver is one of only two Pacific Northwest cities with a U.S. National Park Service historic site in its downtown. The Confluence Land Bridge connects the fort grounds to the Columbia River waterfront, where Vancouver Waterfront Park, a 7-acre park added in 2018, anchors a stretch of redeveloped riverfront. The Waterfront Renaissance Trail runs roughly five miles one-way, connecting downtown's Esther Short Park to Wintler Park along the river. Unlike Ridgefield's single school district, Vancouver is served by more than one — Vancouver Public Schools covers much of the city, but Evergreen Public Schools serves other Vancouver addresses, so school assignment depends on the specific property.",
+      "Price is where the two cities currently diverge. Ridgefield's median sold price was $657,428 across 242 closed sales over the prior six months, per Resideline's market report as of August 2026. Vancouver's median sold price over a comparable recent six-month period was $500,000, with the middle half of sales falling between $421,300 and $625,000, per the same Resideline source as of August 2026. Ridgefield's newer, more uniform housing stock currently carries a higher median than Vancouver's much larger and more varied market — though Vancouver's wide price range means specific neighborhoods there can run well above or below its citywide median, so it's worth checking a specific area rather than relying on the citywide figure alone.",
+      "Commute patterns differ with city size. Ridgefield connects to the rest of the metro via I-5 at Exit 14, putting it on the direct north-south corridor toward Vancouver and Portland. Vancouver sits at the center of that same corridor, served by both I-5 and I-205, with more route options into Portland but correspondingly more in-city traffic to navigate depending on the specific neighborhood. Actual drive times in both cases depend heavily on time of day and are worth testing directly during the hours a buyer would actually be commuting.",
+      "Parks and outdoor access reflect each city's scale. Ridgefield's signature outdoor feature is the Ridgefield National Wildlife Refuge itself, along with newer neighborhood parks built into its recent subdivisions. Vancouver offers the redeveloped Vancouver Waterfront Park, the Waterfront Renaissance Trail, Esther Short Park downtown, and dozens of additional parks spread across its much larger footprint — more total variety, spread over a bigger area, than a single smaller city like Ridgefield can offer.",
+      "Both cities sit within Washington, with no state income tax in either — a shared advantage that doesn't change based on which of the two a buyer chooses. Where they differ is scale and character: Ridgefield's small-town growth story against Vancouver's role as Clark County's historic, economic and population center.",
+      "Neither city is simply a smaller or larger version of the other — they offer genuinely different trade-offs. Ridgefield offers newer construction, direct interstate access, proximity to a major wildlife refuge and one school district, currently at a higher median price than Vancouver. Vancouver offers far more neighborhood variety, a historic downtown anchored by a National Park Service site, redeveloped waterfront amenities and multiple school district options, at a lower citywide median price that still varies by specific neighborhood. A side-by-side comparison of current listings in both — and in the specific Vancouver neighborhood a buyer has in mind — is the clearest way to see how these differences show up in practice.",
+    ],
+    closing: [
+      "Both Ridgefield and Vancouver are worth a direct look for anyone comparing Clark County, Washington cities — the right fit comes down to budget, how much downtown history and waterfront access matter, and whether a smaller or larger city fits a buyer's day-to-day better.",
+    ],
+  },
+  [comparisonKey("Portland, OR", "Beaverton, OR")]: {
+    cityA: "Portland, OR",
+    cityB: "Beaverton, OR",
+    keyword: "Portland OR vs Beaverton OR",
+    metaDescription:
+      "Comparing Portland and Beaverton, OR: housing prices, transit access, neighborhoods and what genuinely sets a major metro core apart from its largest west-side suburb.",
+    execSummary: [
+      "Portland and Beaverton sit on the Oregon side of the same metro area, but represent two different scales of place — Portland is the regional center itself, Beaverton one of its largest and longest-established west-side suburbs.",
+      "Portland is far larger, with dozens of distinct neighborhoods and a wide range of housing stock, price points and school districts; Beaverton is a single, more compact city built around a well-known tech-sector employment base.",
+      "Beaverton offers direct TriMet MAX light rail access into downtown Portland, a transit link that many individual Portland neighborhoods themselves don't have as directly.",
+      "As of 2026 reporting, Portland's citywide median sale price ran somewhat above Beaverton's, though both figures vary by source and move with the market.",
+    ],
+    bulletsA: [
+      "Dozens of distinct neighborhoods, from dense inner-eastside areas with early-1900s craftsman and foursquare homes to outer neighborhoods with newer infill and multifamily construction.",
+      "Forest Park, more than 5,100 acres and among the largest forested urban parks in the country, along with Washington Park's Japanese Garden and International Rose Test Garden.",
+      "A dense network of interstates (I-5, I-84, I-205) plus TriMet's full bus network and multiple MAX light rail lines running through the city.",
+      "Multiple school districts depending on address — Portland Public Schools covers much of the city, but David Douglas, Parkrose and other districts also serve parts of Portland.",
+    ],
+    bulletsB: [
+      "Direct TriMet MAX light rail access via the Blue and Red lines, with stops including Beaverton Transit Center, Beaverton Central and Millikan Way, plus WES Commuter Rail service south to Wilsonville.",
+      "A long-running tech-sector employment base, with the MAX line running past the Tektronix and Nike campuses on its way toward Hillsboro's Intel-area employers.",
+      "A single, more compact city than Portland, served primarily by one district, Beaverton School District.",
+      "Access via Highway 217 and US-26 (the Sunset Highway), connecting directly into central Portland and the broader west-side suburbs.",
+    ],
+    priceAmenitiesA: [
+      "Median sale price: $555,454 as of a report dated May 26, 2026, down 0.8% year over year and up 0.5% month over month, per Redfin-sourced data.",
+      "Typical time on market: about 90 days, per Redfin's Portland housing market page, which rates the market as somewhat competitive.",
+      "Housing stock: broad and varied, from early-1900s craftsman and foursquare homes in inner neighborhoods to mid-century homes and newer construction throughout the rest of the city.",
+    ],
+    priceAmenitiesB: [
+      "Median sale price: $533,300 over the trailing six months (842 tracked closings), per Resideline's Beaverton housing market report as of August 2026.",
+      "Other recent sources have put Beaverton's median anywhere from roughly $520,000 to $592,000 depending on methodology and date — worth checking current listings directly rather than relying on one fixed figure.",
+      "Housing stock: a more compact mix of home ages and styles concentrated in a single, well-established suburb rather than spread across dozens of separate neighborhoods.",
+    ],
+    paragraphs: [
+      "Portland and Beaverton both sit on the Oregon side of the Portland-Vancouver metro, but comparing them means comparing a major city to one of its own suburbs — Beaverton sits just west of Portland's city limits, close enough that some buyers treat the two as a single housing market even though they're separate cities with separate governments, school systems and transit profiles.",
+      "Portland is the regional center, by far the largest city in the metro, made up of dozens of distinct, differently named neighborhoods — from dense inner-eastside areas with early-1900s craftsman and foursquare homes, to outer neighborhoods with newer infill and multifamily construction. That range means housing stock, price and neighborhood character vary enormously within Portland itself, more than they do across an entire smaller city.",
+      "Beaverton is considerably more compact, a single, well-established suburb built up over decades rather than a patchwork of dozens of separate neighborhoods. Its defining feature for many buyers is transit and employment access: TriMet's MAX light rail runs directly through the city, with stops at Beaverton Transit Center, Beaverton Central and Millikan Way, and WES Commuter Rail extends service south to Wilsonville. The MAX line also runs past the Tektronix and Nike campuses on its way toward Hillsboro, where Intel has a major presence — making Beaverton a genuine option for buyers who work in the area's tech sector and want a shorter commute without living inside Portland's city limits.",
+      "Price comparisons between the two depend heavily on which data point and which date you're looking at, since both markets have been reported inconsistently across sources recently. A Redfin-sourced figure dated May 26, 2026 put Portland's citywide median sale price at $555,454, down 0.8% year over year, with homes taking about 90 days to sell on Redfin's own Portland market page. Beaverton's most recently dated figure, from Resideline's August 2026 report, put the median sold price at $533,300 over the trailing six months across 842 tracked closings — though other 2026 sources have shown Beaverton medians ranging from roughly $520,000 up to $592,000 depending on methodology. On the numbers available, Portland's citywide median currently runs somewhat above Beaverton's, but the spread between sources is wide enough in both cities that current listings are worth checking directly rather than relying on any single reported figure.",
+      "It's also worth remembering that Portland's citywide median in particular hides enormous neighborhood-to-neighborhood variation — some Portland neighborhoods run well above Beaverton's price level, others run well below it. A citywide number for Portland is a reasonable starting point, but it isn't a substitute for checking the specific neighborhood a buyer actually has in mind, the way a single, more compact city like Beaverton can be evaluated more directly as a whole.",
+      "Commute and transit access is where the practical difference between the two is clearest. Portland sits at the center of the region's interstate network — I-5, I-84 and I-205 all run through or around the city — and is served by TriMet's bus network along with multiple MAX light rail lines, so transit options vary by neighborhood. Beaverton's own MAX access runs directly into downtown Portland, giving many Beaverton residents a transit commute that's just as direct as living in parts of Portland itself, without the citywide price variation that comes with Portland's larger footprint.",
+      "Schools reflect the same difference in scale. Portland is served by multiple districts depending on the exact address — Portland Public Schools covers much of the city, but David Douglas, Parkrose and other districts also serve parts of Portland, and boundaries have periodically been redrawn. Beaverton is served primarily by Beaverton School District. School boundaries and assignments can change in either city, so buyers should verify current assignments directly with the relevant district rather than relying on a general reputation.",
+      "Neither city is simply a smaller or cheaper version of the other — they offer genuinely different trade-offs. Portland offers far more neighborhood variety, park acreage like Forest Park, and a wider range of housing stock and price points, with a citywide median that still varies enormously by specific neighborhood. Beaverton offers a more compact, single city with direct light rail access to Portland's tech-sector employers and a somewhat lower recent median, in a smaller overall footprint. A side-by-side look at current listings in both — and in the specific Portland neighborhood a buyer has in mind, not just the city as a whole — is the clearest way to see how these differences show up in practice.",
+    ],
+    closing: [
+      "Portland and Beaverton serve different needs within the same metro — a major city with dozens of distinct neighborhoods versus a single, transit-connected suburb — and the right fit depends on how much neighborhood variety a buyer wants weighed against a more compact commute and tech-sector proximity.",
+    ],
+  },
+  [comparisonKey("Lake Oswego, OR", "West Linn, OR")]: {
+    cityA: "Lake Oswego, OR",
+    cityB: "West Linn, OR",
+    keyword: "Lake Oswego OR vs West Linn OR",
+    metaDescription:
+      "Comparing Lake Oswego and West Linn, OR: housing prices, lake and river access, parks, commute and what genuinely sets these two Portland-area cities apart.",
+    execSummary: [
+      "Lake Oswego and West Linn are both established, higher-end Clackamas-area Portland suburbs, sitting across the Willamette River from each other and connected by I-205.",
+      "Lake Oswego is built around Oswego Lake and a compact downtown, Lake View Village; West Linn is built around Willamette Falls and the confluence of the Willamette and Tualatin rivers.",
+      "Both carry some of the higher price points in the Portland metro, though Lake Oswego's median sale price has consistently run above West Linn's.",
+      "Lake and river access work differently in each city — Lake Oswego's lake access requires a deeded easement through a private corporation, while West Linn's river access is open to the public at several of its parks.",
+    ],
+    bulletsA: [
+      "A compact downtown shopping and dining district, Lake View Village, with Oswego Lake just beyond it.",
+      "Oswego Lake itself, though swimming and boating access is controlled by the Lake Oswego Corporation and tied to deeded easement rights — not automatic with every property in the city.",
+      "George Rogers Park, with Willamette River frontage and a public, seasonal swimming area that doesn't require lake-easement access.",
+      "Direct access to I-5 and OR-43 (State Street) along the Willamette River toward downtown Portland.",
+    ],
+    bulletsB: [
+      "Willamette Falls and the confluence of the Willamette and Tualatin rivers, both close to most West Linn neighborhoods.",
+      "Hillier, more wooded established neighborhoods, including Robinwood, Bolton and Marylhurst.",
+      "Mary S. Young State Park, with direct Willamette River access and trails, open to the public without a membership or easement requirement.",
+      "Direct access to I-205 and Highway 43, connecting toward Lake Oswego, Oregon City and Portland's southwest side.",
+    ],
+    priceAmenitiesA: [
+      "Median sale price: $985,000 as of June 2025, up 4.2% year over year, per Redfin's Lake Oswego housing market data; 54 homes sold that month.",
+      "Housing stock: predominantly established, higher-end single-family homes, among some of the highest medians in the Portland metro.",
+      "Lake access: tied to deeded easement rights through the Lake Oswego Corporation, with separate annual fees reported around $219 for swimming and $1,498 to launch a power boat — not included automatically with every property.",
+    ],
+    priceAmenitiesB: [
+      "Median sale price: $747,500 as of November 2025, down 2.0% year over year, per Redfin's West Linn housing market data; price per square foot was $309, up 6.4% year over year.",
+      "Typical time on market: about 34 days, down from 56 days the year before, per the same Redfin report.",
+      "Housing stock: predominantly established single-family homes across multiple decades, concentrated in hillside and river-adjacent neighborhoods.",
+    ],
+    paragraphs: [
+      "Lake Oswego and West Linn sit across the Willamette River from each other in the Portland metro's Clackamas County suburbs, connected by I-205, and both come up often for buyers comparing established, higher-end communities south of downtown Portland. The two cities share a general price tier and a reputation for being quieter, more settled alternatives to Portland proper, but the geography and amenities that define each one are genuinely different.",
+      "Lake Oswego's identity centers on Oswego Lake, though access to it is more limited than the city's name suggests. The lake is managed by the Lake Oswego Corporation, a nonprofit formed in 1942 when the Oregon Iron and Steel Company deeded it the lakebed. Swimming and boating privileges require a separate membership tied to deeded easement rights — reported at roughly $219 a year for swimming and about $1,498 to launch a power boat — rather than coming automatically with every property in the city. Downtown, Lake View Village offers a compact shopping and dining district, and George Rogers Park along the Willamette River includes a public, seasonal swimming area that doesn't require lake-easement access.",
+      "West Linn's character comes from its river geography rather than a private lake. The city sits where the Tualatin River meets the Willamette, next to Willamette Falls — one of the largest waterfalls by volume in the United States — and its established neighborhoods, among them Robinwood, Bolton and Marylhurst, are built across hillier, more wooded terrain than Lake Oswego's. Mary S. Young State Park gives residents direct Willamette River access and trails that are open to the public without any membership or easement requirement, a contrast with Lake Oswego's more restricted lake access.",
+      "Price is where the two cities diverge, with Lake Oswego consistently running higher. Its median sale price was $985,000 as of June 2025, up 4.2% year over year, per Redfin's Lake Oswego housing market data, with 54 homes sold that month. West Linn's median sale price was $747,500 as of November 2025, down 2.0% year over year, per Redfin's West Linn housing market data, with a price per square foot of $309, up 6.4% year over year; homes there were taking about 34 days to sell, down from 56 days the year before. Both figures move with the market and are worth checking against current listings rather than treated as fixed — but the gap between the two cities has held across multiple reporting periods.",
+      "Commute routes differ by river crossing. Lake Oswego connects to downtown Portland via I-5 or OR-43 (State Street) along the Willamette's west bank. West Linn connects via I-205 and Highway 43, putting it closer to Lake Oswego itself, Oregon City and Portland's southwest side, typically via a different river crossing than Lake Oswego's direct route. Actual drive times in both cases depend heavily on time of day and are worth testing directly during the hours a buyer would actually be commuting.",
+      "Outdoor access reflects each city's defining geography. Lake Oswego's recreation centers on Oswego Lake — with the access restrictions already described — plus George Rogers Park's public river frontage. West Linn's centers on Willamette Falls, the river confluence and Mary S. Young State Park, all open without a membership requirement. A buyer who wants lake access specifically should understand Lake Oswego's easement system before assuming it's included with a purchase; a buyer drawn to open river access and trails may find West Linn's parks more straightforward.",
+      "Both cities sit within their own public school districts — Lake Oswego School District, and West Linn-Wilsonville School District, which covers about 42 square miles and serves roughly 8,400 students. School boundaries and assignments can change, so buyers should verify current school assignments directly with the relevant district rather than relying on a neighborhood's general reputation.",
+      "Neither city is simply a cheaper or more expensive version of the other — they draw on different geography and offer different access to the water that defines each one. Lake Oswego offers Lake View Village, George Rogers Park and Oswego Lake itself, at the higher of the two price points and with lake access tied to a separate membership system. West Linn offers Willamette Falls, hillier wooded neighborhoods and open public river access at Mary S. Young State Park, at a somewhat lower overall price point. A side-by-side look at current listings in both is the clearest way to see how those differences show up in what's actually available right now.",
+    ],
+    closing: [
+      "Lake Oswego and West Linn are both worth a direct look for anyone comparing established, higher-end Portland-metro suburbs — the right fit comes down to budget and whether a buyer wants lake access through a membership system or open river access at a public park.",
+    ],
+  },
+  [comparisonKey("Vancouver, WA", "Happy Valley, OR")]: {
+    cityA: "Vancouver, WA",
+    cityB: "Happy Valley, OR",
+    keyword: "Vancouver WA vs Happy Valley OR",
+    metaDescription:
+      "Comparing Vancouver, WA and Happy Valley, OR: housing prices, history, newer construction and what genuinely sets these two cities apart.",
+    execSummary: [
+      "Vancouver, WA and Happy Valley, OR sit on opposite sides of the Portland metro, both within reach of downtown Portland but with very different scale and housing stock.",
+      "Vancouver is Clark County's largest city, with a long history (Fort Vancouver National Historic Site dates to 1825) and a wide range of home ages, from historic districts to new waterfront construction.",
+      "Happy Valley is a much smaller, newer Clackamas County suburb, built out largely over the past few decades, with a housing stock that skews newer than Vancouver's.",
+      "As of recent reporting, Happy Valley's median closing price ran meaningfully higher than Vancouver's, reflecting its newer construction and hillside setting.",
+    ],
+    bulletsA: [
+      "Fort Vancouver National Historic Site, a reconstructed 1825 Hudson's Bay Company fur trading post managed by the National Park Service, in the heart of the city.",
+      "The Waterfront Vancouver, a redeveloped stretch of the former Boise Cascade mill site along the Columbia River, with Grant Street Pier, parks and restaurants.",
+      "No Washington state income tax, plus direct access to both I-5 and I-205 across two Columbia River bridges into Portland.",
+      "A wide range of home ages and styles across many distinct neighborhoods, reflecting the city's status as Clark County's largest and most established.",
+    ],
+    bulletsB: [
+      "A predominantly newer housing stock, with much of the city built out over the past few decades rather than carrying a long industrial or historic core.",
+      "Elevated terrain with views toward Mt. Hood on clear days, a defining feature of the city's hillside neighborhoods.",
+      "North Clackamas School District serves much of the city, and Clackamas Town Center is nearby for shopping and services.",
+      "Access via I-205 and local arterials like Sunnyside Road, connecting to the broader Clackamas County and Portland-metro road network.",
+    ],
+    priceAmenitiesA: [
+      "Median closing price: $500,000 across 1,685 closings over the prior six months, per Resideline's market report as of August 2026; the middle half of sales closed between $421,300 and $625,000.",
+      "Housing stock: a wide range of home ages, from historic in-town neighborhoods to newer construction along the redeveloped waterfront and the city's outer edges.",
+      "School districts: Vancouver Public Schools covers much of the city, though Evergreen Public Schools and other districts also serve parts of Vancouver depending on address.",
+    ],
+    priceAmenitiesB: [
+      "Median closing price: $689,500 across 334 closings over the prior six months, per Resideline's market report as of August 22, 2026.",
+      "Housing stock: predominantly newer construction, concentrated in subdivisions built out over the past few decades rather than an older town core.",
+      "School district: North Clackamas School District serves much of the city, though exact assignment depends on the specific address.",
+    ],
+    paragraphs: [
+      "Vancouver, Washington and Happy Valley, Oregon both sit within commuting range of downtown Portland, but they represent very different scales and histories of Portland-metro community. Vancouver is Clark County's largest city, with roots going back two centuries; Happy Valley is a much smaller, newer Clackamas County suburb that's done most of its growing in recent decades.",
+      "Vancouver's history is visible across the city. Fort Vancouver National Historic Site, a reconstructed 1825 Hudson's Bay Company fur trading post now managed by the National Park Service, sits near the city's core, and downtown Vancouver includes genuinely historic districts alongside newer development. The Waterfront Vancouver, a redevelopment of the former Boise Cascade mill site along the Columbia River, has added parks, restaurants and Grant Street Pier to the city's riverfront in recent years — a newer layer on top of the city's older industrial base. As Clark County's largest city, Vancouver also offers the widest range of home ages and neighborhood types in the county, along with no Washington state income tax.",
+      "Happy Valley's growth has taken a different path. It's a smaller Clackamas County suburb southeast of Portland that has built out largely over the past few decades, giving it a housing stock that skews considerably newer than Vancouver's. Much of the city sits on elevated terrain, with views toward Mt. Hood on clear days from many of its hillside neighborhoods — a defining feature that's shaped how the city has developed. North Clackamas School District serves much of Happy Valley, and Clackamas Town Center is a short drive away for shopping and services.",
+      "Price reflects that difference in housing stock. Vancouver's median closing price was $500,000 across 1,685 closings over the prior six months, per Resideline's market report as of August 2026, with the middle half of sales closing between $421,300 and $625,000 — a wide range that reflects the city's mix of older and newer homes. Happy Valley's median closing price was $689,500 across 334 closings over the prior six months, per Resideline's market report as of August 22, 2026, meaningfully higher than Vancouver's citywide figure. Both numbers move with the market and are worth checking against current listings rather than treated as fixed.",
+      "Commute patterns differ by corridor. Vancouver connects to Portland via I-5 or I-205, crossing the Columbia River on one of two interstate bridges — a commute that varies significantly by time of day and which bridge a buyer uses. Happy Valley connects via I-205 and local arterials like Sunnyside Road, approaching Portland from the southeast rather than crossing the Columbia River at all. Actual drive times in both cases are worth testing directly during the hours a buyer would actually be commuting.",
+      "Outdoor character and daily amenities also differ with each city's layout. Vancouver's waterfront redevelopment and Fort Vancouver give the city a historic, riverfront identity close to its core. Happy Valley's hillside setting and Mt. Hood views give it a different kind of outdoor draw, tied more to elevation and newer residential development than to a historic core or riverfront. A buyer drawn to a larger city with historic character and waterfront redevelopment may lean toward Vancouver; one drawn to newer construction and elevated, view-oriented neighborhoods may lean toward Happy Valley.",
+      "School assignment depends on the specific address in both cities — Vancouver Public Schools covers much of Vancouver, though Evergreen Public Schools and other districts also serve parts of the city, while North Clackamas School District serves much of Happy Valley. School boundaries and assignments can change, so buyers should verify current assignments directly with the relevant district rather than relying on a city's general reputation.",
+      "Neither city is simply a smaller or larger version of the other — they offer genuinely different kinds of Portland-metro living. Vancouver offers a larger, more historic city with a wide range of home ages, waterfront redevelopment and no state income tax, at a lower citywide median price. Happy Valley offers newer construction, elevated terrain with Mt. Hood views and a smaller, more recently built-out city, at a meaningfully higher median price. A side-by-side look at current listings in both is the clearest way to see how those differences show up in what's actually available right now.",
+    ],
+    closing: [
+      "Both Vancouver and Happy Valley are worth a direct look for anyone comparing Portland-metro cities — the right fit comes down to budget, how much historic character matters, and whether newer construction or a wider range of home ages fits a buyer's plans better.",
+    ],
+  },
+  [comparisonKey("Washougal, WA", "Hockinson, WA")]: {
+    cityA: "Washougal, WA",
+    cityB: "Hockinson, WA",
+    keyword: "Washougal WA vs Hockinson WA",
+    metaDescription:
+      "Comparing Washougal and Hockinson, WA: housing prices, Pendleton Woolen Mills, acreage living and what genuinely sets these two Clark County communities apart.",
+    execSummary: [
+      "Washougal and Hockinson are both Clark County, Washington communities, but they offer very different settings — a historic river city with its own downtown versus an unincorporated, low-density rural community.",
+      "Washougal has an established commercial core built around Pendleton Woolen Mills and direct access to the Columbia River and the Steigerwald Lake National Wildlife Refuge.",
+      "Hockinson is unincorporated, with no town center of its own — housing there leans toward larger lots and acreage, reflecting the surrounding rural character of this part of Clark County.",
+      "As of November 2025, Hockinson's median sale price ran meaningfully higher than Washougal's, reflecting its larger-lot housing stock rather than any commercial density.",
+    ],
+    bulletsA: [
+      "A working historic downtown built around Pendleton Woolen Mills, which has operated in Washougal since 1910 and still offers mill tours and an outlet store.",
+      "Direct access to the Steigerwald Lake National Wildlife Refuge, a 1,049-acre floodplain habitat that reopened in 2022 after a $31 million restoration.",
+      "A defined commercial core and its own Washougal School District, with services concentrated close to most residents.",
+      "Direct access to SR-14 along the Columbia River, connecting toward Camas, Vancouver and Portland.",
+    ],
+    bulletsB: [
+      "An unincorporated, low-density rural community with no town center of its own — housing is spread across larger parcels rather than concentrated around shops or services.",
+      "Larger lots and acreage-style properties are common in the local housing mix, a draw for buyers who want more land than a typical in-town lot.",
+      "Its own Hockinson School District, serving the surrounding rural area.",
+      "A higher median sale price than Washougal as of late 2025, reflecting the larger-lot housing stock rather than commercial amenities.",
+    ],
+    priceAmenitiesA: [
+      "Median sale price: $625,000 as of November 2025, roughly flat year over year, per Redfin's Washougal housing market data.",
+      "Typical time on market: about 38 days, down from 50 days the year before, per the same Redfin report.",
+      "Housing stock: a mix of established homes near the historic downtown and more recent construction on the city's edges.",
+    ],
+    priceAmenitiesB: [
+      "Median sale price: $771,000 as of November 2025, up 7.8% year over year, per Redfin's Hockinson housing market data.",
+      "Typical time on market: about 17 days, up from 7 days the year before, per the same report.",
+      "Housing stock: predominantly larger-lot and acreage-style properties, reflecting the area's unincorporated, rural character rather than in-town density.",
+    ],
+    paragraphs: [
+      "Washougal and Hockinson are both Clark County, Washington communities that come up for buyers looking outside Vancouver proper, but they represent genuinely different ways of living in the same county. Washougal is an incorporated city with its own downtown and services; Hockinson is unincorporated, with no town center at all, and its character comes from acreage and open space rather than commercial density.",
+      "Washougal's identity is tied to Pendleton Woolen Mills, a textile mill that opened in town in 1910 and that Pendleton acquired two years later — it still operates today, with public tours and an outlet store that draw visitors beyond local residents. The Steigerwald Lake National Wildlife Refuge, a 1,049-acre floodplain habitat on the edge of the Columbia River Gorge National Scenic Area, sits adjacent to the city; it reopened in 2022 after a $31 million restoration. Washougal has its own school district and a defined commercial core along SR-14, giving residents walkable or short-drive access to shops, restaurants and services close to most neighborhoods.",
+      "Hockinson, by contrast, is unincorporated — it has no city government, no downtown, and no commercial core of its own. It's a rural stretch of Clark County northeast of Vancouver, where the housing stock leans toward larger lots and acreage rather than standard in-town parcels. Buyers drawn to Hockinson are typically looking for more land, more separation between homes, and a quieter, more rural setting than an incorporated city like Washougal offers — not a walkable town center.",
+      "Price reflects that difference in character more than it reflects either market being objectively more desirable. As of November 2025, Washougal carried a median sale price of $625,000, roughly flat year over year, per Redfin's Washougal housing market data, with homes taking about 38 days to sell, down from 50 days the year before. Hockinson's median sale price was $771,000 over the same period, up 7.8% year over year, per Redfin's Hockinson housing market data, with homes moving much faster — about 17 days, up from just 7 days the year before. Hockinson's higher price reflects its larger-lot housing stock, not added commercial amenities; a buyer is paying for land and space, not proximity to shops or services.",
+      "Commute patterns differ by route. Washougal sits directly on SR-14 along the Columbia River, with a fairly direct drive toward Camas, Vancouver and Portland. Hockinson sits farther from the river corridor, in the rural area northeast of Vancouver, typically reached via local roads connecting to SR-503 or Highway 14 depending on the specific property — a longer and less direct drive into the Portland-Vancouver core for most addresses. Actual drive times depend heavily on the specific location and time of day in both cases.",
+      "Outdoor access takes different forms in each place. Washougal residents have direct access to the Steigerwald Lake National Wildlife Refuge and the broader Columbia River Gorge, along with whatever parks and trails the city itself maintains. Hockinson's outdoor appeal is less about a single destination and more about the rural setting itself — open land, larger yards and the kind of privacy that comes with acreage rather than a standard subdivision lot.",
+      "Both areas fall within their own public school districts — Washougal School District and Hockinson School District, respectively — and school assignment depends on the specific address. School boundaries and assignments can change, so buyers should verify current school assignments directly with the relevant district rather than relying on a general reputation.",
+      "Neither place is simply a substitute for the other — they serve genuinely different priorities. Washougal offers an established downtown, direct river and refuge access and a defined school district, at a meaningfully lower median price than Hockinson. Hockinson offers more land, more separation between homes and a distinctly rural, unincorporated setting, at a higher median price driven by lot size rather than amenities. A side-by-side look at current listings in both is the clearest way to see how those differences actually show up in what's available right now.",
+    ],
+    closing: [
+      "Washougal and Hockinson are worth comparing directly for anyone weighing an established river city against a more rural, acreage-focused setting in Clark County, Washington — the right fit comes down to how much land matters versus how much proximity to a town center matters.",
+    ],
+  },
+  [comparisonKey("Tigard, OR", "Tualatin, OR")]: {
+    cityA: "Tigard, OR",
+    cityB: "Tualatin, OR",
+    keyword: "Tigard OR vs Tualatin OR",
+    metaDescription:
+      "Comparing Tigard and Tualatin, OR: housing prices, the shared school district, parks, commute and what sets these Washington County cities apart.",
+    execSummary: [
+      "Tigard and Tualatin are neighboring Washington County, Oregon cities that share the same public school district — an overlap that sets this comparison apart from most others on this list — plus overlapping access to I-5 and OR-99W.",
+      "Tigard is the larger of the two, built in part around Washington Square, one of the Portland area's larger regional shopping malls, with established neighborhoods including Bull Mountain.",
+      "Tualatin is smaller and more compact, centered on the Tualatin River and its downtown Tualatin Commons plaza, with direct access to I-5 and the river itself as a defining feature.",
+      "As of the most recent Redfin data for each, Tigard and Tualatin carried close median sale prices, though Tualatin's market had cooled on days-on-market even as its price kept climbing.",
+    ],
+    bulletsA: [
+      "Washington Square, one of the Portland area's larger regional shopping malls, located within city limits along Highway 217.",
+      "Bull Mountain, a hillside residential area on Tigard's south side with some of the city's larger-lot homes.",
+      "Fanno Creek Trail and Cook Park, for trail access and river-adjacent green space along the Tualatin River.",
+      "Direct access to Highway 217, I-5 and OR-99W (Pacific Highway), connecting to downtown Portland and the broader west-side suburbs.",
+    ],
+    bulletsB: [
+      "Tualatin Commons, a downtown plaza and reflecting pond ringed by shops and restaurants that anchor the city's civic center.",
+      "Direct frontage on the Tualatin River, with Tualatin Community Park offering river access and trails close to downtown.",
+      "A smaller, more compact city than Tigard, with its commercial core built more recently around the Commons area.",
+      "Direct access to I-5 and OR-99W, plus Boones Ferry Road connecting toward Lake Oswego and West Linn.",
+    ],
+    priceAmenitiesA: [
+      "Median sale price: $650,540 as of February 2025, up 2.9% year over year, per Redfin's Tigard housing market data.",
+      "Housing stock: a mix of established single-family neighborhoods, including hillside homes on Bull Mountain, alongside newer infill construction and condominiums near Washington Square.",
+    ],
+    priceAmenitiesB: [
+      "Median sale price: $646,200 as of November 2025, up 10.5% year over year, per Redfin's Tualatin housing market data.",
+      "Typical time on market: about 62 days, up from 32 days the year before, per the same Redfin report.",
+      "Housing stock: a smaller, more compact mix of established single-family homes concentrated around the Tualatin River and the Tualatin Commons area.",
+    ],
+    paragraphs: [
+      "Tigard and Tualatin, Oregon sit next to each other in Washington County southwest of Portland, and the comparison between them is unusual in one respect: they share the same public school district. Buyers weighing one against the other are often comparing two established, walkable Portland-suburb identities rather than choosing between genuinely different regions.",
+      "Tigard is the larger of the two cities, built in large part around Washington Square, one of the Portland area's larger regional shopping malls, which sits within Tigard's city limits and anchors a substantial retail and office corridor along Highway 217. South of the mall, Bull Mountain rises into a hillside residential area with some of the city's larger-lot homes, a markedly different feel from the flatter, more commercial parts of town near Washington Square. Fanno Creek Trail threads through the city, and Cook Park sits along the Tualatin River on Tigard's southern edge, giving residents river access without leaving city limits.",
+      "Tualatin is the smaller and more compact of the two, with a downtown identity built around Tualatin Commons, a plaza and reflecting pond ringed by shops and restaurants that give the city a defined civic center in a way Tigard's more spread-out commercial areas don't quite replicate. The Tualatin River runs directly through the city, and Tualatin Community Park sits along its banks, offering river access and trails close to downtown. Tualatin's growth has also leaned on its own employment base along the I-5 corridor, separate from Tigard's mall-anchored commercial district.",
+      "Unlike most city pairs in this area, Tigard and Tualatin share a single public school district — Tigard-Tualatin School District 23J. The two cities' schools were originally separate, but Tualatin residents voted to join Tigard School District in 1969, and the district took its current combined name in 1990. That means, unlike many of the comparisons on this list, school district alone isn't a reason to choose one city over the other — a buyer's specific address and attendance boundary within the shared district matters more than which city that address happens to sit in. The district has also made recent boundary and school-closure changes, so buyers should verify current attendance assignments directly with the district rather than relying on an older boundary map.",
+      "Price between the two has run close in recent data, though the comparison depends on which month's figures you're looking at. Tigard's median sale price was $650,540 as of February 2025, up 2.9% year over year, per Redfin's Tigard housing market data. Tualatin's median sale price was $646,200 as of November 2025, up 10.5% year over year, per Redfin's Tualatin housing market data, with homes taking about 62 days to sell, up from 32 days the year before — a market that had cooled somewhat on speed even as prices kept climbing. The two cities' price levels sit close enough together that current listings in both are worth comparing directly rather than assuming either city is clearly the more affordable option.",
+      "Both cities share much of the same highway access, which is part of what makes them such a direct comparison. Tigard connects via Highway 217, I-5 and OR-99W (Pacific Highway), putting it within reach of both downtown Portland and the broader west-side suburbs. Tualatin connects via I-5 and OR-99W as well, with Boones Ferry Road offering an additional route toward Lake Oswego and West Linn to the east. Actual commute times depend heavily on time of day and route in both cities, and are worth testing directly during the hours a buyer would actually be driving.",
+      "Outdoor access in both cities centers on the Tualatin River, though the specific amenities differ. Tigard's Cook Park sits along the river on the city's southern edge, alongside the citywide Fanno Creek Trail system. Tualatin's Community Park sits along the same river closer to downtown, with Tualatin Commons' plaza and reflecting pond serving as more of a built, civic gathering space than a natural one. A buyer drawn to a larger trail network spread across a bigger city may lean toward Tigard; one drawn to a more compact, walkable downtown built around the river may lean toward Tualatin.",
+      "Neither city is a clear upgrade over the other — the differences here are more about scale and downtown character than about price or schools, since the two cities share a district. Tigard offers a larger footprint, a major regional mall, hillside neighborhoods on Bull Mountain and a broader trail network. Tualatin offers a smaller, more walkable downtown built around the river and Tualatin Commons, with a recent market that's moved both prices and days-on-market more than Tigard's over the same stretch. A side-by-side look at current listings in both is the clearest way to see how those differences show up in what's actually available right now.",
+    ],
+    closing: [
+      "Both Tigard and Tualatin are worth a direct look for anyone comparing Washington County, Oregon cities — the right fit comes down to downtown character and city scale more than schools, since the two share a district.",
+    ],
+  },
 };
 
 const TITLES: Record<string, PostSeed[]> = {
