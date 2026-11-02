@@ -530,6 +530,72 @@ const COMMUNITY_PAGE_URLS: Record<string, string | null> = {
 // before this existed is Phase 2 — a separate, later pass — not something this map drives.
 const PUBLISHED_POST_URLS: Record<string, string> = {};
 
+// Jamie's feedback on the comparison posts (2026-11-03): "I would like to add in a link to
+// one of the blogs you have already previously written ... this would be in addition to the
+// community page links." Unlike PUBLISHED_POST_URLS above, these ARE real, already-verified
+// URLs (found by browsing jamiemeushawrealestate.com's own site search directly, not guessed
+// or invented) — one real existing neighborhood-level blog post per city, where one exists.
+// `null` means a real search was done and nothing was found, not "not checked yet."
+const NEIGHBORHOOD_POST_LINKS: Record<string, { label: string; url: string } | null> = {
+  "Camas, WA": {
+    label: "Holly Ridge, Camas",
+    url: "https://jamiemeushawrealestate.com/holly-ridge-camas-wa-walk-to-the-lake-back-up-to-the-greenspace-and-call-it-home/",
+  },
+  "Ridgefield, WA": {
+    label: "Pioneer Canyon, Ridgefield",
+    url: "https://jamiemeushawrealestate.com/moving-to-ridgefield-wa-consider-pioneer-canyon-a-day-in-pioneer-canyon-refuge-included/",
+  },
+  "Portland, OR": {
+    label: "Irvington, Portland",
+    url: "https://jamiemeushawrealestate.com/moving-to-portland-or-consider-irvington-demand-for-a-real-historic-district-doesnt-slow-down/",
+  },
+  "Beaverton, OR": {
+    label: "Sexton Mountain, Beaverton",
+    url: "https://jamiemeushawrealestate.com/moving-to-beaverton-or-consider-sexton-mountain-a-quieter-corner-of-a-fast-growing-suburb/",
+  },
+  "Battle Ground, WA": {
+    label: "Battle Ground Meadows, Battle Ground",
+    url: "https://jamiemeushawrealestate.com/moving-to-battle-ground-wa-consider-battle-ground-meadows-settled-streets-a-few-miles-from-the-lake/",
+  },
+  "Washougal, WA": {
+    label: "Washougal",
+    url: "https://jamiemeushawrealestate.com/moving-to-washougal-wa-consider-washougal-columbia-river-access-east-of-camas/",
+  },
+  "Vancouver, WA": {
+    label: "Lakeshore, Vancouver",
+    url: "https://jamiemeushawrealestate.com/lakeshore-vancouver-wa-northwest-clark-countys-lake-community-vancouver-lake-living-and-everything-you-need-to-know-before-you-make-the-move/",
+  },
+  "Happy Valley, OR": {
+    label: "Rock Creek, Happy Valley",
+    url: "https://jamiemeushawrealestate.com/moving-to-happy-valley-or-consider-rock-creek-the-practical-choice-in-a-fast-growing-city/",
+  },
+  // Verified no real post exists yet — do not invent one.
+  "Lake Oswego, OR": null,
+  "West Linn, OR": null,
+  "Hockinson, WA": null,
+  "Tigard, OR": null,
+  "Tualatin, OR": null,
+};
+
+// Same idea, for Jamie's real YouTube channel (youtube.com/@jamiemeushawrealestate) —
+// she explicitly said this coverage "will be limited," so most cities are null by design,
+// not an oversight. Each URL was confirmed live on her channel's own Playlists tab.
+const CITY_YOUTUBE_PLAYLISTS: Record<string, string | null> = {
+  "Camas, WA": "https://www.youtube.com/playlist?list=PLEh0DURDVECF3CgeNR6_omDk70sG7Dzzh",
+  "Ridgefield, WA": "https://www.youtube.com/playlist?list=PLEh0DURDVECFmf3xfz4oUxTF5TZHwSkae",
+  "Portland, OR": "https://www.youtube.com/playlist?list=PLEh0DURDVECEbBfnaW5QcuZR0O9dXpOBB",
+  "Battle Ground, WA": "https://www.youtube.com/playlist?list=PLEh0DURDVECHoxK4QyzoUNVc2NNTiBaCh",
+  "Washougal, WA": "https://www.youtube.com/playlist?list=PLEh0DURDVECHcURdWXBmpHtxiRlz5s9II",
+  "Vancouver, WA": "https://www.youtube.com/playlist?list=PLEh0DURDVECFMkNlNs_DxaX1z3dk2sR45",
+  "Beaverton, OR": null,
+  "Lake Oswego, OR": null,
+  "West Linn, OR": null,
+  "Happy Valley, OR": null,
+  "Hockinson, WA": null,
+  "Tigard, OR": null,
+  "Tualatin, OR": null,
+};
+
 // Per the official SOP, a real neighborhood search URL must be generated + tested via the
 // live property search on jamiemeushawrealestate.com (requires an account the VA doesn't
 // have yet as of 2026-09-23). Only these are confirmed real, from the client's own docs:
@@ -1093,7 +1159,7 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "Camas and Ridgefield are both Clark County, Washington cities in the Portland-Vancouver metro, with no Washington state income tax and straightforward access to Portland, Oregon via SR-14 or I-5.",
       "Camas is the larger, more established of the two, with a historic downtown, Lacamas Lake and a mix of long-established neighborhoods alongside newer subdivisions.",
       "Ridgefield is smaller and newer, with most of its housing built within roughly the last 15 years, direct access to I-5 Exit 14, and the Ridgefield National Wildlife Refuge nearby.",
-      "As of November 2025, Camas carried a meaningfully higher median sale price than Ridgefield, reflecting its larger and more built-out housing stock.",
+      "As of late 2026, Camas carried a meaningfully higher median sale price than Ridgefield, reflecting its larger and more built-out housing stock.",
     ],
     bulletsA: [
       "An established historic downtown along NE 4th Avenue, with local shops and restaurants that predate the area's more recent growth.",
@@ -1105,23 +1171,21 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "Close proximity to the Ridgefield National Wildlife Refuge, more than 5,300 acres of protected habitat along the Columbia River.",
       "A smaller, newer city where a large share of the housing stock is new construction built within the last 10 to 15 years.",
       "Direct access to I-5 at Exit 14, with a compact, walkable downtown core that has grown alongside the city.",
-      "A lower median sale price than Camas as of late 2025, per Redfin — relevant for buyers comparing overall affordability between the two.",
+      "A lower median sale price than Camas in the most recent data for each — relevant for buyers comparing overall affordability between the two.",
     ],
     priceAmenitiesA: [
-      "Median sale price: $809,700 as of November 2025, up 9.8% year over year, per Redfin's Camas housing market data.",
-      "Typical time on market: about 59 days, per the same Redfin report.",
+      "Median sale price: $800,000 over the trailing six months (428 closed sales), per Resideline's Camas market report (ZIP 98607) as of October 5, 2026; the middle half of sales closed between $595,000 and $965,000.",
       "Housing stock: a mix of established single-family neighborhoods, newer subdivisions and some ongoing new construction, spanning several decades of development.",
     ],
     priceAmenitiesB: [
-      "Median sale price: $641,318 across all home types, per Redfin's Ridgefield city guide; single-family homes alone carried a higher median of $687,450.",
-      "Typical time on market: about 52 days, per the same source.",
+      "Median sold price: $657,428 across 242 closed sales over the prior six months, per Resideline's market report as of August 2026.",
       "Housing stock: predominantly newer construction, concentrated in subdivisions built since the 2010s.",
     ],
     paragraphs: [
       "Camas and Ridgefield sit about 20 minutes apart in Clark County, Washington, and both show up often in the same conversation for buyers relocating to the Portland-Vancouver area. They share a state (no Washington income tax), a general commute pattern into Portland, and a reputation as quieter alternatives to Vancouver proper — but the two cities themselves have grown very differently, and that shows up directly in price, home age and day-to-day feel.",
       "Camas is the more established city of the two. Its downtown along NE 4th Avenue developed around a working waterfront — a paper mill has operated there for more than a century, and the city grew up around that industrial base long before it became a draw for Portland-area commuters. That history is still visible: a walkable historic core, a mix of home ages from early-1900s construction through recent subdivisions, and a semiconductor manufacturing facility in the surrounding area that's added a modern layer to the local job base. Lacamas Lake and the Lacamas Heritage Trail sit just north of downtown, giving residents lake access and miles of trail without leaving the city.",
       "Ridgefield's growth has taken a different path. Its historic downtown is smaller and older, but the city around it has expanded rapidly over roughly the last 15 years, largely through new-construction subdivisions built out from the I-5 Exit 14 interchange. Buyers who want a newer home with a builder's warranty, rather than an older home that needs updating, tend to find more of that inventory in Ridgefield than in Camas. The Ridgefield National Wildlife Refuge, more than 5,300 acres of protected wetland and upland habitat along the Columbia River, sits adjacent to the city and is a defining feature of the area.",
-      "Price is where the two cities diverge most clearly. As of November 2025, Camas carried a median sale price of $809,700, up 9.8% year over year, according to Redfin's Camas housing market report — homes there were taking about 59 days to sell. Ridgefield's median sale price across all home types was $641,318, per Redfin's Ridgefield city guide, with single-family homes specifically carrying a higher median of $687,450; homes there were taking about 52 days to sell. The gap is meaningful enough that it's worth factoring into a side-by-side comparison rather than treating the two cities as interchangeable on cost alone — though both figures move with the broader market and should be checked against current listings rather than treated as fixed.",
+      "Price is where the two cities diverge most clearly. As of October 2026, Camas carried a median sale price of $800,000 over the trailing six months, per Resideline's Camas market data (ZIP 98607). Ridgefield's median sold price was $657,428 across 242 closed sales over the prior six months, per Resideline's Ridgefield market report, as of August 2026. The gap is meaningful enough that it's worth factoring into a side-by-side comparison rather than treating the two cities as interchangeable on cost alone — though both figures move with the broader market and should be checked against current listings rather than treated as fixed.",
       "Commute patterns are similar for both cities, since each sits along a different highway corridor into the Portland-Vancouver core. Camas connects via SR-14 (the Lewis and Clark Highway) along the Columbia River, with access to I-205 as well, putting it within reach of both Vancouver and Portland's east side. Ridgefield connects via I-5 at Exit 14, putting it on the more direct north-south corridor through Vancouver into Portland. Actual drive times depend heavily on time of day in both cases and are worth testing directly during the hours a buyer would actually be commuting, rather than relying on a typical off-peak estimate.",
       "Parks and outdoor recreation look different in each city because of how each one grew. Camas residents have walkable access to Lacamas Lake, Lacamas Heritage Trail and Round Lake Park, all close to the established part of the city. Ridgefield's signature outdoor feature is the Ridgefield National Wildlife Refuge itself, along with the newer parks that have been built into its more recent subdivisions as they were platted. Neither city's park access should be assumed identical to the other's — a buyer who specifically wants lake access, for example, should weigh that against a buyer who's drawn to wetland trails and refuge access.",
       "Both cities sit within their own public school districts — Camas School District and Ridgefield School District, respectively — and school assignment depends on the specific address within each city. School boundaries and assignments can change, so buyers should verify current school assignments directly with the relevant district rather than relying on a neighborhood's general reputation.",
@@ -1156,8 +1220,7 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "Multiple school districts depending on address — Portland Public Schools covers much of the city, but David Douglas, Parkrose and other districts also serve parts of Portland.",
     ],
     priceAmenitiesA: [
-      "Median sale price: $809,700 as of November 2025, up 9.8% year over year, per Redfin's Camas housing market data.",
-      "Typical time on market: about 59 days, per the same Redfin report.",
+      "Median sale price: $800,000 over the trailing six months (428 closed sales), per Resideline's Camas market report (ZIP 98607) as of October 5, 2026; the middle half of sales closed between $595,000 and $965,000.",
       "Housing stock: a mix of established single-family neighborhoods, newer subdivisions and some ongoing new construction, spanning several decades of development.",
     ],
     priceAmenitiesB: [
@@ -1169,7 +1232,7 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "Camas, Washington and Portland, Oregon are both part of the same Portland-Vancouver metro area, separated by the Columbia River, but comparing them means comparing two fundamentally different kinds of places — a small, single-downtown city against Oregon's largest city. Buyers who ask about both are usually weighing a smaller, more predictable city against the scale, variety and amenities of a major metro core.",
       "Camas is compact. One historic downtown along NE 4th Avenue, one public school district, and a population in the tens of thousands concentrated in a single city with a handful of named neighborhoods and subdivisions. Its housing stock, while varied in age, is still relatively uniform in character compared to a much larger city — mostly single-family homes across established and newer subdivisions, without the full range of housing types found in a major urban core.",
       "Portland is a different scale of place entirely. With roughly 635,000 residents, per U.S. Census Bureau estimates, it's by far the largest city in the metro area, made up of dozens of distinct, differently named neighborhoods — from dense inner-eastside areas with early-1900s craftsman and foursquare homes, to outer neighborhoods with newer infill and multifamily construction. That range means housing stock, price and neighborhood character vary far more within Portland itself than they do across an entire city the size of Camas.",
-      "Price is where the comparison gets genuinely complicated. As of November 2025, Camas carried a median sale price of $809,700, up 9.8% year over year, per Redfin's Camas housing market data, with homes taking about 59 days to sell. Portland's citywide median sale price, by contrast, was $518,000 over the three months ending September 2026, down 2.2% year over year, per Redfin's Portland housing market page — lower than Camas on a citywide basis. But a single citywide figure for Portland hides enormous neighborhood-to-neighborhood variation: some Portland neighborhoods run well above Camas's price level, others run well below it. A citywide median is a reasonable starting point for Portland, but it's not a substitute for checking the specific neighborhood a buyer actually has in mind.",
+      "Price is where the comparison gets genuinely complicated. As of October 2026, Camas carried a median sale price of $800,000 over the trailing six months, per Resideline's Camas market data (ZIP 98607). Portland's citywide median sale price, by contrast, was $518,000 over the three months ending September 2026, down 2.2% year over year, per Redfin's Portland housing market page — lower than Camas on a citywide basis. But a single citywide figure for Portland hides enormous neighborhood-to-neighborhood variation: some Portland neighborhoods run well above Camas's price level, others run well below it. A citywide median is a reasonable starting point for Portland, but it's not a substitute for checking the specific neighborhood a buyer actually has in mind.",
       "Parks and outdoor access look different because of the difference in scale. Camas residents have walkable or short-drive access to Lacamas Lake, the Lacamas Heritage Trail and Round Lake Park. Portland has Forest Park, more than 5,100 acres and among the largest forested urban parks in the country, along with Washington Park's Japanese Garden and International Rose Test Garden, plus dozens of smaller neighborhood parks scattered throughout the city. Portland offers more total park acreage and variety; Camas offers more concentrated, easy-to-reach access within a smaller area.",
       "Commute and transit options also reflect the difference in scale. Camas connects to the rest of the metro primarily via SR-14 and I-205, with a relatively short, predictable route into Vancouver and east Portland for many addresses. Portland sits at the center of the region's interstate network — I-5, I-84 and I-205 all run through or around the city — and is served by TriMet's bus network and MAX light rail, giving residents more transit options than a smaller city typically offers, though traffic and transit reliability both vary significantly by time of day and specific route.",
       "Schools follow the same pattern. Camas has one public school district, Camas School District, serving the entire city. Portland is served by multiple districts depending on the exact address — Portland Public Schools covers much of the city, but David Douglas, Parkrose and other districts also serve parts of Portland — and Portland Public Schools has periodically redrawn its own attendance boundaries. School boundaries and assignments can change in both cities, so buyers should verify current school assignments directly with the relevant district rather than relying on a general reputation.",
@@ -1204,20 +1267,18 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "Access via Highway 217 and US-26 (the Sunset Highway), connecting directly into central Portland and the broader west-side suburbs.",
     ],
     priceAmenitiesA: [
-      "Median sale price: $809,700 as of November 2025, up 9.8% year over year, per Redfin's Camas housing market data.",
-      "Typical time on market: about 59 days, per the same Redfin report.",
+      "Median sale price: $800,000 over the trailing six months (428 closed sales), per Resideline's Camas market report (ZIP 98607) as of October 5, 2026; the middle half of sales closed between $595,000 and $965,000.",
       "Housing stock: a mix of established single-family neighborhoods, newer subdivisions and some ongoing new construction, spanning several decades of development.",
     ],
     priceAmenitiesB: [
-      "Median sale price: $630,000 as of February 2025 (the most recent figure available), up 14.5% year over year, per Redfin's Beaverton housing market data.",
-      "Typical time on market: about 37 days, per the same report; price per square foot ran about $309, down 1.9% year over year.",
+      "Median sale price: $477,450 over the trailing six months (285 closed sales), per Resideline's Beaverton market data (ZIP 97006) as of October 5, 2026 — other recent sources have put Beaverton's median anywhere from roughly $520,000 to $630,000 depending on ZIP code and methodology.",
       "Housing stock: a wide range of home ages and styles spread across many distinct neighborhoods, reflecting the city's larger, longer-established footprint.",
     ],
     paragraphs: [
       "Camas, Washington and Beaverton, Oregon both sit inside the Portland metro area, but they represent two very different ways of living in it. Camas is a smaller Clark County city on the Washington side of the Columbia River, while Beaverton is a larger, long-established suburb directly west of downtown Portland in Washington County, Oregon. Buyers comparing the two are usually weighing state tax treatment, commute pattern and city scale against each other, not just price.",
       "Camas built its identity around a working waterfront — a paper mill has operated there for more than a century — and more recently added semiconductor manufacturing to its local employment base. Its downtown along NE 4th Avenue is walkable and historic, with local shops and restaurants that predate the newer subdivisions on the city's outer edges. Lacamas Lake and the Lacamas Heritage Trail sit just north of downtown, giving residents lake access and miles of trail close to the city center. As a Washington city, Camas also carries no state income tax, a real factor for buyers weighing overall cost of living alongside home price.",
       "Beaverton is considerably larger and more built-out than Camas, with a correspondingly wider range of home ages, architectural styles and price points spread across many distinct neighborhoods rather than one compact core. Its defining feature for many buyers is transit: TriMet's MAX light rail runs directly through the city, with stops at Beaverton Transit Center, Beaverton Central and Millikan Way, and WES Commuter Rail extends service south to Wilsonville. The MAX line also runs past the Tektronix and Nike campuses on its way toward Hillsboro, where Intel has a major presence — making Beaverton a genuine option for buyers who work in the area's tech sector and want to limit their commute without living in Portland proper.",
-      "Price is where the two cities diverge clearly, though the comparison depends on which data point you're looking at. As of November 2025, Camas carried a median sale price of $809,700, up 9.8% year over year, according to Redfin's Camas housing market report, with homes taking about 59 days to sell. Beaverton's most recently available figure, from February 2025, put its median sale price at $630,000, up 14.5% year over year, with homes selling in about 37 days — a notably faster pace than Camas. Both figures move with the broader market, and Beaverton's figure in particular is older, so current listings in both cities are worth checking directly rather than relying on either number as fixed.",
+      "Price is where the two cities diverge, though Beaverton's figures have been reported inconsistently across sources recently. As of October 2026, Camas carried a median sale price of $800,000 over the trailing six months, per Resideline's Camas market data (ZIP 98607). Beaverton's most recently dated figure is $477,450 over the trailing six months (285 closed sales), per Resideline's ZIP 97006 report as of October 5, 2026 — though other recent sources have put Beaverton's median anywhere from roughly $520,000 up to $630,000 depending on ZIP code and methodology, so current listings in both cities are worth checking directly rather than relying on any single reported figure.",
       "Commute patterns differ meaningfully between the two. Camas connects to Portland via SR-14 along the Columbia River or I-205, a drive that varies significantly by time of day. Beaverton, by contrast, sits close enough to central Portland that MAX light rail is a genuine daily-commute option for many residents, in addition to driving via Highway 217 or US-26. Buyers who want to avoid driving into downtown Portland altogether may find Beaverton's transit access to be the more significant factor, outweighing any price difference on its own.",
       "Both cities fall within their own public school districts — Camas School District and Beaverton School District, respectively — and, as with any city, specific school assignment depends on the exact address. School boundaries and assignments can change, so buyers should verify current assignments directly with the relevant district rather than relying on a city's general reputation. Camas's outdoor draw centers on Lacamas Lake and its trail system close to downtown; Beaverton's parks and green space are spread more broadly across its larger footprint, reflecting its scale as a bigger, more established city.",
       "Neither city is simply a cheaper or more expensive version of the other — they offer genuinely different trade-offs. Camas offers a smaller, lake-adjacent city with no state income tax and a historic downtown, at a meaningfully higher price point. Beaverton offers a larger, more established suburb with direct light rail access to Portland's tech-sector employers and a lower recent median price, though Oregon does carry a state income tax that Washington doesn't. A side-by-side look at current listings in both is the clearest way to see how those trade-offs show up in what's actually available right now.",
@@ -1236,7 +1297,7 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "Camas, WA and Lake Oswego, OR are both established Portland-metro communities with strong reputations, but they sit at different price points on different sides of the Columbia River.",
       "Camas is the more accessible of the two on price, with a historic downtown, Lacamas Lake and a mix of established and newer housing.",
       "Lake Oswego is one of the higher-priced markets in the Portland metro, built around Oswego Lake — though lake access itself is controlled by a private corporation and tied to deeded rights, not open to every resident.",
-      "As of mid-2025, Lake Oswego's median sale price ran well above Camas's, reflecting its longer-established, higher-end housing stock.",
+      "Lake Oswego's median sale price has run well above Camas's in the most recent data available for each, reflecting its longer-established, higher-end housing stock.",
     ],
     bulletsA: [
       "An established historic downtown along NE 4th Avenue, with local shops and restaurants.",
@@ -1251,8 +1312,7 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "Direct access to I-5 and OR-43 along the Willamette River, generally offering a more direct route into downtown Portland than Camas's cross-river commute.",
     ],
     priceAmenitiesA: [
-      "Median sale price: $809,700 as of November 2025, up 9.8% year over year, per Redfin's Camas housing market data.",
-      "Typical time on market: about 59 days, per the same Redfin report.",
+      "Median sale price: $800,000 over the trailing six months (428 closed sales), per Resideline's Camas market report (ZIP 98607) as of October 5, 2026; the middle half of sales closed between $595,000 and $965,000.",
       "Housing stock: a mix of established single-family neighborhoods, newer subdivisions and some ongoing new construction.",
     ],
     priceAmenitiesB: [
@@ -1264,7 +1324,7 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "Camas, Washington and Lake Oswego, Oregon both come up often with buyers comparing established, well-regarded Portland-metro communities — but they sit on opposite ends of the price spectrum, and the reasons why are worth understanding before comparing listings directly.",
       "Camas is the more accessible entry point of the two. Its downtown along NE 4th Avenue grew up around a working waterfront — a paper mill has operated there for more than a century — and the city has since added a semiconductor manufacturing facility nearby, adding a modern layer to the local job base. Lacamas Lake and the Lacamas Heritage Trail sit just north of downtown, giving residents lake access and trails without leaving the city.",
       "Lake Oswego's character is shaped by Oswego Lake itself, even though direct access to the lake is more limited than the city's name suggests. The lake is managed by the Lake Oswego Corporation, a nonprofit formed when the Oregon Iron and Steel Company deeded it the lakebed in 1942. Swimming and boating privileges are tied to deeded easement rights and require separate membership and fees — reported at roughly $219 a year for swimming and about $1,498 to launch a power boat — rather than coming automatically with every property in the city. Downtown, Lake View Village offers a compact shopping and dining district, and George Rogers Park along the Willamette River includes a public, seasonal swimming area that doesn't require lake-easement access.",
-      "Price is where the two cities diverge most sharply. As of November 2025, Camas carried a median sale price of $809,700, up 9.8% year over year, according to Redfin's Camas housing market data. Lake Oswego's median sale price was $985,000 as of June 2025, up 4.2% year over year, per Redfin's Lake Oswego housing market data, with 54 homes sold that month — among the highest median prices in the Portland metro. Some ZIP-code-level reporting for the Lake Oswego area has shown medians even higher than the citywide figure, so it's worth checking current listings in a buyer's specific target area rather than relying on one citywide number alone.",
+      "Price is where the two cities diverge most sharply. As of October 2026, Camas carried a median sale price of $800,000 over the trailing six months, per Resideline's Camas market data (ZIP 98607). Lake Oswego's median sale price was $985,000 as of June 2025, up 4.2% year over year, per Redfin's Lake Oswego housing market data, with 54 homes sold that month — among the highest median prices in the Portland metro. Some ZIP-code-level reporting for the Lake Oswego area has shown medians even higher than the citywide figure, so it's worth checking current listings in a buyer's specific target area rather than relying on one citywide number alone.",
       "Commute patterns differ meaningfully between the two. Camas connects to Portland via SR-14 along the Columbia River, with I-205 also within reach, typically involving a river crossing into Portland's east side or downtown. Lake Oswego connects via I-5 or OR-43 (State Street) along the Willamette River, generally offering a more direct route into downtown Portland without a Columbia River crossing. Actual drive times vary significantly by time of day in both cases and are worth testing directly during the hours a buyer would actually be commuting.",
       "Outdoor recreation looks different in each city. Camas residents have walkable access to Lacamas Lake, the Lacamas Heritage Trail and Round Lake Park. Lake Oswego's recreation centers on Oswego Lake and the Willamette River — though as noted, direct lake access requires a separate easement and membership, while George Rogers Park offers public river access and a seasonal swimming area without that requirement.",
       "Both cities sit within their own public school districts — Camas School District and Lake Oswego School District, respectively — and school assignment depends on the specific address within each city. School boundaries and assignments can change, so buyers should verify current school assignments directly with the relevant district.",
@@ -1284,7 +1344,7 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "Camas, WA and West Linn, OR are both established Portland-area cities known for historic character and higher-end housing rather than new-construction sprawl.",
       "Camas sits in Clark County, Washington, with no state income tax; West Linn sits in Clackamas County, Oregon, with no state sales tax — a real cost tradeoff worth weighing beyond home price alone.",
       "Camas is centered on Lacamas Lake and a historic downtown; West Linn is built around the Willamette and Tualatin rivers and Willamette Falls, across hillier, more wooded neighborhoods.",
-      "As of November 2025, Camas carried a higher median sale price than West Linn, though West Linn homes were selling noticeably faster.",
+      "As of late 2026, Camas carried a higher median sale price than West Linn, though West Linn's market had recently been moving faster.",
     ],
     bulletsA: [
       "A walkable historic downtown along NE 4th Avenue, with local shops and restaurants that predate the city's more recent growth.",
@@ -1296,11 +1356,10 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "Willamette Falls and the confluence of the Willamette and Tualatin rivers, defining features of the city's landscape and close to most neighborhoods.",
       "An established, hillier residential character, with wooded and river-adjacent streets across neighborhoods like Robinwood, Bolton and Marylhurst.",
       "No Oregon state sales tax, offset by Oregon's state income tax — a different cost structure than Washington's no-income-tax approach.",
-      "Direct access to I-205 and Highway 43, with a faster-moving market than Camas as of late 2025, per Redfin.",
+      "Direct access to I-205 and Highway 43, with a faster-moving market than Camas in the most recent data for each, per Redfin.",
     ],
     priceAmenitiesA: [
-      "Median sale price: $809,700 as of November 2025, up 9.8% year over year, per Redfin's Camas housing market data.",
-      "Typical time on market: about 59 days, per the same Redfin report.",
+      "Median sale price: $800,000 over the trailing six months (428 closed sales), per Resideline's Camas market report (ZIP 98607) as of October 5, 2026; the middle half of sales closed between $595,000 and $965,000.",
       "Housing stock: a mix of established single-family neighborhoods, newer subdivisions and some ongoing new construction, spanning several decades of development.",
     ],
     priceAmenitiesB: [
@@ -1312,12 +1371,12 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "Camas, Washington and West Linn, Oregon sit on opposite sides of the Portland metro area — Camas northeast of Vancouver along the Columbia River, West Linn south of Portland along the Willamette — and both come up for buyers comparing established, higher-end Portland-area cities rather than newer, fast-growing suburbs. The two have more in common with each other than either does with a typical new-construction subdivision: older housing stock, a defined downtown or town center, and a reputation for being quieter than the larger cities nearby.",
       "Camas grew up around a working waterfront. A paper mill has operated on the Columbia River there for more than a century, and the city's historic downtown along NE 4th Avenue developed around that industrial base long before Portland-area commuters started moving in. Lacamas Lake and the Lacamas Heritage Trail sit just north of downtown, and a semiconductor manufacturing facility in the surrounding area has added a newer layer to the local job base alongside the older industrial one.",
       "West Linn's character comes from its geography rather than its industry. The city sits where the Tualatin River meets the Willamette, next to Willamette Falls — one of the largest waterfalls by volume in the United States — and its neighborhoods, among them Robinwood, Bolton and Marylhurst, are built across hillier, more wooded terrain than Camas's. The city has been an established Portland-area address for decades, with most of its housing built out well before the recent wave of new construction further out in the metro.",
-      "Price tells a more complicated story than it might look at first. As of November 2025, Camas carried a median sale price of $809,700, up 9.8% year over year, according to Redfin's Camas housing market data — homes there were taking about 59 days to sell. West Linn's median sale price was $747,500 over the same period, down 2.0% year over year, per Redfin's West Linn housing market data, with a price per square foot of $309, up 6.4% year over year; homes there were moving faster, a median of 34 days, down from 56 days a year earlier. Camas currently carries the higher sticker price, but West Linn's market was moving noticeably quicker — both numbers worth checking against current listings rather than treated as fixed.",
+      "Price tells a more complicated story than it might look at first. As of October 2026, Camas carried a median sale price of $800,000 over the trailing six months, per Resideline's Camas market data (ZIP 98607). West Linn's median sale price was $747,500 over the same period, down 2.0% year over year, per Redfin's West Linn housing market data, with a price per square foot of $309, up 6.4% year over year; homes there were moving faster, a median of 34 days, down from 56 days a year earlier. Camas currently carries the higher sticker price, but West Linn's market was moving noticeably quicker — both numbers worth checking against current listings rather than treated as fixed.",
       "The tax picture differs in a way that matters beyond the sale price. Washington has no state income tax, which is part of what Camas, and Clark County generally, offers buyers coming from Oregon. Oregon has no state sales tax, which is part of what West Linn, and Clackamas County, offers in return. Neither is simply cheaper outright — the right answer depends on income, spending patterns and how a buyer weighs the two tax structures against each other.",
       "Commute patterns reflect each city's position in the metro. Camas connects to Portland and Vancouver primarily via SR-14 and I-205, putting it within reach of Portland's east side. West Linn connects via I-205 and Highway 43, putting it closer to Lake Oswego, Portland's southwest side and the broader I-5 corridor. Actual drive times in both cases depend heavily on time of day and bridge traffic, and are worth testing directly during the hours a buyer would actually be commuting rather than relying on an off-peak estimate.",
       "Parks and outdoor recreation draw on different features in each city. Camas residents have walkable access to Lacamas Lake, the Lacamas Heritage Trail and Round Lake Park. West Linn's signature outdoor features are Willamette Falls and the river trails along the Willamette and Tualatin, along with Mary S. Young State Park. A buyer drawn to lake access and trail systems close to a historic downtown may lean toward Camas; a buyer drawn to river frontage, waterfalls and hillier wooded terrain may lean toward West Linn.",
       "Both cities sit within their own public school districts — Camas School District, and West Linn-Wilsonville School District, which covers about 42 square miles and serves roughly 8,400 students. School boundaries and assignments can change, so buyers should verify current school assignments directly with the relevant district rather than relying on a neighborhood's general reputation.",
-      "Neither city is a clear upgrade over the other — they draw on genuinely different geography and history. Camas offers a historic downtown, lake access and no state income tax, at a higher overall price point and a somewhat slower-moving market as of late 2025. West Linn offers river and waterfall access, hillier established neighborhoods and no state sales tax, at a lower overall price point and a faster-moving market over the same period. A side-by-side look at current listings in both is the clearest way to see how those differences show up in what's actually available right now.",
+      "Neither city is a clear upgrade over the other — they draw on genuinely different geography and history. Camas offers a historic downtown, lake access and no state income tax, at a higher overall price point and a somewhat slower-moving market in the most recent data available. West Linn offers river and waterfall access, hillier established neighborhoods and no state sales tax, at a lower overall price point and a faster-moving market in its own most recent data. A side-by-side look at current listings in both is the clearest way to see how those differences show up in what's actually available right now.",
     ],
     closing: [
       "Both Camas and West Linn are worth a direct look for anyone comparing established Portland-area cities — the right fit comes down to budget, tax tradeoffs and which natural feature, lake or river, matters more day to day.",
@@ -1348,8 +1407,7 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "A meaningfully lower median sale price than Camas, per recent market data — relevant for buyers prioritizing overall affordability.",
     ],
     priceAmenitiesA: [
-      "Median sale price: $809,700 as of November 2025, up 9.8% year over year, per Redfin's Camas housing market data.",
-      "Typical time on market: about 59 days, per the same Redfin report.",
+      "Median sale price: $800,000 over the trailing six months (428 closed sales), per Resideline's Camas market report (ZIP 98607) as of October 5, 2026; the middle half of sales closed between $595,000 and $965,000.",
       "Housing stock: a mix of established single-family neighborhoods, newer subdivisions and some ongoing new construction, spanning several decades of development.",
     ],
     priceAmenitiesB: [
@@ -1362,7 +1420,7 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "Camas has grown into a larger city over the past two decades, with a population in the high twenty-thousands, while Battle Ground has grown rapidly too but remains smaller, with a population of roughly 21,526. That size difference shows up in daily life — Camas has more commercial density near its downtown core, while Battle Ground's growth has spread outward into subdivisions and larger-lot parcels rather than concentrating around a single walkable center.",
       "Camas grew up around a working waterfront — a paper mill has operated there for more than a century — and its downtown along NE 4th Avenue still reflects that history, with a walkable core of shops and restaurants alongside homes dating from the early 1900s through recent subdivisions. Lacamas Lake and the Lacamas Heritage Trail sit just north of downtown, and a semiconductor manufacturing facility in the surrounding area has added a modern layer to the local job base beyond Portland-area commuting.",
       "Battle Ground's growth has taken a different shape. It's a smaller city north of Vancouver, reached via SR-502 to I-5, with a housing mix that leans more toward larger lots and acreage-style properties than a typical in-city neighborhood. Battle Ground Lake State Park sits just outside town, giving residents lake swimming, camping and trail access that's less convenient to reach from closer-in Clark County cities.",
-      "Price is where the two diverge clearly. Camas carried a median sale price of $809,700 as of November 2025, up 9.8% year over year, according to Redfin — homes there were taking about 59 days to sell. Battle Ground's 98604 ZIP code saw a median closed sale price of $569,999 over the prior six months (504 closed sales), per Resideline's market report as of October 5, 2026. That's a meaningful gap, though both figures move with the market and are worth checking against current listings rather than treated as fixed reference points.",
+      "Price is where the two diverge clearly. Camas carried a median sale price of $800,000 over the trailing six months, per Resideline's Camas market data (ZIP 98607), as of October 2026. Battle Ground's 98604 ZIP code saw a median closed sale price of $569,999 over the prior six months (504 closed sales), per Resideline's market report as of October 5, 2026. That's a meaningful gap, though both figures move with the market and are worth checking against current listings rather than treated as fixed reference points.",
       "Commute patterns differ by corridor. Camas connects to Portland and Vancouver via SR-14 along the Columbia River, with I-205 access as well. Battle Ground connects via SR-502 to I-5, a more indirect route into central Portland than Camas's. Actual drive times depend heavily on time of day in both cases and are worth testing directly during the hours a buyer would actually be commuting.",
       "Outdoor access looks different in each city. Camas residents have walkable access to Lacamas Lake, Lacamas Heritage Trail and Round Lake Park, all close to the established part of the city. Battle Ground's signature outdoor feature is Battle Ground Lake State Park just outside town, along with the larger private lots that come with many of the city's newer and edge-of-town properties. A buyer drawn to walkable lake access close to downtown and one drawn to more private acreage with a state park nearby are looking for genuinely different things.",
       "Both cities sit within their own public school districts — Camas School District and Battle Ground Public Schools, respectively — and school assignment depends on the specific address within each city. School boundaries and assignments can change, so buyers should verify current school assignments directly with the relevant district.",
@@ -1382,7 +1440,7 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "Camas and Washougal are immediate neighbors in Clark County, Washington, both sitting along the Columbia River and connected by SR-14.",
       "Camas is the larger and more expensive of the two, with a longer-established downtown and a broader mix of home ages.",
       "Washougal is smaller and more affordable, with its own historic core built around Pendleton Woolen Mills and direct access to the Steigerwald Lake National Wildlife Refuge.",
-      "As of 2025, Camas carried a meaningfully higher median sale price than Washougal, a gap that's held even as both markets have cooled somewhat.",
+      "As of late 2026, Camas carried a meaningfully higher median sale price than Washougal, a gap that's held even as both markets have cooled somewhat.",
     ],
     bulletsA: [
       "An established historic downtown along NE 4th Avenue, with local shops and restaurants that predate the area's more recent growth.",
@@ -1397,20 +1455,18 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "A lower median sale price than Camas, relevant for buyers prioritizing overall affordability in the same general area.",
     ],
     priceAmenitiesA: [
-      "Median sale price: $809,700 as of November 2025, up 9.8% year over year, per Redfin's Camas housing market data.",
-      "Typical time on market: about 59 days, per the same Redfin report.",
+      "Median sale price: $800,000 over the trailing six months (428 closed sales), per Resideline's Camas market report (ZIP 98607) as of October 5, 2026; the middle half of sales closed between $595,000 and $965,000.",
       "Housing stock: a mix of established single-family neighborhoods, newer subdivisions and some ongoing new construction, spanning several decades of development.",
     ],
     priceAmenitiesB: [
-      "Median sale price: $550,000 as of February 2025, down 11.8% year over year, per Redfin's Washougal housing market data.",
-      "Typical time on market: about 57 days, per the same Redfin report.",
+      "Median sale price: $619,000 as of June 2026, down 2.7% year over year, per Beyond WA's Washougal market report (based on NWMLS closed sales).",
       "Housing stock: a smaller mix of established homes and more limited new construction compared to Camas, reflecting the city's smaller overall size.",
     ],
     paragraphs: [
       "Camas and Washougal sit directly next to each other in Clark County, Washington, connected by SR-14 along the Columbia River — close enough that some buyers cross-shop both without thinking of them as separate markets. They share a highway corridor, a general commute pattern into Portland, and river-adjacent geography, but the two cities differ meaningfully in size, price and day-to-day character.",
       "Camas is the larger and more established of the two. Its downtown along NE 4th Avenue grew up around a working waterfront paper mill that's operated for more than a century, and the city has since built out a broader mix of home ages, from early-1900s construction through recent subdivisions. Lacamas Lake and the Lacamas Heritage Trail sit just north of downtown, giving residents lake access and miles of trail without leaving the city, and a semiconductor manufacturing facility in the surrounding area has added a modern layer to the local job base.",
       "Washougal is Camas's immediate neighbor to the east, smaller in both population and footprint. Its own historic core grew up around Pendleton Woolen Mills, a textile mill that opened in 1910 and that Pendleton acquired two years later — the mill still operates in town today, with public tours and an outlet store that draw visitors beyond just Washougal residents. The Steigerwald Lake National Wildlife Refuge, a 1,049-acre floodplain habitat on the edge of the Columbia River Gorge National Scenic Area, sits adjacent to the city; it reopened in 2022 after a $31 million restoration and is one of five units in the Ridgefield National Wildlife Refuge Complex.",
-      "Price is where the two cities diverge most. As of November 2025, Camas carried a median sale price of $809,700, up 9.8% year over year, according to Redfin's Camas housing market report — homes there were taking about 59 days to sell. Washougal's median sale price was $550,000 as of February 2025, down 11.8% year over year, per Redfin's Washougal housing market data, with homes taking about 57 days to sell. That's a substantial gap, and it's held even as both markets have shown some cooling — worth weighing directly against current listings rather than treated as a fixed, permanent spread.",
+      "Price is where the two cities diverge. As of October 2026, Camas carried a median sale price of $800,000 over the trailing six months, per Resideline's Camas market data (ZIP 98607). Washougal's median sale price was $619,000 as of June 2026, down 2.7% year over year, per Beyond WA's Washougal market report (based on NWMLS closed sales). That's still a real gap, worth weighing directly against current listings rather than treated as a fixed, permanent spread.",
       "Commute patterns are nearly identical for both cities, since Washougal sits just a few minutes further east along the same SR-14 corridor that runs through Camas toward Vancouver and Portland. The practical difference for most buyers is distance rather than route — a slightly longer drive from Washougal into the Portland-Vancouver core. Actual drive times depend heavily on time of day in both cases and are worth testing directly during the hours a buyer would actually be commuting.",
       "Parks and outdoor recreation take different forms in each city. Camas residents have walkable access to Lacamas Lake, Lacamas Heritage Trail and Round Lake Park, all close to the established part of the city. Washougal's defining outdoor feature is the Steigerwald Lake National Wildlife Refuge, along with the broader access to the Columbia River Gorge that comes with sitting at the gorge's western edge. A buyer drawn to lake access and trail mileage close to downtown may lean toward Camas; one drawn to wetland habitat and gorge proximity may lean toward Washougal.",
       "Both cities sit within their own public school districts — Camas School District and Washougal School District, respectively — and school assignment depends on the specific address within each city. School boundaries and assignments can change, so buyers should verify current school assignments directly with the relevant district rather than relying on a neighborhood's general reputation.",
@@ -1493,20 +1549,18 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "Access via Highway 217 and US-26 (the Sunset Highway), connecting directly into central Portland and the broader west-side suburbs.",
     ],
     priceAmenitiesA: [
-      "Median sale price: $555,454 as of a report dated May 26, 2026, down 0.8% year over year and up 0.5% month over month, per Redfin-sourced data.",
-      "Typical time on market: about 90 days, per Redfin's Portland housing market page, which rates the market as somewhat competitive.",
+      "Median sale price: $518,000 over the three months ending September 2026, down 2.2% year over year, per Redfin's Portland housing market page.",
       "Housing stock: broad and varied, from early-1900s craftsman and foursquare homes in inner neighborhoods to mid-century homes and newer construction throughout the rest of the city.",
     ],
     priceAmenitiesB: [
-      "Median sale price: $533,300 over the trailing six months (842 tracked closings), per Resideline's Beaverton housing market report as of August 2026.",
-      "Other recent sources have put Beaverton's median anywhere from roughly $520,000 to $592,000 depending on methodology and date — worth checking current listings directly rather than relying on one fixed figure.",
+      "Median sale price: $477,450 over the trailing six months (285 closed sales), per Resideline's Beaverton market data (ZIP 97006) as of October 5, 2026 — other recent sources have put Beaverton's median anywhere from roughly $520,000 to $630,000 depending on ZIP code and methodology.",
       "Housing stock: a more compact mix of home ages and styles concentrated in a single, well-established suburb rather than spread across dozens of separate neighborhoods.",
     ],
     paragraphs: [
       "Portland and Beaverton both sit on the Oregon side of the Portland-Vancouver metro, but comparing them means comparing a major city to one of its own suburbs — Beaverton sits just west of Portland's city limits, close enough that some buyers treat the two as a single housing market even though they're separate cities with separate governments, school systems and transit profiles.",
       "Portland is the regional center, by far the largest city in the metro, made up of dozens of distinct, differently named neighborhoods — from dense inner-eastside areas with early-1900s craftsman and foursquare homes, to outer neighborhoods with newer infill and multifamily construction. That range means housing stock, price and neighborhood character vary enormously within Portland itself, more than they do across an entire smaller city.",
       "Beaverton is considerably more compact, a single, well-established suburb built up over decades rather than a patchwork of dozens of separate neighborhoods. Its defining feature for many buyers is transit and employment access: TriMet's MAX light rail runs directly through the city, with stops at Beaverton Transit Center, Beaverton Central and Millikan Way, and WES Commuter Rail extends service south to Wilsonville. The MAX line also runs past the Tektronix and Nike campuses on its way toward Hillsboro, where Intel has a major presence — making Beaverton a genuine option for buyers who work in the area's tech sector and want a shorter commute without living inside Portland's city limits.",
-      "Price comparisons between the two depend heavily on which data point and which date you're looking at, since both markets have been reported inconsistently across sources recently. A Redfin-sourced figure dated May 26, 2026 put Portland's citywide median sale price at $555,454, down 0.8% year over year, with homes taking about 90 days to sell on Redfin's own Portland market page. Beaverton's most recently dated figure, from Resideline's August 2026 report, put the median sold price at $533,300 over the trailing six months across 842 tracked closings — though other 2026 sources have shown Beaverton medians ranging from roughly $520,000 up to $592,000 depending on methodology. On the numbers available, Portland's citywide median currently runs somewhat above Beaverton's, but the spread between sources is wide enough in both cities that current listings are worth checking directly rather than relying on any single reported figure.",
+      "Price comparisons between the two depend heavily on which data point you're looking at, since Beaverton's figures in particular have been reported inconsistently across sources recently. Portland's citywide median sale price was $518,000 over the three months ending September 2026, down 2.2% year over year, per Redfin's own Portland market page. Beaverton's most recently dated figure is $477,450 over the trailing six months (285 closed sales), per Resideline's ZIP 97006 report as of October 5, 2026 — though other 2026 sources have shown Beaverton medians ranging from roughly $520,000 up to $630,000 depending on ZIP code and methodology. On the numbers available, Portland's citywide median currently runs somewhat above Beaverton's, but the spread between sources is wide enough in both cities that current listings are worth checking directly rather than relying on any single reported figure.",
       "It's also worth remembering that Portland's citywide median in particular hides enormous neighborhood-to-neighborhood variation — some Portland neighborhoods run well above Beaverton's price level, others run well below it. A citywide number for Portland is a reasonable starting point, but it isn't a substitute for checking the specific neighborhood a buyer actually has in mind, the way a single, more compact city like Beaverton can be evaluated more directly as a whole.",
       "Commute and transit access is where the practical difference between the two is clearest. Portland sits at the center of the region's interstate network — I-5, I-84 and I-205 all run through or around the city — and is served by TriMet's bus network along with multiple MAX light rail lines, so transit options vary by neighborhood. Beaverton's own MAX access runs directly into downtown Portland, giving many Beaverton residents a transit commute that's just as direct as living in parts of Portland itself, without the citywide price variation that comes with Portland's larger footprint.",
       "Schools reflect the same difference in scale. Portland is served by multiple districts depending on the exact address — Portland Public Schools covers much of the city, but David Douglas, Parkrose and other districts also serve parts of Portland, and boundaries have periodically been redrawn. Beaverton is served primarily by Beaverton School District. School boundaries and assignments can change in either city, so buyers should verify current assignments directly with the relevant district rather than relying on a general reputation.",
@@ -1622,7 +1676,7 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "Washougal and Hockinson are both Clark County, Washington communities, but they offer very different settings — a historic river city with its own downtown versus an unincorporated, low-density rural community.",
       "Washougal has an established commercial core built around Pendleton Woolen Mills and direct access to the Columbia River and the Steigerwald Lake National Wildlife Refuge.",
       "Hockinson is unincorporated, with no town center of its own — housing there leans toward larger lots and acreage, reflecting the surrounding rural character of this part of Clark County.",
-      "As of November 2025, Hockinson's median sale price ran meaningfully higher than Washougal's, reflecting its larger-lot housing stock rather than any commercial density.",
+      "Hockinson's median sale price has run meaningfully higher than Washougal's in the most recent data for each, reflecting its larger-lot housing stock rather than any commercial density.",
     ],
     bulletsA: [
       "A working historic downtown built around Pendleton Woolen Mills, which has operated in Washougal since 1910 and still offers mill tours and an outlet store.",
@@ -1634,11 +1688,10 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "An unincorporated, low-density rural community with no town center of its own — housing is spread across larger parcels rather than concentrated around shops or services.",
       "Larger lots and acreage-style properties are common in the local housing mix, a draw for buyers who want more land than a typical in-town lot.",
       "Its own Hockinson School District, serving the surrounding rural area.",
-      "A higher median sale price than Washougal as of late 2025, reflecting the larger-lot housing stock rather than commercial amenities.",
+      "A higher median sale price than Washougal in the most recent data for each, reflecting the larger-lot housing stock rather than commercial amenities.",
     ],
     priceAmenitiesA: [
-      "Median sale price: $625,000 as of November 2025, roughly flat year over year, per Redfin's Washougal housing market data.",
-      "Typical time on market: about 38 days, down from 50 days the year before, per the same Redfin report.",
+      "Median sale price: $619,000 as of June 2026, down 2.7% year over year, per Beyond WA's Washougal market report (based on NWMLS closed sales).",
       "Housing stock: a mix of established homes near the historic downtown and more recent construction on the city's edges.",
     ],
     priceAmenitiesB: [
@@ -1650,7 +1703,7 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "Washougal and Hockinson are both Clark County, Washington communities that come up for buyers looking outside Vancouver proper, but they represent genuinely different ways of living in the same county. Washougal is an incorporated city with its own downtown and services; Hockinson is unincorporated, with no town center at all, and its character comes from acreage and open space rather than commercial density.",
       "Washougal's identity is tied to Pendleton Woolen Mills, a textile mill that opened in town in 1910 and that Pendleton acquired two years later — it still operates today, with public tours and an outlet store that draw visitors beyond local residents. The Steigerwald Lake National Wildlife Refuge, a 1,049-acre floodplain habitat on the edge of the Columbia River Gorge National Scenic Area, sits adjacent to the city; it reopened in 2022 after a $31 million restoration. Washougal has its own school district and a defined commercial core along SR-14, giving residents walkable or short-drive access to shops, restaurants and services close to most neighborhoods.",
       "Hockinson, by contrast, is unincorporated — it has no city government, no downtown, and no commercial core of its own. It's a rural stretch of Clark County northeast of Vancouver, where the housing stock leans toward larger lots and acreage rather than standard in-town parcels. Buyers drawn to Hockinson are typically looking for more land, more separation between homes, and a quieter, more rural setting than an incorporated city like Washougal offers — not a walkable town center.",
-      "Price reflects that difference in character more than it reflects either market being objectively more desirable. As of November 2025, Washougal carried a median sale price of $625,000, roughly flat year over year, per Redfin's Washougal housing market data, with homes taking about 38 days to sell, down from 50 days the year before. Hockinson's median sale price was $771,000 over the same period, up 7.8% year over year, per Redfin's Hockinson housing market data, with homes moving much faster — about 17 days, up from just 7 days the year before. Hockinson's higher price reflects its larger-lot housing stock, not added commercial amenities; a buyer is paying for land and space, not proximity to shops or services.",
+      "Price reflects that difference in character more than it reflects either market being objectively more desirable. Washougal carried a median sale price of $619,000 as of June 2026, down 2.7% year over year, per Beyond WA's Washougal market report (based on NWMLS closed sales). Hockinson's median sale price was $771,000 over the same period, up 7.8% year over year, per Redfin's Hockinson housing market data, with homes moving much faster — about 17 days, up from just 7 days the year before. Hockinson's higher price reflects its larger-lot housing stock, not added commercial amenities; a buyer is paying for land and space, not proximity to shops or services.",
       "Commute patterns differ by route. Washougal sits directly on SR-14 along the Columbia River, with a fairly direct drive toward Camas, Vancouver and Portland. Hockinson sits farther from the river corridor, in the rural area northeast of Vancouver, typically reached via local roads connecting to SR-503 or Highway 14 depending on the specific property — a longer and less direct drive into the Portland-Vancouver core for most addresses. Actual drive times depend heavily on the specific location and time of day in both cases.",
       "Outdoor access takes different forms in each place. Washougal residents have direct access to the Steigerwald Lake National Wildlife Refuge and the broader Columbia River Gorge, along with whatever parks and trails the city itself maintains. Hockinson's outdoor appeal is less about a single destination and more about the rural setting itself — open land, larger yards and the kind of privacy that comes with acreage rather than a standard subdivision lot.",
       "Both areas fall within their own public school districts — Washougal School District and Hockinson School District, respectively — and school assignment depends on the specific address. School boundaries and assignments can change, so buyers should verify current school assignments directly with the relevant district rather than relying on a general reputation.",
@@ -1685,12 +1738,11 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "Direct access to I-5 and OR-99W, plus Boones Ferry Road connecting toward Lake Oswego and West Linn.",
     ],
     priceAmenitiesA: [
-      "Median sale price: $650,540 as of February 2025, up 2.9% year over year, per Redfin's Tigard housing market data.",
+      "Median sale price: $560,000 median closed sale price over the trailing six months (497 closed sales), per Resideline's Tigard market data (ZIP 97224) as of October 5, 2026.",
       "Housing stock: a mix of established single-family neighborhoods, including hillside homes on Bull Mountain, alongside newer infill construction and condominiums near Washington Square.",
     ],
     priceAmenitiesB: [
-      "Median sale price: $646,200 as of November 2025, up 10.5% year over year, per Redfin's Tualatin housing market data.",
-      "Typical time on market: about 62 days, up from 32 days the year before, per the same Redfin report.",
+      "Median sale price: $592,400 median sold price across 196 closed sales over the trailing six months, per Resideline's Tualatin market report as of September 2026.",
       "Housing stock: a smaller, more compact mix of established single-family homes concentrated around the Tualatin River and the Tualatin Commons area.",
     ],
     paragraphs: [
@@ -1698,7 +1750,7 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "Tigard is the larger of the two cities, built in large part around Washington Square, one of the Portland area's larger regional shopping malls, which sits within Tigard's city limits and anchors a substantial retail and office corridor along Highway 217. South of the mall, Bull Mountain rises into a hillside residential area with some of the city's larger-lot homes, a markedly different feel from the flatter, more commercial parts of town near Washington Square. Fanno Creek Trail threads through the city, and Cook Park sits along the Tualatin River on Tigard's southern edge, giving residents river access without leaving city limits.",
       "Tualatin is the smaller and more compact of the two, with a downtown identity built around Tualatin Commons, a plaza and reflecting pond ringed by shops and restaurants that give the city a defined civic center in a way Tigard's more spread-out commercial areas don't quite replicate. The Tualatin River runs directly through the city, and Tualatin Community Park sits along its banks, offering river access and trails close to downtown. Tualatin's growth has also leaned on its own employment base along the I-5 corridor, separate from Tigard's mall-anchored commercial district.",
       "Unlike most city pairs in this area, Tigard and Tualatin share a single public school district — Tigard-Tualatin School District 23J. The two cities' schools were originally separate, but Tualatin residents voted to join Tigard School District in 1969, and the district took its current combined name in 1990. That means, unlike many of the comparisons on this list, school district alone isn't a reason to choose one city over the other — a buyer's specific address and attendance boundary within the shared district matters more than which city that address happens to sit in. The district has also made recent boundary and school-closure changes, so buyers should verify current attendance assignments directly with the district rather than relying on an older boundary map.",
-      "Price between the two has run close in recent data, though the comparison depends on which month's figures you're looking at. Tigard's median sale price was $650,540 as of February 2025, up 2.9% year over year, per Redfin's Tigard housing market data. Tualatin's median sale price was $646,200 as of November 2025, up 10.5% year over year, per Redfin's Tualatin housing market data, with homes taking about 62 days to sell, up from 32 days the year before — a market that had cooled somewhat on speed even as prices kept climbing. The two cities' price levels sit close enough together that current listings in both are worth comparing directly rather than assuming either city is clearly the more affordable option.",
+      "Price between the two has run close in recent data. Tigard's median sale price was $560,000 over the trailing six months (497 closed sales), per Resideline's Tigard market data (ZIP 97224) as of October 5, 2026. Tualatin's median sale price was $592,400 across 196 closed sales over the trailing six months, per Resideline's Tualatin market report as of September 2026. The two cities' price levels sit close enough together that current listings in both are worth comparing directly rather than assuming either city is clearly the more affordable option.",
       "Both cities share much of the same highway access, which is part of what makes them such a direct comparison. Tigard connects via Highway 217, I-5 and OR-99W (Pacific Highway), putting it within reach of both downtown Portland and the broader west-side suburbs. Tualatin connects via I-5 and OR-99W as well, with Boones Ferry Road offering an additional route toward Lake Oswego and West Linn to the east. Actual commute times depend heavily on time of day and route in both cities, and are worth testing directly during the hours a buyer would actually be driving.",
       "Outdoor access in both cities centers on the Tualatin River, though the specific amenities differ. Tigard's Cook Park sits along the river on the city's southern edge, alongside the citywide Fanno Creek Trail system. Tualatin's Community Park sits along the same river closer to downtown, with Tualatin Commons' plaza and reflecting pond serving as more of a built, civic gathering space than a natural one. A buyer drawn to a larger trail network spread across a bigger city may lean toward Tigard; one drawn to a more compact, walkable downtown built around the river may lean toward Tualatin.",
       "Neither city is a clear upgrade over the other — the differences here are more about scale and downtown character than about price or schools, since the two cities share a district. Tigard offers a larger footprint, a major regional mall, hillside neighborhoods on Bull Mountain and a broader trail network. Tualatin offers a smaller, more walkable downtown built around the river and Tualatin Commons, with a recent market that's moved both prices and days-on-market more than Tigard's over the same stretch. A side-by-side look at current listings in both is the clearest way to see how those differences show up in what's actually available right now.",
@@ -12151,6 +12203,10 @@ function comparisonArticleParagraphs(seed: ComparisonSeed): string[] {
   const bName = seed.cityB.split(",")[0].trim();
   const publishedA = PUBLISHED_POST_URLS[seed.cityA];
   const publishedB = PUBLISHED_POST_URLS[seed.cityB];
+  const neighborhoodA = NEIGHBORHOOD_POST_LINKS[seed.cityA];
+  const neighborhoodB = NEIGHBORHOOD_POST_LINKS[seed.cityB];
+  const youtubeA = CITY_YOUTUBE_PLAYLISTS[seed.cityA];
+  const youtubeB = CITY_YOUTUBE_PLAYLISTS[seed.cityB];
 
   return [
     `${aName} and ${bName} are two of the cities I work in most often, and buyers weighing one against the other ask me the same handful of questions nearly every time. Here's a direct, side-by-side look at how the two actually compare, based on what I see with real listings and real buyers.`,
@@ -12164,6 +12220,12 @@ function comparisonArticleParagraphs(seed: ComparisonSeed): string[] {
     ...(publishedA
       ? [`Related reading: <a href="${publishedA}" target="_blank" rel="noopener">${aName} neighborhood guide</a>`]
       : []),
+    ...(neighborhoodA
+      ? [`Check out this neighborhood in ${aName}: <a href="${neighborhoodA.url}" target="_blank" rel="noopener">${neighborhoodA.label}</a>`]
+      : []),
+    ...(youtubeA
+      ? [`Watch: <a href="${youtubeA}" target="_blank" rel="noopener">Living in ${aName}, ${seed.cityA.split(", ")[1]} — YouTube playlist</a>`]
+      : []),
     h2(`${bName} at a Glance`),
     ...seed.bulletsB,
     h3(`${bName} Price Points & Amenities`),
@@ -12171,6 +12233,12 @@ function comparisonArticleParagraphs(seed: ComparisonSeed): string[] {
     communityLinkLine(`${bName} community page`, seed.cityB),
     ...(publishedB
       ? [`Related reading: <a href="${publishedB}" target="_blank" rel="noopener">${bName} neighborhood guide</a>`]
+      : []),
+    ...(neighborhoodB
+      ? [`Check out this neighborhood in ${bName}: <a href="${neighborhoodB.url}" target="_blank" rel="noopener">${neighborhoodB.label}</a>`]
+      : []),
+    ...(youtubeB
+      ? [`Watch: <a href="${youtubeB}" target="_blank" rel="noopener">Living in ${bName}, ${seed.cityB.split(", ")[1]} — YouTube playlist</a>`]
       : []),
     h2(`Comparing ${aName} and ${bName}`),
     ...seed.paragraphs,
