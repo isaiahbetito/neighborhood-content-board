@@ -534,48 +534,131 @@ const PUBLISHED_POST_URLS: Record<string, string> = {};
 // one of the blogs you have already previously written ... this would be in addition to the
 // community page links." Unlike PUBLISHED_POST_URLS above, these ARE real, already-verified
 // URLs (found by browsing jamiemeushawrealestate.com's own site search directly, not guessed
-// or invented) — one real existing neighborhood-level blog post per city, where one exists.
-// `null` means a real search was done and nothing was found, not "not checked yet."
-const NEIGHBORHOOD_POST_LINKS: Record<string, { label: string; url: string } | null> = {
-  "Camas, WA": {
-    label: "Holly Ridge, Camas",
-    url: "https://jamiemeushawrealestate.com/holly-ridge-camas-wa-walk-to-the-lake-back-up-to-the-greenspace-and-call-it-home/",
-  },
-  "Ridgefield, WA": {
-    label: "Pioneer Canyon, Ridgefield",
-    url: "https://jamiemeushawrealestate.com/moving-to-ridgefield-wa-consider-pioneer-canyon-a-day-in-pioneer-canyon-refuge-included/",
-  },
-  "Portland, OR": {
-    label: "Irvington, Portland",
-    url: "https://jamiemeushawrealestate.com/moving-to-portland-or-consider-irvington-demand-for-a-real-historic-district-doesnt-slow-down/",
-  },
-  "Beaverton, OR": {
-    label: "Sexton Mountain, Beaverton",
-    url: "https://jamiemeushawrealestate.com/moving-to-beaverton-or-consider-sexton-mountain-a-quieter-corner-of-a-fast-growing-suburb/",
-  },
-  "Battle Ground, WA": {
-    label: "Battle Ground Meadows, Battle Ground",
-    url: "https://jamiemeushawrealestate.com/moving-to-battle-ground-wa-consider-battle-ground-meadows-settled-streets-a-few-miles-from-the-lake/",
-  },
-  "Washougal, WA": {
-    label: "Washougal",
-    url: "https://jamiemeushawrealestate.com/moving-to-washougal-wa-consider-washougal-columbia-river-access-east-of-camas/",
-  },
-  "Vancouver, WA": {
-    label: "Lakeshore, Vancouver",
-    url: "https://jamiemeushawrealestate.com/lakeshore-vancouver-wa-northwest-clark-countys-lake-community-vancouver-lake-living-and-everything-you-need-to-know-before-you-make-the-move/",
-  },
-  "Happy Valley, OR": {
-    label: "Rock Creek, Happy Valley",
-    url: "https://jamiemeushawrealestate.com/moving-to-happy-valley-or-consider-rock-creek-the-practical-choice-in-a-fast-growing-city/",
-  },
+// or invented) — multiple real existing neighborhood-level blog posts per city, where they
+// exist. A city appears in more than one comparison post (Camas appears in 7!), so a single
+// link reused everywhere read as repetitive — real feedback, caught 2026-11-03. Each city
+// gets an ARRAY of real posts; pickNeighborhoodPostLink() below picks a different one per
+// comparison deterministically, so e.g. "Camas vs. Ridgefield" and "Camas vs. Portland" don't
+// show the same "check out this neighborhood" link. An empty array means a real search was
+// done and nothing was found, not "not checked yet."
+const NEIGHBORHOOD_POST_LINKS: Record<string, { label: string; url: string }[]> = {
+  "Camas, WA": [
+    {
+      label: "Holly Ridge, Camas",
+      url: "https://jamiemeushawrealestate.com/holly-ridge-camas-wa-walk-to-the-lake-back-up-to-the-greenspace-and-call-it-home/",
+    },
+    {
+      label: "Deer Creek, Camas",
+      url: "https://jamiemeushawrealestate.com/moving-to-camas-wa-consider-deer-creek-wooded-lots-quiet-streets-on-prune-hill/",
+    },
+    {
+      label: "Hunter Ridge Estates, Camas",
+      url: "https://jamiemeushawrealestate.com/moving-to-camas-wa-consider-hunter-ridge-estates-reading-camass-gated-community-market/",
+    },
+  ],
+  "Ridgefield, WA": [
+    {
+      label: "Pioneer Canyon, Ridgefield",
+      url: "https://jamiemeushawrealestate.com/moving-to-ridgefield-wa-consider-pioneer-canyon-a-day-in-pioneer-canyon-refuge-included/",
+    },
+    {
+      label: "Ridgefield",
+      url: "https://jamiemeushawrealestate.com/ridgefield-small-town-charm-new-growth-and-easy-access-to-vancouver/",
+    },
+  ],
+  "Portland, OR": [
+    {
+      label: "Irvington, Portland",
+      url: "https://jamiemeushawrealestate.com/moving-to-portland-or-consider-irvington-demand-for-a-real-historic-district-doesnt-slow-down/",
+    },
+    {
+      label: "St. Johns, Portland",
+      url: "https://jamiemeushawrealestate.com/st-johns-or-north-portlands-most-distinct-neighborhood-real-community-character-and-everything-you-need-to-know-before-you-make-the-move/",
+    },
+  ],
+  "Beaverton, OR": [
+    {
+      label: "Sexton Mountain, Beaverton",
+      url: "https://jamiemeushawrealestate.com/moving-to-beaverton-or-consider-sexton-mountain-a-quieter-corner-of-a-fast-growing-suburb/",
+    },
+    {
+      label: "Cedar Mill, Beaverton",
+      url: "https://jamiemeushawrealestate.com/cedar-mill-or-washington-countys-quiet-overachiever-beaverton-schools-and-everything-you-need-to-know-before-you-make-the-move/",
+    },
+  ],
+  "Battle Ground, WA": [
+    {
+      label: "Battle Ground Meadows, Battle Ground",
+      url: "https://jamiemeushawrealestate.com/moving-to-battle-ground-wa-consider-battle-ground-meadows-settled-streets-a-few-miles-from-the-lake/",
+    },
+  ],
+  "Washougal, WA": [
+    {
+      label: "Washougal: Columbia River Access",
+      url: "https://jamiemeushawrealestate.com/moving-to-washougal-wa-consider-washougal-columbia-river-access-east-of-camas/",
+    },
+    {
+      label: "Washougal: A Day on the Dike Trail",
+      url: "https://jamiemeushawrealestate.com/moving-to-washougal-wa-consider-washougal-a-day-built-around-the-columbia-river-dike-trail/",
+    },
+  ],
+  "Vancouver, WA": [
+    {
+      label: "Lakeshore, Vancouver",
+      url: "https://jamiemeushawrealestate.com/lakeshore-vancouver-wa-northwest-clark-countys-lake-community-vancouver-lake-living-and-everything-you-need-to-know-before-you-make-the-move/",
+    },
+    {
+      label: "Fisher's Landing, Vancouver",
+      url: "https://jamiemeushawrealestate.com/moving-to-vancouver-wa-consider-fishers-landing-a-well-parked-corridor-keeps-drawing-interest/",
+    },
+  ],
+  "Happy Valley, OR": [
+    {
+      label: "Rock Creek, Happy Valley",
+      url: "https://jamiemeushawrealestate.com/moving-to-happy-valley-or-consider-rock-creek-the-practical-choice-in-a-fast-growing-city/",
+    },
+  ],
   // Verified no real post exists yet — do not invent one.
-  "Lake Oswego, OR": null,
-  "West Linn, OR": null,
-  "Hockinson, WA": null,
-  "Tigard, OR": null,
-  "Tualatin, OR": null,
+  "Lake Oswego, OR": [],
+  "West Linn, OR": [],
+  "Hockinson, WA": [],
+  "Tigard, OR": [],
+  "Tualatin, OR": [],
 };
+
+// Explicit, hand-verified round-robin assignment of which NEIGHBORHOOD_POST_LINKS entry each
+// comparison pair gets, keyed by comparisonKey(cityA, cityB). A hash-based pick was tried
+// first and rejected — with only 2-3 options per city and a handful of real pairs, a simple
+// hash collided onto the same index for every pair sharing a city far too often (e.g. both of
+// Ridgefield's, Portland's and Beaverton's real pairs landed on the same link). This table is
+// the reliable alternative: every multi-appearance city is manually confirmed to cycle
+// through its different real links rather than repeating one. Missing entries default to
+// index 0 — correct for every city that currently appears in only one comparison post.
+const NEIGHBORHOOD_LINK_INDEX: Record<string, { a?: number; b?: number }> = {
+  [comparisonKey("Camas, WA", "Ridgefield, WA")]: { a: 0 },
+  [comparisonKey("Camas, WA", "Portland, OR")]: { a: 1 },
+  [comparisonKey("Camas, WA", "Beaverton, OR")]: { a: 2 },
+  [comparisonKey("Camas, WA", "Lake Oswego, OR")]: { a: 0 },
+  [comparisonKey("Camas, WA", "West Linn, OR")]: { a: 1 },
+  [comparisonKey("Camas, WA", "Battle Ground, WA")]: { a: 2 },
+  [comparisonKey("Camas, WA", "Washougal, WA")]: { a: 0, b: 0 },
+  [comparisonKey("Ridgefield, WA", "Vancouver, WA")]: { a: 1, b: 0 },
+  [comparisonKey("Portland, OR", "Beaverton, OR")]: { a: 1, b: 1 },
+  [comparisonKey("Washougal, WA", "Hockinson, WA")]: { a: 1 },
+  [comparisonKey("Vancouver, WA", "Happy Valley, OR")]: { a: 1 },
+};
+
+function pickNeighborhoodPostLink(
+  cityA: string,
+  cityB: string,
+  side: "a" | "b"
+): { label: string; url: string } | null {
+  const city = side === "a" ? cityA : cityB;
+  const options = NEIGHBORHOOD_POST_LINKS[city];
+  if (!options || options.length === 0) return null;
+  const idx = NEIGHBORHOOD_LINK_INDEX[comparisonKey(cityA, cityB)]?.[side] ?? 0;
+  return options[idx] ?? options[0];
+}
 
 // Same idea, for Jamie's real YouTube channel (youtube.com/@jamiemeushawrealestate) —
 // she explicitly said this coverage "will be limited," so most cities are null by design,
@@ -12203,8 +12286,8 @@ function comparisonArticleParagraphs(seed: ComparisonSeed): string[] {
   const bName = seed.cityB.split(",")[0].trim();
   const publishedA = PUBLISHED_POST_URLS[seed.cityA];
   const publishedB = PUBLISHED_POST_URLS[seed.cityB];
-  const neighborhoodA = NEIGHBORHOOD_POST_LINKS[seed.cityA];
-  const neighborhoodB = NEIGHBORHOOD_POST_LINKS[seed.cityB];
+  const neighborhoodA = pickNeighborhoodPostLink(seed.cityA, seed.cityB, "a");
+  const neighborhoodB = pickNeighborhoodPostLink(seed.cityA, seed.cityB, "b");
   const youtubeA = CITY_YOUTUBE_PLAYLISTS[seed.cityA];
   const youtubeB = CITY_YOUTUBE_PLAYLISTS[seed.cityB];
 
