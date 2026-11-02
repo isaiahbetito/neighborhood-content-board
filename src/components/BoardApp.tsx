@@ -1249,6 +1249,7 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "Lacamas Lake, the Lacamas Heritage Trail and Round Lake Park, for lake access, trails and year-round outdoor recreation close to the city center.",
       "A long-running industrial and employment base on the waterfront, plus semiconductor manufacturing in the surrounding area.",
       "Direct access to SR-14 and I-205, with a broader mix of established and newer neighborhoods to choose from than a smaller, newer city typically offers.",
+      "Camas School District, ranked 15th of 238 Washington school districts by SchoolDigger as of 2026 (with 8 five-star-rated schools) — a real, often-cited factor in why buyers specifically target Camas.",
     ],
     bulletsB: [
       "Close proximity to the Ridgefield National Wildlife Refuge, more than 5,300 acres of protected habitat along the Columbia River.",
@@ -1295,6 +1296,7 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "Lacamas Lake, the Lacamas Heritage Trail and Round Lake Park, all within a short drive of most Camas addresses.",
       "One public school district, Camas School District, instead of Portland's patchwork of districts and periodic boundary changes.",
       "Direct access to SR-14 and I-205, with a shorter, more predictable commute into Vancouver and east Portland for many Camas addresses.",
+      "Camas School District, ranked 15th of 238 Washington school districts by SchoolDigger as of 2026 (with 8 five-star-rated schools) — a real, often-cited factor in why buyers specifically target Camas.",
     ],
     bulletsB: [
       "A far larger selection of neighborhoods and housing types, from inner-eastside craftsman and foursquare homes to newer infill and multifamily construction throughout the city.",
@@ -1342,6 +1344,7 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "Lacamas Lake, the Lacamas Heritage Trail and Round Lake Park, for lake access, trails and year-round outdoor recreation close to the city center.",
       "A long-running industrial and employment base on the waterfront, plus semiconductor manufacturing in the surrounding area.",
       "Direct access to SR-14 and I-205, with no Washington state income tax to factor into a budget comparison.",
+      "Camas School District, ranked 15th of 238 Washington school districts by SchoolDigger as of 2026 (with 8 five-star-rated schools) — a real, often-cited factor in why buyers specifically target Camas.",
     ],
     bulletsB: [
       "Direct TriMet MAX light rail access via the Blue and Red lines, with stops including Beaverton Transit Center, Beaverton Central and Millikan Way, plus WES Commuter Rail service south to Wilsonville.",
@@ -1387,6 +1390,7 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "Lacamas Lake, the Lacamas Heritage Trail and Round Lake Park, for lake access and trails close to downtown.",
       "A long-running industrial and employment base on the waterfront, plus semiconductor manufacturing in the surrounding area.",
       "Direct access to SR-14 and I-205, with a meaningfully lower overall price level than Lake Oswego.",
+      "Camas School District, ranked 15th of 238 Washington school districts by SchoolDigger as of 2026 (with 8 five-star-rated schools) — a real, often-cited factor in why buyers specifically target Camas.",
     ],
     bulletsB: [
       "A long-established, higher-end housing market in the Portland metro, with a compact downtown shopping and dining district, Lake View Village.",
@@ -1434,6 +1438,7 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "Lacamas Lake, the Lacamas Heritage Trail and Round Lake Park, all within a short drive of downtown, for lake access and year-round trail use.",
       "No Washington state income tax, plus a long-running industrial and semiconductor manufacturing base nearby.",
       "Direct access to SR-14 and I-205, connecting to both Vancouver and Portland's east side.",
+      "Camas School District, ranked 15th of 238 Washington school districts by SchoolDigger as of 2026 (with 8 five-star-rated schools) — a real, often-cited factor in why buyers specifically target Camas.",
     ],
     bulletsB: [
       "Willamette Falls and the confluence of the Willamette and Tualatin rivers, defining features of the city's landscape and close to most neighborhoods.",
@@ -1482,6 +1487,7 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "Lacamas Lake and the Lacamas Heritage Trail, both within a short drive of most Camas neighborhoods, for swimming, paddling and trail access.",
       "A long-running paper mill on the waterfront plus semiconductor manufacturing in the surrounding area, giving the city an established local job base beyond Portland commuting.",
       "Direct access to SR-14 and I-205, with a more built-out mix of home ages and styles than a smaller, newer city typically offers.",
+      "Camas School District, ranked 15th of 238 Washington school districts by SchoolDigger as of 2026 (with 8 five-star-rated schools) — a real, often-cited factor in why buyers specifically target Camas.",
     ],
     bulletsB: [
       "Battle Ground Lake State Park just outside town, with lake swimming, camping and trail access that's less convenient to reach from closer-in Clark County cities.",
@@ -1530,6 +1536,7 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
       "Lacamas Lake, the Lacamas Heritage Trail and Round Lake Park, for lake access, trails and year-round outdoor recreation close to the city center.",
       "A long-running industrial and employment base on the waterfront, plus semiconductor manufacturing in the surrounding area.",
       "A larger, more built-out city overall, with a broader mix of home ages and neighborhoods to choose from than its smaller neighbor to the east.",
+      "Camas School District, ranked 15th of 238 Washington school districts by SchoolDigger as of 2026 (with 8 five-star-rated schools) — a real, often-cited factor in why buyers specifically target Camas.",
     ],
     bulletsB: [
       "A working historic downtown built around Pendleton Woolen Mills, which has operated in Washougal since 1910 and still offers mill tours and an outlet store.",
