@@ -10087,7 +10087,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to the Portland, OR area? Explore Woodland Park, officially the smallest neighborhood in the entire city.",
       gbp:
-        "If you're moving to the Portland, OR area, Woodland Park is worth knowing about for a genuinely unusual reason — it's officially the smallest neighborhood in the entire city, a small, almost triangular area running parallel to I-84, east of I-84 and west of NE 102nd Ave, north of NE Halsey St. A small cluster of floating homes sits along its north border on NE Marine Drive, a real, distinctive detail for such a compact neighborhood. If you're comparing Woodland Park homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the floating homes and current listings.",
+        "If you're moving to the Portland, OR area, Woodland Park is worth knowing about for a genuinely unusual reason — it's officially the smallest neighborhood in the entire city, a small, almost triangular area running parallel to I-84, east of I-84 and west of NE 102nd Ave, north of NE Halsey St. If you're comparing Woodland Park homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the neighborhood's size, boundaries and current listings.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to the Portland, Oregon area, Woodland Park is worth knowing about for a genuinely unusual reason — it's officially the smallest neighborhood in the entire city.",
@@ -10102,14 +10102,13 @@ const TITLES: Record<string, PostSeed[]> = {
         "Specific, verified current pricing wasn't broadly confirmed for this writeup — compare current listings directly, given the very small inventory this neighborhood's size implies.",
       ],
       parks: [
-        "A small cluster of floating homes sits along the neighborhood's north border on NE Marine Drive, a real, distinctive housing type for such a compact area.",
+        "Specific park amenities within Woodland Park's small footprint weren't broadly confirmed for this writeup — given its size, parks in bordering neighborhoods like Madison South, Parkrose Heights and Hazelwood may be the closer day-to-day option.",
       ],
       commute: [
         "Woodland Park's location along I-84 keeps it within reasonable reach of the broader Portland arterial network, with the usual time-of-day variability on actual drive time.",
       ],
       reasons: [
         "<strong>Officially Portland's smallest neighborhood:</strong> a real, checkable superlative.",
-        "<strong>A small floating-home cluster:</strong> a genuinely distinctive housing type for such a compact area.",
         "<strong>Direct I-84 access:</strong> convenient highway connectivity given the neighborhood's size.",
       ],
       considerations: [
