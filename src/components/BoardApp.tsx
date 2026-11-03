@@ -12168,7 +12168,21 @@ const AREA_PHOTOS: Record<string, (keyof typeof PHOTOS)[]> = {
 // posts aren't in AREAS at all. Same safety rule applies: never derive this from a shared
 // function, only ever add a new entry per pair. Starts empty; filled in as real images are
 // generated and verified (see photoForPost's comparison branch).
-const COMPARISON_GENERATED_PHOTOS: Record<string, string> = {};
+const COMPARISON_GENERATED_PHOTOS: Record<string, string> = {
+  [comparisonKey("Camas, WA", "Ridgefield, WA")]: "/neighborhood-photos/camas-vs-ridgefield.jpeg",
+  [comparisonKey("Camas, WA", "Portland, OR")]: "/neighborhood-photos/camas-vs-portland.jpeg",
+  [comparisonKey("Camas, WA", "Beaverton, OR")]: "/neighborhood-photos/camas-vs-beaverton.jpeg",
+  [comparisonKey("Camas, WA", "Lake Oswego, OR")]: "/neighborhood-photos/camas-vs-lake-oswego.jpeg",
+  [comparisonKey("Camas, WA", "West Linn, OR")]: "/neighborhood-photos/camas-vs-west-linn.jpeg",
+  [comparisonKey("Camas, WA", "Battle Ground, WA")]: "/neighborhood-photos/camas-vs-battle-ground.jpeg",
+  [comparisonKey("Camas, WA", "Washougal, WA")]: "/neighborhood-photos/camas-vs-washougal.jpeg",
+  [comparisonKey("Ridgefield, WA", "Vancouver, WA")]: "/neighborhood-photos/ridgefield-vs-vancouver.jpeg",
+  [comparisonKey("Portland, OR", "Beaverton, OR")]: "/neighborhood-photos/portland-vs-beaverton.jpeg",
+  [comparisonKey("Lake Oswego, OR", "West Linn, OR")]: "/neighborhood-photos/lake-oswego-vs-west-linn.jpeg",
+  [comparisonKey("Vancouver, WA", "Happy Valley, OR")]: "/neighborhood-photos/vancouver-vs-happy-valley.jpeg",
+  [comparisonKey("Washougal, WA", "Hockinson, WA")]: "/neighborhood-photos/washougal-vs-hockinson.jpeg",
+  [comparisonKey("Tigard, OR", "Tualatin, OR")]: "/neighborhood-photos/tigard-vs-tualatin.jpeg",
+};
 
 const AREA_GENERATED_PHOTOS: Record<string, string> = {
   "Piedmont, Portland": "/neighborhood-photos/piedmont-portland.jpeg",
