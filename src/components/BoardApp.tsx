@@ -12164,6 +12164,15 @@ const AREA_PHOTOS: Record<string, (keyof typeof PHOTOS)[]> = {
 // existing areas/variants again; it silently reaches every post that doesn't have its own
 // photoUrl, including ones already live.
 const AREA_GENERATED_PHOTOS: Record<string, string> = {
+  "Piedmont, Portland": "/neighborhood-photos/piedmont-portland.jpeg",
+  "Portsmouth, Portland": "/neighborhood-photos/portsmouth-portland.jpeg",
+  "St. Johns, Portland": "/neighborhood-photos/st-johns-portland.jpeg",
+  "University Park, Portland": "/neighborhood-photos/university-park-portland.jpeg",
+  "East Columbia, Portland": "/neighborhood-photos/east-columbia-portland.jpeg",
+  "Bridgeton, Portland": "/neighborhood-photos/bridgeton-portland.jpeg",
+  "Boise, Portland": "/neighborhood-photos/boise-portland.jpeg",
+  "Eliot, Portland": "/neighborhood-photos/eliot-portland.jpeg",
+  "Humboldt, Portland": "/neighborhood-photos/humboldt-portland.jpeg",
   "Holly Ridge, Camas": "/neighborhood-photos/holly-ridge-camas.jpeg",
   "Lakeshore, Vancouver": "/neighborhood-photos/lakeshore-vancouver.jpeg",
   "Pleasant Valley, Vancouver": "/neighborhood-photos/pleasant-valley-vancouver.jpeg",
