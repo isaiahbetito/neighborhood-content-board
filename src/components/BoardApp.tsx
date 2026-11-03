@@ -1372,6 +1372,7 @@ type ComparisonSeed = {
   cityB: string; // "Ridgefield, WA"
   keyword: string;
   metaDescription: string;
+  excerpt?: string; // WordPress excerpt field, 1-2 sentences
   execSummary: string[];
   bulletsA: string[];
   bulletsB: string[];
@@ -1409,6 +1410,8 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
     keyword: "Camas WA vs Ridgefield WA",
     metaDescription:
       "Comparing Camas and Ridgefield, WA: housing prices, amenities, parks, commute and what genuinely sets these two Clark County cities apart.",
+    excerpt:
+      "Comparing Camas and Ridgefield, WA? A side-by-side look at two Clark County cities: Camas, with its historic downtown and Lacamas Lake, and Ridgefield, newer and growing fast near I-5 and the wildlife refuge.",
     execSummary: [
       "Camas and Ridgefield are both Clark County, Washington cities in the Portland-Vancouver metro, with no Washington state income tax and straightforward access to Portland, Oregon via SR-14 or I-5.",
       "Camas is the larger, more established of the two, with a historic downtown, Lacamas Lake and a mix of long-established neighborhoods alongside newer subdivisions.",
@@ -1456,6 +1459,8 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
     keyword: "Camas WA vs Portland OR",
     metaDescription:
       "Comparing Camas, WA and Portland, OR: housing prices, neighborhoods, parks, commute and what sets a small Clark County city apart from a major metro core.",
+    excerpt:
+      "Comparing Camas, WA and Portland, OR? A side-by-side look at a compact Clark County city with one historic downtown and Oregon's largest city, with dozens of neighborhoods and price points.",
     execSummary: [
       "Camas, Washington and Portland, Oregon sit on opposite sides of the Columbia River in the same metro area, but they're very different kinds of places to live — a small, established Clark County city compared to Oregon's largest city.",
       "Camas is a single, compact city with one historic downtown and a population in the tens of thousands; Portland is a much larger city of roughly 635,000 residents, spanning dozens of distinct neighborhoods with very different character and price points.",
@@ -1504,6 +1509,8 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
     keyword: "Camas WA vs Beaverton OR",
     metaDescription:
       "Comparing Camas, WA and Beaverton, OR: housing prices, transit access, tech-sector employment and what genuinely sets these two cities apart.",
+    excerpt:
+      "Comparing Camas, WA and Beaverton, OR? A side-by-side look at home prices, MAX light rail access, tech-sector jobs and the tax differences between two cities on opposite sides of the metro.",
     execSummary: [
       "Camas, WA and Beaverton, OR are both part of the broader Portland-Vancouver metro, but sit on opposite sides of the region — Camas in Clark County, Washington, Beaverton in Washington County, Oregon — which means different state tax treatment and a different commute pattern into central Portland.",
       "Camas is the smaller of the two, with a historic downtown, Lacamas Lake and a mix of established and newer neighborhoods, built around a working waterfront and more recent semiconductor manufacturing.",
@@ -1550,6 +1557,8 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
     keyword: "Camas WA vs Lake Oswego OR",
     metaDescription:
       "Comparing Camas, WA and Lake Oswego, OR: housing prices, Oswego Lake access, parks, commute and what genuinely sets these two cities apart.",
+    excerpt:
+      "Comparing Camas, WA and Lake Oswego, OR? A side-by-side look at price points, Lacamas Lake versus Oswego Lake access and what sets these two established Portland-metro communities apart.",
     execSummary: [
       "Camas, WA and Lake Oswego, OR are both established Portland-metro communities with strong reputations, but they sit at different price points on different sides of the Columbia River.",
       "Camas is the more accessible of the two on price, with a historic downtown, Lacamas Lake and a mix of established and newer housing.",
@@ -1598,6 +1607,8 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
     keyword: "Camas WA vs West Linn OR",
     metaDescription:
       "Comparing Camas, WA and West Linn, OR: housing prices, amenities, parks, commute and what genuinely sets these two Portland-area cities apart.",
+    excerpt:
+      "Comparing Camas, WA and West Linn, OR? A side-by-side look at home prices, Washington and Oregon tax tradeoffs, and the lakes, rivers and parks of two established Portland-area cities.",
     execSummary: [
       "Camas, WA and West Linn, OR are both established Portland-area cities known for historic character and higher-end housing rather than new-construction sprawl.",
       "Camas sits in Clark County, Washington, with no state income tax; West Linn sits in Clackamas County, Oregon, with no state sales tax — a real cost tradeoff worth weighing beyond home price alone.",
@@ -1647,6 +1658,8 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
     keyword: "Camas WA vs Battle Ground WA",
     metaDescription:
       "Comparing Camas and Battle Ground, WA: housing prices, amenities, parks, commute and what genuinely sets these two Clark County cities apart.",
+    excerpt:
+      "Comparing Camas and Battle Ground, WA? A side-by-side look at two Clark County cities: an established downtown on Lacamas Lake versus larger lots and acreage near Battle Ground Lake State Park.",
     execSummary: [
       "Camas and Battle Ground are both Clark County, Washington cities with no state income tax, though they sit at different points relative to Vancouver and Portland — Camas closer to the Columbia River, Battle Ground farther north and more spread out.",
       "Camas is the larger, more established of the two, with a historic downtown, Lacamas Lake and a long industrial and semiconductor-driven employment base.",
@@ -1696,6 +1709,8 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
     keyword: "Camas WA vs Washougal WA",
     metaDescription:
       "Comparing Camas and Washougal, WA: housing prices, Pendleton Woolen Mills, the Steigerwald Lake refuge and what sets these neighboring Columbia River cities apart.",
+    excerpt:
+      "Comparing Camas and Washougal, WA? A side-by-side look at two neighboring Columbia River cities, from home prices and downtowns to Pendleton Woolen Mills and the Steigerwald Lake refuge.",
     execSummary: [
       "Camas and Washougal are immediate neighbors in Clark County, Washington, both sitting along the Columbia River and connected by SR-14.",
       "Camas is the larger and more expensive of the two, with a longer-established downtown and a broader mix of home ages.",
@@ -1743,6 +1758,8 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
     keyword: "Ridgefield WA vs Vancouver WA",
     metaDescription:
       "Comparing Ridgefield and Vancouver, WA: housing prices, downtown character, parks, commute and what genuinely sets these two Clark County cities apart.",
+    excerpt:
+      "Comparing Ridgefield and Vancouver, WA? A side-by-side look at a small, fast-growing city off I-5 Exit 14 and Clark County's largest city, with its historic fort and Columbia River waterfront.",
     execSummary: [
       "Ridgefield and Vancouver are both Clark County, Washington cities along the Columbia River, but represent very different scales — a small, fast-growing newer city compared to the county's largest city by a wide margin.",
       "Ridgefield has grown rapidly over roughly the past 15 years, expanding out from the I-5 Exit 14 interchange through new-construction subdivisions, while keeping a small historic downtown along Pioneer Street.",
@@ -1791,6 +1808,8 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
     keyword: "Portland OR vs Beaverton OR",
     metaDescription:
       "Comparing Portland and Beaverton, OR: housing prices, transit access, neighborhoods and what genuinely sets a major metro core apart from its largest west-side suburb.",
+    excerpt:
+      "Comparing Portland and Beaverton, OR? A side-by-side look at home prices, neighborhoods and MAX light rail access in Oregon's largest city and one of its longest-established west-side suburbs.",
     execSummary: [
       "Portland and Beaverton sit on the Oregon side of the same metro area, but represent two different scales of place — Portland is the regional center itself, Beaverton one of its largest and longest-established west-side suburbs.",
       "Portland is far larger, with dozens of distinct neighborhoods and a wide range of housing stock, price points and school districts; Beaverton is a single, more compact city built around a well-known tech-sector employment base.",
@@ -1837,6 +1856,8 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
     keyword: "Lake Oswego OR vs West Linn OR",
     metaDescription:
       "Comparing Lake Oswego and West Linn, OR: housing prices, lake and river access, parks, commute and what genuinely sets these two Portland-area cities apart.",
+    excerpt:
+      "Comparing Lake Oswego and West Linn, OR? A side-by-side look at home prices, Oswego Lake and Willamette River access, parks and commutes in two established suburbs across the river from each other.",
     execSummary: [
       "Lake Oswego and West Linn are both established, higher-end Clackamas-area Portland suburbs, sitting across the Willamette River from each other and connected by I-205.",
       "Lake Oswego is built around Oswego Lake and a compact downtown, Lake View Village; West Linn is built around Willamette Falls and the confluence of the Willamette and Tualatin rivers.",
@@ -1885,6 +1906,8 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
     keyword: "Vancouver WA vs Happy Valley OR",
     metaDescription:
       "Comparing Vancouver, WA and Happy Valley, OR: housing prices, history, newer construction and what genuinely sets these two cities apart.",
+    excerpt:
+      "Comparing Vancouver, WA and Happy Valley, OR? A side-by-side look at Clark County's largest city, with homes from historic to brand new, and a newer, hillside Clackamas County suburb.",
     execSummary: [
       "Vancouver, WA and Happy Valley, OR sit on opposite sides of the Portland metro, both within reach of downtown Portland but with very different scale and housing stock.",
       "Vancouver is Clark County's largest city, with a long history (Fort Vancouver National Historic Site dates to 1825) and a wide range of home ages, from historic districts to new waterfront construction.",
@@ -1933,6 +1956,8 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
     keyword: "Washougal WA vs Hockinson WA",
     metaDescription:
       "Comparing Washougal and Hockinson, WA: housing prices, Pendleton Woolen Mills, acreage living and what genuinely sets these two Clark County communities apart.",
+    excerpt:
+      "Comparing Washougal and Hockinson, WA? A side-by-side look at a historic Columbia River city with its own downtown and an unincorporated rural community of larger lots and acreage.",
     execSummary: [
       "Washougal and Hockinson are both Clark County, Washington communities, but they offer very different settings — a historic river city with its own downtown versus an unincorporated, low-density rural community.",
       "Washougal has an established commercial core built around Pendleton Woolen Mills and direct access to the Columbia River and the Steigerwald Lake National Wildlife Refuge.",
@@ -1980,6 +2005,8 @@ const COMPARISON_TITLES: Record<string, ComparisonSeed> = {
     keyword: "Tigard OR vs Tualatin OR",
     metaDescription:
       "Comparing Tigard and Tualatin, OR: housing prices, the shared school district, parks, commute and what sets these Washington County cities apart.",
+    excerpt:
+      "Comparing Tigard and Tualatin, OR? A side-by-side look at two neighboring Washington County cities that share a school district, from Washington Square and Bull Mountain to the Tualatin River.",
     execSummary: [
       "Tigard and Tualatin are neighboring Washington County, Oregon cities that share the same public school district — an overlap that sets this comparison apart from most others on this list — plus overlapping access to I-5 and OR-99W.",
       "Tigard is the larger of the two, built in part around Washington Square, one of the Portland area's larger regional shopping malls, with established neighborhoods including Bull Mountain.",
@@ -12770,6 +12797,9 @@ function contentPackageText(post: Post): string {
     const lines = [
       "TITLE",
       post.title,
+      "",
+      "EXCERPT",
+      seed.excerpt ?? post.metaDescription,
       "",
       "EXECUTIVE SUMMARY",
       ...seed.execSummary,
