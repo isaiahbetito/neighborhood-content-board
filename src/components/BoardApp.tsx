@@ -12185,6 +12185,7 @@ const COMPARISON_GENERATED_PHOTOS: Record<string, string> = {
 };
 
 const AREA_GENERATED_PHOTOS: Record<string, string> = {
+  "Lloyd District, Portland": "/neighborhood-photos/lloyd-district-portland.jpeg",
   "Piedmont, Portland": "/neighborhood-photos/piedmont-portland.jpeg",
   "Portsmouth, Portland": "/neighborhood-photos/portsmouth-portland.jpeg",
   "St. Johns, Portland": "/neighborhood-photos/st-johns-portland.jpeg",
