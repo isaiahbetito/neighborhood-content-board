@@ -12478,6 +12478,16 @@ const AREA_GENERATED_PHOTOS: Record<string, string> = {
   "Wilkes, Portland": "/neighborhood-photos/wilkes-portland.jpeg",
   "Woodland Park, Portland": "/neighborhood-photos/woodland-park-portland.jpeg",
   "Woodlawn, Portland": "/neighborhood-photos/woodlawn-portland.jpeg",
+  "Brentwood-Darlington, Portland": "/neighborhood-photos/brentwood-darlington-portland.jpeg",
+  "Brooklyn, Portland": "/neighborhood-photos/brooklyn-portland.jpeg",
+  "Buckman, Portland": "/neighborhood-photos/buckman-portland.jpeg",
+  "Centennial, Portland": "/neighborhood-photos/centennial-portland.jpeg",
+  "Creston-Kenilworth, Portland": "/neighborhood-photos/creston-kenilworth-portland.jpeg",
+  "Eastmoreland, Portland": "/neighborhood-photos/eastmoreland-portland.jpeg",
+  "Foster-Powell, Portland": "/neighborhood-photos/foster-powell-portland.jpeg",
+  "Hosford-Abernethy, Portland": "/neighborhood-photos/hosford-abernethy-portland.jpeg",
+  "Lents, Portland": "/neighborhood-photos/lents-portland.jpeg",
+  "Mill Park, Portland": "/neighborhood-photos/mill-park-portland.jpeg",
 };
 
 function titleIndexForPost(post: Post): number {
