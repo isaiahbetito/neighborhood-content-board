@@ -12163,6 +12163,13 @@ const AREA_PHOTOS: Record<string, (keyof typeof PHOTOS)[]> = {
 // on that one post when it's created) — never change what this shared function returns for
 // existing areas/variants again; it silently reaches every post that doesn't have its own
 // photoUrl, including ones already live.
+// Real Gemini-generated photos for city-comparison posts, keyed by comparisonKey(cityA,
+// cityB) — mirrors AREA_GENERATED_PHOTOS' pattern but kept as its own map since comparison
+// posts aren't in AREAS at all. Same safety rule applies: never derive this from a shared
+// function, only ever add a new entry per pair. Starts empty; filled in as real images are
+// generated and verified (see photoForPost's comparison branch).
+const COMPARISON_GENERATED_PHOTOS: Record<string, string> = {};
+
 const AREA_GENERATED_PHOTOS: Record<string, string> = {
   "Piedmont, Portland": "/neighborhood-photos/piedmont-portland.jpeg",
   "Portsmouth, Portland": "/neighborhood-photos/portsmouth-portland.jpeg",
@@ -12273,6 +12280,11 @@ function titleIndexForPost(post: Post): number {
 
 function photoForPost(post: Post): string {
   if (post.photoUrl) return post.photoUrl;
+  if (post.kind === "comparison" && post.cityA && post.cityB) {
+    const generatedComparison = COMPARISON_GENERATED_PHOTOS[comparisonKey(post.cityA, post.cityB)];
+    if (generatedComparison) return generatedComparison;
+    return photoUrl("farmhouse");
+  }
   const generated = AREA_GENERATED_PHOTOS[post.area];
   if (generated) return generated;
   const idx = titleIndexForPost(post);
