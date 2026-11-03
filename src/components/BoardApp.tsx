@@ -12302,6 +12302,12 @@ const AREA_GENERATED_PHOTOS: Record<string, string> = {
   "Westlake, Lake Oswego": "/neighborhood-photos/westlake-lake-oswego.jpeg",
   "Westridge, Lake Oswego": "/neighborhood-photos/westridge-lake-oswego.jpeg",
   "First Addition / Forest Hills, Lake Oswego": "/neighborhood-photos/first-addition-forest-hills-lake-oswego.jpeg",
+  "Kerns, Portland": "/neighborhood-photos/kerns-portland.jpeg",
+  "Sunderland, Portland": "/neighborhood-photos/sunderland-portland.jpeg",
+  "Vernon, Portland": "/neighborhood-photos/vernon-portland.jpeg",
+  "Wilkes, Portland": "/neighborhood-photos/wilkes-portland.jpeg",
+  "Woodland Park, Portland": "/neighborhood-photos/woodland-park-portland.jpeg",
+  "Woodlawn, Portland": "/neighborhood-photos/woodlawn-portland.jpeg",
 };
 
 function titleIndexForPost(post: Post): number {
