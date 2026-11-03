@@ -618,12 +618,46 @@ const NEIGHBORHOOD_POST_LINKS: Record<string, { label: string; url: string }[]> 
       url: "https://jamiemeushawrealestate.com/moving-to-happy-valley-or-consider-rock-creek-the-practical-choice-in-a-fast-growing-city/",
     },
   ],
-  // Verified no real post exists yet — do not invent one.
-  "Lake Oswego, OR": [],
-  "West Linn, OR": [],
-  "Hockinson, WA": [],
-  "Tigard, OR": [],
-  "Tualatin, OR": [],
+  // Added 2026-11-04 from the site's own full post list (wp-json/wp/v2/posts, all 370 posts) —
+  // an earlier site-search pass had wrongly concluded these cities had no posts.
+  "Lake Oswego, OR": [
+    {
+      label: "Mountain Park, Lake Oswego",
+      url: "https://jamiemeushawrealestate.com/moving-to-lake-oswego-or-consider-mountain-park-a-large-hoa-community-with-private-trails-near-portland/",
+    },
+    {
+      label: "Lake Oswego",
+      url: "https://jamiemeushawrealestate.com/lake-oswego-luxury-living-waterfront-charm-and-top-tier-schools/",
+    },
+  ],
+  "West Linn, OR": [
+    {
+      label: "Hidden Springs, West Linn",
+      url: "https://jamiemeushawrealestate.com/moving-to-west-linn-or-consider-hidden-springs-one-of-west-linns-eleven-official-neighborhoods-west-of-the-willamette/",
+    },
+    {
+      label: "West Linn",
+      url: "https://jamiemeushawrealestate.com/moving-to-west-linn-oregon-what-you-need-to-know-before-you-relocate/",
+    },
+  ],
+  "Hockinson, WA": [
+    {
+      label: "Hockinson",
+      url: "https://jamiemeushawrealestate.com/moving-to-hockinson-wa-consider-hockinson-rural-residential-acreage-northeast-of-vancouver/",
+    },
+  ],
+  "Tigard, OR": [
+    {
+      label: "Bull Mountain, Tigard",
+      url: "https://jamiemeushawrealestate.com/moving-to-tigard-or-consider-bull-mountain-elevated-new-construction-on-tigards-signature-hilltop/",
+    },
+  ],
+  "Tualatin, OR": [
+    {
+      label: "Tualatin",
+      url: "https://jamiemeushawrealestate.com/tualatin-central-location-with-suburban-ease/",
+    },
+  ],
 };
 
 // Explicit, hand-verified round-robin assignment of which NEIGHBORHOOD_POST_LINKS entry each
@@ -646,6 +680,9 @@ const NEIGHBORHOOD_LINK_INDEX: Record<string, { a?: number; b?: number }> = {
   [comparisonKey("Portland, OR", "Beaverton, OR")]: { a: 1, b: 1 },
   [comparisonKey("Washougal, WA", "Hockinson, WA")]: { a: 1 },
   [comparisonKey("Vancouver, WA", "Happy Valley, OR")]: { a: 1 },
+  // Camas vs. Lake Oswego / Camas vs. West Linn take index 0 for LO / WL, so the
+  // Lake Oswego vs. West Linn pair uses index 1 on both sides to avoid repeating them.
+  [comparisonKey("Lake Oswego, OR", "West Linn, OR")]: { a: 1, b: 1 },
 };
 
 function pickNeighborhoodPostLink(
@@ -658,6 +695,140 @@ function pickNeighborhoodPostLink(
   if (!options || options.length === 0) return null;
   const idx = NEIGHBORHOOD_LINK_INDEX[comparisonKey(cityA, cityB)]?.[side] ?? 0;
   return options[idx] ?? options[0];
+}
+
+// Backlinks for neighborhood (non-comparison) posts, added 2026-11-04 at the user's request.
+// Every URL below came from jamiemeushawrealestate.com's own full post list
+// (wp-json/wp/v2/posts, 370 posts) — none guessed. AREA_BLOG_LINKS is a real existing post
+// about the SAME neighborhood (the most recent earlier post from this board's own series where
+// one exists, otherwise Jamie's older long-form guide). Areas with no post of their own fall
+// back to CITY_BLOG_POOLS, a different real post in the same city, picked per area so a city
+// with many neighborhoods doesn't repeat one link everywhere. Cities with no pool get no line.
+const AREA_BLOG_LINKS: Record<string, { label: string; url: string }> = {
+  "Stephens Hillside Farm, La Center": { label: "Stephens Hillside Farm, La Center", url: "https://jamiemeushawrealestate.com/moving-to-la-center-wa-consider-stephens-hillside-farm-new-construction-in-a-small-market/" },
+  "Northfork Landing, Woodland": { label: "Northfork Landing, Woodland", url: "https://jamiemeushawrealestate.com/moving-to-woodland-wa-consider-northfork-landing-new-construction-along-the-lewis-river/" },
+  "Washougal, Washougal": { label: "Washougal, Washougal", url: "https://jamiemeushawrealestate.com/moving-to-washougal-wa-consider-washougal-a-market-with-no-single-center-of-gravity/" },
+  "Hockinson, Hockinson": { label: "Hockinson, Hockinson", url: "https://jamiemeushawrealestate.com/moving-to-hockinson-wa-consider-hockinson-why-acreage-here-doesnt-sit-long/" },
+  "Amboy, Amboy": { label: "Amboy, Amboy", url: "https://jamiemeushawrealestate.com/moving-to-amboy-wa-consider-amboy-a-small-slow-moving-rural-market/" },
+  "Brush Prairie, Brush Prairie": { label: "Brush Prairie, Brush Prairie", url: "https://jamiemeushawrealestate.com/moving-to-brush-prairie-wa-consider-brush-prairie-hobby-farms-and-acreage-in-demand/" },
+  "Cascade Park, Vancouver": { label: "Cascade Park, Vancouver", url: "https://jamiemeushawrealestate.com/moving-to-vancouver-wa-consider-cascade-park-steady-east-vancouver-demand/" },
+  "Fisher's Landing, Vancouver": { label: "Fisher's Landing, Vancouver", url: "https://jamiemeushawrealestate.com/moving-to-vancouver-wa-consider-fishers-landing-a-well-parked-corridor-keeps-drawing-interest/" },
+  "Downtown Vancouver, Vancouver": { label: "Downtown Vancouver, Vancouver", url: "https://jamiemeushawrealestate.com/moving-to-vancouver-wa-consider-downtown-vancouver-condo-demand-tracks-the-waterfront-buildout/" },
+  "Salmon Creek, Vancouver": { label: "Salmon Creek, Vancouver", url: "https://jamiemeushawrealestate.com/moving-to-vancouver-wa-consider-salmon-creek-a-wide-range-steady-demand-either-way/" },
+  "Irvington, Portland": { label: "Irvington, Portland", url: "https://jamiemeushawrealestate.com/moving-to-portland-or-consider-irvington-demand-for-a-real-historic-district-doesnt-slow-down/" },
+  "Sexton Mountain, Beaverton": { label: "Sexton Mountain, Beaverton", url: "https://jamiemeushawrealestate.com/moving-to-beaverton-or-consider-sexton-mountain-a-quieter-corner-of-a-fast-growing-suburb/" },
+  "Bull Mountain, Tigard": { label: "Bull Mountain, Tigard", url: "https://jamiemeushawrealestate.com/moving-to-tigard-or-consider-bull-mountain-new-construction-keeps-bull-mountain-in-demand/" },
+  "North Bethany, Bethany": { label: "North Bethany, Bethany", url: "https://jamiemeushawrealestate.com/moving-to-bethany-or-consider-north-bethany-a-still-developing-community-worth-watching/" },
+  "Orenco Station, Hillsboro": { label: "Orenco Station, Hillsboro", url: "https://jamiemeushawrealestate.com/moving-to-hillsboro-or-consider-orenco-station-one-of-the-metros-most-requested-transit-oriented-addresses/" },
+  "Mountain Park, Lake Oswego": { label: "Mountain Park, Lake Oswego", url: "https://jamiemeushawrealestate.com/moving-to-lake-oswego-or-consider-mountain-park-steady-interest-across-a-genuinely-wide-price-range/" },
+  "Hidden Springs, West Linn": { label: "Hidden Springs, West Linn", url: "https://jamiemeushawrealestate.com/moving-to-west-linn-or-consider-hidden-springs-a-smaller-neighborhood-where-inventory-moves-quickly/" },
+  "Canemah, Oregon City": { label: "Canemah, Oregon City", url: "https://jamiemeushawrealestate.com/moving-to-oregon-city-or-consider-canemah-a-historic-district-that-doesnt-turn-over-often/" },
+  "Historic Milwaukie, Milwaukie": { label: "Historic Milwaukie, Milwaukie", url: "https://jamiemeushawrealestate.com/moving-to-milwaukie-or-consider-historic-milwaukie-downtown-character-keeps-this-neighborhood-in-demand/" },
+  "Rock Creek, Happy Valley": { label: "Rock Creek, Happy Valley", url: "https://jamiemeushawrealestate.com/moving-to-happy-valley-or-consider-rock-creek-the-practical-choice-in-a-fast-growing-city/" },
+  "Cedar Hills, Beaverton": { label: "Cedar Hills, Beaverton", url: "https://jamiemeushawrealestate.com/cedar-hills-or-washington-countys-most-accessible-established-neighborhood-beaverton-schools-and-everything-you-need-to-know-before-you-make-the-move/" },
+  "Tanasbourne, Beaverton": { label: "Tanasbourne, Beaverton", url: "https://jamiemeushawrealestate.com/tanasbourne-westside-convenience-tech-corridor-access-and-one-of-portlands-most-practical-places-to-live/" },
+  "Garden Home / Raleigh Hills, Beaverton": { label: "Garden Home / Raleigh Hills, Beaverton", url: "https://jamiemeushawrealestate.com/raleigh-hills-or-southwest-portlands-most-established-unincorporated-community-timeless-residential-character-and-everything-you-need-to-know-before-you-make-the-move/" },
+  "Metzger, Tigard": { label: "Metzger, Tigard", url: "https://jamiemeushawrealestate.com/metzger-or-washington-countys-southwest-connector-community-practical-urban-adjacency-and-everything-you-need-to-know-before-you-make-the-move/" },
+  "Northwest District, Portland": { label: "Northwest District, Portland", url: "https://jamiemeushawrealestate.com/the-nw-district-portland-or-portlands-most-established-neighborhood-timeless-urban-character-and-everything-you-need-to-know-before-you-make-the-move/" },
+  "Pearl District, Portland": { label: "Pearl District, Portland", url: "https://jamiemeushawrealestate.com/the-pearl-district-portland-or-urban-living-at-its-most-refined-and-everything-you-need-to-know-before-you-make-the-move/" },
+  "Hayden Island, Portland": { label: "Hayden Island, Portland", url: "https://jamiemeushawrealestate.com/hayden-island-portland-or-columbia-river-living-floating-homes-and-everything-you-need-to-know-before-you-make-the-move/" },
+  "St. Johns, Portland": { label: "St. Johns, Portland", url: "https://jamiemeushawrealestate.com/st-johns-or-north-portlands-most-distinct-neighborhood-real-community-character-and-everything-you-need-to-know-before-you-make-the-move/" },
+  "Alameda, Portland": { label: "Alameda, Portland", url: "https://jamiemeushawrealestate.com/alameda-elevated-views-classic-homes-and-quiet-northeast-living/" },
+  "Beaumont-Wilshire, Portland": { label: "Beaumont-Wilshire, Portland", url: "https://jamiemeushawrealestate.com/beaumont-wilshire-tree-lined-streets-walkable-dining-and-classic-northeast-portland-living/" },
+  "Concordia, Portland": { label: "Concordia, Portland", url: "https://jamiemeushawrealestate.com/concordia-alberta-arts-energy-parks-and-one-of-northeast-portlands-most-lively-communities/" },
+  "Kerns, Portland": { label: "Kerns, Portland", url: "https://jamiemeushawrealestate.com/kerns-central-northeast-living-with-character-walkability-and-creative-energy/" },
+  "Laurelhurst, Portland": { label: "Laurelhurst, Portland", url: "https://jamiemeushawrealestate.com/laurelhurst-historic-elegance-parkside-living-and-inner-southeast-prestige/" },
+  "Buckman, Portland": { label: "Buckman, Portland", url: "https://jamiemeushawrealestate.com/buckman-inner-southeast-energy-walkability-and-classic-portland-character/" },
+  "Creston-Kenilworth, Portland": { label: "Creston-Kenilworth, Portland", url: "https://jamiemeushawrealestate.com/creston-walkable-southeast-portland-living-with-character-and-community/" },
+  "Lents, Portland": { label: "Lents, Portland", url: "https://jamiemeushawrealestate.com/lents-portland-or-southeast-portlands-most-undervalued-neighborhood-real-community-roots-and-everything-you-need-to-know-before-you-make-the-move/" },
+  "Mount Tabor, Portland": { label: "Mount Tabor, Portland", url: "https://jamiemeushawrealestate.com/mount-tabor-scenic-views-iconic-park-living-and-one-of-southeast-portlands-most-unique-neighborhoods/" },
+  "Richmond, Portland": { label: "Richmond, Portland", url: "https://jamiemeushawrealestate.com/richmond-division-street-energy-classic-homes-and-southeast-portland-living/" },
+  "Sellwood-Moreland, Portland": { label: "Sellwood-Moreland, Portland", url: "https://jamiemeushawrealestate.com/sellwood-moreland-riverside-living-historic-charm-and-one-of-southeast-portlands-most-beloved-neighborhoods/" },
+  "Maplewood, Portland": { label: "Maplewood, Portland", url: "https://jamiemeushawrealestate.com/maplewood-portland-or-southwest-hills-character-deep-west-hills-living-and-everything-you-need-to-know-before-you-make-the-move/" },
+  "Multnomah, Portland": { label: "Multnomah, Portland", url: "https://jamiemeushawrealestate.com/multnomah-village-small-town-charm-in-southwest-portland-with-walkability-and-community-feel/" },
+  "Sylvan-Highlands, Portland": { label: "Sylvan-Highlands, Portland", url: "https://jamiemeushawrealestate.com/sylvan-forested-hillsides-privacy-and-westside-convenience/" },
+};
+
+const CITY_BLOG_POOLS: Record<string, { label: string; url: string }[]> = {
+  "Beaverton": [
+    { label: "Beaverton", url: "https://jamiemeushawrealestate.com/beaverton-suburban-comfort-with-big-city-access/" },
+    { label: "Sexton Mountain, Beaverton", url: "https://jamiemeushawrealestate.com/moving-to-beaverton-or-consider-sexton-mountain-a-quieter-corner-of-a-fast-growing-suburb/" },
+    { label: "Cedar Hills, Beaverton", url: "https://jamiemeushawrealestate.com/cedar-hills-or-washington-countys-most-accessible-established-neighborhood-beaverton-schools-and-everything-you-need-to-know-before-you-make-the-move/" },
+    { label: "Cedar Mill, Beaverton", url: "https://jamiemeushawrealestate.com/cedar-mill-or-washington-countys-quiet-overachiever-beaverton-schools-and-everything-you-need-to-know-before-you-make-the-move/" },
+    { label: "Cooper Mountain, Beaverton", url: "https://jamiemeushawrealestate.com/cooper-mountain-or-washington-countys-western-ridge-beaverton-schools-and-everything-you-need-to-know-before-you-make-the-move/" },
+  ],
+  "Tigard": [
+    { label: "Tigard", url: "https://jamiemeushawrealestate.com/tigard-suburban-convenience-central-location-and-one-of-the-westsides-most-accessible-communities/" },
+    { label: "Bull Mountain, Tigard", url: "https://jamiemeushawrealestate.com/moving-to-tigard-or-consider-bull-mountain-new-construction-keeps-bull-mountain-in-demand/" },
+    { label: "Metzger, Tigard", url: "https://jamiemeushawrealestate.com/metzger-or-washington-countys-southwest-connector-community-practical-urban-adjacency-and-everything-you-need-to-know-before-you-make-the-move/" },
+  ],
+  "Lake Oswego": [
+    { label: "Lake Oswego", url: "https://jamiemeushawrealestate.com/lake-oswego-luxury-living-waterfront-charm-and-top-tier-schools/" },
+    { label: "Mountain Park, Lake Oswego", url: "https://jamiemeushawrealestate.com/moving-to-lake-oswego-or-consider-mountain-park-steady-interest-across-a-genuinely-wide-price-range/" },
+    { label: "Mountain Park, Lake Oswego", url: "https://jamiemeushawrealestate.com/moving-to-lake-oswego-or-consider-mountain-park-what-daily-life-looks-like-inside-the-hoa-trail-system/" },
+  ],
+  "West Linn": [
+    { label: "West Linn", url: "https://jamiemeushawrealestate.com/west-linn-oregon-one-of-oregons-most-desirable-suburbs/" },
+    { label: "West Linn", url: "https://jamiemeushawrealestate.com/moving-to-west-linn-oregon-what-you-need-to-know-before-you-relocate/" },
+    { label: "Hidden Springs, West Linn", url: "https://jamiemeushawrealestate.com/moving-to-west-linn-or-consider-hidden-springs-a-smaller-neighborhood-where-inventory-moves-quickly/" },
+  ],
+  "Happy Valley": [
+    { label: "Happy Valley", url: "https://jamiemeushawrealestate.com/happy-valley-oregon-suburban-living-with-views-space-and-convenience/" },
+    { label: "Rock Creek, Happy Valley", url: "https://jamiemeushawrealestate.com/moving-to-happy-valley-or-consider-rock-creek-the-practical-choice-in-a-fast-growing-city/" },
+  ],
+  "Milwaukie": [
+    { label: "Historic Milwaukie, Milwaukie", url: "https://jamiemeushawrealestate.com/moving-to-milwaukie-or-consider-historic-milwaukie-downtown-character-keeps-this-neighborhood-in-demand/" },
+    { label: "Historic Milwaukie, Milwaukie", url: "https://jamiemeushawrealestate.com/moving-to-milwaukie-or-consider-historic-milwaukie-a-sunday-morning-on-main-street/" },
+  ],
+  "Portland": [
+    { label: "Irvington, Portland", url: "https://jamiemeushawrealestate.com/moving-to-portland-or-consider-irvington-demand-for-a-real-historic-district-doesnt-slow-down/" },
+    { label: "Northwest District, Portland", url: "https://jamiemeushawrealestate.com/the-nw-district-portland-or-portlands-most-established-neighborhood-timeless-urban-character-and-everything-you-need-to-know-before-you-make-the-move/" },
+    { label: "Pearl District, Portland", url: "https://jamiemeushawrealestate.com/the-pearl-district-portland-or-urban-living-at-its-most-refined-and-everything-you-need-to-know-before-you-make-the-move/" },
+    { label: "Hayden Island, Portland", url: "https://jamiemeushawrealestate.com/hayden-island-portland-or-columbia-river-living-floating-homes-and-everything-you-need-to-know-before-you-make-the-move/" },
+    { label: "St. Johns, Portland", url: "https://jamiemeushawrealestate.com/st-johns-or-north-portlands-most-distinct-neighborhood-real-community-character-and-everything-you-need-to-know-before-you-make-the-move/" },
+    { label: "Alameda, Portland", url: "https://jamiemeushawrealestate.com/alameda-elevated-views-classic-homes-and-quiet-northeast-living/" },
+    { label: "Beaumont-Wilshire, Portland", url: "https://jamiemeushawrealestate.com/beaumont-wilshire-tree-lined-streets-walkable-dining-and-classic-northeast-portland-living/" },
+    { label: "Concordia, Portland", url: "https://jamiemeushawrealestate.com/concordia-alberta-arts-energy-parks-and-one-of-northeast-portlands-most-lively-communities/" },
+    { label: "Kerns, Portland", url: "https://jamiemeushawrealestate.com/kerns-central-northeast-living-with-character-walkability-and-creative-energy/" },
+    { label: "Laurelhurst, Portland", url: "https://jamiemeushawrealestate.com/laurelhurst-historic-elegance-parkside-living-and-inner-southeast-prestige/" },
+    { label: "Buckman, Portland", url: "https://jamiemeushawrealestate.com/buckman-inner-southeast-energy-walkability-and-classic-portland-character/" },
+    { label: "Creston-Kenilworth, Portland", url: "https://jamiemeushawrealestate.com/creston-walkable-southeast-portland-living-with-character-and-community/" },
+    { label: "Lents, Portland", url: "https://jamiemeushawrealestate.com/lents-portland-or-southeast-portlands-most-undervalued-neighborhood-real-community-roots-and-everything-you-need-to-know-before-you-make-the-move/" },
+    { label: "Mount Tabor, Portland", url: "https://jamiemeushawrealestate.com/mount-tabor-scenic-views-iconic-park-living-and-one-of-southeast-portlands-most-unique-neighborhoods/" },
+    { label: "Richmond, Portland", url: "https://jamiemeushawrealestate.com/richmond-division-street-energy-classic-homes-and-southeast-portland-living/" },
+    { label: "Sellwood-Moreland, Portland", url: "https://jamiemeushawrealestate.com/sellwood-moreland-riverside-living-historic-charm-and-one-of-southeast-portlands-most-beloved-neighborhoods/" },
+    { label: "Maplewood, Portland", url: "https://jamiemeushawrealestate.com/maplewood-portland-or-southwest-hills-character-deep-west-hills-living-and-everything-you-need-to-know-before-you-make-the-move/" },
+    { label: "Multnomah, Portland", url: "https://jamiemeushawrealestate.com/multnomah-village-small-town-charm-in-southwest-portland-with-walkability-and-community-feel/" },
+    { label: "Sylvan-Highlands, Portland", url: "https://jamiemeushawrealestate.com/sylvan-forested-hillsides-privacy-and-westside-convenience/" },
+  ],
+};
+
+// One line per backlink, with the URL as the visible link text (same as every other link in
+// these posts) so "copy for WordPress", which strips <a> tags, still carries the URL. A link
+// to a city-level post reads "Read more about {city}", a neighborhood post names it.
+function blogLinkLine(city: string, link: { label: string; url: string }): string {
+  const name = link.label.replace(new RegExp(`, ${city}$`), "");
+  const anchor = `<a href="${link.url}" target="_blank" rel="noopener">${link.url}</a>`;
+  return name === city
+    ? `Read more about ${city} on the blog: ${anchor}`
+    : `Check out this neighborhood in ${city} (${name}): ${anchor}`;
+}
+
+function relatedPostBlock(area: string): string[] {
+  const neighborhood = area.split(",")[0].trim();
+  const city = area.split(",")[1]?.trim() ?? "";
+  const own = AREA_BLOG_LINKS[area];
+  if (own) {
+    return [
+      `Read more about ${neighborhood} on the blog: <a href="${own.url}" target="_blank" rel="noopener">${own.url}</a>`,
+    ];
+  }
+  const pool = CITY_BLOG_POOLS[city] ?? [];
+  if (pool.length === 0) return [];
+  let h = 0;
+  for (const ch of area) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+  const pick = pool[h % pool.length];
+  return [blogLinkLine(city, pick)];
 }
 
 // Same idea, for Jamie's real YouTube channel (youtube.com/@jamiemeushawrealestate) —
@@ -12378,10 +12549,10 @@ function comparisonArticleParagraphs(seed: ComparisonSeed): string[] {
       ? [`Related reading: <a href="${publishedA}" target="_blank" rel="noopener">${aName} neighborhood guide</a>`]
       : []),
     ...(neighborhoodA
-      ? [`Check out this neighborhood in ${aName}: <a href="${neighborhoodA.url}" target="_blank" rel="noopener">${neighborhoodA.label}</a>`]
+      ? [blogLinkLine(aName, neighborhoodA)]
       : []),
     ...(youtubeA
-      ? [`Watch: <a href="${youtubeA}" target="_blank" rel="noopener">Living in ${aName}, ${seed.cityA.split(", ")[1]} — YouTube playlist</a>`]
+      ? [`Watch: Living in ${aName}, ${seed.cityA.split(", ")[1]} (YouTube playlist): <a href="${youtubeA}" target="_blank" rel="noopener">${youtubeA}</a>`]
       : []),
     h2(`${bName} at a Glance`),
     ...seed.bulletsB,
@@ -12392,10 +12563,10 @@ function comparisonArticleParagraphs(seed: ComparisonSeed): string[] {
       ? [`Related reading: <a href="${publishedB}" target="_blank" rel="noopener">${bName} neighborhood guide</a>`]
       : []),
     ...(neighborhoodB
-      ? [`Check out this neighborhood in ${bName}: <a href="${neighborhoodB.url}" target="_blank" rel="noopener">${neighborhoodB.label}</a>`]
+      ? [blogLinkLine(bName, neighborhoodB)]
       : []),
     ...(youtubeB
-      ? [`Watch: <a href="${youtubeB}" target="_blank" rel="noopener">Living in ${bName}, ${seed.cityB.split(", ")[1]} — YouTube playlist</a>`]
+      ? [`Watch: Living in ${bName}, ${seed.cityB.split(", ")[1]} (YouTube playlist): <a href="${youtubeB}" target="_blank" rel="noopener">${youtubeB}</a>`]
       : []),
     h2(`Comparing ${aName} and ${bName}`),
     ...seed.paragraphs,
@@ -12445,6 +12616,7 @@ function articleParagraphs(post: Post): string[] {
       ...(seed.considerations ?? []),
       h2(`Should You Consider ${neighborhood} if You're Moving to ${city}, ${stateAbbr}?`),
       ...seed.closing,
+      ...relatedPostBlock(post.area),
       ...seeHomesBlock(neighborhood, city, stateAbbr, nUrl, cityUrl),
       ...youtubeBlock(city, stateAbbr),
       ...workWithJamieBlock(),
@@ -12458,6 +12630,7 @@ function articleParagraphs(post: Post): string[] {
       h2(`${neighborhood} Market Notes`),
       ...(seed.marketNotes ?? []),
       ...seed.closing,
+      ...relatedPostBlock(post.area),
       ...seeHomesBlock(neighborhood, city, stateAbbr, nUrl, cityUrl),
       ...youtubeBlock(city, stateAbbr),
       ...workWithJamieBlock(),
@@ -12475,6 +12648,7 @@ function articleParagraphs(post: Post): string[] {
       h2("Getting Around"),
       ...(seed.commute ?? []),
       ...seed.closing,
+      ...relatedPostBlock(post.area),
       ...seeHomesBlock(neighborhood, city, stateAbbr, nUrl, cityUrl),
       ...youtubeBlock(city, stateAbbr),
       ...workWithJamieBlock(),
@@ -12491,7 +12665,8 @@ function articleParagraphs(post: Post): string[] {
     ...(seed.considerations ?? []),
     ...schoolsBlock(neighborhood, district),
     ...seed.closing,
-    ...seeHomesBlock(neighborhood, city, stateAbbr, nUrl, cityUrl),
+    ...relatedPostBlock(post.area),
+      ...seeHomesBlock(neighborhood, city, stateAbbr, nUrl, cityUrl),
     ...youtubeBlock(city, stateAbbr),
     ...workWithJamieBlock(),
   ];
