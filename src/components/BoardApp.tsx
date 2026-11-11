@@ -12893,13 +12893,22 @@ function gbpPostText(post: Post): string {
     if (!seed) return "No Google Business Profile post has been written yet for this comparison.";
     const aName = seed.cityA.split(",")[0].trim();
     const bName = seed.cityB.split(",")[0].trim();
+    const aState = seed.cityA.split(", ")[1];
+    const bState = seed.cityB.split(", ")[1];
+    // Cross-state pairs (Camas, WA vs. Portland, OR) must name each state; reusing
+    // city A's state produced "Portland, WA".
+    const intro = aState === bState ? `${aName} and ${bName}, ${aState}` : `${seed.cityA} and ${seed.cityB}`;
+    // Each price line names its city; on their own both read "Median sale price: ...".
+    const priceLine = (city: string, line?: string) =>
+      !line ? "" : /^Median (sale|sold) price:/i.test(line) ? line.replace(/^Median (sale|sold) price:/i, (_m, w) => `${city} median ${w.toLowerCase()} price:`) : `${city}: ${line}`;
+    // No phone, email or URL in the text: Google Business Profile rejects posts with a
+    // phone number in the body. The link and call go on the post's button instead.
     return [
-      `Comparing ${aName} and ${bName}, ${seed.cityA.split(", ")[1]}? ${seed.execSummary[1] ?? ""}`,
-      seed.priceAmenitiesA[0],
-      seed.priceAmenitiesB[0],
-      `Read the full comparison, or reach out directly to talk through which fits your plans.`,
-      `Jamie Meushaw | ${CONTACT_PHONE} | ${CONTACT_EMAIL} | ${WEBSITE_URL}`,
-    ].join("\n\n");
+      `Comparing ${intro}? ${seed.execSummary[1] ?? ""}`,
+      priceLine(aName, seed.priceAmenitiesA[0]),
+      priceLine(bName, seed.priceAmenitiesB[0]),
+      `Read the full comparison on Jamie's website, or reach out directly to talk through which fits your plans.`,
+    ].filter(Boolean).join("\n\n");
   }
   const seed = seedForPost(post);
   if (seed?.gbp) return seed.gbp;
@@ -14036,7 +14045,7 @@ export default function BoardApp() {
       el<HTMLButtonElement>("gbpPostBtn").addEventListener("click", () => {
         openTextModal(
           `Google Business Profile post — ${areaDisplayLabel(post.area)}`,
-          "Paste this directly onto Google Business Profile and any other platform the client's SOP calls for.",
+          "Paste this onto Google Business Profile. Add a Learn more button linking to the blog post (or Call now). Never put the phone number or email in the text: Google rejects those posts.",
           gbpPostText(post)
         );
       });
