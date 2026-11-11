@@ -5632,7 +5632,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to Milwaukie, OR? Explore Hector Campbell, a mid-century ranch-and-cottage neighborhood with mature trees and real bus access.",
       gbp:
-        "If you're moving to Milwaukie, OR, Hector Campbell is worth researching: a mid-century neighborhood of mostly single detached homes built around the 1960s, with a mix of cottage-style and ranch houses plus some duplexes and newer townhomes. Mature trees and a settled, long-tenured feel are common themes among residents here. Several TriMet bus lines run through the neighborhood, giving it a moderately walkable Walk Score and a real transit option beyond driving. Recently sold homes have ranged roughly from the $420,000s to the $650,000s, so comparing specific listings matters more than assuming one price point for the area. Linwood Elementary, Rowe Middle School and Milwaukie High School serve the neighborhood. If you're comparing Hector Campbell homes for sale or Milwaukie OR homes for sale more broadly, the full neighborhood guide covers transit access, home styles and current listings.",
+        "If you're moving to Milwaukie, OR, Hector Campbell is worth researching: a mid-century neighborhood of mostly single detached homes built around the 1960s, with a mix of cottage-style and ranch houses plus some duplexes and newer townhomes. Mature trees and a settled, long-tenured feel are common themes among residents here. Several TriMet bus lines run through the neighborhood, giving it a moderately walkable Walk Score and a real transit option beyond driving. Home sizes and conditions vary across the neighborhood, so comparing specific listings in the live search shows what's currently available. Linwood Elementary, Rowe Middle School and Milwaukie High School serve the neighborhood. If you're comparing Hector Campbell homes for sale or Milwaukie OR homes for sale more broadly, the full neighborhood guide covers transit access, home styles and current listings.",
       variant: "guide",
       faq: [
         { q: "What is the Hector Campbell neighborhood association?", a: "Hector Campbell is one of seven Neighborhood District Associations officially recognized by the City of Milwaukie. The city's contact listing has shown the Hector Campbell group meeting every two months on the second Wednesday at 6 p.m., with agendas and minutes posted on the city site. Meeting dates and officers change, so check the city's neighborhood meetings page. The association also runs events at Homewood Park, including a Haunted Forest each October.", sources: ["https://milwaukieoregon.gov/citymanager/all-neighborhood-association-meetings-contact-information", "https://milwaukieoregon.gov/node/46071"] },
@@ -5653,7 +5653,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Hector Campbell is a residential neighborhood within Milwaukie, with several TriMet bus lines running through it and a Walk Score in the moderately walkable range.",
       ],
       homesIn: [
-        "Most homes here are mid-century single detached houses (cottage-style and ranch floor plans built around the 1960s) with some duplexes and newer townhomes on the same streets. Recently sold homes have ranged roughly from the $420,000s to the $650,000s, so comparing specific listings matters more than assuming one price point for the neighborhood.",
+        "Most homes here are mid-century single detached houses (cottage-style and ranch floor plans built around the 1960s) with some duplexes and newer townhomes on the same streets. Pricing varies with size, condition and location, so the live search shows what's currently available.",
       ],
       parks: [
         "The neighborhood is served by several TriMet bus lines, giving residents a real transit option for errands and commuting without relying solely on a car.",
@@ -5667,7 +5667,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "<strong>Established, settled feel:</strong> longtime residents and mature landscaping rather than a newer subdivision feel.",
       ],
       considerations: [
-        "<strong>Price range varies:</strong> recently sold homes have spanned roughly $420,000 to $655,000. Compare specific listings rather than assuming one price point.",
+        "<strong>Compare specific listings:</strong> home size, condition and location vary across the neighborhood, so the live search shows what's currently available.",
         "<strong>Mixed property types:</strong> duplexes and newer townhomes sit alongside single-family homes, so confirm what you're actually touring.",
         "<strong>Mid-century systems:</strong> homes built in the 1960s may need updated wiring, roofing or mechanical systems depending on upkeep history.",
       ],
@@ -5786,11 +5786,11 @@ const TITLES: Record<string, PostSeed[]> = {
       hook: "A Classic Mix of Homes Anchored by the Neighborhood Park",
       keyword: "Lewelling Milwaukie OR homes",
       metaDescription:
-        "Moving to Milwaukie, OR? See what Lewelling is like: Lewelling Park, ranch and classic homes, and current listings.",
+        "Moving to Milwaukie, OR? See what Lewelling is like: Ball-Michel Park, ranch and classic homes, and current listings.",
       excerpt:
-        "Thinking about moving to Milwaukie, OR? Explore Lewelling, a neighborhood of classic and ranch-style homes anchored by Lewelling Park.",
+        "Thinking about moving to Milwaukie, OR? Explore Lewelling, a neighborhood of classic and ranch-style homes anchored by Ball-Michel Park.",
       gbp:
-        "If you're moving to Milwaukie, OR, Lewelling is worth researching: a neighborhood of well-kept homes in a mix of classic and modern styles, anchored by Lewelling Park. Housing here runs from older homes with original hardwood floors on tree-shaded lots to ranch-style properties and more recently updated homes. Lewelling Park is the real community anchor, used for both everyday recreation and neighborhood events throughout the year. At roughly 3,511 residents, it's one of Milwaukie's larger neighborhoods, with downtown Milwaukie about 10 to 15 minutes away by car and a moderate Walk Score around 52. Homes here have tended to sit on the market a bit longer than in some other Milwaukie neighborhoods, which is worth factoring into how you time an offer. If you're comparing Lewelling homes for sale or Milwaukie OR homes for sale more broadly, the full neighborhood guide covers the park, home styles and current listings.",
+        "If you're moving to Milwaukie, OR, Lewelling is worth researching: a neighborhood of well-kept homes in a mix of classic and modern styles, anchored by Ball-Michel Park. Housing here runs from older homes with original hardwood floors on tree-shaded lots to ranch-style properties and more recently updated homes. Ball-Michel Park, a small neighborhood park with a playground and picnic shelter, is the park the city associates with the neighborhood throughout the year. At roughly 3,511 residents, it's one of Milwaukie's larger neighborhoods, with downtown Milwaukie about 10 to 15 minutes away by car and a moderate Walk Score around 52. Homes here have tended to sit on the market a bit longer than in some other Milwaukie neighborhoods, which is worth factoring into how you time an offer. If you're comparing Lewelling homes for sale or Milwaukie OR homes for sale more broadly, the full neighborhood guide covers the park, home styles and current listings.",
       variant: "guide",
       faq: [
         { q: "Is Lewelling inside Milwaukie city limits?", a: "Lewelling is one of the seven neighborhood district associations officially recognized by the City of Milwaukie, alongside Hector Campbell, Linwood, Ardenwald-Johnson Creek, Historic Milwaukie, Island Station and Lake Road. Some properties with a Milwaukie mailing address sit in unincorporated Clackamas County instead, so confirm jurisdiction for an exact address with the city before assuming which city or county services apply.", sources: ["https://milwaukieoregon.gov/node/45171", "https://www.milwaukieoregon.gov/neighborhood/lewelling"] },
@@ -5805,7 +5805,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "At roughly 3,511 residents, it's one of the city's larger neighborhoods, with downtown Milwaukie about 10 to 15 minutes away by car.",
       ],
       livingIn: [
-        "Lewelling's housing mixes ranch-style homes and older houses (some with original hardwood floors) on tree-shaded lots, alongside more recently updated properties. Lewelling Park anchors the neighborhood as its main green space, used for both everyday recreation and community events.",
+        "Lewelling's housing mixes ranch-style homes and older houses (some with original hardwood floors) on tree-shaded lots, alongside more recently updated properties. Ball-Michel Park, a small neighborhood park on SE Stanley Avenue, is the park the city associates with the neighborhood.",
       ],
       whereLocated: [
         "Lewelling sits within Milwaukie, roughly 10 to 15 minutes from downtown by car, with a moderate Walk Score around 52.",
@@ -5814,13 +5814,13 @@ const TITLES: Record<string, PostSeed[]> = {
         "Homes here run from older houses with original hardwood floors and tree-shaded lots to ranch-style properties and more recently updated homes, a genuine mix of eras rather than one uniform product.",
       ],
       parks: [
-        "Lewelling Park is the neighborhood's main green space, hosting both everyday recreation and community events throughout the year.",
+        "Ball-Michel Park is the neighborhood's park, with a playground, picnic area and shelter.",
       ],
       commute: [
         "Downtown Milwaukie is roughly 10 to 15 minutes away by car, with the usual time-of-day variability on actual drive time.",
       ],
       reasons: [
-        "<strong>Lewelling Park:</strong> a real community anchor used for both recreation and neighborhood events.",
+        "<strong>Ball-Michel Park:</strong> a small neighborhood park with a playground and picnic shelter.",
         "<strong>Genuine mix of home styles:</strong> classic homes with original character alongside ranch-style and updated properties.",
         "<strong>Tree-shaded lots:</strong> mature landscaping that gives the neighborhood a settled feel.",
       ],
@@ -5839,11 +5839,11 @@ const TITLES: Record<string, PostSeed[]> = {
       hook: "A Generous-Lot, 1930s Pocket of Southeast Milwaukie",
       keyword: "Linwood Milwaukie OR homes",
       metaDescription:
-        "Moving to Milwaukie, OR? See what Linwood is like: 1930s homes, Kellogg Creek Park access and current listings.",
+        "Moving to Milwaukie, OR? See what Linwood is like: 1930s homes, Wichita Park and current listings.",
       excerpt:
-        "Thinking about moving to Milwaukie, OR? Explore Linwood, a southeast Milwaukie neighborhood of 1930s homes on generous lots near Kellogg Creek Park.",
+        "Thinking about moving to Milwaukie, OR? Explore Linwood, a southeast Milwaukie neighborhood of 1930s homes on generous lots near Wichita Park.",
       gbp:
-        "If you're moving to Milwaukie, OR, Linwood is worth researching: a southeast Milwaukie neighborhood with real 1930s character on genuinely generous lots. Living here means a wide mix of housing: original 1930s homes with details like tongue-and-groove paneling, stone fireplaces and corner lots up to a quarter acre, alongside a dedicated manufactured-home community, Linwood Mobile Estates, and some newer, larger homes on other streets. Kellogg Creek Park is the standout nearby green space, and residents describe tree-lined streets with a genuinely friendly feel. Because the neighborhood's Walk Score sits in the minimally walkable range, most errands here mean getting in the car rather than walking. If you're comparing Linwood homes for sale or Milwaukie OR homes for sale more broadly, the full neighborhood guide covers the home styles, park access and current listings.",
+        "If you're moving to Milwaukie, OR, Linwood is worth researching: a southeast Milwaukie neighborhood with real 1930s character on genuinely generous lots. Living here means a wide mix of housing: original 1930s homes with details like tongue-and-groove paneling, stone fireplaces and corner lots up to a quarter acre, alongside a dedicated manufactured-home community, Linwood Mobile Estates, and some newer, larger homes on other streets. Wichita Park, a neighborhood park site the city is planning, is close by, and residents describe tree-lined streets with a genuinely friendly feel. Because the neighborhood's Walk Score sits in the minimally walkable range, most errands here mean getting in the car rather than walking. If you're comparing Linwood homes for sale or Milwaukie OR homes for sale more broadly, the full neighborhood guide covers the home styles, park access and current listings.",
       variant: "guide",
       faq: [
         { q: "Is Linwood part of the city of Milwaukie?", a: "Yes. The City of Milwaukie officially recognizes the Linwood Neighborhood District Association as one of its seven neighborhood associations, and Linwood is in the southeast part of the city. These associations are volunteer neighborhood groups that the city funds through its Milwaukie Neighborhood Enhancement Program. Whether an individual property has a separate HOA depends on the address, so verify it in the listing documents.", sources: ["https://www.milwaukieoregon.gov/government/neighborhood_district_association/linwood.php", "https://www.milwaukieoregon.gov/government/neighborhood_district_association/contact.php"] },
@@ -5854,26 +5854,26 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       intro: [
         "If you're thinking about moving to Milwaukie, Oregon, Linwood is worth a look: a southeast Milwaukie neighborhood with real 1930s character on genuinely generous lots.",
-        "The neighborhood sits near Kellogg Creek Park, with a tree-lined, friendly feel that longtime residents often point to first.",
+        "The neighborhood sits near Wichita Park, with a tree-lined, friendly feel that longtime residents often point to first.",
       ],
       livingIn: [
         "Linwood's housing mixes 1930s-era homes (some with original tongue-and-groove paneling and stone fireplaces on corner lots as large as a quarter acre) with a manufactured-home community (Linwood Mobile Estates) and newer construction on other streets.",
       ],
       whereLocated: [
-        "Linwood sits in southeast Milwaukie, near Kellogg Creek Park, with a Walk Score in the minimally walkable range: most errands here mean getting in the car.",
+        "Linwood sits in southeast Milwaukie, near Wichita Park, with a Walk Score in the minimally walkable range: most errands here mean getting in the car.",
       ],
       homesIn: [
         "Homes here range from genuine 1930s houses (original tongue-and-groove paneling, stone fireplaces, corner lots up to a quarter acre) to a dedicated manufactured-home community, Linwood Mobile Estates, and some newer, larger homes on other streets. It's a genuinely wide mix rather than one uniform product.",
       ],
       parks: [
-        "Kellogg Creek Park is the neighborhood's standout nearby green space, giving residents real access without a long drive.",
+        "Wichita Park, a roughly 1-acre neighborhood park site on SE Monroe Street, sits within the neighborhood, with its master plan updated in 2011.",
       ],
       commute: [
         "Linwood's Walk Score sits in the minimally walkable range, so most errands mean getting in the car; OR-99E and the broader Milwaukie arterial network provide the main driving routes toward downtown and I-205.",
       ],
       reasons: [
         "<strong>Genuine 1930s character:</strong> original details and generous, up-to-quarter-acre corner lots in some homes.",
-        "<strong>Kellogg Creek Park access:</strong> real nearby green space without a long drive.",
+        "<strong>Wichita Park:</strong> a neighborhood park site within Linwood, with a 2011 master plan.",
         "<strong>Wide range of home types:</strong> from 1930s houses to a dedicated manufactured-home community, giving buyers real options across price points.",
       ],
       considerations: [
@@ -5948,7 +5948,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to Beaverton, OR? Explore Five Oaks / Triple Creek, a northwest Beaverton neighborhood with real MAX access near Nike and Intel.",
       gbp:
-        "If you're moving to Beaverton, OR, Five Oaks / Triple Creek is worth researching: a northwest Beaverton neighborhood (97006) with a genuinely diverse mix of single detached homes, apartments and duplexes. Three MAX Blue Line stations (Beaverton Creek, Millikan Way, and Willow Creek/SW 185th Ave TC) serve the area, along with direct US-26 access toward Nike, Intel and downtown Portland. Waterhouse Trail and Magnolia Park are both within reach, and The Streets of Tanasbourne and Costco are close by for everyday shopping. Westview High School, Elmonica Elementary and Five Oaks Middle School serve the neighborhood. Recently reported listing prices have ranged widely, so comparing specific properties matters more than assuming one price point. If you're comparing Five Oaks / Triple Creek homes for sale or Beaverton OR homes for sale more broadly, the full neighborhood guide covers transit access, home styles and current listings.",
+        "If you're moving to Beaverton, OR, Five Oaks / Triple Creek is worth researching: a northwest Beaverton neighborhood (97006) with a genuinely diverse mix of single detached homes, apartments and duplexes. Three MAX Blue Line stations (Beaverton Creek, Millikan Way, and Willow Creek/SW 185th Ave TC) serve the area, along with direct US-26 access toward Nike, Intel and downtown Portland. Waterhouse Trail and Willow Creek Greenway are both within reach, and The Streets of Tanasbourne and Costco are close by for everyday shopping. Westview High School, Elmonica Elementary and Five Oaks Middle School serve the neighborhood. Recently reported listing prices have ranged widely, so comparing specific properties matters more than assuming one price point. If you're comparing Five Oaks / Triple Creek homes for sale or Beaverton OR homes for sale more broadly, the full neighborhood guide covers transit access, home styles and current listings.",
       variant: "guide",
       faq: [
         { q: "Is there a neighborhood association for Five Oaks / Triple Creek?", a: "Yes. The City of Beaverton lists the Five Oaks / Triple Creek Neighborhood Association Committee, or NAC, among its active neighborhood committees. Developers proposing projects in the area have held neighborhood meetings with it, and the NAC has worked with Tualatin Hills Park & Recreation District, the city, Five Oaks Middle School and SOLVE on habitat work in Autumn Ridge Park and Willow Creek Greenway. Check the city's NAC page for current meeting details.", sources: ["https://www.thprd.org/connect/news/thprd-and-city-of-beaverton-partnership-wins-national-award", "https://apps2.beavertonoregon.gov/DevelopmentProjects/ApplicantMaterials/Exhibit 3.13 Neighborhood Meeting.pdf"] },
@@ -5966,13 +5966,13 @@ const TITLES: Record<string, PostSeed[]> = {
         "Five Oaks / Triple Creek offers a diverse housing selection (single detached homes, apartments and duplexes, mostly with two and three bedrooms) within reach of the Beaverton Creek, Millikan Way and Willow Creek/SW 185th Ave MAX Blue Line stations.",
       ],
       whereLocated: [
-        "The neighborhood sits in northwest Beaverton (97006), close to Nike, Intel, The Streets of Tanasbourne, Costco, Waterhouse Trail, Magnolia Park and US-26.",
+        "The neighborhood sits in northwest Beaverton (97006), close to Nike, Intel, The Streets of Tanasbourne, Costco, Waterhouse Trail, Willow Creek Greenway and US-26.",
       ],
       homesIn: [
-        "Housing here spans single detached homes, apartments and duplexes, mostly two- and three-bedroom. Recently reported listing prices have centered in the $340,000s to $580,000s range, so comparing specific properties matters more than assuming one price point.",
+        "Housing here spans single detached homes, apartments and duplexes, mostly two- and three-bedroom. Pricing varies by property type, so comparing specific properties in the live search matters more than assuming one answer for the area.",
       ],
       parks: [
-        "Waterhouse Trail and Magnolia Park are both within reach, and the neighborhood's moderate walkability (Walk Score around 61) means some errands are realistic without a car.",
+        "Waterhouse Trail and Willow Creek Greenway are both within reach, and the neighborhood's moderate walkability (Walk Score around 61) means some errands are realistic without a car.",
       ],
       commute: [
         "Three MAX Blue Line stations (Beaverton Creek, Millikan Way, and Willow Creek/SW 185th Ave TC) serve the neighborhood, alongside direct access to US-26 for driving toward Nike, Intel and downtown Portland.",
@@ -6054,7 +6054,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to Beaverton, OR? Explore Highland, a southeast Beaverton neighborhood of mid-century ranch and split-level homes on genuinely varied lots.",
       gbp:
-        "If you're moving to Beaverton, OR, Highland is worth researching: a southeast Beaverton neighborhood of mostly mid-20th-century homes on genuinely varied, larger-than-typical lots. Housing here leans heavily toward one-level ranches and split-levels built in the 1960s and 70s, complemented by small apartment buildings and townhomes. Taliesen Park and the roughly 30-acre Hyland Forest Park both serve the neighborhood, with green space worked throughout rather than concentrated in one spot. Worth noting: some sources also refer to this area as Hyland Hills or Highland Hills, so it's worth confirming the exact boundary for a specific address. If you're comparing Highland homes for sale or Beaverton OR homes for sale more broadly, the full neighborhood guide covers the home styles, park access and current listings.",
+        "If you're moving to Beaverton, OR, Highland is worth researching: a southeast Beaverton neighborhood of mostly mid-20th-century homes on genuinely varied, larger-than-typical lots. Housing here leans heavily toward one-level ranches and split-levels built in the 1960s and 70s, complemented by small apartment buildings and townhomes. The roughly 30-acre Hyland Woods Natural Area serves the neighborhood, with green space worked throughout rather than concentrated in one spot. Worth noting: some sources also refer to this area as Hyland Hills or Highland Hills, so it's worth confirming the exact boundary for a specific address. If you're comparing Highland homes for sale or Beaverton OR homes for sale more broadly, the full neighborhood guide covers the home styles, park access and current listings.",
       variant: "guide",
       faq: [
         { q: "Is Hyland Forest Park the same as Hyland Woods in Highland, Beaverton?", a: "Yes, based on Tualatin Hills Park & Recreation District (THPRD) materials. The site is listed today as Hyland Woods Natural Area, and local sources note it was formerly called Hyland Forest Park. THPRD places it near SW Murray Blvd and Hart Road, in the South Beaverton and Highland neighborhoods. Park names change over time, so use the current name when searching THPRD's park finder.", sources: ["https://www.thprd.org/parks-and-trails/natural-areas", "https://gis.thprd.org/district-information/2008-bond-measure/detail/hyland-woods-formerly-hyland-forest-park/47"] },
@@ -6072,13 +6072,13 @@ const TITLES: Record<string, PostSeed[]> = {
         "Highland's housing stock is primarily single detached homes from the mid-20th century (many one-level ranches and split-levels from the 1960s and 70s) complemented by small apartment buildings and townhomes. Large yards mean homes aren't built side by side the way they are in newer, denser subdivisions.",
       ],
       whereLocated: [
-        "Highland sits in southeast Beaverton, with green space located throughout the neighborhood and Taliesen Park and the roughly 30-acre Hyland Forest Park both nearby.",
+        "Highland sits in southeast Beaverton, with green space located throughout the neighborhood and the roughly 30-acre Hyland Woods Natural Area nearby.",
       ],
       homesIn: [
         "Most homes here are one-level ranches and split-levels built in the 1960s and 70s, on genuinely varied, larger-than-typical lots. Residents describe real variety from one home to the next rather than one repeated design.",
       ],
       parks: [
-        "Taliesen Park and the roughly 30-acre Hyland Forest Park both serve the neighborhood, with green space worked into the layout throughout rather than concentrated in one spot.",
+        "The roughly 30-acre Hyland Woods Natural Area serves the neighborhood, with green space worked into the layout throughout rather than concentrated in one spot.",
       ],
       commute: [
         "Highland's southeast Beaverton location keeps it within reasonable reach of the broader Beaverton arterial network, with the usual time-of-day variability on actual drive times.",
@@ -6086,7 +6086,7 @@ const TITLES: Record<string, PostSeed[]> = {
       reasons: [
         "<strong>Genuine lot variety:</strong> large yards and varied home designs rather than one repeated floor plan.",
         "<strong>Established, well-maintained streets:</strong> described as one of Beaverton's more settled neighborhoods.",
-        "<strong>Real park access:</strong> Taliesen Park and the roughly 30-acre Hyland Forest Park both nearby.",
+        "<strong>Real park access:</strong> the roughly 30-acre Hyland Woods Natural Area nearby.",
       ],
       considerations: [
         "<strong>Boundary naming varies:</strong> some sources call this area Hyland Hills or Highland Hills. Confirm which applies to a specific address.",
@@ -6213,7 +6213,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to Beaverton, OR? Explore Murrayhill (sometimes spelled Murray Hill), a south Beaverton neighborhood with a genuine range of home types.",
       gbp:
-        "If you're moving to Beaverton, OR, Murrayhill is worth researching: a south Beaverton neighborhood (sometimes spelled Murray Hill in listings) with a genuinely wide range of housing. Living here means single-family homes with garages, townhouses and condos, including a meaningful share of single-story properties, across a price range that's recently spanned roughly the high $300,000s to the mid-$600,000s depending on property type. The neighborhood sits close to Sexton Mountain, Progress Ridge and South Beaverton, giving buyers several comparable neighborhoods to tour side by side. Homes here have recently taken a bit longer to sell than in some other Beaverton neighborhoods, so it's worth comparing specific property types rather than assuming one price point. If you're comparing Murrayhill homes for sale or Beaverton OR homes for sale more broadly, the full neighborhood guide covers the home types, nearby areas and current listings.",
+        "If you're moving to Beaverton, OR, Murrayhill is worth researching: a south Beaverton neighborhood (sometimes spelled Murray Hill in listings) with a genuinely wide range of housing. Living here means single-family homes with garages, townhouses and condos, including a meaningful share of single-story properties, with pricing that depends on property type. The neighborhood sits close to Sexton Mountain, Progress Ridge and South Beaverton, giving buyers several comparable neighborhoods to tour side by side. Homes here have recently taken a bit longer to sell than in some other Beaverton neighborhoods, so it's worth comparing specific property types rather than assuming one price point. If you're comparing Murrayhill homes for sale or Beaverton OR homes for sale more broadly, the full neighborhood guide covers the home types, nearby areas and current listings.",
       variant: "guide",
       faq: [
         { q: "Is it Murrayhill or Murray Hill in Beaverton, and what ZIP code is it?", a: "Both spellings appear in listings and maps. The neighborhood lies in south Beaverton, and Murrayhill Marketplace, a main shopping center, uses a 97007 Beaverton address on SW Teal Blvd. Because some searches treat the two spellings as separate areas, try both when looking up listings, and confirm the exact boundary for any specific address.", sources: ["https://regencycenters.com/property/detail/662/MurrayhillMarketplace"] },
@@ -6233,7 +6233,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Murrayhill sits in south Beaverton (97007), close to Sexton Mountain, Progress Ridge and South Beaverton.",
       ],
       homesIn: [
-        "Homes here range from single-family houses with garages to townhouses and condos, with single-story options a meaningful share of what's available. Reported recent median prices have spanned roughly the high $300,000s for condos to the mid-$600,000s for single-family homes with garages, a wide enough range that comparing specific property types matters more than assuming one price point.",
+        "Homes here range from single-family houses with garages to townhouses and condos, with single-story options a meaningful share of what's available. Pricing differs a lot between condos and single-family homes with garages, so comparing specific property types in the live search matters more than assuming one price point.",
       ],
       parks: [
         "The neighborhood's south Beaverton setting keeps it close to Progress Ridge's shopping and park amenities without being inside that commercial core directly.",
@@ -6318,7 +6318,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to Beaverton, OR? Explore Cedar Hills, a mid-century modern neighborhood with real MAX access and tree-lined streets.",
       gbp:
-        "If you're moving to Beaverton, OR, Cedar Hills is worth researching: a neighborhood known for mid-century modern architecture, tree-lined streets and real transit access via the Millikan Way MAX station and several bus lines. Living here spans single-level ranches and tri-levels from the early 1960s, some with original details intact, up to larger four-plus-bedroom homes. Cedar Hills Park, Tualatin Hills Nature Park and Commonwealth Lake Park are all close by, along with Cedar Hills Crossing for everyday shopping. Recently reported sales for three- and four-bedroom homes have ranged roughly from $545,000 to $689,000. Worth noting: some addresses here carry a Portland 97225 mailing address rather than Beaverton, so it's worth confirming for a specific property. If you're comparing Cedar Hills homes for sale or Beaverton OR homes for sale more broadly, the full neighborhood guide covers the home styles, transit access and current listings.",
+        "If you're moving to Beaverton, OR, Cedar Hills is worth researching: a neighborhood known for mid-century modern architecture, tree-lined streets and real transit access via the Millikan Way MAX station and several bus lines. Living here spans single-level ranches and tri-levels from the early 1960s, some with original details intact, up to larger four-plus-bedroom homes. Cedar Hills Park, Tualatin Hills Nature Park and Commonwealth Lake Park are all close by, along with Cedar Hills Crossing for everyday shopping. Pricing varies with size and condition, so the live search shows what's currently available. Worth noting: some addresses here carry a Portland 97225 mailing address rather than Beaverton, so it's worth confirming for a specific property. If you're comparing Cedar Hills homes for sale or Beaverton OR homes for sale more broadly, the full neighborhood guide covers the home styles, transit access and current listings.",
       variant: "guide",
       faq: [
         { q: "Is Cedar Hills inside Beaverton city limits?", a: "Cedar Hills is a census-designated place in Washington County and is described as an unincorporated community with no city government of its own. Part of the neighborhood has been annexed by the City of Beaverton, and the rest is planned for annexation later. Fire and emergency medical response comes from Tualatin Valley Fire and Rescue, and parks come from the Tualatin Hills Park & Recreation District. Check a specific address with the City of Beaverton or Washington County.", sources: ["https://en.wikipedia.org/wiki/Cedar_Hills,_Oregon"] },
@@ -6339,7 +6339,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Cedar Hills is close to Cedar Hills Park, Tualatin Hills Nature Park and Commonwealth Lake Park, with the Millikan Way MAX station and several bus lines serving the area.",
       ],
       homesIn: [
-        "Housing spans mid-century single-level ranches and tri-levels, some with original details and fireplaces, up to larger four-plus-bedroom homes. Recently reported sales for three- and four-bedroom homes have ranged roughly from $545,000 to $689,000, with smaller homes selling for less.",
+        "Housing spans mid-century single-level ranches and tri-levels, some with original details and fireplaces, up to larger four-plus-bedroom homes. Pricing varies with size and condition, so the live search shows what's currently available.",
       ],
       parks: [
         "Cedar Hills Park sits close by, with Tualatin Hills Nature Park and Commonwealth Lake Park both reachable for additional green space, and Cedar Hills Crossing nearby for everyday shopping.",
@@ -6371,7 +6371,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to Beaverton, OR? Explore Oak Hills, a National Register-listed, master-planned community with real neighborhood amenities.",
       gbp:
-        "If you're moving to Beaverton, OR, Oak Hills is worth researching: a roughly 240-acre, master-planned community listed on the National Register of Historic Places. Living here means 627 single-family detached homes and four townhouse clusters, mostly mid-century ranches from the late 1960s and early 1970s alongside some newer colonial farmhouse-style homes on cul-de-sacs, all set among mature oak trees. Residents share real amenities built into the original plan: swimming pools, tennis courts, a recreation center, a community room, playgrounds, walking trails and an elementary school. Recently reported sales have ranged roughly from $525,000 to $975,000, with newer or larger homes toward the higher end. If you're comparing Oak Hills homes for sale or Beaverton OR homes for sale more broadly, the full neighborhood guide covers the amenities, home styles and current listings.",
+        "If you're moving to Beaverton, OR, Oak Hills is worth researching: a roughly 240-acre, master-planned community listed on the National Register of Historic Places. Living here means 627 single-family detached homes and four townhouse clusters, mostly mid-century ranches from the late 1960s and early 1970s alongside some newer colonial farmhouse-style homes on cul-de-sacs, all set among mature oak trees. Residents share real amenities built into the original plan: swimming pools, tennis courts, a recreation center, a community room, playgrounds, walking trails and an elementary school. Pricing varies with home age and size, so the live search shows what's currently available. If you're comparing Oak Hills homes for sale or Beaverton OR homes for sale more broadly, the full neighborhood guide covers the amenities, home styles and current listings.",
       variant: "guide",
       faq: [
         { q: "Is Oak Hills inside Beaverton city limits?", a: "Oak Hills is an unincorporated community in Washington County. The U.S. Postal Service assigns Beaverton mailing addresses, but that does not place a home inside the City of Beaverton. Fire and emergency medical service comes from Tualatin Valley Fire and Rescue. Because jurisdiction, zoning and permit rules can differ between city and county land, confirm the status of a specific address with Washington County before making plans.", sources: ["https://en.wikipedia.org/wiki/Oak_Hills,_Oregon"] },
@@ -6392,7 +6392,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Oak Hills sits as a single, master-planned community in Beaverton, surrounded by newer suburban subdivisions, with more than 40 acres of green space built into the layout.",
       ],
       homesIn: [
-        "Most homes are single-family ranches from the late 1960s and early 1970s, often combining original mid-century character with later updates, alongside newer homes on cul-de-sacs backing onto greenspace. Recently reported sales have ranged roughly from $525,000 to $975,000, with newer or larger homes toward the higher end.",
+        "Most homes are single-family ranches from the late 1960s and early 1970s, often combining original mid-century character with later updates, alongside newer homes on cul-de-sacs backing onto greenspace. Pricing varies with home age and size, so the live search shows what's currently available.",
       ],
       parks: [
         "Residents have access to swimming pools, tennis courts, a recreation center, a community room, playgrounds, walking trails and an elementary school, all part of the original planned community rather than added later.",
@@ -6406,7 +6406,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "<strong>Mature oak trees throughout:</strong> a settled, established feel across the whole 240-acre community.",
       ],
       considerations: [
-        "<strong>Wide price range:</strong> recently reported sales have spanned roughly $525,000 to $975,000. Compare specific homes rather than assuming one price point.",
+        "<strong>Compare specific homes:</strong> age, size and updates vary widely, so look at individual listings rather than assuming one price point.",
         "<strong>Mid-century systems:</strong> homes from the late 1960s and early 1970s may need updated wiring, roofing or mechanical systems depending on upkeep history.",
         "<strong>HOA or amenity dues likely:</strong> confirm what funds the shared pools, tennis courts and rec center for a specific property.",
       ],
@@ -6582,7 +6582,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to the Tigard, OR area? Explore Summerlake, a neighborhood built around Summerlake Park's trails and courts.",
       gbp:
-        "If you're moving to the Tigard, OR area, Summerlake is worth researching: a neighborhood built around Summerlake Park, with trails, basketball, tennis and pickleball courts, fields and playgrounds that some homes back directly onto. Homes here are a mix of single-level and two-story construction, mostly built in the 1980s and 1990s, with recently reported sales ranging roughly from $590,000 to $700,000: comparing specific properties matters more than assuming one price point. One genuine wrinkle: Summerlake spans both the Tigard-Tualatin School District and the Beaverton School District depending on the exact address, so confirming school zoning before you get attached to a specific home is worth doing early. If you're comparing Summerlake homes for sale or Tigard OR homes for sale more broadly, the full neighborhood guide covers the park access, home styles, school zoning and current listings.",
+        "If you're moving to the Tigard, OR area, Summerlake is worth researching: a neighborhood built around Summerlake Park, with trails, basketball, tennis and pickleball courts, fields and playgrounds that some homes back directly onto. Homes here are a mix of single-level and two-story construction, mostly built in the 1980s and 1990s, so comparing specific properties matters more than assuming one answer for the area. One genuine wrinkle: Summerlake spans both the Tigard-Tualatin School District and the Beaverton School District depending on the exact address, so confirming school zoning before you get attached to a specific home is worth doing early. If you're comparing Summerlake homes for sale or Tigard OR homes for sale more broadly, the full neighborhood guide covers the park access, home styles, school zoning and current listings.",
       variant: "guide",
       faq: [
         { q: "What is there to do at Summerlake Park in Tigard?", a: "The City of Tigard lists Summerlake Park at 11450 SW Winterlake Drive, about 30 acres with dawn-to-dusk hours. Amenities include a nature trail with three footbridges over the lake, a playground, a picnic shelter, an off-leash dog area and the Sorg Rhododendron Garden. A 2022 local article also describes a mostly paved loop of about one mile, sports courts and a ballfield. Confirm current facilities on the city's page before visiting.", sources: ["https://www.tigard-or.gov/Home/Components/FacilityDirectory/FacilityDirectory/54/183", "https://tigardlife.com/?p=10421"] },
@@ -6603,7 +6603,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Summerlake sits near Scholls Ferry Road in Tigard, close enough to the Beaverton border that school-district boundaries genuinely split within the neighborhood. See the school note below.",
       ],
       homesIn: [
-        "Recently reported sales in Summerlake have ranged roughly from $590,000 to $700,000, spanning a mix of single-level and two-story floor plans. Comparing a few specific listings tells you more than any single price point.",
+        "Summerlake homes span a mix of single-level and two-story floor plans. Comparing a few specific listings in the live search tells you more than any single price point.",
       ],
       parks: [
         "Summerlake Park anchors the neighborhood, with trails, basketball, tennis and pickleball courts, fields and playgrounds. Some homes have a private path leading directly from the backyard into the park.",
@@ -6618,7 +6618,7 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       considerations: [
         "<strong>School district genuinely splits by address:</strong> Summerlake spans both the Tigard-Tualatin and Beaverton School Districts. Verify zoning for the exact property, not just the neighborhood name.",
-        "<strong>Price range is wide:</strong> recently reported sales spanned roughly $590,000 to $700,000, so compare specific homes rather than assuming one price point.",
+        "<strong>Compare specific homes:</strong> floor plans and park access differ, so look at individual listings rather than assuming one price point.",
         "<strong>Homes aren't new construction:</strong> built mostly in the 1980s and 1990s, so condition and updates vary property to property.",
       ],
       closing: [
@@ -6761,7 +6761,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Blue Heron sits within Lake Oswego, within reach of Tryon Creek State Natural Area and a short drive from George Rogers Park on the Willamette River.",
       ],
       homesIn: [
-        "Recently reported sales have ranged roughly from $950,000 to $1.8 million. Comparing specific properties, including whether each one actually carries a lake easement, matters more than assuming one price point.",
+        "Pricing varies with size, condition and location. Comparing specific properties, including whether each one actually carries a lake easement, matters more than assuming one price point.",
       ],
       parks: [
         "Tryon Creek State Natural Area is nearby, and George Rogers Park (with picnic areas, a playground and Willamette River access) is a short drive away.",
@@ -6776,7 +6776,7 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       considerations: [
         "<strong>Lake access isn't universal:</strong> not every Blue Heron home carries a lake easement or frontage. Confirm what a specific listing actually includes.",
-        "<strong>Wide price range:</strong> recently reported sales spanned roughly $950,000 to $1.8 million, so compare specific homes rather than assuming one price point.",
+        "<strong>Compare specific homes:</strong> features and condition vary, so look at individual listings rather than assuming one price point.",
         "<strong>Mixed home ages:</strong> a 1938 property and a 1980s one will have very different systems and maintenance needs.",
       ],
       closing: [
@@ -6791,9 +6791,9 @@ const TITLES: Record<string, PostSeed[]> = {
       metaDescription:
         "Moving to the Lake Oswego, OR area? See what Bryant is like: Bryant Woods Park, a split elementary zone, and current listings.",
       excerpt:
-        "Thinking about moving to the Lake Oswego, OR area? Explore Bryant, a southeast Lake Oswego neighborhood built around Bryant Woods Park.",
+        "Thinking about moving to the Lake Oswego, OR area? Explore Bryant, a Lake Oswego neighborhood built around Bryant Woods Park.",
       gbp:
-        "If you're moving to the Lake Oswego, OR area, Bryant is worth researching: a southeast Lake Oswego neighborhood with mature trees, established streets, and Bryant Woods Park (walking trails, green space and a playground) as a real local amenity. Some homes have a direct walking path to Lakeridge Middle School. One genuine wrinkle: elementary school zoning isn't uniform across Bryant. Most listings point to River Grove Elementary, but at least one address in the neighborhood is zoned for Westridge Elementary instead, so confirm zoning for the specific property. Recently reported sales have ranged roughly from $800,000 to $1.65 million. If you're comparing Bryant homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the park, school zoning and current listings.",
+        "If you're moving to the Lake Oswego, OR area, Bryant is worth researching: a Lake Oswego neighborhood with mature trees, established streets, and Bryant Woods Park (walking trails, green space and a playground) as a real local amenity. Some homes have a direct walking path to Lakeridge Middle School. One genuine wrinkle: elementary school zoning isn't uniform across Bryant. Most listings point to River Grove Elementary, but at least one address in the neighborhood is zoned for Westridge Elementary instead, so confirm zoning for the specific property. Pricing varies with size, condition and location, so the live search shows what's currently available. If you're comparing Bryant homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the park, school zoning and current listings.",
       variant: "guide",
       faq: [
         { q: "What is Bryant Woods Nature Park like?", a: "Bryant Woods Nature Park is a Lake Oswego park with walking trails through forest, thickets and meadow near the old Oswego Canal. Oregon Hikers describes it alongside the neighboring Canal Acres Natural Area, which can be walked together. Third-party neighborhood directories also mention open green space and a playground, but those details are not confirmed by the city, so check Lake Oswego Parks and Recreation before planning a visit.", sources: ["https://www.oregonhikers.org/field_guide/Bryant_Woods-Canal_Acres_Hike"] },
@@ -6803,23 +6803,23 @@ const TITLES: Record<string, PostSeed[]> = {
         { q: "What public transit runs near Bryant in Lake Oswego?", a: "Bus stops are listed along Boones Ferry Road near the area. TriMet Line 96-Boones Ferry Rd runs weekday rush-hour local service between Wilsonville and Portland City Center, with no weekend service. Line 78-Denney/Kerr Pkwy connects Beaverton Transit Center and Lake Oswego Transit Center daily. Routes and stops change, so check TriMet's trip planner for the nearest stop to a specific address.", sources: ["https://www.trimet.org/schedules/r096.htm", "https://www.trimet.org/schedules/r078.htm"] },
       ],
       intro: [
-        "If you're thinking about moving to the Lake Oswego, Oregon area, Bryant is worth a look: an established southeast Lake Oswego neighborhood with real walkable amenities built in.",
+        "If you're thinking about moving to the Lake Oswego, Oregon area, Bryant is worth a look: an established Lake Oswego neighborhood with real walkable amenities built in.",
         "Bryant Woods Park anchors the neighborhood, and some homes have a direct walking path to Lakeridge Middle School, a genuinely concrete, checkable feature rather than a general walkability claim.",
       ],
       livingIn: [
         "Homes here range from a 1974 single-level in the Bryant Woods area to a 1979 home on about half an acre backing greenspace, alongside newer custom 4-bedroom construction, a real mix of ages rather than one era.",
       ],
       whereLocated: [
-        "Bryant sits in southeast Lake Oswego, with mature trees and established streets throughout.",
+        "Bryant sits in Lake Oswego, with mature trees and established streets throughout.",
       ],
       homesIn: [
-        "Recently reported sales have ranged roughly from $800,000 to $1.65 million, spanning everything from older single-level homes to newer custom construction. Comparing specific properties matters more than assuming one price point.",
+        "Homes here span everything from older single-level homes to newer custom construction. Pricing varies accordingly, so comparing specific properties matters more than assuming one price point.",
       ],
       parks: [
         "Bryant Woods Park provides walking trails, green space and a playground directly in the neighborhood, and some homes have a direct walking path to Lakeridge Middle School.",
       ],
       commute: [
-        "Bryant's southeast Lake Oswego location keeps it within reasonable reach of the broader area's arterial network, with the usual time-of-day variability on actual drive time.",
+        "Bryant's Lake Oswego location keeps it within reasonable reach of the broader area's arterial network, with the usual time-of-day variability on actual drive time.",
       ],
       reasons: [
         "<strong>Bryant Woods Park:</strong> trails, green space and a playground built directly into the neighborhood.",
@@ -6828,7 +6828,7 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       considerations: [
         "<strong>Elementary zoning genuinely splits:</strong> most of Bryant is zoned for River Grove Elementary, but at least one address is zoned for Westridge Elementary instead. Verify for the specific property.",
-        "<strong>Wide price range:</strong> recently reported sales spanned roughly $800,000 to $1.65 million, so compare specific homes rather than assuming one price point.",
+        "<strong>Compare specific homes:</strong> older single-level homes and newer custom construction sit side by side, so look at individual listings rather than assuming one price point.",
         "<strong>Older homes need closer inspection:</strong> 1970s-era properties may need updated systems depending on upkeep history.",
       ],
       closing: [
@@ -6843,9 +6843,9 @@ const TITLES: Record<string, PostSeed[]> = {
       metaDescription:
         "Moving to the Lake Oswego, OR area? See what Evergreen is like: proximity to Millennium Park and the Farmers Market, and current listings.",
       excerpt:
-        "Thinking about moving to the Lake Oswego, OR area? Explore Evergreen, a southeastern Lake Oswego neighborhood near Millennium Park.",
+        "Thinking about moving to the Lake Oswego, OR area? Explore Evergreen, a Lake Oswego neighborhood near Millennium Park.",
       gbp:
-        "If you're moving to the Lake Oswego, OR area, Evergreen is worth researching: a southeastern Lake Oswego neighborhood that borders Oswego Lake on its south side. Millennium Park, which hosts the Lake Oswego Farmers Market, is a real, checkable civic landmark close to the neighborhood. If you're comparing Evergreen homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the location, nearby amenities and current listings.",
+        "If you're moving to the Lake Oswego, OR area, Evergreen is worth researching: a Lake Oswego neighborhood close to downtown. Millennium Plaza Park, which hosts the Lake Oswego Farmers Market, is a real, checkable civic landmark close to the neighborhood. If you're comparing Evergreen homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the location, nearby amenities and current listings.",
       variant: "guide",
       faq: [
         { q: "Is Evergreen an official Lake Oswego neighborhood?", a: "Yes. Evergreen is organized as the Evergreen Neighborhood Association, which became an officially recognized Lake Oswego neighborhood association in 1976. The association and the City of Lake Oswego produced the Evergreen Neighborhood Plan together, and it was adopted in November 2005. The plan is a useful read if you want to understand how the neighborhood has been guided by local policy.", sources: ["https://scholarsbank.uoregon.edu/xmlui/handle/1794/3995", "https://scholarsbank.uoregon.edu/server/api/core/bitstreams/59e715b2-02b2-4ec9-be81-021f9900e79a/content"] },
@@ -6856,13 +6856,13 @@ const TITLES: Record<string, PostSeed[]> = {
         { q: "Is Oswego Lake open to the public now?", a: "The situation has been changing. In November 2024 a Clackamas County judge ruled that the city's ban on public access to the lake violated state law. In April 2025 the City Council voted 5 to 2 not to join the Lake Oswego Corporation's appeal, and Lower Millennium Plaza Park was designated as the public access point. Check the City of Lake Oswego for the current status and rules.", sources: ["https://opb.org/article/2024/11/13/lake-oswego-access-outdoors-oregon-portland-law-court", "https://www.wweek.com/news/courts/2025/04/03/city-council-wont-fight-any-further-to-keep-oswego-lake-private/"] },
       ],
       intro: [
-        "If you're thinking about moving to the Lake Oswego, Oregon area, Evergreen is worth a look: a southeastern neighborhood that borders Oswego Lake itself on its south side.",
+        "If you're thinking about moving to the Lake Oswego, Oregon area, Evergreen is worth a look: a neighborhood close to downtown Lake Oswego.",
       ],
       livingIn: [
-        "Evergreen is a southeastern Lake Oswego neighborhood, close enough to Millennium Park and the weekly Lake Oswego Farmers Market there that it's a realistic regular habit rather than an occasional trip.",
+        "Evergreen is a Lake Oswego neighborhood, close enough to Millennium Park and the weekly Lake Oswego Farmers Market there that it's a realistic regular habit rather than an occasional trip.",
       ],
       whereLocated: [
-        "Evergreen borders Oswego Lake on its south side and sits close to Millennium Park and downtown Lake Oswego.",
+        "Evergreen sits close to Millennium Plaza Park and downtown Lake Oswego.",
       ],
       homesIn: [
         "Specific, verified pricing wasn't available for this writeup. Compare current listings directly rather than relying on an assumed price point for the area.",
@@ -6874,7 +6874,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Evergreen's proximity to downtown Lake Oswego keeps most errands and civic amenities within easy reach, with the usual time-of-day variability on actual drive time.",
       ],
       reasons: [
-        "<strong>Borders Oswego Lake directly:</strong> a real lakefront-adjacent location on the lake's south side.",
+        "<strong>Close to downtown:</strong> Millennium Plaza Park and downtown Lake Oswego are nearby.",
         "<strong>Millennium Park and the Farmers Market close by:</strong> a genuine weekly amenity, not just a nearby park.",
         "<strong>Close to downtown Lake Oswego:</strong> civic and commercial amenities within easy reach.",
       ],
@@ -6884,7 +6884,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "<strong>Lake access rules apply:</strong> Oswego Lake itself is private. Bordering the lake doesn't automatically mean a given property has lake access.",
       ],
       closing: [
-        "If being minutes from Millennium Park and the Farmers Market matters to your search, Evergreen is worth comparing against other southeast Lake Oswego neighborhoods directly.",
+        "If being minutes from Millennium Park and the Farmers Market matters to your search, Evergreen is worth comparing against other Lake Oswego neighborhoods directly.",
       ],
     },
   ],
@@ -7002,7 +7002,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to the Lake Oswego, OR area? Explore Hallinan Heights, a south Lake Oswego neighborhood built mostly in the 1950s-60s.",
       gbp:
-        "If you're moving to the Lake Oswego, OR area, Hallinan Heights is worth researching: a south Lake Oswego neighborhood built mostly in the 1950s and 1960s, with some newer contemporary infill. Hallinan Elementary (16800 Hawthorne Dr, Lake Oswego School District) sits within walking distance of much of the neighborhood. Streets are tree-lined and quiet, with proximity to George Rogers Park and the Lake Oswego Farmers Market, and some homes have territorial mountain views. Recently reported sales have ranged roughly from $685,000 to $1.3 million. If you're comparing Hallinan Heights homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the schools, home styles and current listings.",
+        "If you're moving to the Lake Oswego, OR area, Hallinan Heights is worth researching: a south Lake Oswego neighborhood built mostly in the 1950s and 1960s, with some newer contemporary infill. Hallinan Elementary (16800 Hawthorne Dr, Lake Oswego School District) sits within walking distance of much of the neighborhood. Streets are tree-lined and quiet, with proximity to George Rogers Park and the Lake Oswego Farmers Market, and some homes have territorial mountain views. Pricing varies with size, condition and location, so the live search shows what's currently available. If you're comparing Hallinan Heights homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the schools, home styles and current listings.",
       variant: "guide",
       faq: [
         { q: "Is Hallinan Heights part of the City of Lake Oswego?", a: "Hallinan Heights is a neighborhood recognized by the City of Lake Oswego. The Hallinan Heights Neighborhood Association appears on the city's official list of neighborhood associations, which began as a city program in 1974. Because neighborhood names are informal and some sources use Hallinan and Hallinan Heights interchangeably, confirm whether a specific address is inside city limits with the city's planning department.", sources: ["https://www.ci.oswego.or.us/planning/neighborhood-associations-list", "https://www.ci.oswego.or.us/planning/neighborhood-associations"] },
@@ -7022,7 +7022,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Hallinan Heights sits in south Lake Oswego, within walking distance of Hallinan Elementary (16800 Hawthorne Dr), and close to George Rogers Park and the Lake Oswego Farmers Market.",
       ],
       homesIn: [
-        "Recently reported sales have ranged roughly from $685,000 to $1.3 million, spanning 1950s-60s ranches to newer contemporary construction. Comparing specific properties matters more than assuming one price point.",
+        "Homes here span 1950s-60s ranches to newer contemporary construction. Comparing specific properties matters more than assuming one price point.",
       ],
       parks: [
         "George Rogers Park and the Lake Oswego Farmers Market are both close by, and some homes have territorial views of Mt. Hood, Mt. Adams or Mt. St. Helens.",
@@ -7037,7 +7037,7 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       considerations: [
         "<strong>Boundary is somewhat fuzzy:</strong> \"Hallinan\" and \"Hallinan Heights\" are used interchangeably in some sourcing. Confirm the exact boundary for a specific address.",
-        "<strong>Wide price range:</strong> recently reported sales spanned roughly $685,000 to $1.3 million, so compare specific homes rather than assuming one price point.",
+        "<strong>Compare specific homes:</strong> 1950s-60s ranches and newer contemporary construction both appear, so look at individual listings rather than assuming one price point.",
         "<strong>Older homes need closer inspection:</strong> 1950s-60s construction may need updated systems depending on upkeep history.",
       ],
       closing: [
@@ -7054,7 +7054,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to the Lake Oswego, OR area? Explore Holly Orchard, a south Lake Oswego neighborhood with a real Street of Dreams history.",
       gbp:
-        "If you're moving to the Lake Oswego, OR area, Holly Orchard is worth researching: a south Lake Oswego neighborhood that includes a real 1980 Street of Dreams showcase home, architect-designed, on Sundew Court, giving part of the neighborhood a genuinely distinctive design pedigree. Housing is mostly single-family detached, 3-4 bedroom, and the area is car-dependent with some hills. Recently reported sales include a 1983 English Tudor on a cul-de-sac that sold for $1,265,000. If you're comparing Holly Orchard homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the Street of Dreams history, home styles and current listings.",
+        "If you're moving to the Lake Oswego, OR area, Holly Orchard is worth researching: a south Lake Oswego neighborhood that includes a real 1980 Street of Dreams showcase home, architect-designed, on Sundew Court, giving part of the neighborhood a genuinely distinctive design pedigree. Housing is mostly single-family detached, 3-4 bedroom, and the area is car-dependent with some hills. Recently reported sales include a 1983 English Tudor on a cul-de-sac. If you're comparing Holly Orchard homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the Street of Dreams history, home styles and current listings.",
       variant: "guide",
       faq: [
         { q: "Is Holly Orchard part of the city of Lake Oswego?", a: "Yes. Holly Orchard is one of the formally recognized neighborhood associations in the city of Lake Oswego, and homes there use the 97035 ZIP code. Lake Oswego is primarily in Clackamas County, with small portions in Multnomah and Washington counties. County, taxing districts and utilities can vary by property, so verify the details for a specific address with the county assessor or the city.", sources: ["https://en.wikipedia.org/wiki/Lake_Oswego,_Oregon"] },
@@ -7074,7 +7074,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Holly Orchard sits in south Lake Oswego (ZIP 97035) and is car-dependent, with limited walkable transit access.",
       ],
       homesIn: [
-        "Recently reported sales include a 1983 English Tudor on a cul-de-sac that sold for $1,265,000. Comparing specific properties, including whether a given home was part of the original Street of Dreams showcase, tells you more than any single price point.",
+        "Recently reported sales include a 1983 English Tudor on a cul-de-sac. Comparing specific properties, including whether a given home was part of the original Street of Dreams showcase, tells you more than any single price point.",
       ],
       parks: [
         "Specific park amenities directly in Holly Orchard weren't confirmed for this writeup. Check current listings or the city's park map for what's actually nearby a specific address.",
@@ -7099,14 +7099,14 @@ const TITLES: Record<string, PostSeed[]> = {
   ],
   "Lake Forest, Lake Oswego": [
     {
-      hook: "Just Above Westridge School and Park",
+      hook: "A Westside Neighborhood Served by Waluga Park",
       keyword: "Lake Forest Lake Oswego OR homes",
       metaDescription:
-        "Moving to the Lake Oswego, OR area? See what Lake Forest is like: proximity to Westridge Elementary and Park, and current listings.",
+        "Moving to the Lake Oswego, OR area? See what Lake Forest is like: Waluga Park, the neighborhood plan, and current listings.",
       excerpt:
-        "Thinking about moving to the Lake Oswego, OR area? Explore Lake Forest, a Lake Oswego neighborhood just above Westridge School and Park.",
+        "Thinking about moving to the Lake Oswego, OR area? Explore Lake Forest, a Lake Oswego neighborhood served by Waluga Park.",
       gbp:
-        "If you're moving to the Lake Oswego, OR area, Lake Forest is worth a look: an established neighborhood with mature trees sitting just above Westridge Elementary (3400 Royce Way) and Westridge Park, with some newer custom infill construction alongside older homes. If you're comparing Lake Forest homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the location, schools and current listings.",
+        "If you're moving to the Lake Oswego, OR area, Lake Forest is worth a look: an established neighborhood with mature trees at the westerly end of Lake Oswego, served by Waluga Park, with some newer custom infill construction alongside older homes. If you're comparing Lake Forest homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the location, schools and current listings.",
       variant: "guide",
       faq: [
         { q: "Where is the Lake Forest neighborhood in Lake Oswego?", a: "Lake Forest lies at the westerly end of Lake Oswego. The city's adopted Lake Forest Neighborhood Plan describes it as bordered by the I-5 freeway on the west, Boones Ferry Road on the south, Waluga Drive on the east and Meadows Road on the north. The plan was adopted in 2002, so confirm the current boundary for a specific address with the city's interactive neighborhood map or Planning Department.", sources: ["https://www.ci.oswego.or.us/sites/default/files/fileattachments/planning/webpage/11855/lake_forest_na_plan_council_adopted_version_march_2002.pdf", "https://www.ci.oswego.or.us/planning/neighborhood-associations-list"] },
@@ -7118,13 +7118,13 @@ const TITLES: Record<string, PostSeed[]> = {
         { q: "Does Lake Forest have a neighborhood association and plan?", a: "Yes. The City Council recognized the Lake Forest Neighborhood Association on May 2, 2000, and adopted the Lake Forest Neighborhood Plan in March 2002. The plan sets goals and policies for land use, parks, transportation and services in the area. The city lists Lake Forest among its 25 recognized associations, and the Planning Department at 503-635-0290 can provide a full copy of the plan.", sources: ["https://www.ci.oswego.or.us/sites/default/files/fileattachments/planning/webpage/11855/lake_forest_na_plan_council_adopted_version_march_2002.pdf", "https://www.ci.oswego.or.us/planning/neighborhood-associations-list", "https://www.ci.oswego.or.us/planning/neighborhood-plans-0"] },
       ],
       intro: [
-        "If you're thinking about moving to the Lake Oswego, Oregon area, Lake Forest is worth a look: an established neighborhood positioned just above Westridge Elementary and Westridge Park.",
+        "If you're thinking about moving to the Lake Oswego, Oregon area, Lake Forest is worth a look: an established neighborhood at the westerly end of Lake Oswego, served by Waluga Park.",
       ],
       livingIn: [
         "Lake Forest is an established, mature-tree neighborhood with a mix of older homes and some newer custom infill construction.",
       ],
       whereLocated: [
-        "Lake Forest sits just above Westridge Elementary (3400 Royce Way) and Westridge Park in Lake Oswego.",
+        "Lake Forest sits at the westerly end of Lake Oswego, near I-5 and Boones Ferry Road, with Waluga Park along its eastern edge.",
       ],
       homesIn: [
         "Specific, verified pricing for this neighborhood is limited. Compare current listings directly rather than relying on an assumed price point.",
@@ -7136,7 +7136,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Lake Forest's Lake Oswego location keeps it within reasonable reach of the broader area's arterial network, with the usual time-of-day variability on actual drive time.",
       ],
       reasons: [
-        "<strong>Walkable to Westridge Elementary and Park:</strong> both sit just below the neighborhood.",
+        "<strong>Waluga Park along its edge:</strong> the city plan names it as the park serving the neighborhood.",
         "<strong>Established, mature-tree setting:</strong> a settled feel alongside some newer custom infill.",
       ],
       considerations: [
@@ -7144,7 +7144,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "<strong>Confirm specific school assignment:</strong> verify directly rather than assuming based on proximity alone.",
       ],
       closing: [
-        "If proximity to Westridge Elementary and Park matters to your search, Lake Forest is worth comparing directly against other established Lake Oswego neighborhoods nearby.",
+        "If access to Waluga Park matters to your search, Lake Forest is worth comparing directly against other established Lake Oswego neighborhoods nearby.",
       ],
     },
   ],
@@ -7157,7 +7157,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to the Lake Oswego, OR area? Explore Lake Grove, centered on the historic Boones Ferry corridor and its village district.",
       gbp:
-        "If you're moving to the Lake Oswego, OR area, Lake Grove is worth researching: a southwest Lake Oswego neighborhood centered on the Lake Grove Village commercial district along Boones Ferry Road, named for Alphonso Boone's real historic Willamette River ferry crossing. Lake Grove Elementary (15777 SW Boones Ferry Rd) feeds Lake Oswego Junior High and Lake Oswego High. The area is described as undergoing a bond-financed shift toward more of a walkable village atmosphere, a real, ongoing redevelopment worth knowing about going in. Market data here is genuinely mixed: condos along the Boones Ferry corridor run closer to $450,000, while newer homes have reported medians around $2.19 million. These represent different housing types in the same named area, not one typical price. If you're comparing Lake Grove homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the village redevelopment, schools and current listings.",
+        "If you're moving to the Lake Oswego, OR area, Lake Grove is worth researching: a southwest Lake Oswego neighborhood centered on the Lake Grove Village commercial district along Boones Ferry Road, named for Alphonso Boone's real historic Willamette River ferry crossing. Lake Grove Elementary (15777 SW Boones Ferry Rd) feeds Lake Oswego Junior High and Lake Oswego High. The area is described as undergoing a bond-financed shift toward more of a walkable village atmosphere, a real, ongoing redevelopment worth knowing about going in. Housing here is genuinely mixed: condos along the Boones Ferry corridor and newer homes are different housing types in the same named area, not one typical property. If you're comparing Lake Grove homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the village redevelopment, schools and current listings.",
       variant: "guide",
       faq: [
         { q: "Which schools serve Lake Grove in Lake Oswego?", a: "Lake Grove is part of the Lake Oswego School District, and the district lists Lake Grove Elementary in its feeder pattern for Lake Oswego Middle School and Lake Oswego High School. Attendance areas are set by the school board and can change, so confirm the assigned schools for a specific address with the district's boundary map or its school search boundary database before making decisions.", sources: ["https://www.losdschools.org/about-losd/registration-transfers/school-attendance-boundary-maps"] },
@@ -7178,7 +7178,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Lake Grove sits in southwest Lake Oswego, centered on the Lake Grove Village commercial district along Boones Ferry Road, within reach of the lake.",
       ],
       homesIn: [
-        "Market data here is genuinely mixed by housing type: condos along the Boones Ferry corridor have run closer to $450,000, while newer homes have reported medians around $2.19 million. Compare specific housing types rather than assuming one price point represents the whole neighborhood.",
+        "Housing here is genuinely mixed by type: condos along the Boones Ferry corridor and newer homes sit in the same named area. Compare specific housing types rather than assuming one price point represents the whole neighborhood.",
       ],
       parks: [
         "The Lake Grove Village redevelopment is bringing more walkable village-style amenities to the commercial corridor, in addition to the neighborhood's existing proximity to the lake.",
@@ -7203,14 +7203,14 @@ const TITLES: Record<string, PostSeed[]> = {
   ],
   "Lakewood, Lake Oswego": [
     {
-      hook: "Built Around a Real Waterfront Park and the City's Own Arts Center",
+      hook: "Home to the Lakewood Center for the Arts",
       keyword: "Lakewood Lake Oswego OR homes",
       metaDescription:
-        "Moving to the Lake Oswego, OR area? See what Lakewood is like: Lakewood Bay Park, the Lakewood Center for the Arts, and current listings.",
+        "Moving to the Lake Oswego, OR area? See what Lakewood is like: the Lakewood Center for the Arts, lake easements and current listings.",
       excerpt:
-        "Thinking about moving to the Lake Oswego, OR area? Explore Lakewood, home to Lakewood Bay Park and the Lakewood Center for the Arts.",
+        "Thinking about moving to the Lake Oswego, OR area? Explore Lakewood, home to the Lakewood Center for the Arts.",
       gbp:
-        "If you're moving to the Lake Oswego, OR area, Lakewood is worth researching: a southeast Lake Oswego neighborhood built around two real, named landmarks: Lakewood Bay Park, a waterfront park, and the Lakewood Center for the Arts, an actual theater and exhibit venue hosting concerts and performances. Housing spans a real range, from a 1948 townhouse to a 1996 home, and some homes near George Rogers Park carry lake easement access. There's no \"Lakewood Elementary\" in the Lake Oswego School District: children here feed into a neighboring district elementary school, so confirm which one serves a specific address. If you're comparing Lakewood homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the park, arts center and current listings.",
+        "If you're moving to the Lake Oswego, OR area, Lakewood is worth researching: a Lake Oswego neighborhood home to a real, named landmark: the Lakewood Center for the Arts, an actual theater and exhibit venue hosting concerts and performances. Housing spans a real range, from a 1948 townhouse to a 1996 home, and some homes near George Rogers Park carry lake easement access. There's no \"Lakewood Elementary\" in the Lake Oswego School District: students here are assigned to a neighboring district elementary school, so confirm which one serves a specific address. If you're comparing Lakewood homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the park, arts center and current listings.",
       variant: "guide",
       faq: [
         { q: "Which school district serves Lakewood in Lake Oswego?", a: "Lakewood is served by the Lake Oswego School District. The district has no school named Lakewood Elementary. Its elementary schools are Forest Hills, Hallinan, Lake Grove, Oak Creek, River Grove and Westridge, plus the district-wide Palisades World Language School. The School Board sets each attendance area, so assignment depends on the exact street address. Use the district's boundary map and School Search database, or call the district, to confirm before relying on any one school.", sources: ["https://www.losdschools.org/about-losd/registration-transfers/school-attendance-boundary-maps"] },
@@ -7222,25 +7222,25 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       intro: [
         "If you're thinking about moving to the Lake Oswego, Oregon area, Lakewood is worth a look: a neighborhood built around two real, distinctive landmarks most other Lake Oswego areas don't have.",
-        "Lakewood Bay Park gives the neighborhood real waterfront access, and the Lakewood Center for the Arts is an actual theater and exhibit venue, not a generic \"close to culture\" claim.",
+        "The Lakewood Center for the Arts is an actual theater and exhibit venue, not a generic \"close to culture\" claim.",
       ],
       livingIn: [
         "Housing in Lakewood spans a genuine range of ages, from a 1948 townhouse up to a 1996 home, and some properties near George Rogers Park carry lake easement access.",
       ],
       whereLocated: [
-        "Lakewood sits in southeast Lake Oswego, built around Lakewood Bay Park and the Lakewood Center for the Arts.",
+        "Lakewood sits in Lake Oswego, home to the Lakewood Center for the Arts.",
       ],
       homesIn: [
-        "Recently reported waterfront sales have run around $1.49 million in one snapshot. Treat this as a single reference point, not a stated range, and compare specific listings directly.",
+        "Waterfront properties here are individual, so compare specific listings directly in the live search.",
       ],
       parks: [
-        "Lakewood Bay Park is the neighborhood's defining waterfront amenity, and the Lakewood Center for the Arts hosts real theater, concerts and exhibits close by.",
+        "The Lakewood Center for the Arts hosts real theater, concerts and exhibits within the neighborhood.",
       ],
       commute: [
-        "Lakewood's southeast Lake Oswego location keeps it within reasonable reach of the broader area's arterial network, with the usual time-of-day variability on actual drive time.",
+        "Lakewood's Lake Oswego location keeps it within reasonable reach of the broader area's arterial network, with the usual time-of-day variability on actual drive time.",
       ],
       reasons: [
-        "<strong>Lakewood Bay Park:</strong> real, named waterfront green space built into the neighborhood.",
+        "<strong>Lakewood Center for the Arts:</strong> a real theater and exhibit venue in the neighborhood.",
         "<strong>Lakewood Center for the Arts:</strong> an actual theater and exhibit venue close by, genuinely distinctive among Lake Oswego neighborhoods.",
         "<strong>Some homes carry lake easement access:</strong> properties near George Rogers Park can include real lake access.",
       ],
@@ -7263,7 +7263,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to the Lake Oswego, OR area? Explore McVey-South Shore, a Clackamas County-side neighborhood with a mix of home eras.",
       gbp:
-        "If you're moving to the Lake Oswego, OR area, McVey-South Shore is worth researching: a neighborhood on the Clackamas County side of Lake Oswego with a genuine mix of mid-century homes on quiet cul-de-sacs and newer custom builds, some with peek-a-boo lake or Mt. Hood views. Recently reported sales have suggested a median listing price around $1.2 million, though that figure comes from a single, undated snapshot and shouldn't be treated as a current quote. If you're comparing McVey-South Shore homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the home mix, view lots and current listings.",
+        "If you're moving to the Lake Oswego, OR area, McVey-South Shore is worth researching: a neighborhood on the Clackamas County side of Lake Oswego with a genuine mix of mid-century homes on quiet cul-de-sacs and newer custom builds, some with peek-a-boo lake or Mt. Hood views. Pricing varies with lot, view and home age, so the live search shows what's currently available. If you're comparing McVey-South Shore homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the home mix, view lots and current listings.",
       variant: "guide",
       faq: [
         { q: "Is McVey-South Shore its own city or part of Lake Oswego?", a: "McVey-South Shore is not a separate city. It is one of 25 neighborhood associations recognized by the City of Lake Oswego, and the city's website has a dedicated page for it with bylaws and a boundary map. Because the name is a neighborhood label rather than a legal boundary, confirm that a specific address is inside Lake Oswego city limits by using the city's interactive neighborhood map or by contacting the city's planning staff.", sources: ["https://www.ci.oswego.or.us/planning/neighborhood-associations-list", "https://www.ci.oswego.or.us/planning/mcvey-south-shore-neighborhood-association"] },
@@ -7283,7 +7283,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "McVey-South Shore sits on the Clackamas County side of Lake Oswego, near comparable areas like Dunthorpe, Mountain Park and Lake Grove.",
       ],
       homesIn: [
-        "Some lots here offer peek-a-boo lake or Mt. Hood views, a genuine feature on certain properties, not universal across the neighborhood. Recently reported listing data has suggested a median around $1.2 million, though treat that as a rough, dated figure and compare current listings directly.",
+        "Some lots here offer peek-a-boo lake or Mt. Hood views, a genuine feature on certain properties, not universal across the neighborhood. Pricing varies by property, so compare current listings directly.",
       ],
       parks: [
         "Specific park amenities directly in McVey-South Shore weren't confirmed for this writeup. Check current listings or the city's park map for what's actually nearby a specific address.",
@@ -7379,7 +7379,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Oak Creek sits around Oak Creek Elementary (55 Kingsgate Rd) and within walking distance of Westlake Park.",
       ],
       homesIn: [
-        "One recently reported sale included a 5-bedroom, 3-bath, 3,224-square-foot home at $919,000, a single data point, not a stated range, so compare current listings directly.",
+        "One recently reported sale included a 5-bedroom, 3-bath, 3,224-square-foot home, a single data point, so compare current listings directly.",
       ],
       parks: [
         "Westlake Park is within walking distance of much of the neighborhood, alongside Oak Creek Elementary itself.",
@@ -7463,7 +7463,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to the Lake Oswego, OR area? Explore Palisades, known for mature-tree, larger-lot character and real school-zone variation.",
       gbp:
-        "If you're moving to the Lake Oswego, OR area, Palisades is worth researching: a neighborhood (ZIP 97034) with mid-century and contemporary homes on larger, mature-tree lots, near Foothills Park and its trails. Recently reported sales span a genuinely wide range, from a 1953 daylight ranch on 0.35 acres at $870,000 to a 1982 contemporary on about half an acre at $1,795,000. One real wrinkle: elementary school zoning in Palisades is genuinely inconsistent across sources. Some listings name Palisades Elementary, others Hallinan Elementary, and at least one names Westridge Elementary, so confirm zoning for the specific address directly with the district rather than assuming. If you're comparing Palisades homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the home styles, school zoning and current listings.",
+        "If you're moving to the Lake Oswego, OR area, Palisades is worth researching: a neighborhood (ZIP 97034) with mid-century and contemporary homes on larger, mature-tree lots, near Foothills Park and its trails. Recently reported sales include a 1953 daylight ranch on 0.35 acres and a 1982 contemporary on about half an acre. One real wrinkle: elementary school zoning in Palisades is genuinely inconsistent across sources. Some listings name Palisades Elementary, others Hallinan Elementary, and at least one names Westridge Elementary, so confirm zoning for the specific address directly with the district rather than assuming. If you're comparing Palisades homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the home styles, school zoning and current listings.",
       variant: "guide",
       faq: [
         { q: "Is there a Palisades Elementary School in Lake Oswego?", a: "The Lake Oswego School District lists Palisades World Language School at 1500 Greentree Avenue, and the district attendance page marks it as district-wide attendance rather than tied to a home address. It is part of the district's language immersion programs, with Mandarin Chinese and Spanish resources on the school's site. Older listings that still name Palisades Elementary for a home may be out of date, so confirm the current assignment for any address with the district.", sources: ["https://pal.losdschools.org/", "https://www.losdschools.org/about-losd/registration-transfers/school-attendance-boundary-maps"] },
@@ -7483,7 +7483,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Palisades (ZIP 97034) sits near Foothills Park, with trail access close by.",
       ],
       homesIn: [
-        "Recently reported sales span a genuinely wide range: a 1953 daylight ranch on 0.35 acres at $870,000, and a 1982 contemporary on about half an acre at $1,795,000. Compare specific properties rather than assuming any single price point represents the neighborhood.",
+        "Recently reported sales include a 1953 daylight ranch on 0.35 acres and a 1982 contemporary on about half an acre. Compare specific properties rather than assuming any single price point represents the neighborhood.",
       ],
       parks: [
         "Foothills Park and its trails sit close to the neighborhood, giving residents real outdoor access without a long drive.",
@@ -7498,7 +7498,7 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       considerations: [
         "<strong>Elementary zoning genuinely varies:</strong> confirm directly with the district. Palisades, Hallinan and Westridge Elementary have all been named for addresses here.",
-        "<strong>Very wide price range:</strong> recently reported sales spanned roughly $870,000 to $1.8 million, so compare specific homes rather than assuming one price point.",
+        "<strong>Compare specific homes:</strong> lot sizes, ages and styles vary, so look at individual listings rather than assuming one price point.",
         "<strong>Older homes need closer inspection:</strong> 1950s-era construction may need updated systems depending on upkeep history.",
       ],
       closing: [
@@ -7565,7 +7565,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to the Lake Oswego, OR area? Explore Skylands, an upscale hillside neighborhood with real territorial views.",
       gbp:
-        "If you're moving to the Lake Oswego, OR area and want real acreage with views, Skylands is worth researching: an upscale, hillside, wooded-lot neighborhood where multiple listings have cited genuine territorial views of Mt. Hood, Mt. St. Helens, Mt. Adams and the Willamette River. Lots here typically run large, roughly 0.9 to more than 3.5 acres, genuinely larger than a typical suburban lot. Recently reported listings have ranged widely, from around $1.6 million to over $5 million, reflecting a real mix of home ages and sizes rather than one typical property. If you're comparing Skylands homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the lot sizes, views and current listings.",
+        "If you're moving to the Lake Oswego, OR area and want real acreage with views, Skylands is worth researching: an upscale, hillside, wooded-lot neighborhood where multiple listings have cited genuine territorial views of Mt. Hood, Mt. St. Helens, Mt. Adams and the Willamette River. Lots here typically run large, roughly 0.9 to more than 3.5 acres, genuinely larger than a typical suburban lot. Listings here reflect a real mix of home ages and sizes rather than one typical property. If you're comparing Skylands homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the lot sizes, views and current listings.",
       variant: "guide",
       faq: [
         { q: "Is Skylands inside Lake Oswego city limits?", a: "Partly. The Skylands Neighborhood Association says its boundaries cover land both within the City of Lake Oswego and in unincorporated Clackamas County. Its meeting notes put about 84 homes in unincorporated Clackamas County and roughly 22 in the city. Because the line runs through the neighborhood, whether a specific home is in the city depends on its exact address. Confirm with Clackamas County or the City of Lake Oswego before assuming which jurisdiction applies.", sources: ["https://www.clackamas.us/community/skylands-neighborhood-association-cpo-meetings", "https://www.clackamas.us/planning/skylands-neighborhood-association-bylaws"] },
@@ -7585,7 +7585,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Skylands sits on elevated terrain within Lake Oswego, which is part of what makes the territorial views here genuinely possible, not a listing exaggeration.",
       ],
       homesIn: [
-        "Recently reported listings have ranged roughly from $1.6 million to over $5 million, reflecting real differences in lot size, age and construction quality. Compare specific properties rather than assuming one price point.",
+        "Recently reported listings reflect real differences in lot size, age and construction quality. Compare specific properties rather than assuming one price point.",
       ],
       parks: [
         "The neighborhood's elevation itself is the main amenity here: multiple listings have cited genuine territorial views of Mt. Hood, Mt. St. Helens, Mt. Adams and the Willamette River from specific lots.",
@@ -7600,7 +7600,7 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       considerations: [
         "<strong>Views aren't universal:</strong> not every lot has the same view profile. Confirm what a specific listing actually offers.",
-        "<strong>Very wide price range:</strong> recently reported listings spanned roughly $1.6 million to over $5 million, so compare specific homes rather than assuming one price point.",
+        "<strong>Compare specific homes:</strong> lot size, age and construction quality vary, so look at individual listings rather than assuming one price point.",
         "<strong>Confirm specific school assignment:</strong> listing-sourced school names should be verified directly with the district, especially given how many elementary zones exist nearby.",
       ],
       closing: [
@@ -7638,7 +7638,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Uplands borders Oswego Lake Country Club's golf course, and some homes carry a real Uplands lake easement for lake access.",
       ],
       homesIn: [
-        "Recently reported listings have ranged from around $1.9 million for newer construction up to roughly $3 million, alongside some older mid-century homes on smaller lots. Compare specific properties directly.",
+        "Recently reported listings include newer construction alongside some older mid-century homes on smaller lots. Compare specific properties directly.",
       ],
       parks: [
         "The Oswego Lake Country Club golf course borders the neighborhood, and some homes carry a documented lake easement for direct access.",
@@ -7670,7 +7670,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to the Lake Oswego, OR area? Explore Waluga, organized around East and West Waluga Park.",
       gbp:
-        "If you're moving to the Lake Oswego, OR area, Waluga is worth researching: a southeast Lake Oswego neighborhood organized around East and West Waluga Park, with ponds, greenery and trails as a real, defining amenity. Housing here genuinely mixes single-family homes with townhomes, including the Trillium Woods area's duplex-style units with direct park access. Lake Grove Elementary, Lake Oswego Middle and Lake Oswego High serve the area. Lake Grove Village is close by for shopping, and downtown Lake Oswego is roughly 10-15 minutes away. If you're comparing Waluga homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the parks, housing mix and current listings.",
+        "If you're moving to the Lake Oswego, OR area, Waluga is worth researching: a Lake Oswego neighborhood organized around East and West Waluga Park, with ponds, greenery and trails as a real, defining amenity. Housing here genuinely mixes single-family homes with townhomes, including the Trillium Woods area's duplex-style units with direct park access. Lake Grove Elementary, Lake Oswego Middle and Lake Oswego High serve the area. Lake Grove Village is close by for shopping, and downtown Lake Oswego is roughly 10-15 minutes away. If you're comparing Waluga homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the parks, housing mix and current listings.",
       variant: "guide",
       faq: [
         { q: "Where are East and West Waluga Park located?", a: "The City of Lake Oswego lists two separate parks. Waluga Park East is at 15505 Quarry Rd., and Waluga Park West is at 15775 Waluga Drive. The city's park pages place both in the Lake Forest neighborhood. Since the neighborhood name and the park names are used a bit differently, check an exact address on the city's map before assuming it falls inside a given boundary.", sources: ["https://www.ci.oswego.or.us/parksrec/waluga-park-east", "https://www.ci.oswego.or.us/parksrec/waluga-park-west"] },
@@ -7687,10 +7687,10 @@ const TITLES: Record<string, PostSeed[]> = {
         "Waluga combines single-family homes with townhomes, including the Trillium Woods area's duplex-style units with direct park access, a genuine housing-type mix, not just one product.",
       ],
       whereLocated: [
-        "Waluga sits in southeast Lake Oswego, organized around East and West Waluga Park, close to Lake Grove Village and roughly 10-15 minutes from downtown Lake Oswego.",
+        "Waluga sits in Lake Oswego, organized around East and West Waluga Park, close to Lake Grove Village and roughly 10-15 minutes from downtown Lake Oswego.",
       ],
       homesIn: [
-        "Recently reported sales include a 2004 Craftsman around 3,000 square feet at $1.05 million and a 3-bedroom home near the park at $775,000. Comparing specific properties, including housing type, tells you more than any single price point.",
+        "Recently reported sales include a 2004 Craftsman around 3,000 square feet and a 3-bedroom home near the park. Comparing specific properties, including housing type, tells you more than any single price point.",
       ],
       parks: [
         "East and West Waluga Park anchor the neighborhood, with ponds, greenery and trails as a real, defining amenity, not a nearby park, but the neighborhood's own namesake.",
@@ -7705,7 +7705,7 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       considerations: [
         "<strong>Housing type affects price significantly:</strong> townhomes and single-family homes carry different price points. Compare the specific type you want.",
-        "<strong>Wide price range:</strong> recently reported sales spanned roughly $775,000 to $1.05 million in these examples. Compare current listings directly.",
+        "<strong>Compare specific homes:</strong> recently reported sales include a 2004 Craftsman and a 3-bedroom home near the park in these examples. Compare current listings directly.",
         "<strong>Confirm specific school assignment:</strong> verify directly with the district rather than assuming based on the neighborhood name alone.",
       ],
       closing: [
@@ -7720,9 +7720,9 @@ const TITLES: Record<string, PostSeed[]> = {
       metaDescription:
         "Moving to the Lake Oswego, OR area? See what Westlake is like: cul-de-sac layouts, highway access, Westlake Park, and current listings.",
       excerpt:
-        "Thinking about moving to the Lake Oswego, OR area? Explore Westlake, a southeast Lake Oswego neighborhood with real highway access.",
+        "Thinking about moving to the Lake Oswego, OR area? Explore Westlake, a Lake Oswego neighborhood with real highway access.",
       gbp:
-        "If you're moving to the Lake Oswego, OR area, Westlake is worth a look: a southeast Lake Oswego neighborhood built mostly in the 1980s and 1990s, laid out around cul-de-sac streets, with genuinely easy access to both I-5 and OR-217. Westlake Park (playgrounds, sports fields) is the neighborhood's local green space, and Oak Creek Elementary serves at least part of the area. Recently reported sales have ranged roughly from $950,000 to $1.4 million. If you're comparing Westlake homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the layout, highway access and current listings.",
+        "If you're moving to the Lake Oswego, OR area, Westlake is worth a look: a Lake Oswego neighborhood built mostly in the 1980s and 1990s, laid out around cul-de-sac streets, with genuinely easy access to both I-5 and OR-217. Westlake Park (playgrounds, sports fields) is the neighborhood's local green space, and Oak Creek Elementary serves at least part of the area. Home sizes and conditions vary, so the live search shows what's currently available. If you're comparing Westlake homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the layout, highway access and current listings.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to the Lake Oswego, Oregon area and commute flexibility matters, Westlake is worth a look: it's a straightforward, well-located neighborhood rather than one built around a singular standout feature.",
@@ -7731,10 +7731,10 @@ const TITLES: Record<string, PostSeed[]> = {
         "Westlake is mostly 1980s-90s single-family construction, laid out around cul-de-sac streets throughout much of the neighborhood.",
       ],
       whereLocated: [
-        "Westlake sits in southeast Lake Oswego, with genuinely easy access to both I-5 and OR-217, a real commute advantage compared to some other Lake Oswego neighborhoods farther from the highway.",
+        "Westlake sits in Lake Oswego, with genuinely easy access to both I-5 and OR-217, a real commute advantage compared to some other Lake Oswego neighborhoods farther from the highway.",
       ],
       homesIn: [
-        "Recently reported sales have ranged roughly from $950,000 to $1.4 million. Comparing specific properties matters more than assuming one price point.",
+        "Comparing specific properties in the live search matters more than assuming one price point.",
       ],
       parks: [
         "Westlake Park, with playgrounds and sports fields, is the neighborhood's local green-space amenity.",
@@ -7749,11 +7749,11 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       considerations: [
         "<strong>Fewer standout amenities than some other Lake Oswego neighborhoods:</strong> Westlake's main draw is practical (layout and commute access) rather than a singular landmark feature.",
-        "<strong>Wide price range:</strong> recently reported sales spanned roughly $950,000 to $1.4 million, so compare specific homes rather than assuming one price point.",
+        "<strong>Compare specific homes:</strong> look at individual listings rather than assuming one price point.",
         "<strong>Confirm specific school assignment:</strong> verify directly with the district for the specific address.",
       ],
       closing: [
-        "If a practical, well-located neighborhood with genuinely easy highway access is what you're after, Westlake is worth a close look alongside other southeast Lake Oswego areas.",
+        "If a practical, well-located neighborhood with genuinely easy highway access is what you're after, Westlake is worth a close look alongside other Lake Oswego areas.",
       ],
     },
   ],
@@ -7766,7 +7766,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to the Lake Oswego, OR area? Explore Westridge, where listings range from fixer-uppers to custom estates.",
       gbp:
-        "If you're moving to the Lake Oswego, OR area, Westridge is worth researching: a southeast Lake Oswego neighborhood with tree-lined streets and a genuinely wide range of home conditions, from older homes explicitly marketed as equity-building fixer-uppers to large custom estates with features like elevators. Westridge Park provides local green space. Recently reported sales have included a 1981 fixer at $1.015 million, a 2003 custom estate at $2.099 million, and a 1982 home on a cul-de-sac at $1.548 million, a real spread, not one typical price. If you're comparing Westridge homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the home-condition range and current listings.",
+        "If you're moving to the Lake Oswego, OR area, Westridge is worth researching: a Lake Oswego neighborhood with tree-lined streets and a genuinely wide range of home conditions, from older homes explicitly marketed as equity-building fixer-uppers to large custom estates with features like elevators. Westridge Park provides local green space. Recently reported sales have included a 1981 fixer, a 2003 custom estate and a 1982 home on a cul-de-sac, a real spread, not one typical home. If you're comparing Westridge homes for sale or Lake Oswego OR homes for sale more broadly, the full neighborhood guide covers the home-condition range and current listings.",
       variant: "guide",
       faq: [
         { q: "What is at Westridge Park in Lake Oswego?", a: "Westridge Park is a 2.2-acre city park at 3400 Royce Way, next to Westridge Elementary School. The City of Lake Oswego lists play equipment and a volleyball area beside the school's soccer and little league field. Its amenities include little league and softball fields, a play area and volleyball. The park is listed under the Westridge neighborhood on the city's parks site.", sources: ["https://www.ci.oswego.or.us/parksrec/westridge-park"] },
@@ -7783,16 +7783,16 @@ const TITLES: Record<string, PostSeed[]> = {
         "Westridge has tree-lined streets and a genuinely wide range of home conditions: some older homes are explicitly marketed as equity-building opportunities, while others are large custom estates.",
       ],
       whereLocated: [
-        "Westridge sits in southeast Lake Oswego, with Westridge Park and Westridge Elementary both close by.",
+        "Westridge sits in Lake Oswego, with Westridge Park and Westridge Elementary both close by.",
       ],
       homesIn: [
-        "Recently reported sales include a 1981 home needing updates at $1.015 million, a 2003 custom estate with an elevator at $2.099 million, and a 1982 cul-de-sac home at $1.548 million, a real, wide spread rather than one typical price point.",
+        "Recently reported sales include a 1981 home needing updates, a 2003 custom estate with an elevator, and a 1982 cul-de-sac home, a real, wide spread rather than one typical home.",
       ],
       parks: [
         "Westridge Park gives the neighborhood local green space, with tree-lined streets throughout.",
       ],
       commute: [
-        "Westridge's southeast Lake Oswego location keeps it within reasonable reach of the broader area's arterial network, with the usual time-of-day variability on actual drive time.",
+        "Westridge's Lake Oswego location keeps it within reasonable reach of the broader area's arterial network, with the usual time-of-day variability on actual drive time.",
       ],
       reasons: [
         "<strong>Genuine range of home conditions:</strong> from fixer-uppers with real equity potential to large custom estates.",
@@ -7800,7 +7800,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "<strong>Westridge Park and Elementary nearby:</strong> both close to much of the neighborhood.",
       ],
       considerations: [
-        "<strong>Very wide price range:</strong> recently reported sales spanned roughly $1 million to over $2 million depending on condition and size. Compare specific homes directly.",
+        "<strong>Wide range of conditions:</strong> recent sales varied depending on condition and size. Compare specific homes directly.",
         "<strong>Older homes may need real investment:</strong> some listings are explicitly marketed as fixer-uppers, not move-in ready.",
         "<strong>Confirm specific school assignment:</strong> verify directly with the district for the specific address.",
       ],
@@ -7884,7 +7884,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Pleasant Valley sits close to New Seasons, Fred Meyer, Costco and Clackamas Town Center for everyday shopping, with Powell Butte Nature Park and the Clackamas River both nearby for outdoor access.",
       ],
       homesIn: [
-        "Recently reported new-construction pricing has included a 4-bedroom, 2,341-square-foot home at $733,400. Compare current builder pricing directly, since new-construction communities adjust pricing by phase.",
+        "Recently reported new-construction listings have included a 4-bedroom, 2,341-square-foot home. Check current builder listings directly, since new-construction communities adjust offerings by phase.",
       ],
       parks: [
         "On-site amenities include a pool, trails, a clubhouse, playgrounds, parks and basketball courts, in addition to nearby Powell Butte Nature Park.",
@@ -7916,7 +7916,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to the Happy Valley, OR area? Explore Jackson Hills, a Clackamas County neighborhood of larger single-family homes.",
       gbp:
-        "If you're moving to the Happy Valley, OR area, Jackson Hills is worth researching: a Clackamas County neighborhood of larger single-family homes, generally 4-6 bedrooms and roughly 3,400 to 4,800 square feet, with three-car garages and large, level lots common throughout. Recently reported sales have ranged roughly from $935,000 to $1.35 million. Nearby parks are within walking distance, and the neighborhood is in the North Clackamas School District, with HOA fees on recent listings running roughly $42-$52 per month. If you're comparing Jackson Hills homes for sale or Happy Valley OR homes for sale more broadly, the full neighborhood guide covers the home styles, HOA details and current listings.",
+        "If you're moving to the Happy Valley, OR area, Jackson Hills is worth researching: a Clackamas County neighborhood of larger single-family homes, generally 4-6 bedrooms and roughly 3,400 to 4,800 square feet, with three-car garages and large, level lots common throughout. Pricing varies with lot size and garage configuration, so the live search shows what's currently available. Nearby parks are within walking distance, and the neighborhood is in the North Clackamas School District, with HOA fees on recent listings varying by property. If you're comparing Jackson Hills homes for sale or Happy Valley OR homes for sale more broadly, the full neighborhood guide covers the home styles, HOA details and current listings.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to the Happy Valley, Oregon area and want real space, Jackson Hills is worth a look: larger lots and larger homes define this neighborhood.",
@@ -7928,7 +7928,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Jackson Hills sits in Clackamas County within the Happy Valley area, with nearby parks within walking distance of much of the neighborhood.",
       ],
       homesIn: [
-        "Recently reported sales have ranged roughly from $935,000 to $1.35 million. Comparing specific properties, including lot size and garage configuration, matters more than assuming one price point.",
+        "Comparing specific properties, including lot size and garage configuration, matters most, and the live search shows what's currently available.",
       ],
       parks: [
         "Nearby parks are within walking distance for much of the neighborhood, and some homes include real backyard amenities like sports courts and fire pits.",
@@ -7942,8 +7942,8 @@ const TITLES: Record<string, PostSeed[]> = {
         "<strong>Real community life:</strong> an annual neighborhood party has been cited on more than one listing.",
       ],
       considerations: [
-        "<strong>HOA fees apply:</strong> recent listings show roughly $42-$52 per month. Confirm current dues directly.",
-        "<strong>Wide price range:</strong> recently reported sales spanned roughly $935,000 to $1.35 million, so compare specific homes rather than assuming one price point.",
+        "<strong>HOA fees apply:</strong> dues vary by listing. Confirm current dues directly.",
+        "<strong>Compare specific listings:</strong> homes here vary widely, so compare specific homes in the live property search.",
         "<strong>Confirm specific school assignment:</strong> verify directly with North Clackamas School District for the specific address.",
       ],
       closing: [
@@ -8026,7 +8026,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "West Mount Scott sits at a genuine overlap between Happy Valley and the Sunnyside/southeast Portland area. Confirm the exact jurisdiction for a specific address.",
       ],
       homesIn: [
-        "Recently reported listing data has suggested a median price roughly in the $680,000 to $712,000 range, though figures varied across undated snapshots. Compare current listings directly.",
+        "Pricing varies with size, condition and location. Compare current listings directly.",
       ],
       parks: [
         "Specific park amenities directly in West Mount Scott weren't confirmed for this writeup. Check current listings or local park maps for what's actually nearby a specific address.",
@@ -8058,7 +8058,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to the Happy Valley, OR area? Explore Eagle Landing, a townhome and single-family community built around its own golf course.",
       gbp:
-        "If you're moving to the Happy Valley, OR area, Eagle Landing is worth researching: a townhome and single-family community built around Eagle Landing Golf Course (also marketed as \"Arie\"), with 27 holes of par-3 golf, mini golf, soccer fields and a private fitness center among the club's amenities. HOA dues typically cover front and back landscaping, exterior paint and common-area upkeep, and vary by listing: some include golf and gym membership, others don't, so confirm what a specific property's dues actually cover. Recently reported sales have included a 2007 townhome at $439,000 and a 2021 six-bedroom single-family home listed at $715,000. If you're comparing Eagle Landing homes for sale or Happy Valley OR homes for sale more broadly, the full neighborhood guide covers the golf amenities, HOA details and current listings.",
+        "If you're moving to the Happy Valley, OR area, Eagle Landing is worth researching: a townhome and single-family community built around Eagle Landing Golf Course (also marketed as \"Arie\"), with 27 holes of par-3 golf, mini golf, soccer fields and a private fitness center among the club's amenities. HOA dues typically cover front and back landscaping, exterior paint and common-area upkeep, and vary by listing: some include golf and gym membership, others don't, so confirm what a specific property's dues actually cover. Recently reported sales have included a 2007 townhome and a 2021 six-bedroom single-family home. If you're comparing Eagle Landing homes for sale or Happy Valley OR homes for sale more broadly, the full neighborhood guide covers the golf amenities, HOA details and current listings.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to the Happy Valley, Oregon area and want genuine golf-course living, Eagle Landing is worth a look: a real, amenity-rich community built around its own course.",
@@ -8070,7 +8070,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Eagle Landing sits in Happy Valley, centered on its own golf course and clubhouse amenities.",
       ],
       homesIn: [
-        "Recently reported sales have included a 2007 townhome at $439,000 and a 2021 six-bedroom single-family home listed at $715,000. Comparing specific property types matters more than assuming one price point, since townhomes and single-family homes here carry real price differences.",
+        "Recently reported sales have included a 2007 townhome and a 2021 six-bedroom single-family home. Comparing specific property types matters, since townhomes and single-family homes here differ, and the live search shows what's currently available.",
       ],
       parks: [
         "Club amenities include 27 holes of par-3 golf, mini golf, soccer fields and a private fitness center, a genuinely extensive set of on-site amenities beyond the golf course itself.",
@@ -8114,7 +8114,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "This area sits within West Linn, car-dependent with limited walkability, near White Oak Savanna and Tanner Creek Park.",
       ],
       homesIn: [
-        "Recently reported listing data has suggested a median price around $1.26 million, though that figure comes from a single, undated snapshot. Compare current listings directly.",
+        "Pricing varies with size, condition and location. Compare current listings directly.",
       ],
       parks: [
         "White Oak Savanna and Tanner Creek Park are both real, named green spaces near the neighborhood.",
@@ -8159,7 +8159,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Bolton sits along the Willamette River near the falls, close to Hammerle Park, Burnside Park, Mary S. Young Park, Hidden Springs Open Space and Camassia Conservancy Park.",
       ],
       homesIn: [
-        "Recently reported sales have suggested a median around $587,000 in one undated snapshot. Compare current listings directly rather than relying on a single figure.",
+        "Pricing shifts from listing to listing. Compare current listings directly rather than relying on a single figure.",
       ],
       parks: [
         "Hammerle Park (5.8 acres) is named for Frank A. Hammerle, a real 1930s West Linn mayor and paper mill superintendent, and includes play equipment, athletic fields and a reservable picnic shelter. Burnside Park adds river beaches and forest trails nearby.",
@@ -8204,7 +8204,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Marylhurst covers 171 acres on a ridge overlooking the Willamette River, bordered by Skyline to the north, Robinwood to the east and Hidden Springs to the south, boundaries confirmed by the city's own neighborhood plan.",
       ],
       homesIn: [
-        "Recently reported listings have ranged roughly from $650,000 to $1.5 million. Comparing specific properties, including whether a home sits in the mid-century \"Marylhurst Heights\" pocket or elsewhere, matters more than assuming one price point.",
+        "Comparing specific properties, including whether a home sits in the mid-century \"Marylhurst Heights\" pocket or elsewhere, matters, and the live search shows what's currently available.",
       ],
       parks: [
         "Marylhurst's ridge-top position gives it a real overlook of the Willamette River, with Hidden Springs' own open space bordering the neighborhood to the south.",
@@ -8219,7 +8219,7 @@ const TITLES: Record<string, PostSeed[]> = {
       ],
       considerations: [
         "<strong>Easily confused with a different place:</strong> make sure any research is about West Linn's Marylhurst, not the separate Marylhurst area or former university campus in Lake Oswego.",
-        "<strong>Wide price range:</strong> recently reported listings spanned roughly $650,000 to $1.5 million, so compare specific homes rather than assuming one price point.",
+        "<strong>Compare specific listings:</strong> homes here vary widely, so check individual properties in the live search.",
         "<strong>Confirm specific school assignment:</strong> verify directly with West Linn-Wilsonville School District for the specific address.",
       ],
       closing: [
@@ -8248,7 +8248,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Parker Crest sits in Clackamas County within West Linn, moderately walkable, near Tanner Creek Park.",
       ],
       homesIn: [
-        "Recently reported listing data has suggested a median price around $1 million, with homes typically taking a couple of months to sell. Compare current listings directly rather than relying on a single snapshot.",
+        "Recently reported listing data has suggested homes typically taking a couple of months to sell. Compare current listings directly rather than relying on a single snapshot.",
       ],
       parks: [
         "Some Parker Crest properties sit on corner lots directly overlooking Tanner Creek Park, a genuine positional advantage on specific listings, not universal across the neighborhood.",
@@ -8292,7 +8292,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Robinwood sits a few minutes from I-205, near Mary S. Young State Park, Willamette Park, hiking trails and river access.",
       ],
       homesIn: [
-        "Recently reported listing data has suggested a median price around $1.15 million in one snapshot. Compare current listings directly rather than relying on a single figure.",
+        "Pricing varies with size, condition and location. Compare current listings directly rather than relying on a single figure.",
       ],
       parks: [
         "Some Robinwood homes back directly onto Robinwood Park itself, a real, confirmed feature on specific listings, not universal across the neighborhood. Mary S. Young State Park and Willamette Park are both close by as well.",
@@ -8336,7 +8336,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Rosemont Summit sits in Clackamas County within West Linn, near Canemah, Far West, Robinwood, Willamette and Hallinan.",
       ],
       homesIn: [
-        "Recently reported listing data has suggested a median price in the $800,000s, with homes typically taking two to three months to sell. Compare current listings directly rather than relying on a single snapshot.",
+        "Recently reported listing data has suggested homes typically taking two to three months to sell. Compare current listings directly rather than relying on a single snapshot.",
       ],
       parks: [
         "Specific park amenities directly in Rosemont Summit weren't confirmed for this writeup. Check current listings or the city's park map for what's actually nearby a specific address.",
@@ -8380,7 +8380,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Savanna Oaks sits on a 354-acre ridge above the Willamette and Tualatin Rivers, bordered by Parker Crest, Barrington Heights and Willamette.",
       ],
       homesIn: [
-        "Recently reported listing data has ranged roughly from $960,000 to $1.01 million depending on the specific snapshot and filters used. Compare current listings directly, and note that homes here have taken anywhere from about 3 to 6 months to sell depending on the listing.",
+        "Recently reported listing data has varied depending on the specific snapshot and filters used. Compare current listings directly, and note that homes here have taken anywhere from about 3 to 6 months to sell depending on the listing.",
       ],
       parks: [
         "The neighborhood's elevated, steep lots can carry real valley and territorial-hill views, a direct result of its ridge-top position above the Willamette and Tualatin Rivers.",
@@ -8424,7 +8424,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Skyline Ridge sits within West Linn, car-dependent with limited walkability, built around Skyline Ridge Park.",
       ],
       homesIn: [
-        "Recently reported sales have ranged roughly from $825,000 to $1.29 million. Comparing specific properties matters more than assuming one price point.",
+        "Comparing specific properties matters, and the live search shows what's currently available.",
       ],
       parks: [
         "Skyline Ridge Park sits directly in the neighborhood, with tennis courts, a basketball court, a playground and picnic areas, real, specific amenities, not a generic nearby-park claim. An optional neighborhood pool is available on some properties.",
@@ -8468,7 +8468,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Sunset sits in Clackamas County within West Linn, built directly around Sunset Park and Sunset Primary School.",
       ],
       homesIn: [
-        "Recently reported pricing in the higher-end segment has suggested a median around $899,000 in one snapshot. Compare current listings directly, since Sunset's housing mix spans condos to larger single-family homes.",
+        "Pricing varies widely in the higher-end segment. Compare current listings directly, since Sunset's housing mix spans condos to larger single-family homes.",
       ],
       parks: [
         "Sunset Park sits directly in the neighborhood, and Sunset Primary School is the specific, confirmed elementary school serving the area, both genuinely tied to the neighborhood's own name.",
@@ -8677,7 +8677,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to the Portland, OR area? Explore Hillside, a West Hills neighborhood anchored by the Hillside Community Center.",
       gbp:
-        "If you're moving to the Portland, OR area, Hillside is worth researching: a West Hills neighborhood anchored by the Hillside Community Center, a real, specific local landmark. Recently reported listing data has suggested a median around $875,000 for homes and roughly $463,000 for condos, though these figures come from undated snapshots. The boundary with neighboring Westover and Kings Heights isn't clearly documented, so confirm the specific area for a given address rather than assuming. If you're comparing Hillside homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the community center, home styles and current listings.",
+        "If you're moving to the Portland, OR area, Hillside is worth researching: a West Hills neighborhood anchored by the Hillside Community Center, a real, specific local landmark. Pricing differs between homes and condos, so the live search shows what's currently available. The boundary with neighboring Westover and Kings Heights isn't clearly documented, so confirm the specific area for a given address rather than assuming. If you're comparing Hillside homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the community center, home styles and current listings.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to the Portland, Oregon area, Hillside is worth a look: a West Hills neighborhood with a real, named community anchor.",
@@ -8689,7 +8689,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Hillside sits in Portland's West Hills, near the Westover and Kings Heights areas. The exact boundary between them isn't clearly documented, so confirm the specific area for a given address.",
       ],
       homesIn: [
-        "Recently reported listing data has suggested a median around $875,000 for homes and roughly $463,000 for condos, though these figures come from undated snapshots. Compare current listings directly.",
+        "Pricing differs between homes and condos and shifts over time. Compare current listings directly.",
       ],
       parks: [
         "The Hillside Community Center is the neighborhood's real, named anchor, offering a genuine local gathering point beyond just a park.",
@@ -8811,7 +8811,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to the Portland, OR area? Explore Northwest Heights, a quiet neighborhood near Washington Park, distinct from Forest Heights.",
       gbp:
-        "If you're moving to the Portland, OR area, Northwest Heights is worth researching carefully, a quiet, suburban-feeling neighborhood roughly 15-20 minutes from downtown, near Washington Park (Oregon Zoo, Japanese Garden, Hoyt Arboretum). One genuine source of confusion worth knowing about: Northwest Heights is a separate, distinct area from the nearby Forest Heights neighborhood, a different planned community in the 97229 ZIP with its own Village Center and Mill Pond Park. The two are easy to mix up, so confirm which a specific address is actually in. Recently reported listing data for Northwest Heights has suggested a median around $945,000. If you're comparing Northwest Heights homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the location, the Forest Heights distinction and current listings.",
+        "If you're moving to the Portland, OR area, Northwest Heights is worth researching carefully, a quiet, suburban-feeling neighborhood roughly 15-20 minutes from downtown, near Washington Park (Oregon Zoo, Japanese Garden, Hoyt Arboretum). One genuine source of confusion worth knowing about: Northwest Heights is a separate, distinct area from the nearby Forest Heights neighborhood, a different planned community in the 97229 ZIP with its own Village Center and Mill Pond Park. The two are easy to mix up, so confirm which a specific address is actually in. If you're comparing Northwest Heights homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the location, the Forest Heights distinction and current listings.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to the Portland, Oregon area, Northwest Heights is worth a look: just make sure you're researching the right neighborhood, since it's genuinely easy to confuse with nearby Forest Heights.",
@@ -8824,7 +8824,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Northwest Heights sits near Washington Park, home to the Oregon Zoo, Japanese Garden and Hoyt Arboretum.",
       ],
       homesIn: [
-        "Recently reported listing data has suggested a median around $945,000, though this comes from an undated snapshot. Compare current listings directly.",
+        "Pricing varies with size, condition and location. Compare current listings directly.",
       ],
       parks: [
         "Washington Park and its attractions (the Oregon Zoo, Japanese Garden and Hoyt Arboretum) are all within reasonable reach of the neighborhood.",
@@ -8901,7 +8901,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to the Portland, OR area? Explore South Portland, covering the historic Lair Hill, Corbett and Terwilliger sub-areas.",
       gbp:
-        "If you're moving to the Portland, OR area, South Portland is worth researching: a neighborhood covering three historically distinct sub-areas: Lair Hill (named for lawyer/editor William Lair Hill), Corbett (named for Senator Henry Winslow Corbett) and Terwilliger. The neighborhood was formerly called Corbett-Terwilliger-Lair Hill (CTLH) until a real, dated neighborhood-association vote renamed it South Portland on September 6, 2006. The area was once home to a district of Italian, Irish and Jewish immigrants, largely demolished by a 1958 urban renewal project, a significant, documented piece of the neighborhood's history. Recently reported data has suggested a median home value around $502,000. If you're comparing South Portland homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the history, sub-areas and current listings.",
+        "If you're moving to the Portland, OR area, South Portland is worth researching: a neighborhood covering three historically distinct sub-areas: Lair Hill (named for lawyer/editor William Lair Hill), Corbett (named for Senator Henry Winslow Corbett) and Terwilliger. The neighborhood was formerly called Corbett-Terwilliger-Lair Hill (CTLH) until a real, dated neighborhood-association vote renamed it South Portland on September 6, 2006. The area was once home to a district of Italian, Irish and Jewish immigrants, largely demolished by a 1958 urban renewal project, a significant, documented piece of the neighborhood's history. If you're comparing South Portland homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the history, sub-areas and current listings.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to the Portland, Oregon area and real neighborhood history matters to you, South Portland is worth a look: a genuinely documented name change and a significant, honest history worth knowing.",
@@ -8914,7 +8914,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Lair Hill sits roughly between I-405, SW Barbur Blvd and SW Naito Pkwy; Corbett and Terwilliger sit farther south toward SW Macadam Ave. The exact line between Corbett and Terwilliger isn't consistently documented across sources, so confirm the specific sub-area for a given address.",
       ],
       homesIn: [
-        "Recently reported data has suggested a median home value around $502,000, with 3-bedroom homes averaging closer to $619,000 in one snapshot. Compare current listings directly.",
+        "Pricing varies with bedroom count, size and condition. Compare current listings directly.",
       ],
       parks: [
         "South Portland's real, documented history includes a once-thriving district of Italian, Irish and Jewish immigrant residents, largely demolished by a 1958 urban renewal project, a significant part of the neighborhood's story worth understanding honestly.",
@@ -8990,7 +8990,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to the Portland, OR area? Explore Cathedral Park, named for the St. Johns Bridge's cathedral-like Gothic arches.",
       gbp:
-        "If you're moving to the Portland, OR area, Cathedral Park is worth researching: a small North Portland neighborhood directly beneath the east end of the St. Johns Bridge, which opened in 1931 and was, at the time, the longest suspension bridge west of the Mississippi. Both the neighborhood and its namesake park are named for the bridge's Gothic arches, which resemble a cathedral. The area was part of the independent City of St. Johns until voters approved annexation to Portland in 1915. The park itself, on what was previously industrial land, was completed in 1980 after a $7.5 million fundraising effort. If you're comparing Cathedral Park homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the bridge history, park and current listings.",
+        "If you're moving to the Portland, OR area, Cathedral Park is worth researching: a small North Portland neighborhood directly beneath the east end of the St. Johns Bridge, which opened in 1931 and was, at the time, the longest suspension bridge west of the Mississippi. Both the neighborhood and its namesake park are named for the bridge's Gothic arches, which resemble a cathedral. The area was part of the independent City of St. Johns until voters approved annexation to Portland in 1915. The park itself, on what was previously industrial land, was completed in 1980 after a major fundraising effort. If you're comparing Cathedral Park homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the bridge history, park and current listings.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to the Portland, Oregon area, Cathedral Park is worth a look: a small neighborhood with a real, specific namesake story.",
@@ -9006,7 +9006,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Specific, verified current pricing wasn't broadly confirmed for this writeup. Compare current listings directly for up-to-date figures.",
       ],
       parks: [
-        "Cathedral Park itself, completed in 1980 after a $7.5 million fundraising effort, sits directly beneath the bridge's Gothic arches on what was previously industrial land.",
+        "Cathedral Park itself, completed in 1980 after a major fundraising effort, sits directly beneath the bridge's Gothic arches on what was previously industrial land.",
       ],
       commute: [
         "The St. Johns Bridge provides direct access across the Willamette River toward Northwest Portland, with the usual time-of-day variability on actual drive time.",
@@ -9035,7 +9035,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to the Portland, OR area? Explore Hayden Island, where real floating-home communities make this genuinely different from a typical neighborhood.",
       gbp:
-        "If you're moving to the Portland, OR area and floating-home living interests you, Hayden Island is worth researching. This is a genuinely distinct Columbia River island neighborhood, not a typical land-based residential area: housing here leans heavily toward condos and real, documented floating-home communities, with several gated floating-home communities and marinas including Hayden Bay Condominium Marina, Island Cove Marina, Riverhouse Marina and Jantzen Beach Moorage. Recently reported listings have included a 1935 floating bungalow at $299,900. If you're comparing Hayden Island homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the floating-home communities, marinas and current listings.",
+        "If you're moving to the Portland, OR area and floating-home living interests you, Hayden Island is worth researching. This is a genuinely distinct Columbia River island neighborhood, not a typical land-based residential area: housing here leans heavily toward condos and real, documented floating-home communities, with several gated floating-home communities and marinas including Hayden Bay Condominium Marina, Island Cove Marina, Riverhouse Marina and Jantzen Beach Moorage. Recently reported listings have included a 1935 floating bungalow. If you're comparing Hayden Island homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the floating-home communities, marinas and current listings.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to the Portland, Oregon area and want something genuinely different from a typical neighborhood, Hayden Island is worth a look. This is a Columbia River island where floating-home living is a real, established housing type, not a novelty.",
@@ -9047,7 +9047,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Hayden Island sits in the Columbia River, with several named marinas including Hayden Bay Condominium Marina, Island Cove Marina, Riverhouse Marina and Jantzen Beach Moorage.",
       ],
       homesIn: [
-        "Recently reported listings have included a 1935 floating bungalow at $299,900. Compare current listings directly, and confirm whether a specific listing is a floating home, a condo, or a land-based property, since all three exist here.",
+        "Recently reported listings have included a 1935 floating bungalow. Compare current listings directly, and confirm whether a specific listing is a floating home, a condo, or a land-based property, since all three exist here.",
       ],
       parks: [
         "The island's marinas themselves function as a real amenity: Hayden Bay Condominium Marina offers full-service slips with power, water and storage for residents.",
@@ -9168,7 +9168,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to the Portland, OR area? Explore Piedmont, home to Peninsula Park, Portland's original rose garden.",
       gbp:
-        "If you're moving to the Portland, OR area, Piedmont is worth researching: a North Portland neighborhood platted in 1889 by developer Edward Quackenbush, with more than 140 dwellings built within the following two decades, many still standing. Peninsula Park, the neighborhood's real anchor, is Portland's original rose garden, drawing over 300,000 visitors in its first bloom year (1913); before the park, the site held a quarter-mile racetrack, a campground and an auto park, and the land was previously owned by a private citizen before the city purchased it for $60,000. Housing includes Victorians, Craftsman bungalows and newer construction. If you're comparing Piedmont homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers Peninsula Park's history, home styles and current listings.",
+        "If you're moving to the Portland, OR area, Piedmont is worth researching: a North Portland neighborhood platted in 1889 by developer Edward Quackenbush, with more than 140 dwellings built within the following two decades, many still standing. Peninsula Park, the neighborhood's real anchor, is Portland's original rose garden, drawing over 300,000 visitors in its first bloom year (1913); before the park, the site held a quarter-mile racetrack, a campground and an auto park, and the land was previously owned by a private citizen before the city purchased it. Housing includes Victorians, Craftsman bungalows and newer construction. If you're comparing Piedmont homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers Peninsula Park's history, home styles and current listings.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to the Portland, Oregon area, Piedmont is worth a look: home to a real, documented park history that goes well beyond a typical neighborhood green space.",
@@ -9257,7 +9257,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to the Portland, OR area? Explore St. Johns, a former independent city home to the landmark St. Johns Bridge.",
       gbp:
-        "If you're moving to the Portland, OR area, St. Johns is worth researching: a far North Portland neighborhood that was its own incorporated city from 1903 to 1915, when voters in both St. Johns and Portland approved annexation. The St. Johns Bridge, opened in 1931 and designed by David B. Steinman at a cost of $4.5 million, is a real Portland Historic Landmark, a Gothic-arch steel suspension bridge connecting across the Willamette River to Linnton in Northwest Portland, with Cathedral Park sitting directly beneath it. A historic downtown commercial core includes a revitalized theater, shops and restaurants. If you're comparing St. Johns homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the history, bridge and current listings.",
+        "If you're moving to the Portland, OR area, St. Johns is worth researching: a far North Portland neighborhood that was its own incorporated city from 1903 to 1915, when voters in both St. Johns and Portland approved annexation. The St. Johns Bridge, opened in 1931 and designed by David B. Steinman, is a real Portland Historic Landmark, a Gothic-arch steel suspension bridge connecting across the Willamette River to Linnton in Northwest Portland, with Cathedral Park sitting directly beneath it. A historic downtown commercial core includes a revitalized theater, shops and restaurants. If you're comparing St. Johns homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the history, bridge and current listings.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to the Portland, Oregon area and real municipal history matters to you, St. Johns is worth a look. This was genuinely its own incorporated city before becoming part of Portland.",
@@ -9273,7 +9273,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Specific, verified current pricing wasn't broadly confirmed for this writeup. Compare current listings directly for up-to-date figures.",
       ],
       parks: [
-        "The St. Johns Bridge, opened in 1931 and designed by David B. Steinman at a cost of $4.5 million, is a real Portland Historic Landmark; Cathedral Park, named for the bridge's Gothic arches, sits directly beneath it.",
+        "The St. Johns Bridge, opened in 1931 and designed by David B. Steinman, is a real Portland Historic Landmark; Cathedral Park, named for the bridge's Gothic arches, sits directly beneath it.",
       ],
       commute: [
         "The St. Johns Bridge provides direct access across the Willamette River toward Northwest Portland, with the usual time-of-day variability on actual drive time.",
@@ -9791,14 +9791,14 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to the Portland, OR area? Explore Cully, home to Cully Park, a real former landfill turned 25-acre park.",
       gbp:
-        "If you're moving to the Portland, OR area, Cully is worth researching: named for 19th-century homesteaders Thomas and Rebecca Cully. Cully Park, a real, documented transformation, opened June 30, 2018 on a former landfill site, giving 517 Portland families their first park within a half-mile walk, per the city's own 2018 release, with real Mt. Hood and Mt. St. Helens views. The neighborhood has seen significant community investment, including a $5.4 million rebuild of Cully Boulevard. If you're comparing Cully homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers Cully Park, the investment and current listings.",
+        "If you're moving to the Portland, OR area, Cully is worth researching: named for 19th-century homesteaders Thomas and Rebecca Cully. Cully Park, a real, documented transformation, opened June 30, 2018 on a former landfill site, giving many nearby residents their first park within a half-mile walk, per the city's own 2018 release, with real Mt. Hood and Mt. St. Helens views. The neighborhood has seen significant community investment, including a rebuild of Cully Boulevard. If you're comparing Cully homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers Cully Park, the investment and current listings.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to the Portland, Oregon area, Cully is worth a look: home to one of the city's most genuinely distinctive park transformations.",
-        "Cully Park opened June 30, 2018 on a former landfill site, a real, documented transformation, not a generic park claim, giving 517 Portland families their first park within a half-mile walk, per the city's own release.",
+        "Cully Park opened June 30, 2018 on a former landfill site, a real, documented transformation, not a generic park claim, giving many nearby residents their first park within a half-mile walk, per the city's own release.",
       ],
       livingIn: [
-        "Cully has seen significant recent community investment, including a $5.4 million rebuild of Cully Boulevard, as the neighborhood revitalizes from what was once considered the city's \"hinterlands.\"",
+        "Cully has seen significant recent community investment, including a rebuild of Cully Boulevard, as the neighborhood revitalizes from what was once considered the city's \"hinterlands.\"",
       ],
       whereLocated: [
         "Cully sits in Northeast Portland, named for 19th-century homesteaders Thomas and Rebecca Cully.",
@@ -9807,14 +9807,14 @@ const TITLES: Record<string, PostSeed[]> = {
         "Specific, verified current pricing wasn't broadly confirmed for this writeup. Compare current listings directly for up-to-date figures.",
       ],
       parks: [
-        "Cully Park, 25 acres on a former landfill site, offers real Mt. Hood and Mt. St. Helens views and gave hundreds of Portland families their first nearby park access when it opened in 2018.",
+        "Cully Park, 25 acres on a former landfill site, offers real Mt. Hood and Mt. St. Helens views and gave many nearby residents their first close-by park when it opened in 2018.",
       ],
       commute: [
         "Cully's Northeast Portland location keeps it within reasonable reach of the broader arterial network, with the usual time-of-day variability on actual drive time.",
       ],
       reasons: [
         "<strong>A real landfill-to-park transformation:</strong> Cully Park, opened 2018, a genuinely distinctive civic achievement.",
-        "<strong>Significant recent investment:</strong> a $5.4 million Cully Boulevard rebuild and other community projects.",
+        "<strong>Significant recent investment:</strong> a Cully Boulevard rebuild and other community projects.",
         "<strong>Real mountain views:</strong> Mt. Hood and Mt. St. Helens visible from the park.",
       ],
       considerations: [
@@ -9951,7 +9951,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "<strong>A real, active neighborhood association:</strong> explicitly focused on supporting communities of color, immigrants and refugees.",
       ],
       considerations: [
-        "<strong>Mixed resident feedback on condition and safety:</strong> some reviews cite concerns worth researching directly rather than assuming based on general neighborhood reputation.",
+        "<strong>Research specific blocks directly:</strong> conditions vary street by street, so visit at different times and review a specific property rather than relying on general neighborhood reputation.",
         "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
         "<strong>Confirm specific school assignment:</strong> verify directly with Portland Public Schools for the specific address.",
       ],
@@ -10149,13 +10149,13 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to the Portland, OR area? Explore Madison South, home to Rocky Butte, a real natural landmark with climbing walls.",
       gbp:
-        "If you're moving to the Portland, OR area, Madison South is worth researching: platted in 1892, it stayed a rural farm community until after WWII, when Black families moved in during a wartime defense-industry jobs boom. Rocky Butte, roughly 2.5 acres with trails and two real rock-climbing walls, is a genuine, distinctive natural landmark here. Rose City Golf Course, bordering the neighborhood, began as the Rose City Raceway, a racetrack developed in 1910. Dining options line NE 82nd Ave along the western border. If you're comparing Madison South homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers Rocky Butte, the history and current listings.",
+        "If you're moving to the Portland, OR area, Madison South is worth researching: platted in 1892, it stayed a rural farm community until after WWII, when new residents arrived during a wartime defense-industry jobs boom. Rocky Butte, roughly 2.5 acres with trails and two real rock-climbing walls, is a genuine, distinctive natural landmark here. Rose City Golf Course, bordering the neighborhood, began as the Rose City Raceway, a racetrack developed in 1910. Dining options line NE 82nd Ave along the western border. If you're comparing Madison South homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers Rocky Butte, the history and current listings.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to the Portland, Oregon area, Madison South is worth a look: home to a genuinely distinctive natural landmark most other Portland neighborhoods don't have.",
       ],
       livingIn: [
-        "Madison South was platted in 1892 and stayed a rural farm community until after WWII, when Black families moved in during a wartime defense-industry jobs boom.",
+        "Madison South was platted in 1892 and stayed a rural farm community until after WWII, when new residents arrived during a wartime defense-industry jobs boom.",
       ],
       whereLocated: [
         "Madison South is bounded by I-84 to the south and I-205 to the east, bordering Roseway, Sumner, Cully, Parkrose, Montavilla and Rose City Park.",
@@ -10549,7 +10549,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to the Portland, OR area? Explore Sumner, a Parkrose School District neighborhood with a genuinely fast-moving housing market.",
       gbp:
-        "If you're moving to the Portland, OR area, Sumner is worth researching: a Northeast Portland neighborhood that also includes the part of Maywood Park west of I-205. Housing mixes single-family homes and townhomes; one recently reported 1920s two-bedroom listed around $439,000. Roughly 876 households call Sumner home, with about 72% owner-occupancy, a genuinely higher rate than some neighboring areas. Sumner is served by the Parkrose School District, not Portland Public Schools. If you're comparing Sumner homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the housing mix, schools and current listings.",
+        "If you're moving to the Portland, OR area, Sumner is worth researching: a Northeast Portland neighborhood that also includes the part of Maywood Park west of I-205. Housing mixes single-family homes and townhomes; one recently reported 1920s two-bedroom listing. Roughly 876 households call Sumner home, with about 72% owner-occupancy, a genuinely higher rate than some neighboring areas. Sumner is served by the Parkrose School District, not Portland Public Schools. If you're comparing Sumner homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the housing mix, schools and current listings.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to the Portland, Oregon area, Sumner is worth a look: a neighborhood with a genuinely higher owner-occupancy rate than some of its neighbors, and a real mix of housing types.",
@@ -10561,7 +10561,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Sumner sits in Northeast Portland and also includes the part of Maywood Park west of I-205, a specific, real geographic detail worth knowing.",
       ],
       homesIn: [
-        "One recently reported 1920s two-bedroom listed around $439,000, with homes in the area averaging roughly two weeks on the market in one snapshot. Compare current listings directly for up-to-date figures.",
+        "Homes in the area have averaged roughly two weeks on the market in one snapshot. Compare current listings directly for up-to-date figures.",
       ],
       parks: [
         "Specific park amenities directly in Sumner weren't confirmed for this writeup. Check current listings or the city's park map for what's actually nearby a specific address.",
@@ -11169,18 +11169,18 @@ const TITLES: Record<string, PostSeed[]> = {
   ],
   "Lents, Portland": [
     {
-      hook: "A City-Audited $207 Million Urban Renewal Effort, With Real, Mixed Results",
+      hook: "A City-Audited Urban Renewal Effort, With Real, Mixed Results",
       keyword: "Lents Portland OR homes",
       metaDescription:
         "Moving to the Portland, OR area? See what Lents is like: a real, city-audited urban renewal history, and current listings.",
       excerpt:
-        "Thinking about moving to the Portland, OR area? Explore Lents, home to a real, city-audited $207 million urban renewal effort.",
+        "Thinking about moving to the Portland, OR area? Explore Lents, home to a real, city-audited urban renewal effort.",
       gbp:
-        "If you're moving to the Portland, OR area, Lents is worth understanding honestly. Platted in 1892 as the Town of Lent by Oliver P. Lent and annexed to Portland in 1912, the neighborhood is home to the Lents Town Center Urban Renewal Area, established in 1998. The city's own 2020 auditor report found $207 million invested since 2000, managed by Prosper Portland and the Housing Bureau, with real, mixed results: property values rose, but less than a comparison area, and 3 of 5 renters remain cost-burdened. The investment has helped redevelop Lents Town Center, Portland Mercado and 72Foster, real, named, current projects. If you're comparing Lents homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers this history, the current projects and listings.",
+        "If you're moving to the Portland, OR area, Lents is worth understanding honestly. Platted in 1892 as the Town of Lent by Oliver P. Lent and annexed to Portland in 1912, the neighborhood is home to the Lents Town Center Urban Renewal Area, established in 1998. The city's own 2020 auditor report found significant investment since 2000, managed by Prosper Portland and the Housing Bureau, with real, mixed results: property values rose, but less than a comparison area, and 3 of 5 renters remain cost-burdened. The investment has helped redevelop Lents Town Center, Portland Mercado and 72Foster, real, named, current projects. If you're comparing Lents homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers this history, the current projects and listings.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to the Portland, Oregon area, Lents is worth understanding through its real, city-audited history. This neighborhood's urban renewal story is specific, documented and genuinely mixed, not a simple \"up and coming\" narrative.",
-        "The city's own 2020 auditor report found $207 million invested in the Lents Town Center Urban Renewal Area since 2000, with real, mixed results: property values rose, but less than a comparison area, and 3 of 5 renters remain cost-burdened.",
+        "The city's own 2020 auditor report found significant investment in the Lents Town Center Urban Renewal Area since 2000, with real, mixed results: property values rose, but less than a comparison area, and 3 of 5 renters remain cost-burdened.",
       ],
       livingIn: [
         "Lents was platted in 1892 as the Town of Lent and annexed to Portland in 1912; the ongoing urban renewal investment has helped redevelop Lents Town Center, Portland Mercado and 72Foster, real, named, current projects.",
@@ -11198,7 +11198,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "I-205 runs directly through Lents, giving genuinely convenient highway access alongside the rest of the Southeast Portland arterial network.",
       ],
       reasons: [
-        "<strong>Significant, real civic investment:</strong> $207 million in documented urban renewal spending since 2000.",
+        "<strong>Significant, real civic investment:</strong> documented urban renewal spending since 2000.",
         "<strong>Real, current redevelopment projects:</strong> Lents Town Center, Portland Mercado and 72Foster.",
         "<strong>Direct I-205 access:</strong> genuinely convenient highway connectivity.",
       ],
@@ -12072,7 +12072,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Daniel Lownsdale claimed land here in 1845 and opened a tannery where Civic Stadium, now Providence Park, now stands, real, specific, sourced history, not a generic founding story.",
       ],
       livingIn: [
-        "Chinese farmers rented land here from the 1870s until 1910, and immigrant German, Jewish and British families later built up the neighborhood, a genuinely layered, documented community history.",
+        "Farmers rented land here from the 1870s until 1910, and later settlers built up the neighborhood, a layered, documented history.",
       ],
       whereLocated: [
         "Goose Hollow sits west of downtown Portland, home to Lincoln High School, founded in 1869 as Portland High School, the oldest high school in the Pacific Northwest.",
@@ -12089,7 +12089,7 @@ const TITLES: Record<string, PostSeed[]> = {
       reasons: [
         "<strong>An entire published book about the neighborhood:</strong> Tracy J. Prince's 2011 \"Portland's Goose Hollow,\" genuinely substantial documented history.",
         "<strong>Lincoln High School:</strong> the oldest high school in the Pacific Northwest, founded 1869.",
-        "<strong>A layered, documented immigrant community history:</strong> Chinese, German, Jewish and British families all part of the neighborhood's real story.",
+        "<strong>A layered, documented history:</strong> land farmed from the 1870s until 1910, later built up into the neighborhood seen today.",
       ],
       considerations: [
         "<strong>Limited verified pricing data:</strong> compare current listings directly rather than assuming a specific price range.",
@@ -12110,7 +12110,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to the Portland, OR area? Explore Hayhurst, home to Gabriel Park, purchased by the city in 1950.",
       gbp:
-        "If you're moving to the Portland, OR area, Hayhurst is worth researching: named for Hayhurst School, itself named for Elizabeth Hayhurst, the first president of the Oregon Parent Teacher Association in the early 1900s. Gabriel Park, 87 acres purchased by the Parks Bureau in October 1950 for $120,000, sits on the neighborhood's southern edge at 45th Ave and Vermont St, with two small creeks, wooded areas and the Southwest Community Center. Alpenrose Dairy, which stood in the western part of the neighborhood since 1916 with a velodrome, baseball park and a replica frontier town, was demolished in May 2025 as part of the Raleigh Crest development, real, recent history, not a current amenity. If you're comparing Hayhurst homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers Gabriel Park, the Alpenrose history and current listings.",
+        "If you're moving to the Portland, OR area, Hayhurst is worth researching: named for Hayhurst School, itself named for Elizabeth Hayhurst, the first president of the Oregon Parent Teacher Association in the early 1900s. Gabriel Park, 87 acres purchased by the Parks Bureau in October 1950, sits on the neighborhood's southern edge at 45th Ave and Vermont St, with two small creeks, wooded areas and the Southwest Community Center. Alpenrose Dairy, which stood in the western part of the neighborhood since 1916 with a velodrome, baseball park and a replica frontier town, was demolished in May 2025 as part of the Raleigh Crest development, real, recent history, not a current amenity. If you're comparing Hayhurst homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers Gabriel Park, the Alpenrose history and current listings.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to the Portland, Oregon area, Hayhurst is worth a look: home to a real, dated park history and a recently closed neighborhood landmark worth knowing about.",
@@ -12126,7 +12126,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "One recently reported listing included a 1953 cottage-style ranch near Gabriel Park, a single data point, not a stated range, so compare current listings directly.",
       ],
       parks: [
-        "Gabriel Park, 87 acres purchased by the Parks Bureau in October 1950 for $120,000, sits on the neighborhood's southern edge, with two small creeks, wooded areas and the Southwest Community Center.",
+        "Gabriel Park, 87 acres purchased by the Parks Bureau in October 1950, sits on the neighborhood's southern edge, with two small creeks, wooded areas and the Southwest Community Center.",
       ],
       commute: [
         "Hayhurst's Southwest Portland location keeps it within reasonable reach of the broader arterial network, with the usual time-of-day variability on actual drive time.",
@@ -12512,7 +12512,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to the Portland, OR area? Explore South Burlingame, once nicknamed Hummingbird Hill before its 1910 renaming.",
       gbp:
-        "If you're moving to the Portland, OR area, South Burlingame is worth researching: grown out of the 411-acre Fulton Park District, formed July 20, 1888 when Philip A. Marquam sold the land to the South West Portland Company for $150,000. Earlier called Carson Heights and nicknamed \"Hummingbird Hill\" for its hummingbirds, it became South Burlingame in 1910, per the neighborhood association. Many original houses remain, including Arts and Crafts-era homes, alongside modern builds. If you're comparing South Burlingame homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers this history, home styles and current listings.",
+        "If you're moving to the Portland, OR area, South Burlingame is worth researching: grown out of the 411-acre Fulton Park District, formed July 20, 1888 when Philip A. Marquam sold the land to the South West Portland Company. Earlier called Carson Heights and nicknamed \"Hummingbird Hill\" for its hummingbirds, it became South Burlingame in 1910, per the neighborhood association. Many original houses remain, including Arts and Crafts-era homes, alongside modern builds. If you're comparing South Burlingame homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers this history, home styles and current listings.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to the Portland, Oregon area, South Burlingame is worth a look: a neighborhood with a real, dated founding story and a genuinely charming earlier nickname.",
@@ -12525,7 +12525,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "South Burlingame sits in Southwest Portland, developed as an early-1900s streetcar suburb.",
       ],
       homesIn: [
-        "One recently reported sale included a 1938 single-family home at $479,000 (4bd/2ba/1,692 sqft), a single data point, not a stated range, so compare current listings directly.",
+        "One recently reported sale included a 1938 single-family home (4bd/2ba/1,692 sqft), a single data point, so compare current listings directly.",
       ],
       parks: [
         "The neighborhood's real, documented history as the former Fulton Park District and earlier \"Hummingbird Hill\" gives it a genuinely distinctive identity beyond typical park amenities.",
@@ -12615,7 +12615,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "Sylvan-Highlands borders Forest Park, Arlington Heights and Southwest Hills, next to Washington Park.",
       ],
       homesIn: [
-        "Recently reported sales for vintage homes have suggested a median around $769,000 in one undated snapshot, with homes averaging roughly 86 days on market. Compare current listings directly.",
+        "Recently reported sales for vintage homes have shown homes averaging roughly 86 days on market in one undated snapshot. Compare current listings directly.",
       ],
       parks: [
         "The neighborhood's proximity to Forest Park and Washington Park gives it real, substantial nature access alongside its secluded, wooded residential lots.",
@@ -12647,7 +12647,7 @@ const TITLES: Record<string, PostSeed[]> = {
       excerpt:
         "Thinking about moving to the Portland, OR area? Explore West Portland Park, home to the Capitol Hill area's real community cluster.",
       gbp:
-        "If you're moving to the Portland, OR area, West Portland Park is worth researching: between SW 53rd Ave and SW 35th Ave, I-5 and SW Stephenson St/the city limits. Its northern part, Capitol Hill, includes the Capitol Hill Library and several mosques and an Islamic school, a real, specific, checkable community feature. Recently reported market data has shown a median around $538,000, up 7.5% year over year, with homes averaging 41 days on market. If you're comparing West Portland Park homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the Capitol Hill area and current listings.",
+        "If you're moving to the Portland, OR area, West Portland Park is worth researching: between SW 53rd Ave and SW 35th Ave, I-5 and SW Stephenson St/the city limits. Its northern part, Capitol Hill, includes the Capitol Hill Library and several mosques and an Islamic school, a real, specific, checkable community feature. Recently reported market data has shown homes averaging 41 days on market. If you're comparing West Portland Park homes for sale or Portland OR homes for sale more broadly, the full neighborhood guide covers the Capitol Hill area and current listings.",
       variant: "guide",
       intro: [
         "If you're thinking about moving to the Portland, Oregon area, West Portland Park is worth a look: home to a real, distinctive community cluster in its northern Capitol Hill section.",
@@ -12659,7 +12659,7 @@ const TITLES: Record<string, PostSeed[]> = {
         "West Portland Park sits between SW 53rd Ave and SW 35th Ave, I-5 to the north and SW Stephenson St/the city limits to the south.",
       ],
       homesIn: [
-        "Recently reported market data has shown a median around $538,000, up 7.5% year over year, with homes averaging 41 days on market. Compare current listings directly for up-to-date figures.",
+        "Recently reported market data has shown homes averaging 41 days on market. Compare current listings directly for up-to-date figures.",
       ],
       parks: [
         "The Capitol Hill Library serves the neighborhood's northern section, alongside the area's real mosques and Islamic school.",
