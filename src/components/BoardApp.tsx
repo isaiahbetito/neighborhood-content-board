@@ -472,6 +472,9 @@ const CITY_URLS: Record<string, string> = {
   "Oregon City": "https://jamiemeushawrealestate.com/properties/city-Oregon%20City,%20OR/",
   Milwaukie: "https://jamiemeushawrealestate.com/properties/place-Milwaukie,%20OR/",
   "Happy Valley": "https://jamiemeushawrealestate.com/properties/city-Happy%20Valley,%20OR/",
+  // Verified 2026-11-19 in a browser: loads real city listings (395 / 192 at the time).
+  Gresham: "https://jamiemeushawrealestate.com/properties/city-Gresham,%20OR/",
+  Newberg: "https://jamiemeushawrealestate.com/properties/city-Newberg,%20OR/",
 };
 
 // City-comparison posts (added 2026-11-03) link to a DIFFERENT kind of page than CITY_URLS
